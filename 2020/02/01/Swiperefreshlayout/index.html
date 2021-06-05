@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Swiperefreshlayout - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Swiperefreshlayout
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-01 01:45" pubdate>
+        2020-02-01
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Swiperefreshlayout</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="Swiperefreshlayout"><a href="#Swiperefreshlayout" class="headerlink" title="Swiperefreshlayout"></a>Swiperefreshlayout</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/releases/swiperefreshlayout?hl=zh-cn">GoogleDoc</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/googlearchive/android-SwipeRefreshLayoutBasic#readme">GoogleGithub</a></p>
+<h2 id="声明依赖项"><a href="#声明依赖项" class="headerlink" title="声明依赖项"></a>声明依赖项</h2><p>直接复制官方文档，不多解释了（懒</p>
+<blockquote>
+<p>在应用或模块的 <code>build.gradle</code> 文件中添加所需工件的依赖项：</p>
+<pre><code class="hljs groovy">dependencies &#123;
+    implementation <span class="hljs-string">&quot;androidx.swiperefreshlayout:swiperefreshlayout:1.0.0&quot;</span>
+&#125;
+</code></pre>
+
+<p>如需详细了解依赖项，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/build/dependencies.html?hl=zh-cn">添加编译依赖项</a>。</p>
+</blockquote>
+<h2 id="添加布局"><a href="#添加布局" class="headerlink" title="添加布局"></a>添加布局</h2><p>在 xml 布局文件中添加 SwipeRefreshLayout，并将 WebView 内嵌在 SwipeRefreshLayout 中。</p>
+<blockquote>
+<p>布局这里拷贝了别人的代码，结果软件闪退，搞了半天找不到原因，重开了一个项目，根据代码提示写了一份居然可以运行，分明代码一样的，好迷啊。。。。。</p>
+</blockquote>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.swiperefreshlayout.widget.SwipeRefreshLayout</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/swipe_refresh&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">WebView</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/web_view&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.swiperefreshlayout.widget.SwipeRefreshLayout</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span></code></pre>
+
+<p>SwipeRefreshLayout 类似 ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽</p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ScrollView</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test_scroll&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;16sp&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ScrollView</span>&gt;</span></code></pre>
+
+<h2 id="编写代码部分"><a href="#编写代码部分" class="headerlink" title="编写代码部分"></a>编写代码部分</h2><p>先放一个完整的源码，看不懂直接跳过，下面介绍关于 Swiperefreshlayout 的核心代码</p>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.aimerneige.bingsearchlite;
+
+<span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity;
+<span class="hljs-keyword">import</span> androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+<span class="hljs-keyword">import</span> android.annotation.SuppressLint;
+<span class="hljs-keyword">import</span> android.os.Bundle;
+<span class="hljs-keyword">import</span> android.view.KeyEvent;
+<span class="hljs-keyword">import</span> android.webkit.WebView;
+<span class="hljs-keyword">import</span> android.webkit.WebViewClient;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>&#123;
+
+    WebView webView;
+    SwipeRefreshLayout swipe_refresh;
+
+    <span class="hljs-meta">@SuppressLint(&quot;SetJavaScriptEnabled&quot;)</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>&#123;
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        webView = findViewById(R.id.web_view);
+        webView.getSettings().setJavaScriptEnabled(<span class="hljs-keyword">true</span>); <span class="hljs-comment">// 启用JavaScript脚本支持</span>
+        webView.loadUrl(<span class="hljs-string">&quot;https://www.bing.com/&quot;</span>);
+        webView.setWebViewClient(<span class="hljs-keyword">new</span> MyWebViewClient());
+
+        swipe_refresh = findViewById(R.id.swipe_refresh);
+        swipe_refresh.setOnRefreshListener(<span class="hljs-keyword">new</span> SwipeRefreshLayout.OnRefreshListener() &#123;
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRefresh</span><span class="hljs-params">()</span> </span>&#123;
+                webView.reload();
+                swipe_refresh.setRefreshing(<span class="hljs-keyword">false</span>);
+            &#125;
+        &#125;);
+    &#125;
+
+    <span class="hljs-comment">// 解决点击返回直接退出的问题</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onKeyDown</span><span class="hljs-params">(<span class="hljs-keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;
+        <span class="hljs-keyword">if</span>(keyCode==KeyEvent.KEYCODE_BACK &amp;&amp; webView.canGoBack())&#123;
+            <span class="hljs-comment">// 如果点击了返回建且当前网页可以后退时，调用后退</span>
+            webView.goBack();
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        &#125;
+        <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-comment">// 否则调用原有功能</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.onKeyDown(keyCode, event);
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyWebViewClient</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebViewClient</span> </span>&#123;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageFinished</span><span class="hljs-params">(WebView view, String url)</span> </span>&#123;
+            <span class="hljs-comment">// 插入JavaScript脚本，去除底部烦人的下载手机必应的提示</span>
+            String js = <span class="hljs-string">&quot;javascript:var m = document.getElementById(\&quot;BottomAppPro\&quot;);&quot;</span> +
+                    <span class="hljs-string">&quot;m.parentNode.removeChild(m);&quot;</span>;
+            view.loadUrl(js);
+        &#125;
+    &#125;
+&#125;</code></pre>
+
+<h3 id="定义引用变量"><a href="#定义引用变量" class="headerlink" title="定义引用变量"></a>定义引用变量</h3><pre><code class="hljs java">SwipeRefreshLayout swipe_refresh;</code></pre>
+
+<h3 id="引用对应控件"><a href="#引用对应控件" class="headerlink" title="引用对应控件"></a>引用对应控件</h3><pre><code class="hljs java">swipe_refresh = findViewById(R.id.swipe_refresh);</code></pre>
+
+<h3 id="设置刷新监听器"><a href="#设置刷新监听器" class="headerlink" title="设置刷新监听器"></a>设置刷新监听器</h3><pre><code class="hljs java">swipe_refresh.setOnRefreshListener(<span class="hljs-keyword">new</span> SwipeRefreshLayout.OnRefreshListener() &#123;
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRefresh</span><span class="hljs-params">()</span> </span>&#123;
+                webView.reload();
+                swipe_refresh.setRefreshing(<span class="hljs-keyword">false</span>);
+            &#125;
+        &#125;);</code></pre>
+
+<p>其中：</p>
+<p><code>webView.reload();</code>进行网页的刷新（没有的话是假刷新，只显示刷新动画而不刷新内容）</p>
+<p><code>swipe_refresh.setRefreshing(false);</code>关闭刷新动画（没有的话网页会一直刷新）</p>
+<h3 id="其他部分"><a href="#其他部分" class="headerlink" title="其他部分"></a>其他部分</h3><p>注释里有，就不解释了（懒</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/16/Gson-Format/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Gson Format</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/01/24/Ubuntu-Install/">
+                        <span class="hidden-mobile">Ubuntu Install</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

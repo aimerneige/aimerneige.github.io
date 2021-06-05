@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Deploy Web Page With Nginx - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Deploy Web Page With Nginx
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-04 01:18" pubdate>
+        2020-10-04
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      50
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Deploy Web Page With Nginx</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="使用-Nginx-搭建静态网页服务"><a href="#使用-Nginx-搭建静态网页服务" class="headerlink" title="使用 Nginx 搭建静态网页服务"></a>使用 Nginx 搭建静态网页服务</h1><blockquote>
+<p>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 <code>CSDN</code> 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。</p>
+</blockquote>
+<h2 id="阅读须知"><a href="#阅读须知" class="headerlink" title="阅读须知"></a>阅读须知</h2><p><strong>在阅读本文章前，你需要准备以下内容</strong></p>
+<ol>
+<li><strong>掌握基础的 <code>Linux</code> 命令行操作</strong> （本文章将介绍如何在 <code>Linux</code> 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 <code>Windows</code> ，请查阅其他文章。）</li>
+<li><strong>拥有一台 <code>Linux 服务器</code></strong> （可以购买 <code>VPS</code> 也可以使用 <code>虚拟机</code> 本文章以 <code>VPS</code> 为例，并购置了域名 <em>（域名非必须）</em> ）</li>
+<li><strong>拥有一个静态网站的源码</strong> （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 <code>hexo</code> 生成的静态网站为例。）</li>
+<li><strong>知道 <code>Nginx</code> 是什么，有什么用</strong> （不需要掌握 <code>Nginx</code>）</li>
+</ol>
+<p><strong>不同 <code>Linux</code> 发行版下命令会有所区别，本文章以 <code>Ubuntu20.04</code> 为例</strong></p>
+<h2 id="准备服务器"><a href="#准备服务器" class="headerlink" title="准备服务器"></a>准备服务器</h2><p>如果你已经有了一台服务器并安装好了 <code>Nginx</code> ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。</p>
+<h3 id="升级系统"><a href="#升级系统" class="headerlink" title="升级系统"></a>升级系统</h3><pre><code class="hljs bash">sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+
+<h3 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 <code>Nginx</code></h3><pre><code class="hljs bash">sudo apt install nginx</code></pre>
+
+<h3 id="启动-Nginx"><a href="#启动-Nginx" class="headerlink" title="启动 Nginx"></a>启动 <code>Nginx</code></h3><pre><code class="hljs bash">sudo systemctl start nginx
+<span class="hljs-comment"># 开机自动启动</span>
+sudo systemctl <span class="hljs-built_in">enable</span> nginx</code></pre>
+
+<h3 id="测试服务"><a href="#测试服务" class="headerlink" title="测试服务"></a>测试服务</h3><p>直接在浏览器访问你服务器的 ip，如果你部署了 <code>DNS</code> 服务的话，你也可以直接使用域名。如果哦看到 <code>Nginx</code> 的欢迎界面，服务器准备成功！</p>
+<h2 id="将网站源码发送到服务器"><a href="#将网站源码发送到服务器" class="headerlink" title="将网站源码发送到服务器"></a>将网站源码发送到服务器</h2><p>这一步可以有很多的选择，你可以通过 <code>github</code> 来 clone，也可以直接使用一些 <code>ftp</code> 工具。这里演示使用 <code>tar</code> 打包并使用 <code>scp</code> 上传。</p>
+<h3 id="打包压缩源文件"><a href="#打包压缩源文件" class="headerlink" title="打包压缩源文件"></a>打包压缩源文件</h3><p>当然，你可以使用其他指令打包压缩或者不压缩，这里使用 <code>xz</code> 压缩以节省网络流量。</p>
+<pre><code class="hljs bash">tar -Jcv -f site.tar.xz public/</code></pre>
+
+<h3 id="将压缩包上传到服务器"><a href="#将压缩包上传到服务器" class="headerlink" title="将压缩包上传到服务器"></a>将压缩包上传到服务器</h3><pre><code class="hljs bash">scp site.tar.xz root@test.aimerneige.com:~/</code></pre>
+
+<h3 id="在服务器解压压缩包"><a href="#在服务器解压压缩包" class="headerlink" title="在服务器解压压缩包"></a>在服务器解压压缩包</h3><p>通常，我们会将静态网站的源文件放置在 <code>/var/www/</code> 这个目录下，但是你也可以放置在家目录或其他你喜欢的位置下。当然，你要保证你喜欢的目录没有问题。<sub><del>（喜欢放在 <code>/tmp</code> 下的给爷爬）</del></sub></p>
+<pre><code class="hljs bash">tar -Jxv -f site.tar.xz -C ./
+sudo mv public/ /var/www/blog</code></pre>
+
+<h2 id="配置-Nginx"><a href="#配置-Nginx" class="headerlink" title="配置 Nginx"></a>配置 <code>Nginx</code></h2><blockquote>
+<p>本文章并不会介绍如何使用 <code>Nginx</code> ，并且阅读本文章并不需要掌握 <code>Nginx</code>，你只需要了解 <code>Nginx</code> 有什么用即可。因为如果只是部署一个简单的静态网页，只需要简单修改默认配置即可。如果你想了解更多关于 <code>Nginx</code> 的内容请查阅其他文章。</p>
+</blockquote>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>直接使用 <code>vim</code> 修改默认的配置文件即可。 如果你没有安装 <code>vim</code> ，执行 <code>sudo apt install vim</code> 来安装它，当然你也可以使用自己喜欢的编辑器。</p>
+<pre><code class="hljs gradle">sudo vim <span class="hljs-regexp">/etc/</span>nginx<span class="hljs-regexp">/sites-available/</span><span class="hljs-keyword">default</span></code></pre>
+
+<p>找到这一行：</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">root</span> /var/www/html;</code></pre>
+
+<p>修改为源文件所在目录：</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">root</span> /var/www/blog;</code></pre>
+
+<p>如果你需要配置域名，找到这一行：</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">server_name</span> _;</code></pre>
+
+<p>将 <code>_</code> 修改为你的域名。</p>
+<h3 id="检查配置是否正确"><a href="#检查配置是否正确" class="headerlink" title="检查配置是否正确"></a>检查配置是否正确</h3><pre><code class="hljs bash">sudo nginx -t</code></pre>
+
+<p>如果得到类似如下的输出，则证明配置文件没有错误。</p>
+<pre><code class="hljs bash">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span class="hljs-built_in">test</span> is successful</code></pre>
+
+<p>如果你的配置文件出现了问题，请重新修改。</p>
+<h3 id="重启-Nginx"><a href="#重启-Nginx" class="headerlink" title="重启 Nginx"></a>重启 <code>Nginx</code></h3><pre><code class="hljs bash">sudo nginx -s reload</code></pre>
+
+<h2 id="检查站点"><a href="#检查站点" class="headerlink" title="检查站点"></a>检查站点</h2><p>重新访问你的服务器 ip 或域名，检查服务是否成功部署。</p>
+<hr>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="为什么-Nginx-的配置文件要这样改"><a href="#为什么-Nginx-的配置文件要这样改" class="headerlink" title="为什么 Nginx 的配置文件要这样改"></a>为什么 <code>Nginx</code> 的配置文件要这样改</h2><p><code>Nginx</code> 的默认配置文件位于 <code>/etc/nginx/</code> 目录下，主配置文件为 <code>nginx.conf</code></p>
+<p>我们首先看一下默认的主配置文件</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">user</span> www-data;
+<span class="hljs-attribute">worker_processes</span> auto;
+<span class="hljs-attribute">pid</span> /run/nginx.pid;
+<span class="hljs-attribute">include</span> /etc/nginx/modules-enabled/<span class="hljs-regexp">*.conf</span>;
+
+<span class="hljs-section">events</span> &#123;
+	<span class="hljs-attribute">worker_connections</span> <span class="hljs-number">768</span>;
+	<span class="hljs-comment"># multi_accept on;</span>
+&#125;
+
+<span class="hljs-section">http</span> &#123;
+
+	<span class="hljs-comment">##</span>
+	<span class="hljs-comment"># Basic Settings</span>
+	<span class="hljs-comment">##</span>
+
+	<span class="hljs-attribute">sendfile</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">tcp_nopush</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">tcp_nodelay</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">keepalive_timeout</span> <span class="hljs-number">65</span>;
+	<span class="hljs-attribute">types_hash_max_size</span> <span class="hljs-number">2048</span>;
+	<span class="hljs-comment"># server_tokens off;</span>
+
+	<span class="hljs-comment"># server_names_hash_bucket_size 64;</span>
+	<span class="hljs-comment"># server_name_in_redirect off;</span>
+
+	<span class="hljs-attribute">include</span> /etc/nginx/mime.types;
+	<span class="hljs-attribute">default_type</span> application/octet-stream;
+
+	<span class="hljs-comment">##</span>
+	<span class="hljs-comment"># SSL Settings</span>
+	<span class="hljs-comment">##</span>
+
+	<span class="hljs-attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="hljs-number">1</span> TLSv1.<span class="hljs-number">2</span> TLSv1.<span class="hljs-number">3</span>; <span class="hljs-comment"># Dropping SSLv3, ref: POODLE</span>
+	<span class="hljs-attribute">ssl_prefer_server_ciphers</span> <span class="hljs-literal">on</span>;
+
+	<span class="hljs-comment">##</span>
+	<span class="hljs-comment"># Logging Settings</span>
+	<span class="hljs-comment">##</span>
+
+	<span class="hljs-attribute">access_log</span> /var/log/nginx/access.log;
+	<span class="hljs-attribute">error_log</span> /var/log/nginx/error.log;
+
+	<span class="hljs-comment">##</span>
+	<span class="hljs-comment"># Gzip Settings</span>
+	<span class="hljs-comment">##</span>
+
+	<span class="hljs-attribute">gzip</span> <span class="hljs-literal">on</span>;
+
+	<span class="hljs-comment"># gzip_vary on;</span>
+	<span class="hljs-comment"># gzip_proxied any;</span>
+	<span class="hljs-comment"># gzip_comp_level 6;</span>
+	<span class="hljs-comment"># gzip_buffers 16 8k;</span>
+	<span class="hljs-comment"># gzip_http_version 1.1;</span>
+	<span class="hljs-comment"># gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span>
+
+	<span class="hljs-comment">##</span>
+	<span class="hljs-comment"># Virtual Host Configs</span>
+	<span class="hljs-comment">##</span>
+
+	<span class="hljs-attribute">include</span> /etc/nginx/conf.d/<span class="hljs-regexp">*.conf</span>;
+	<span class="hljs-attribute">include</span> /etc/nginx/sites-enabled/*;
+&#125;
+
+
+<span class="hljs-comment">#mail &#123;</span>
+<span class="hljs-comment">#	# See sample authentication script at:</span>
+<span class="hljs-comment">#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	# auth_http localhost/auth.php;</span>
+<span class="hljs-comment">#	# pop3_capabilities &quot;TOP&quot; &quot;USER&quot;;</span>
+<span class="hljs-comment">#	# imap_capabilities &quot;IMAP4rev1&quot; &quot;UIDPLUS&quot;;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	server &#123;</span>
+<span class="hljs-comment">#		listen     localhost:110;</span>
+<span class="hljs-comment">#		protocol   pop3;</span>
+<span class="hljs-comment">#		proxy      on;</span>
+<span class="hljs-comment">#	&#125;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	server &#123;</span>
+<span class="hljs-comment">#		listen     localhost:143;</span>
+<span class="hljs-comment">#		protocol   imap;</span>
+<span class="hljs-comment">#		proxy      on;</span>
+<span class="hljs-comment">#	&#125;</span>
+<span class="hljs-comment">#&#125;</span></code></pre>
+
+<p>去掉全部的注释</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">user</span> www-data;
+<span class="hljs-attribute">worker_processes</span> auto;
+<span class="hljs-attribute">pid</span> /run/nginx.pid;
+<span class="hljs-attribute">include</span> /etc/nginx/modules-enabled/<span class="hljs-regexp">*.conf</span>;
+
+<span class="hljs-section">events</span> &#123;
+	<span class="hljs-attribute">worker_connections</span> <span class="hljs-number">768</span>;
+&#125;
+
+<span class="hljs-section">http</span> &#123;
+
+	<span class="hljs-attribute">sendfile</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">tcp_nopush</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">tcp_nodelay</span> <span class="hljs-literal">on</span>;
+	<span class="hljs-attribute">keepalive_timeout</span> <span class="hljs-number">65</span>;
+	<span class="hljs-attribute">types_hash_max_size</span> <span class="hljs-number">2048</span>;
+
+	<span class="hljs-attribute">include</span> /etc/nginx/mime.types;
+	<span class="hljs-attribute">default_type</span> application/octet-stream;
+
+	<span class="hljs-attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="hljs-number">1</span> TLSv1.<span class="hljs-number">2</span> TLSv1.<span class="hljs-number">3</span>; <span class="hljs-comment"># Dropping SSLv3, ref: POODLE</span>
+	<span class="hljs-attribute">ssl_prefer_server_ciphers</span> <span class="hljs-literal">on</span>;
+
+	<span class="hljs-attribute">access_log</span> /var/log/nginx/access.log;
+	<span class="hljs-attribute">error_log</span> /var/log/nginx/error.log;
+
+	<span class="hljs-attribute">gzip</span> <span class="hljs-literal">on</span>;
+
+	<span class="hljs-attribute">xml</span> application/xml application/xml+rss text/javascript;
+
+	<span class="hljs-attribute">include</span> /etc/nginx/conf.d/<span class="hljs-regexp">*.conf</span>;
+	<span class="hljs-attribute">include</span> /etc/nginx/sites-enabled/*;
+&#125;</code></pre>
+
+<p>默认的服务为什么可以跑呢？注意这一行：</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">include</span> /etc/nginx/sites-enabled/*;</code></pre>
+
+<p>切换到 <code>/etc/nginx/sites-enabled/</code> 目录下，并查看文件</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /etc/nginx/sites-enabled/
+ls</code></pre>
+
+<p>我们会发现只有一个 <code>default</code> 文件</p>
+<p>查看它的内容：</p>
+<pre><code class="hljs nginx"><span class="hljs-comment">##</span>
+<span class="hljs-comment"># You should look at the following URL&#x27;s in order to grasp a solid understanding</span>
+<span class="hljs-comment"># of Nginx configuration files in order to fully unleash the power of Nginx.</span>
+<span class="hljs-comment"># https://www.nginx.com/resources/wiki/start/</span>
+<span class="hljs-comment"># https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/</span>
+<span class="hljs-comment"># https://wiki.debian.org/Nginx/DirectoryStructure</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># In most cases, administrators will remove this file from sites-enabled/ and</span>
+<span class="hljs-comment"># leave it as reference inside of sites-available where it will continue to be</span>
+<span class="hljs-comment"># updated by the nginx packaging team.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># This file will automatically load configuration files provided by other</span>
+<span class="hljs-comment"># applications, such as Drupal or Wordpress. These applications will be made</span>
+<span class="hljs-comment"># available underneath a path with that package name, such as /drupal8.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.</span>
+<span class="hljs-comment">##</span>
+
+<span class="hljs-comment"># Default server configuration</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-section">server</span> &#123;
+	<span class="hljs-attribute">listen</span> <span class="hljs-number">80</span> default_server;
+	<span class="hljs-attribute">listen</span> [::]:<span class="hljs-number">80</span> default_server;
+
+	<span class="hljs-comment"># SSL configuration</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment"># listen 443 ssl default_server;</span>
+	<span class="hljs-comment"># listen [::]:443 ssl default_server;</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment"># Note: You should disable gzip for SSL traffic.</span>
+	<span class="hljs-comment"># See: https://bugs.debian.org/773332</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment"># Read up on ssl_ciphers to ensure a secure configuration.</span>
+	<span class="hljs-comment"># See: https://bugs.debian.org/765782</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment"># Self signed certs generated by the ssl-cert package</span>
+	<span class="hljs-comment"># Don&#x27;t use them in a production server!</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment"># include snippets/snakeoil.conf;</span>
+
+	<span class="hljs-attribute">root</span> /var/www/html;
+
+	<span class="hljs-comment"># Add index.php to the list if you are using PHP</span>
+	<span class="hljs-attribute">index</span> index.html index.htm index.nginx-debian.html;
+	<span class="hljs-comment"># index test.json;</span>
+
+	<span class="hljs-attribute">server_name</span> _;
+
+	<span class="hljs-attribute">location</span> / &#123;
+		<span class="hljs-comment"># First attempt to serve request as file, then</span>
+		<span class="hljs-comment"># as directory, then fall back to displaying a 404.</span>
+		<span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ =<span class="hljs-number">404</span>;
+	&#125;
+
+	<span class="hljs-comment"># pass PHP scripts to FastCGI server</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment">#location ~ \.php$ &#123;</span>
+	<span class="hljs-comment">#	include snippets/fastcgi-php.conf;</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment">#	# With php-fpm (or other unix sockets):</span>
+	<span class="hljs-comment">#	fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;</span>
+	<span class="hljs-comment">#	# With php-cgi (or other tcp sockets):</span>
+	<span class="hljs-comment">#	fastcgi_pass 127.0.0.1:9000;</span>
+	<span class="hljs-comment">#&#125;</span>
+
+	<span class="hljs-comment"># deny access to .htaccess files, if Apache&#x27;s document root</span>
+	<span class="hljs-comment"># concurs with nginx&#x27;s one</span>
+	<span class="hljs-comment">#</span>
+	<span class="hljs-comment">#location ~ /\.ht &#123;</span>
+	<span class="hljs-comment">#	deny all;</span>
+	<span class="hljs-comment">#&#125;</span>
+&#125;
+
+
+<span class="hljs-comment"># Virtual Host configuration for example.com</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># You can move that to a different file under sites-available/ and symlink that</span>
+<span class="hljs-comment"># to sites-enabled/ to enable it.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#server &#123;</span>
+<span class="hljs-comment">#	listen 80;</span>
+<span class="hljs-comment">#	listen [::]:80;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	server_name example.com;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	root /var/www/example.com;</span>
+<span class="hljs-comment">#	index index.html;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#	location / &#123;</span>
+<span class="hljs-comment">#		try_files $uri $uri/ =404;</span>
+<span class="hljs-comment">#	&#125;</span>
+<span class="hljs-comment">#&#125;</span></code></pre>
+
+<p>去掉注释：</p>
+<pre><code class="hljs nginx"><span class="hljs-section">server</span> &#123;
+	<span class="hljs-attribute">listen</span> <span class="hljs-number">80</span> default_server;
+	<span class="hljs-attribute">listen</span> [::]:<span class="hljs-number">80</span> default_server;
+
+	<span class="hljs-attribute">root</span> /var/www/html;
+
+	<span class="hljs-attribute">index</span> index.html index.htm index.nginx-debian.html;
+
+	<span class="hljs-attribute">server_name</span> _;
+
+	<span class="hljs-attribute">location</span> / &#123;
+		<span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ =<span class="hljs-number">404</span>;
+	&#125;
+&#125;</code></pre>
+
+<p>我相信哪怕没有学习过 <code>Nginx</code> 应该也能理解部分含义。</p>
+<p>接下来我们看一下 <code>/var/www/html</code> 这个目录</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /var/www/html
+ls</code></pre>
+
+<p>只有一个 <code>index.nginx-debian.html</code> 文件，正是欢迎界面的源代码。</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Welcome to nginx!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+    body &#123;
+        width: 48em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    &#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome to Nginx!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>For online documentation and support please refer to
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://nginx.org/&quot;</span>&gt;</span>nginx.org<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+Commercial support is available at
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://nginx.com/&quot;</span>&gt;</span>nginx.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>Thank you for using nginx.<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p>回到 <code>/etc/nginx/sites-enabled/</code> 目录下，我想你应该明白应该修改什么了吧。</p>
+<!-- ```nginx
+server {
+    listen 80;
+
+    server_name example.com;
+
+    location / {
+        proxy_pass http://localhost:3000/;
+    }
+}
+``` -->
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Web/">Web</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Program/">Program</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/17/GCC-Basic/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GCC Basic</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/22/Ubuntu-20-04-Resolution-Error-Fix/">
+                        <span class="hidden-mobile">Ubuntu 20.04 Resolution Error Fix</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

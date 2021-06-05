@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>20 Python Skills - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                20 Python Skills
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-13 20:27" pubdate>
+        2020-04-13
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      70
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">20 Python Skills</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="20-个-Python-进阶技巧"><a href="#20-个-Python-进阶技巧" class="headerlink" title="20 个 Python 进阶技巧"></a>20 个 Python 进阶技巧</h1><blockquote>
+<p>本来是在查资料，无意间看到了这个<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/89998429">知乎文章</a>，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自<a target="_blank" rel="noopener" href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124">Medium</a>的文章，但是原文章是英语写的，为了帮到那些英语不太好的 Python 学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）</p>
+</blockquote>
+<blockquote>
+<p>基于 Medium 的文章 <a target="_blank" rel="noopener" href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124">《20 Python Snippets You Should Learn Today》</a> ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。</p>
+<p>大部分示例代码均引用自 <strong>Medium</strong> <a target="_blank" rel="noopener" href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124">《20 Python Snippets You Should Learn Today》</a></p>
+</blockquote>
+<h2 id="1-反转字符串"><a href="#1-反转字符串" class="headerlink" title="1 反转字符串"></a>1 反转字符串</h2><p>下面的代码使用 Python 切片操作来反转字符串。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Reversing a string using slicing</span>
+
+my_string = <span class="hljs-string">&quot;ABCDE&quot;</span>
+reversed_string = my_string[::<span class="hljs-number">-1</span>]
+
+print(reversed_string)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># EDCBA</span></code></pre>
+
+<p>这里用到的是 Python<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017269965565856">切片</a></p>
+<p>切片某种意义上就是对如下代码的书写进行了简化（不考虑 Python 中-1 的情况）</p>
+<pre><code class="hljs c"><span class="hljs-comment">// [a:b:c]</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a, i &lt; b; i = i + c) &#123;
+    <span class="hljs-comment">// do something</span>
+&#125;</code></pre>
+
+<p>推荐阅读： <a target="_blank" rel="noopener" href="https://medium.com/swlh/how-to-reverse-a-string-in-python-66fc4bbc7379">《How to reverse a string in Python?》</a></p>
+<h2 id="2-转化为标题（首字母大写）"><a href="#2-转化为标题（首字母大写）" class="headerlink" title="2 转化为标题（首字母大写）"></a>2 转化为标题（首字母大写）</h2><p>下面的代码把字符串转化为标题格式。这里用了字符串类的 title()方法来实现。</p>
+<pre><code class="hljs python">my_string = <span class="hljs-string">&quot;my name is chaitanya baweja&quot;</span>
+
+<span class="hljs-comment"># using the title() function of string class</span>
+new_string = my_string.title()
+
+print(new_string)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># My Name Is Chaitanya Baweja</span></code></pre>
+
+<p>把字符串中单词的首字母都大写，转变为标题格式，就是调用了字符串类的 title()方法，很简单，不需要解释。</p>
+<p>值得一提的是，虽然叫 <code>title</code>， 但是它是完全不加判断地把所有单词的首字母大写，并没有遵循英语的语法规则。</p>
+<blockquote>
+<h3 id="英文标题首字母大写规则"><a href="#英文标题首字母大写规则" class="headerlink" title="英文标题首字母大写规则"></a>英文标题首字母大写规则</h3><p>按照规则的优先级从高到底应该是：</p>
+<ol>
+<li>标题的第一个单词的首字母要大写；</li>
+<li>冠词都不需要大写；</li>
+<li>字母个数多于 3 个（不含 3 个）的介词、连词的首字母要大写；</li>
+<li>名词、动词、形容词、副词、代词、感叹词首字母应大写；</li>
+<li>大写所有英语中要求大写的单词。如月份、人名、地名等等。</li>
+</ol>
+<p>根据优先级递减的规则，如果后面的规则与前面的规则冲突，则优先执行前面的规则。</p>
+<p>来源： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/crackpotisback/p/5547249.html">https://www.cnblogs.com/crackpotisback/p/5547249.html</a></p>
+</blockquote>
+<pre><code class="hljs python">test_str = <span class="hljs-string">&quot;the story of an magical apple and me&quot;</span>
+title_str = test_str.title()
+print(title_str)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># The Story Of An Magical Apple And Me</span></code></pre>
+
+<p>另外，函数只识别空格分割的单词</p>
+<pre><code class="hljs python">my_string = <span class="hljs-string">&quot;helloworld&quot;</span>
+new_string = my_string.title()
+print(new_string)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># Helloworld</span></code></pre>
+
+<h2 id="3-查找字符串的唯一元素"><a href="#3-查找字符串的唯一元素" class="headerlink" title="3 查找字符串的唯一元素"></a>3 查找字符串的唯一元素</h2><p>下面的代码可以用于查找字符串中所有的唯一元素，我们利用了<a target="_blank" rel="noopener" href="https://medium.com/python-pandemonium/https-medium-com-python-pandemonium-an-introduction-to-python-sets-part-i-120974a713be">集合内元素的唯一性</a>。</p>
+<pre><code class="hljs python">my_string = <span class="hljs-string">&quot;aavvccccddddeee&quot;</span>
+
+<span class="hljs-comment"># converting the string to a set</span>
+temp_set = set(my_string)
+
+<span class="hljs-comment"># stitching set into a string using join</span>
+new_string = <span class="hljs-string">&#x27;&#x27;</span>.join(temp_set)
+
+print(new_string)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># ecdva</span></code></pre>
+
+<p>效果是把字符串中用到的字符都提取出来，构成一个新的字符串。</p>
+<p>比如对 <code>hello</code> ，它内部包含 <code>h, e, l, o</code> 这几四字符，于是我们就会得到一个由这四个字符构成的新字符串，顺序通常是乱的，比如 <code>oelh</code> 就是一种可能的结果。</p>
+<p>输出结果并没有排序，是随机的，比如你期望如下代码返回<code>abcdefghijklmnopqrstuvwxyz .</code>，但是结果却是杂乱的。</p>
+<pre><code class="hljs python">my_string = <span class="hljs-string">&quot;the quick brown fox jumps over the lazy dog.&quot;</span>
+temp_set = set(my_string)
+new_string = <span class="hljs-string">&#x27;&#x27;</span>.join(temp_set)
+print(new_string)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># trzixup.efbajovcdnslywhg qmk</span></code></pre>
+
+<p>这里用到了 python 中的 <a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-set.html">集合</a> 和 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-string-join.html">join()方法</a></p>
+<p>首先利用集合的唯一性，用原始字符串构造一个集合，然后利用 join()方法把集合内的元素用空字符串进行连接，相当于将集合内的元素连接成字符串。</p>
+<p>推荐阅读： <a target="_blank" rel="noopener" href="https://medium.com/python-pandemonium/https-medium-com-python-pandemonium-an-introduction-to-python-sets-part-i-120974a713be">《An Introduction to Python Sets - Part I》</a></p>
+<h2 id="4-输出-n-次字符串或列表"><a href="#4-输出-n-次字符串或列表" class="headerlink" title="4 输出 n 次字符串或列表"></a>4 输出 n 次字符串或列表</h2><p>你可以对字符串或列表使用乘法(*)。这让我们可以按照我们的需求输出多次。</p>
+<pre><code class="hljs python">n = <span class="hljs-number">3</span> <span class="hljs-comment"># number of repetitions</span>
+
+my_string = <span class="hljs-string">&quot;abcd&quot;</span>
+my_list = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+
+print(my_string*n)
+<span class="hljs-comment"># abcdabcdabcd</span>
+
+print(my_list*n)
+<span class="hljs-comment"># [1,2,3,1,2,3,1,2,3]</span></code></pre>
+
+<p>关于这个内容的一个有趣的用例是定义一个具有恒定值的列表——假设为零。</p>
+<pre><code class="hljs python">n = <span class="hljs-number">4</span>
+my_list = [<span class="hljs-number">0</span>]*n <span class="hljs-comment"># n denotes the length of the required list</span>
+<span class="hljs-comment"># [0, 0, 0, 0]</span></code></pre>
+
+<p>乘法的特殊用法，没什么需要解释的。</p>
+<h2 id="5-列表解析"><a href="#5-列表解析" class="headerlink" title="5 列表解析"></a>5 列表解析</h2><p>列表解析为创建列表提供了一种可以以其他列表为基础来创建新的列表的优雅方式。</p>
+<p>下面的代码通过把旧列表中的每个元素都乘以 2 来创建新列表。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># Multiplying each element in a list by 2</span>
+
+original_list = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+
+new_list = [<span class="hljs-number">2</span>*x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> original_list]
+
+print(new_list)
+<span class="hljs-comment"># [2,4,6,8]</span></code></pre>
+
+<p>推荐阅读： <a target="_blank" rel="noopener" href="https://medium.com/swlh/list-comprehensions-in-python-e8d409bb216e">《List Comprehensions in Python》</a></p>
+<h2 id="6-交换俩个变量的值"><a href="#6-交换俩个变量的值" class="headerlink" title="6 交换俩个变量的值"></a>6 交换俩个变量的值</h2><p>Python 使得交换俩个变量的值变得十分简单，并不需要使用另一个变量。</p>
+<pre><code class="hljs python">a = <span class="hljs-number">1</span>
+b = <span class="hljs-number">2</span>
+
+a, b = b, a
+
+print(a) <span class="hljs-comment"># 2</span>
+print(b) <span class="hljs-comment"># 1</span></code></pre>
+
+<p>很简单，不需要解释。</p>
+<h2 id="7-把字符串分解为子字符串列表"><a href="#7-把字符串分解为子字符串列表" class="headerlink" title="7 把字符串分解为子字符串列表"></a>7 把字符串分解为子字符串列表</h2><p>我们可以通过字符串类的 <code>split()</code> 方法来把字符串分解成子字符串列表。你同样可以传递一个参数来决定用什么字符进行分割。</p>
+<pre><code class="hljs python">string_1 = <span class="hljs-string">&quot;My name is Chaitanya Baweja&quot;</span>
+string_2 = <span class="hljs-string">&quot;sample/ string 2&quot;</span>
+
+<span class="hljs-comment"># default separator &#x27; &#x27;</span>
+print(string_1.split())
+<span class="hljs-comment"># [&#x27;My&#x27;, &#x27;name&#x27;, &#x27;is&#x27;, &#x27;Chaitanya&#x27;, &#x27;Baweja&#x27;]</span>
+
+<span class="hljs-comment"># defining separator as &#x27;/&#x27;</span>
+print(string_2.split(<span class="hljs-string">&#x27;/&#x27;</span>))
+<span class="hljs-comment"># [&#x27;sample&#x27;, &#x27; string 2&#x27;]</span></code></pre>
+
+<p>这里使用了 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-string-split.html">split()方法</a> 不多解释了。</p>
+<h2 id="8-将字符串列表组合成单字符串"><a href="#8-将字符串列表组合成单字符串" class="headerlink" title="8 将字符串列表组合成单字符串"></a>8 将字符串列表组合成单字符串</h2><p><code>join()</code>方法可以通过传入的参数作为间隔把字符串数组组合成单字符串。</p>
+<p>在本例中。我们使用逗号作为分割符。</p>
+<pre><code class="hljs python">list_of_strings = [<span class="hljs-string">&#x27;My&#x27;</span>, <span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;is&#x27;</span>, <span class="hljs-string">&#x27;Chaitanya&#x27;</span>, <span class="hljs-string">&#x27;Baweja&#x27;</span>]
+
+<span class="hljs-comment"># Using join with the comma separator</span>
+print(<span class="hljs-string">&#x27;,&#x27;</span>.join(list_of_strings))
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># My,name,is,Chaitanya,Baweja</span></code></pre>
+
+<p>使用了 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-string-join.html">join()方法</a> ，不多解释了。</p>
+<h2 id="9-检查给定字符串是否为回文（Palindrome）"><a href="#9-检查给定字符串是否为回文（Palindrome）" class="headerlink" title="9 检查给定字符串是否为回文（Palindrome）"></a>9 检查给定字符串是否为回文（Palindrome）</h2><p>我们已经讨论了如何反转字符串，因此，在 Python 中，回文检查变得很简单。</p>
+<pre><code class="hljs python">my_string = <span class="hljs-string">&quot;abcba&quot;</span>
+
+<span class="hljs-keyword">if</span> my_string == my_string[::<span class="hljs-number">-1</span>]:
+    print(<span class="hljs-string">&quot;palindrome&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">&quot;not palindrome&quot;</span>)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># palindrome</span></code></pre>
+
+<h2 id="10-列表中元素出现的次数"><a href="#10-列表中元素出现的次数" class="headerlink" title="10 列表中元素出现的次数"></a>10 列表中元素出现的次数</h2><p>有很多的方法来做这件事，但是我最喜欢的方法是使用 Python 中的 <code>Counter</code> 类。</p>
+<p>Python 的 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.Counter">Counter</a> 会记录容器内每个元素的出现次数。<code>Counter()</code> 返回一个字典，字典内以元素为键，出现次数为值。</p>
+<p>同样的，我们可以使用函数 <code>most_common()</code> 来获得列表中出现次数最多的元素。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># finding frequency of each element in a list</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+my_list = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>]
+count = Counter(my_list) <span class="hljs-comment"># defining a counter object</span>
+
+print(count) <span class="hljs-comment"># Of all elements</span>
+<span class="hljs-comment"># Counter(&#123;&#x27;d&#x27;: 5, &#x27;b&#x27;: 3, &#x27;a&#x27;: 2, &#x27;c&#x27;: 1&#125;)</span>
+
+print(count[<span class="hljs-string">&#x27;b&#x27;</span>]) <span class="hljs-comment"># of individual element</span>
+<span class="hljs-comment"># 3</span>
+
+print(count.most_common(<span class="hljs-number">1</span>)) <span class="hljs-comment"># most frequent element</span>
+<span class="hljs-comment"># [(&#x27;d&#x27;, 5)]</span></code></pre>
+
+<p>使用列表作为参数构建 Counter 类，返回值即为所需内容。</p>
+<p>推荐阅读：<a target="_blank" rel="noopener" href="https://medium.com/datadriveninvestor/an-introduction-to-python-counter-47948fdd9c1a">《An Introduction to Python Counter》</a></p>
+<h2 id="11-判断俩个字符串是否为易位词"><a href="#11-判断俩个字符串是否为易位词" class="headerlink" title="11 判断俩个字符串是否为易位词"></a>11 判断俩个字符串是否为易位词</h2><p>Counter 的一个有趣的应用是判断易位词。</p>
+<p>如果一个单词或者短语是由另一个单词或短语重新排序构成的，那么这个俩单词或者短语就被称为易位词。（百科词条可能会帮到你）</p>
+<blockquote>
+<p><strong>易位构词游戏</strong>的英文词汇是 _anagram_，这个词来源于有“反向”或“再次”的含义的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%B8%8C%E8%85%8A%E8%AF%AD">希腊语</a>字根<em>ana-<em>和有“书写”、“写下”的意思的词根</em>gramma</em>。易位构词是一类<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E6%B8%B8%E6%88%8F">文字游戏</a>（更准确地说是一类“词语游戏”），是将组成一个词或短句的字母重新排列顺序，原文中所有字母的每次出现都被使用一次，这样构造出另外一些新的词或短句。</p>
+<p>来源: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%98%93%E4%BD%8D%E6%9E%84%E8%AF%8D%E6%B8%B8%E6%88%8F">中文维基 易位构词游戏</a></p>
+<p>推荐阅读：<a href="%5Bhttps://baike.baidu.com/item/%E5%8F%98%E4%BD%8D%E8%AF%8D/3844597%5D(https://baike.baidu.com/item/%E5%8F%98%E4%BD%8D%E8%AF%8D/3844597)">百度百科 易位词</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Anagram">English wiki Anagram</a></p>
+</blockquote>
+<p>如果俩个字符串的 Counter 对象是相同的，那么他们是易位词。</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+str_1, str_2, str_3 = <span class="hljs-string">&quot;acbde&quot;</span>, <span class="hljs-string">&quot;abced&quot;</span>, <span class="hljs-string">&quot;abcda&quot;</span>
+cnt_1, cnt_2, cnt_3  = Counter(str_1), Counter(str_2), Counter(str_3)
+
+<span class="hljs-keyword">if</span> cnt_1 == cnt_2:
+    print(<span class="hljs-string">&#x27;1 and 2 anagram&#x27;</span>)
+<span class="hljs-keyword">if</span> cnt_1 == cnt_3:
+    print(<span class="hljs-string">&#x27;1 and 3 anagram&#x27;</span>)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># 1 and 2 anagram</span></code></pre>
+
+<h2 id="12-使用-try-except-else"><a href="#12-使用-try-except-else" class="headerlink" title="12 使用 try-except-else"></a>12 使用 try-except-else</h2><p>在 python 中，通过使用 try/except 代码块可以简单地处理错误。在这个代码块中添加 else 可能是有用的。</p>
+<p>如果没有错误发生的话，else 后的代码就会被执行。</p>
+<p>如果你有一些不管错误是否发生都需要执行的代码，使用 finally。</p>
+<pre><code class="hljs python">a, b = <span class="hljs-number">1</span>,<span class="hljs-number">0</span>
+
+<span class="hljs-keyword">try</span>:
+    print(a/b)
+    <span class="hljs-comment"># exception raised when b is 0</span>
+<span class="hljs-keyword">except</span> ZeroDivisionError:
+    print(<span class="hljs-string">&quot;division by zero&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">&quot;no exceptions raised&quot;</span>)
+<span class="hljs-keyword">finally</span>:
+    print(<span class="hljs-string">&quot;Run this always&quot;</span>)
+
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># division by zero</span>
+<span class="hljs-comment"># Run this always</span></code></pre>
+
+<pre><code class="hljs python"><span class="hljs-keyword">try</span>:
+   some_dangerous_operation()
+   <span class="hljs-comment"># something may cause exception</span>
+<span class="hljs-keyword">except</span>:
+   exception_handle()
+   <span class="hljs-comment"># something run when the exception happens</span>
+<span class="hljs-keyword">else</span>:
+   no_exception()
+   <span class="hljs-comment"># something run when no exception happens</span>
+<span class="hljs-keyword">finally</span>:
+   something_must_to_been_done()
+   <span class="hljs-comment"># something run weather the exception happens or not</span></code></pre>
+
+<h2 id="13-使用-Enumerate-来取得-索引-值-对"><a href="#13-使用-Enumerate-来取得-索引-值-对" class="headerlink" title="13 使用 Enumerate 来取得 索引-值 对"></a>13 使用 Enumerate 来取得 索引-值 对</h2><p>下面的脚本使用了 Enumerate 来迭代列表中的值及其索引。</p>
+<pre><code class="hljs python">my_list = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>]
+
+<span class="hljs-keyword">for</span> index, value <span class="hljs-keyword">in</span> enumerate(my_list):
+    print(<span class="hljs-string">&#x27;&#123;0&#125;: &#123;1&#125;&#x27;</span>.format(index, value))
+
+<span class="hljs-comment"># 0: a</span>
+<span class="hljs-comment"># 1: b</span>
+<span class="hljs-comment"># 2: c</span>
+<span class="hljs-comment"># 3: d</span>
+<span class="hljs-comment"># 4: e</span></code></pre>
+
+<p>推荐阅读： <a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-func-enumerate.html">菜鸟教程 enumerate() 函数</a></p>
+<h2 id="14-检查对象的内存使用"><a href="#14-检查对象的内存使用" class="headerlink" title="14 检查对象的内存使用"></a>14 检查对象的内存使用</h2><p>下面的脚本可以用于检查对象的内存使用。</p>
+<p>在这里阅读更多： <a target="_blank" rel="noopener" href="https://code.tutsplus.com/tutorials/understand-how-much-memory-your-python-objects-use--cms-25609">这里</a></p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> sys
+
+num = <span class="hljs-number">21</span>
+
+print(sys.getsizeof(num))
+
+<span class="hljs-comment"># In Python 2, 24</span>
+<span class="hljs-comment"># In Python 3, 28</span></code></pre>
+
+<h2 id="15-合并俩个字典"><a href="#15-合并俩个字典" class="headerlink" title="15 合并俩个字典"></a>15 合并俩个字典</h2><p>在 Python 2，我们使用 <code>update()</code> 方法来合并俩个字典。</p>
+<p>Python 3.5 简化了这个过程。</p>
+<p>在下面的脚本中，俩个字典被合并。为了防止交叉的情况，使用第二个字典的值。</p>
+<pre><code class="hljs python">dict_1 = &#123;<span class="hljs-string">&#x27;apple&#x27;</span>: <span class="hljs-number">9</span>, <span class="hljs-string">&#x27;banana&#x27;</span>: <span class="hljs-number">6</span>&#125;
+dict_2 = &#123;<span class="hljs-string">&#x27;banana&#x27;</span>: <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;orange&#x27;</span>: <span class="hljs-number">8</span>&#125;
+
+combined_dict = &#123;**dict_1, **dict_2&#125;
+
+print(combined_dict)
+<span class="hljs-comment"># Output</span>
+<span class="hljs-comment"># &#123;&#x27;apple&#x27;: 9, &#x27;banana&#x27;: 4, &#x27;orange&#x27;: 8&#125;</span></code></pre>
+
+<h2 id="16-执行一段代码所需时间"><a href="#16-执行一段代码所需时间" class="headerlink" title="16 执行一段代码所需时间"></a>16 执行一段代码所需时间</h2><p>下面的代码使用 time 库计算运行一段代码所需要的时间。</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> time
+
+start_time = time.time()
+<span class="hljs-comment"># Code to check follows</span>
+a, b = <span class="hljs-number">1</span>,<span class="hljs-number">2</span>
+c = a+ b
+<span class="hljs-comment"># Code to check ends</span>
+end_time = time.time()
+time_taken_in_micro = (end_time- start_time)*(<span class="hljs-number">10</span>**<span class="hljs-number">6</span>)
+
+print(<span class="hljs-string">&quot; Time taken in micro_seconds: &#123;0&#125; ms&quot;</span>).format(time_taken_in_micro)</code></pre>
+
+<h2 id="17-嵌套列表扁平化"><a href="#17-嵌套列表扁平化" class="headerlink" title="17 嵌套列表扁平化"></a>17 嵌套列表扁平化</h2><p>有时，你并不清楚你的列表的嵌套深度，并且你仅仅只是想要让所有元素变成一个扁平的列表。</p>
+<p>这个代码告诉你如何实现！</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> iteration_utilities <span class="hljs-keyword">import</span> deepflatten
+
+<span class="hljs-comment"># if you only have one depth nested_list, use this</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flatten</span>(<span class="hljs-params">l</span>):</span>
+  <span class="hljs-keyword">return</span> [item <span class="hljs-keyword">for</span> sublist <span class="hljs-keyword">in</span> l <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> sublist]
+
+l = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">3</span>]]
+print(flatten(l))
+<span class="hljs-comment"># [1, 2, 3, 3]</span>
+
+<span class="hljs-comment"># if you don&#x27;t know how deep the list is nested</span>
+l = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,[<span class="hljs-number">5</span>],[<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]],[<span class="hljs-number">8</span>,[<span class="hljs-number">9</span>,[<span class="hljs-number">10</span>]]]]
+
+print(list(deepflatten(l, depth=<span class="hljs-number">3</span>)))
+<span class="hljs-comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></code></pre>
+
+<p>如果你有一个正确格式化的数组， <a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.flatten.html">Numpy flatten</a> 可能是一个更好的选择。</p>
+<h2 id="18-列表取样"><a href="#18-列表取样" class="headerlink" title="18 列表取样"></a>18 列表取样</h2><p>下面的代码生使用 <code>random</code> 库从给定的列表中生成了 n 个随机的样本。</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> random
+
+my_list = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>]
+num_samples = <span class="hljs-number">2</span>
+
+samples = random.sample(my_list,num_samples)
+print(samples)
+<span class="hljs-comment"># [ &#x27;a&#x27;, &#x27;e&#x27;] this will have any 2 random values</span></code></pre>
+
+<p>我十分推荐使用 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/secrets.html">secrets</a> 库来生成用于加密的随机样本。</p>
+<p>下面的代码只能在 python 3 运行。</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> secrets                              <span class="hljs-comment"># imports secure module.</span>
+secure_random = secrets.SystemRandom()      <span class="hljs-comment"># creates a secure random object.</span>
+
+my_list = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>]
+num_samples = <span class="hljs-number">2</span>
+
+samples = secure_random.sample(my_list, num_samples)
+
+print(samples)
+<span class="hljs-comment"># [ &#x27;e&#x27;, &#x27;d&#x27;] this will have any 2 random values</span></code></pre>
+
+<h2 id="19-数字化"><a href="#19-数字化" class="headerlink" title="19 数字化"></a>19 数字化</h2><p>下面的代码将会把一个整数转化成数字的列表。</p>
+<pre><code class="hljs python">num = <span class="hljs-number">123456</span>
+
+<span class="hljs-comment"># using map</span>
+list_of_digits = list(map(int, str(num)))
+
+print(list_of_digits)
+<span class="hljs-comment"># [1, 2, 3, 4, 5, 6]</span>
+
+<span class="hljs-comment"># using list comprehension</span>
+list_of_digits = [int(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> str(num)]
+
+print(list_of_digits)
+<span class="hljs-comment"># [1, 2, 3, 4, 5, 6]</span></code></pre>
+
+<h2 id="20-检查唯一性"><a href="#20-检查唯一性" class="headerlink" title="20 检查唯一性"></a>20 检查唯一性</h2><p>下面的函数会检查一个列表内的所有元素是否是唯一的。</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">unique</span>(<span class="hljs-params">l</span>):</span>
+    <span class="hljs-keyword">if</span> len(l)==len(set(l)):
+        print(<span class="hljs-string">&quot;All elements are unique&quot;</span>)
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&quot;List has duplicates&quot;</span>)
+
+unique([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+<span class="hljs-comment"># All elements are unique</span>
+
+unique([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])
+<span class="hljs-comment"># List has duplicates</span></code></pre>
+
+<p>这里利用了集合的唯一性。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不得不说对于计算机学习来说，英语还是很重要的，很多资料都是英语的。</p>
+<p>推荐阅读： <a target="_blank" rel="noopener" href="https://www.30secondsofcode.org/python/p/1">https://www.30secondsofcode.org/python/p/1</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/27/Using-Pillow-To-Convert-Comic-To-pdf-Quickly/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Using Pillow To Convert Comic To pdf Quickly</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/22/Data-Binding/">
+                        <span class="hidden-mobile">Data Binding</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

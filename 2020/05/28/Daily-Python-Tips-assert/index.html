@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Daily Python Tips assert - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Daily Python Tips assert
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-28 23:10" pubdate>
+        2020-05-28
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      748 words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      18
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Daily Python Tips assert</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="每天一个-Python-小知识-assert"><a href="#每天一个-Python-小知识-assert" class="headerlink" title="每天一个 Python 小知识-assert"></a>每天一个 Python 小知识-assert</h1><p>首先来看下 w3schools 的解释</p>
+<blockquote>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Test if a condition returns True:</p>
+<pre><code class="hljs python">x = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns True, then nothing happens:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns False, AssertionError is raised:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;goodbye&quot;</span></code></pre>
+
+<h2 id="Definition-and-Usage"><a href="#Definition-and-Usage" class="headerlink" title="Definition and Usage"></a>Definition and Usage</h2><p>The <code>assert</code> keyword is used when debugging code.</p>
+<p>The <code>assert</code> keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.</p>
+<p>You can write a message to be written if the code returns False, check the example below.</p>
+<h2 id="More-Examples"><a href="#More-Examples" class="headerlink" title="More Examples"></a>More Examples</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><p>Write a message if the condition is False:</p>
+<pre><code class="hljs python">x = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns False, AssertionError is raised:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;goodbye&quot;</span>, <span class="hljs-string">&quot;x should be &#x27;hello&#x27;&quot;</span></code></pre>
+
+<p>来源： <a target="_blank" rel="noopener" href="https://www.w3schools.com/python/ref_keyword_assert.asp">https://www.w3schools.com/python/ref_keyword_assert.asp</a></p>
+</blockquote>
+<p>帮助那些英语不好的 python 学习者翻译一下</p>
+<hr>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>测试一个条件的返回值是否为真</p>
+<pre><code class="hljs python">x = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns True, then nothing happens:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns False, AssertionError is raised:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;goodbye&quot;</span></code></pre>
+
+<h2 id="定义和用法："><a href="#定义和用法：" class="headerlink" title="定义和用法："></a><strong>定义和用法：</strong></h2><p>当调试代码的时候，会使用 <code>assert</code> 关键字。</p>
+<p><code>assert</code> 关键字可以允许你测试你代码中的一个条件判断的返回值是否返回 <code>True</code>，如果不是的话，程序将会抛出一个<code>AssertionError</code> 。</p>
+<p>你可以写一条用来在条件返回假时打印的信息，测试下面的示例代码：</p>
+<h2 id="更多示例"><a href="#更多示例" class="headerlink" title="更多示例"></a>更多示例</h2><h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>如果条件为假，输出一条信息</p>
+<pre><code class="hljs python">x = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">#if condition returns False, AssertionError is raised:</span>
+<span class="hljs-keyword">assert</span> x == <span class="hljs-string">&quot;goodbye&quot;</span>, <span class="hljs-string">&quot;x should be &#x27;hello&#x27;&quot;</span></code></pre>
+
+<hr>
+<p>然后我们看下菜鸟教程的解释：</p>
+<blockquote>
+<h1 id="Python3-assert（断言）"><a href="#Python3-assert（断言）" class="headerlink" title="Python3 assert（断言）"></a>Python3 assert（断言）</h1><p>Python assert（断言）用于判断一个表达式，在表达式条件为 false 的时候触发异常。</p>
+<p>断言可以在条件不满足程序运行的情况下直接返回错误，而不必等待程序运行后出现崩溃的情况，例如我们的代码只能在 Linux 系统下运行，可以先判断当前系统是否符合条件。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/07/assert.png" alt="img"></p>
+<p>语法格式如下：</p>
+<pre><code class="hljs aspectj"><span class="hljs-keyword">assert</span> expression</code></pre>
+
+<p>等价于：</p>
+<pre><code class="hljs properties"><span class="hljs-attr">if</span> <span class="hljs-string">not expression:</span>
+    <span class="hljs-attr">raise</span> <span class="hljs-string">AssertionError</span></code></pre>
+
+<p>assert 后面也可以紧跟参数:</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">assert</span> expression<span class="hljs-meta"> [, arguments]</span></code></pre>
+
+<p>等价于：</p>
+<pre><code class="hljs isbl"><span class="hljs-variable"><span class="hljs-keyword">if</span></span> <span class="hljs-variable"><span class="hljs-keyword">not</span></span> <span class="hljs-variable">expression</span>:
+    <span class="hljs-variable">raise</span> <span class="hljs-function"><span class="hljs-title">AssertionError</span>(<span class="hljs-variable">arguments</span>)</span></code></pre>
+
+<p>以下为 assert 使用实例：</p>
+<pre><code class="hljs bash">&gt;&gt;&gt; assert True     <span class="hljs-comment"># 条件为 true 正常执行</span>
+&gt;&gt;&gt; assert False    <span class="hljs-comment"># 条件为 false 触发异常</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line 1, <span class="hljs-keyword">in</span> &lt;module&gt;
+AssertionError
+&gt;&gt;&gt; assert 1==1    <span class="hljs-comment"># 条件为 true 正常执行</span>
+&gt;&gt;&gt; assert 1==2    <span class="hljs-comment"># 条件为 false 触发异常</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line 1, <span class="hljs-keyword">in</span> &lt;module&gt;
+AssertionError
+
+&gt;&gt;&gt; assert 1==2, <span class="hljs-string">&#x27;1 不等于 2&#x27;</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line 1, <span class="hljs-keyword">in</span> &lt;module&gt;
+AssertionError: 1 不等于 2
+&gt;&gt;&gt;</code></pre>
+
+<p>以下实例判断当前系统是否为 Linux，如果不满足条件则直接触发异常，不必执行接下来的代码：</p>
+<blockquote>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">assert</span> (<span class="hljs-string">&#x27;linux&#x27;</span> <span class="hljs-keyword">in</span> sys.platform), <span class="hljs-string">&quot;该代码只能在 Linux 下执行&quot;</span>
+
+<span class="hljs-comment"># 接下来要执行的代码</span></code></pre>
+</blockquote>
+<p>来源： <a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-assert.html">https://www.runoob.com/python3/python3-assert.html</a></p>
+</blockquote>
+<p>更多示例：</p>
+<pre><code class="hljs python"><span class="hljs-comment"># 检查传入的参数是否符合要求</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">log</span>(<span class="hljs-params">val:<span class="hljs-string">&#x27;str&#x27;</span></span>):</span>
+    <span class="hljs-keyword">assert</span> isinstance(val, str), <span class="hljs-string">&#x27;val is not str&#x27;</span>
+    print(val）</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/29/Daily-Python-Tips-isinstance/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Daily Python Tips isinstance</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/28/PicGo/">
+                        <span class="hidden-mobile">PicGo</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Android Develop Data Save - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Android Develop Data Save
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-10 00:50" pubdate>
+        2020-08-10
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      590 words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Android Develop Data Save</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="Android-Develop-Data-Save"><a href="#Android-Develop-Data-Save" class="headerlink" title="Android Develop Data Save"></a>Android Develop Data Save</h1><h2 id="Save-data-to-file"><a href="#Save-data-to-file" class="headerlink" title="Save data to file"></a>Save data to file</h2><h3 id="save-data"><a href="#save-data" class="headerlink" title="save data"></a>save data</h3><pre><code class="hljs kotlin"><span class="hljs-comment">// This function will save the data of inputText into file &quot;data&quot; as text file</span>
+<span class="hljs-comment">// The file &quot;data&quot; will be saved to /data/data/com.aimerneige.example/files/data</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">save</span><span class="hljs-params">(inputText: <span class="hljs-type">String</span>)</span></span> &#123;
+    <span class="hljs-keyword">try</span> &#123;
+        <span class="hljs-comment">// &quot;data&quot; is the name of the file you saved on phone storage</span>
+        <span class="hljs-comment">// You can change it as you want</span>
+        <span class="hljs-keyword">val</span> output = openFileOutput(<span class="hljs-string">&quot;data&quot;</span>, Context.MODE_PRIVATE)
+        <span class="hljs-keyword">val</span> writer = BufferedWriter(OutputStreamWriter(output))
+        writer.use &#123;
+            it.write(inputText)
+        &#125;
+    &#125; <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+        e.printStackTrace()
+    &#125;
+&#125;</code></pre>
+
+<h3 id="load-data"><a href="#load-data" class="headerlink" title="load data"></a>load data</h3><pre><code class="hljs kotlin"><span class="hljs-comment">// This function will try to load the data at a file named &quot;data&quot;</span>
+<span class="hljs-comment">// which is on /data/data/com.aimerneige.example/files/data</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>: String &#123;
+    <span class="hljs-comment">// a StringBuilder to load data</span>
+    <span class="hljs-keyword">val</span> content = StringBuilder()
+    <span class="hljs-keyword">try</span> &#123;
+        <span class="hljs-comment">// &quot;data&quot; is the name of the file you want to find on disk</span>
+        <span class="hljs-keyword">val</span> input = openFileInput(<span class="hljs-string">&quot;data&quot;</span>)
+        <span class="hljs-keyword">val</span> reader = BufferedReader(InputStreamReader(input))
+        reader.use &#123;
+            reader.forEachLine &#123;
+                content.append(it)
+            &#125;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+        e.printStackTrace()
+    &#125;
+    <span class="hljs-keyword">return</span> content.toString()
+&#125;</code></pre>
+
+<p>You can also use like this:</p>
+<h3 id="save-data-with-file-name"><a href="#save-data-with-file-name" class="headerlink" title="save data with file name"></a>save data with file name</h3><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">save</span><span class="hljs-params">(data_input: <span class="hljs-type">String</span>, file_name: <span class="hljs-type">String</span>)</span></span> &#123;
+    <span class="hljs-keyword">try</span> &#123;
+        <span class="hljs-keyword">val</span> output = openFileOutput(file_name, Context.MODE_PRIVATE)
+        <span class="hljs-keyword">val</span> writer = BufferedWriter(OutputStreamWriter(output))
+        writer.use &#123;
+            it.write(data_input)
+        &#125;
+    &#125; <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+        e.printStackTrace()
+    &#125;
+&#125;</code></pre>
+
+<h3 id="read-data-with-file-name"><a href="#read-data-with-file-name" class="headerlink" title="read data with file name"></a>read data with file name</h3><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">(file_name: <span class="hljs-type">String</span>)</span></span>: String &#123;
+    <span class="hljs-keyword">val</span> content = StringBuilder()
+    <span class="hljs-keyword">try</span> &#123;
+        <span class="hljs-keyword">val</span> input = openFileInput(file_name)
+        <span class="hljs-keyword">val</span> reader = BufferedReader(InputStreamReader(input))
+        reader.use &#123;
+            reader.forEachLine &#123;
+                content.append(it)
+            &#125;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+        e.printStackTrace()
+    &#125;
+    <span class="hljs-keyword">return</span> content.toString()
+&#125;</code></pre>
+
+<p>In this way, all of the file will saved into the file <code>/data/data/&#123;package-name&#125;/files/&#123;file-name&#125;</code>.</p>
+<h2 id="Save-data-with-SharedPreferences"><a href="#Save-data-with-SharedPreferences" class="headerlink" title="Save data with SharedPreferences"></a>Save data with SharedPreferences</h2><h3 id="save-data-1"><a href="#save-data-1" class="headerlink" title="save data"></a>save data</h3><pre><code class="hljs kotlin"><span class="hljs-comment">// This function will save much data with key-value into file &quot;data.xml&quot;</span>
+<span class="hljs-comment">// The file &quot;data.xml&quot; will be saved to /data/data/com.aimerneige.example/shared_prefs/data.xml</span>
+button_save.setOnClickListener &#123;
+    <span class="hljs-comment">// &quot;data&quot; is the name of the file you saved on phone storage</span>
+    <span class="hljs-comment">// You can change it as you want</span>
+    <span class="hljs-keyword">val</span> editor = getSharedPreferences(<span class="hljs-string">&quot;data&quot;</span>, Context.MODE_PRIVATE).edit()
+    editor.putString(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;Tom&quot;</span>)
+    editor.putInt(<span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-number">28</span>)
+    editor.putBoolean(<span class="hljs-string">&quot;married&quot;</span>, <span class="hljs-literal">false</span>)
+    editor.apply()
+&#125;
+</code></pre>
+
+<h3 id="load-data-1"><a href="#load-data-1" class="headerlink" title="load data"></a>load data</h3><pre><code class="hljs kotlin"><span class="hljs-comment">// This function will try to load the data at &quot;data.xml&quot;</span>
+<span class="hljs-comment">// which is on /data/data/com.aimerneige.example/shared_prefs/data.xml</span>
+button_load.setOnClickListener &#123;
+    <span class="hljs-comment">// &quot;data&quot; is the name of the file without the .xml</span>
+    <span class="hljs-keyword">val</span> prefs = getSharedPreferences(<span class="hljs-string">&quot;data&quot;</span>, Context.MODE_PRIVATE)
+    <span class="hljs-comment">// needless to check if the file contains the data</span>
+    <span class="hljs-comment">// just use a val to  read it, if failed, use the default value</span>
+    <span class="hljs-keyword">val</span> name = prefs.getString(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+    <span class="hljs-keyword">val</span> age = prefs.getInt(<span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">val</span> married = prefs.getBoolean(<span class="hljs-string">&quot;married&quot;</span>, <span class="hljs-literal">false</span>)
+    <span class="hljs-keyword">val</span> sb = StringBuilder()
+    sb.append(<span class="hljs-string">&quot;Name: &quot;</span> + name + <span class="hljs-string">&quot; &quot;</span>)
+    sb.append(<span class="hljs-string">&quot;Age: &quot;</span> + age.toString() + <span class="hljs-string">&quot; &quot;</span>)
+    sb.append(<span class="hljs-string">&quot;Married: &quot;</span> + married.toString() + <span class="hljs-string">&quot;.&quot;</span>)
+    Toast.makeText(<span class="hljs-keyword">this</span>, sb.toString(), Toast.LENGTH_SHORT).show()
+&#125;</code></pre>
+
+<p>In this way, all of the file will saved into the file <code>/data/data/&#123;package-name&#125;/shared_prefs/&#123;file-name&#125;.xml</code>.</p>
+<p>Or, you can get a SharedPreferences in this way:</p>
+<pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> prefs = getSharedPreferences(Context.MODE_PRIVATE)</code></pre>
+
+<p>This will save data into the file <code>/data/data/&#123;package-name&#125;/shared_prefs/&#123;current-activity-class-name&#125;.xml</code></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/18/Android-Change-Package-Name/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Android Change Package Name</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/10/How-to-Install-ffmpeg-on-Windows10/">
+                        <span class="hidden-mobile">How to Install ffmpeg on Windows10</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

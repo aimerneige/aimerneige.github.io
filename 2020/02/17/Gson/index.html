@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Gson - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Gson
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-17 00:26" pubdate>
+        2020-02-17
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      844 words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Gson</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="使用-Gson-解析-Json-数据"><a href="#使用-Gson-解析-Json-数据" class="headerlink" title="使用 Gson 解析 Json 数据"></a>使用 <code>Gson</code> 解析 Json 数据</h1><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>导入 Gson 依赖</p>
+<pre><code class="hljs gradle">implementation <span class="hljs-string">&#x27;com.google.code.gson:gson:2.8.5&#x27;</span></code></pre>
+
+<h2 id="设计布局"><a href="#设计布局" class="headerlink" title="设计布局"></a>设计布局</h2><p>这里设计俩个 <code>TextView</code> 和一个 <code>Button</code>，点击 <code>Button</code> 后发送 <code>Http</code> 请求获取 <code>Json</code> 数据，并且通过 <code>Gson</code> 进行解析，将解析结果显示在 <code>TextView</code> 上，以此验证解析成功。</p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/text1&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;nodata&quot;</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/text2&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;nodata&quot;</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;test&quot;</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span></code></pre>
+
+<p>代码很简单就不多解释了。另外 <strong>在 Activity 中注册控件</strong> 的内容也省略。</p>
+<h2 id="发送-Http-请求并获取数据"><a href="#发送-Http-请求并获取数据" class="headerlink" title="发送 Http 请求并获取数据"></a>发送 Http 请求并获取数据</h2><p>操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。</p>
+<pre><code>https://user.moecraft.net:8443/API/Mc/authlib/</code></pre>
+<p>获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 <code>jsonData</code>。</p>
+<h2 id="利用-GsonFormat-插件生成映射对象"><a href="#利用-GsonFormat-插件生成映射对象" class="headerlink" title="利用 GsonFormat 插件生成映射对象"></a>利用 GsonFormat 插件生成映射对象</h2><p>具体操作方法不解释了，具体看之前发布的博客文章。这里新建的类命名为 <code>ApiTest</code> 。</p>
+<p>以下代码为 <code>GsonFormat</code> 自动生成。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ApiTest</span> </span>&#123;
+
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * meta : &#123;&quot;serverName&quot;:&quot;MoeCraft&quot;,&quot;implementationName&quot;:&quot;MoeCraft Account Center: Minecraft Yggdrasil API (Completely Implemented by Kenvix) for Authlib-Injector 1.1.23&quot;,&quot;implementationVersion&quot;:&quot;5.0&quot;&#125;</span>
+<span class="hljs-comment">     * skinDomains : [&quot;.moecraft.net&quot;,&quot;.kenvix.com&quot;,&quot;accounts.moecraft.net&quot;,&quot;user.moecraft.net&quot;,&quot;user.moecraft.net:8443&quot;,&quot;localhost&quot;]</span>
+<span class="hljs-comment">     * signaturePublickey : -----BEGIN PUBLIC KEY-----</span>
+<span class="hljs-comment">     MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDYM0MxKIv4ybovs4XlwMk4g/0r</span>
+<span class="hljs-comment">     O4+HDK+ltpFDkFjiBY5pDHK4J5Z2tdtkliK7DC2mwIAK5wOeTXYb9uHO8VAVxuE9</span>
+<span class="hljs-comment">     enMSOiVl9uvSVPelDU/t/JH3gSE6yYT7aNHT6xpvqnSQrCUGDvTbsqXvjxEr3F/H</span>
+<span class="hljs-comment">     zORoqhiGR+F27XfOhQIDAQAB</span>
+<span class="hljs-comment">     -----END PUBLIC KEY-----</span>
+<span class="hljs-comment">     * status : 0</span>
+<span class="hljs-comment">     * info :</span>
+<span class="hljs-comment">     */</span>
+
+    <span class="hljs-keyword">private</span> MetaBean meta;
+    <span class="hljs-keyword">private</span> String signaturePublickey;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> status;
+    <span class="hljs-keyword">private</span> String info;
+    <span class="hljs-keyword">private</span> List&lt;String&gt; skinDomains;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> MetaBean <span class="hljs-title">getMeta</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> meta;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMeta</span><span class="hljs-params">(MetaBean meta)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.meta = meta;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getSignaturePublickey</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> signaturePublickey;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSignaturePublickey</span><span class="hljs-params">(String signaturePublickey)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.signaturePublickey = signaturePublickey;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getStatus</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> status;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setStatus</span><span class="hljs-params">(<span class="hljs-keyword">int</span> status)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.status = status;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getInfo</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> info;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setInfo</span><span class="hljs-params">(String info)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.info = info;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title">getSkinDomains</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> skinDomains;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSkinDomains</span><span class="hljs-params">(List&lt;String&gt; skinDomains)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.skinDomains = skinDomains;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MetaBean</span> </span>&#123;
+        <span class="hljs-comment">/**</span>
+<span class="hljs-comment">         * serverName : MoeCraft</span>
+<span class="hljs-comment">         * implementationName : MoeCraft Account Center: Minecraft Yggdrasil API (Completely Implemented by Kenvix) for Authlib-Injector 1.1.23</span>
+<span class="hljs-comment">         * implementationVersion : 5.0</span>
+<span class="hljs-comment">         */</span>
+
+        <span class="hljs-keyword">private</span> String serverName;
+        <span class="hljs-keyword">private</span> String implementationName;
+        <span class="hljs-keyword">private</span> String implementationVersion;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getServerName</span><span class="hljs-params">()</span> </span>&#123;
+            <span class="hljs-keyword">return</span> serverName;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setServerName</span><span class="hljs-params">(String serverName)</span> </span>&#123;
+            <span class="hljs-keyword">this</span>.serverName = serverName;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getImplementationName</span><span class="hljs-params">()</span> </span>&#123;
+            <span class="hljs-keyword">return</span> implementationName;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setImplementationName</span><span class="hljs-params">(String implementationName)</span> </span>&#123;
+            <span class="hljs-keyword">this</span>.implementationName = implementationName;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getImplementationVersion</span><span class="hljs-params">()</span> </span>&#123;
+            <span class="hljs-keyword">return</span> implementationVersion;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setImplementationVersion</span><span class="hljs-params">(String implementationVersion)</span> </span>&#123;
+            <span class="hljs-keyword">this</span>.implementationVersion = implementationVersion;
+        &#125;
+    &#125;
+&#125;</code></pre>
+
+<p>源 Json 数据中内容较多，这里我们只挑选部分内容基础进行测试。</p>
+<p>此处我们选择解析的对象（目标）是 <code>MetaBean</code> 下的 <code>serverName</code> 和 <code>implementationName</code> 字段。</p>
+<h2 id="通过-Gson-解析对应内容"><a href="#通过-Gson-解析对应内容" class="headerlink" title="通过 Gson 解析对应内容"></a>通过 Gson 解析对应内容</h2><ol>
+<li>构建 Gson 对象</li>
+</ol>
+<pre><code class="hljs java">Gson gson = <span class="hljs-keyword">new</span> Gson();</code></pre>
+
+<ol start="2">
+<li>通过 <code>Gson</code> 解析来构建 <code>ApiTest</code> 实体类</li>
+</ol>
+<pre><code class="hljs java">ApiTest apiTest = gson.fromJson(jsonData, ApiTest.class);</code></pre>
+
+<ol start="3">
+<li>直接通过 <code>get</code> 方法访问 <code>apiTest</code> 实体类中的内容即可</li>
+</ol>
+<pre><code class="hljs java">text1.setText(apiTest.getMeta().getServerName());
+text2.setText(apiTest.getMeta().getImplementationName());</code></pre>
+
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>其实很简单，利用谷歌提供的 <code>Gson</code> 配合 <code>GsonFormat</code> 简直不要太爽。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/18/ToolBar/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ToolBar</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/16/Hexo-On-Ubuntu-19-10/">
+                        <span class="hidden-mobile">Hexo On Ubuntu 19.10</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

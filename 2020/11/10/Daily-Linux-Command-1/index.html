@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Daily Linux Command 1 - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Daily Linux Command 1
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-10 10:41" pubdate>
+        2020-11-10
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      59
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Daily Linux Command 1</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="每天一个-Linux-指令-（一）"><a href="#每天一个-Linux-指令-（一）" class="headerlink" title="每天一个 Linux 指令 （一）"></a>每天一个 Linux 指令 （一）</h1><h2 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h2><pre><code class="hljs bash">➜  ~ ifconfig
+enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.117.154  netmask 255.255.255.0  broadcast 10.0.117.255
+        inet6 2001:250:c00:218:5bd6:795c:5b92:e787  prefixlen 64  scopeid 0x0&lt;global&gt;
+        inet6 fe80::2224:6ee:2527:f54d  prefixlen 64  scopeid 0x20&lt;link&gt;
+        inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d  prefixlen 64  scopeid 0x0&lt;global&gt;
+        ether 2c:16:db:a3:7d:18  txqueuelen 1000  (Ethernet)
+        RX packets 110382  bytes 150904005 (150.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30811  bytes 3569027 (3.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 26251  bytes 4892192 (4.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26251  bytes 4892192 (4.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.7.243  netmask 255.255.255.0  broadcast 192.168.7.255
+        inet6 fe80::1dea:1bcb:ae17:fa3b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether d0:c6:37:dd:91:95  txqueuelen 1000  (Ethernet)
+        RX packets 17759  bytes 19498138 (19.4 MB)
+        RX errors 0  dropped 7  overruns 0  frame 0
+        TX packets 6341  bytes 911629 (911.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></pre>
+
+<h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>Linux 服务器无法上网</p>
+<ol>
+<li>ping localhost<br>侦测网卡安装或配置有问题</li>
+<li>ping 网关<br><code>ip route show</code> 查看网关<br>侦测局域网中的网关或路由器是否正常</li>
+<li>ping dns server<br>在 <code>/etc/resolv.conf</code> 查看 dns 配置<br>dns 解析是否可以解析</li>
+<li>ping 远程地址<br>与外部的连接是否正常</li>
+</ol>
+<h2 id="mtr"><a href="#mtr" class="headerlink" title="mtr"></a>mtr</h2><p>网络侦测工具</p>
+<pre><code class="hljs apache">                         <span class="hljs-attribute">My</span> traceroute <span class="hljs-meta"> [v0.93]</span>
+<span class="hljs-attribute">an</span>-xiaomi-book-pro (<span class="hljs-number">10.0.117.154</span>)              <span class="hljs-number">2020</span>-<span class="hljs-number">11</span>-<span class="hljs-number">10</span>T<span class="hljs-number">10</span>:<span class="hljs-number">08</span>:<span class="hljs-number">42</span>+<span class="hljs-number">0800</span>
+<span class="hljs-attribute">Keys</span>:  Help   Display mode   Restart statistics   Order of fields   quit
+                               <span class="hljs-attribute">Packets</span>               Pings
+ <span class="hljs-attribute">Host</span>                        Loss%   Snt   Last   Avg  Best  Wrst StDev
+ <span class="hljs-attribute">1</span>. _gateway                  <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">156</span>    <span class="hljs-number">1</span>.<span class="hljs-number">2</span>   <span class="hljs-number">1</span>.<span class="hljs-number">8</span>   <span class="hljs-number">0</span>.<span class="hljs-number">8</span>  <span class="hljs-number">16</span>.<span class="hljs-number">4</span>   <span class="hljs-number">2</span>.<span class="hljs-number">6</span>
+ <span class="hljs-attribute">2</span>. <span class="hljs-number">10.125.255.2</span>              <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">156</span>    <span class="hljs-number">0</span>.<span class="hljs-number">6</span>   <span class="hljs-number">0</span>.<span class="hljs-number">5</span>   <span class="hljs-number">0</span>.<span class="hljs-number">4</span>   <span class="hljs-number">0</span>.<span class="hljs-number">8</span>   <span class="hljs-number">0</span>.<span class="hljs-number">1</span>
+ <span class="hljs-attribute">3</span>. <span class="hljs-number">172.16.1.254</span>             <span class="hljs-number">96</span>.<span class="hljs-number">8</span>%   <span class="hljs-number">156</span>    <span class="hljs-number">2</span>.<span class="hljs-number">5</span>   <span class="hljs-number">5</span>.<span class="hljs-number">7</span>   <span class="hljs-number">1</span>.<span class="hljs-number">7</span>  <span class="hljs-number">18</span>.<span class="hljs-number">3</span>   <span class="hljs-number">7</span>.<span class="hljs-number">1</span>
+ <span class="hljs-attribute">4</span>. <span class="hljs-number">129.210.99.202</span>.internet.  <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">156</span>    <span class="hljs-number">2</span>.<span class="hljs-number">1</span>   <span class="hljs-number">3</span>.<span class="hljs-number">4</span>   <span class="hljs-number">1</span>.<span class="hljs-number">7</span>  <span class="hljs-number">12</span>.<span class="hljs-number">4</span>   <span class="hljs-number">2</span>.<span class="hljs-number">2</span>
+ <span class="hljs-attribute">5</span>. <span class="hljs-number">57.53.26.218</span>.internet.sx  <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">156</span>    <span class="hljs-number">2</span>.<span class="hljs-number">7</span>   <span class="hljs-number">4</span>.<span class="hljs-number">1</span>   <span class="hljs-number">2</span>.<span class="hljs-number">1</span>  <span class="hljs-number">12</span>.<span class="hljs-number">9</span>   <span class="hljs-number">1</span>.<span class="hljs-number">9</span>
+ <span class="hljs-attribute">6</span>. <span class="hljs-number">165.151.26.218</span>.internet.  <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">156</span>   <span class="hljs-number">25</span>.<span class="hljs-number">9</span>  <span class="hljs-number">25</span>.<span class="hljs-number">6</span>  <span class="hljs-number">24</span>.<span class="hljs-number">0</span>  <span class="hljs-number">32</span>.<span class="hljs-number">0</span>   <span class="hljs-number">0</span>.<span class="hljs-number">9</span>
+ <span class="hljs-attribute">7</span>. <span class="hljs-number">219.158.101.109</span>           <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">155</span>   <span class="hljs-number">17</span>.<span class="hljs-number">2</span>  <span class="hljs-number">14</span>.<span class="hljs-number">0</span>  <span class="hljs-number">10</span>.<span class="hljs-number">1</span>  <span class="hljs-number">18</span>.<span class="hljs-number">5</span>   <span class="hljs-number">2</span>.<span class="hljs-number">3</span>
+ <span class="hljs-attribute">8</span>. <span class="hljs-number">219.158.5.158</span>             <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">155</span>   <span class="hljs-number">17</span>.<span class="hljs-number">7</span>  <span class="hljs-number">15</span>.<span class="hljs-number">5</span>  <span class="hljs-number">10</span>.<span class="hljs-number">9</span>  <span class="hljs-number">33</span>.<span class="hljs-number">9</span>   <span class="hljs-number">3</span>.<span class="hljs-number">2</span>
+ <span class="hljs-attribute">9</span>. <span class="hljs-number">219.158.16.70</span>             <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">155</span>   <span class="hljs-number">13</span>.<span class="hljs-number">1</span>  <span class="hljs-number">15</span>.<span class="hljs-number">7</span>  <span class="hljs-number">11</span>.<span class="hljs-number">7</span>  <span class="hljs-number">20</span>.<span class="hljs-number">8</span>   <span class="hljs-number">2</span>.<span class="hljs-number">4</span>
+<span class="hljs-attribute">10</span>. <span class="hljs-number">219.158.32.30</span>            <span class="hljs-number">18</span>.<span class="hljs-number">7</span>%   <span class="hljs-number">155</span>  <span class="hljs-number">121</span>.<span class="hljs-number">5</span> <span class="hljs-number">165</span>.<span class="hljs-number">3</span> <span class="hljs-number">108</span>.<span class="hljs-number">3</span> <span class="hljs-number">226</span>.<span class="hljs-number">9</span>  <span class="hljs-number">34</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">11</span>. ae-<span class="hljs-number">1</span>.r<span class="hljs-number">31</span>.tokyjp<span class="hljs-number">05</span>.jp.bb.  <span class="hljs-number">0</span>.<span class="hljs-number">0</span>%   <span class="hljs-number">155</span>   <span class="hljs-number">56</span>.<span class="hljs-number">5</span> <span class="hljs-number">109</span>.<span class="hljs-number">5</span>  <span class="hljs-number">55</span>.<span class="hljs-number">6</span> <span class="hljs-number">173</span>.<span class="hljs-number">8</span>  <span class="hljs-number">34</span>.<span class="hljs-number">5</span>
+<span class="hljs-attribute">12</span>. ae-<span class="hljs-number">3</span>.r<span class="hljs-number">01</span>.tokyjp<span class="hljs-number">08</span>.jp.bb. <span class="hljs-number">18</span>.<span class="hljs-number">1</span>%   <span class="hljs-number">155</span>  <span class="hljs-number">109</span>.<span class="hljs-number">4</span> <span class="hljs-number">161</span>.<span class="hljs-number">9</span> <span class="hljs-number">108</span>.<span class="hljs-number">5</span> <span class="hljs-number">222</span>.<span class="hljs-number">7</span>  <span class="hljs-number">35</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">13</span>. ae-<span class="hljs-number">3</span>.fastly.tokyjp<span class="hljs-number">08</span>.jp. <span class="hljs-number">20</span>.<span class="hljs-number">6</span>%   <span class="hljs-number">155</span>  <span class="hljs-number">106</span>.<span class="hljs-number">5</span> <span class="hljs-number">161</span>.<span class="hljs-number">5</span> <span class="hljs-number">105</span>.<span class="hljs-number">9</span> <span class="hljs-number">219</span>.<span class="hljs-number">5</span>  <span class="hljs-number">33</span>.<span class="hljs-number">7</span>
+<span class="hljs-attribute">14</span>. <span class="hljs-number">185.199.109.153</span>           <span class="hljs-number">0</span>.<span class="hljs-number">6</span>%   <span class="hljs-number">155</span>  <span class="hljs-number">159</span>.<span class="hljs-number">2</span> <span class="hljs-number">210</span>.<span class="hljs-number">4</span> <span class="hljs-number">157</span>.<span class="hljs-number">4</span> <span class="hljs-number">271</span>.<span class="hljs-number">3</span>  <span class="hljs-number">33</span>.<span class="hljs-number">6</span>
+</code></pre>
+
+<ul>
+<li>Loss 丢包率</li>
+<li>Snt 发送的次数</li>
+<li>Last 最近一次的返回时延</li>
+<li>Avg 平均值</li>
+<li>Best 最短的一次时间</li>
+<li>Wrst 最长的一次时间</li>
+<li>StDev 标准偏差</li>
+</ul>
+<h2 id="traceroute-tracepath"><a href="#traceroute-tracepath" class="headerlink" title="traceroute / tracepath"></a>traceroute / tracepath</h2><pre><code class="hljs bash">➜  ~ traceroute aimerneige.com
+traceroute to aimerneige.com (185.199.109.153), 30 hops max, 60 byte packets
+1  10.0.117.1 (10.0.117.1)  11.848 ms  11.768 ms  11.719 ms
+2  10.125.255.2 (10.125.255.2)  0.605 ms  0.578 ms  0.544 ms
+3  * * *
+4  129.210.99.202.internet.sx.cn (202.99.210.129)  2.015 ms  1.965 ms  1.920 ms
+5  233.124.26.218.internet.sx.cn (218.26.124.233)  1.874 ms  2.345 ms 237.124.26.218.internet.sx.cn (218.26.124.237)  2.304 ms
+6  245.131.26.218.router-switch.sx.cn (218.26.131.245)  2.902 ms 209.151.26.218.internet.sx.cn (218.26.151.209)  40.287 ms 245.131.26.218.router-switch.sx.cn (218.26.131.245)  2.713 ms
+7  219.158.105.93 (219.158.105.93)  10.882 ms 219.158.102.249 (219.158.102.249)  9.079 ms 219.158.101.109 (219.158.101.109)  13.673 ms
+8  219.158.5.158 (219.158.5.158)  11.302 ms  11.258 ms 219.158.4.174 (219.158.4.174)  20.035 ms
+9  219.158.16.70 (219.158.16.70)  11.866 ms  19.391 ms  19.316 ms
+10  219.158.32.30 (219.158.32.30)  216.576 ms  220.853 ms  215.579 ms
+11  ae-0.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.2.11)  162.897 ms  162.880 ms ae-1.r31.tokyjp05.jp.bb.gin.ntt.net (129.250.2.153)  163.532 ms
+12  ae-3.r01.tokyjp08.jp.bb.gin.ntt.net (129.250.6.133)  215.634 ms ae-3.r00.tokyjp08.jp.bb.gin.ntt.net (129.250.6.129)  213.725 ms ae-2.r00.tokyjp08.jp.bb.gin.ntt.net (129.250.6.127)  169.350 ms
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *</code></pre>
+
+<pre><code class="hljs bash">➜  ~ tracepath aimerneige.com
+ 1?: [LOCALHOST]                      pmtu 1500
+ 1:  _gateway                                              1.048ms
+ 1:  _gateway                                              1.195ms
+ 2:  10.125.255.2                                          0.588ms
+ 3:  172.16.1.254                                          5.206ms
+ 4:  129.210.99.202.internet.sx.cn                         2.954ms
+ 5:  145.53.26.218.internet.sx.cn                          2.496ms
+ 6:  245.131.26.218.router-switch.sx.cn                    4.198ms
+ 7:  219.158.11.113                                       13.225ms
+ 8:  219.158.5.158                                        19.169ms
+ 9:  219.158.16.70                                        11.860ms
+10:  219.158.32.30                                       226.589ms
+11:  ae-1.r31.tokyjp05.jp.bb.gin.ntt.net                 165.652ms
+12:  ae-3.r00.tokyjp08.jp.bb.gin.ntt.net                 200.616ms
+13:  no reply
+14:  no reply
+15:  no reply
+16:  no reply
+17:  no reply
+18:  no reply
+19:  no reply
+20:  no reply
+21:  no reply
+22:  no reply
+23:  no reply
+24:  no reply
+25:  no reply
+26:  no reply
+27:  no reply
+28:  no reply
+29:  no reply
+30:  no reply
+     Too many hops: pmtu 1500
+     Resume: pmtu 1500</code></pre>
+
+<h2 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h2><h3 id="查看网卡信息-ip-addr-show"><a href="#查看网卡信息-ip-addr-show" class="headerlink" title="查看网卡信息 ip addr show"></a>查看网卡信息 <code>ip addr show</code></h3><pre><code class="hljs bash">➜  ~ ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: wlp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether d0:c6:37:dd:91:95 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.243/24 brd 192.168.7.255 scope global dynamic noprefixroute wlp2s0
+       valid_lft 169205sec preferred_lft 169205sec
+    inet6 fe80::1dea:1bcb:ae17:fa3b/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+3: enx2c16dba37d18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 2c:16:db:a3:7d:18 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.117.154/24 brd 10.0.117.255 scope global dynamic noprefixroute enx2c16dba37d18
+       valid_lft 3601sec preferred_lft 3601sec
+    inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d/64 scope global temporary dynamic
+       valid_lft 601397sec preferred_lft 82623sec
+    inet6 2001:250:c00:218:5bd6:795c:5b92:e787/64 scope global dynamic mngtmpaddr noprefixroute
+       valid_lft 2591976sec preferred_lft 604776sec
+    inet6 fe80::2224:6ee:2527:f54d/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever</code></pre>
+
+<h3 id="启用-禁用网卡-sudo-ip-link-set-enp0s3-up-dowm"><a href="#启用-禁用网卡-sudo-ip-link-set-enp0s3-up-dowm" class="headerlink" title="启用/禁用网卡 sudo ip link set enp0s3 up / dowm"></a>启用/禁用网卡 <code>sudo ip link set enp0s3 up / dowm</code></h3><h3 id="为网卡分配地址"><a href="#为网卡分配地址" class="headerlink" title="为网卡分配地址"></a>为网卡分配地址</h3><pre><code class="hljs routeros">sudo<span class="hljs-built_in"> ip </span>addr <span class="hljs-builtin-name">add</span> 192.168.0.50/255.255.255.0 dev enp0s3
+sudo<span class="hljs-built_in"> ip </span>addr del 192.168.0.10/24 dev enp0s3</code></pre>
+
+<h3 id="ip-route"><a href="#ip-route" class="headerlink" title="ip route"></a>ip route</h3><p>查看路由</p>
+<p><code>ip route</code></p>
+<pre><code class="hljs bash">➜  ~ ip route
+default via 10.0.117.1 dev enx2c16dba37d18 proto dhcp metric 100
+default via 192.168.7.1 dev wlp2s0 proto dhcp metric 600
+10.0.117.0/24 dev enx2c16dba37d18 proto kernel scope link src 10.0.117.154 metric 100
+169.254.0.0/16 dev enx2c16dba37d18 scope link metric 1000
+192.168.7.0/24 dev wlp2s0 proto kernel scope link src 192.168.7.243 metric 600</code></pre>
+
+<p>添加静态路由</p>
+<p><code>sudo ip route add 172.16.32.32 via 192.168.0.150/24 dev enp0s3</code></p>
+<p>删除路由</p>
+<p><code>sudo ip route del 192.168.0.150/24</code></p>
+<h3 id="arp"><a href="#arp" class="headerlink" title="arp"></a>arp</h3><p>查看 arp 记录</p>
+<p><code>ip neigh</code></p>
+<pre><code class="hljs bash">➜  ~ ip neigh
+192.168.7.2 dev wlp2s0 lladdr e8:39:35:1f:13:b1 STALE
+192.168.7.1 dev wlp2s0 lladdr 28:d1:27:85:38:d7 REACHABLE
+10.0.117.177 dev enx2c16dba37d18 lladdr e8:39:35:1f:14:<span class="hljs-built_in">fc</span> STALE
+192.168.7.38 dev wlp2s0 lladdr 2c:ff:ee:66:e2:01 STALE
+10.0.117.1 dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b REACHABLE
+192.168.7.160 dev wlp2s0 lladdr 3e:22:9c:ef:b8:d2 STALE
+fe80::5a69:6cff:fe07:714b dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b router STALE</code></pre>
+
+<ul>
+<li>PERM 永久有效并且只能被管理员删除</li>
+<li>NOARP 记录有效，过期后可被删除</li>
+<li>STALE 记录有效，但可能已经过期</li>
+<li>REACHABLE 记录有效，但超时后就失效了</li>
+</ul>
+<p>增加 arp 记录</p>
+<p><code>sudo ip neigh add 192.168.0.150 lladdr 33:1g:75:37:r3:84 dev enp0s3 nud perm</code></p>
+<p>删除 arp</p>
+<p><code>sudo ip neigh del 192.168.0.106 dev enp0s3</code></p>
+<h2 id="curl-wget"><a href="#curl-wget" class="headerlink" title="curl / wget"></a>curl / wget</h2><p><code>curl aimerneige.com</code></p>
+<p><code>wget aimerneige.com</code></p>
+<h2 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h2><p>网络连接状态以及其相关信息的程序<br>告诉用户哪些网络连接正在运作</p>
+<ul>
+<li>列出所有端口 <code>netstat -a</code></li>
+<li>列出所有 tcp 端口 <code>netstat -at</code></li>
+<li>列出所有 udp 端口 <code>netstat -au</code></li>
+<li>显示进程 id 和名称 <code>netstat -p</code></li>
+<li>显示路由信息 <code>netstat -r</code></li>
+<li>显示所有监听的端口 <code>netstat -tnl</code></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Command/">Command</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/12/13/Fcitx5-With-Rime-Install/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Fcitx5 With Rime Install</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/05/This-Is-Not-Bug/">
+                        <span class="hidden-mobile">This Is Not Bug</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

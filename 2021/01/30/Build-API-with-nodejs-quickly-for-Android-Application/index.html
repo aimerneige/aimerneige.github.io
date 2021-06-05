@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Build API with nodejs quickly for Android Application - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Build API with nodejs quickly for Android Application
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-30 20:17" pubdate>
+        2021-01-30
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      65
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Build API with nodejs quickly for Android Application</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="使用-nodejs-快速为-Android-程序构建-API"><a href="#使用-nodejs-快速为-Android-程序构建-API" class="headerlink" title="使用 nodejs 快速为 Android 程序构建 API"></a>使用 nodejs 快速为 Android 程序构建 API</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
+<li>你要了解互联网通讯原理</li>
+<li>你要会一些基础的 <code>JavaScript</code></li>
+<li>你要有一台服务器</li>
+<li>你会数据库操作</li>
+<li>最好有一个域名（非必须）</li>
+<li>掌握基础的终端操作</li>
+</ol>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>本文章中后端开发使用的开发语言为 <code>JavaScript</code> 配合 <code>nodejs</code>。数据库采用常用的 <code>mysql</code>。</p>
+<blockquote>
+<p>注： <code>nodejs</code> 开发常用的数据库是 <code>mongodb</code>，但是由于 <code>mysql</code> 比较常用这里就用 <code>mysql</code> 了，当然其他数据库也是可以的，你可以查找一下 <code>nodejs</code> 如何链接这些数据库，并将本文中 <code>mysql</code> 操作的部分替换掉就可以了。</p>
+</blockquote>
+<h3 id="本地测试客户端安装"><a href="#本地测试客户端安装" class="headerlink" title="本地测试客户端安装"></a>本地测试客户端安装</h3><p>你需要在自己用来开发的电脑上安装配置如下环境：</p>
+<ul>
+<li><strong>nodejs</strong></li>
+<li><strong>npm</strong></li>
+</ul>
+<h4 id="安装-nodejs"><a href="#安装-nodejs" class="headerlink" title="安装 nodejs"></a>安装 nodejs</h4><p>Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。</p>
+<p>以 Ubuntu 为例，直接在终端执行如下指令：</p>
+<pre><code class="hljs bash">sudo apt install nodejs</code></pre>
+
+<p>安装完成后使用 <code>node -v</code> 查看 node 版本来确认安装是否成功。</p>
+<p>如果是 windows 用户就更加简单了，直接在 <a target="_blank" rel="noopener" href="https://nodejs.org/">nodejs 官网</a> 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。</p>
+<h4 id="安装-npm"><a href="#安装-npm" class="headerlink" title="安装 npm"></a>安装 npm</h4><p>通常情况下，安装 <code>nodejs</code> 时会附带安装 <code>npm</code>，你可以直接使用 <code>npm -v</code> 来查看当前系统安装的 <code>npm</code> 版本来检测安装情况。</p>
+<p>如果没有安装，以 <code>Ubuntu</code> 系统为例，可以在终端执行下面的指令：</p>
+<pre><code class="hljs bash">sudo apt install npm</code></pre>
+
+<p><code>windows</code> 用户在执行完 <code>node</code> 的安装程序后 <code>npm </code> 会自动安装完成。</p>
+<h3 id="服务器安装"><a href="#服务器安装" class="headerlink" title="服务器安装"></a>服务器安装</h3><p>你需要在服务器上安装配置如下环境：</p>
+<ul>
+<li><strong>nodejs</strong></li>
+<li><strong>npm</strong></li>
+<li><strong>mysql</strong></li>
+<li><strong>nginx</strong></li>
+</ul>
+<h4 id="安装-nodejs-与-npm"><a href="#安装-nodejs-与-npm" class="headerlink" title="安装 nodejs 与 npm"></a>安装 nodejs 与 npm</h4><p>其中 <code>nodejs</code> 和 <code>npm</code> 的安装同客户端完全相同，这里不再赘述。</p>
+<h4 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h4><p><code>mysql</code> 可以一并安装在运行 <code>node</code> 项目的服务器上，也可以使用独立的数据库提供服务器。</p>
+<p>本文章主要讨论如何构建 <code>API</code> ，这里不再赘述如何安装配置 <code>mysql</code>。可以查看我的其他文章。</p>
+<h4 id="安装-nginx"><a href="#安装-nginx" class="headerlink" title="安装 nginx"></a>安装 nginx</h4><p>nginx 用于将服务反向代理到 80 端口，以 <code>Ubuntu</code> 系统为例，直接在终端执行如下指令：</p>
+<pre><code class="hljs bash">sudo apt install nginx</code></pre>
+
+<p>Windows 用户自行查阅相关资料。<sub><del>不会吧，不会吧，不会有人服务器用 windows 吧？？</del></sub></p>
+<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><h3 id="使用模版"><a href="#使用模版" class="headerlink" title="使用模版"></a>使用模版</h3><p>为了方便快速构建一个项目，我写了一个模版，你可以在 <a target="_blank" rel="noopener" href="https://github.com/aimerneige/node_json_api_template">GitHub</a> 上找到它。</p>
+<p>使用这个模版快速构建一个新的仓库，将它 clone 到本地，并进行下面的修改：</p>
+<ol>
+<li>修改 package.json</li>
+<li>修改 LICENSE</li>
+<li>修改 README</li>
+<li>在 <code>src/config</code> 下新建 <code>db.js</code> 写入数据库服务器的配置。</li>
+</ol>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在项目路径下启动终端，执行如下指令：</p>
+<pre><code class="hljs bash">npm i</code></pre>
+
+<p>这个指令是 <code>npm install</code> 的缩写，<code>npm</code> 会安装需要的依赖，本模版项目只依赖了俩个包：</p>
+<ol>
+<li>express</li>
+<li>mysql</li>
+</ol>
+<p>依赖安装完成后，你会在项目路径下看到 <code>node_modules</code> 这个文件夹，它已经被写在 <code>.gitignore</code> 中，这个文件夹下是项目所需要的依赖，即使你意外地删掉了这个文件夹，再次执行 <code>npm i</code> 就可以将这些文件下载回来，所以你不应该在意这个文件夹中有什么内容，<code>npm</code> 会帮我们处理它。</p>
+<h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><p>使用 <code>cd</code> 命令切换到 <code>src</code> 目录下，执行下面的指令：</p>
+<pre><code class="hljs bash">node app.js</code></pre>
+
+<p>之后你会在终端看到如下输出：</p>
+<pre><code class="hljs bash">Server start <span class="hljs-keyword">in</span> development mode on http://localhost:4000; press Ctrl + C to terminated.</code></pre>
+
+<p>打开你的浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p>如果你看到下面的内容，说明项目成功启动了：</p>
+<pre><code class="hljs json">&#123; <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>, <span class="hljs-attr">&quot;info&quot;</span>: <span class="hljs-string">&quot;If you see this, the server deploy success!&quot;</span> &#125;</code></pre>
+
+<p>如果你在服务器启动项目，假设你的服务器 ip 为 <code>43.192.82.215</code> 并且配置了域名 <code>api.aimerneige.com</code> ，你可以通过在浏览器内访问下面的地址测试服务器：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://43.192.82.215:4000/">http://43.192.82.215:4000/</a></li>
+<li><a target="_blank" rel="noopener" href="http://api.aimerneige.com:4000/">http://api.aimerneige.com:4000/</a></li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>在本地测试启动的服务器只能通过 <strong>本地/内网</strong> 访问</li>
+<li>在有公网 ip 的服务器上部署的服务可以在 <strong>任意浏览器内</strong> 打开</li>
+</ul>
+<p>如果你在服务器测试，请注意以这样的方式运行仅能用来测试，不可以用作生产环境，后文会介绍如何在服务器部署项目。</p>
+<h3 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h3><p>项目可以启动后，说明环境配置无误，接下来可以开始写代码了。</p>
+<p>我们简单看一下程序的入口 <code>app.js</code></p>
+<p>本项目依赖 express 构建，首先导入 express 的模块：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// require</span>
+<span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);</code></pre>
+
+<p>接下来导入路由目录下的路由模块：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// user require</span>
+<span class="hljs-keyword">const</span> indexRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./routes/index&quot;</span>);</code></pre>
+
+<p>创建 express 对象：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// express app</span>
+<span class="hljs-keyword">var</span> app = express();</code></pre>
+
+<p>设置监听端口：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// set port</span>
+app.set(<span class="hljs-string">&quot;port&quot;</span>, process.env.PORT || <span class="hljs-number">4000</span>);</code></pre>
+
+<p>添加可以支持 json 解析的中间件：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// json parse</span>
+app.use(express.json());
+app.use(express.urlencoded(&#123; <span class="hljs-attr">extended</span>: <span class="hljs-literal">false</span> &#125;));</code></pre>
+
+<p>添加路由中间件：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// routes</span>
+app.use(<span class="hljs-string">&quot;/&quot;</span>, indexRouter);</code></pre>
+
+<p>路由匹配失败后返回 404 错误：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// catch 404 and forward to error handler</span>
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> err = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Not Found&quot;</span>);
+  err.status = <span class="hljs-number">404</span>;
+  next(err);
+&#125;);</code></pre>
+
+<p>处理错误信息：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// error handler</span>
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, req, res, next</span>) </span>&#123;
+  res.type(<span class="hljs-string">&quot;application/json&quot;</span>);
+  res.status(err.status || <span class="hljs-number">500</span>);
+  res.send(&#123;
+    status: err.status || <span class="hljs-number">500</span>,
+    message: err.message,
+  &#125;);
+&#125;);</code></pre>
+
+<p>检测当前模块是否被直接执行，如果是则启动服务器，否者导出模块：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// check if run app.js directly</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">require</span>.main === <span class="hljs-built_in">module</span>) &#123;
+  app.listen(app.get(<span class="hljs-string">&quot;port&quot;</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(
+      <span class="hljs-string">&quot;Server start in &quot;</span> +
+        app.get(<span class="hljs-string">&quot;env&quot;</span>) +
+        <span class="hljs-string">&quot; mode on http://localhost:&quot;</span> +
+        app.get(<span class="hljs-string">&quot;port&quot;</span>) +
+        <span class="hljs-string">&quot;; press Ctrl + C to terminated.&quot;</span>
+    );
+  &#125;);
+&#125; <span class="hljs-keyword">else</span> &#123;
+  <span class="hljs-built_in">module</span>.exports = app;
+&#125;</code></pre>
+
+<p>其他的代码可以暂时不去理会，最重要的是路由这一部分：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// 导入路由模块</span>
+<span class="hljs-keyword">const</span> indexRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./routes/index&quot;</span>);
+<span class="hljs-comment">// 添加路由中间件</span>
+app.use(<span class="hljs-string">&quot;/&quot;</span>, indexRouter);</code></pre>
+
+<p>在编写 api 时，只需要在 <code>/src/routes</code> 目录下新建路由模块，并在 <code>app.js</code> 下引用即可。</p>
+<h3 id="添加路由"><a href="#添加路由" class="headerlink" title="添加路由"></a>添加路由</h3><p>接下来我们看一下默认的路由模块 <code>index.js</code> ：</p>
+<p>导入 express 模块：</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
+<span class="hljs-keyword">const</span> router = express.Router();</code></pre>
+
+<p>配置路由规则：</p>
+<pre><code class="hljs js">router.get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>&#123;
+  res.type(<span class="hljs-string">&quot;application/json&quot;</span>);
+  res.status(<span class="hljs-number">200</span>);
+  res.send(&#123;
+    status: <span class="hljs-number">200</span>,
+    info: <span class="hljs-string">&quot;If you see this, the server deploy success!&quot;</span>,
+  &#125;);
+&#125;);</code></pre>
+
+<p>导出模块：</p>
+<pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = router;</code></pre>
+
+<p>其中重点即配置路由规则这一部分。</p>
+<p>我相信这几行代码还是很易懂的，相对地，如果我们想要使用 post 方法，访问路径为 <code>/about</code> 需要这样写：</p>
+<pre><code class="hljs js">router.post(<span class="hljs-string">&quot;/about&quot;</span>, fuction()&#123; <span class="hljs-comment">/* function */</span> &#125; );</code></pre>
+
+<p>设置好请求方法和请求路径后，回调函数用来向客户端返回数据。</p>
+<p>设置返回数据类型，这里使用 <code>json</code> 进行数据传输：</p>
+<pre><code class="hljs js">res.type(<span class="hljs-string">&quot;application/json&quot;</span>);</code></pre>
+
+<p>设置返回状态码：</p>
+<pre><code class="hljs js">res.status(<span class="hljs-number">200</span>);</code></pre>
+
+<p>返回指定数据：</p>
+<pre><code class="hljs js">res.send(return_data);</code></pre>
+
+<p>由于开发语言为 js ，而且本项目添加了解析 json 的中间件，如果想要返回 json，不需像其他语言那样要将对象解析为 json 字符串，直接返回一个对象即可，客户端会成功接收到正确的 json 字符串。</p>
+<pre><code class="hljs js"><span class="hljs-comment">// 服务器返回的对象</span>
+&#123;
+    status: <span class="hljs-number">200</span>,
+    info: <span class="hljs-string">&quot;If you see this, the server deploy success!&quot;</span>,
+&#125;</code></pre>
+
+<pre><code class="hljs json"><span class="hljs-comment">// 客户端拿到的字符串</span>
+&#123; <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>, <span class="hljs-attr">&quot;info&quot;</span>: <span class="hljs-string">&quot;If you see this, the server deploy success!&quot;</span> &#125;</code></pre>
+
+<p>书写好路由模块后在 <code>app.js</code> 中引用即可：</p>
+<pre><code class="hljs js"><span class="hljs-comment">// 导入模块</span>
+<span class="hljs-keyword">const</span> indexRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./routes/index&quot;</span>);
+
+<span class="hljs-comment">// ... 中间的其他代码</span>
+
+<span class="hljs-comment">// 在 app 中应用路由模块</span>
+app.use(<span class="hljs-string">&quot;/&quot;</span>, indexRouter);</code></pre>
+
+<p>要注意模块导入的位置，不能乱放。和模版保持一致即可。</p>
+<h3 id="添加更多的路由信息"><a href="#添加更多的路由信息" class="headerlink" title="添加更多的路由信息"></a>添加更多的路由信息</h3><p>就像上面的例子中所写的，我们可以继续添加新的路由模块，也可以在同一个路由模块下添加更多的访问路径。</p>
+<ul>
+<li><code>src/app.js</code></li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">const</span> indexRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./routes/index&quot;</span>);
+<span class="hljs-keyword">const</span> userRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./routes/user&quot;</span>);
+
+<span class="hljs-comment">// ...</span>
+
+app.use(<span class="hljs-string">&quot;/&quot;</span>, indexRouter);
+app.use(<span class="hljs-string">&quot;/user&quot;</span>, userRouter);</code></pre>
+
+<ul>
+<li><code>src/routes/index.js</code></li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// 访问路径 /</span>
+router.get(<span class="hljs-string">&quot;/&quot;</span>, fuction()&#123; <span class="hljs-comment">/* function */</span> &#125; );
+
+<span class="hljs-comment">// 访问路径 /about</span>
+router.get(<span class="hljs-string">&quot;/about&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* function */</span> &#125;);
+
+<span class="hljs-comment">// ...</span></code></pre>
+
+<ul>
+<li><code>src/routes/user.js</code></li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// 访问路径 /user/cat</span>
+router.get(<span class="hljs-string">&quot;/cat&quot;</span>, fuction()&#123; <span class="hljs-comment">/* function */</span> &#125; );
+
+<span class="hljs-comment">// 访问路径 /user/edit</span>
+router.post(<span class="hljs-string">&quot;/edit&quot;</span>, fuction()&#123; <span class="hljs-comment">/* function */</span> &#125; );
+
+<span class="hljs-comment">// 访问路径 /user/new</span>
+router.psot(<span class="hljs-string">&quot;/new&quot;</span>, fuction()&#123; <span class="hljs-comment">/* function */</span> &#125; );
+
+<span class="hljs-comment">// ...</span></code></pre>
+
+<h3 id="获取客户端数据"><a href="#获取客户端数据" class="headerlink" title="获取客户端数据"></a>获取客户端数据</h3><h4 id="获取请求参数信息"><a href="#获取请求参数信息" class="headerlink" title="获取请求参数信息"></a>获取请求参数信息</h4><p><code>req.query</code> 对象是由客户端请求参数构成的，在回调函数内，可以直接调用它来获取客户端请求参数，如果客户端传递了参数，我们就可以拿到对应的数据，否者我们只能得到 <code>undefined</code>。由此可以通过判空来确定客户端请求参数是否正确。</p>
+<p>例如我们的请求路径为 <code>/data</code> 所需请求参数为 <code>id</code> 和 <code>class</code> 可以这样写：</p>
+<blockquote>
+<p>注： 对应的示例请求地址为 <code>https://api.example.com/data?id=1930201&amp;class=302</code></p>
+</blockquote>
+<pre><code class="hljs js">router.get(<span class="hljs-string">&quot;/data&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  res.type(<span class="hljs-string">&quot;application/json&quot;</span>);
+  <span class="hljs-keyword">if</span> (req.query.class === <span class="hljs-literal">undefined</span> || req.query.id === <span class="hljs-literal">undefined</span>) &#123;
+    res.status(<span class="hljs-number">400</span>);
+    <span class="hljs-comment">// 向客户端返回错误信息，提示客户端返回正确的参数</span>
+    res.send(&#123;
+      status: <span class="hljs-number">400</span>,
+      info: <span class="hljs-string">&quot;Wrong arguments!&quot;</span>,
+    &#125;);
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-comment">// 向用户返回数据（通常会用客户端参数来调用数据库，为了简便这里返回一个类做简单示范）</span>
+    res.status(<span class="hljs-number">200</span>);
+    res.send(&#123;
+      status: <span class="hljs-number">200</span>,
+      info: &#123;
+        class: req.query.class,
+        id: req.query.id,
+      &#125;,
+    &#125;);
+  &#125;
+&#125;);</code></pre>
+
+<p>我们可以通过判空来确定客户端请求参数是否正确，之后可以使用参数来进行其他操作，比如构建类，调取数据库等等。</p>
+<h4 id="获取请求体信息"><a href="#获取请求体信息" class="headerlink" title="获取请求体信息"></a>获取请求体信息</h4><p>与请求参数类似，请求体信息也保存在一个类中，就是 <code>req.body</code>。使用方法和之前请求参数完全一致，这里只写一个示例，不多赘述。</p>
+<pre><code class="hljs js">router.post(<span class="hljs-string">&quot;/new&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  res.type(<span class="hljs-string">&quot;application/json&quot;</span>);
+  <span class="hljs-keyword">if</span> (req.body.class === <span class="hljs-literal">undefined</span> || req.body.id === <span class="hljs-literal">undefined</span>) &#123;
+    res.status(<span class="hljs-number">400</span>);
+    <span class="hljs-comment">// 向客户端返回错误信息，提示客户端返回正确的参数</span>
+    res.send(&#123;
+      status: <span class="hljs-number">400</span>,
+      info: <span class="hljs-string">&quot;Wrong arguments!&quot;</span>,
+    &#125;);
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-keyword">var</span> new_student = &#123;
+      class: req.body.class,
+      id: req.body.id,
+    &#125;;
+    <span class="hljs-comment">// 向数据库内添加新的学生</span>
+    res.status(<span class="hljs-number">200</span>);
+    res.send(&#123;
+      status: <span class="hljs-number">200</span>,
+      info: <span class="hljs-string">&quot;Student create successful!&quot;</span>,
+    &#125;);
+  &#125;
+&#125;);</code></pre>
+
+<h4 id="获取更多信息"><a href="#获取更多信息" class="headerlink" title="获取更多信息"></a>获取更多信息</h4><p>在回调函数中，req 对象中保存了所有来自客户请求的数据，前面介绍的只是比较常用的，其他内容可以查找文档。</p>
+<h3 id="获取数据库信息"><a href="#获取数据库信息" class="headerlink" title="获取数据库信息"></a>获取数据库信息</h3><h4 id="配置数据库信息"><a href="#配置数据库信息" class="headerlink" title="配置数据库信息"></a>配置数据库信息</h4><p>参考 <code>db.js.example</code> 创建 <code>db.js</code> 写入服务器的配置</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> mysql = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;mysql&quot;</span>);
+
+<span class="hljs-keyword">var</span> pool = mysql.createPool(&#123;
+  host: <span class="hljs-string">&quot;host_ip&quot;</span>,
+  user: <span class="hljs-string">&quot;user_name&quot;</span>,
+  password: <span class="hljs-string">&quot;password&quot;</span>,
+  database: <span class="hljs-string">&quot;data&quot;</span>,
+  port: <span class="hljs-number">3306</span>,
+&#125;);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">query</span>(<span class="hljs-params">sql, callback</span>) </span>&#123;
+  pool.getConnection(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, connection</span>) </span>&#123;
+    connection.query(sql, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, rows</span>) </span>&#123;
+      callback(err, rows);
+      connection.release();
+    &#125;);
+  &#125;);
+&#125;
+
+<span class="hljs-built_in">exports</span>.query = query;</code></pre>
+
+<p>配置好数据库服务器后，就可以通过下面的方法访问数据库的数据了：</p>
+<pre><code class="hljs js">sql_command = <span class="hljs-string">&quot;DROP DATABASE *;&quot;</span>; <span class="hljs-comment">// ⚠️ 注意修改</span>
+db.query(sql_command, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, result, fields</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (err) &#123;
+    <span class="hljs-comment">// 如果数据库指令执行出现了错误，返回错误信息</span>
+    requestSQLFailedLog(sql_command, err);
+    res.status(<span class="hljs-number">400</span>);
+    res.send(&#123; <span class="hljs-attr">status</span>: <span class="hljs-number">400</span>, <span class="hljs-attr">info</span>: err &#125;);
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-comment">// 如果数据库指令执行成功，返回数据</span>
+    requestSQLSuccessLog(sql_command, result);
+    res.status(<span class="hljs-number">200</span>);
+    res.send(result);
+  &#125;
+&#125;);</code></pre>
+
+<h2 id="服务部署"><a href="#服务部署" class="headerlink" title="服务部署"></a>服务部署</h2><blockquote>
+<p>待完善，咕咕咕</p>
+</blockquote>
+<ol>
+<li>将项目上传到服务器</li>
+<li>修改 <code>db.js</code> 的配置</li>
+<li><code>cd src</code></li>
+<li><code>node cluster.js</code></li>
+<li>如果你想要后台运行，执行 <code>nohup node cluster.js &amp;</code></li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Web/">Web</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/nodejs/">nodejs</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/29/EditorConfig/">
+                        <span class="hidden-mobile">EditorConfig</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>ToolBar - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                ToolBar
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-18 00:05" pubdate>
+        2020-02-18
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      50
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">ToolBar</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="ToolBar"><a href="#ToolBar" class="headerlink" title="ToolBar"></a>ToolBar</h1><h2 id="MaterialDesign-依赖库"><a href="#MaterialDesign-依赖库" class="headerlink" title="MaterialDesign 依赖库"></a>MaterialDesign 依赖库</h2><pre><code class="hljs xml">implementation &#x27;com.google.android.material:material:1.1.0&#x27;</code></pre>
+
+<h2 id="在布局文件中加入-TooBar"><a href="#在布局文件中加入-TooBar" class="headerlink" title="在布局文件中加入 TooBar"></a>在布局文件中加入 TooBar</h2><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.appcompat.widget.Toolbar</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolBar&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+    &lt;!--其他属性设置--&gt;
+    /&gt;</code></pre>
+
+<blockquote>
+<p>关于旧版的说明</p>
+<p>旧版需要使用兼容包</p>
+<p><code>compile &#39;com.android.support:appcompat-v7:23.1.1&#39;</code></p>
+<p>使用以下布局方法</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">android.support.v7.widget.Toolbar</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolbar&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;标题&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20sp&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">android.support.v7.widget.Toolbar</span>&gt;</span></code></pre>
+
+<p>很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用</p>
+</blockquote>
+<h2 id="在-MainActivity-中引用-Toolbar"><a href="#在-MainActivity-中引用-Toolbar" class="headerlink" title="在 MainActivity 中引用 Toolbar"></a>在 MainActivity 中引用 Toolbar</h2><pre><code class="hljs java">Toolbar toolbar = findViewById(R.id.toolBar);</code></pre>
+
+<h2 id="使用-ToolBar-作为界面布局"><a href="#使用-ToolBar-作为界面布局" class="headerlink" title="使用 ToolBar 作为界面布局"></a>使用 ToolBar 作为界面布局</h2><pre><code class="hljs java">toolbar.setTitle(<span class="hljs-string">&quot;AppBarLayoutTest&quot;</span>);
+setSupportActionBar(toolbar);</code></pre>
+
+<blockquote>
+<p>导包的时候导这个，不要导错了，否则会报错</p>
+<p><code>import androidx.appcompat.widget.Toolbar;</code></p>
+</blockquote>
+<h2 id="添加自定义属性"><a href="#添加自定义属性" class="headerlink" title="添加自定义属性"></a>添加自定义属性</h2><p>按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。</p>
+<blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/widget/Toolbar">https://developer.android.com/reference/android/widget/Toolbar</a></p>
+</blockquote>
+<h2 id="添加菜单"><a href="#添加菜单" class="headerlink" title="添加菜单"></a>添加菜单</h2><h3 id="构建菜单的布局文件"><a href="#构建菜单的布局文件" class="headerlink" title="构建菜单的布局文件"></a>构建菜单的布局文件</h3><p>这里添加的 item 会按顺序显示在 ToolBar 上面。</p>
+<p>showAsAction 属性：</p>
+<ul>
+<li>always:总是显示</li>
+<li>ifRoom:空间足够时显示</li>
+<li>never:永不显示（收纳在右侧的三条横线那个更多按钮里）</li>
+</ul>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolbar_setting&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;@drawable/ic_setting&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:title</span>=<span class="hljs-string">&quot;@string/toolbar_setting&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">app:showAsAction</span>=<span class="hljs-string">&quot;always&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolbar_about&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:title</span>=<span class="hljs-string">&quot;@string/toolbar_about&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">app:showAsAction</span>=<span class="hljs-string">&quot;never&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolbar_exit&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:title</span>=<span class="hljs-string">&quot;@string/toolbar_exit&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">app:showAsAction</span>=<span class="hljs-string">&quot;never&quot;</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span></code></pre>
+
+<h3 id="在主菜单中引用菜单的布局文件"><a href="#在主菜单中引用菜单的布局文件" class="headerlink" title="在主菜单中引用菜单的布局文件"></a>在主菜单中引用菜单的布局文件</h3><pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onCreateOptionsMenu</span><span class="hljs-params">(Menu menu)</span> </span>&#123;
+    getMenuInflater().inflate(R.menu.toolbar, menu);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+&#125;</code></pre>
+
+<h3 id="设置菜单点击事件"><a href="#设置菜单点击事件" class="headerlink" title="设置菜单点击事件"></a>设置菜单点击事件</h3><pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onOptionsItemSelected</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> MenuItem item)</span> </span>&#123;
+    <span class="hljs-keyword">switch</span> (item.getItemId()) &#123;
+        <span class="hljs-keyword">case</span> android.R.id.home:
+            drawerLayout.openDrawer(GravityCompat.START);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> R.id.toolbar_setting:
+            Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for setting&quot;</span>, Toast.LENGTH_SHORT).show();
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> R.id.toolbar_about:
+            Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for about&quot;</span>, Toast.LENGTH_SHORT).show();
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> R.id.toolbar_exit:
+            Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for exit&quot;</span>, Toast.LENGTH_SHORT).show();
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">break</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+&#125;</code></pre>
+
+<h2 id="AppBarLayout"><a href="#AppBarLayout" class="headerlink" title="AppBarLayout"></a>AppBarLayout</h2><p>使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。</p>
+<p>这里省略了属性，主要关注布局层次即可。</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.appbar.AppBarLayout</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.appcompat.widget.Toolbar</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.tabs.TabLayout</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;46dp&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">com.google.android.material.tabs.TabLayout</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">com.google.android.material.appbar.AppBarLayout</span>&gt;</span></code></pre>
+
+<p>用 AppBarLayout 套住 ToolBar 即可，内部还可以嵌套一个 TabLayout。</p>
+<p>你也可以将整个布局放置在 CoordinatorLayout 中实现更好的效果。</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><p>代码很垃圾，只是一个壳子，凑合看</p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">androidx.drawerlayout.widget.DrawerLayout</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/draw_layout&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.coordinatorlayout.widget.CoordinatorLayout</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.appbar.AppBarLayout</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/app_bar&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">androidx.appcompat.widget.Toolbar</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/toolBar&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">app:titleTextColor</span>=<span class="hljs-string">&quot;@color/write&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">app:layout_scrollFlags</span>=<span class="hljs-string">&quot;scroll|enterAlwaysCollapsed&quot;</span>/&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.tabs.TabLayout</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/tabLayout&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;46dp&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">android:minHeight</span>=<span class="hljs-string">&quot;46dp&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">app:tabMode</span>=<span class="hljs-string">&quot;fixed&quot;</span></span>
+<span class="hljs-tag">                <span class="hljs-attr">app:layout_scrollFlags</span>=<span class="hljs-string">&quot;scroll|exitUntilCollapsed|enterAlways&quot;</span>&gt;</span>
+
+                <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.tabs.TabItem</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Test1&quot;</span> /&gt;</span>
+
+                <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.tabs.TabItem</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Test2&quot;</span> /&gt;</span>
+
+                <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.tabs.TabItem</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">                    <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Test3&quot;</span> /&gt;</span>
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">com.google.android.material.tabs.TabLayout</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">com.google.android.material.appbar.AppBarLayout</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">androidx.viewpager.widget.ViewPager</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/view_pager&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">app:layout_behavior</span>=<span class="hljs-string">&quot;@string/appbar_scrolling_view_behavior&quot;</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.floatingactionbutton.FloatingActionButton</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/fab&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">&quot;bottom|end&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:layout_margin</span>=<span class="hljs-string">&quot;16dp&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/ic_add&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">&quot;8dp&quot;</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.coordinatorlayout.widget.CoordinatorLayout</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.navigation.NavigationView</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/nav_view&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;300dp&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">&quot;start&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">app:headerLayout</span>=<span class="hljs-string">&quot;@layout/nav_header&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">app:menu</span>=<span class="hljs-string">&quot;@menu/nav_menu&quot;</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">androidx.drawerlayout.widget.DrawerLayout</span>&gt;</span></code></pre>
+
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.aimerneige.appbarlayoutyesy;
+
+<span class="hljs-keyword">import</span> androidx.annotation.NonNull;
+<span class="hljs-keyword">import</span> androidx.appcompat.app.ActionBar;
+<span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity;
+<span class="hljs-keyword">import</span> androidx.appcompat.widget.Toolbar;
+<span class="hljs-keyword">import</span> androidx.core.view.GravityCompat;
+<span class="hljs-keyword">import</span> androidx.drawerlayout.widget.DrawerLayout;
+<span class="hljs-keyword">import</span> androidx.viewpager.widget.ViewPager;
+
+<span class="hljs-keyword">import</span> android.annotation.SuppressLint;
+<span class="hljs-keyword">import</span> android.os.Bundle;
+<span class="hljs-keyword">import</span> android.view.Menu;
+<span class="hljs-keyword">import</span> android.view.MenuItem;
+<span class="hljs-keyword">import</span> android.view.View;
+<span class="hljs-keyword">import</span> android.widget.Toast;
+
+<span class="hljs-keyword">import</span> com.google.android.material.appbar.AppBarLayout;
+<span class="hljs-keyword">import</span> com.google.android.material.floatingactionbutton.FloatingActionButton;
+<span class="hljs-keyword">import</span> com.google.android.material.navigation.NavigationView;
+<span class="hljs-keyword">import</span> com.google.android.material.snackbar.Snackbar;
+<span class="hljs-keyword">import</span> com.google.android.material.tabs.TabLayout;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>&#123;
+
+    <span class="hljs-keyword">private</span> DrawerLayout drawerLayout;
+
+    <span class="hljs-meta">@SuppressLint(&quot;ResourceAsColor&quot;)</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>&#123;
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        AppBarLayout appBarLayout = findViewById(R.id.app_bar);
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        drawerLayout = findViewById(R.id.draw_layout);
+
+        <span class="hljs-comment">// Set toolbar as ActionBar</span>
+        toolbar.setTitle(<span class="hljs-string">&quot;AppBarLayoutTest&quot;</span>);
+        setSupportActionBar(toolbar);
+
+        <span class="hljs-comment">// Set menu icon</span>
+        ActionBar actionBar = getSupportActionBar();
+        <span class="hljs-keyword">if</span> (actionBar != <span class="hljs-keyword">null</span>) &#123;
+            actionBar.setDisplayHomeAsUpEnabled(<span class="hljs-keyword">true</span>);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        &#125;
+
+        <span class="hljs-comment">// Set TabLayout selected</span>
+        tabLayout.addOnTabSelectedListener(<span class="hljs-keyword">new</span> TabLayout.OnTabSelectedListener() &#123;
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onTabSelected</span><span class="hljs-params">(TabLayout.Tab tab)</span> </span>&#123;
+
+            &#125;
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onTabUnselected</span><span class="hljs-params">(TabLayout.Tab tab)</span> </span>&#123;
+
+            &#125;
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onTabReselected</span><span class="hljs-params">(TabLayout.Tab tab)</span> </span>&#123;
+
+            &#125;
+        &#125;);
+
+        <span class="hljs-comment">// Navigation selected</span>
+        navigationView.setCheckedItem(R.id.nav_alien);
+        navigationView.setNavigationItemSelectedListener(<span class="hljs-keyword">new</span> NavigationView.OnNavigationItemSelectedListener() &#123;
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onNavigationItemSelected</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> MenuItem item)</span> </span>&#123;
+                <span class="hljs-keyword">switch</span> (item.getItemId()) &#123;
+                    <span class="hljs-keyword">case</span> R.id.nav_alien:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;alien&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> R.id.nav_games:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Games&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> R.id.nav_icecream:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;IceCream&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> R.id.nav_camping:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Camping&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> R.id.nav_basketball:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Basketball&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> R.id.nav_cloud:
+                        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Cloud&quot;</span>, Toast.LENGTH_SHORT).show();
+                        <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">default</span>:
+                        <span class="hljs-keyword">break</span>;
+                &#125;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            &#125;
+        &#125;);
+
+        fab.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() &#123;
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>&#123;
+                Snackbar.make(v, <span class="hljs-string">&quot;Waiting for coding&quot;</span>, Snackbar.LENGTH_LONG)
+                        .setAction(<span class="hljs-string">&quot;Undo&quot;</span>, <span class="hljs-keyword">new</span> View.OnClickListener() &#123;
+                            <span class="hljs-meta">@Override</span>
+                            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>&#123;
+                                Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Undo success&quot;</span>,
+                                        Toast.LENGTH_SHORT).show();
+                            &#125;
+                        &#125;).show();
+            &#125;
+        &#125;);
+    &#125;
+
+    <span class="hljs-comment">// Set menu for toolbar</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onCreateOptionsMenu</span><span class="hljs-params">(Menu menu)</span> </span>&#123;
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    &#125;
+
+    <span class="hljs-comment">// ToolBar MenuOption</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onOptionsItemSelected</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> MenuItem item)</span> </span>&#123;
+        <span class="hljs-keyword">switch</span> (item.getItemId()) &#123;
+            <span class="hljs-keyword">case</span> android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> R.id.toolbar_setting:
+                Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for setting&quot;</span>, Toast.LENGTH_SHORT).show();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> R.id.toolbar_about:
+                Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for about&quot;</span>, Toast.LENGTH_SHORT).show();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> R.id.toolbar_exit:
+                Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Waiting for coding for exit&quot;</span>, Toast.LENGTH_SHORT).show();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    &#125;
+&#125;</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/20/View-Model/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">View Model</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/17/Gson/">
+                        <span class="hidden-mobile">Gson</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

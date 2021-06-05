@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Ubuntu Install - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Ubuntu Install
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-01-24 16:11" pubdate>
+        2020-01-24
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      26
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Ubuntu Install</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。</p>
+<p>经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。</p>
+<p>个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
+<li>更加稳定</li>
+<li>更加安全</li>
+<li>不会整天提醒你更新系统</li>
+<li>配置开发环境仅需几行终端指令</li>
+<li>忘记恼人的弹窗广告和流氓软件吧</li>
+</ol>
+<h2 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h2><ol>
+<li>很多软件不支持 Linux，只能在 Windows 上运行</li>
+<li>几乎 90%的游戏都不支持 Linux</li>
+<li>需要学习命令行</li>
+<li>界面丑</li>
+</ol>
+<p>对策：</p>
+<ol>
+<li>Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine</li>
+<li>游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统</li>
+<li>命令行也不是特别难，遇到问题谷歌一下就行了</li>
+<li>至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的</li>
+</ol>
+<h1 id="Ubuntu-的安装"><a href="#Ubuntu-的安装" class="headerlink" title="Ubuntu 的安装"></a>Ubuntu 的安装</h1><p>访问 Ubuntu 官网下载最新的镜像文件</p>
+<p>使用 Etcher 写入 U 盘作为启动盘</p>
+<p>通过 U 盘启动系统</p>
+<p>依照图形化安装程序进行安装</p>
+<p>系统安装好之后就可以开始使用激动人心的 Ubuntu19.10 了！</p>
+<p>（Emmmm，这个之后补图详细介绍吧）</p>
+<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><p>安装好系统之后，还需要进行软件的配置，才能作为日常的使用。</p>
+<p>下面是博主的配置过程，仅供参考。</p>
+<h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>俗话说的好，装好 Linux 后第一件事就是换源。</p>
+<p>由于不同地区网络不同，我用起来很快的源你用可能会很慢，所以这里推荐大家自己百度，多试几个，选一个稳定高速的。</p>
+<p>实际上 Ubuntu 官方源在国内也是可以直接用的，博主就没有更换，默认官方源使用。</p>
+<p>可以通过 speedtest 工具检测网络问题是否是由于网卡驱动导致。</p>
+<h3 id="首先安装-python3"><a href="#首先安装-python3" class="headerlink" title="首先安装 python3"></a>首先安装 python3</h3><pre><code class="hljs shell">sudo apt install python3 -y</code></pre>
+
+<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><pre><code class="hljs shell">sudo apt install python-pip -y
+</code></pre>
+
+<h3 id="安装-speedtest-工具"><a href="#安装-speedtest-工具" class="headerlink" title="安装 speedtest 工具"></a>安装 speedtest 工具</h3><pre><code class="hljs shell">sudo pip install speedtest-cli</code></pre>
+
+<h3 id="进行测速"><a href="#进行测速" class="headerlink" title="进行测速"></a>进行测速</h3><pre><code class="hljs shell">speedtest</code></pre>
+
+<p>安装之后随时都可以使用 speedtest 指令测速，有关该 python 小工具的更多功能请自行谷歌</p>
+<p>如果测速结果正常但是安装软件却很慢说明网卡没有问题，可以考虑更换国内镜像源</p>
+<h2 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h2><p>不管有没有换源，首先更新系统</p>
+<pre><code class="hljs shell">sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+
+<h2 id="安装开发环境"><a href="#安装开发环境" class="headerlink" title="安装开发环境"></a>安装开发环境</h2><h3 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h3><pre><code class="hljs shell">sudo apt install git</code></pre>
+
+<h3 id="安装-java-运行环境"><a href="#安装-java-运行环境" class="headerlink" title="安装 java 运行环境"></a>安装 java 运行环境</h3><h4 id="jre"><a href="#jre" class="headerlink" title="jre"></a>jre</h4><pre><code class="hljs shell">sudo apt install openjdk-8-jre</code></pre>
+
+<h4 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h4><pre><code class="hljs shell">sudo apt install openjdk-8-jdk</code></pre>
+
+<h3 id="安装-gcc-编译器"><a href="#安装-gcc-编译器" class="headerlink" title="安装 gcc 编译器"></a>安装 gcc 编译器</h3><pre><code class="hljs shell">sudo apt install gcc</code></pre>
+
+<h3 id="安装-g-编译器"><a href="#安装-g-编译器" class="headerlink" title="安装 g++编译器"></a>安装 g++编译器</h3><pre><code class="hljs shell">sudo apt install g++</code></pre>
+
+<h3 id="安装-adb-调试工具"><a href="#安装-adb-调试工具" class="headerlink" title="安装 adb 调试工具"></a>安装 adb 调试工具</h3><pre><code class="hljs shell">sudo apt install adb</code></pre>
+
+<h2 id="安装-chrome"><a href="#安装-chrome" class="headerlink" title="安装 chrome"></a>安装 chrome</h2><p>这条终端指令安装的是开源的 chromium</p>
+<pre><code class="hljs shell">sudo apt install chromium-browser</code></pre>
+
+<p>如果想要正式版的 chrome 可以去 chrome 官网下载 deb 包安装</p>
+<h2 id="更换-vim"><a href="#更换-vim" class="headerlink" title="更换 vim"></a>更换 vim</h2><p>系统自带的 vi 太难用了，安装 vim 替换</p>
+<pre><code class="hljs shell">sudo apt install vim</code></pre>
+
+<p>当然你也可以使用<code>gedit</code>或者<code>nano</code></p>
+<h2 id="安装-typora"><a href="#安装-typora" class="headerlink" title="安装 typora"></a>安装 typora</h2><p>装机必备啊，写博客什么的很舒服。</p>
+<p><a target="_blank" rel="noopener" href="https://typora.io/#linux">官网</a>有最新安装命令（以官网为主）</p>
+<pre><code class="hljs shell">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository &#x27;deb https://typora.io/linux ./&#x27;
+sudo apt-get update
+sudo apt-get install typora</code></pre>
+
+<h2 id="网络代理"><a href="#网络代理" class="headerlink" title="网络代理"></a>网络代理</h2><p>自行谷歌</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>在官网下载 deb 包进行安装</p>
+<p>VSC<br>VirtuaBox</p>
+<p>网易云音乐</p>
+<h2 id="等宽字体"><a href="#等宽字体" class="headerlink" title="等宽字体"></a>等宽字体</h2><p>下载 FiraCode 字体文件</p>
+<p>将 otf 字体文件保存到一文件夹内，这里以<code>~/Downloads/FiraCode</code>为例</p>
+<p>在<code>/usr/local/share/fonts/</code>目录下创建自定义文件夹名，这里以<code>FiraCode</code>为例</p>
+<pre><code class="hljs shell">cd /usr/local/hare/fonts/
+mkdir FiraCode</code></pre>
+
+<p>cd 到字体文件目录</p>
+<pre><code class="hljs shell">cd ~/Downloads/FiraCode/</code></pre>
+
+<p>移动字体文件</p>
+<pre><code class="hljs shell">sudo mv * /usr/local/share/fonts/FiraCode/
+// 或者使用cp命令拷贝</code></pre>
+
+<p>切换到字体目录</p>
+<pre><code class="hljs shell">cd /usr/local/share/fonts/FiraCode/</code></pre>
+
+<p>建立字体缓存</p>
+<pre><code class="hljs shell">sudo fc-cache -fv</code></pre>
+
+<h2 id="配置-VSC"><a href="#配置-VSC" class="headerlink" title="配置 VSC"></a>配置 VSC</h2><h3 id="调整字体"><a href="#调整字体" class="headerlink" title="调整字体"></a>调整字体</h3><p>更改字体为 FiraCode</p>
+<p>更改字体大小，粗度</p>
+<h3 id="下载必备扩展包"><a href="#下载必备扩展包" class="headerlink" title="下载必备扩展包"></a>下载必备扩展包</h3><h4 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h4><p><code>One Dark Pro</code><br><code>Material Icon Theme</code><br><code>Material Theme</code></p>
+<h4 id="C-语言"><a href="#C-语言" class="headerlink" title="C 语言"></a>C 语言</h4><p><code>C/C++</code><br><code>Code Runner</code></p>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p><code>Language support for Java ™ for Visual Studio Code</code><br><code>Debugger for Java</code><br><code>Java Test Runner</code><br><code>Java Extension Pack</code></p>
+<h3 id="按需下载其他扩展包"><a href="#按需下载其他扩展包" class="headerlink" title="按需下载其他扩展包"></a>按需下载其他扩展包</h3><h2 id="配置-AndroidStudio"><a href="#配置-AndroidStudio" class="headerlink" title="配置 AndroidStudio"></a>配置 AndroidStudio</h2><p>官网下载安装包</p>
+<p>提取文件到某一目录</p>
+<p>移动文件到/opt</p>
+<pre><code class="hljs shell">mv /opt</code></pre>
+
+<p>cd 到安装目录</p>
+<pre><code class="hljs shell">cd /opt/android-studio/bin</code></pre>
+
+<p>通过指令运行</p>
+<pre><code class="hljs shell">run with ./studio.sh</code></pre>
+
+<p>不嫌烦的话可以使用指令启动软件</p>
+<p>想添加桌面图标的编辑如下文件</p>
+<pre><code class="hljs shell">gedit ~/.local/share/applications/androidstudio.desktop</code></pre>
+
+<p>添加以下内容</p>
+<pre><code class="hljs shell">and add the lines below
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Exec=&quot;/opt/android-studio/bin/studio.sh&quot; %f
+Icon=/opt/android-studio/bin/studio.png
+Categories=Development;IDE;
+Terminal=false
+StartupNotify=true
+StartupWMClass=android-studio</code></pre>
+
+<p>JB 全家桶均可按照此方法安装，具体配置文件建议谷歌</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Ubuntu/">Ubuntu</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/01/Swiperefreshlayout/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Swiperefreshlayout</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/01/24/Random-Numbers-On-C-Language/">
+                        <span class="hidden-mobile">Random Numbers On C Language</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

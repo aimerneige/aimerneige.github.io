@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Random Numbers On C Language - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Random Numbers On C Language
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-01-24 15:58" pubdate>
+        2020-01-24
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      40
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Random Numbers On C Language</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="面向小白的-C-语言随机数详解"><a href="#面向小白的-C-语言随机数详解" class="headerlink" title="面向小白的 C 语言随机数详解"></a>面向小白的 C 语言随机数详解</h1><pre><code class="hljs cpp"><span class="hljs-comment">// 生成一系列0~9之间的随机整数</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;time.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    srand( time(<span class="hljs-literal">NULL</span>) );
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++) &#123;
+    	ret = rand() % <span class="hljs-number">10</span>; <span class="hljs-comment">// ret是一个0~9之间的随机整数</span>
+    	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ret);
+    &#125;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span></code></pre>
+
+<h2 id="这是啥啊？看不懂啊。"><a href="#这是啥啊？看不懂啊。" class="headerlink" title="这是啥啊？看不懂啊。"></a>这是啥啊？看不懂啊。</h2><h3 id="不要着急，我来慢慢讲"><a href="#不要着急，我来慢慢讲" class="headerlink" title="不要着急，我来慢慢讲"></a>不要着急，我来慢慢讲</h3><p>首先是一个最简单的随机数：</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">int</span> ret = rand();
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, ret);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">41</span></code></pre>
+
+<p>这里用到了<code>rand()</code>这个函数，使用这个函数需要引入<code>stdlib.h</code>这个头文件，函数返回一个随机数，生成的随机数都是整数，所以我们把它交给一个<code>int</code>的变量。然后使用<code>printf</code>函数输出即可看到结果。当然，由于我们使用了<code>printf</code>函数，我们还需要引入<code>stdio.h </code>这个头文件。</p>
+<p>但是我们如果多次运行，发现结果始终是 41，这是怎么回事呢？</p>
+<p>这里要了解 C 语言随机数的生成机制：</p>
+<blockquote>
+<p>在 C 语言中,rand()函数可以用来产生随机数，但是这不是真真意义上的随机数，是一个伪随机数，是根据一个数，我们可以称它为种子，为基准以某个递推公式推算出来的一系数，当这系列数很大的时候，就符合正态公布，从而相当于产生了随机数，但这不是真正的随机数，当计算机正常开机后，这个种子的值是定了的，除非你破坏了系统，为了改变这个种子的值，C 提供了 srand()函数，它的原形是 void srand( int a)。</p>
+</blockquote>
+<h2 id="这又是啥啊？看不懂啊。"><a href="#这又是啥啊？看不懂啊。" class="headerlink" title="这又是啥啊？看不懂啊。"></a>这又是啥啊？看不懂啊。</h2><h3 id="没关系，继续向下看"><a href="#没关系，继续向下看" class="headerlink" title="没关系，继续向下看"></a>没关系，继续向下看</h3><p>看这个程序</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">200</span>; i++) &#123;
+        ret = rand();
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ret);
+    &#125;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">41</span> <span class="hljs-number">18467</span> <span class="hljs-number">6334</span> <span class="hljs-number">26500</span> <span class="hljs-number">19169</span> <span class="hljs-number">15724</span> <span class="hljs-number">11478</span> <span class="hljs-number">29358</span> <span class="hljs-number">26962</span> <span class="hljs-number">24464</span> <span class="hljs-number">5705</span> <span class="hljs-number">28145</span> <span class="hljs-number">23281</span> <span class="hljs-number">16827</span> <span class="hljs-number">9961</span> <span class="hljs-number">491</span> <span class="hljs-number">2995</span> <span class="hljs-number">11942</span> <span class="hljs-number">4827</span> <span class="hljs-number">5436</span> <span class="hljs-number">32391</span> <span class="hljs-number">14604</span> <span class="hljs-number">3902</span> <span class="hljs-number">153</span> <span class="hljs-number">292</span> <span class="hljs-number">12382</span> <span class="hljs-number">17421</span> <span class="hljs-number">18716</span> <span class="hljs-number">19718</span> <span class="hljs-number">19895</span> <span class="hljs-number">5447</span> <span class="hljs-number">21726</span> <span class="hljs-number">14771</span> <span class="hljs-number">11538</span> <span class="hljs-number">1869</span> <span class="hljs-number">19912</span> <span class="hljs-number">25667</span> <span class="hljs-number">26299</span> <span class="hljs-number">17035</span> <span class="hljs-number">9894</span> <span class="hljs-number">28703</span> <span class="hljs-number">23811</span> <span class="hljs-number">31322</span> <span class="hljs-number">30333</span> <span class="hljs-number">17673</span> <span class="hljs-number">4664</span> <span class="hljs-number">15141</span> <span class="hljs-number">7711</span> <span class="hljs-number">28253</span> <span class="hljs-number">6868</span> <span class="hljs-number">25547</span> <span class="hljs-number">27644</span> <span class="hljs-number">32662</span> <span class="hljs-number">32757</span> <span class="hljs-number">20037</span> <span class="hljs-number">12859</span> <span class="hljs-number">8723</span> <span class="hljs-number">9741</span> <span class="hljs-number">27529</span> <span class="hljs-number">778</span> <span class="hljs-number">12316</span> <span class="hljs-number">3035</span> <span class="hljs-number">22190</span> <span class="hljs-number">1842</span> <span class="hljs-number">288</span> <span class="hljs-number">30106</span> <span class="hljs-number">9040</span> <span class="hljs-number">8942</span> <span class="hljs-number">19264</span> <span class="hljs-number">22648</span> <span class="hljs-number">27446</span> <span class="hljs-number">23805</span> <span class="hljs-number">15890</span> <span class="hljs-number">6729</span> <span class="hljs-number">24370</span> <span class="hljs-number">15350</span> <span class="hljs-number">15006</span> <span class="hljs-number">31101</span> <span class="hljs-number">24393</span> <span class="hljs-number">3548</span> <span class="hljs-number">19629</span> <span class="hljs-number">12623</span> <span class="hljs-number">24084</span> <span class="hljs-number">19954</span> <span class="hljs-number">18756</span> <span class="hljs-number">11840</span> <span class="hljs-number">4966</span> <span class="hljs-number">7376</span> <span class="hljs-number">13931</span> <span class="hljs-number">26308</span> <span class="hljs-number">16944</span> <span class="hljs-number">32439</span> <span class="hljs-number">24626</span> <span class="hljs-number">11323</span> <span class="hljs-number">5537</span> <span class="hljs-number">21538</span> <span class="hljs-number">16118</span> <span class="hljs-number">2082</span> <span class="hljs-number">22929</span> <span class="hljs-number">16541</span> <span class="hljs-number">4833</span> <span class="hljs-number">31115</span> <span class="hljs-number">4639</span> <span class="hljs-number">29658</span> <span class="hljs-number">22704</span> <span class="hljs-number">9930</span> <span class="hljs-number">13977</span> <span class="hljs-number">2306</span> <span class="hljs-number">31673</span> <span class="hljs-number">22386</span> <span class="hljs-number">5021</span> <span class="hljs-number">28745</span> <span class="hljs-number">26924</span> <span class="hljs-number">19072</span> <span class="hljs-number">6270</span> <span class="hljs-number">5829</span> <span class="hljs-number">26777</span> <span class="hljs-number">15573</span> <span class="hljs-number">5097</span> <span class="hljs-number">16512</span> <span class="hljs-number">23986</span> <span class="hljs-number">13290</span> <span class="hljs-number">9161</span> <span class="hljs-number">18636</span> <span class="hljs-number">22355</span> <span class="hljs-number">24767</span> <span class="hljs-number">23655</span> <span class="hljs-number">15574</span> <span class="hljs-number">4031</span> <span class="hljs-number">12052</span> <span class="hljs-number">27350</span> <span class="hljs-number">1150</span> <span class="hljs-number">16941</span> <span class="hljs-number">21724</span> <span class="hljs-number">13966</span> <span class="hljs-number">3430</span> <span class="hljs-number">31107</span> <span class="hljs-number">30191</span> <span class="hljs-number">18007</span> <span class="hljs-number">11337</span> <span class="hljs-number">15457</span> <span class="hljs-number">12287</span> <span class="hljs-number">27753</span> <span class="hljs-number">10383</span> <span class="hljs-number">14945</span> <span class="hljs-number">8909</span> <span class="hljs-number">32209</span> <span class="hljs-number">9758</span> <span class="hljs-number">24221</span> <span class="hljs-number">18588</span> <span class="hljs-number">6422</span> <span class="hljs-number">24946</span> <span class="hljs-number">27506</span> <span class="hljs-number">13030</span> <span class="hljs-number">16413</span> <span class="hljs-number">29168</span> <span class="hljs-number">900</span> <span class="hljs-number">32591</span> <span class="hljs-number">18762</span> <span class="hljs-number">1655</span> <span class="hljs-number">17410</span> <span class="hljs-number">6359</span> <span class="hljs-number">27624</span> <span class="hljs-number">20537</span> <span class="hljs-number">21548</span> <span class="hljs-number">6483</span> <span class="hljs-number">27595</span> <span class="hljs-number">4041</span> <span class="hljs-number">3602</span> <span class="hljs-number">24350</span> <span class="hljs-number">10291</span> <span class="hljs-number">30836</span> <span class="hljs-number">9374</span> <span class="hljs-number">11020</span> <span class="hljs-number">4596</span> <span class="hljs-number">24021</span> <span class="hljs-number">27348</span> <span class="hljs-number">23199</span> <span class="hljs-number">19668</span> <span class="hljs-number">24484</span> <span class="hljs-number">8281</span> <span class="hljs-number">4734</span> <span class="hljs-number">53</span> <span class="hljs-number">1999</span> <span class="hljs-number">26418</span> <span class="hljs-number">27938</span> <span class="hljs-number">6900</span> <span class="hljs-number">3788</span> <span class="hljs-number">18127</span> <span class="hljs-number">467</span> <span class="hljs-number">3728</span> <span class="hljs-number">14893</span> <span class="hljs-number">24648</span> <span class="hljs-number">22483</span> <span class="hljs-number">17807</span> <span class="hljs-number">2421</span> <span class="hljs-number">14310</span> <span class="hljs-number">6617</span> <span class="hljs-number">22813</span> <span class="hljs-number">9514</span></code></pre>
+
+<p>这一次我们不是输出一次，而是输出 200 次，这时候我们发现，得到的结果有大有小，几乎都不同。<code>rand</code>函数的返回值确实是随机数，但是和上面一样，我们多次运行得到的还是一样的结果。</p>
+<h2 id="为什么一样？问题出在哪了呢？"><a href="#为什么一样？问题出在哪了呢？" class="headerlink" title="为什么一样？问题出在哪了呢？"></a>为什么一样？问题出在哪了呢？</h2><h3 id="随机数种子"><a href="#随机数种子" class="headerlink" title="随机数种子"></a>随机数种子</h3><p>如果单纯从结果来看，我们得到的这些数据确实是随机的（符合正态分布），也就是说，系统会使用系统内部预定义的随机数种子来进行某个复杂的计算得到一系列数，这些数符合正态分布，也就实现了随机数，由于算法是一致的，只要不去破坏系统，系统给定的种子不会改变，那么我们得到的结果就是一样的。</p>
+<p>如果你不想考虑太多的话，我们可以直接使用<code>rand()</code>函数生成随机数，比如这样：</p>
+<pre><code class="hljs cpp"><span class="hljs-comment">// 生成一系列0~9之间的随机整数</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++) &#123;
+    	ret = rand() % <span class="hljs-number">10</span>; <span class="hljs-comment">// ret是一个0~9之间的随机整数</span>
+    	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ret);
+    &#125;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span></code></pre>
+
+<p>这样确实可以实现随机数的功能，唯一的缺点就是得到的结果在每次运行程序都是是一致的。</p>
+<h2 id="那么如何改变种子呢？"><a href="#那么如何改变种子呢？" class="headerlink" title="那么如何改变种子呢？"></a>那么如何改变种子呢？</h2><h3 id="使用srand-函数"><a href="#使用srand-函数" class="headerlink" title="使用srand()函数"></a>使用<code>srand()</code>函数</h3><p>在不破坏系统的情况下，如果我们想要设置自己的种子的话，可以使用<code>srand()</code>函数。</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    srand( <span class="hljs-number">20191218</span> ); <span class="hljs-comment">// 在这里设置种子，你可以填写任何你喜欢的数字</span>
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++) &#123;
+    	ret = rand() % <span class="hljs-number">10</span>; <span class="hljs-comment">// ret是一个0~9之间的随机整数</span>
+    	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ret);
+    &#125;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span></code></pre>
+
+<p>我们得到了和上面不一样的结果，但是，如果我们继续运行的话，结果依然是不变的。</p>
+<p>这时你可能会气急败坏：</p>
+<blockquote>
+<p>从一个圈里跳到另一个圈里？有什么用啊？还不是一样的？难道要我每次运行之前都去手动更改随机数种子吗？</p>
+</blockquote>
+<p>不要生气嘛，至少你学会了如何改变随机数的种子。</p>
+<h2 id="我不想要这样的结果啊，我想要每次运行都能得到不同的结果。"><a href="#我不想要这样的结果啊，我想要每次运行都能得到不同的结果。" class="headerlink" title="我不想要这样的结果啊，我想要每次运行都能得到不同的结果。"></a>我不想要这样的结果啊，我想要每次运行都能得到不同的结果。</h2><h3 id="不要着急，这里有完美的解决方案"><a href="#不要着急，这里有完美的解决方案" class="headerlink" title="不要着急，这里有完美的解决方案"></a>不要着急，这里有完美的解决方案</h3><p>首先我们要先认识一下<code>time()</code>函数</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;time.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, time(<span class="hljs-literal">NULL</span>));
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<p>输出结果</p>
+<pre><code class="hljs cpp"><span class="hljs-number">1576683441</span></code></pre>
+
+<p>调用<code>time()</code>后，我们得到了一个非常大的数字。</p>
+<h2 id="这是什么啊？"><a href="#这是什么啊？" class="headerlink" title="这是什么啊？"></a>这是什么啊？</h2><h3 id="当前日历时间"><a href="#当前日历时间" class="headerlink" title="当前日历时间"></a>当前日历时间</h3><blockquote>
+<p>函数原型: time_t time(time_t *timer)</p>
+<p>参数说明: timer=NULL 时得到当前日历时间（从 1970-01-01 00:00:00 到现在的秒数），timer=时间数值时，用于设置日历时间，time_t 是一个 unsigned long 类型。如果 timer 不为空，则返回值也存储在变量 timer 中。</p>
+<p>函数功能: 得到当前日历时间或者设置日历时间</p>
+<p>函数返回: 当前日历时间</p>
+</blockquote>
+<p>也就是说，调用<code>time(NULL)</code>会得到当前时间，回到之前的问题，每次运行程序的时间一般是不同的，如果我们使用<code>time(NULL)</code>作为种子的话，每次运行程序计算机都会生成一个不同的数字给我们，那么我们就可以得到不同的随机数了。</p>
+<h2 id="原来如此，但是如果我想得到固定范围内的随机数改怎么做呢？"><a href="#原来如此，但是如果我想得到固定范围内的随机数改怎么做呢？" class="headerlink" title="原来如此，但是如果我想得到固定范围内的随机数改怎么做呢？"></a>原来如此，但是如果我想得到固定范围内的随机数改怎么做呢？</h2><h3 id="取余"><a href="#取余" class="headerlink" title="取余"></a>取余</h3><p>我们得到的数都是比较大的整数，如果我们需要特定范围内的数，直接进行取余操作就可以了。</p>
+<p>例如：</p>
+<pre><code class="hljs cpp">rand() % <span class="hljs-number">100</span>         <span class="hljs-comment">// 0~99</span></code></pre>
+
+<pre><code class="hljs cpp">rand() % <span class="hljs-number">20</span>          <span class="hljs-comment">// 0~19</span></code></pre>
+
+<pre><code class="hljs cpp">rand() % <span class="hljs-number">40</span> + <span class="hljs-number">1</span>      <span class="hljs-comment">// 1~40</span></code></pre>
+
+<pre><code class="hljs cpp">rand() % <span class="hljs-number">41</span> - <span class="hljs-number">10</span>     <span class="hljs-comment">// -10~30</span></code></pre>
+
+<p>其他依次类推。</p>
+<h2 id="好了，我学会了！"><a href="#好了，我学会了！" class="headerlink" title="好了，我学会了！"></a>好了，我学会了！</h2><h3 id="不要急，还有呢。"><a href="#不要急，还有呢。" class="headerlink" title="不要急，还有呢。"></a>不要急，还有呢。</h3><p>到这里基本的操作应该都结束了，但是如果你觉得这样就结束的话，那真是：</p>
+<blockquote>
+<p>Too young too simple.</p>
+</blockquote>
+<p>（狗头保命）</p>
+<p>为了便于使用，当然是要封装成函数来调用啊！</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">randNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span></span>
+<span class="hljs-function"></span>&#123;
+    end++;
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">int</span> det;
+    det = end - start;
+    ret = rand() % (det) + start;
+    <span class="hljs-keyword">return</span> ret;
+&#125;</code></pre>
+
+<p>这样用起来是不是舒服很多了呢？</p>
+<p>好了，本教程到此结束。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C-C/">C/C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/01/24/Ubuntu-Install/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Ubuntu Install</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/01/24/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;light&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Love Life, Code and ACG">
+  <meta name="author" content="Aimer Neige">
+  <meta name="keywords" content="">
+  <title>Using Pillow To Convert Comic To pdf Quickly - AimerNeige&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 90vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AimerNeige's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Using Pillow To Convert Comic To pdf Quickly
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-27 23:36" pubdate>
+        2020-05-27
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       minutes
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Using Pillow To Convert Comic To pdf Quickly</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="使用-pillow-库快速将漫画转化为-pdf-便于转发与阅读"><a href="#使用-pillow-库快速将漫画转化为-pdf-便于转发与阅读" class="headerlink" title="使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读"></a>使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。</p>
+<p>查阅资料，我们会发现 <a target="_blank" rel="noopener" href="https://github.com/python-pillow/Pillow">Pillow</a> 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。</p>
+<p>简单地查看下 <a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/">官方文档</a> 。</p>
+<p>emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。</p>
+<p>随便查了下，发现了这个：</p>
+<blockquote>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+
+image1 = Image.open(<span class="hljs-string">r&#x27;C:\Users\Ron\Desktop\Test\image1.png&#x27;</span>)
+image2 = Image.open(<span class="hljs-string">r&#x27;C:\Users\Ron\Desktop\Test\image2.png&#x27;</span>)
+image3 = Image.open(<span class="hljs-string">r&#x27;C:\Users\Ron\Desktop\Test\image3.png&#x27;</span>)
+image4 = Image.open(<span class="hljs-string">r&#x27;C:\Users\Ron\Desktop\Test\image4.png&#x27;</span>)
+
+im1 = image1.convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+im2 = image2.convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+im3 = image3.convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+im4 = image4.convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+
+imagelist = [im2,im3,im4]
+
+im1.save(<span class="hljs-string">r&#x27;C:\Users\Ron\Desktop\Test\myImages.pdf&#x27;</span>,save_all=<span class="hljs-literal">True</span>, append_images=imagelist)</code></pre>
+
+<p>来源： <a target="_blank" rel="noopener" href="https://datatofish.com/images-to-pdf-python/">https://datatofish.com/images-to-pdf-python/</a></p>
+</blockquote>
+<p>不需要仔细看又臭又长的官方文档了，nice！</p>
+<p>了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!</p>
+<p><strong>代码很简单，直接上源码了：</strong></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>项目文件目录：</p>
+<pre><code class="hljs haml">-<span class="ruby"> comic/ <span class="hljs-comment"># 包含了漫画的图片</span></span>
+<span class="ruby">	- example_001.png</span>
+<span class="ruby">	- example_002.png</span>
+<span class="ruby">	- example_003.png</span>
+<span class="ruby">	  ...</span>
+<span class="ruby">	- example_202.png</span>
+<span class="ruby">- output/ <span class="hljs-comment"># 保存输出的pdf文件</span></span>
+<span class="ruby">	- ろりっぽいの.pdf</span>
+<span class="ruby">main.py</span></code></pre>
+
+<p>main.py</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">import</span> os
+
+<span class="hljs-comment"># change these config</span>
+DOC_NAME    = <span class="hljs-string">&#x27;ろりっぽいの&#x27;</span> <span class="hljs-comment"># 输出pdf文件的名字</span>
+COMIC_PATH  = <span class="hljs-string">&#x27;comic/&#x27;</span>       <span class="hljs-comment"># 漫画的保存路径</span>
+SAVE_PATH   = <span class="hljs-string">&#x27;output/&#x27;</span>      <span class="hljs-comment"># pdf输出路径</span>
+USE_ABSLUTE = <span class="hljs-literal">False</span>          <span class="hljs-comment"># 是否使用绝对路径</span>
+PAGE_NUMBER = <span class="hljs-number">220</span>            <span class="hljs-comment"># 漫画的页数</span>
+NAME_BEFORE = <span class="hljs-string">&#x27;example_&#x27;</span>     <span class="hljs-comment"># 漫画图片文件数字前的内容</span>
+FILE_TYPE   = <span class="hljs-string">&#x27;.png&#x27;</span>         <span class="hljs-comment"># 漫画文件的文件类型</span>
+FILL_NUMBER = <span class="hljs-number">2</span>              <span class="hljs-comment"># 填充的数字的个数</span>
+
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> USE_ABSLUTE:
+    DIR_PATH = os.path.dirname(os.path.realpath(__file__)) + <span class="hljs-string">&#x27;/&#x27;</span>
+    COMIC_PATH = DIR_PATH + COMIC_PATH
+    SAVE_PATH = DIR_PATH + SAVE_PATH
+
+
+cover_path = COMIC_PATH + NAME_BEFORE + <span class="hljs-string">&#x27;1&#x27;</span>.zfill(FILL_NUMBER) + FILE_TYPE
+cover = Image.open(cover_path).convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+
+comic_images_list = []
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>, PAGE_NUMBER + <span class="hljs-number">1</span>):
+    comic_image_path = COMIC_PATH + NAME_BEFORE + str(i).zfill(FILL_NUMBER) + FILE_TYPE
+    comic_image = Image.open(comic_image_path).convert(<span class="hljs-string">&#x27;RGB&#x27;</span>)
+    comic_images_list.append(comic_image)
+
+pdf_file_path = SAVE_PATH + DOC_NAME + <span class="hljs-string">&#x27;.pdf&#x27;</span>
+
+cover.save(pdf_file_path, save_all=<span class="hljs-literal">True</span>, append_images=comic_images_list)</code></pre>
+
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>唔，能打开我的文章并看懂我上面在说什么的读者应该知道如何使用吧，甚至可以自己手撸一个功能相同的软件出来，不过这里还是稍微解释一下我的代码。</p>
+<p>使用的话，代码部分不需要修改，直接按照注释，修改前面的几个全局变量就可以了。</p>
+<p>唯一需要说明的是最后一个变量 <code>__FILL_NUMBER__</code> ：</p>
+<p>由于大部分的漫(ben)画(zi)一般都是 <code>001.jpg, 002.jpg, 003.jpg, ... , 102.jpg</code> 这样或者 <code>01.png, 02.png, 03.png, ... , 42.png</code> 这样的命名规则，所以这里我使用了 <code>zfill</code> 这个函数来快速将循环数转化为文件名，而这个参数就是给 <code>zfill</code> 这个函数用的。</p>
+<p>如果你不清楚 <code>zfill</code> 这个函数是干什么的。这里我准备了几个网站。</p>
+<p><a target="_blank" rel="noopener" href="https://python-reference.readthedocs.io/en/latest/docs/str/zfill.html">https://python-reference.readthedocs.io/en/latest/docs/str/zfill.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.w3schools.com/python/ref_string_zfill.asp">https://www.w3schools.com/python/ref_string_zfill.asp</a></p>
+<h2 id="软件效率"><a href="#软件效率" class="headerlink" title="软件效率"></a>软件效率</h2><p>值得一提的是转化效率，200 多页，大概 100 多 M 的漫(ben)画(zi)转化只用了不到 10 秒钟，转化后 pdf 文件只有 60 多 M，还有压缩效果，nice。pillow 牛逼就完事了。<del>可以使用 iPad 继续愉快的看漫(ben)画(zi)了。</del></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本来想上传 GitHub 的，但是代码太简单了，干脆直接水一篇博客算了。</p>
+<p>话说如果把漫(ben)画(zi)连代码一起打包发到 GitHub 上会不会被 ban 帐号啊？（听说 GitHub 在打击网盘行为？）<del>传播淫秽物品罪了解一下？</del></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/28/PicGo/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PicGo</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/13/20-Python-Skills/">
+                        <span class="hidden-mobile">20 Python Skills</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 1,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
