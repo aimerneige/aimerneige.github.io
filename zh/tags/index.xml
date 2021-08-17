@@ -8,15 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>content</title>
-      <link>https://aimerneige.com/zh/tags/content/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/tags/content/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>hugo</title>
       <link>https://aimerneige.com/zh/tags/hugo/</link>
       <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
@@ -26,11 +17,11 @@
     </item>
     
     <item>
-      <title>static site generator</title>
-      <link>https://aimerneige.com/zh/tags/static-site-generator/</link>
+      <title>site</title>
+      <link>https://aimerneige.com/zh/tags/site/</link>
       <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/tags/static-site-generator/</guid>
+      <guid>https://aimerneige.com/zh/tags/site/</guid>
       <description></description>
     </item>
     

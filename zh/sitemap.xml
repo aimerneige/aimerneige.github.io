@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/zh/tags/content/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/zh/categories/development/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
@@ -98,13 +93,18 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/zh/categories/publishing/</loc>
+    <loc>https://aimerneige.com/zh/tags/site/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/tags/static-site-generator/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/site/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/site/"
+                />
   </url>
   
   <url>
@@ -119,6 +119,21 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/web/</loc>
+    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/web/"
                 />
   </url>
   

@@ -95,6 +95,16 @@
   <url>
     <loc>https://aimerneige.com/en/tags/site/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/site/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/site/"
+                />
   </url>
   
   <url>
@@ -115,6 +125,16 @@
   <url>
     <loc>https://aimerneige.com/en/categories/web/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/web/"
+                />
   </url>
   
   <url>
