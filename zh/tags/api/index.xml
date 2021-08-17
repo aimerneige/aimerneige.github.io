@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>web on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/categories/web/</link>
-    <description>Recent content in web on AimerNeige&#39;s Blog</description>
+    <title>api on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/api/</link>
+    <description>Recent content in api on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/web/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello Hugo</title>
-      <link>https://aimerneige.com/zh/post/hello-hugo/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/hello-hugo/</guid>
-      <description>安装和配置 hugo</description>
-    </item>
-    
+    <lastBuildDate>Sat, 30 Jan 2021 20:17:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 nodejs 快速为 Android 程序构建 API</title>
       <link>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</link>
