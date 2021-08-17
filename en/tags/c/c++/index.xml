@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>C/C&#43;&#43; on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/c/c&#43;&#43;/</link>
+    <description>Recent content in C/C&#43;&#43; on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aimerneige.com/en/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C Function Pointer</title>
+      <link>https://aimerneige.com/en/post/c-function-point/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/c-function-point/</guid>
+      <description>函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
+文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/
+函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。
+函数指针的定义 下面的语句定义了一个指向函数的指针变量 p。其中 void *表示返回值，(*p) 表示 p 是一个指针变量， (int, float) 是函数的参数列表。
+void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的类型为 void * (*)(int, float)
+所以函数指针的定义方法为：
+函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。
+即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
+void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明</description>
+    </item>
+    
+  </channel>
+</rss>
