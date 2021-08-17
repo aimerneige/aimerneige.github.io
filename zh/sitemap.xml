@@ -138,6 +138,21 @@
   </url>
   
   <url>
+    <loc>https://aimerneige.com/zh/post/c-function-point/</loc>
+    <lastmod>2020-11-04T21:00:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/program/</loc>
+    <lastmod>2020-11-04T21:00:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/tags/teach/</loc>
+    <lastmod>2020-11-04T21:00:39+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://aimerneige.com/zh/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -163,6 +178,10 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/archives/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/tags/c/c&#43;&#43;/</loc>
   </url>
   
   <url>

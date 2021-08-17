@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>C/C&#43;&#43; on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/tags/c/c&#43;&#43;/</link>
-    <description>Recent content in C/C&#43;&#43; on AimerNeige&#39;s Blog</description>
+    <title>Teach on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/teach/</link>
+    <description>Recent content in Teach on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://aimerneige.com/zh/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Nov 2020 21:00:39 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/teach/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C 函数指针</title>
       <link>https://aimerneige.com/zh/post/c-function-point/</link>
