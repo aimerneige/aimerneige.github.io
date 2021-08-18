@@ -49,5 +49,19 @@ gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&amp;#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</description>
     </item>
     
+    <item>
+      <title>GCC 基础</title>
+      <link>https://aimerneige.com/zh/post/gcc-basic/</link>
+      <pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/gcc-basic/</guid>
+      <description>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
+GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
+GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
+GCC 的 C 编译器 是 gcc，其命令格式为 :
+Usage: gcc [options] file... GCC 下默认文扩展名的含义：
+   文件扩展名 GCC 所理解的含义     *.</description>
+    </item>
+    
   </channel>
 </rss>

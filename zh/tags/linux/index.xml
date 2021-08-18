@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/linux/</link>
+    <description>Recent content in Linux on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Oct 2020 22:37:01 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCC 基础</title>
+      <link>https://aimerneige.com/zh/post/gcc-basic/</link>
+      <pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/gcc-basic/</guid>
+      <description>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
+GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
+GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
+GCC 的 C 编译器 是 gcc，其命令格式为 :
+Usage: gcc [options] file... GCC 下默认文扩展名的含义：
+   文件扩展名 GCC 所理解的含义     *.</description>
+    </item>
+    
+  </channel>
+</rss>
