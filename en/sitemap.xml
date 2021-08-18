@@ -198,6 +198,31 @@
   </url>
   
   <url>
+    <loc>https://aimerneige.com/en/post/hello-world/</loc>
+    <lastmod>2020-01-24T15:50:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/categories/others/</loc>
+    <lastmod>2020-01-24T15:50:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/others/</loc>
+    <lastmod>2020-01-24T15:50:47+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://aimerneige.com/en/draft/android_base64/</loc>
   </url>
   

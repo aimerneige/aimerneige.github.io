@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Others on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/categories/others/</link>
+    <description>Recent content in Others on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jan 2020 15:50:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://aimerneige.com/en/post/hello-world/</link>
+      <pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/hello-world/</guid>
+      <description>Welcome Welcome!
+This is my first Blog and I am glad it works. Before then, I have tried many times to build a blog. But all of them failed. That made me really upset and there has been a long time before I try it again today.
+I had meet many problems and I think I can make an article to help others likes me to build their own blog.</description>
+    </item>
+    
+  </channel>
+</rss>
