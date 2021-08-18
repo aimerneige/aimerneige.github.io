@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>写给小白的 win10 使用技巧 | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="windows" />
+<meta name="description" content="本文章项目地址 https://github.com/AimerNeige/Tutorial.git
+ 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
+杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
+ 但是，没有杀毒软件的话，电脑中毒怎么办啊？
+ 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+ 删了它们我怎么清理电脑垃圾啊？
+ 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+ 没有软件管家我不会下载软件了怎么办？
+ 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+ 没有电脑管家我如何管理系统自启动啊？
+ 禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/tips-using-windows10/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.09c108e3264e89b014be5846c6d4400805855e88ac39bf8d749068428ba25760.js" integrity="sha256-CcEI4yZOibAUvlhGxtRACAWFXoisOb&#43;NdJBoQouiV2A="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/tips-using-windows10/" />
+<meta property="og:title" content="写给小白的 win10 使用技巧" />
+<meta property="og:description" content="本文章项目地址 https://github.com/AimerNeige/Tutorial.git
+ 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
+杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
+ 但是，没有杀毒软件的话，电脑中毒怎么办啊？
+ 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+ 删了它们我怎么清理电脑垃圾啊？
+ 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+ 没有软件管家我不会下载软件了怎么办？
+ 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+ 没有电脑管家我如何管理系统自启动啊？
+ 禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/tips-using-windows10/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-08-26T22:46:52&#43;08:00" />
+<meta property="article:modified_time" content="2020-08-26T22:46:52&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="写给小白的 win10 使用技巧"/>
+<meta name="twitter:description" content="本文章项目地址 https://github.com/AimerNeige/Tutorial.git
+ 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
+杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
+ 但是，没有杀毒软件的话，电脑中毒怎么办啊？
+ 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+ 删了它们我怎么清理电脑垃圾啊？
+ 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+ 没有软件管家我不会下载软件了怎么办？
+ 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+ 没有电脑管家我如何管理系统自启动啊？
+ 禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "写给小白的 win10 使用技巧",
+      "item": "https://aimerneige.com/zh/post/tips-using-windows10/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "写给小白的 win10 使用技巧",
+  "name": "写给小白的 win10 使用技巧",
+  "description": "本文章项目地址 https://github.com/AimerNeige/Tutorial.git\n 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。\n主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。\n杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。\n 但是，没有杀毒软件的话，电脑中毒怎么办啊？\n 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。\n 删了它们我怎么清理电脑垃圾啊？\n 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。\n 没有软件管家我不会下载软件了怎么办？\n 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。\n 没有电脑管家我如何管理系统自启动啊？\n 禁用开机自启动：\n启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。",
+  "keywords": [
+    "windows"
+  ],
+  "articleBody": " 本文章项目地址 https://github.com/AimerNeige/Tutorial.git\n 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。\n主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。\n杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。\n 但是，没有杀毒软件的话，电脑中毒怎么办啊？\n 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。\n 删了它们我怎么清理电脑垃圾啊？\n 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。\n 没有软件管家我不会下载软件了怎么办？\n 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。\n 没有电脑管家我如何管理系统自启动啊？\n 禁用开机自启动：\n启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。\n设置开机自启动：\n按住 Win 键（左下角有 windows 徽标的按键）然后按 R, 在弹出的运行框中输入 shell:startup 将软件的 快捷方式 放在这个目录下即可。\n 我想要那个网速显示的悬浮窗！！\n 这个软件可能会帮到你 https://github.com/zhongyang219/TrafficMonitor。\n 没有加速球电脑会不会卡啊？\n 首先，如果你的电脑配置不是很差的话，写代码基本上不会发生卡顿现象，加速球的用处并不大，相反的，它还会占用系统资源，反而有可能导致电脑卡顿。\n 你说的有道理，但是我就是想点那个加速球怎么办啊？\n 慢慢习惯吧。\n 文章好棒，但是我就是只要不点加速球，不发射小火箭就浑身难受，习惯不了啊怎么办？\n ，，，，保安呢？保安在那里啊！这里有人捣乱，砸场子呢！！！\n浏览器 浏览器首推 Chrome 你可以在 Chrome 的官网 https://www.google.com/chrome/ 快速下载它，同时，我也推荐以下几款浏览器：\nChromium https://www.chromium.org/ Chrome 的开源版。\nCentBrowser 百分浏览器 http://www.centbrowser.com/ Chromium 的一个分支版本，有一些额外的小功能。\n当然，如果你无法访问谷歌的话，上面这几款浏览器没有同步还是很难受的，你同样可以选择这几款：\nFirefox https://www.mozilla.org/zh-CN/firefox/\n 注意不要下载国内定制版 https://www.firefox.com.cn/ FireFox (AD Pro Plus For China User)\n Edge https://www.microsoft.com/zh-cn/edge 注意是新版 Edge 不是 Win10 自带的那个。\n此外还有 Firefox Dev 版本 https://www.mozilla.org/zh-CN/firefox/developer/ 可以用来调试 web 程序。\n至于其他浏览器，诸如 QQ 浏览器，猎豹急速浏览器，360 安全浏览器之类的软件请立即卸载。\n更多 大概就说这么多吧，只要不安装国产的垃圾杀毒软件和浏览器，你的电脑使用起来绝对会很舒服。\n本仓库保持更新，想到其他内容之后会添加。\n如果你有好的内容欢迎 pr。\nhttps://github.com/AimerNeige/Tutorial.git\n",
+  "wordCount" : "135",
+  "inLanguage": "zh",
+  "datePublished": "2020-08-26T22:46:52+08:00",
+  "dateModified": "2020-08-26T22:46:52+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/tips-using-windows10/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/friends/" title="朋友">
+                    <span>朋友</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      写给小白的 win10 使用技巧
+    </h1>
+    <div class="post-meta">August 26, 2020&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/tips-using-windows10.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%bd%bf%e7%94%a8%e6%8a%80%e5%b7%a7" aria-label="计算机使用技巧">计算机使用技巧</a><ul>
+                        
+                <li>
+                    <a href="#%e6%9d%80%e6%af%92%e8%bd%af%e4%bb%b6" aria-label="杀毒软件">杀毒软件</a></li>
+                <li>
+                    <a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" aria-label="浏览器">浏览器</a></li>
+                <li>
+                    <a href="#%e6%9b%b4%e5%a4%9a" aria-label="更多">更多</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><blockquote>
+<p>本文章项目地址 <a href="https://github.com/AimerNeige/Tutorial.git">https://github.com/AimerNeige/Tutorial.git</a></p>
+</blockquote>
+<h1 id="计算机使用技巧">计算机使用技巧<a hidden class="anchor" aria-hidden="true" href="#计算机使用技巧">#</a></h1>
+<p>如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。</p>
+<p>主要介绍 <code>Windows10</code> 的一些使用技巧，如果你是 <code>mac</code> 用户，请自行查阅其他文章，但是如果你是 <code>Linux</code> 用户，我觉得你应该不需要看我的文章。</p>
+<h2 id="杀毒软件">杀毒软件<a hidden class="anchor" aria-hidden="true" href="#杀毒软件">#</a></h2>
+<p>或许你会在较旧的电脑上见到诸如<em>360 安全卫士</em>，<em>金山毒霸</em>，<em>电脑管家</em>等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 <strong>务必</strong> <strong>立即</strong> 删除它们。</p>
+<blockquote>
+<p>但是，没有杀毒软件的话，电脑中毒怎么办啊？</p>
+</blockquote>
+<p>如果你的电脑是刚到手的笔记本，我相信你的预装系统是 <code>Windows10</code>。 而 <code>windows</code> 本身会预装 <code>Windows Defender</code> ，对于一般的病毒，<code>Windows Defender</code> 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 <code>火绒杀毒</code> <a href="https://www.huorong.cn/">https://www.huorong.cn/</a> 。这款软件的个人版完全免费而且没用任何广告弹窗。</p>
+<blockquote>
+<p>删了它们我怎么清理电脑垃圾啊？</p>
+</blockquote>
+<p>在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 <code>CCleaner</code> <a href="https://www.ccleaner.com/">https://www.ccleaner.com/</a>。</p>
+<blockquote>
+<p>没有软件管家我不会下载软件了怎么办？</p>
+</blockquote>
+<p>要养成去官网下载软件的好习惯，比如我们想要安装 <code>QQ</code> 就使用搜索引擎搜索 <code>QQ</code> 的官网，找到 <code>QQ</code> 的官网 <a href="http://im.qq.com/">http://im.qq.com/</a> ，然后在官网下载安装包。类是地，我们同样可以在 <code>Visual Studio Code</code> 的官网 <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> 上下载 <code>Visual Studio Code</code> 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。</p>
+<blockquote>
+<p>没有电脑管家我如何管理系统自启动啊？</p>
+</blockquote>
+<p>禁用开机自启动：<br>
+启动任务管理器，点击 <code>启动</code> 找到想要禁用的自启项，右击，选择禁用。</p>
+<p>设置开机自启动：<br>
+按住 <code>Win</code> 键（左下角有 windows 徽标的按键）然后按 <code>R</code>, 在弹出的运行框中输入 <code>shell:startup</code> 将软件的 <strong>快捷方式</strong> 放在这个目录下即可。</p>
+<blockquote>
+<p>我想要那个网速显示的悬浮窗！！</p>
+</blockquote>
+<p>这个软件可能会帮到你 <a href="https://github.com/zhongyang219/TrafficMonitor">https://github.com/zhongyang219/TrafficMonitor</a>。</p>
+<blockquote>
+<p>没有加速球电脑会不会卡啊？</p>
+</blockquote>
+<p>首先，如果你的电脑配置不是很差的话，写代码基本上不会发生卡顿现象，加速球的用处并不大，相反的，它还会占用系统资源，反而有可能导致电脑卡顿。</p>
+<blockquote>
+<p>你说的有道理，但是我就是想点那个加速球怎么办啊？</p>
+</blockquote>
+<p>慢慢习惯吧。</p>
+<blockquote>
+<p>文章好棒，但是我就是只要不点加速球，不发射小火箭就浑身难受，习惯不了啊怎么办？</p>
+</blockquote>
+<p>，，，，保安呢？保安在那里啊！这里有人捣乱，砸场子呢！！！</p>
+<h2 id="浏览器">浏览器<a hidden class="anchor" aria-hidden="true" href="#浏览器">#</a></h2>
+<p>浏览器首推 <code>Chrome</code> 你可以在 Chrome 的官网 <a href="https://www.google.com/chrome/">https://www.google.com/chrome/</a> 快速下载它，同时，我也推荐以下几款浏览器：</p>
+<p>Chromium <a href="https://www.chromium.org/">https://www.chromium.org/</a> Chrome 的开源版。</p>
+<p>CentBrowser 百分浏览器 <a href="http://www.centbrowser.com/">http://www.centbrowser.com/</a> Chromium 的一个分支版本，有一些额外的小功能。</p>
+<p>当然，如果你无法访问谷歌的话，上面这几款浏览器没有同步还是很难受的，你同样可以选择这几款：</p>
+<p>Firefox <a href="https://www.mozilla.org/zh-CN/firefox/">https://www.mozilla.org/zh-CN/firefox/</a></p>
+<blockquote>
+<p>注意不要下载国内定制版 <code>https://www.firefox.com.cn/</code> FireFox (AD Pro Plus For China User)</p>
+</blockquote>
+<p>Edge <a href="https://www.microsoft.com/zh-cn/edge">https://www.microsoft.com/zh-cn/edge</a> 注意是新版 <code>Edge</code> 不是 Win10 自带的那个。</p>
+<p>此外还有 Firefox Dev 版本 <a href="https://www.mozilla.org/zh-CN/firefox/developer/">https://www.mozilla.org/zh-CN/firefox/developer/</a> 可以用来调试 web 程序。</p>
+<p>至于其他浏览器，诸如 QQ 浏览器，猎豹急速浏览器，360 安全浏览器之类的软件请立即卸载。</p>
+<h2 id="更多">更多<a hidden class="anchor" aria-hidden="true" href="#更多">#</a></h2>
+<p>大概就说这么多吧，只要不安装国产的垃圾杀毒软件和浏览器，你的电脑使用起来绝对会很舒服。</p>
+<p>本仓库保持更新，想到其他内容之后会添加。</p>
+<p>如果你有好的内容欢迎 pr。</p>
+<p><a href="https://github.com/AimerNeige/Tutorial.git">https://github.com/AimerNeige/Tutorial.git</a></p>
+
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/windows/">windows</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/zh/post/deploy-web-page-with-nginx/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>使用 Nginx 搭建静态网页服务</span>
+  </a>
+</nav>
+
+  </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
