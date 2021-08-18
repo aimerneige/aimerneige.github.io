@@ -138,6 +138,98 @@
   </url>
   
   <url>
+    <loc>https://aimerneige.com/en/draft/android_base64/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/android_studio/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/android_studio_read_time_out/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/angular/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/c#/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/c_sharp_operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/c_thread_function/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/c_upgrade/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/connect_google_com_on_windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/datastruct_binarytree/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/git_github_basic/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/graph/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/how_to_save_password_in_password/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/linux_chinese/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/shell/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/springboot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/submodule/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/tcp_ip/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/transfer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/vue/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/web_beginning/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/windowssoftware/</loc>
+  </url>
+  
+  <url>
     <loc>https://aimerneige.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -163,6 +255,10 @@
                 hreflang="en"
                 href="https://aimerneige.com/en/archives/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/draft/</loc>
   </url>
   
   <url>

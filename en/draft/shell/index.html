@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Shell 学习笔记  本文章内容整理自 菜鸟教程 RUNOOB.COM
+本文章版权均归 菜鸟教程 所有 (有删改)
+https://www.runoob.com/linux/linux-shell.html
+ Hello World #!/bin/bash echo &#34;Hello World!&#34; 变量 定义变量 定义变量时，变量名不加美元符号
+your_name=&#34;AimerNeige&#34; 命名规则  命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用 bash 里的关键字（可用 help 命令查看保留关键字）。  隐式赋值 for file in `ls /etc` 或 for file in $(ls /etc) 使用变量 使用一个定义过的变量，只要在变量名前面加美元符号即可
+your_name=&#34;AimerNeige&#34; echo $your_name echo ${your_name} 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
+for skill in Ada Coffe Action Java; do echo &#34;I am good at ${skill}Script&#34; done 如果不给 skill 变量加花括号，写成 echo &quot;I am good at $skillScript&quot;，解释器就会把 $skillScript 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/draft/shell/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.09c108e3264e89b014be5846c6d4400805855e88ac39bf8d749068428ba25760.js" integrity="sha256-CcEI4yZOibAUvlhGxtRACAWFXoisOb&#43;NdJBoQouiV2A="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/draft/shell/" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="Shell 学习笔记  本文章内容整理自 菜鸟教程 RUNOOB.COM
+本文章版权均归 菜鸟教程 所有 (有删改)
+https://www.runoob.com/linux/linux-shell.html
+ Hello World #!/bin/bash echo &#34;Hello World!&#34; 变量 定义变量 定义变量时，变量名不加美元符号
+your_name=&#34;AimerNeige&#34; 命名规则  命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用 bash 里的关键字（可用 help 命令查看保留关键字）。  隐式赋值 for file in `ls /etc` 或 for file in $(ls /etc) 使用变量 使用一个定义过的变量，只要在变量名前面加美元符号即可
+your_name=&#34;AimerNeige&#34; echo $your_name echo ${your_name} 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
+for skill in Ada Coffe Action Java; do echo &#34;I am good at ${skill}Script&#34; done 如果不给 skill 变量加花括号，写成 echo &quot;I am good at $skillScript&quot;，解释器就会把 $skillScript 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/draft/shell/" /><meta property="article:section" content="draft" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Shell 学习笔记  本文章内容整理自 菜鸟教程 RUNOOB.COM
+本文章版权均归 菜鸟教程 所有 (有删改)
+https://www.runoob.com/linux/linux-shell.html
+ Hello World #!/bin/bash echo &#34;Hello World!&#34; 变量 定义变量 定义变量时，变量名不加美元符号
+your_name=&#34;AimerNeige&#34; 命名规则  命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用 bash 里的关键字（可用 help 命令查看保留关键字）。  隐式赋值 for file in `ls /etc` 或 for file in $(ls /etc) 使用变量 使用一个定义过的变量，只要在变量名前面加美元符号即可
+your_name=&#34;AimerNeige&#34; echo $your_name echo ${your_name} 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
+for skill in Ada Coffe Action Java; do echo &#34;I am good at ${skill}Script&#34; done 如果不给 skill 变量加花括号，写成 echo &quot;I am good at $skillScript&quot;，解释器就会把 $skillScript 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Drafts",
+      "item": "https://aimerneige.com/en/draft/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "https://aimerneige.com/en/draft/shell/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Shell 学习笔记  本文章内容整理自 菜鸟教程 RUNOOB.COM\n本文章版权均归 菜鸟教程 所有 (有删改)\nhttps://www.runoob.com/linux/linux-shell.html\n Hello World #!/bin/bash echo \u0026#34;Hello World!\u0026#34; 变量 定义变量 定义变量时，变量名不加美元符号\nyour_name=\u0026#34;AimerNeige\u0026#34; 命名规则  命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用 bash 里的关键字（可用 help 命令查看保留关键字）。  隐式赋值 for file in `ls /etc` 或 for file in $(ls /etc) 使用变量 使用一个定义过的变量，只要在变量名前面加美元符号即可\nyour_name=\u0026#34;AimerNeige\u0026#34; echo $your_name echo ${your_name} 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：\nfor skill in Ada Coffe Action Java; do echo \u0026#34;I am good at ${skill}Script\u0026#34; done 如果不给 skill 变量加花括号，写成 echo \u0026quot;I am good at $skillScript\u0026quot;，解释器就会把 $skillScript 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。",
+  "keywords": [
+    
+  ],
+  "articleBody": "Shell 学习笔记  本文章内容整理自 菜鸟教程 RUNOOB.COM\n本文章版权均归 菜鸟教程 所有 (有删改)\nhttps://www.runoob.com/linux/linux-shell.html\n Hello World #!/bin/bash echo \"Hello World!\" 变量 定义变量 定义变量时，变量名不加美元符号\nyour_name=\"AimerNeige\" 命名规则  命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用 bash 里的关键字（可用 help 命令查看保留关键字）。  隐式赋值 for file in `ls /etc` 或 for file in $(ls /etc) 使用变量 使用一个定义过的变量，只要在变量名前面加美元符号即可\nyour_name=\"AimerNeige\" echo $your_name echo ${your_name} 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：\nfor skill in Ada Coffe Action Java; do echo \"I am good at ${skill}Script\" done 如果不给 skill 变量加花括号，写成 echo \"I am good at $skillScript\"，解释器就会把 $skillScript 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。\n推荐给所有变量加上花括号，这是个好的编程习惯。\n已定义的变量，可以被重新定义，如：\nyour_name=\"tom\" echo $your_name your_name=\"AimerNeige\" echo $your_name 这样写是合法的，但注意，第二次赋值的时候不能写 $your_name=\"alibaba\"，使用变量的时候才加美元符（$）。\n只读变量 使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。\n下面的例子尝试更改只读变量，结果报错：\n#!/bin/bash myUrl=\"https://www.google.com\" readonly myUrl myUrl=\"https://www.runoob.com\" 运行脚本，结果如下：\n/bin/sh: NAME: This variable is read only. 删除变量 使用 unset 命令可以删除变量。语法：\nunset variable_name 变量被删除后不能再次使用。unset 命令不能删除只读变量。\n#!/bin/sh myUrl=\"https://www.runoob.com\" unset myUrl echo $myUrl 以上实例执行将没有任何输出。\n变量类型 运行 shell 时，会同时存在三种变量：\n 局部变量 局部变量在脚本或命令中定义，仅在当前 shell 实例中有效，其他 shell 启动的程序不能访问局部变量。 环境变量 所有的程序，包括 shell 启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候 shell 脚本也可以定义环境变量。 shell 变量 shell 变量是由 shell 程序设置的特殊变量。shell 变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了 shell 的正常运行  Shell 字符串 单引号 str='this is a string' 单引号字符串的限制：\n 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的； 单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。  双引号 your_name='AimerNeige' str=\"Hello, I know you are \\\"$your_name\\\"! \\n\" echo -e $str 输出结果为：\nHello, I know you are \"AimerNeige\"! 双引号的优点：\n 双引号里可以有变量 双引号里可以出现转义字符  拼接字符串 your_name=\"AimerNeige\" # 使用双引号拼接 greeting=\"hello, \"$your_name\" !\" greeting_1=\"hello, ${your_name}!\" echo $greeting $greeting_1 # 使用单引号拼接 greeting_2='hello, '$your_name' !' greeting_3='hello, ${your_name} !' echo $greeting_2 $greeting_3 输出结果为：\nhello, runoob ! hello, runoob ! hello, runoob ! hello, ${your_name} ! 获取字符串长度 string=\"abcd\" echo ${#string} #输出 4 提取子字符串 以下实例从字符串第 2 个字符开始截取 4 个字符：\nstring=\"runoob is a great site\" echo ${string:1:4} # 输出 unoo 注意：第一个字符的索引值为 0。\n查找子字符串 查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：\nstring=\"runoob is a great site\" echo `expr index \"$string\" io` # 输出 4 注意： 以上脚本中 ` 是反引号，而不是单引号 ‘，不要看错了哦。\nShell 数组 bash 支持一维数组（不支持多维数组），并且没有限定数组的大小。\n类似于 C 语言，数组元素的下标由 0 开始编号。获取数组中的元素要利用下标，下标可以是整数或算术表达式，其值应大于或等于 0。\n定义数组 在 Shell 中，用括号来表示数组，数组元素用\"空格\"符号分割开。定义数组的一般形式为：\narray_name=(value0 value1 value2 value3) array_name=( value0 value1 value2 value3 ) array_name[0]=value0 array_name[1]=value1 array_name[n]=valuen 可以不使用连续的下标，而且下标的范围没有限制。\n读取数组 value_n=${array_name[n]} 使用 @ 符号可以获取数组中的所有元素，例如：\necho ${array_name[@]} 获取数组的长度 获取数组长度的方法与获取字符串长度的方法相同，例如：\n# 取得数组元素的个数 length=${#array_name[@]} # 或者 length=${#array_name[*]} # 取得数组单个元素的长度 lengthn=${#array_name[n]} Shell 注释 以 # 开头的行就是注释，会被解释器忽略。\n通过每一行加一个 # 号设置多行注释，像这样：\n#-------------------------------------------- # 这是一个注释 # author：菜鸟教程 # site：www.runoob.com # slogan：学的不仅是技术，更是梦想！ #-------------------------------------------- ##### 用户配置区 开始 ##### # # # 这里可以添加脚本描述信息 # # ##### 用户配置区 结束 ##### 如果在开发过程中，遇到大段的代码需要临时注释起来，过一会儿又取消注释，怎么办呢？\n每一行加个#符号太费力了，可以把这一段要注释的代码用一对花括号括起来，定义成一个函数，没有地方调用这个函数，这块代码就不会执行，达到了和注释一样的效果。\n多行注释 :注释内容... 注释内容... 注释内容... EOF EOF 也可以使用其他符号:\n:' 注释内容... 注释内容... 注释内容... ' :Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……\n以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com echo \"Shell 传递参数实例！\"; echo \"执行的文件名：$0\"; echo \"第一个参数为：$1\"; echo \"第二个参数为：$2\"; echo \"第三个参数为：$3\"; 为脚本设置可执行权限，并执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 1 2 3 Shell 传递参数实例！ 执行的文件名：./test.sh 第一个参数为：1 第二个参数为：2 第三个参数为：3 另外，还有几个特殊字符用来处理参数：\n   参数处理 说明     $# 传递到脚本的参数个数   $* 以一个单字符串显示所有向脚本传递的参数。 如\"$*“用「\"」括起来的情况、以”$1 $2 … $n\"的形式输出所有参数。   $$ 脚本运行的当前进程 ID 号   $! 后台运行的最后一个进程的 ID 号   $@ 与 $* 相同，但是使用时加引号，并在引号中返回每个参数。 如 \"$@\" 用 \" 括起来的情况、以 \"$1\" \"$2\" … \"$n\" 的形式输出所有参数。   $- 显示 Shell 使用的当前选项，与 set 命令功能相同。   $? 显示最后命令的退出状态。0 表示没有错误，其他任何值表明有错误。    #!/bin/bash # author:菜鸟教程 # url:www.runoob.com echo \"Shell 传递参数实例！\"; echo \"第一个参数为：$1\"; echo \"参数个数为：$#\"; echo \"传递的参数作为一个字符串显示：$*\"; 执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 1 2 3 Shell 传递参数实例！ 第一个参数为：1 参数个数为：3 传递的参数作为一个字符串显示：1 2 3 $* 与 $@ 区别：\n 相同点：都是引用所有参数。 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 \" * \" 等价于 “1 2 3”（传递了一个参数），而 “@” 等价于 “1” “2” “3”（传递了三个参数）。  #!/bin/bash # author:菜鸟教程 # url:www.runoob.com echo \"-- \\$* 演示 ---\" for i in \"$*\"; do echo $i done echo \"-- \\$@ 演示 ---\" for i in \"$@\"; do echo $i done 执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 1 2 3 -- $* 演示 --- 1 2 3 -- $@ 演示 --- 1 2 3 Shell 数组 数组中可以存放多个值。Bash Shell 只支持一维数组（不支持多维数组），初始化时不需要定义数组大小（与 PHP 类似）。\n与大部分编程语言类似，数组元素的下标由 0 开始。\nShell 数组用括号来表示，元素用\"空格\"符号分割开，语法格式如下：\narray_name=(value1 value2 ... valuen) #!/bin/bash # author:菜鸟教程 # url:www.runoob.com my_array=(A B \"C\" D) 我们也可以使用下标来定义数组:\narray_name[0]=value0 array_name[1]=value1 array_name[2]=value2 读取数组 读取数组元素值的一般格式是：\n${array_name[index]} #!/bin/bash # author:菜鸟教程 # url:www.runoob.com my_array=(A B \"C\" D) echo \"第一个元素为: ${my_array[0]}\" echo \"第二个元素为: ${my_array[1]}\" echo \"第三个元素为: ${my_array[2]}\" echo \"第四个元素为: ${my_array[3]}\" 执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 第一个元素为: A 第二个元素为: B 第三个元素为: C 第四个元素为: D 获取数组中的所有元素 使用 @ 或 * 可以获取数组中的所有元素，例如：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com my_array[0]=A my_array[1]=B my_array[2]=C my_array[3]=D echo \"数组的元素为: ${my_array[*]}\" echo \"数组的元素为: ${my_array[@]}\" 执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 数组的元素为: A B C D 数组的元素为: A B C D 获取数组的长度 获取数组长度的方法与获取字符串长度的方法相同，例如：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com my_array[0]=A my_array[1]=B my_array[2]=C my_array[3]=D echo \"数组元素个数为: ${#my_array[*]}\" echo \"数组元素个数为: ${#my_array[@]}\" 执行脚本，输出结果如下所示：\n$ chmod +x test.sh $ ./test.sh 数组元素个数为: 4 数组元素个数为: 4 Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括：\n 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符  原生 bash 不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr ， expr 最常用。\nexpr 是一款表达式计算工具，使用它能完成表达式的求值操作。\n例如，两个数相加(注意使用的是反引号 ` 而不是单引号 ‘)：\n#!/bin/bash  val=`expr 2 + 2` echo \"两数之和为 : $val\" 执行脚本，输出结果如下所示：\n两数之和为 : 4 两点注意：\n 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。 完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边, Tab 键上边，与 MarkDown 中代码块的标记相同。  算术运算符 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：\n   运算符 说明 举例          + 加法 expr $a + $b 结果为 30。   - 减法 expr $a - $b 结果为 -10。   * 乘法 expr $a \\* $b 结果为 200。   / 除法 expr $b / $a 结果为 2。   % 取余 expr $b % $a 结果为 0。   = 赋值 a=$b 将把变量 b 的值赋给 a。   == 相等。用于比较两个数字，相同则返回 true。 [ $a == $b ] 返回 false。   != 不相等。用于比较两个数字，不相同则返回 true。 [ $a != $b ] 返回 true。    注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]。\n算术运算符实例如下：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com a=10 b=20 val=`expr $a + $b` echo \"a + b : $val\" val=`expr $a - $b` echo \"a - b : $val\" val=`expr $a \\* $b` echo \"a * b : $val\" val=`expr $b / $a` echo \"b / a : $val\" val=`expr $b % $a` echo \"b % a : $val\" if [ $a == $b ] then echo \"a 等于 b\" fi if [ $a != $b ] then echo \"a 不等于 b\" fi 执行脚本，输出结果如下所示：\na + b : 30 a - b : -10 a * b : 200 b / a : 2 b % a : 0 a 不等于 b  注意：\n 乘号(*)前边必须加反斜杠(\\)才能实现乘法运算； if…then…fi 是条件语句，后续将会讲解。 在 MAC 中 shell 的 expr 语法是：$((表达式))，此处表达式中的 “*” 不需要转义符号 “\" 。   关系运算符 关系运算符只支持数字，不支持字符串，除非字符串的值是数字。\n下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：\n   运算符 说明 举例     -eq 检测两个数是否相等，相等返回 true。 [ $a -eq $b ] 返回 false。   -ne 检测两个数是否不相等，不相等返回 true。 [ $a -ne $b ] 返回 true。   -gt 检测左边的数是否大于右边的，如果是，则返回 true。 [ $a -gt $b ] 返回 false。   -lt 检测左边的数是否小于右边的，如果是，则返回 true。 [ $a -lt $b ] 返回 true。   -ge 检测左边的数是否大于等于右边的，如果是，则返回 true。 [ $a -ge $b ] 返回 false。   -le 检测左边的数是否小于等于右边的，如果是，则返回 true。 [ $a -le $b ] 返回 true。    关系运算符实例如下：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com a=10 b=20 if [ $a -eq $b ] then echo \"$a-eq $b: a 等于 b\" else echo \"$a-eq $b: a 不等于 b\" fi if [ $a -ne $b ] then echo \"$a-ne $b: a 不等于 b\" else echo \"$a-ne $b: a 等于 b\" fi if [ $a -gt $b ] then echo \"$a-gt $b: a 大于 b\" else echo \"$a-gt $b: a 不大于 b\" fi if [ $a -lt $b ] then echo \"$a-lt $b: a 小于 b\" else echo \"$a-lt $b: a 不小于 b\" fi if [ $a -ge $b ] then echo \"$a-ge $b: a 大于或等于 b\" else echo \"$a-ge $b: a 小于 b\" fi if [ $a -le $b ] then echo \"$a-le $b: a 小于或等于 b\" else echo \"$a-le $b: a 大于 b\" fi 执行脚本，输出结果如下所示：\n10 -eq 20: a 不等于 b 10 -ne 20: a 不等于 b 10 -gt 20: a 不大于 b 10 -lt 20: a 小于 b 10 -ge 20: a 小于 b 10 -le 20: a 小于或等于 b 布尔运算符 下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：\n   运算符 说明 举例     ! 非运算，表达式为 true 则返回 false，否则返回 true。 [ ! false ] 返回 true。   -o 或运算，有一个表达式为 true 则返回 true。 [ $a -lt 20 -o $b -gt 100 ] 返回 true。   -a 与运算，两个表达式都为 true 才返回 true。 [ $a -lt 20 -a $b -gt 100 ] 返回 false。    布尔运算符实例如下：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com a=10 b=20 if [ $a != $b ] then echo \"$a!= $b: a 不等于 b\" else echo \"$a== $b: a 等于 b\" fi if [ $a -lt 100 -a $b -gt 15 ] then echo \"$a小于 100 且 $b大于 15 : 返回 true\" else echo \"$a小于 100 且 $b大于 15 : 返回 false\" fi if [ $a -lt 100 -o $b -gt 100 ] then echo \"$a小于 100 或 $b大于 100 : 返回 true\" else echo \"$a小于 100 或 $b大于 100 : 返回 false\" fi if [ $a -lt 5 -o $b -gt 100 ] then echo \"$a小于 5 或 $b大于 100 : 返回 true\" else echo \"$a小于 5 或 $b大于 100 : 返回 false\" fi 执行脚本，输出结果如下所示：\n10 != 20 : a 不等于 b 10 小于 100 且 20 大于 15 : 返回 true 10 小于 100 或 20 大于 100 : 返回 true 10 小于 5 或 20 大于 100 : 返回 false 逻辑运算符 以下介绍 Shell 的逻辑运算符，假定变量 a 为 10，变量 b 为 20:\n   运算符 说明 举例     \u0026\u0026 逻辑的 AND [[ $a -lt 100 \u0026\u0026 $b -gt 100 ]] 返回 false   || 逻辑的 OR [[ $a -lt 100 || $b -gt 100 ]] 返回 true    逻辑运算符实例如下：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com a=10 b=20 if [[ $a -lt 100 \u0026\u0026 $b -gt 100 ]] then echo \"返回 true\" else echo \"返回 false\" fi if [[ $a -lt 100 || $b -gt 100 ]] then echo \"返回 true\" else echo \"返回 false\" fi 执行脚本，输出结果如下所示：\n返回 false 返回 true 字符串运算符 下表列出了常用的字符串运算符，假定变量 a 为 “abc”，变量 b 为 “efg”：\n   运算符 说明 举例     = 检测两个字符串是否相等，相等返回 true。 [ $a = $b ] 返回 false。   != 检测两个字符串是否相等，不相等返回 true。 [ $a != $b ] 返回 true。   -z 检测字符串长度是否为 0，为 0 返回 true。 [ -z $a ] 返回 false。   -n 检测字符串长度是否不为 0，不为 0 返回 true。 [ -n “$a” ] 返回 true。   $ 检测字符串是否为空，不为空返回 true。 [ $a ] 返回 true。    字符串运算符实例如下：\n#!/bin/bash # author:菜鸟教程 # url:www.runoob.com a=\"abc\" b=\"efg\" if [ $a = $b ] then echo \"$a= $b: a 等于 b\" else echo \"$a= $b: a 不等于 b\" fi if [ $a != $b ] then echo \"$a!= $b: a 不等于 b\" else echo \"$a!= $b: a 等于 b\" fi if [ -z $a ] then echo \"-z $a: 字符串长度为 0\" else echo \"-z $a: 字符串长度不为 0\" fi if [ -n \"$a\" ] then echo \"-n $a: 字符串长度不为 0\" else echo \"-n $a: 字符串长度为 0\" fi if [ $a ] then echo \"$a: 字符串不为空\" else echo \"$a: 字符串为空\" fi 执行脚本，输出结果如下所示：\nabc = efg: a 不等于 b abc != efg : a 不等于 b -z abc : 字符串长度不为 0 -n abc : 字符串长度不为 0 abc : 字符串不为空 文件测试运算符 文件测试运算符用于检测 Unix 文件的各种属性。\n属性检测描述如下：\n   操作符 说明 举例     -b file 检测文件是否是块设备文件，如果是，则返回 true。 [ -b $file ] 返回 false。   -c file 检测文件是否是字符设备文件，如果是，则返回 true。 [ -c $file ] 返回 false。   -d file 检测文件是否是目录，如果是，则返回 true。 [ -d $file ] 返回 false。   -f file 检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。 [ -f $file ] 返回 true。   -g file 检测文件是否设置了 SGID 位，如果是，则返回 true。 [ -g $file ] 返回 false。   -k file 检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。 [ -k $file ] 返回 false。   -p file 检测文件是否是有名管道，如果是，则返回 true。 [ -p $file ] 返回 false。   -u file 检测文件是否设置了 SUID 位，如果是，则返回 true。 [ -u $file ] 返回 false。   -r file 检测文件是否可读，如果是，则返回 true。 [ -r $file ] 返回 true。   -w file 检测文件是否可写，如果是，则返回 true。 [ -w $file ] 返回 true。   -x file 检测文件是否可执行，如果是，则返回 true。 [ -x $file ] 返回 true。   -s file 检测文件是否为空（文件大小是否大于 0），不为空返回 true。 [ -s $file ] 返回 true。   -e file 检测文件（包括目录）是否存在，如果是，则返回 true。 [ -e $file ] 返回 true。    其他检查符：\n -S: 判断某文件是否 socket。 -L: 检测文件是否存在并且是一个符号链接。   变量 file 表示文件 /var/www/runoob/test.sh，它的大小为 100 字节，具有 rwx 权限。下面的代码，将检测该文件的各种属性：\n #!/bin/bash # author:菜鸟教程 # url:www.runoob.com file=\"/var/www/runoob/test.sh\" if [ -r $file ] then echo \"文件可读\" else echo \"文件不可读\" fi if [ -w $file ] then echo \"文件可写\" else echo \"文件不可写\" fi if [ -x $file ] then echo \"文件可执行\" else echo \"文件不可执行\" fi if [ -f $file ] then echo \"文件为普通文件\" else echo \"文件为特殊文件\" fi if [ -d $file ] then echo \"文件是个目录\" else echo \"文件不是个目录\" fi if [ -s $file ] then echo \"文件不为空\" else echo \"文件为空\" fi if [ -e $file ] then echo \"文件存在\" else echo \"文件不存在\" fi 执行脚本，输出结果如下所示：\n文件可读 文件可写 文件可执行 文件为普通文件 文件不是个目录 文件不为空 文件存在 ",
+  "wordCount" : "1942",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/draft/shell/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/draft/">Drafts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/draft/shell.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#shell-%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0" aria-label="Shell 学习笔记">Shell 学习笔记</a><ul>
+                        
+                <li>
+                    <a href="#hello-world" aria-label="Hello World">Hello World</a></li>
+                <li>
+                    <a href="#%e5%8f%98%e9%87%8f" aria-label="变量">变量</a><ul>
+                        
+                <li>
+                    <a href="#%e5%ae%9a%e4%b9%89%e5%8f%98%e9%87%8f" aria-label="定义变量">定义变量</a></li>
+                <li>
+                    <a href="#%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99" aria-label="命名规则">命名规则</a></li>
+                <li>
+                    <a href="#%e9%9a%90%e5%bc%8f%e8%b5%8b%e5%80%bc" aria-label="隐式赋值">隐式赋值</a></li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8%e5%8f%98%e9%87%8f" aria-label="使用变量">使用变量</a></li>
+                <li>
+                    <a href="#%e5%8f%aa%e8%af%bb%e5%8f%98%e9%87%8f" aria-label="只读变量">只读变量</a></li>
+                <li>
+                    <a href="#%e5%88%a0%e9%99%a4%e5%8f%98%e9%87%8f" aria-label="删除变量">删除变量</a></li>
+                <li>
+                    <a href="#%e5%8f%98%e9%87%8f%e7%b1%bb%e5%9e%8b" aria-label="变量类型">变量类型</a></li>
+                <li>
+                    <a href="#shell-%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="Shell 字符串">Shell 字符串</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8d%95%e5%bc%95%e5%8f%b7" aria-label="单引号">单引号</a></li>
+                <li>
+                    <a href="#%e5%8f%8c%e5%bc%95%e5%8f%b7" aria-label="双引号">双引号</a></li>
+                <li>
+                    <a href="#%e6%8b%bc%e6%8e%a5%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="拼接字符串">拼接字符串</a></li>
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e7%ac%a6%e4%b8%b2%e9%95%bf%e5%ba%a6" aria-label="获取字符串长度">获取字符串长度</a></li>
+                <li>
+                    <a href="#%e6%8f%90%e5%8f%96%e5%ad%90%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="提取子字符串">提取子字符串</a></li>
+                <li>
+                    <a href="#%e6%9f%a5%e6%89%be%e5%ad%90%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="查找子字符串">查找子字符串</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shell-%e6%95%b0%e7%bb%84" aria-label="Shell 数组">Shell 数组</a><ul>
+                        
+                <li>
+                    <a href="#%e5%ae%9a%e4%b9%89%e6%95%b0%e7%bb%84" aria-label="定义数组">定义数组</a></li>
+                <li>
+                    <a href="#%e8%af%bb%e5%8f%96%e6%95%b0%e7%bb%84" aria-label="读取数组">读取数组</a></li>
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e6%95%b0%e7%bb%84%e7%9a%84%e9%95%bf%e5%ba%a6" aria-label="获取数组的长度">获取数组的长度</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shell-%e6%b3%a8%e9%87%8a" aria-label="Shell 注释">Shell 注释</a></li>
+                <li>
+                    <a href="#%e5%a4%9a%e8%a1%8c%e6%b3%a8%e9%87%8a" aria-label="多行注释">多行注释</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shell-%e4%bc%a0%e9%80%92%e5%8f%82%e6%95%b0" aria-label="Shell 传递参数">Shell 传递参数</a></li>
+                <li>
+                    <a href="#shell-%e6%95%b0%e7%bb%84-1" aria-label="Shell 数组">Shell 数组</a><ul>
+                        
+                <li>
+                    <a href="#%e8%af%bb%e5%8f%96%e6%95%b0%e7%bb%84-1" aria-label="读取数组">读取数组</a></li>
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e6%95%b0%e7%bb%84%e4%b8%ad%e7%9a%84%e6%89%80%e6%9c%89%e5%85%83%e7%b4%a0" aria-label="获取数组中的所有元素">获取数组中的所有元素</a></li>
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e6%95%b0%e7%bb%84%e7%9a%84%e9%95%bf%e5%ba%a6-1" aria-label="获取数组的长度">获取数组的长度</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shell-%e5%9f%ba%e6%9c%ac%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="Shell 基本运算符">Shell 基本运算符</a><ul>
+                        
+                <li>
+                    <a href="#%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="算术运算符">算术运算符</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="关系运算符">关系运算符</a></li>
+                <li>
+                    <a href="#%e5%b8%83%e5%b0%94%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="布尔运算符">布尔运算符</a></li>
+                <li>
+                    <a href="#%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="逻辑运算符">逻辑运算符</a></li>
+                <li>
+                    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="字符串运算符">字符串运算符</a></li>
+                <li>
+                    <a href="#%e6%96%87%e4%bb%b6%e6%b5%8b%e8%af%95%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="文件测试运算符">文件测试运算符</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="shell-学习笔记">Shell 学习笔记<a hidden class="anchor" aria-hidden="true" href="#shell-学习笔记">#</a></h1>
+<blockquote>
+<p>本文章内容整理自 <strong>菜鸟教程</strong> <strong>RUNOOB.COM</strong></p>
+<p>本文章版权均归 <strong>菜鸟教程</strong> 所有 (有删改)</p>
+<p><a href="https://www.runoob.com/linux/linux-shell.html">https://www.runoob.com/linux/linux-shell.html</a></p>
+</blockquote>
+<h2 id="hello-world">Hello World<a hidden class="anchor" aria-hidden="true" href="#hello-world">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</code></pre></div><h2 id="变量">变量<a hidden class="anchor" aria-hidden="true" href="#变量">#</a></h2>
+<h3 id="定义变量">定义变量<a hidden class="anchor" aria-hidden="true" href="#定义变量">#</a></h3>
+<p>定义变量时，变量名不加美元符号</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AimerNeige&#34;</span>
+</code></pre></div><h3 id="命名规则">命名规则<a hidden class="anchor" aria-hidden="true" href="#命名规则">#</a></h3>
+<ul>
+<li>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。</li>
+<li>中间不能有空格，可以使用下划线（_）。</li>
+<li>不能使用标点符号。</li>
+<li>不能使用 <code>bash</code> 里的关键字（可用 <code>help</code> 命令查看保留关键字）。</li>
+</ul>
+<h3 id="隐式赋值">隐式赋值<a hidden class="anchor" aria-hidden="true" href="#隐式赋值">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">`</span>ls /etc<span style="color:#e6db74">`</span>
+或
+<span style="color:#66d9ef">for</span> file in <span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
+</code></pre></div><h3 id="使用变量">使用变量<a hidden class="anchor" aria-hidden="true" href="#使用变量">#</a></h3>
+<p>使用一个定义过的变量，只要在变量名前面加美元符号即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AimerNeige&#34;</span>
+echo $your_name
+echo <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span>
+</code></pre></div><p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">for</span> skill in Ada Coffe Action Java; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;I am good at </span><span style="color:#e6db74">${</span>skill<span style="color:#e6db74">}</span><span style="color:#e6db74">Script&#34;</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>如果不给 <code>skill</code> 变量加花括号，写成 <code>echo &quot;I am good at $skillScript&quot;</code>，解释器就会把 <code>$skillScript</code> 当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
+<p>推荐给<strong>所有变量</strong>加上花括号，这是个好的编程习惯。</p>
+<p>已定义的变量，可以被<strong>重新定义</strong>，如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tom&#34;</span>
+echo $your_name
+your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AimerNeige&#34;</span>
+echo $your_name
+</code></pre></div><p>这样写是合法的，但注意，第二次赋值的时候不能写 <code>$your_name=&quot;alibaba&quot;</code>，使用变量的时候才加美元符（<code>$</code>）。</p>
+<h3 id="只读变量">只读变量<a hidden class="anchor" aria-hidden="true" href="#只读变量">#</a></h3>
+<p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
+<p>下面的例子尝试更改只读变量，结果报错：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>
+readonly myUrl
+myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.runoob.com&#34;</span>
+</code></pre></div><p>运行脚本，结果如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/bin/sh: NAME: This variable is read only.
+</code></pre></div><h3 id="删除变量">删除变量<a hidden class="anchor" aria-hidden="true" href="#删除变量">#</a></h3>
+<p>使用 unset 命令可以删除变量。语法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">unset variable_name
+</code></pre></div><p>变量被删除后不能再次使用。unset 命令<strong>不能删除只读变量</strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.runoob.com&#34;</span>
+unset myUrl
+echo $myUrl
+</code></pre></div><p>以上实例执行将没有任何输出。</p>
+<h3 id="变量类型">变量类型<a hidden class="anchor" aria-hidden="true" href="#变量类型">#</a></h3>
+<p>运行 <code>shell</code> 时，会同时存在三种变量：</p>
+<ol>
+<li><strong>局部变量</strong> 局部变量在脚本或命令中定义，仅在当前 <code>shell</code> 实例中有效，其他 <code>shell</code> 启动的程序不能访问局部变量。</li>
+<li><strong>环境变量</strong> 所有的程序，包括 <code>shell</code> 启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候 <code>shell</code> 脚本也可以定义环境变量。</li>
+<li><strong>shell 变量</strong> <code>shell</code> 变量是由 <code>shell</code> 程序设置的特殊变量。<code>shell</code> 变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了 <code>shell</code> 的正常运行</li>
+</ol>
+<h3 id="shell-字符串">Shell 字符串<a hidden class="anchor" aria-hidden="true" href="#shell-字符串">#</a></h3>
+<h4 id="单引号">单引号<a hidden class="anchor" aria-hidden="true" href="#单引号">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this is a string&#39;</span>
+</code></pre></div><p>单引号字符串的限制：</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
+<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
+</ul>
+<h4 id="双引号">双引号<a hidden class="anchor" aria-hidden="true" href="#双引号">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AimerNeige&#39;</span>
+str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, I know you are \&#34;</span>$your_name<span style="color:#e6db74">\&#34;! \n&#34;</span>
+echo -e $str
+</code></pre></div><p>输出结果为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Hello, I know you are <span style="color:#e6db74">&#34;AimerNeige&#34;</span>!
+</code></pre></div><p>双引号的优点：</p>
+<ul>
+<li>双引号里可以有变量</li>
+<li>双引号里可以出现转义字符</li>
+</ul>
+<h4 id="拼接字符串">拼接字符串<a hidden class="anchor" aria-hidden="true" href="#拼接字符串">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AimerNeige&#34;</span>
+<span style="color:#75715e"># 使用双引号拼接</span>
+greeting<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, &#34;</span>$your_name<span style="color:#e6db74">&#34; !&#34;</span>
+greeting_1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, </span><span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> !&#34;</span>
+echo $greeting  $greeting_1
+<span style="color:#75715e"># 使用单引号拼接</span>
+greeting_2<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, &#39;</span>$your_name<span style="color:#e6db74">&#39; !&#39;</span>
+greeting_3<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, ${your_name} !&#39;</span>
+echo $greeting_2  $greeting_3
+</code></pre></div><p>输出结果为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello, runoob ! hello, runoob !
+hello, runoob ! hello, <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span> !
+</code></pre></div><h4 id="获取字符串长度">获取字符串长度<a hidden class="anchor" aria-hidden="true" href="#获取字符串长度">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
+echo <span style="color:#e6db74">${#</span>string<span style="color:#e6db74">}</span> <span style="color:#75715e">#输出 4</span>
+</code></pre></div><h4 id="提取子字符串">提取子字符串<a hidden class="anchor" aria-hidden="true" href="#提取子字符串">#</a></h4>
+<p>以下实例从字符串第 2 个字符开始截取 4 个字符：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob is a great site&#34;</span>
+echo <span style="color:#e6db74">${</span>string:1:4<span style="color:#e6db74">}</span> <span style="color:#75715e"># 输出 unoo</span>
+</code></pre></div><p>注意：第一个字符的索引值为 0。</p>
+<h4 id="查找子字符串">查找子字符串<a hidden class="anchor" aria-hidden="true" href="#查找子字符串">#</a></h4>
+<p>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob is a great site&#34;</span>
+echo <span style="color:#e6db74">`</span>expr index <span style="color:#e6db74">&#34;</span>$string<span style="color:#e6db74">&#34;</span> io<span style="color:#e6db74">`</span>  <span style="color:#75715e"># 输出 4</span>
+</code></pre></div><p>注意： 以上脚本中 ` 是反引号，而不是单引号 &lsquo;，不要看错了哦。</p>
+<h3 id="shell-数组">Shell 数组<a hidden class="anchor" aria-hidden="true" href="#shell-数组">#</a></h3>
+<p><code>bash</code> 支持一维数组（不支持多维数组），并且没有限定数组的大小。</p>
+<p>类似于 C 语言，数组元素的下标由 0 开始编号。获取数组中的元素要利用下标，下标可以是整数或算术表达式，其值应大于或等于 0。</p>
+<h4 id="定义数组">定义数组<a hidden class="anchor" aria-hidden="true" href="#定义数组">#</a></h4>
+<p>在 Shell 中，用括号来表示数组，数组元素用&quot;空格&quot;符号分割开。定义数组的一般形式为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">array_name<span style="color:#f92672">=(</span>value0 value1 value2 value3<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">array_name<span style="color:#f92672">=(</span>
+value0
+value1
+value2
+value3
+<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
+array_name<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>value1
+array_name<span style="color:#f92672">[</span>n<span style="color:#f92672">]=</span>valuen
+</code></pre></div><p>可以不使用连续的下标，而且下标的范围没有限制。</p>
+<h4 id="读取数组">读取数组<a hidden class="anchor" aria-hidden="true" href="#读取数组">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">value_n<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>array_name[n]<span style="color:#e6db74">}</span>
+</code></pre></div><p>使用 <code>@</code> 符号可以获取数组中的所有元素，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">echo <span style="color:#e6db74">${</span>array_name[@]<span style="color:#e6db74">}</span>
+</code></pre></div><h4 id="获取数组的长度">获取数组的长度<a hidden class="anchor" aria-hidden="true" href="#获取数组的长度">#</a></h4>
+<p>获取数组长度的方法与获取字符串长度的方法相同，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 取得数组元素的个数</span>
+length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[@]<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># 或者</span>
+length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[*]<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># 取得数组单个元素的长度</span>
+lengthn<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[n]<span style="color:#e6db74">}</span>
+</code></pre></div><h3 id="shell-注释">Shell 注释<a hidden class="anchor" aria-hidden="true" href="#shell-注释">#</a></h3>
+<p>以 <code>#</code> 开头的行就是注释，会被解释器忽略。</p>
+<p>通过每一行加一个 # 号设置多行注释，像这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#--------------------------------------------</span>
+<span style="color:#75715e"># 这是一个注释</span>
+<span style="color:#75715e"># author：菜鸟教程</span>
+<span style="color:#75715e"># site：www.runoob.com</span>
+<span style="color:#75715e"># slogan：学的不仅是技术，更是梦想！</span>
+<span style="color:#75715e">#--------------------------------------------</span>
+<span style="color:#75715e">##### 用户配置区 开始 #####</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 这里可以添加脚本描述信息</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">##### 用户配置区 结束  #####</span>
+</code></pre></div><p>如果在开发过程中，遇到大段的代码需要临时注释起来，过一会儿又取消注释，怎么办呢？</p>
+<p>每一行加个#符号太费力了，可以把这一段要注释的代码用一对花括号括起来，定义成一个函数，没有地方调用这个函数，这块代码就不会执行，达到了和注释一样的效果。</p>
+<h3 id="多行注释">多行注释<a hidden class="anchor" aria-hidden="true" href="#多行注释">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">:<span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div><p>EOF 也可以使用其他符号:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">:&lt;&lt;<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">注释内容...
+</span><span style="color:#e6db74">&#39;</span>
+
+:&lt;&lt;!
+注释内容...
+注释内容...
+注释内容...
+!
+</code></pre></div><h2 id="shell-传递参数">Shell 传递参数<a hidden class="anchor" aria-hidden="true" href="#shell-传递参数">#</a></h2>
+<p>我们可以在执行 <code>Shell</code> 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
+<p>以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+echo <span style="color:#e6db74">&#34;Shell 传递参数实例！&#34;</span>;
+echo <span style="color:#e6db74">&#34;执行的文件名：</span>$0<span style="color:#e6db74">&#34;</span>;
+echo <span style="color:#e6db74">&#34;第一个参数为：</span>$1<span style="color:#e6db74">&#34;</span>;
+echo <span style="color:#e6db74">&#34;第二个参数为：</span>$2<span style="color:#e6db74">&#34;</span>;
+echo <span style="color:#e6db74">&#34;第三个参数为：</span>$3<span style="color:#e6db74">&#34;</span>;
+</code></pre></div><p>为脚本设置可执行权限，并执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+Shell 传递参数实例！
+执行的文件名：./test.sh
+第一个参数为：1
+第二个参数为：2
+第三个参数为：3
+</code></pre></div><p>另外，还有几个特殊字符用来处理参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数处理</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$#</td>
+<td>传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>以一个单字符串显示所有向脚本传递的参数。 如&quot;$*&ldquo;用「&quot;」括起来的情况、以&rdquo;$1 $2 … $n&quot;的形式输出所有参数。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>脚本运行的当前进程 ID 号</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台运行的最后一个进程的 ID 号</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>与 <code>$*</code> 相同，但是使用时加引号，并在引号中返回每个参数。 如 <code>&quot;$@&quot;</code> 用 <code>&quot;</code> 括起来的情况、以 <code>&quot;$1&quot;</code> <code>&quot;$2&quot;</code> … <code>&quot;$n&quot;</code> 的形式输出所有参数。</td>
+</tr>
+<tr>
+<td>$-</td>
+<td>显示 Shell 使用的当前选项，与 set 命令功能相同。</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>显示最后命令的退出状态。0 表示没有错误，其他任何值表明有错误。</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+echo <span style="color:#e6db74">&#34;Shell 传递参数实例！&#34;</span>;
+echo <span style="color:#e6db74">&#34;第一个参数为：</span>$1<span style="color:#e6db74">&#34;</span>;
+
+echo <span style="color:#e6db74">&#34;参数个数为：</span>$#<span style="color:#e6db74">&#34;</span>;
+echo <span style="color:#e6db74">&#34;传递的参数作为一个字符串显示：</span>$*<span style="color:#e6db74">&#34;</span>;
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+Shell 传递参数实例！
+第一个参数为：1
+参数个数为：3
+传递的参数作为一个字符串显示：1 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+</code></pre></div><p><code>$*</code> 与 <code>$@</code> 区别：</p>
+<ul>
+<li>相同点：都是引用所有参数。</li>
+<li>不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 &quot; * &quot; 等价于 &ldquo;1 2 3&rdquo;（传递了一个参数），而 &ldquo;@&rdquo; 等价于 &ldquo;1&rdquo; &ldquo;2&rdquo; &ldquo;3&rdquo;（传递了三个参数）。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+echo <span style="color:#e6db74">&#34;-- \$* 演示 ---&#34;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+    echo $i
+<span style="color:#66d9ef">done</span>
+
+echo <span style="color:#e6db74">&#34;-- \$@ 演示 ---&#34;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+    echo $i
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+-- $* 演示 ---
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+-- $@ 演示 ---
+<span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+</code></pre></div><h2 id="shell-数组-1">Shell 数组<a hidden class="anchor" aria-hidden="true" href="#shell-数组-1">#</a></h2>
+<p>数组中可以存放多个值。Bash Shell 只支持一维数组（不支持多维数组），初始化时不需要定义数组大小（与 PHP 类似）。</p>
+<p>与大部分编程语言类似，数组元素的下标由 0 开始。</p>
+<p>Shell 数组用括号来表示，元素用&quot;空格&quot;符号分割开，语法格式如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">array_name<span style="color:#f92672">=(</span>value1 value2 ... valuen<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+my_array<span style="color:#f92672">=(</span>A B <span style="color:#e6db74">&#34;C&#34;</span> D<span style="color:#f92672">)</span>
+</code></pre></div><p>我们也可以使用下标来定义数组:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
+array_name<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>value1
+array_name<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>value2
+</code></pre></div><h3 id="读取数组-1">读取数组<a hidden class="anchor" aria-hidden="true" href="#读取数组-1">#</a></h3>
+<p>读取数组元素值的一般格式是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">${</span>array_name[index]<span style="color:#e6db74">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+my_array<span style="color:#f92672">=(</span>A B <span style="color:#e6db74">&#34;C&#34;</span> D<span style="color:#f92672">)</span>
+
+echo <span style="color:#e6db74">&#34;第一个元素为: </span><span style="color:#e6db74">${</span>my_array[0]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;第二个元素为: </span><span style="color:#e6db74">${</span>my_array[1]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;第三个元素为: </span><span style="color:#e6db74">${</span>my_array[2]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;第四个元素为: </span><span style="color:#e6db74">${</span>my_array[3]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh
+第一个元素为: A
+第二个元素为: B
+第三个元素为: C
+第四个元素为: D
+</code></pre></div><h3 id="获取数组中的所有元素">获取数组中的所有元素<a hidden class="anchor" aria-hidden="true" href="#获取数组中的所有元素">#</a></h3>
+<p>使用 @ 或 * 可以获取数组中的所有元素，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+my_array<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>A
+my_array<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>B
+my_array<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>C
+my_array<span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span>D
+
+echo <span style="color:#e6db74">&#34;数组的元素为: </span><span style="color:#e6db74">${</span>my_array[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;数组的元素为: </span><span style="color:#e6db74">${</span>my_array[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh
+数组的元素为: A B C D
+数组的元素为: A B C D
+</code></pre></div><h3 id="获取数组的长度-1">获取数组的长度<a hidden class="anchor" aria-hidden="true" href="#获取数组的长度-1">#</a></h3>
+<p>获取数组长度的方法与获取字符串长度的方法相同，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+my_array<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>A
+my_array<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>B
+my_array<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>C
+my_array<span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span>D
+
+echo <span style="color:#e6db74">&#34;数组元素个数为: </span><span style="color:#e6db74">${#</span>my_array[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;数组元素个数为: </span><span style="color:#e6db74">${#</span>my_array[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod +x test.sh
+$ ./test.sh
+数组元素个数为: <span style="color:#ae81ff">4</span>
+数组元素个数为: <span style="color:#ae81ff">4</span>
+</code></pre></div><h2 id="shell-基本运算符">Shell 基本运算符<a hidden class="anchor" aria-hidden="true" href="#shell-基本运算符">#</a></h2>
+<p>Shell 和其他编程语言一样，支持多种运算符，包括：</p>
+<ul>
+<li>算数运算符</li>
+<li>关系运算符</li>
+<li>布尔运算符</li>
+<li>字符串运算符</li>
+<li>文件测试运算符</li>
+</ul>
+<p>原生 bash 不支持简单的数学运算，但是可以通过其他命令来实现，例如 <code>awk</code> 和 <code>expr</code> ， <code>expr</code> 最常用。</p>
+<p><code>expr</code> 是一款表达式计算工具，使用它能完成表达式的求值操作。</p>
+<p>例如，两个数相加(注意使用的是反引号 ` 而不是单引号 &lsquo;)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#ae81ff">2</span> + 2<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;两数之和为 : </span>$val<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">两数之和为 : <span style="color:#ae81ff">4</span>
+</code></pre></div><p>两点注意：</p>
+<ul>
+<li>表达式和运算符之间要有空格，例如 <code>2+2</code> 是不对的，必须写成 <code>2 + 2</code>，这与我们熟悉的大多数编程语言不一样。</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 <code>Esc</code> 键下边, <code>Tab</code> 键上边，与 <code>MarkDown</code> 中代码块的标记相同。</li>
+</ul>
+<h3 id="算术运算符">算术运算符<a hidden class="anchor" aria-hidden="true" href="#算术运算符">#</a></h3>
+<p>下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+</td>
+<td>加法</td>
+<td><code>expr $a + $b</code> 结果为 30。</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td><code>expr $a - $b</code> 结果为 -10。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td><code>expr $a \* $b</code> 结果为 200。</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+<td><code>expr $b / $a</code> 结果为 2。</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td><code>expr $b % $a</code> 结果为 0。</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+<td>a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td>==</td>
+<td>相等。用于比较两个数字，相同则返回 true。</td>
+<td>[ $a == $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不相等。用于比较两个数字，不相同则返回 true。</td>
+<td>[ $a != $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p>注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]。</p>
+<p>算术运算符实例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $a + $b<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;a + b : </span>$val<span style="color:#e6db74">&#34;</span>
+
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $a - $b<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;a - b : </span>$val<span style="color:#e6db74">&#34;</span>
+
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $a <span style="color:#ae81ff">\*</span> $b<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;a * b : </span>$val<span style="color:#e6db74">&#34;</span>
+
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $b / $a<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;b / a : </span>$val<span style="color:#e6db74">&#34;</span>
+
+val<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $b % $a<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;b % a : </span>$val<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a <span style="color:#f92672">==</span> $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;a 等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a !<span style="color:#f92672">=</span> $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;a 不等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">a + b : <span style="color:#ae81ff">30</span>
+a - b : -10
+a * b : <span style="color:#ae81ff">200</span>
+b / a : <span style="color:#ae81ff">2</span>
+b % a : <span style="color:#ae81ff">0</span>
+a 不等于 b
+</code></pre></div><blockquote>
+<p>注意：</p>
+<ul>
+<li>乘号(*)前边必须加反斜杠(\)才能实现乘法运算；</li>
+<li>if&hellip;then&hellip;fi 是条件语句，后续将会讲解。</li>
+<li>在 MAC 中 shell 的 expr 语法是：$((表达式))，此处表达式中的 &ldquo;*&rdquo; 不需要转义符号 &ldquo;&quot; 。</li>
+</ul>
+</blockquote>
+<h3 id="关系运算符">关系运算符<a hidden class="anchor" aria-hidden="true" href="#关系运算符">#</a></h3>
+<p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。</p>
+<p>下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>检测两个数是否相等，相等返回 true。</td>
+<td>[ $a -eq $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>检测两个数是否不相等，不相等返回 true。</td>
+<td>[ $a -ne $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>检测左边的数是否大于右边的，如果是，则返回 true。</td>
+<td>[ $a -gt $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>检测左边的数是否小于右边的，如果是，则返回 true。</td>
+<td>[ $a -lt $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>检测左边的数是否大于等于右边的，如果是，则返回 true。</td>
+<td>[ $a -ge $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>检测左边的数是否小于等于右边的，如果是，则返回 true。</td>
+<td>[ $a -le $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p>关系运算符实例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -eq $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -eq </span>$b<span style="color:#e6db74"> : a 等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -eq </span>$b<span style="color:#e6db74">: a 不等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -ne $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -ne </span>$b<span style="color:#e6db74">: a 不等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -ne </span>$b<span style="color:#e6db74"> : a 等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -gt $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -gt </span>$b<span style="color:#e6db74">: a 大于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -gt </span>$b<span style="color:#e6db74">: a 不大于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -lt $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -lt </span>$b<span style="color:#e6db74">: a 小于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -lt </span>$b<span style="color:#e6db74">: a 不小于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -ge $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -ge </span>$b<span style="color:#e6db74">: a 大于或等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -ge </span>$b<span style="color:#e6db74">: a 小于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -le $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -le </span>$b<span style="color:#e6db74">: a 小于或等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> -le </span>$b<span style="color:#e6db74">: a 大于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">10</span> -eq 20: a 不等于 b
+<span style="color:#ae81ff">10</span> -ne 20: a 不等于 b
+<span style="color:#ae81ff">10</span> -gt 20: a 不大于 b
+<span style="color:#ae81ff">10</span> -lt 20: a 小于 b
+<span style="color:#ae81ff">10</span> -ge 20: a 小于 b
+<span style="color:#ae81ff">10</span> -le 20: a 小于或等于 b
+</code></pre></div><h3 id="布尔运算符">布尔运算符<a hidden class="anchor" aria-hidden="true" href="#布尔运算符">#</a></h3>
+<p>下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>非运算，表达式为 true 则返回 false，否则返回 true。</td>
+<td>[ ! false ] 返回 true。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算，有一个表达式为 true 则返回 true。</td>
+<td>[ $a -lt 20 -o $b -gt 100 ] 返回 true。</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算，两个表达式都为 true 才返回 true。</td>
+<td>[ $a -lt 20 -a $b -gt 100 ] 返回 false。</td>
+</tr>
+</tbody>
+</table>
+<p>布尔运算符实例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a !<span style="color:#f92672">=</span> $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> != </span>$b<span style="color:#e6db74"> : a 不等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> == </span>$b<span style="color:#e6db74">: a 等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -lt <span style="color:#ae81ff">100</span> -a $b -gt <span style="color:#ae81ff">15</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 100 且 </span>$b<span style="color:#e6db74"> 大于 15 : 返回 true&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 100 且 </span>$b<span style="color:#e6db74"> 大于 15 : 返回 false&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -lt <span style="color:#ae81ff">100</span> -o $b -gt <span style="color:#ae81ff">100</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 100 或 </span>$b<span style="color:#e6db74"> 大于 100 : 返回 true&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 100 或 </span>$b<span style="color:#e6db74"> 大于 100 : 返回 false&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a -lt <span style="color:#ae81ff">5</span> -o $b -gt <span style="color:#ae81ff">100</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 5 或 </span>$b<span style="color:#e6db74"> 大于 100 : 返回 true&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> 小于 5 或 </span>$b<span style="color:#e6db74"> 大于 100 : 返回 false&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">10</span> !<span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span> : a 不等于 b
+<span style="color:#ae81ff">10</span> 小于 <span style="color:#ae81ff">100</span> 且 <span style="color:#ae81ff">20</span> 大于 <span style="color:#ae81ff">15</span> : 返回 true
+<span style="color:#ae81ff">10</span> 小于 <span style="color:#ae81ff">100</span> 或 <span style="color:#ae81ff">20</span> 大于 <span style="color:#ae81ff">100</span> : 返回 true
+<span style="color:#ae81ff">10</span> 小于 <span style="color:#ae81ff">5</span> 或 <span style="color:#ae81ff">20</span> 大于 <span style="color:#ae81ff">100</span> : 返回 false
+</code></pre></div><h3 id="逻辑运算符">逻辑运算符<a hidden class="anchor" aria-hidden="true" href="#逻辑运算符">#</a></h3>
+<p>以下介绍 Shell 的逻辑运算符，假定变量 a 为 10，变量 b 为 20:</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑的 AND</td>
+<td>[[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑的 OR</td>
+<td>[[ $a -lt 100 || $b -gt 100 ]] 返回 true</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑运算符实例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $a -lt <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;&amp;</span> $b -gt <span style="color:#ae81ff">100</span> <span style="color:#f92672">]]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;返回 true&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;返回 false&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $a -lt <span style="color:#ae81ff">100</span> <span style="color:#f92672">||</span> $b -gt <span style="color:#ae81ff">100</span> <span style="color:#f92672">]]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;返回 true&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;返回 false&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">返回 false
+返回 true
+</code></pre></div><h3 id="字符串运算符">字符串运算符<a hidden class="anchor" aria-hidden="true" href="#字符串运算符">#</a></h3>
+<p>下表列出了常用的字符串运算符，假定变量 a 为 &ldquo;abc&rdquo;，变量 b 为 &ldquo;efg&rdquo;：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>检测两个字符串是否相等，相等返回 true。</td>
+<td>[ $a = $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检测两个字符串是否相等，不相等返回 true。</td>
+<td>[ $a != $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>检测字符串长度是否为 0，为 0 返回 true。</td>
+<td>[ -z $a ] 返回 false。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>检测字符串长度是否不为 0，不为 0 返回 true。</td>
+<td>[ -n &ldquo;$a&rdquo; ] 返回 true。</td>
+</tr>
+<tr>
+<td>$</td>
+<td>检测字符串是否为空，不为空返回 true。</td>
+<td>[ $a ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p>字符串运算符实例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+a<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abc&#34;</span>
+b<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;efg&#34;</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a <span style="color:#f92672">=</span> $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> = </span>$b<span style="color:#e6db74"> : a 等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> = </span>$b<span style="color:#e6db74">: a 不等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a !<span style="color:#f92672">=</span> $b <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> != </span>$b<span style="color:#e6db74"> : a 不等于 b&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> != </span>$b<span style="color:#e6db74">: a 等于 b&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z $a <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;-z </span>$a<span style="color:#e6db74"> : 字符串长度为 0&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;-z </span>$a<span style="color:#e6db74"> : 字符串长度不为 0&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;-n </span>$a<span style="color:#e6db74"> : 字符串长度不为 0&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;-n </span>$a<span style="color:#e6db74"> : 字符串长度为 0&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $a <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> : 字符串不为空&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74"> : 字符串为空&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">abc <span style="color:#f92672">=</span> efg: a 不等于 b
+abc !<span style="color:#f92672">=</span> efg : a 不等于 b
+-z abc : 字符串长度不为 <span style="color:#ae81ff">0</span>
+-n abc : 字符串长度不为 <span style="color:#ae81ff">0</span>
+abc : 字符串不为空
+</code></pre></div><h3 id="文件测试运算符">文件测试运算符<a hidden class="anchor" aria-hidden="true" href="#文件测试运算符">#</a></h3>
+<p>文件测试运算符用于检测 Unix 文件的各种属性。</p>
+<p>属性检测描述如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b file</td>
+<td>检测文件是否是块设备文件，如果是，则返回 true。</td>
+<td>[ -b $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>检测文件是否是字符设备文件，如果是，则返回 true。</td>
+<td>[ -c $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>检测文件是否是目录，如果是，则返回 true。</td>
+<td>[ -d $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td>
+<td>[ -f $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
+<td>[ -g $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
+<td>[ -k $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>检测文件是否是有名管道，如果是，则返回 true。</td>
+<td>[ -p $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
+<td>[ -u $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>检测文件是否可读，如果是，则返回 true。</td>
+<td>[ -r $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>检测文件是否可写，如果是，则返回 true。</td>
+<td>[ -w $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>检测文件是否可执行，如果是，则返回 true。</td>
+<td>[ -x $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>检测文件是否为空（文件大小是否大于 0），不为空返回 true。</td>
+<td>[ -s $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>检测文件（包括目录）是否存在，如果是，则返回 true。</td>
+<td>[ -e $file ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p>其他检查符：</p>
+<ul>
+<li>-S: 判断某文件是否 socket。</li>
+<li>-L: 检测文件是否存在并且是一个符号链接。</li>
+</ul>
+<blockquote>
+<p>变量 file 表示文件 /var/www/runoob/test.sh，它的大小为 100 字节，具有 rwx 权限。下面的代码，将检测该文件的各种属性：</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># author:菜鸟教程</span>
+<span style="color:#75715e"># url:www.runoob.com</span>
+
+file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/runoob/test.sh&#34;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -r $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件可读&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件不可读&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -w $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件可写&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件不可写&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -x $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件可执行&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件不可执行&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件为普通文件&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件为特殊文件&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件是个目录&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件不是个目录&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -s $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件不为空&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件为空&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e $file <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+   echo <span style="color:#e6db74">&#34;文件存在&#34;</span>
+<span style="color:#66d9ef">else</span>
+   echo <span style="color:#e6db74">&#34;文件不存在&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">文件可读
+文件可写
+文件可执行
+文件为普通文件
+文件不是个目录
+文件不为空
+文件存在
+</code></pre></div><!-- raw HTML omitted -->
+
+
+  </div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/en/draft/linux_chinese/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="https://aimerneige.com/en/draft/springboot/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
