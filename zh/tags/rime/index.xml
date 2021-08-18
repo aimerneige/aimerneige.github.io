@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>tool on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/tags/tool/</link>
-    <description>Recent content in tool on AimerNeige&#39;s Blog</description>
+    <title>rime on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/rime/</link>
+    <description>Recent content in rime on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 01:50:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 01:50:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/rime/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diy Your Rime for Better Coding</title>
       <link>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</link>
@@ -19,15 +19,6 @@
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
 patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34; &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34; &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34; &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34; &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34; &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34; &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34; &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34; &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34; &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34; &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34; &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34; &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34; &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34; &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34; &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34; &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34; &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34; &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34; &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34; &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34; &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34; &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34; &amp;#34;.</description>
-    </item>
-    
-    <item>
-      <title>利用 EditorConfig 定义代码格式，统一代码风格</title>
-      <link>https://aimerneige.com/zh/post/editorconfig/</link>
-      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/editorconfig/</guid>
-      <description>EditorConfig 的简要介绍</description>
     </item>
     
     <item>

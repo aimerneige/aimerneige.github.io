@@ -6,7 +6,21 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 01:50:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diy Your Rime for Better Coding</title>
+      <link>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</link>
+      <pubDate>Thu, 19 Aug 2021 01:50:11 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</guid>
+      <description>平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。
+ 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
+本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
+找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
+   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
+patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34; &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34; &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34; &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34; &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34; &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34; &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34; &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34; &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34; &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34; &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34; &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34; &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34; &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34; &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34; &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34; &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34; &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34; &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34; &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34; &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34; &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34; &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34; &amp;#34;.</description>
+    </item>
+    
     <item>
       <title>Hello Hugo</title>
       <link>https://aimerneige.com/zh/post/hello-hugo/</link>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Linux 下安装 fcitx5 与 Rime | AimerNeige&#39;s Blog</title>
-<meta name="keywords" content="software, tool" />
+<meta name="keywords" content="software, tool, rime" />
 <meta name="description" content="Linux 下中文输入法安装">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/" />
@@ -64,7 +64,7 @@
   "name": "Linux 下安装 fcitx5 与 Rime",
   "description": "Linux 下中文输入法安装",
   "keywords": [
-    "software", "tool"
+    "software", "tool", "rime"
   ],
   "articleBody": "前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。\n 测试环境：\n.............. aimerneige@an ..,;:ccc,. ------------- ......''';lxO. OS: Kali GNU/Linux Rolling x86_64 .....''''..........,:ld; Host: TM1701 .';;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..'''. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc',. Packages: 3537 (dpkg) . OMo ':ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..',;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/ 3] .:d;.':;. Terminal: gnome-terminal 'd, .' CPU: Intel i7-8550U (8) @ 4.000GHz ;l .. GPU: NVIDIA GeForce MX250 .o GPU: Intel UHD Graphics 620 c Memory: 3698MiB / 15899MiB .' .  安装 fcitx5 sudo apt install fcitx5 启用 fcitx5 im-config 在开启的图形化界面中启用 fcitx5\n配置 fcitx5 编辑文件 ~/.xprofile 写入如下内容：\nexport GTK_IM_MODULE=fcitx5 export QT_IM_MODULE=fcitx5 export XMODIFIERS=\"@im=fcitx5\" export LANG=\"zh_CN.UTF-8\" export LC_CTYPE=\"zh_CN.UTF-8\" 编辑完成后注销账户，重新启动桌面\n安装 rime sudo apt install fcitx5-rime 启用 rime 在托盘处点击配置，并添加 rime。\n如果你的系统和我一样是英文，取消勾选“Only Show Current Language”即可查看中文选项\n更快地，你可以直接在上面的搜索框搜索 Rime\n安装输入方案 安装 四叶草拼音输入方案 提供的输入方案\n具体安装方法查看 项目 wiki\n更换简体中文 按下 Ctrl + ` 将输入模式切换为简体中文\n你也可以按照自己的喜好更改全角/半角的设置\n后记 如果你在安装中遇到任何问题，请查阅 fcitx rime 四叶草拼音输入方案 提供的文档。\n或是在 Arch Wiki 上查阅相关内容。\n",
   "wordCount" : "169",
@@ -320,6 +320,7 @@ export LC_CTYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&
     <ul class="post-tags">
       <li><a href="https://aimerneige.com/zh/tags/software/">software</a></li>
       <li><a href="https://aimerneige.com/zh/tags/tool/">tool</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/rime/">rime</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://aimerneige.com/zh/post/editorconfig/">
