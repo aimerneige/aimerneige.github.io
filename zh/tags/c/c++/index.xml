@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://aimerneige.com/zh/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>这不是 Bug，而是语言特性</title>
+      <link>https://aimerneige.com/zh/post/this-is-not-bug/</link>
+      <pubDate>Thu, 05 Nov 2020 14:37:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/this-is-not-bug/</guid>
+      <description>C 语言中 goto 带来的奇怪问题</description>
+    </item>
+    
+    <item>
       <title>C 函数指针</title>
       <link>https://aimerneige.com/zh/post/c-function-point/</link>
       <pubDate>Wed, 04 Nov 2020 21:00:39 +0800</pubDate>
