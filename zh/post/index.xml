@@ -163,5 +163,19 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。</description>
     </item>
     
+    <item>
+      <title>每天一个 Python 小知识 isinstance</title>
+      <link>https://aimerneige.com/zh/post/daily-python-tips/</link>
+      <pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/daily-python-tips/</guid>
+      <description>首先来看下 w3schools 的解释：
+ Example Check if the number 5 is an integer:
+x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
+ Syntax isinstance(object, type)
+Parameter Values    Parameter Description     object Required.</description>
+    </item>
+    
   </channel>
 </rss>

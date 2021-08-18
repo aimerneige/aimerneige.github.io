@@ -77,5 +77,19 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 升级系统 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！</description>
     </item>
     
+    <item>
+      <title>每天一个 Python 小知识 isinstance</title>
+      <link>https://aimerneige.com/zh/post/daily-python-tips/</link>
+      <pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/daily-python-tips/</guid>
+      <description>首先来看下 w3schools 的解释：
+ Example Check if the number 5 is an integer:
+x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
+ Syntax isinstance(object, type)
+Parameter Values    Parameter Description     object Required.</description>
+    </item>
+    
   </channel>
 </rss>
