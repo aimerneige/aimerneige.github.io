@@ -71,6 +71,16 @@
     </item>
     
     <item>
+      <title>C 语言多线程基础</title>
+      <link>https://aimerneige.com/zh/post/c-thread-basic/</link>
+      <pubDate>Sun, 01 Nov 2020 18:21:23 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/c-thread-basic/</guid>
+      <description>thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;pthread.h&amp;gt; void *myfunc(void *args) { for (int i = 0; i &amp;lt; 50; i++) { printf(&amp;#34;%d\n&amp;#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;amp;th1, NULL, myfunc, NULL); pthread_create(&amp;amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数</description>
+    </item>
+    
+    <item>
       <title>Friends</title>
       <link>https://aimerneige.com/zh/friends/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
