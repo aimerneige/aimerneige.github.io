@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Program on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/categories/program/</link>
+    <description>Recent content in Program on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Sep 2020 15:30:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode Pyramid Transition Matrix</title>
+      <link>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</link>
+      <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</guid>
+      <description>https://leetcode.com/problems/pyramid-transition-matrix/
+  We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
+We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.
+We start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed.</description>
+    </item>
+    
+  </channel>
+</rss>

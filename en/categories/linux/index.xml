@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/categories/linux/</link>
+    <description>Recent content in Linux on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Sep 2020 13:29:32 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 20.04 Resolution Error Fix</title>
+      <link>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</link>
+      <pubDate>Tue, 22 Sep 2020 13:29:32 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</guid>
+      <description>After upgrade my ubuntu 20.04, I find the system ui resolution is small and looks ugly. I search google for this which tell me to reinstall my Graphics Card Driver. But it doesn&amp;rsquo;t work, so I have to try it myself. And here are my solutions:
+ Open the settings. Select the Displays. Change the scale bigger. Select revert. All done.  After the system reboot, this problem will appear again.</description>
+    </item>
+    
+  </channel>
+</rss>

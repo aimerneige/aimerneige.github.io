@@ -25,5 +25,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Linux</title>
+      <link>https://aimerneige.com/en/categories/linux/</link>
+      <pubDate>Tue, 22 Sep 2020 13:29:32 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Program</title>
+      <link>https://aimerneige.com/en/categories/program/</link>
+      <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/program/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

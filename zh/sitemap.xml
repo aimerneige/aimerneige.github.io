@@ -190,6 +190,16 @@
   <url>
     <loc>https://aimerneige.com/zh/categories/linux/</loc>
     <lastmod>2020-12-13T19:35:18+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
   </url>
   
   <url>
@@ -215,6 +225,16 @@
   <url>
     <loc>https://aimerneige.com/zh/categories/program/</loc>
     <lastmod>2020-11-05T14:37:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/program/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/program/"
+                />
   </url>
   
   <url>

@@ -138,6 +138,56 @@
   </url>
   
   <url>
+    <loc>https://aimerneige.com/en/categories/linux/</loc>
+    <lastmod>2020-09-22T13:29:32+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/ubuntu/</loc>
+    <lastmod>2020-09-22T13:29:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</loc>
+    <lastmod>2020-09-22T13:29:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/leetcode/</loc>
+    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</loc>
+    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/categories/program/</loc>
+    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/program/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/program/"
+                />
+  </url>
+  
+  <url>
     <loc>https://aimerneige.com/en/draft/android_base64/</loc>
   </url>
   
