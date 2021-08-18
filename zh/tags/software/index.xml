@@ -16,5 +16,25 @@
       <description>Linux 下中文输入法安装</description>
     </item>
     
+    <item>
+      <title>在 Windows10 安装和配置 alacritty</title>
+      <link>https://aimerneige.com/zh/post/alacritty-on-windows/</link>
+      <pubDate>Thu, 22 Oct 2020 15:15:19 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/alacritty-on-windows/</guid>
+      <description>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
+ 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+本次演示中可执行文件存储目录：
+‪C:\Tools\Alacritty\alacritty.exe
+配置 alacritty 将配置文件放置在如下目录：
+C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
+配置方法和 Linux 下类似。
+我的配置文件
+将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&amp;quot;Alacritty terminal here&amp;quot; &amp;quot;Icon&amp;quot;=&amp;quot;C:\\Tools\\Alacritty\\alacritty.ico&amp;quot; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&amp;quot;C:\\Tools\\Alacritty\\alacritty.exe&amp;quot; 当然，你也可以按照自己的喜好手动编辑注册表。
+其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
+你也可以将 @=&amp;quot;Alacritty terminal here&amp;quot; 修改为自己喜欢的内容。</description>
+    </item>
+    
   </channel>
 </rss>

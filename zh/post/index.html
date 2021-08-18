@@ -323,6 +323,28 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
   <footer class="entry-footer">October 31, 2020&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言静态函数" href="https://aimerneige.com/zh/post/c-static-function/"></a>
 </article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>在 Windows10 安装和配置 alacritty</h2>
+  </header>
+  <section class="entry-content">
+    <p>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
+ 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+本次演示中可执行文件存储目录：
+‪C:\Tools\Alacritty\alacritty.exe
+配置 alacritty 将配置文件放置在如下目录：
+C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
+配置方法和 Linux 下类似。
+我的配置文件
+将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&#34;Alacritty terminal here&#34; &#34;Icon&#34;=&#34;C:\\Tools\\Alacritty\\alacritty.ico&#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&#34;C:\\Tools\\Alacritty\\alacritty.exe&#34; 当然，你也可以按照自己的喜好手动编辑注册表。
+其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
+你也可以将 @=&#34;Alacritty terminal here&#34; 修改为自己喜欢的内容。</p>
+  </section>
+  <footer class="entry-footer">October 22, 2020&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 Windows10 安装和配置 alacritty" href="https://aimerneige.com/zh/post/alacritty-on-windows/"></a>
+</article>
     </main>
     <footer class="footer">
     <span>&copy; 2021 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
