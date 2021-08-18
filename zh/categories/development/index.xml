@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>development on AimerNeige&#39;s Blog</title>
+    <title>Development on AimerNeige&#39;s Blog</title>
     <link>https://aimerneige.com/zh/categories/development/</link>
-    <description>Recent content in development on AimerNeige&#39;s Blog</description>
+    <description>Recent content in Development on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/development/index.xml" rel="self" type="application/rss+xml" />
@@ -14,6 +14,15 @@
       
       <guid>https://aimerneige.com/zh/post/hello-hugo/</guid>
       <description>安装和配置 hugo</description>
+    </item>
+    
+    <item>
+      <title>利用 EditorConfig 定义代码格式，统一代码风格</title>
+      <link>https://aimerneige.com/zh/post/editorconfig/</link>
+      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/editorconfig/</guid>
+      <description>EditorConfig 的简要介绍</description>
     </item>
     
   </channel>

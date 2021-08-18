@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>development</title>
+      <title>Development</title>
       <link>https://aimerneige.com/zh/categories/development/</link>
       <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>web</title>
+      <title>Web</title>
       <link>https://aimerneige.com/zh/categories/web/</link>
       <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>database</title>
+      <title>Database</title>
       <link>https://aimerneige.com/zh/categories/database/</link>
       <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
       
@@ -35,11 +35,29 @@
     </item>
     
     <item>
-      <title>Program</title>
-      <link>https://aimerneige.com/zh/categories/program/</link>
+      <title>Others</title>
+      <link>https://aimerneige.com/zh/categories/others/</link>
+      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/others/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://aimerneige.com/zh/categories/linux/</link>
+      <pubDate>Sun, 13 Dec 2020 19:35:18 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ProgramLanguage</title>
+      <link>https://aimerneige.com/zh/categories/programlanguage/</link>
       <pubDate>Wed, 04 Nov 2020 21:00:39 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/categories/program/</guid>
+      <guid>https://aimerneige.com/zh/categories/programlanguage/</guid>
       <description></description>
     </item>
     
