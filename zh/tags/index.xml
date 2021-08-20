@@ -6,7 +6,25 @@
     <description>Recent content in 标签 🏷️ on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 01:50:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 21:44:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://aimerneige.com/zh/tags/javascript/</link>
+      <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://aimerneige.com/zh/tags/web/</link>
+      <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>rime</title>
       <link>https://aimerneige.com/zh/tags/rime/</link>
@@ -58,15 +76,6 @@
       <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://aimerneige.com/zh/tags/javascript/</link>
-      <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -130,15 +139,6 @@
       <pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://aimerneige.com/zh/tags/web/</link>
-      <pubDate>Sun, 04 Oct 2020 01:18:44 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/tags/web/</guid>
       <description></description>
     </item>
     

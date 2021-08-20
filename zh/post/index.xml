@@ -6,7 +6,24 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 01:50:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 21:44:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对于某实验平台的吐槽</title>
+      <link>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</link>
+      <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</guid>
+      <description>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
+这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
+结果我在后台找到了下面的代码:
+$.ajax({ url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, type: &amp;#34;GET&amp;#34;, data: { courseId: courseId }, dataType: &amp;#34;JSON&amp;#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
+ // 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) { var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;); var questionAnswer = question1.attr(&amp;#34;data-answer&amp;#34;); var userAnswer = question1.find(&amp;#34;input[type=&amp;#39;radio&amp;#39;]:checked&amp;#34;).val(); var score = parseFloat(question1.</description>
+    </item>
+    
     <item>
       <title>定制你的 rime 提升编程体验</title>
       <link>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</link>

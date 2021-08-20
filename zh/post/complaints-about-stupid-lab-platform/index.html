@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>对于某实验平台的吐槽 | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="web, javascript" />
+<meta name="description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
+这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
+结果我在后台找到了下面的代码:
+$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.09c108e3264e89b014be5846c6d4400805855e88ac39bf8d749068428ba25760.js" integrity="sha256-CcEI4yZOibAUvlhGxtRACAWFXoisOb&#43;NdJBoQouiV2A="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/" />
+<meta property="og:title" content="对于某实验平台的吐槽" />
+<meta property="og:description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
+这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
+结果我在后台找到了下面的代码:
+$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-19T21:44:21&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-19T21:44:21&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对于某实验平台的吐槽"/>
+<meta name="twitter:description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
+这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
+结果我在后台找到了下面的代码:
+$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "对于某实验平台的吐槽",
+      "item": "https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "对于某实验平台的吐槽",
+  "name": "对于某实验平台的吐槽",
+  "description": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n 温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ url: \u0026#34;/webApi/experimen/rig/getData\u0026#34;, type: \u0026#34;GET\u0026#34;, data: { courseId: courseId }, dataType: \u0026#34;JSON\u0026#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n // 单选 var answer = $(\u0026#39;.afterTesting .topic1 form\u0026#39;); for (var k = 0; k \u0026lt; answer.length; k++) { var question1 = $(answer[k]).find(\u0026#34;.question1\u0026#34;); var questionAnswer = question1.attr(\u0026#34;data-answer\u0026#34;); var userAnswer = question1.find(\u0026#34;input[type=\u0026#39;radio\u0026#39;]:checked\u0026#34;).val(); var score = parseFloat(question1.",
+  "keywords": [
+    "web", "javascript"
+  ],
+  "articleBody": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n 温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ url: \"/webApi/experimen/rig/getData\", type: \"GET\", data: { courseId: courseId }, dataType: \"JSON\", success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n // 单选 var answer = $('.afterTesting .topic1 form'); for (var k = 0; k  answer.length; k++) { var question1 = $(answer[k]).find(\".question1\"); var questionAnswer = question1.attr(\"data-answer\"); var userAnswer = question1.find(\"input[type='radio']:checked\").val(); var score = parseFloat(question1.attr(\"data-score\")); if (questionAnswer.length  1) { var userdAnswer = question1.find(\"input[type='checkbox']:checked\"); let userdAnswerStr = ''; for (let i = 0; i  userdAnswer.length; i++) { userdAnswerStr += $(userdAnswer[i]).val(); //console.log($(userdAnswer[i]).val());  } //console.log(userdAnswerStr);  userAnswer = userdAnswerStr } var isok = \"\"; if (questionAnswer == userAnswer) { isok = \"正确\"; question1.find(\".countItem span\").html(score); resultafter += score } else { isok = \"错误\"; question1.find(\".countItem span\").html(\"0\"); } question1.find(\".yourAnswer span\").html(isok); } 好家伙，前端直接向后台发请求拿答案数据，然后判断对错？这就好比考试的时候老师把答案和试卷都给你，让你自己写完试卷自己评分。\n直接发一个请求过去，果然拿到答案了。\n数据示例:\n{ \"id\": \"570239720236388352\", \"courseId\": null, \"title\": \"07、机器人的运动速度与摇杆的偏转量 （）\", \"optionA\": \"A、正比 \", \"optionB\": \"B、反比 \", \"optionC\": \"C、不成比例 \", \"optionD\": \"D、以上均不正确\", \"optionE\": \"\", \"optionF\": \"\", \"optionG\": \"\", \"optionH\": \"\", \"answer\": \"A\", \"tag\": \"\", \"analysis\": \"\", \"remarks\": \"\", \"content\": \"\", \"score\": 3.0, \"pid\": \"550581359601651712_before\", \"countOfRow\": null } ",
+  "wordCount" : "175",
+  "inLanguage": "zh",
+  "datePublished": "2021-08-19T21:44:21+08:00",
+  "dateModified": "2021-08-19T21:44:21+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/friends/" title="朋友">
+                    <span>朋友</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      对于某实验平台的吐槽
+    </h1>
+    <div class="post-meta">August 19, 2021&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/complaints-about-stupid-lab-platform.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+</div>
+  </header> 
+  <div class="post-content"><p>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:</p>
+<blockquote>
+<p>温馨提示:需要从实验空间进入实验,不可直接输入网址进入</p>
+</blockquote>
+<p>不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。</p>
+<p>这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？</p>
+<p>这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。</p>
+<p>结果我在后台找到了下面的代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+		<span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/webApi/experimen/rig/getData&#34;</span>,
+		<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;GET&#34;</span>,
+		<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">courseId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">courseId</span> },
+		<span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JSON&#34;</span>,
+		<span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">res</span>) {
+
+        <span style="color:#75715e">// 省略的大量代码逻辑
+</span><span style="color:#75715e"></span>
+        })<span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><blockquote>
+<p>下面的注释是原来就有，不是我加的。<br>
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 单选
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">answer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.afterTesting .topic1 form&#39;</span>);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">answer</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">question1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">answer</span>[<span style="color:#a6e22e">k</span>]).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;.question1&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">questionAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;data-answer&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;input[type=&#39;radio&#39;]:checked&#34;</span>).<span style="color:#a6e22e">val</span>();
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;data-score&#34;</span>));
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">questionAnswer</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userdAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;input[type=&#39;checkbox&#39;]:checked&#34;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">userdAnswerStr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">userdAnswer</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#a6e22e">userdAnswerStr</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">userdAnswer</span>[<span style="color:#a6e22e">i</span>]).<span style="color:#a6e22e">val</span>();
+        <span style="color:#75715e">//console.log($(userdAnswer[i]).val());
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#75715e">//console.log(userdAnswerStr);
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">userAnswer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userdAnswerStr</span>
+    }
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isok</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">questionAnswer</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">userAnswer</span>) {
+        <span style="color:#a6e22e">isok</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;正确&#34;</span>;
+        <span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;.countItem span&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">score</span>);
+        <span style="color:#a6e22e">resultafter</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">score</span>
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">isok</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;错误&#34;</span>;
+        <span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;.countItem span&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#34;0&#34;</span>);
+	}
+	<span style="color:#a6e22e">question1</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;.yourAnswer span&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">isok</span>);
+}
+</code></pre></div><p>好家伙，前端直接向后台发请求拿答案数据，然后判断对错？这就好比考试的时候老师把答案和试卷都给你，让你自己写完试卷自己评分。</p>
+<p>直接发一个请求过去，果然拿到答案了。</p>
+<p>数据示例:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;570239720236388352&#34;</span>,
+    <span style="color:#f92672">&#34;courseId&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;07、机器人的运动速度与摇杆的偏转量 （）&#34;</span>,
+    <span style="color:#f92672">&#34;optionA&#34;</span>: <span style="color:#e6db74">&#34;A、正比             &#34;</span>,
+    <span style="color:#f92672">&#34;optionB&#34;</span>: <span style="color:#e6db74">&#34;B、反比 &#34;</span>,
+    <span style="color:#f92672">&#34;optionC&#34;</span>: <span style="color:#e6db74">&#34;C、不成比例         &#34;</span>,
+    <span style="color:#f92672">&#34;optionD&#34;</span>: <span style="color:#e6db74">&#34;D、以上均不正确&#34;</span>,
+    <span style="color:#f92672">&#34;optionE&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;optionF&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;optionG&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;optionH&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;A&#34;</span>,
+    <span style="color:#f92672">&#34;tag&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;analysis&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;remarks&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;score&#34;</span>: <span style="color:#ae81ff">3.0</span>,
+    <span style="color:#f92672">&#34;pid&#34;</span>: <span style="color:#e6db74">&#34;550581359601651712_before&#34;</span>,
+    <span style="color:#f92672">&#34;countOfRow&#34;</span>: <span style="color:#66d9ef">null</span>
+}
+</code></pre></div>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/web/">web</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/javascript/">javascript</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>定制你的 rime 提升编程体验</span>
+  </a>
+</nav>
+
+  </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
