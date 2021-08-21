@@ -201,7 +201,8 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
     <h2>C 语言多线程基础</h2>
   </header>
   <section class="entry-content">
-    <p>thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+    <p>线程于进程的对比
+          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
 #include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
   </section>
   <footer class="entry-footer">November 1, 2020&nbsp;·&nbsp;Aimer Neige</footer>
