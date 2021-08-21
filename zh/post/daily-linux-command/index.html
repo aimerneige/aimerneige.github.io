@@ -499,6 +499,29 @@ fe80::5a69:6cff:fe07:714b dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b router ST
 </nav>
 
   </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    };
+
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function (x) {
+            x.parentElement.classList += 'has-jax'
+        })
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </article>
     </main>

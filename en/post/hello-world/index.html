@@ -70,8 +70,8 @@ I had meet many problems and I think I can make an article to help others likes 
   "keywords": [
     "others"
   ],
-  "articleBody": "Welcome Welcome!\nThis is my first Blog and I am glad it works. Before then, I have tried many times to build a blog. But all of them failed. That made me really upset and there has been a long time before I try it again today.\nI had meet many problems and I think I can make an article to help others likes me to build their own blog.\nIt will come soon.\nSee you later!\nHelloWorld This is a simple test for my first blog article.\nC #include int main() { printf(\"HelloWorld!\\n\"); return 0; } C++ #include int main() { std::cout  \"HelloWorld!\"  std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.out.println(\"HelloWorld!\"); } } Python print(\"HelloWorld!\") Go package main import \"fmt\" func main() { fmt.Println(\"HelloWorld!\") } vala void main (string[] args) { stdout.printf (\"Hello world!\"); } ",
-  "wordCount" : "146",
+  "articleBody": "Welcome Welcome!\nThis is my first Blog and I am glad it works. Before then, I have tried many times to build a blog. But all of them failed. That made me really upset and there has been a long time before I try it again today.\nI had meet many problems and I think I can make an article to help others likes me to build their own blog.\nIt will come soon.\nSee you later!\nHelloWorld This is a simple test for my first blog article.\nMathjax $$a_{PI}(x|D) = E[u(x) | x, D] = \\int_{-\\infty}^{f'} \\mathcal{N}(f; \\mu(x), \\kappa(x, x)) \\ df =\\phi(f'; \\mu(x), \\kappa(x, x))$$\nC #include int main() { printf(\"HelloWorld!\\n\"); return 0; } C++ #include int main() { std::cout  \"HelloWorld!\"  std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.out.println(\"HelloWorld!\"); } } Python print(\"HelloWorld!\") Go package main import \"fmt\" func main() { fmt.Println(\"HelloWorld!\") } vala void main (string[] args) { stdout.printf (\"Hello world!\"); } ",
+  "wordCount" : "165",
   "inLanguage": "en",
   "datePublished": "2020-01-24T15:50:47+08:00",
   "dateModified": "2020-01-24T15:50:47+08:00",
@@ -238,6 +238,8 @@ I had meet many problems and I think I can make an article to help others likes 
                     <a href="#helloworld" aria-label="HelloWorld">HelloWorld</a><ul>
                         
                 <li>
+                    <a href="#mathjax" aria-label="Mathjax">Mathjax</a></li>
+                <li>
                     <a href="#c" aria-label="C">C</a></li>
                 <li>
                     <a href="#c-1" aria-label="C&#43;&#43;">C++</a></li>
@@ -265,6 +267,9 @@ I had meet many problems and I think I can make an article to help others likes 
 <p>See you later!</p>
 <h1 id="helloworld">HelloWorld<a hidden class="anchor" aria-hidden="true" href="#helloworld">#</a></h1>
 <p>This is a simple test for my first blog article.</p>
+<h2 id="mathjax">Mathjax<a hidden class="anchor" aria-hidden="true" href="#mathjax">#</a></h2>
+<p>$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))$$</p>
 <h2 id="c">C<a hidden class="anchor" aria-hidden="true" href="#c">#</a></h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
@@ -315,6 +320,29 @@ I had meet many problems and I think I can make an article to help others likes 
 </nav>
 
   </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    };
+
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function (x) {
+            x.parentElement.classList += 'has-jax'
+        })
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </article>
     </main>
