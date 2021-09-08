@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Teach | AimerNeige&#39;s Blog</title>
+<title>golang | AimerNeige&#39;s Blog</title>
 <meta name="keywords" content="" />
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
-<link rel="canonical" href="https://aimerneige.com/zh/tags/teach/" />
+<link rel="canonical" href="https://aimerneige.com/zh/tags/golang/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -19,8 +19,8 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.80.0" />
-<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/tags/teach/index.xml">
-<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/teach/" />
+<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/tags/golang/index.xml">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/golang/" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -34,13 +34,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-<meta property="og:title" content="Teach" />
+<meta property="og:title" content="golang" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://aimerneige.com/zh/tags/teach/" />
+<meta property="og:url" content="https://aimerneige.com/zh/tags/golang/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Teach"/>
+<meta name="twitter:title" content="golang"/>
 <meta name="twitter:description" content=""/>
 
 </head>
@@ -144,7 +144,7 @@ if (!doNotTrack) {
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/tags/">标签 🏷️</a></div>
-  <h1>Teach</h1>
+  <h1>golang</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
@@ -168,55 +168,6 @@ rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
   </section>
   <footer class="entry-footer">August 24, 2021&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go-env-setup-for-beginner/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C 函数指针</h2>
-  </header>
-  <section class="entry-content">
-    <p>函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
-文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/
-函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。
-函数指针的定义 下面的语句定义了一个指向函数的指针变量 p。其中 void *表示返回值，(*p) 表示 p 是一个指针变量， (int, float) 是函数的参数列表。
-void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的类型为 void * (*)(int, float)
-所以函数指针的定义方法为：
-函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。
-即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
-void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
-  </section>
-  <footer class="entry-footer">November 4, 2020&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c-function-point/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C 语言多线程基础</h2>
-  </header>
-  <section class="entry-content">
-    <p>线程于进程的对比
-          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
-  </section>
-  <footer class="entry-footer">November 1, 2020&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c-thread-basic/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C 语言静态函数</h2>
-  </header>
-  <section class="entry-content">
-    <p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
-例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
-gcc file2.c file1.c 你会得到这样的链接错误：
-undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
-  </section>
-  <footer class="entry-footer">October 31, 2020&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to C 语言静态函数" href="https://aimerneige.com/zh/post/c-static-function/"></a>
 </article>
     </main>
     <footer class="footer">

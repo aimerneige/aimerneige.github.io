@@ -164,6 +164,29 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/golang.jpeg" alt="Blue Poison">
+</figure>
+  <header class="entry-header">
+    <h2>配置 go 开发环境</h2>
+  </header>
+  <section class="entry-content">
+    <p>由于某些网络原因1，本文所提到的部分网站、下载链接可能在中国大陆地区无法访问，请自行查找解决方案，本文不再赘述。
+  如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
+ 下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
+本文不推荐使用一键安装包的方式安装 go 语言，即请不要直接下载下图所示的文件:
+我们在下面的 Stable versions 后找到最新版本的 go，选择适合自己电脑系统与架构的压缩包。要选择 Archive　而不要选择 Installer。
+.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} 提示
+当然使用 msi 等一键安装包安装也是完全可以的，如果你想要使用一键安装包的方式安装 go，请查阅其他资料。
+  如果你想要通过源码安装，请自行查阅 通过源码构建。
+ 安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
+Linux  解压压缩文件  这里我们可以直接使用 官方安装指南 提供的指令来解压。
+rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz 本指令会将 go 安装在 /usr/local/go 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。...</p>
+  </section>
+  <footer class="entry-footer">August 24, 2021&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go-env-setup-for-beginner/"></a>
+</article>
+
+<article class="post-entry"> 
   <header class="entry-header">
     <h2>得到一切后我们还会快乐吗</h2>
   </header>
@@ -316,25 +339,6 @@ switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\
   </section>
   <footer class="entry-footer">November 5, 2020&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/this-is-not-bug/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C 函数指针</h2>
-  </header>
-  <section class="entry-content">
-    <p>函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
-文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/
-函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。
-函数指针的定义 下面的语句定义了一个指向函数的指针变量 p。其中 void *表示返回值，(*p) 表示 p 是一个指针变量， (int, float) 是函数的参数列表。
-void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的类型为 void * (*)(int, float)
-所以函数指针的定义方法为：
-函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。
-即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
-void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
-  </section>
-  <footer class="entry-footer">November 4, 2020&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c-function-point/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
