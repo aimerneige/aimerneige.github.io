@@ -203,7 +203,7 @@ if (!doNotTrack) {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
     <h1 class="post-title">
       每天一个 Linux 指令
     </h1>
@@ -212,7 +212,7 @@ if (!doNotTrack) {
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <div class="details">目录</div>
+            <div class="details">Table of Contents</div>
         </summary>
         <div class="inner"><ul>
                 <li>
@@ -476,12 +476,12 @@ fe80::5a69:6cff:fe07:714b dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b router ST
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/">
-    <span class="title">« 上一页</span>
+    <span class="title">« Prev Page</span>
     <br>
     <span>Linux 下安装 fcitx5 与 Rime</span>
   </a>
   <a class="next" href="https://aimerneige.com/zh/post/this-is-not-bug/">
-    <span class="title">下一页 »</span>
+    <span class="title">Next Page »</span>
     <br>
     <span>这不是 Bug，而是语言特性</span>
   </a>
@@ -498,29 +498,7 @@ fe80::5a69:6cff:fe07:714b dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b router ST
         async>
 </script>
 
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        }
-    };
 
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll("mjx-container").forEach(function (x) {
-            x.parentElement.classList += 'has-jax'
-        })
-    });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </article>
     </main>
@@ -586,12 +564,12 @@ fe80::5a69:6cff:fe07:714b dev enx2c16dba37d18 lladdr 58:69:6c:07:71:4b router ST
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = '复制';
+        copybutton.innerText = 'copy';
 
         function copyingDone() {
-            copybutton.innerText = '已复制！';
+            copybutton.innerText = 'copied!';
             setTimeout(() => {
-                copybutton.innerText = '复制';
+                copybutton.innerText = 'copy';
             }, 2000);
         }
 

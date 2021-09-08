@@ -203,7 +203,7 @@ if (!doNotTrack) {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
     <h1 class="post-title">
       这不是 Bug，而是语言特性
     </h1>
@@ -264,12 +264,12 @@ if (!doNotTrack) {
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://aimerneige.com/zh/post/daily-linux-command/">
-    <span class="title">« 上一页</span>
+    <span class="title">« Prev Page</span>
     <br>
     <span>每天一个 Linux 指令</span>
   </a>
   <a class="next" href="https://aimerneige.com/zh/post/c-function-point/">
-    <span class="title">下一页 »</span>
+    <span class="title">Next Page »</span>
     <br>
     <span>C 函数指针</span>
   </a>
@@ -286,29 +286,7 @@ if (!doNotTrack) {
         async>
 </script>
 
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        }
-    };
 
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll("mjx-container").forEach(function (x) {
-            x.parentElement.classList += 'has-jax'
-        })
-    });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </article>
     </main>
@@ -374,12 +352,12 @@ if (!doNotTrack) {
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = '复制';
+        copybutton.innerText = 'copy';
 
         function copyingDone() {
-            copybutton.innerText = '已复制！';
+            copybutton.innerText = 'copied!';
             setTimeout(() => {
-                copybutton.innerText = '复制';
+                copybutton.innerText = 'copy';
             }, 2000);
         }
 

@@ -213,12 +213,12 @@ if (!doNotTrack) {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a></div>
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a></div>
     <h1 class="post-title">
       关于我 👨‍💻
     </h1>
     <div class="post-meta">Aimer Neige&nbsp;|&nbsp;
-<ul class="i18n_list">语言:
+<ul class="i18n_list">Translations:
     <li>
         <a href="https://aimerneige.com/en/about/">English</a>
     </li>
@@ -284,29 +284,7 @@ if (!doNotTrack) {
         async>
 </script>
 
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        }
-    };
 
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll("mjx-container").forEach(function (x) {
-            x.parentElement.classList += 'has-jax'
-        })
-    });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </article>
     </main>
@@ -372,12 +350,12 @@ if (!doNotTrack) {
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = '复制';
+        copybutton.innerText = 'copy';
 
         function copyingDone() {
-            copybutton.innerText = '已复制！';
+            copybutton.innerText = 'copied!';
             setTimeout(() => {
-                copybutton.innerText = '复制';
+                copybutton.innerText = 'copy';
             }, 2000);
         }
 
