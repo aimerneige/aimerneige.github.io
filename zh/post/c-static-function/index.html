@@ -16,7 +16,7 @@ gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/c-static-function/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css" integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw&#43;W8mWdq36u97PLc=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.09c108e3264e89b014be5846c6d4400805855e88ac39bf8d749068428ba25760.js" integrity="sha256-CcEI4yZOibAUvlhGxtRACAWFXoisOb&#43;NdJBoQouiV2A="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -28,7 +28,43 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.80.0" />
 <link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/c-static-function/" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -127,43 +163,6 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
 
 <header class="header">
     <nav class="nav">
@@ -221,7 +220,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
     <h1 class="post-title">
       C 语言静态函数
     </h1>
@@ -260,6 +259,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 
 
   </div>
+
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a></li>
@@ -267,12 +267,12 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://aimerneige.com/zh/post/c-thread-basic/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« 上一页</span>
     <br>
     <span>C 语言多线程基础</span>
   </a>
   <a class="next" href="https://aimerneige.com/zh/post/alacritty-on-windows/">
-    <span class="title">Next Page »</span>
+    <span class="title">下一页 »</span>
     <br>
     <span>在 Windows10 安装和配置 alacritty</span>
   </a>
@@ -293,7 +293,8 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 
 </article>
     </main>
-    <footer class="footer">
+    
+<footer class="footer">
     <span>&copy; 2021 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
@@ -301,12 +302,10 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
         <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
 <script>
@@ -355,12 +354,12 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = 'copy';
+        copybutton.innerText = '复制';
 
         function copyingDone() {
-            copybutton.innerText = 'copied!';
+            copybutton.innerText = '已复制！';
             setTimeout(() => {
-                copybutton.innerText = 'copy';
+                copybutton.innerText = '复制';
             }, 2000);
         }
 

@@ -7,10 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>文章 📝 | AimerNeige&#39;s Blog</title>
 <meta name="keywords" content="" />
-<meta name="description" content="">
+<meta name="description" content="文章 📝 - AimerNeige&#39;s Blog">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css" integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css" integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw&#43;W8mWdq36u97PLc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -22,7 +22,43 @@
 <link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/post/index.xml">
 <link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/" />
 <link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -68,43 +104,6 @@ if (!doNotTrack) {
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
 
 <header class="header">
     <nav class="nav">
@@ -159,13 +158,14 @@ if (!doNotTrack) {
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">Home</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a></div>
   <h1>文章 📝</h1>
 </header>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>C 函数指针</h2>
+    <h2>C 函数指针
+    </h2>
   </header>
   <section class="entry-content">
     <p>函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
@@ -184,7 +184,8 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>C 语言多线程基础</h2>
+    <h2>C 语言多线程基础
+    </h2>
   </header>
   <section class="entry-content">
     <p>线程于进程的对比
@@ -197,7 +198,8 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>C 语言静态函数</h2>
+    <h2>C 语言静态函数
+    </h2>
   </header>
   <section class="entry-content">
     <p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
@@ -214,7 +216,8 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>在 Windows10 安装和配置 alacritty</h2>
+    <h2>在 Windows10 安装和配置 alacritty
+    </h2>
   </header>
   <section class="entry-content">
     <p>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
@@ -236,7 +239,8 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\she
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>GCC 基础</h2>
+    <h2>GCC 基础
+    </h2>
   </header>
   <section class="entry-content">
     <p>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g&#43;&#43; 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
@@ -254,7 +258,8 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nginx.png" alt="nginx-logo">
 </figure>
   <header class="entry-header">
-    <h2>使用 Nginx 搭建静态网页服务</h2>
+    <h2>使用 Nginx 搭建静态网页服务
+    </h2>
   </header>
   <section class="entry-content">
     <p>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
@@ -269,7 +274,8 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>写给小白的 win10 使用技巧</h2>
+    <h2>写给小白的 win10 使用技巧
+    </h2>
   </header>
   <section class="entry-content">
     <p>本文章项目地址 https://github.com/AimerNeige/Tutorial.git
@@ -292,7 +298,8 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>每天一个 Python 小知识 isinstance</h2>
+    <h2>每天一个 Python 小知识 isinstance
+    </h2>
   </header>
   <section class="entry-content">
     <p>首先来看下 w3schools 的解释：
@@ -307,11 +314,12 @@ Parameter Values    Parameter Description     object Required....</p>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://aimerneige.com/zh/post/">« Prev Page</a>
+    <a class="prev" href="https://aimerneige.com/zh/post/">« 上一页</a>
   </nav>
 </footer>
     </main>
-    <footer class="footer">
+    
+<footer class="footer">
     <span>&copy; 2021 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
@@ -319,12 +327,10 @@ Parameter Values    Parameter Description     object Required....</p>
         <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
 <script>
