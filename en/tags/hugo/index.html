@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/tags/hugo/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css" integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw&#43;W8mWdq36u97PLc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.e21185e6c4b43ff34c81666f70aa4f80140274057866888c0a5c28addc9b7fd2.css" integrity="sha256-4hGF5sS0P/NMgWZvcKpPgBQCdAV4ZoiMClwordybf9I=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -157,7 +157,7 @@ if (!doNotTrack) {
   <section class="entry-content">
     <p>Before Start It’s been a long time since I wrote a blog post last time. That’s because I often reinstall my system on computer, and every time I install and configure the blog of hexo on my computer is a troublesome thing. But recently, I discovered hugo, a simple and easy-to-use blog system, which can keep me away from hexo, which is slow and troublesome to configure and install. It has a great experience to use and I happened to change a blog theme, so I decided to use hugo to build my new blog....</p>
   </section>
-  <footer class="entry-footer">August 17, 2021&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>August 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/en/post/hello-hugo/"></a>
 </article>
     </main>
@@ -178,9 +178,11 @@ if (!doNotTrack) {
 
 <script>
     let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
