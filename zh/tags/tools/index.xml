@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Development on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/categories/development/</link>
-    <description>Recent content in Development on AimerNeige&#39;s Blog</description>
+    <title>tools on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/tools/</link>
+    <description>Recent content in tools on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 15:37:39 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 15:37:39 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 vscode 开发 Spring 项目</title>
       <link>https://aimerneige.com/zh/post/start-develop-spring-project-on-vscode/</link>
@@ -18,24 +18,6 @@ Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件�
 配置 安装配置 Java 和 Maven .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Tip
 正常流程配置 Java 和 Maven，如果你已经配置过可以直接跳过
   下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin  安装必要插件  Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators  在 settings.</description>
-    </item>
-    
-    <item>
-      <title>Hello Hugo</title>
-      <link>https://aimerneige.com/zh/post/hello-hugo/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/hello-hugo/</guid>
-      <description>安装和配置 hugo</description>
-    </item>
-    
-    <item>
-      <title>利用 EditorConfig 定义代码格式，统一代码风格</title>
-      <link>https://aimerneige.com/zh/post/editorconfig/</link>
-      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/editorconfig/</guid>
-      <description>EditorConfig 的简要介绍</description>
     </item>
     
   </channel>

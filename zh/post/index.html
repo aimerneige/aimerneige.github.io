@@ -163,6 +163,24 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/spring_vscode.svg" alt="Spring VSCode">
+</figure>
+  <header class="entry-header">
+    <h2>使用 vscode 开发 Spring 项目
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>前言 毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。
+Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。
+配置 安装配置 Java 和 Maven .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Tip
+正常流程配置 Java 和 Maven，如果你已经配置过可以直接跳过
+  下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin  安装必要插件  Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators  在 settings....</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-12-28 15:37:39 +0800 CST'>December 28, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 使用 vscode 开发 Spring 项目" href="https://aimerneige.com/zh/post/start-develop-spring-project-on-vscode/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/golang.jpeg" alt="Blue Poison">
 </figure>
   <header class="entry-header">
@@ -328,26 +346,6 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </section>
   <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>November 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/daily-linux-command/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>这不是 Bug，而是语言特性
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>今天遇到一个奇怪的问题：
-一个 C 语言初学者写了这样的错误代码：
-switch (a) { case1: // do something  break; case2: // do something  break; case3: // do something  break; default: break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
-那么 case1 case2 这些东西是哪里来的？
-几番求证无果，最后在翻阅《C 专家编程》这本书的时候突然发现了原因：
-首先像下面这样写是可以的：
-switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again; default: i&#43;&#43;; case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。
-原错误代码中 case1 case2 等被编译器理解为了标签。
-由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>November 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/this-is-not-bug/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
