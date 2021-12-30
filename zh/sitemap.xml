@@ -35,11 +35,31 @@
   <url>
     <loc>https://aimerneige.com/zh/tags/java/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/java/"
+                />
   </url>
   
   <url>
     <loc>https://aimerneige.com/zh/tags/spring/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/spring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/spring/"
+                />
   </url>
   
   <url>

@@ -6,7 +6,19 @@
     <description>Recent content on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 15:35:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable Swagger on Spring Boot Gradle Projects</title>
+      <link>https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/</link>
+      <pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/</guid>
+      <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &amp;quot;io.springfox:springfox-boot-starter:3.0.0&amp;quot; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+Configuring Swagger Create SwaggerConfig class.
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.</description>
+    </item>
+    
     <item>
       <title>Hello Hugo</title>
       <link>https://aimerneige.com/en/post/hello-hugo/</link>

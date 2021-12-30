@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://aimerneige.com/en/categories/development/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -44,6 +44,76 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/development/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/java/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/java/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/spring/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/spring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/spring/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/swagger/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
                 />
   </url>
   
@@ -78,21 +148,6 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/en/tags/site/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
@@ -104,21 +159,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/site/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
                 />
   </url>
   
