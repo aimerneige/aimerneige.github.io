@@ -162,7 +162,7 @@ switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\
 原错误代码中 case1 case2 等被编译器理解为了标签。
 由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>November 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 +0800'>November 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/this-is-not-bug/"></a>
 </article>
 
@@ -182,7 +182,7 @@ void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的�
 即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
 void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>November 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 +0800'>November 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c-function-point/"></a>
 </article>
 
@@ -196,7 +196,7 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
           thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
 #include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>November 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 +0800'>November 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c-thread-basic/"></a>
 </article>
 
@@ -214,7 +214,7 @@ static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语�
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
   </section>
-  <footer class="entry-footer"><span title='2020-10-31 20:31:36 +0800 CST'>October 31, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-31 20:31:36 +0800 +0800'>October 31, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言静态函数" href="https://aimerneige.com/zh/post/c-static-function/"></a>
 </article>
 
@@ -231,7 +231,7 @@ GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
    文件扩展名 GCC 所理解的含义     *....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>October 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 +0800'>October 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/gcc-basic/"></a>
 </article>
     </main>
