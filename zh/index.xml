@@ -263,7 +263,8 @@ Parameter Values    Parameter Description     object Required.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aimerneige.com/zh/friends/</guid>
-      <description>.friends { padding: 1em 0; border: 2px solid transparent; border-bottom: 1px dashed var(--color-contrast-low); display: flex; transition: all .5s; } .friends .friend { text-decoration: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .name { font-weight: bold; margin: 0.375em 0; } .friends .excerpt { font-size: 0.875em; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .avatar { width: 4em !important; height: 4em !important; margin: 0 1em 0 0 !important; z-index: 0; }  伞 一只咸鱼的学习记录    HelloWorld的小博客 这里是一个小白的博客    TangZ TangZ 的个人页面    Kenvix 党明学姐    HeoLis We need to go faster and deeper.</description>
+      <description>排名不分先后，按照添加时间排序。
+.friends { padding: 1em 0; border: 2px solid transparent; border-bottom: 1px dashed var(--color-contrast-low); display: flex; transition: all .5s; } .friends .friend { text-decoration: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .name { font-weight: bold; margin: 0.375em 0; } .friends .excerpt { font-size: 0.875em; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .avatar { width: 4em !important; height: 4em !important; margin: 0 1em 0 0 !important; z-index: 0; }  伞 一只咸鱼的学习记录    HelloWorld的小博客 这里是一个小白的博客    TangZ TangZ 的个人页面    Kenvix 党明学姐    HeoLis We need to go faster and deeper.</description>
     </item>
     
     <item>
