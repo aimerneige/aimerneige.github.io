@@ -6,7 +6,25 @@
     <description>Recent content in 分类 🤹‍♂️ on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Mar 2022 19:36:29 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 22:22:44 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows</title>
+      <link>https://aimerneige.com/zh/categories/windows/</link>
+      <pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>https://aimerneige.com/zh/categories/wsl/</link>
+      <pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/wsl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://aimerneige.com/zh/categories/linux/</link>

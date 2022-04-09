@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>wsl on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/wsl/</link>
+    <description>Recent content in wsl on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2022 22:22:44 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Fedora35 on wsl</title>
+      <link>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</link>
+      <pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</guid>
+      <description>安装 wsl2 使用管理员身份开启 windows terminal.
+执行如下指令：
+wsl.exe --install 等待安装完成后在开始菜单执行重启(reboot)
+.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Warning
+注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
+ 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+执行下面的指令设置 wsl 默认版本为 wsl2：
+wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
+wsl --list --online 返回数据类似下面这样：
+The following is a list of valid distributions that can be installed. Install using &amp;#39;wsl --install -d &amp;lt;Distro&amp;gt;&amp;#39;.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -128,6 +128,29 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wsl.png" alt="Fedora Windows">
+</figure>
+  <header class="entry-header">
+    <h2>Install Fedora35 on wsl
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>安装 wsl2 使用管理员身份开启 windows terminal.
+执行如下指令：
+wsl.exe --install 等待安装完成后在开始菜单执行重启(reboot)
+.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Warning
+注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
+ 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+执行下面的指令设置 wsl 默认版本为 wsl2：
+wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
+wsl --list --online 返回数据类似下面这样：
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-09 22:22:44 +0800 CST'>April 9, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install Fedora35 on wsl" href="https://aimerneige.com/zh/post/install-fedora35-on-wsl/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/find.png" alt="Find Command On Cool Retro Term">
 </figure>
   <header class="entry-header">
@@ -300,22 +323,6 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </section>
   <footer class="entry-footer"><span title='2021-01-29 16:37:25 +0800 CST'>January 29, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 利用 EditorConfig 定义代码格式，统一代码风格" href="https://aimerneige.com/zh/post/editorconfig/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/rime.png" alt="Rime logo">
-</figure>
-  <header class="entry-header">
-    <h2>Linux 下安装 fcitx5 与 Rime
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。
- 测试环境：
-.............. aimerneige@an ..,;:ccc,. ------------- ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg) . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..&#39;,;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/&gt; 3] ....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>December 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
