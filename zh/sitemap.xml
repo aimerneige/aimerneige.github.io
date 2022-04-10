@@ -23,11 +23,6 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/zh/categories/windows/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
   </url>
@@ -55,6 +50,11 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</loc>
+    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
   </url>
   
   <url>
