@@ -301,16 +301,34 @@ Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件�
   </a>
 </nav>
 
-  </footer><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under <a target="_blank" rel="noopener"
+            href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #ee5b32;">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
 
-<script src="https://utteranc.es/client.js"
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
         theme="preferred-color-scheme"
         crossorigin="anonymous"
         async>
-</script>
+    </script>
+    <script>
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
 
 
 
