@@ -415,6 +415,16 @@
   <url>
     <loc>https://aimerneige.com/zh/tags/linux/</loc>
     <lastmod>2020-10-17T22:37:01+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/linux/"
+                />
   </url>
   
   <url>
