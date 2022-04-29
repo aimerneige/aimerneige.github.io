@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>文章 📝 | AimerNeige&#39;s Blog</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="文章 📝 - AimerNeige&#39;s Blog">
 <meta name="author" content="Aimer Neige">
-<link rel="canonical" href="https://aimerneige.com/zh/post/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://aimerneige.com/zh/post/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -19,8 +19,8 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/post/index.xml">
-<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/" />
-<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/" />
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/">
 <noscript>
     <style>
         #theme-toggle,
@@ -134,7 +134,7 @@ if (!doNotTrack) {
     <h2>在 wsl 下安装 fedora 35
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
@@ -145,7 +145,7 @@ wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
 The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2022-04-09 22:22:44 +0800 CST'>April 9, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 wsl 下安装 fedora 35" href="https://aimerneige.com/zh/post/install-fedora35-on-wsl/"></a>
 </article>
@@ -157,12 +157,12 @@ The following is a list of valid distributions that can be installed. Install us
     <h2>find 指令的基本用法
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>什么是 find 正如它的名字一样，find 指令用于查找文件。
  Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 来源: 菜鸟教程
   The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>March 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/basic-usage-of-find/"></a>
 </article>
@@ -174,13 +174,13 @@ The following is a list of valid distributions that can be installed. Install us
     <h2>使用 vscode 开发 Spring 项目
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>前言 毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。
 Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。
 配置 安装配置 Java 和 Maven .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Tip
 正常流程配置 Java 和 Maven，如果你已经配置过可以直接跳过
   下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin  安装必要插件  Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators XML Dependency Analytics  在 settings....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-12-28 15:37:39 +0800 CST'>December 28, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 vscode 开发 Spring 项目" href="https://aimerneige.com/zh/post/start-develop-spring-project-on-vscode/"></a>
 </article>
@@ -192,7 +192,7 @@ Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件�
     <h2>配置 go 开发环境
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>由于某些网络原因1，本文所提到的部分网站、下载链接可能在中国大陆地区无法访问，请自行查找解决方案，本文不再赘述。
   如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
  下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
@@ -204,7 +204,7 @@ Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件�
  安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
 Linux  解压压缩文件  这里我们可以直接使用 官方安装指南 提供的指令来解压。
 rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz 本指令会将 go 安装在 /usr/local/go 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。...</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-08-24 21:31:05 +0800 CST'>August 24, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go-env-setup-for-beginner/"></a>
 </article>
@@ -214,14 +214,14 @@ rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
     <h2>得到一切后我们还会快乐吗
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>回想起小时候，除了过年外，最快乐的时光大概就是村里赶会。
 在每年的固定时间，乡里就会来大量的商人，卖好多新奇的玩意儿。有各种小吃，五花八门的小玩具，平时买不到的衣服，还有诸如打气球，旋转木马等娱乐设施。除此之外，还会有人登台唱大戏，而我看不懂大戏，只喜欢跟着父母讨要各种好吃的小吃。而且这时，我便也不再被要求学习，可以领到父母的零花钱在赶会期间玩乐，通常，每一年的这个时候父母都是最慷慨的。我会带着零花钱买雪糕，饮料，小玩具，还可以在街上看热闹，跟着几个哥哥到处野。
 而现在，互联网高速发展，我们想要的一切都可以直接在网络上购买，我们未曾见过的东西也可以通过互联网快都了解。而我也不再是当初的那个见到什么都欣喜万分的孩子，作为正在学习计算机专业的学生，我对如何使用互联网再清楚不过，有想要的东西可以在电商平台一键下单，有没见过的东西也可以在网络上快速找到资料。我了解的越来越多，可当初的那份简单的快乐如今还剩多少呢？
 小的时候智能手机并不发达，手机没有拍照的功能，家里人每年都会在特殊的日子，比如儿童节，带我去照相馆拍照，一张张的照片记录了我的成长，也见证了时代的兴衰。现在的手机都有拍照功能，而家里人坐在一起拍照纪念的日子有有多少呢?
 得到一切后我们还会快乐吗？
 2021年8月21日凌晨 于宁武</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-08-21 05:07:48 +0800 CST'>August 21, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 得到一切后我们还会快乐吗" href="https://aimerneige.com/zh/post/will-we-still-be-happy-after-gain-everything/"></a>
 </article>
@@ -231,7 +231,7 @@ rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
     <h2>对于某实验平台的吐槽
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
  温馨提示:需要从实验空间进入实验,不可直接输入网址进入
  不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
@@ -241,7 +241,7 @@ rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
 $.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
  // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-08-19 21:44:21 +0800 CST'>August 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 对于某实验平台的吐槽" href="https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/"></a>
 </article>
@@ -253,14 +253,14 @@ $.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data
     <h2>定制你的 rime 提升编程体验
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。
  准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
 patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-08-19 01:50:11 +0800 CST'>August 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 定制你的 rime 提升编程体验" href="https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/"></a>
 </article>
@@ -272,7 +272,7 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
     <h2>Hello Hugo
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>前言 距离上一次写博客文章已经很长时间了，因为经常重装系统，而每次在电脑上安装和配置 hexo 的博客都是一件比较麻烦的事情，于是就一直咕了。但是最近我发现了 hugo 这一简洁好用的博客系统，可以让我远离配置安装都又慢又麻烦的 hexo，使用下来体验很棒，而我恰好又打算换一个博客主题，于是决定使用 hugo 来搭建我的新博客。本文简要介绍如何安装和使用 hugo。
 安装 你可能需要  go 的开发环境 git 一个顺手的编辑器  你一定不需要  nodejs npm  安装 hugo 要安装 hugo 非常简单，以 fedora 系统为例，只需要执行如下指令：
 sudo dnf install hugo 创建站点文件夹 使用以下指令创建你的站点文件夹：
@@ -283,7 +283,7 @@ git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth
  当然，下载解压压缩包的方式也是可以的。
 如果想要方便版本控制和更新，使用如下指令添加 submodule：
 git submodule add https://github....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>August 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/zh/post/hello-hugo/"></a>
 </article>
@@ -295,7 +295,7 @@ git submodule add https://github....</p>
     <h2>使用 nodejs 快速为 Android 程序构建 API
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。
 前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
  注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
@@ -305,7 +305,7 @@ git submodule add https://github....</p>
 sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。
 如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。
 安装 npm 通常情况下，安装 nodejs 时会附带安装 npm，你可以直接使用 npm -v 来查看当前系统安装的 npm 版本来检测安装情况。...</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-01-30 20:17:30 +0800 CST'>January 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 nodejs 快速为 Android 程序构建 API" href="https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/"></a>
 </article>
@@ -317,10 +317,10 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
     <h2>利用 EditorConfig 定义代码格式，统一代码风格
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>在多人协作的项目中，为了同一代码格式，可以使用 editorconfig 来定义，这样不仅可以帮助协作者快速了解当前项目要求的代码风格，也可以方便使用一些格式化工具保证代码风格按照预期格式化。
 快速了解  What is EditorConfig? EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2021-01-29 16:37:25 +0800 CST'>January 29, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 利用 EditorConfig 定义代码格式，统一代码风格" href="https://aimerneige.com/zh/post/editorconfig/"></a>
 </article>

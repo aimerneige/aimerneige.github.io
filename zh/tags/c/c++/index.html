@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>C/C&#43;&#43; | AimerNeige&#39;s Blog</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
-<link rel="canonical" href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/index.xml">
-<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/" />
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/">
 <noscript>
     <style>
         #theme-toggle,
@@ -116,7 +116,7 @@ if (!doNotTrack) {
     <h2>这不是 Bug，而是语言特性
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>今天遇到一个奇怪的问题：
 一个 C 语言初学者写了这样的错误代码：
 switch (a) { case1: // do something  break; case2: // do something  break; case3: // do something  break; default: break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
@@ -126,7 +126,7 @@ switch (a) { case1: // do something  break; case2: // do something  break; case3
 switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again; default: i&#43;&#43;; case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。
 原错误代码中 case1 case2 等被编译器理解为了标签。
 由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。...</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>November 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/this-is-not-bug/"></a>
 </article>
@@ -136,7 +136,7 @@ switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\
     <h2>C 函数指针
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
 文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/
 函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。
@@ -146,7 +146,7 @@ void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的�
 函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。
 即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
 void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>November 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c-function-point/"></a>
 </article>
@@ -156,11 +156,11 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
     <h2>C 语言多线程基础
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>线程于进程的对比
           thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
 #include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>November 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c-thread-basic/"></a>
 </article>
@@ -170,7 +170,7 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
     <h2>C 语言静态函数
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
 static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
@@ -178,7 +178,7 @@ static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语�
 // in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2020-10-31 20:31:36 +0800 CST'>October 31, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言静态函数" href="https://aimerneige.com/zh/post/c-static-function/"></a>
 </article>
@@ -188,14 +188,14 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
     <h2>GCC 基础
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g&#43;&#43; 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
 GCC 工具集不仅能编译 C/C&#43;&#43; 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
 GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
 GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
    文件扩展名 GCC 所理解的含义     *....</p>
-  </section>
+  </div>
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>October 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/gcc-basic/"></a>
 </article>
