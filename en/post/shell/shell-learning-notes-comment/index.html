@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Shell Learning Notes Comment | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="linux, bash, shell, notes">
+<meta name="description" content="Shell Comment Start with #
+# this is a line of comment Simply write more with # start
+# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
+:&lt;&lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&lt;&lt;&#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &#39; :&lt;&lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  ">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-5QJPQTJ618', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Shell Learning Notes Comment" />
+<meta property="og:description" content="Shell Comment Start with #
+# this is a line of comment Simply write more with # start
+# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
+:&lt;&lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&lt;&lt;&#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &#39; :&lt;&lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/" />
+<meta property="og:image" content="https://aimerneige.com/images/Gnu-bash-logo.svg" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-01T02:25:48&#43;08:00" />
+<meta property="article:modified_time" content="2022-05-01T02:25:48&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/Gnu-bash-logo.svg" />
+<meta name="twitter:title" content="Shell Learning Notes Comment"/>
+<meta name="twitter:description" content="Shell Comment Start with #
+# this is a line of comment Simply write more with # start
+# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
+:&lt;&lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&lt;&lt;&#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &#39; :&lt;&lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Shell Learning Notes Comment",
+      "item": "https://aimerneige.com/en/post/shell/shell-learning-notes-comment/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Shell Learning Notes Comment",
+  "name": "Shell Learning Notes Comment",
+  "description": "Shell Comment Start with #\n# this is a line of comment Simply write more with # start\n# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:\n:\u0026lt;\u0026lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :\u0026lt;\u0026lt;\u0026#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 \u0026#39; :\u0026lt;\u0026lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  ",
+  "keywords": [
+    "linux", "bash", "shell", "notes"
+  ],
+  "articleBody": "Shell Comment Start with #\n# this is a line of comment Simply write more with # start\n# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:\n:Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :' Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ' :Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  ",
+  "wordCount" : "60",
+  "inLanguage": "en",
+  "image":"https://aimerneige.com/images/Gnu-bash-logo.svg","datePublished": "2022-05-01T02:25:48+08:00",
+  "dateModified": "2022-05-01T02:25:48+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/shell/shell-learning-notes-comment/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Shell Learning Notes Comment
+    </h1>
+    <div class="post-meta"><span title='2022-05-01 02:25:48 +0800 CST'>May 1, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/shell/shell-learning-notes-comment.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#shell-comment" aria-label="Shell Comment">Shell Comment</a><ul>
+                        
+                <li>
+                    <a href="#refer-link" aria-label="Refer Link">Refer Link</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="shell-comment">Shell Comment<a hidden class="anchor" aria-hidden="true" href="#shell-comment">#</a></h1>
+<p>Start with <code>#</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># this is a line of comment</span>
+</code></pre></div><p>Simply write more with <code>#</code> start</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Author: Aimer Neige</span>
+<span style="color:#75715e"># Email: aimer.neige@aimerneige.com</span>
+<span style="color:#75715e"># Date: 2022-04-29</span>
+</code></pre></div><p>Other way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:<span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74">Author: Aimer Neige
+</span><span style="color:#e6db74">Email: aimer.neige@aimerneige.com
+</span><span style="color:#e6db74">Date: 2022-04-29
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:&lt;&lt;<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">Author: Aimer Neige
+</span><span style="color:#e6db74">Email: aimer.neige@aimerneige.com
+</span><span style="color:#e6db74">Date: 2022-04-29
+</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:&lt;&lt;!
+Author: Aimer Neige
+Email: aimer.neige@aimerneige.com
+Date: 2022-04-29
+!
+</code></pre></div><h2 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h2>
+<ul>
+<li><a href="https://www.runoob.com/linux/linux-shell-variable.html">https://www.runoob.com/linux/linux-shell-variable.html</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/linux/">linux</a></li>
+      <li><a href="https://aimerneige.com/en/tags/bash/">bash</a></li>
+      <li><a href="https://aimerneige.com/en/tags/shell/">shell</a></li>
+      <li><a href="https://aimerneige.com/en/tags/notes/">notes</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>Shell Learning Notes Parameters</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a
+            target="_blank"
+            rel="noopener"
+            href="http://creativecommons.org/licenses/by-nc/4.0/"
+            style="color: #00b5da"
+        >
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

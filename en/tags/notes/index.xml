@@ -6,23 +6,42 @@
     <description>Recent content in notes on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 02:22:52 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 02:25:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell Learning Notes Comment</title>
+      <link>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</link>
+      <pubDate>Sun, 01 May 2022 02:25:48 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</guid>
+      <description>Shell Comment Start with #
+# this is a line of comment Simply write more with # start
+# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
+:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </description>
+    </item>
+    
     <item>
       <title>Shell Learning Notes Parameters</title>
-      <link>https://aimerneige.com/en/post/shell-learning-notes-parameters/</link>
+      <link>https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/</link>
       <pubDate>Sun, 01 May 2022 02:22:52 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/shell-learning-notes-parameters/</guid>
-      <description>Learning notes for shell script parameters</description>
+      <guid>https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/</guid>
+      <description>Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
+The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
+Note that the 0 is the script fine name.
+Example:
+#!/usr/bin/bash  echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
     </item>
     
     <item>
       <title>Shell Learning Notes Variable</title>
-      <link>https://aimerneige.com/en/post/shell-learning-notes-variable/</link>
+      <link>https://aimerneige.com/en/post/shell/shell-learning-notes-variable/</link>
       <pubDate>Sat, 30 Apr 2022 00:42:38 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/shell-learning-notes-variable/</guid>
-      <description>Learning notes for shell script variable</description>
+      <guid>https://aimerneige.com/en/post/shell/shell-learning-notes-variable/</guid>
+      <description>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
+For example:
+your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you need to follow these rules:
+ You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
     </item>
     
   </channel>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Shell Learning Notes Parameters | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="linux, bash, shell, notes">
+<meta name="description" content="Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
+The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
+Note that the 0 is the script fine name.
+Example:
+#!/usr/bin/bash  echo &#34;Parameters Example:&#34; echo &#34;The Script File Name: \&#34;$0\&#34;&#34; echo &#34;The First Parameters: \&#34;$1\&#34;&#34; echo &#34;The Second Parameters: \&#34;$2\&#34;&#34; echo &#34;The Third Parameters: \&#34;$3\&#34;&#34; echo &#34;The Forth Parameters: \&#34;$4\&#34;&#34; Run this script:">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-5QJPQTJ618', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Shell Learning Notes Parameters" />
+<meta property="og:description" content="Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
+The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
+Note that the 0 is the script fine name.
+Example:
+#!/usr/bin/bash  echo &#34;Parameters Example:&#34; echo &#34;The Script File Name: \&#34;$0\&#34;&#34; echo &#34;The First Parameters: \&#34;$1\&#34;&#34; echo &#34;The Second Parameters: \&#34;$2\&#34;&#34; echo &#34;The Third Parameters: \&#34;$3\&#34;&#34; echo &#34;The Forth Parameters: \&#34;$4\&#34;&#34; Run this script:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/" />
+<meta property="og:image" content="https://aimerneige.com/images/Gnu-bash-logo.svg" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-01T02:22:52&#43;08:00" />
+<meta property="article:modified_time" content="2022-05-01T02:22:52&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/Gnu-bash-logo.svg" />
+<meta name="twitter:title" content="Shell Learning Notes Parameters"/>
+<meta name="twitter:description" content="Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
+The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
+Note that the 0 is the script fine name.
+Example:
+#!/usr/bin/bash  echo &#34;Parameters Example:&#34; echo &#34;The Script File Name: \&#34;$0\&#34;&#34; echo &#34;The First Parameters: \&#34;$1\&#34;&#34; echo &#34;The Second Parameters: \&#34;$2\&#34;&#34; echo &#34;The Third Parameters: \&#34;$3\&#34;&#34; echo &#34;The Forth Parameters: \&#34;$4\&#34;&#34; Run this script:"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Shell Learning Notes Parameters",
+      "item": "https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Shell Learning Notes Parameters",
+  "name": "Shell Learning Notes Parameters",
+  "description": "Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.\nThe n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.\nNote that the 0 is the script fine name.\nExample:\n#!/usr/bin/bash  echo \u0026#34;Parameters Example:\u0026#34; echo \u0026#34;The Script File Name: \\\u0026#34;$0\\\u0026#34;\u0026#34; echo \u0026#34;The First Parameters: \\\u0026#34;$1\\\u0026#34;\u0026#34; echo \u0026#34;The Second Parameters: \\\u0026#34;$2\\\u0026#34;\u0026#34; echo \u0026#34;The Third Parameters: \\\u0026#34;$3\\\u0026#34;\u0026#34; echo \u0026#34;The Forth Parameters: \\\u0026#34;$4\\\u0026#34;\u0026#34; Run this script:",
+  "keywords": [
+    "linux", "bash", "shell", "notes"
+  ],
+  "articleBody": "Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.\nThe n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.\nNote that the 0 is the script fine name.\nExample:\n#!/usr/bin/bash  echo \"Parameters Example:\" echo \"The Script File Name: \\\"$0\\\"\" echo \"The First Parameters: \\\"$1\\\"\" echo \"The Second Parameters: \\\"$2\\\"\" echo \"The Third Parameters: \\\"$3\\\"\" echo \"The Forth Parameters: \\\"$4\\\"\" Run this script:\n➜ ./test.sh first second third fourth Parameters Example: The Script File Name: \"./test.sh\" The First Parameters: \"first\" The Second Parameters: \"second\" The Third Parameters: \"third\" The Forth Parameters: \"fourth\" Some special characters to solve the parameters:\n   args explanation     $# The number of arguments passed to the script.   $* Displays all parameters passed to the script as a single string.   $$ The current process ID number of the script running.   $! ID number of the last process running in the background.   $@ Same as $*, but returns each argument as in array.   $- Displays the current options used by the shell, which has the same function as the set command.   $? Displays the exit status of the last command. 0 means no error, any other value means there is an error.    Example:\n#!/usr/bin/bash  echo \"Parameters Example:\" echo \"The Script File Name: \\\"$0\\\"\" echo \"The Number of Parameters: $#\" echo \"All Parameters: \\\"$*\\\"\" echo \"Script PID: $$\" Run this script:\n➜ ./test.sh first second third fourth fifth Parameters Example: The Script File Name: \"./test.sh\" The Number of Parameters: 5 All Parameters: \"first second third fourth fifth\" Script PID: 25504 Different between $* and $@:\n $* return one args, which means 1 2 3 as a single string. $@ return array of args, which means 1 2 3 as a array.  Example:\n#!/usr/bin/bash  echo \"-- Example For \\$* ---\" for i in \"$*\"; do echo $i done echo \"-- Example For \\$@ ---\" for i in \"$@\"; do echo $i done Run this script:\n➜ ./test.sh first second third fourth fifth -- Example For $* --- first second third fourth fifth -- Example For $@ --- first second third fourth fifth Refer Link  https://www.runoob.com/linux/linux-shell-passing-arguments.html  ",
+  "wordCount" : "382",
+  "inLanguage": "en",
+  "image":"https://aimerneige.com/images/Gnu-bash-logo.svg","datePublished": "2022-05-01T02:22:52+08:00",
+  "dateModified": "2022-05-01T02:22:52+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Shell Learning Notes Parameters
+    </h1>
+    <div class="post-meta"><span title='2022-05-01 02:22:52 +0800 CST'>May 1, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/shell/shell-learning-notes-parameters.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#pass-parameters" aria-label="Pass Parameters">Pass Parameters</a><ul>
+                        
+                <li>
+                    <a href="#refer-link" aria-label="Refer Link">Refer Link</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="pass-parameters">Pass Parameters<a hidden class="anchor" aria-hidden="true" href="#pass-parameters">#</a></h1>
+<p>When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by <code>$n</code>.</p>
+<p>The <code>n</code> represents a number, the <code>1</code> is meant for the first parameters you pass to the script, the <code>2</code> is the second parameters you pass to the script, and so on.</p>
+<p>Note that the <code>0</code> is the script fine name.</p>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/bash
+</span><span style="color:#75715e"></span>
+echo <span style="color:#e6db74">&#34;Parameters Example:&#34;</span>
+echo <span style="color:#e6db74">&#34;The Script File Name: \&#34;</span>$0<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;The First Parameters: \&#34;</span>$1<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;The Second Parameters: \&#34;</span>$2<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;The Third Parameters: \&#34;</span>$3<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;The Forth Parameters: \&#34;</span>$4<span style="color:#e6db74">\&#34;&#34;</span>
+</code></pre></div><p>Run this script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ ./test.sh first second third fourth
+Parameters Example:
+The Script File Name: <span style="color:#e6db74">&#34;./test.sh&#34;</span>
+The First Parameters: <span style="color:#e6db74">&#34;first&#34;</span>
+The Second Parameters: <span style="color:#e6db74">&#34;second&#34;</span>
+The Third Parameters: <span style="color:#e6db74">&#34;third&#34;</span>
+The Forth Parameters: <span style="color:#e6db74">&#34;fourth&#34;</span>
+</code></pre></div><p>Some special characters to solve the parameters:</p>
+<table>
+<thead>
+<tr>
+<th>args</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$#</code></td>
+<td>The number of arguments passed to the script.</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>Displays all parameters passed to the script as a single string.</td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>The current process ID number of the script running.</td>
+</tr>
+<tr>
+<td><code>$!</code></td>
+<td>ID number of the last process running in the background.</td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>Same as <code>$*</code>, but returns each argument as in array.</td>
+</tr>
+<tr>
+<td><code>$-</code></td>
+<td>Displays the current options used by the shell, which has the same function as the <strong>set</strong> command.</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>Displays the exit status of the last command. 0 means no error, any other value means there is an error.</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/bash
+</span><span style="color:#75715e"></span>
+echo <span style="color:#e6db74">&#34;Parameters Example:&#34;</span>
+echo <span style="color:#e6db74">&#34;The Script File Name: \&#34;</span>$0<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;The Number of Parameters: </span>$#<span style="color:#e6db74">&#34;</span>
+echo <span style="color:#e6db74">&#34;All Parameters: \&#34;</span>$*<span style="color:#e6db74">\&#34;&#34;</span>
+echo <span style="color:#e6db74">&#34;Script PID: </span>$$<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>Run this script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ ./test.sh first second third fourth fifth
+Parameters Example:
+The Script File Name: <span style="color:#e6db74">&#34;./test.sh&#34;</span>
+The Number of Parameters: <span style="color:#ae81ff">5</span>
+All Parameters: <span style="color:#e6db74">&#34;first second third fourth fifth&#34;</span>
+Script PID: <span style="color:#ae81ff">25504</span>
+</code></pre></div><p>Different between <code>$*</code> and <code>$@</code>:</p>
+<ul>
+<li><code>$*</code> return one args, which means <code>1 2 3</code> as a single string.</li>
+<li><code>$@</code> return array of args, which means <code>1</code> <code>2</code> <code>3</code> as a array.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/bash
+</span><span style="color:#75715e"></span>
+echo <span style="color:#e6db74">&#34;-- Example For \$* ---&#34;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+    echo $i
+<span style="color:#66d9ef">done</span>
+
+echo <span style="color:#e6db74">&#34;-- Example For \$@ ---&#34;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+    echo $i
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>Run this script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ ./test.sh first second third fourth fifth
+-- Example For $* ---
+first second third fourth fifth
+-- Example For $@ ---
+first
+second
+third
+fourth
+fifth
+</code></pre></div><h2 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h2>
+<ul>
+<li><a href="https://www.runoob.com/linux/linux-shell-passing-arguments.html">https://www.runoob.com/linux/linux-shell-passing-arguments.html</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/linux/">linux</a></li>
+      <li><a href="https://aimerneige.com/en/tags/bash/">bash</a></li>
+      <li><a href="https://aimerneige.com/en/tags/shell/">shell</a></li>
+      <li><a href="https://aimerneige.com/en/tags/notes/">notes</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>Shell Learning Notes Comment</span>
+  </a>
+  <a class="next" href="https://aimerneige.com/en/post/shell/shell-learning-notes-variable/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>Shell Learning Notes Variable</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a
+            target="_blank"
+            rel="noopener"
+            href="http://creativecommons.org/licenses/by-nc/4.0/"
+            style="color: #00b5da"
+        >
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
