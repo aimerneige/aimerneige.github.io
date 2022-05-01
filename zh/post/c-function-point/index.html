@@ -512,8 +512,12 @@ p(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
         async
     ></script>
     <script>
+        
         let ua = navigator.userAgent.toLocaleLowerCase();
         if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
             document.getElementById("utterances").remove();
         }
     </script>

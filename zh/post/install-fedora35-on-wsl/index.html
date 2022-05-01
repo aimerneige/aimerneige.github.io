@@ -481,8 +481,12 @@ wsl --import freshfedora $HOME\wsl\freshfedora $HOME\Downloads\fedora-wsl.tar
         async
     ></script>
     <script>
+        
         let ua = navigator.userAgent.toLocaleLowerCase();
         if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
             document.getElementById("utterances").remove();
         }
     </script>

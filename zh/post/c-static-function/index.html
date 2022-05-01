@@ -271,8 +271,12 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
         async
     ></script>
     <script>
+        
         let ua = navigator.userAgent.toLocaleLowerCase();
         if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
             document.getElementById("utterances").remove();
         }
     </script>

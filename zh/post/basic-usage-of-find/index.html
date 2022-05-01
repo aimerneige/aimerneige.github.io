@@ -407,8 +407,12 @@ find . -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span>
         async
     ></script>
     <script>
+        
         let ua = navigator.userAgent.toLocaleLowerCase();
         if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
             document.getElementById("utterances").remove();
         }
     </script>

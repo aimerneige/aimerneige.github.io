@@ -322,8 +322,12 @@ $.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data
         async
     ></script>
     <script>
+        
         let ua = navigator.userAgent.toLocaleLowerCase();
         if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
             document.getElementById("utterances").remove();
         }
     </script>
