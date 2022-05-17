@@ -62,15 +62,6 @@
     </item>
     
     <item>
-      <title>Others</title>
-      <link>https://aimerneige.com/zh/categories/others/</link>
-      <pubDate>Sat, 21 Aug 2021 05:07:48 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/categories/others/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Web</title>
       <link>https://aimerneige.com/zh/categories/web/</link>
       <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
@@ -85,6 +76,15 @@
       <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>https://aimerneige.com/zh/categories/others/</link>
+      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/others/</guid>
       <description></description>
     </item>
     

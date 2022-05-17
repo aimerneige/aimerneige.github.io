@@ -248,31 +248,6 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/zh/tags/article/</loc>
-    <lastmod>2021-08-21T05:07:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/categories/others/</loc>
-    <lastmod>2021-08-21T05:07:48+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/others/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/others/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/post/will-we-still-be-happy-after-gain-everything/</loc>
-    <lastmod>2021-08-21T05:07:48+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/zh/tags/javascript/</loc>
     <lastmod>2021-08-19T21:44:21+08:00</lastmod>
   </url>
@@ -390,6 +365,21 @@
   <url>
     <loc>https://aimerneige.com/zh/tags/editor/</loc>
     <lastmod>2021-01-29T16:37:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/others/</loc>
+    <lastmod>2021-01-29T16:37:25+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
   </url>
   
   <url>

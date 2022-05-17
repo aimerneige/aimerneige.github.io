@@ -39,7 +39,7 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       <description>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
  安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
 本次演示中可执行文件存储目录：
-‪C:\Tools\Alacritty\alacritty.exe
+C:\Tools\Alacritty\alacritty.exe
 配置 alacritty 将配置文件放置在如下目录：
 C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
 配置方法和 Linux 下类似。
