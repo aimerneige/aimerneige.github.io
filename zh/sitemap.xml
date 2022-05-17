@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://aimerneige.com/zh/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,91 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/devops/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/tags/linux/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/linux/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/categories/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/post/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/zh/tags/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
                 />
   </url>
   
@@ -38,53 +123,8 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/zh/categories/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/post/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/tags/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
   </url>
   
   <url>
@@ -95,21 +135,6 @@
   <url>
     <loc>https://aimerneige.com/zh/post/basic-usage-of-find/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/categories/linux/</loc>
-    <lastmod>2022-03-12T19:36:29+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
   </url>
   
   <url>
@@ -410,21 +435,6 @@
   <url>
     <loc>https://aimerneige.com/zh/post/gcc-basic/</loc>
     <lastmod>2020-10-17T22:37:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/zh/tags/linux/</loc>
-    <lastmod>2020-10-17T22:37:01+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/linux/"
-                />
   </url>
   
   <url>

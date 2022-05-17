@@ -6,7 +6,16 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Apr 2022 22:22:44 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何配置新购置的 Linux 服务器</title>
+      <link>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</link>
+      <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</guid>
+      <description>如何配置新购置的 Linux 服务器 更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置连接密钥 # run this on your local machine ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config  将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录  设置 sudo 免密码 sudo visudo 在末尾添加如下内容</description>
+    </item>
+    
     <item>
       <title>在 wsl 下安装 fedora 35</title>
       <link>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</link>
