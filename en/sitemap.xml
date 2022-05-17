@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -18,13 +18,8 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/en/tags/bash/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -35,6 +30,66 @@
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/install-wsa-with-google-play-store-and-root/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/categories/windows/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/windows/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/wsa/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/bash/</loc>
+    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url>
   
   <url>
@@ -73,21 +128,6 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url>
-  
-  <url>
     <loc>https://aimerneige.com/en/tags/shell/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url>
@@ -100,21 +140,6 @@
   <url>
     <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
   </url>
   
   <url>

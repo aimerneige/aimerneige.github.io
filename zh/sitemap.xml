@@ -110,6 +110,16 @@
   <url>
     <loc>https://aimerneige.com/zh/categories/windows/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/windows/"
+                />
   </url>
   
   <url>

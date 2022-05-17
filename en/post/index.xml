@@ -6,7 +6,16 @@
     <description>Recent content in Posts 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 02:25:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install WSA With Google Play Store and Root</title>
+      <link>https://aimerneige.com/en/post/install-wsa-with-google-play-store-and-root/</link>
+      <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/install-wsa-with-google-play-store-and-root/</guid>
+      <description>Install  Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it  Enable usb debug  Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS  </description>
+    </item>
+    
     <item>
       <title>Shell Learning Notes Comment</title>
       <link>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</link>
