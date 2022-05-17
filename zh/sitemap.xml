@@ -20,6 +20,16 @@
   <url>
     <loc>https://aimerneige.com/zh/categories/devops/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/devops/"
+                />
   </url>
   
   <url>
@@ -70,6 +80,16 @@
   <url>
     <loc>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"
+                />
   </url>
   
   <url>

@@ -88,13 +88,38 @@
   </url>
   
   <url>
-    <loc>https://aimerneige.com/en/tags/bash/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+    <loc>https://aimerneige.com/en/categories/devops/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/devops/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/</loc>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/"
+                />
   </url>
   
   <url>
     <loc>https://aimerneige.com/en/categories/linux/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -109,7 +134,7 @@
   
   <url>
     <loc>https://aimerneige.com/en/tags/linux/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -120,6 +145,11 @@
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/linux/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://aimerneige.com/en/tags/bash/</loc>
+    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url>
   
   <url>
