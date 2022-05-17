@@ -44,15 +44,5 @@ your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you ne
  You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
     </item>
     
-    <item>
-      <title>Ubuntu 20.04 Resolution Error Fix</title>
-      <link>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</link>
-      <pubDate>Tue, 22 Sep 2020 13:29:32 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</guid>
-      <description>After upgrade my ubuntu 20.04, I find the system ui resolution is small and looks ugly. I search google for this which tell me to reinstall my Graphics Card Driver. But it doesn&amp;rsquo;t work, so I have to try it myself. And here are my solutions:
- Open the settings. Select the Displays. Change the scale bigger. Select revert. All done.  After the system reboot, this problem will appear again.</description>
-    </item>
-    
   </channel>
 </rss>

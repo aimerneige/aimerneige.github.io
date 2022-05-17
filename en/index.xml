@@ -75,16 +75,6 @@ package com.aimerneige.example.config; import org.springframework.context.annota
     </item>
     
     <item>
-      <title>Ubuntu 20.04 Resolution Error Fix</title>
-      <link>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</link>
-      <pubDate>Tue, 22 Sep 2020 13:29:32 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/</guid>
-      <description>After upgrade my ubuntu 20.04, I find the system ui resolution is small and looks ugly. I search google for this which tell me to reinstall my Graphics Card Driver. But it doesn&amp;rsquo;t work, so I have to try it myself. And here are my solutions:
- Open the settings. Select the Displays. Change the scale bigger. Select revert. All done.  After the system reboot, this problem will appear again.</description>
-    </item>
-    
-    <item>
       <title>LeetCode Pyramid Transition Matrix</title>
       <link>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</link>
       <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
