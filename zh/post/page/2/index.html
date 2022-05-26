@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="文章 📝" />
@@ -137,9 +135,9 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。
  测试环境：
-.............. aimerneige@an ..,;:ccc,. ------------- ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg) . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..&#39;,;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/&gt; 3] ....</p>
+.............. aimerneige@an  ..,;:ccc,. -------------  ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64  ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg)  . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>December 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/"></a>
 </article>
 
@@ -149,9 +147,9 @@ if (!doNotTrack) {
     </h2>
   </header>
   <div class="entry-content">
-    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127....</p>
+    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536  inet 127....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>November 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/daily-linux-command/"></a>
 </article>
 
@@ -163,15 +161,13 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>今天遇到一个奇怪的问题：
 一个 C 语言初学者写了这样的错误代码：
-switch (a) { case1: // do something  break; case2: // do something  break; case3: // do something  break; default: break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
+switch (a) {  case1:  // do something  break;  case2:  // do something  break;  case3:  // do something  break;  default:  break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
 那么 case1 case2 这些东西是哪里来的？
 几番求证无果，最后在翻阅《C 专家编程》这本书的时候突然发现了原因：
 首先像下面这样写是可以的：
-switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again; default: i&#43;&#43;; case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。
-原错误代码中 case1 case2 等被编译器理解为了标签。
-由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。...</p>
+switch (i) {  case 5 &#43; 3: do_again:  case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again;  default: i&#43;&#43;;  case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>November 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>十一月 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/this-is-not-bug/"></a>
 </article>
 
@@ -191,7 +187,7 @@ void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的�
 即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
 void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>November 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>十一月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c-function-point/"></a>
 </article>
 
@@ -203,9 +199,9 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
   <div class="entry-content">
     <p>线程于进程的对比
           thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
+#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) {  for (int i = 0; i &lt; 50; i&#43;&#43;)  {  printf(&#34;%d\n&#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>November 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c-thread-basic/"></a>
 </article>
 
@@ -216,14 +212,14 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
   </header>
   <div class="entry-content">
     <p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) {  printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() {  printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &lt;stdio.h&gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-31 20:31:36 +0800 CST'>October 31, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-31 20:31:36 +0800 CST'>十月 31, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言静态函数" href="https://aimerneige.com/zh/post/c-static-function/"></a>
 </article>
 
@@ -246,7 +242,7 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\she
 其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
 你也可以将 @=&#34;Alacritty terminal here&#34; 修改为自己喜欢的内容。</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-22 15:15:19 +0800 CST'>October 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-22 15:15:19 +0800 CST'>十月 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 Windows10 安装和配置 alacritty" href="https://aimerneige.com/zh/post/alacritty-on-windows/"></a>
 </article>
 
@@ -263,7 +259,7 @@ GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
    文件扩展名 GCC 所理解的含义     *....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>October 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/gcc-basic/"></a>
 </article>
 
@@ -281,7 +277,7 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
 升级系统 sudo apt update &amp;&amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-04 01:18:44 +0800 CST'>October 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-10-04 01:18:44 +0800 CST'>十月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 Nginx 搭建静态网页服务" href="https://aimerneige.com/zh/post/deploy-web-page-with-nginx/"></a>
 </article>
 
@@ -305,7 +301,7 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
  禁用开机自启动：
 启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-08-26 22:46:52 +0800 CST'>August 26, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-08-26 22:46:52 +0800 CST'>八月 26, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 写给小白的 win10 使用技巧" href="https://aimerneige.com/zh/post/tips-using-windows10/"></a>
 </article>
 <footer class="page-footer">

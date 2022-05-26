@@ -69,9 +69,9 @@ your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you ne
       
       <guid>https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/</guid>
       <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
-plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &amp;quot;io.springfox:springfox-boot-starter:3.0.0&amp;quot; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.</description>
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
     </item>
     
     <item>
@@ -116,9 +116,9 @@ Adapt colors Make a new folder at project/app/src/main/res/values-night then mak
       <guid>https://aimerneige.com/en/post/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&#39;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&#39;; \mu(x), \kappa(x, x))$$
+Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
  Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
+C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
     </item>
     
     <item>

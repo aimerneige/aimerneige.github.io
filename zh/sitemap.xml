@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://aimerneige.com/zh/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
@@ -15,9 +14,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/devops/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -30,9 +27,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/devops/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/linux/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -45,9 +40,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/linux/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/linux/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -60,9 +53,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/linux/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -75,9 +66,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -90,9 +79,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -105,9 +92,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/post/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
@@ -120,14 +105,10 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/fedora35/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/windows/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
     <xhtml:link
@@ -140,39 +121,25 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/windows/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/wsl/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/wsl/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/cli/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/basic-usage-of-find/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/tool/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/development/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
     <xhtml:link
@@ -185,9 +152,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/development/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/java/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
     <xhtml:link
@@ -200,9 +165,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/java/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/spring/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
     <xhtml:link
@@ -215,34 +178,22 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/spring/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/tools/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/vscode/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/start-develop-spring-project-on-vscode/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/env/</loc>
     <lastmod>2021-08-24T21:31:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/golang/</loc>
     <lastmod>2021-08-24T21:31:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/program/</loc>
     <lastmod>2021-08-24T21:31:05+08:00</lastmod>
     <xhtml:link
@@ -255,24 +206,16 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/program/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/teach/</loc>
     <lastmod>2021-08-24T21:31:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/go-env-setup-for-beginner/</loc>
     <lastmod>2021-08-24T21:31:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/javascript/</loc>
     <lastmod>2021-08-19T21:44:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/web/</loc>
     <lastmod>2021-08-19T21:44:21+08:00</lastmod>
     <xhtml:link
@@ -285,34 +228,22 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/web/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/web/</loc>
     <lastmod>2021-08-19T21:44:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</loc>
     <lastmod>2021-08-19T21:44:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/rime/</loc>
     <lastmod>2021-08-19T01:50:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/software/</loc>
     <lastmod>2021-08-19T01:50:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</loc>
     <lastmod>2021-08-19T01:50:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/hello-hugo/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
@@ -325,9 +256,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/post/hello-hugo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/hugo/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
@@ -340,9 +269,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/hugo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/site/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
@@ -355,39 +282,25 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/tags/site/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/api/</loc>
     <lastmod>2021-01-30T20:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/database/</loc>
     <lastmod>2021-01-30T20:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/mysql/</loc>
     <lastmod>2021-01-30T20:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/nodejs/</loc>
     <lastmod>2021-01-30T20:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</loc>
     <lastmod>2021-01-30T20:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/editor/</loc>
     <lastmod>2021-01-29T16:37:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/others/</loc>
     <lastmod>2021-01-29T16:37:25+08:00</lastmod>
     <xhtml:link
@@ -400,93 +313,57 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/others/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/editorconfig/</loc>
     <lastmod>2021-01-29T16:37:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/</loc>
     <lastmod>2020-12-13T19:35:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/cmd/</loc>
     <lastmod>2020-11-10T10:41:51+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/daily-linux-command/</loc>
     <lastmod>2020-11-10T10:41:51+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/this-is-not-bug/</loc>
     <lastmod>2020-11-05T14:37:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/c-function-point/</loc>
     <lastmod>2020-11-04T21:00:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/c-thread-basic/</loc>
     <lastmod>2020-11-01T18:21:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/c-static-function/</loc>
     <lastmod>2020-10-31T20:31:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/windows/</loc>
     <lastmod>2020-10-22T15:15:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/alacritty-on-windows/</loc>
     <lastmod>2020-10-22T15:15:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/gcc-basic/</loc>
     <lastmod>2020-10-17T22:37:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/deploy-web-page-with-nginx/</loc>
     <lastmod>2020-10-04T01:18:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/categories/computer/</loc>
     <lastmod>2020-08-26T22:46:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/tips-using-windows10/</loc>
     <lastmod>2020-08-26T22:46:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/post/daily-python-tips/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/c/c&#43;&#43;/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/friends/</loc>
     <xhtml:link
                 rel="alternate"
@@ -498,9 +375,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/friends/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/series/</loc>
     <xhtml:link
                 rel="alternate"
@@ -512,9 +387,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/series/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -526,9 +399,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/archives/</loc>
     <xhtml:link
                 rel="alternate"
@@ -540,9 +411,7 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/archives/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aimerneige.com/zh/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -555,5 +424,4 @@
                 href="https://aimerneige.com/zh/search/"
                 />
   </url>
-  
 </urlset>

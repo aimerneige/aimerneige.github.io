@@ -11,7 +11,7 @@
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/go-env-setup-for-beginner/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="配置 go 开发环境" />
@@ -176,7 +174,7 @@ if (!doNotTrack) {
     <div class="post-description">
       本篇文章简要介绍如何配置 go 的开发环境
     </div>
-    <div class="post-meta"><span title='2021-08-24 21:31:05 +0800 CST'>August 24, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/go-env-setup-for-beginner.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2021-08-24 21:31:05 +0800 CST'>八月 24, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/go-env-setup-for-beginner.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
@@ -237,8 +235,8 @@ if (!doNotTrack) {
 <li>解压压缩文件</li>
 </ol>
 <p>这里我们可以直接使用 <a href="https://golang.org/doc/install">官方安装指南</a> 提供的指令来解压。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -rf /usr/local/go <span style="color:#f92672">&amp;&amp;</span> tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
-</code></pre></div><p>本指令会将 go 安装在 <code>/usr/local/go</code> 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf /usr/local/go <span style="color:#f92672">&amp;&amp;</span> tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+</span></span></code></pre></div><p>本指令会将 go 安装在 <code>/usr/local/go</code> 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。</p>
 <div class="notice info" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>如果你使用了其他的路径来安装 go，在之后的配置过程中记得要修改 <code>GOROOT</code> 变量修改为你所安装的路径。</p></div>
 
@@ -252,13 +250,13 @@ if (!doNotTrack) {
 <p>成功解压后，如果你尝试直接在终端执行 go 指令，你会发现系统并没有识别到你刚安装的 go 二进制文件，这是因为我们还没有对 go 的环境变量进行配置。</p>
 <p>根据你所使用的不同的 shell，直接修改对应的配置文件，写入如下内容即可。<br>
 例如在 bash 下要修改 <code>~/.bashrc</code>，而在 zsh 下则需要修改 <code>~/.zshrc</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOROOT<span style="color:#f92672">=</span>/usr/local/go
-export GOPATH<span style="color:#f92672">=</span>$HOME/golang
-export PATH<span style="color:#f92672">=</span>$GOROOT/bin:$PATH
-export PATH<span style="color:#f92672">=</span>$GOPATH/bin:$PATH
-export GO111MODULE<span style="color:#f92672">=</span>on
-<span style="color:#75715e"># export GOPROXY=https://goproxy.cn</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOROOT<span style="color:#f92672">=</span>/usr/local/go
+</span></span><span style="display:flex;"><span>export GOPATH<span style="color:#f92672">=</span>$HOME/golang
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$GOROOT/bin:$PATH
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$GOPATH/bin:$PATH
+</span></span><span style="display:flex;"><span>export GO111MODULE<span style="color:#f92672">=</span>on
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># export GOPROXY=https://goproxy.cn</span>
+</span></span></code></pre></div><ol>
 <li><code>export GOROOT=/usr/local/go</code> 为 go 的安装目录，即之前的解压路径。</li>
 <li><code>export GOPATH=$HOME/golang</code> 为 go 的工作区目录，所有的源代码、代码包等会存放在这里，可以自己定义。</li>
 <li><code>export PATH=$GOROOT/bin:$PATH</code> 与 <code>export PATH=$GOPATH/bin:$PATH</code> 将可执行文件目录添加到环境变量。不需要修改。</li>

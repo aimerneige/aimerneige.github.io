@@ -11,7 +11,7 @@
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/c-function-point/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="C 函数指针" />
@@ -84,7 +82,7 @@ if (!doNotTrack) {
   "keywords": [
     "C/C++", "Teach"
   ],
-  "articleBody": "函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。\n文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/\n函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。\n函数指针的定义 下面的语句定义了一个指向函数的指针变量 p。其中 void *表示返回值，(*p) 表示 p 是一个指针变量， (int, float) 是函数的参数列表。\nvoid *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的类型为 void * (*)(int, float)\n所以函数指针的定义方法为：\n函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。\n即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。\nvoid *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = \u0026Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明\n函数指针的调用 #include  int max(int a, int b); // 函数声明  int main(int argc, char const *argv[]) { int a = 12; int b = 32; int (*p)(int, int); // 函数指针定义  p = \u0026max; // 函数指针赋值  int c = (*p)(a, b); // 函数指针的调用  printf(\"%d\\n\", c); // 输出 `32`  return 0; } // 函数定义 int max(int a, int b) { return a  b ? a : b; } 另一种可行的写法\n#include  int max(int a, int b); // 函数声明  int main(int argc, char const *argv[]) { int a = 12; int b = 32; int (*p)(int, int); // 函数指针定义  p = max; // 函数指针赋值  int c = *p(a, b); // 函数指针的调用  printf(\"%d\\n\", c); // 输出 `32`  return 0; } // 函数定义 int max(int a, int b) { return a  b ? a : b; } 注：对于这俩种调用的写法的详细说明见对函数赋值和调用的一些说明\n函数指针中要注意的一些内容  与一般的指针不同，函数指针指向代码而不是数据。通常，一个函数指针存储了可执行代码的起始位置。 与普通指针不同，我们使用函数指针时不需要分配和释放内存。 函数名也可以用来获取函数的地址。（详见对函数赋值和调用的一些说明） 类似普通的指针，我们也有函数指针数组。（详见函数指针数组示例） 函数指针可被用于 switch case 结构中，例如函数指针数组示例中的示例程序中，用户可以通过输入 0 ～ 2 来选择不同的操作。 就像普通数据的指针一样，一个函数指针同样可以被用作函数的参数和返回值，例如函数指针作为参数的示例中的程序中 wrapper() 函数接受 void (*fun)() 作为参数并且执行这个函数。这个特性有很多的应用，你可以在函数指针作为参数的应用中查看更多内容。 C++ 中的许多面向对象特性都是使用 C 中的函数指针实现的，例如虚函数，类方法是使用函数指针实现的另一个示例。  对函数赋值和调用的一些说明 通常，既然是指针赋值，我们会使用取地址操作来获取地址，然后使用 * 运算符调用，但是，对于函数来说，直接使用函数名也可以获得地址。即如下俩种写法等价：\np = \u0026Func; (*p)(2, 3); p = Func; p(2, 3); 编译执行以下程序：\n#include #include  int max(int a, int b); int main(int argc, char const *argv[]) { printf(\"%p\\n\", (max) ); printf(\"%p\\n\", (\u0026max) ); return 0; } int max(int a, int b) { return a  b ? a : b; } 你会发现 (max) (\u0026max) 拥有相同的值，即直接使用函数名也可以获得地址。\n因此，我更推荐第二种没有 \u0026 和 * 的写法，更加直观易用。\n函数指针数组示例 #include  void add(int a, int b) { printf(\"Addition is %d\\n\", a + b); } void subtract(int a, int b) { printf(\"Subtraction is %d\\n\", a - b); } void multiply(int a, int b) { printf(\"Multiplication is %d\\n\", a * b); } int main() { // fun_ptr_arr 是一个函数指针的数组  void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply}; unsigned int ch, a = 15, b = 10; printf(\"Enter Choice: 0 for add, 1 for subtract and 2 for multiply\\n\"); scanf(\"%d\", \u0026ch); if (ch  2) { return 0; } (*fun_ptr_arr[ch])(a, b); return 0; } 函数指针作为参数的示例 // 一个简单的 C 语言程序来演示使用函数指针作为参数 #include  // 俩个简单的函数 void fun1() { printf(\"Fun1\\n\"); } void fun2() { printf(\"Fun2\\n\"); } // 一个接受函数作为参数并在内部执行这个函数的函数 void wrapper(void (*fun)()) { fun(); } int main() { wrapper(fun1); wrapper(fun2); return 0; } 函数指针作为参数的应用 我们可以使用将函数指针作为参数来避免书写重复的代码，例如较为简单的函数 qsort() 可以被用来排序数组或其他任何的自定义结构体。不仅这些，有了函数指针和空指针，使用 qsort() 函数可以对任何数据类型进行排序。\n// 一个关于 qsort 和比较器的定义 #include #include  // 一个比较器示例函数 // 它被用对一个整数数组进行排序 // 为了对任何其他数据类型或条件的任何数组进行排序 // 我们需要编写更多的比较函数 // 这样我们就可以使用相同的 qsort() int compare(const void *a, const void *b) { return (*(int *)a - *(int *)b); } int main() { int arr[] = {10, 5, 15, 12, 90, 80}; int n = sizeof(arr) / sizeof(arr[0]); qsort(arr, n, sizeof(int), compare); for (int i = 0; i  n; i++) { printf(\"%d \", arr[i]); } return 0; } 类似 qsort() 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）。\n#include #include  // 一个被用来对整数数组进行搜索的比较函数 bool compare(const void *a, const void *b) { return (*(int *)a == *(int *)b); } // 可以被用来在一个长度为 arr_size 的数组 arr[] 中 // 搜索元素 *x 的通用 search() 函数。 // 注意这里使用 void 指针，这样函数就可以在调用 // 的时候传入任何类型的参数 // ele_size 是数组元素的大小 int search(void *arr, int arr_size, int ele_size, void *x, bool compare(const void *, const void *)) { // 因为 char 占用一个字节，因此我们使用 char 指针  // 来可以保证用于任何类型的指针运算都正确，我们  // 需要将 index 与元素的大小 ele_size 相乘  char *ptr = (char *)arr; int i; for (i = 0; i  arr_size; i++) if (compare(ptr + i * ele_size, x)) return i; // 如果没有找到元素  return -1; } int main() { int arr[] = {2, 5, 7, 90, 70}; int n = sizeof(arr) / sizeof(arr[0]); int x = 7; printf(\"Returned index is %d \", search(arr, n, sizeof(int), \u0026x, compare)); return 0; } 这个函数可以被用于任何类型的数据，只要定义一个比较函数。\n如何使用 typedef 定义函数指针类型 与一般的定义不同，函数指针在使用 typedef 重命名时，新的变量名不是在末尾而是类似函数指针变量定义的写法。\n下面是一个简单的例子：\ntypedef int (*type_name) (const void *, double); 其中 int 为函数返回值类型， const void *, double 是函数接受的参数列表，(*type_name) 表明定义的是一个函数指针，它的类型为 int (*)(const void *, double)，新的类型名为 type_name，你可以使用 type_name 来定义一个类型为 int (*)(const void *, double) 的函数指针。\n也就是说，使用定义函数指针类型的格式如下：\ntypedef 函数返回值类型 (*类型名) (函数参数列表) 接下来看一下 qsort() 函数的源代码：\n首先是函数 qsort() 的声明：\nextern void qsort (void *__base, size_t __nmemb, size_t __size, __compar_fn_t __compar) __nonnull ((1, 4)); 这里有一个新的数据类型 __compar_fn_t，我们知道它是一个函数指针，我们找一下它的定义：\ntypedef int (*__compar_fn_t) (const void *, const void *); 上例中 search() 函数可以这样定义：\n// 类型定义 typedef bool (*compare_fun)(const void *, const void *); // 函数声明 int search(void *arr, int arr_size, int ele_size, void *x, compare_fun compare);  建议阅读： https://www.geeksforgeeks.org/function-pointer-in-c/\n",
+  "articleBody": "函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。\n文章部分内容翻译引用于 https://www.geeksforgeeks.org/function-pointer-in-c/\n函数指针的概念 类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。\n函数指针的定义 下面的语句定义了一个指向函数的指针变量 p。其中 void *表示返回值，(*p) 表示 p 是一个指针变量， (int, float) 是函数的参数列表。\nvoid *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的类型为 void * (*)(int, float)\n所以函数指针的定义方法为：\n函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。\n即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。\nvoid *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = \u0026Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明\n函数指针的调用 #include  int max(int a, int b); // 函数声明  int main(int argc, char const *argv[]) {  int a = 12;  int b = 32;   int (*p)(int, int); // 函数指针定义  p = \u0026max; // 函数指针赋值   int c = (*p)(a, b); // 函数指针的调用  printf(\"%d\\n\", c); // 输出 `32`   return 0; }  // 函数定义 int max(int a, int b) {  return a  b ? a : b; } 另一种可行的写法\n#include  int max(int a, int b); // 函数声明  int main(int argc, char const *argv[]) {  int a = 12;  int b = 32;   int (*p)(int, int); // 函数指针定义  p = max; // 函数指针赋值   int c = *p(a, b); // 函数指针的调用  printf(\"%d\\n\", c); // 输出 `32`   return 0; }  // 函数定义 int max(int a, int b) {  return a  b ? a : b; } 注：对于这俩种调用的写法的详细说明见对函数赋值和调用的一些说明\n函数指针中要注意的一些内容  与一般的指针不同，函数指针指向代码而不是数据。通常，一个函数指针存储了可执行代码的起始位置。 与普通指针不同，我们使用函数指针时不需要分配和释放内存。 函数名也可以用来获取函数的地址。（详见对函数赋值和调用的一些说明） 类似普通的指针，我们也有函数指针数组。（详见函数指针数组示例） 函数指针可被用于 switch case 结构中，例如函数指针数组示例中的示例程序中，用户可以通过输入 0 ～ 2 来选择不同的操作。 就像普通数据的指针一样，一个函数指针同样可以被用作函数的参数和返回值，例如函数指针作为参数的示例中的程序中 wrapper() 函数接受 void (*fun)() 作为参数并且执行这个函数。这个特性有很多的应用，你可以在函数指针作为参数的应用中查看更多内容。 C++ 中的许多面向对象特性都是使用 C 中的函数指针实现的，例如虚函数，类方法是使用函数指针实现的另一个示例。  对函数赋值和调用的一些说明 通常，既然是指针赋值，我们会使用取地址操作来获取地址，然后使用 * 运算符调用，但是，对于函数来说，直接使用函数名也可以获得地址。即如下俩种写法等价：\np = \u0026Func; (*p)(2, 3); p = Func; p(2, 3); 编译执行以下程序：\n#include #include  int max(int a, int b);  int main(int argc, char const *argv[]) {  printf(\"%p\\n\", (max) );  printf(\"%p\\n\", (\u0026max) );  return 0; }  int max(int a, int b) {  return a  b ? a : b; } 你会发现 (max) (\u0026max) 拥有相同的值，即直接使用函数名也可以获得地址。\n因此，我更推荐第二种没有 \u0026 和 * 的写法，更加直观易用。\n函数指针数组示例 #include  void add(int a, int b) {  printf(\"Addition is %d\\n\", a + b); }  void subtract(int a, int b) {  printf(\"Subtraction is %d\\n\", a - b); }  void multiply(int a, int b) {  printf(\"Multiplication is %d\\n\", a * b); }  int main() {  // fun_ptr_arr 是一个函数指针的数组  void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};  unsigned int ch, a = 15, b = 10;   printf(\"Enter Choice: 0 for add, 1 for subtract and 2 for multiply\\n\");  scanf(\"%d\", \u0026ch);   if (ch  2)  {  return 0;  }   (*fun_ptr_arr[ch])(a, b);   return 0; } 函数指针作为参数的示例 // 一个简单的 C 语言程序来演示使用函数指针作为参数 #include  // 俩个简单的函数 void fun1() { printf(\"Fun1\\n\"); } void fun2() { printf(\"Fun2\\n\"); }  // 一个接受函数作为参数并在内部执行这个函数的函数 void wrapper(void (*fun)()) {  fun(); }  int main() {  wrapper(fun1);  wrapper(fun2);  return 0; } 函数指针作为参数的应用 我们可以使用将函数指针作为参数来避免书写重复的代码，例如较为简单的函数 qsort() 可以被用来排序数组或其他任何的自定义结构体。不仅这些，有了函数指针和空指针，使用 qsort() 函数可以对任何数据类型进行排序。\n// 一个关于 qsort 和比较器的定义 #include #include  // 一个比较器示例函数 // 它被用对一个整数数组进行排序 // 为了对任何其他数据类型或条件的任何数组进行排序 // 我们需要编写更多的比较函数 // 这样我们就可以使用相同的 qsort() int compare(const void *a, const void *b) {  return (*(int *)a - *(int *)b); }  int main() {  int arr[] = {10, 5, 15, 12, 90, 80};  int n = sizeof(arr) / sizeof(arr[0]);   qsort(arr, n, sizeof(int), compare);   for (int i = 0; i  n; i++) {  printf(\"%d \", arr[i]);  }  return 0; } 类似 qsort() 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）。\n#include #include  // 一个被用来对整数数组进行搜索的比较函数 bool compare(const void *a, const void *b) {  return (*(int *)a == *(int *)b); }  // 可以被用来在一个长度为 arr_size 的数组 arr[] 中 // 搜索元素 *x 的通用 search() 函数。 // 注意这里使用 void 指针，这样函数就可以在调用 // 的时候传入任何类型的参数 // ele_size 是数组元素的大小 int search(void *arr, int arr_size, int ele_size, void *x,  bool compare(const void *, const void *)) {   // 因为 char 占用一个字节，因此我们使用 char 指针  // 来可以保证用于任何类型的指针运算都正确，我们  // 需要将 index 与元素的大小 ele_size 相乘  char *ptr = (char *)arr;   int i;  for (i = 0; i  arr_size; i++)  if (compare(ptr + i * ele_size, x))  return i;   // 如果没有找到元素  return -1; }  int main() {  int arr[] = {2, 5, 7, 90, 70};  int n = sizeof(arr) / sizeof(arr[0]);  int x = 7;  printf(\"Returned index is %d \", search(arr, n,  sizeof(int), \u0026x, compare));  return 0; } 这个函数可以被用于任何类型的数据，只要定义一个比较函数。\n如何使用 typedef 定义函数指针类型 与一般的定义不同，函数指针在使用 typedef 重命名时，新的变量名不是在末尾而是类似函数指针变量定义的写法。\n下面是一个简单的例子：\ntypedef int (*type_name) (const void *, double); 其中 int 为函数返回值类型， const void *, double 是函数接受的参数列表，(*type_name) 表明定义的是一个函数指针，它的类型为 int (*)(const void *, double)，新的类型名为 type_name，你可以使用 type_name 来定义一个类型为 int (*)(const void *, double) 的函数指针。\n也就是说，使用定义函数指针类型的格式如下：\ntypedef 函数返回值类型 (*类型名) (函数参数列表) 接下来看一下 qsort() 函数的源代码：\n首先是函数 qsort() 的声明：\nextern void qsort (void *__base, size_t __nmemb, size_t __size, \t__compar_fn_t __compar) __nonnull ((1, 4)); 这里有一个新的数据类型 __compar_fn_t，我们知道它是一个函数指针，我们找一下它的定义：\ntypedef int (*__compar_fn_t) (const void *, const void *); 上例中 search() 函数可以这样定义：\n// 类型定义 typedef bool (*compare_fun)(const void *, const void *); // 函数声明 int search(void *arr, int arr_size, int ele_size, void *x, compare_fun compare);  建议阅读： https://www.geeksforgeeks.org/function-pointer-in-c/\n",
   "wordCount" : "734",
   "inLanguage": "zh",
   "datePublished": "2020-11-04T21:00:39+08:00",
@@ -174,7 +172,7 @@ if (!doNotTrack) {
     <div class="post-description">
       函数指针用法
     </div>
-    <div class="post-meta"><span title='2020-11-04 21:00:39 +0800 CST'>November 4, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/c-function-point.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2020-11-04 21:00:39 +0800 CST'>十一月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/c-function-point.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> <div class="toc">
@@ -216,71 +214,71 @@ if (!doNotTrack) {
 <p>类似变量，函数也会被分配一段存储空间，这段存储空间的首地址即被称做这个函数的地址。而且函数名表示的就是这个地址。既然是地址，我们就可以定义一个指针变量来存放，这个指针变量就叫做函数指针变量，简称函数指针。</p>
 <h2 id="函数指针的定义">函数指针的定义<a hidden class="anchor" aria-hidden="true" href="#函数指针的定义">#</a></h2>
 <p>下面的语句定义了一个指向函数的指针变量 p。其中 <code>void *</code>表示返回值，<code>(*p)</code> 表示 p 是一个指针变量， <code>(int, float)</code> 是函数的参数列表。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">float</span>);
-</code></pre></div><p>这样我们就得到了一个指针变量 p，它的类型为 <code>void * (*)(int, float)</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">float</span>);
+</span></span></code></pre></div><p>这样我们就得到了一个指针变量 p，它的类型为 <code>void * (*)(int, float)</code></p>
 <p>所以函数指针的定义方法为：</p>
-<pre><code>函数返回类型 (*指针变量名) (函数参数列表);
+<pre tabindex="0"><code>函数返回类型 (*指针变量名) (函数参数列表);
 </code></pre><p>这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。</p>
 <p>即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">float</span>);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">float</span> b);
-</code></pre></div><h2 id="如何对函数指针赋值">如何对函数指针赋值<a hidden class="anchor" aria-hidden="true" href="#如何对函数指针赋值">#</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Func</span>(<span style="color:#66d9ef">int</span> x); <span style="color:#75715e">// 函数的声明
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span> x); <span style="color:#75715e">// 函数指针的定义
-</span><span style="color:#75715e"></span>
-p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>Func; <span style="color:#75715e">// 函数指针的赋值
-</span><span style="color:#75715e"></span>p <span style="color:#f92672">=</span> Func; <span style="color:#75715e">// 另一种可行的写法
-</span></code></pre></div><p>注：对于俩种赋值写法的详细说明见<a href="#%E5%AF%B9%E5%87%BD%E6%95%B0%E8%B5%8B%E5%80%BC%E5%92%8C%E8%B0%83%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E">对函数赋值和调用的一些说明</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">float</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">float</span> b);
+</span></span></code></pre></div><h2 id="如何对函数指针赋值">如何对函数指针赋值<a hidden class="anchor" aria-hidden="true" href="#如何对函数指针赋值">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Func</span>(<span style="color:#66d9ef">int</span> x); <span style="color:#75715e">// 函数的声明
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p) (<span style="color:#66d9ef">int</span> x); <span style="color:#75715e">// 函数指针的定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>Func; <span style="color:#75715e">// 函数指针的赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p <span style="color:#f92672">=</span> Func; <span style="color:#75715e">// 另一种可行的写法
+</span></span></span></code></pre></div><p>注：对于俩种赋值写法的详细说明见<a href="#%E5%AF%B9%E5%87%BD%E6%95%B0%E8%B5%8B%E5%80%BC%E5%92%8C%E8%B0%83%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E">对函数赋值和调用的一些说明</a></p>
 <h2 id="函数指针的调用">函数指针的调用<a hidden class="anchor" aria-hidden="true" href="#函数指针的调用">#</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b); <span style="color:#75715e">// 函数声明
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
-{
-    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
-    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;
-
-    <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p)(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); <span style="color:#75715e">// 函数指针定义
-</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>max; <span style="color:#75715e">// 函数指针赋值
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> (<span style="color:#f92672">*</span>p)(a, b); <span style="color:#75715e">// 函数指针的调用
-</span><span style="color:#75715e"></span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c); <span style="color:#75715e">// 输出 `32`
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-
-<span style="color:#75715e">// 函数定义
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
-}
-</code></pre></div><p>另一种可行的写法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b); <span style="color:#75715e">// 函数声明
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
-{
-    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
-    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;
-
-    <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p)(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); <span style="color:#75715e">// 函数指针定义
-</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> max; <span style="color:#75715e">// 函数指针赋值
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>p(a, b); <span style="color:#75715e">// 函数指针的调用
-</span><span style="color:#75715e"></span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c); <span style="color:#75715e">// 输出 `32`
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-
-<span style="color:#75715e">// 函数定义
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
-}
-</code></pre></div><p>注：对于这俩种调用的写法的详细说明见<a href="#%E5%AF%B9%E5%87%BD%E6%95%B0%E8%B5%8B%E5%80%BC%E5%92%8C%E8%B0%83%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E">对函数赋值和调用的一些说明</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b); <span style="color:#75715e">// 函数声明
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p)(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); <span style="color:#75715e">// 函数指针定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>max; <span style="color:#75715e">// 函数指针赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> (<span style="color:#f92672">*</span>p)(a, b); <span style="color:#75715e">// 函数指针的调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c); <span style="color:#75715e">// 输出 `32`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 函数定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>另一种可行的写法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b); <span style="color:#75715e">// 函数声明
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>p)(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); <span style="color:#75715e">// 函数指针定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> max; <span style="color:#75715e">// 函数指针赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>p(a, b); <span style="color:#75715e">// 函数指针的调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c); <span style="color:#75715e">// 输出 `32`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 函数定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>注：对于这俩种调用的写法的详细说明见<a href="#%E5%AF%B9%E5%87%BD%E6%95%B0%E8%B5%8B%E5%80%BC%E5%92%8C%E8%B0%83%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E">对函数赋值和调用的一些说明</a></p>
 <h2 id="函数指针中要注意的一些内容">函数指针中要注意的一些内容<a hidden class="anchor" aria-hidden="true" href="#函数指针中要注意的一些内容">#</a></h2>
 <ol>
 <li>与一般的指针不同，函数指针指向代码而不是数据。通常，一个函数指针存储了可执行代码的起始位置。</li>
@@ -293,175 +291,175 @@ p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>F
 </ol>
 <h2 id="对函数赋值和调用的一些说明">对函数赋值和调用的一些说明<a hidden class="anchor" aria-hidden="true" href="#对函数赋值和调用的一些说明">#</a></h2>
 <p>通常，既然是指针赋值，我们会使用取地址操作来获取地址，然后使用 <code>*</code> 运算符调用，但是，对于函数来说，直接使用函数名也可以获得地址。即如下俩种写法等价：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>Func;
-(<span style="color:#f92672">*</span>p)(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">p <span style="color:#f92672">=</span> Func;
-p(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
-</code></pre></div><p>编译执行以下程序：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b);
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
-{
-    printf(<span style="color:#e6db74">&#34;%p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,  (max) );
-    printf(<span style="color:#e6db74">&#34;%p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, (<span style="color:#f92672">&amp;</span>max) );
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
-}
-</code></pre></div><p>你会发现 <code>(max)</code> <code>(&amp;max)</code> 拥有相同的值，即直接使用函数名也可以获得地址。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>Func;
+</span></span><span style="display:flex;"><span>(<span style="color:#f92672">*</span>p)(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>p <span style="color:#f92672">=</span> Func;
+</span></span><span style="display:flex;"><span>p(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
+</span></span></code></pre></div><p>编译执行以下程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,  (max) );
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, (<span style="color:#f92672">&amp;</span>max) );
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>你会发现 <code>(max)</code> <code>(&amp;max)</code> 拥有相同的值，即直接使用函数名也可以获得地址。</p>
 <p>因此，我更推荐第二种没有 <code>&amp;</code> 和 <code>*</code> 的写法，更加直观易用。</p>
 <h2 id="函数指针数组示例">函数指针数组示例<a hidden class="anchor" aria-hidden="true" href="#函数指针数组示例">#</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    printf(<span style="color:#e6db74">&#34;Addition is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">+</span> b);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">subtract</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    printf(<span style="color:#e6db74">&#34;Subtraction is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">-</span> b);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
-{
-    printf(<span style="color:#e6db74">&#34;Multiplication is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">*</span> b);
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-    <span style="color:#75715e">// fun_ptr_arr 是一个函数指针的数组
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fun_ptr_arr[])(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) <span style="color:#f92672">=</span> {add, subtract, multiply};
-    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> ch, a <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-
-    printf(<span style="color:#e6db74">&#34;Enter Choice: 0 for add, 1 for subtract and 2 for multiply</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-    scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>ch);
-
-    <span style="color:#66d9ef">if</span> (ch <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>)
-    {
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-    }
-
-    (<span style="color:#f92672">*</span>fun_ptr_arr[ch])(a, b);
-
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><h2 id="函数指针作为参数的示例">函数指针作为参数的示例<a hidden class="anchor" aria-hidden="true" href="#函数指针作为参数的示例">#</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 一个简单的 C 语言程序来演示使用函数指针作为参数
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 俩个简单的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun1</span>() { printf(<span style="color:#e6db74">&#34;Fun1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); }
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun2</span>() { printf(<span style="color:#e6db74">&#34;Fun2</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); }
-
-<span style="color:#75715e">// 一个接受函数作为参数并在内部执行这个函数的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fun)())
-{
-    fun();
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-    wrapper(fun1);
-    wrapper(fun2);
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><h2 id="函数指针作为参数的应用">函数指针作为参数的应用<a hidden class="anchor" aria-hidden="true" href="#函数指针作为参数的应用">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Addition is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">+</span> b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">subtract</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Subtraction is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">-</span> b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Multiplication is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">*</span> b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// fun_ptr_arr 是一个函数指针的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fun_ptr_arr[])(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) <span style="color:#f92672">=</span> {add, subtract, multiply};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> ch, a <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Enter Choice: 0 for add, 1 for subtract and 2 for multiply</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>ch);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (ch <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#f92672">*</span>fun_ptr_arr[ch])(a, b);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="函数指针作为参数的示例">函数指针作为参数的示例<a hidden class="anchor" aria-hidden="true" href="#函数指针作为参数的示例">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 一个简单的 C 语言程序来演示使用函数指针作为参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 俩个简单的函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun1</span>() { printf(<span style="color:#e6db74">&#34;Fun1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun2</span>() { printf(<span style="color:#e6db74">&#34;Fun2</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 一个接受函数作为参数并在内部执行这个函数的函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fun)())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    fun();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    wrapper(fun1);
+</span></span><span style="display:flex;"><span>    wrapper(fun2);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="函数指针作为参数的应用">函数指针作为参数的应用<a hidden class="anchor" aria-hidden="true" href="#函数指针作为参数的应用">#</a></h2>
 <p>我们可以使用将函数指针作为参数来避免书写重复的代码，例如较为简单的函数 <code>qsort()</code> 可以被用来排序数组或其他任何的自定义结构体。不仅这些，有了函数指针和空指针，使用 <code>qsort()</code> 函数可以对任何数据类型进行排序。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 一个关于 qsort 和比较器的定义
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 一个比较器示例函数
-</span><span style="color:#75715e">// 它被用对一个整数数组进行排序
-</span><span style="color:#75715e">// 为了对任何其他数据类型或条件的任何数组进行排序
-</span><span style="color:#75715e">// 我们需要编写更多的比较函数
-</span><span style="color:#75715e">// 这样我们就可以使用相同的 qsort()
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b)
-{
-    <span style="color:#66d9ef">return</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)b);
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-    <span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">80</span>};
-    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(arr) <span style="color:#f92672">/</span> <span style="color:#66d9ef">sizeof</span>(arr[<span style="color:#ae81ff">0</span>]);
-
-    qsort(arr, n, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), compare);
-
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
-        printf(<span style="color:#e6db74">&#34;%d &#34;</span>, arr[i]);
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>类似 <code>qsort()</code> 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdbool.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 一个被用来对整数数组进行搜索的比较函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">compare</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b)
-{
-    <span style="color:#66d9ef">return</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)a <span style="color:#f92672">==</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)b);
-}
-
-<span style="color:#75715e">// 可以被用来在一个长度为 arr_size 的数组 arr[] 中
-</span><span style="color:#75715e">// 搜索元素 *x 的通用 search() 函数。
-</span><span style="color:#75715e">// 注意这里使用 void 指针，这样函数就可以在调用
-</span><span style="color:#75715e">// 的时候传入任何类型的参数
-</span><span style="color:#75715e">// ele_size 是数组元素的大小
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> arr_size, <span style="color:#66d9ef">int</span> ele_size, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>x,
-           <span style="color:#66d9ef">bool</span> compare(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>))
-{
-
-    <span style="color:#75715e">// 因为 char 占用一个字节，因此我们使用 char 指针
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 来可以保证用于任何类型的指针运算都正确，我们
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 需要将 index 与元素的大小 ele_size 相乘
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)arr;
-
-    <span style="color:#66d9ef">int</span> i;
-    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> arr_size; i<span style="color:#f92672">++</span>)
-        <span style="color:#66d9ef">if</span> (compare(ptr <span style="color:#f92672">+</span> i <span style="color:#f92672">*</span> ele_size, x))
-            <span style="color:#66d9ef">return</span> i;
-
-    <span style="color:#75715e">// 如果没有找到元素
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-    <span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">70</span>};
-    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(arr) <span style="color:#f92672">/</span> <span style="color:#66d9ef">sizeof</span>(arr[<span style="color:#ae81ff">0</span>]);
-    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
-    printf(<span style="color:#e6db74">&#34;Returned index is %d &#34;</span>, search(arr, n,
-                        <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), <span style="color:#f92672">&amp;</span>x, compare));
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>这个函数可以被用于任何类型的数据，只要定义一个比较函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 一个关于 qsort 和比较器的定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 一个比较器示例函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 它被用对一个整数数组进行排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 为了对任何其他数据类型或条件的任何数组进行排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 我们需要编写更多的比较函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 这样我们就可以使用相同的 qsort()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">80</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(arr) <span style="color:#f92672">/</span> <span style="color:#66d9ef">sizeof</span>(arr[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    qsort(arr, n, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), compare);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d &#34;</span>, arr[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>类似 <code>qsort()</code> 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdbool.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 一个被用来对整数数组进行搜索的比较函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">compare</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)a <span style="color:#f92672">==</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 可以被用来在一个长度为 arr_size 的数组 arr[] 中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 搜索元素 *x 的通用 search() 函数。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 注意这里使用 void 指针，这样函数就可以在调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 的时候传入任何类型的参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ele_size 是数组元素的大小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> arr_size, <span style="color:#66d9ef">int</span> ele_size, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>x,
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">bool</span> compare(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 因为 char 占用一个字节，因此我们使用 char 指针
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 来可以保证用于任何类型的指针运算都正确，我们
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 需要将 index 与元素的大小 ele_size 相乘
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)arr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> arr_size; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (compare(ptr <span style="color:#f92672">+</span> i <span style="color:#f92672">*</span> ele_size, x))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 如果没有找到元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">70</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(arr) <span style="color:#f92672">/</span> <span style="color:#66d9ef">sizeof</span>(arr[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Returned index is %d &#34;</span>, search(arr, n,
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), <span style="color:#f92672">&amp;</span>x, compare));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这个函数可以被用于任何类型的数据，只要定义一个比较函数。</p>
 <h2 id="如何使用-typedef-定义函数指针类型">如何使用 typedef 定义函数指针类型<a hidden class="anchor" aria-hidden="true" href="#如何使用-typedef-定义函数指针类型">#</a></h2>
 <p>与一般的定义不同，函数指针在使用 typedef 重命名时，新的变量名不是在末尾而是类似函数指针变量定义的写法。</p>
 <p>下面是一个简单的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">int</span> (<span style="color:#f92672">*</span>type_name) (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">double</span>);
-</code></pre></div><p>其中 <code>int</code> 为函数返回值类型， <code>const void *, double</code> 是函数接受的参数列表，<code>(*type_name)</code> 表明定义的是一个函数指针，它的类型为 <code>int (*)(const void *, double)</code>，新的类型名为 <code>type_name</code>，你可以使用 <code>type_name</code> 来定义一个类型为 <code>int (*)(const void *, double)</code> 的函数指针。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">int</span> (<span style="color:#f92672">*</span>type_name) (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">double</span>);
+</span></span></code></pre></div><p>其中 <code>int</code> 为函数返回值类型， <code>const void *, double</code> 是函数接受的参数列表，<code>(*type_name)</code> 表明定义的是一个函数指针，它的类型为 <code>int (*)(const void *, double)</code>，新的类型名为 <code>type_name</code>，你可以使用 <code>type_name</code> 来定义一个类型为 <code>int (*)(const void *, double)</code> 的函数指针。</p>
 <p>也就是说，使用定义函数指针类型的格式如下：</p>
-<pre><code>typedef 函数返回值类型 (*类型名) (函数参数列表)
+<pre tabindex="0"><code>typedef 函数返回值类型 (*类型名) (函数参数列表)
 </code></pre><p>接下来看一下 <code>qsort()</code> 函数的源代码：</p>
 <p>首先是函数 <code>qsort()</code> 的声明：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">qsort</span> (<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>__base, size_t __nmemb, size_t __size,
-		   __compar_fn_t __compar) __nonnull ((<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>));
-</code></pre></div><p>这里有一个新的数据类型 <code>__compar_fn_t</code>，我们知道它是一个函数指针，我们找一下它的定义：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">int</span> (<span style="color:#f92672">*</span>__compar_fn_t) (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>);
-</code></pre></div><p>上例中 <code>search()</code> 函数可以这样定义：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 类型定义
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">bool</span> (<span style="color:#f92672">*</span>compare_fun)(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>);
-<span style="color:#75715e">// 函数声明
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> arr_size, <span style="color:#66d9ef">int</span> ele_size, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>x, compare_fun compare);
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">qsort</span> (<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>__base, size_t __nmemb, size_t __size,
+</span></span><span style="display:flex;"><span>		   __compar_fn_t __compar) __nonnull ((<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>));
+</span></span></code></pre></div><p>这里有一个新的数据类型 <code>__compar_fn_t</code>，我们知道它是一个函数指针，我们找一下它的定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">int</span> (<span style="color:#f92672">*</span>__compar_fn_t) (<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>);
+</span></span></code></pre></div><p>上例中 <code>search()</code> 函数可以这样定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 类型定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">bool</span> (<span style="color:#f92672">*</span>compare_fun)(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 函数声明
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> arr_size, <span style="color:#66d9ef">int</span> ele_size, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>x, compare_fun compare);
+</span></span></code></pre></div><hr>
 <p>建议阅读： <a href="https://www.geeksforgeeks.org/function-pointer-in-c/">https://www.geeksforgeeks.org/function-pointer-in-c/</a></p>
 
 

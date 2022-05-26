@@ -12,11 +12,11 @@
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;.">
+patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -35,16 +35,14 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="定制你的 rime 提升编程体验" />
@@ -53,7 +51,7 @@ if (!doNotTrack) {
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;." />
+patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/" />
 <meta property="og:image" content="https://aimerneige.com/images/rime.png" /><meta property="article:section" content="post" />
@@ -68,7 +66,7 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;."/>
+patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;."/>
 
 
 <script type="application/ld+json">
@@ -97,11 +95,11 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
   "@type": "BlogPosting",
   "headline": "定制你的 rime 提升编程体验",
   "name": "定制你的 rime 提升编程体验",
-  "description": "平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。\n 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。\n本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。\n找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同\n   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:\npatch: punctuator/full_shape: \u0026#34;`\u0026#34;: \u0026#34;｀\u0026#34; \u0026#34;~\u0026#34;: \u0026#34;～\u0026#34; \u0026#34;!\u0026#34;: \u0026#34;！\u0026#34; \u0026#34;@\u0026#34;: \u0026#34;＠\u0026#34; \u0026#34;#\u0026#34;: \u0026#34;＃\u0026#34; \u0026#34;$\u0026#34;: \u0026#34;￥\u0026#34; \u0026#34;%\u0026#34;: \u0026#34;％\u0026#34; \u0026#34;^\u0026#34;: \u0026#34;……\u0026#34; \u0026#34;\u0026amp;\u0026#34;: \u0026#34;＆\u0026#34; \u0026#34;*\u0026#34;: \u0026#34;×\u0026#34; \u0026#34;(\u0026#34;: \u0026#34;（\u0026#34; \u0026#34;)\u0026#34;: \u0026#34;）\u0026#34; \u0026#34;_\u0026#34;: \u0026#34;——\u0026#34; \u0026#34;+\u0026#34;: \u0026#34;＋\u0026#34; \u0026#34;-\u0026#34;: \u0026#34;－\u0026#34; \u0026#34;=\u0026#34;: \u0026#34;＝\u0026#34; \u0026#34;[\u0026#34;: \u0026#34;【\u0026#34; \u0026#34;]\u0026#34;: \u0026#34;】\u0026#34; \u0026#34;{\u0026#34;: \u0026#34;｛\u0026#34; \u0026#34;}\u0026#34;: \u0026#34;｝\u0026#34; \u0026#34;|\u0026#34;: \u0026#34;｜\u0026#34; \u0026#34;\\\\\u0026#34;: \u0026#34;、\u0026#34; \u0026#34;/\u0026#34;: \u0026#34;、\u0026#34; \u0026#34;;\u0026#34;: \u0026#34;；\u0026#34; \u0026#34;\u0026#39;\u0026#34;: \u0026#34;‘\u0026#34; \u0026#34;,\u0026#34;: \u0026#34;，\u0026#34; \u0026#34;.",
+  "description": "平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。\n 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。\n本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。\n找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同\n   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:\npatch:  punctuator/full_shape:  \u0026#34;`\u0026#34;: \u0026#34;｀\u0026#34;  \u0026#34;~\u0026#34;: \u0026#34;～\u0026#34;  \u0026#34;!\u0026#34;: \u0026#34;！\u0026#34;  \u0026#34;@\u0026#34;: \u0026#34;＠\u0026#34;  \u0026#34;#\u0026#34;: \u0026#34;＃\u0026#34;  \u0026#34;$\u0026#34;: \u0026#34;￥\u0026#34;  \u0026#34;%\u0026#34;: \u0026#34;％\u0026#34;  \u0026#34;^\u0026#34;: \u0026#34;……\u0026#34;  \u0026#34;\u0026amp;\u0026#34;: \u0026#34;＆\u0026#34;  \u0026#34;*\u0026#34;: \u0026#34;×\u0026#34;  \u0026#34;(\u0026#34;: \u0026#34;（\u0026#34;  \u0026#34;)\u0026#34;: \u0026#34;）\u0026#34;  \u0026#34;_\u0026#34;: \u0026#34;——\u0026#34;  \u0026#34;+\u0026#34;: \u0026#34;＋\u0026#34;  \u0026#34;-\u0026#34;: \u0026#34;－\u0026#34;  \u0026#34;=\u0026#34;: \u0026#34;＝\u0026#34;  \u0026#34;[\u0026#34;: \u0026#34;【\u0026#34;  \u0026#34;]\u0026#34;: \u0026#34;】\u0026#34;  \u0026#34;{\u0026#34;: \u0026#34;｛\u0026#34;  \u0026#34;}\u0026#34;: \u0026#34;｝\u0026#34;  \u0026#34;|\u0026#34;: \u0026#34;｜\u0026#34;  \u0026#34;\\\\\u0026#34;: \u0026#34;、\u0026#34;  \u0026#34;/\u0026#34;: \u0026#34;、\u0026#34;  \u0026#34;;\u0026#34;: \u0026#34;；\u0026#34;  \u0026#34;\u0026#39;\u0026#34;: \u0026#34;‘\u0026#34;  \u0026#34;,\u0026#34;: \u0026#34;，\u0026#34;  \u0026#34;.",
   "keywords": [
     "software", "tool", "rime"
   ],
-  "articleBody": " 平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。\n 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。\n本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。\n找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同\n   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:\npatch: punctuator/full_shape: \"`\": \"｀\" \"~\": \"～\" \"!\": \"！\" \"@\": \"＠\" \"#\": \"＃\" \"$\": \"￥\" \"%\": \"％\" \"^\": \"……\" \"\u0026\": \"＆\" \"*\": \"×\" \"(\": \"（\" \")\": \"）\" \"_\": \"——\" \"+\": \"＋\" \"-\": \"－\" \"=\": \"＝\" \"[\": \"【\" \"]\": \"】\" \"{\": \"｛\" \"}\": \"｝\" \"|\": \"｜\" \"\\\\\": \"、\" \"/\": \"、\" \";\": \"；\" \"'\": \"‘\" \",\": \"，\" \".\": \"。\" \"\"《\" \"\": \"》\" \"?\": \"？\" punctuator/half_shape: \"`\": \"`\" \"~\": \"~\" \"!\": \"！\" \"@\": \"@\" \"#\": \"#\" \"$\": \"￥\" \"%\": \"%\" \"^\": \"……\" \"\u0026\": \"\u0026\" \"*\": \"×\" \"(\": \"（\" \")\": \"）\" \"_\": \"——\" \"+\": \"+\" \"-\": \"-\" \"=\": \"=\" \"[\": \"【\" \"]\": \"】\" \"{\": \"｛\" \"}\": \"｝\" \"|\": \"｜\" \"\\\\\": \"、\" \"/\": \"/\" \";\": \"；\" \"'\": \"’\" \",\": \"，\" \".\": \"。\" \"\"《\" \"\": \"》\" \"?\": \"？\" 以上配置的具体细节请查阅文档。\n应用配置 保存好你的配置文件之后，切换输入法到 rime，在托盘右击你的输入法（fedora 下左键单击也是一样的效果）选择 部署 ，稍等片刻，等待 rime 部署你的配置文件后，如果没有错误警告，那么恭喜你应用成功。之后在中文半角状态下输入 / 时会直接输入 / 而没有烦人的二级窗口提示你选择要输入的内容，可以愉快的写中文注释了。\n",
+  "articleBody": " 平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。\n 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。\n本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。\n找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同\n   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:\npatch:  punctuator/full_shape:  \"`\": \"｀\"  \"~\": \"～\"  \"!\": \"！\"  \"@\": \"＠\"  \"#\": \"＃\"  \"$\": \"￥\"  \"%\": \"％\"  \"^\": \"……\"  \"\u0026\": \"＆\"  \"*\": \"×\"  \"(\": \"（\"  \")\": \"）\"  \"_\": \"——\"  \"+\": \"＋\"  \"-\": \"－\"  \"=\": \"＝\"  \"[\": \"【\"  \"]\": \"】\"  \"{\": \"｛\"  \"}\": \"｝\"  \"|\": \"｜\"  \"\\\\\": \"、\"  \"/\": \"、\"  \";\": \"；\"  \"'\": \"‘\"  \",\": \"，\"  \".\": \"。\"  \"\"《\"  \"\": \"》\"  \"?\": \"？\"  punctuator/half_shape:  \"`\": \"`\"  \"~\": \"~\"  \"!\": \"！\"  \"@\": \"@\"  \"#\": \"#\"  \"$\": \"￥\"  \"%\": \"%\"  \"^\": \"……\"  \"\u0026\": \"\u0026\"  \"*\": \"×\"  \"(\": \"（\"  \")\": \"）\"  \"_\": \"——\"  \"+\": \"+\"  \"-\": \"-\"  \"=\": \"=\"  \"[\": \"【\"  \"]\": \"】\"  \"{\": \"｛\"  \"}\": \"｝\"  \"|\": \"｜\"  \"\\\\\": \"、\"  \"/\": \"/\"  \";\": \"；\"  \"'\": \"’\"  \",\": \"，\"  \".\": \"。\"  \"\"《\"  \"\": \"》\"  \"?\": \"？\" 以上配置的具体细节请查阅文档。\n应用配置 保存好你的配置文件之后，切换输入法到 rime，在托盘右击你的输入法（fedora 下左键单击也是一样的效果）选择 部署 ，稍等片刻，等待 rime 部署你的配置文件后，如果没有错误警告，那么恭喜你应用成功。之后在中文半角状态下输入 / 时会直接输入 / 而没有烦人的二级窗口提示你选择要输入的内容，可以愉快的写中文注释了。\n",
   "wordCount" : "175",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/rime.png","datePublished": "2021-08-19T01:50:11+08:00",
@@ -188,7 +186,7 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
     <h1 class="post-title">
       定制你的 rime 提升编程体验
     </h1>
-    <div class="post-meta"><span title='2021-08-19 01:50:11 +0800 CST'>August 19, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/diy-your-rime-for-better-coding.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2021-08-19 01:50:11 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/diy-your-rime-for-better-coding.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
@@ -247,70 +245,70 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
 </table>
 <h1 id="创建你的配置文件">创建你的配置文件<a hidden class="anchor" aria-hidden="true" href="#创建你的配置文件">#</a></h1>
 <p>如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 <code>default.custom.yaml</code> 的配置文件，写入如下内容:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">patch</span>:
-  <span style="color:#f92672">punctuator/full_shape</span>:
-    <span style="color:#f92672">&#34;`&#34;: </span><span style="color:#e6db74">&#34;｀&#34;</span>
-    <span style="color:#f92672">&#34;~&#34;: </span><span style="color:#e6db74">&#34;～&#34;</span>
-    <span style="color:#f92672">&#34;!&#34;: </span><span style="color:#e6db74">&#34;！&#34;</span>
-    <span style="color:#f92672">&#34;@&#34;: </span><span style="color:#e6db74">&#34;＠&#34;</span>
-    <span style="color:#f92672">&#34;#&#34;: </span><span style="color:#e6db74">&#34;＃&#34;</span>
-    <span style="color:#f92672">&#34;$&#34;: </span><span style="color:#e6db74">&#34;￥&#34;</span>
-    <span style="color:#f92672">&#34;%&#34;: </span><span style="color:#e6db74">&#34;％&#34;</span>
-    <span style="color:#f92672">&#34;^&#34;: </span><span style="color:#e6db74">&#34;……&#34;</span>
-    <span style="color:#f92672">&#34;&amp;&#34;: </span><span style="color:#e6db74">&#34;＆&#34;</span>
-    <span style="color:#f92672">&#34;*&#34;: </span><span style="color:#e6db74">&#34;×&#34;</span>
-    <span style="color:#f92672">&#34;(&#34;: </span><span style="color:#e6db74">&#34;（&#34;</span>
-    <span style="color:#f92672">&#34;)&#34;: </span><span style="color:#e6db74">&#34;）&#34;</span>
-    <span style="color:#f92672">&#34;_&#34;: </span><span style="color:#e6db74">&#34;——&#34;</span>
-    <span style="color:#f92672">&#34;+&#34;: </span><span style="color:#e6db74">&#34;＋&#34;</span>
-    <span style="color:#f92672">&#34;-&#34;: </span><span style="color:#e6db74">&#34;－&#34;</span>
-    <span style="color:#f92672">&#34;=&#34;: </span><span style="color:#e6db74">&#34;＝&#34;</span>
-    <span style="color:#f92672">&#34;[&#34;: </span><span style="color:#e6db74">&#34;【&#34;</span>
-    <span style="color:#f92672">&#34;]&#34;: </span><span style="color:#e6db74">&#34;】&#34;</span>
-    <span style="color:#f92672">&#34;{&#34;: </span><span style="color:#e6db74">&#34;｛&#34;</span>
-    <span style="color:#f92672">&#34;}&#34;: </span><span style="color:#e6db74">&#34;｝&#34;</span>
-    <span style="color:#f92672">&#34;|&#34;: </span><span style="color:#e6db74">&#34;｜&#34;</span>
-    <span style="color:#f92672">&#34;\\&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
-    <span style="color:#f92672">&#34;/&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
-    <span style="color:#f92672">&#34;;&#34;: </span><span style="color:#e6db74">&#34;；&#34;</span>
-    <span style="color:#f92672">&#34;&#39;&#34;: </span><span style="color:#e6db74">&#34;‘&#34;</span>
-    <span style="color:#f92672">&#34;,&#34;: </span><span style="color:#e6db74">&#34;，&#34;</span>
-    <span style="color:#f92672">&#34;.&#34;: </span><span style="color:#e6db74">&#34;。&#34;</span>
-    <span style="color:#f92672">&#34;&lt;&#34;: </span><span style="color:#e6db74">&#34;《&#34;</span>
-    <span style="color:#f92672">&#34;&gt;&#34;: </span><span style="color:#e6db74">&#34;》&#34;</span>
-    <span style="color:#f92672">&#34;?&#34;: </span><span style="color:#e6db74">&#34;？&#34;</span>
-  <span style="color:#f92672">punctuator/half_shape</span>:
-    <span style="color:#f92672">&#34;`&#34;: </span><span style="color:#e6db74">&#34;`&#34;</span>
-    <span style="color:#f92672">&#34;~&#34;: </span><span style="color:#e6db74">&#34;~&#34;</span>
-    <span style="color:#f92672">&#34;!&#34;: </span><span style="color:#e6db74">&#34;！&#34;</span>
-    <span style="color:#f92672">&#34;@&#34;: </span><span style="color:#e6db74">&#34;@&#34;</span>
-    <span style="color:#f92672">&#34;#&#34;: </span><span style="color:#e6db74">&#34;#&#34;</span>
-    <span style="color:#f92672">&#34;$&#34;: </span><span style="color:#e6db74">&#34;￥&#34;</span>
-    <span style="color:#f92672">&#34;%&#34;: </span><span style="color:#e6db74">&#34;%&#34;</span>
-    <span style="color:#f92672">&#34;^&#34;: </span><span style="color:#e6db74">&#34;……&#34;</span>
-    <span style="color:#f92672">&#34;&amp;&#34;: </span><span style="color:#e6db74">&#34;&amp;&#34;</span>
-    <span style="color:#f92672">&#34;*&#34;: </span><span style="color:#e6db74">&#34;×&#34;</span>
-    <span style="color:#f92672">&#34;(&#34;: </span><span style="color:#e6db74">&#34;（&#34;</span>
-    <span style="color:#f92672">&#34;)&#34;: </span><span style="color:#e6db74">&#34;）&#34;</span>
-    <span style="color:#f92672">&#34;_&#34;: </span><span style="color:#e6db74">&#34;——&#34;</span>
-    <span style="color:#f92672">&#34;+&#34;: </span><span style="color:#e6db74">&#34;+&#34;</span>
-    <span style="color:#f92672">&#34;-&#34;: </span><span style="color:#e6db74">&#34;-&#34;</span>
-    <span style="color:#f92672">&#34;=&#34;: </span><span style="color:#e6db74">&#34;=&#34;</span>
-    <span style="color:#f92672">&#34;[&#34;: </span><span style="color:#e6db74">&#34;【&#34;</span>
-    <span style="color:#f92672">&#34;]&#34;: </span><span style="color:#e6db74">&#34;】&#34;</span>
-    <span style="color:#f92672">&#34;{&#34;: </span><span style="color:#e6db74">&#34;｛&#34;</span>
-    <span style="color:#f92672">&#34;}&#34;: </span><span style="color:#e6db74">&#34;｝&#34;</span>
-    <span style="color:#f92672">&#34;|&#34;: </span><span style="color:#e6db74">&#34;｜&#34;</span>
-    <span style="color:#f92672">&#34;\\&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
-    <span style="color:#f92672">&#34;/&#34;: </span><span style="color:#e6db74">&#34;/&#34;</span>
-    <span style="color:#f92672">&#34;;&#34;: </span><span style="color:#e6db74">&#34;；&#34;</span>
-    <span style="color:#f92672">&#34;&#39;&#34;: </span><span style="color:#e6db74">&#34;’&#34;</span>
-    <span style="color:#f92672">&#34;,&#34;: </span><span style="color:#e6db74">&#34;，&#34;</span>
-    <span style="color:#f92672">&#34;.&#34;: </span><span style="color:#e6db74">&#34;。&#34;</span>
-    <span style="color:#f92672">&#34;&lt;&#34;: </span><span style="color:#e6db74">&#34;《&#34;</span>
-    <span style="color:#f92672">&#34;&gt;&#34;: </span><span style="color:#e6db74">&#34;》&#34;</span>
-    <span style="color:#f92672">&#34;?&#34;: </span><span style="color:#e6db74">&#34;？&#34;</span>
-</code></pre></div><p>以上配置的具体细节请查阅<a href="https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F">文档</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">patch</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">punctuator/full_shape</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;`&#34;: </span><span style="color:#e6db74">&#34;｀&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;~&#34;: </span><span style="color:#e6db74">&#34;～&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;!&#34;: </span><span style="color:#e6db74">&#34;！&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;@&#34;: </span><span style="color:#e6db74">&#34;＠&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;#&#34;: </span><span style="color:#e6db74">&#34;＃&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;$&#34;: </span><span style="color:#e6db74">&#34;￥&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;%&#34;: </span><span style="color:#e6db74">&#34;％&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;^&#34;: </span><span style="color:#e6db74">&#34;……&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&amp;&#34;: </span><span style="color:#e6db74">&#34;＆&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;*&#34;: </span><span style="color:#e6db74">&#34;×&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;(&#34;: </span><span style="color:#e6db74">&#34;（&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;)&#34;: </span><span style="color:#e6db74">&#34;）&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;_&#34;: </span><span style="color:#e6db74">&#34;——&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;+&#34;: </span><span style="color:#e6db74">&#34;＋&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;-&#34;: </span><span style="color:#e6db74">&#34;－&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;=&#34;: </span><span style="color:#e6db74">&#34;＝&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;[&#34;: </span><span style="color:#e6db74">&#34;【&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;]&#34;: </span><span style="color:#e6db74">&#34;】&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;{&#34;: </span><span style="color:#e6db74">&#34;｛&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;}&#34;: </span><span style="color:#e6db74">&#34;｝&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;|&#34;: </span><span style="color:#e6db74">&#34;｜&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;\\&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;/&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;;&#34;: </span><span style="color:#e6db74">&#34;；&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&#39;&#34;: </span><span style="color:#e6db74">&#34;‘&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;,&#34;: </span><span style="color:#e6db74">&#34;，&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;.&#34;: </span><span style="color:#e6db74">&#34;。&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&lt;&#34;: </span><span style="color:#e6db74">&#34;《&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&gt;&#34;: </span><span style="color:#e6db74">&#34;》&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;?&#34;: </span><span style="color:#e6db74">&#34;？&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">punctuator/half_shape</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;`&#34;: </span><span style="color:#e6db74">&#34;`&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;~&#34;: </span><span style="color:#e6db74">&#34;~&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;!&#34;: </span><span style="color:#e6db74">&#34;！&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;@&#34;: </span><span style="color:#e6db74">&#34;@&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;#&#34;: </span><span style="color:#e6db74">&#34;#&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;$&#34;: </span><span style="color:#e6db74">&#34;￥&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;%&#34;: </span><span style="color:#e6db74">&#34;%&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;^&#34;: </span><span style="color:#e6db74">&#34;……&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&amp;&#34;: </span><span style="color:#e6db74">&#34;&amp;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;*&#34;: </span><span style="color:#e6db74">&#34;×&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;(&#34;: </span><span style="color:#e6db74">&#34;（&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;)&#34;: </span><span style="color:#e6db74">&#34;）&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;_&#34;: </span><span style="color:#e6db74">&#34;——&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;+&#34;: </span><span style="color:#e6db74">&#34;+&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;-&#34;: </span><span style="color:#e6db74">&#34;-&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;=&#34;: </span><span style="color:#e6db74">&#34;=&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;[&#34;: </span><span style="color:#e6db74">&#34;【&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;]&#34;: </span><span style="color:#e6db74">&#34;】&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;{&#34;: </span><span style="color:#e6db74">&#34;｛&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;}&#34;: </span><span style="color:#e6db74">&#34;｝&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;|&#34;: </span><span style="color:#e6db74">&#34;｜&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;\\&#34;: </span><span style="color:#e6db74">&#34;、&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;/&#34;: </span><span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;;&#34;: </span><span style="color:#e6db74">&#34;；&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&#39;&#34;: </span><span style="color:#e6db74">&#34;’&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;,&#34;: </span><span style="color:#e6db74">&#34;，&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;.&#34;: </span><span style="color:#e6db74">&#34;。&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&lt;&#34;: </span><span style="color:#e6db74">&#34;《&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;&gt;&#34;: </span><span style="color:#e6db74">&#34;》&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;?&#34;: </span><span style="color:#e6db74">&#34;？&#34;</span>
+</span></span></code></pre></div><p>以上配置的具体细节请查阅<a href="https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F">文档</a>。</p>
 <h1 id="应用配置">应用配置<a hidden class="anchor" aria-hidden="true" href="#应用配置">#</a></h1>
 <p>保存好你的配置文件之后，切换输入法到 rime，在托盘右击你的输入法（fedora 下左键单击也是一样的效果）选择 <strong>部署</strong> ，稍等片刻，等待 rime 部署你的配置文件后，如果没有错误警告，那么恭喜你应用成功。之后在中文半角状态下输入 <code>/</code> 时会直接输入 <code>/</code> 而没有烦人的二级窗口提示你选择要输入的内容，可以愉快的写中文注释了。</p>
 

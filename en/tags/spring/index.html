@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="spring" />
@@ -123,7 +121,7 @@ if (!doNotTrack) {
     <p>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &#34;io.springfox:springfox-boot-starter:3.0.0&#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox....</p>
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-30 15:35:21 +0800 CST'>December 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Enable Swagger on Spring Boot Gradle Projects" href="https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/"></a>

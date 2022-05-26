@@ -22,7 +22,7 @@ C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
 配置方法和 Linux 下类似。
 我的配置文件
 将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
-Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&amp;quot;Alacritty terminal here&amp;quot; &amp;quot;Icon&amp;quot;=&amp;quot;C:\\Tools\\Alacritty\\alacritty.ico&amp;quot; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&amp;quot;C:\\Tools\\Alacritty\\alacritty.exe&amp;quot; 当然，你也可以按照自己的喜好手动编辑注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&amp;#34;Alacritty terminal here&amp;#34; &amp;#34;Icon&amp;#34;=&amp;#34;C:\\Tools\\Alacritty\\alacritty.ico&amp;#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&amp;#34;C:\\Tools\\Alacritty\\alacritty.exe&amp;#34; 当然，你也可以按照自己的喜好手动编辑注册表。
 其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
 你也可以将 @=&amp;quot;Alacritty terminal here&amp;quot; 修改为自己喜欢的内容。</description>
     </item>

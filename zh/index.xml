@@ -80,9 +80,9 @@ Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件�
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, type: &amp;#34;GET&amp;#34;, data: { courseId: courseId }, dataType: &amp;#34;JSON&amp;#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
+$.ajax({ 	url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, 	type: &amp;#34;GET&amp;#34;, 	data: { courseId: courseId }, 	dataType: &amp;#34;JSON&amp;#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) { var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;); var questionAnswer = question1.attr(&amp;#34;data-answer&amp;#34;); var userAnswer = question1.find(&amp;#34;input[type=&amp;#39;radio&amp;#39;]:checked&amp;#34;).val(); var score = parseFloat(question1.</description>
+ // 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) {  var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;);  var questionAnswer = question1.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ $.ajax({ url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, type: &amp;#34;GE
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34; &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34; &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34; &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34; &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34; &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34; &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34; &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34; &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34; &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34; &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34; &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34; &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34; &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34; &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34; &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34; &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34; &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34; &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34; &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34; &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34; &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34; &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34; &amp;#34;.</description>
+patch:  punctuator/full_shape:  &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34;  &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34;  &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34;  &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34;  &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34;  &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34;  &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34;  &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34;  &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34;  &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34;  &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34;  &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34;  &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34;  &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34;  &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34;  &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34;  &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34;  &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34;  &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34;  &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34;  &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34;  &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34;  &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34;  &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34;  &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34;  &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34;  &amp;#34;.</description>
     </item>
     
     <item>
@@ -141,7 +141,7 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       <pubDate>Tue, 10 Nov 2020 10:41:51 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/daily-linux-command/</guid>
-      <description>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&amp;lt;link&amp;gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt; mtu 65536 inet 127.</description>
+      <description>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&amp;lt;link&amp;gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt; mtu 65536  inet 127.</description>
     </item>
     
     <item>
@@ -170,7 +170,7 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       <guid>https://aimerneige.com/zh/post/c-thread-basic/</guid>
       <description>线程于进程的对比
           thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;pthread.h&amp;gt; void *myfunc(void *args) { for (int i = 0; i &amp;lt; 50; i++) { printf(&amp;#34;%d\n&amp;#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;amp;th1, NULL, myfunc, NULL); pthread_create(&amp;amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数</description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;pthread.h&amp;gt; void *myfunc(void *args) {  for (int i = 0; i &amp;lt; 50; i++)  {  printf(&amp;#34;%d\n&amp;#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数</description>
     </item>
     
     <item>
@@ -180,10 +180,10 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       
       <guid>https://aimerneige.com/zh/post/c-static-function/</guid>
       <description>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) { printf(&amp;#34;I am a static funciton.\n&amp;#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) {  printf(&amp;#34;I am a static funciton.\n&amp;#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &amp;lt;stdio.h&amp;gt; static void fun1() { printf(&amp;#34;fun1 called.\n&amp;#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &amp;lt;stdio.h&amp;gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &amp;lt;stdio.h&amp;gt; static void fun1() {  printf(&amp;#34;fun1 called.\n&amp;#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &amp;lt;stdio.h&amp;gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&amp;#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</description>
     </item>
@@ -203,7 +203,7 @@ C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
 配置方法和 Linux 下类似。
 我的配置文件
 将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
-Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&amp;quot;Alacritty terminal here&amp;quot; &amp;quot;Icon&amp;quot;=&amp;quot;C:\\Tools\\Alacritty\\alacritty.ico&amp;quot; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&amp;quot;C:\\Tools\\Alacritty\\alacritty.exe&amp;quot; 当然，你也可以按照自己的喜好手动编辑注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&amp;#34;Alacritty terminal here&amp;#34; &amp;#34;Icon&amp;#34;=&amp;#34;C:\\Tools\\Alacritty\\alacritty.ico&amp;#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&amp;#34;C:\\Tools\\Alacritty\\alacritty.exe&amp;#34; 当然，你也可以按照自己的喜好手动编辑注册表。
 其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
 你也可以将 @=&amp;quot;Alacritty terminal here&amp;quot; 修改为自己喜欢的内容。</description>
     </item>

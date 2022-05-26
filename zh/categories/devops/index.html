@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="Devops" />
@@ -122,7 +120,7 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config  将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录  设置 sudo 免密码 sudo visudo 在末尾添加如下内容...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>May 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>五月 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 如何配置新购置的 Linux 服务器" href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"></a>
 </article>
     </main>

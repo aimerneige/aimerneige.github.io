@@ -11,7 +11,7 @@
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="使用 nodejs 快速为 Android 程序构建 API" />
@@ -86,7 +84,7 @@ if (!doNotTrack) {
   "keywords": [
     "nodejs", "javascript", "api", "mysql"
   ],
-  "articleBody": "前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。\n前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。\n 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。\n 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：\n nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。\n以 Ubuntu 为例，直接在终端执行如下指令：\nsudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。\n如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。\n安装 npm 通常情况下，安装 nodejs 时会附带安装 npm，你可以直接使用 npm -v 来查看当前系统安装的 npm 版本来检测安装情况。\n如果没有安装，以 Ubuntu 系统为例，可以在终端执行下面的指令：\nsudo apt install npm windows 用户在执行完 node 的安装程序后 npm  会自动安装完成。\n服务器安装 你需要在服务器上安装配置如下环境：\n nodejs npm mysql nginx  安装 nodejs 与 npm 其中 nodejs 和 npm 的安装同客户端完全相同，这里不再赘述。\n安装 mysql mysql 可以一并安装在运行 node 项目的服务器上，也可以使用独立的数据库提供服务器。\n本文章主要讨论如何构建 API ，这里不再赘述如何安装配置 mysql。可以查看我的其他文章。\n安装 nginx nginx 用于将服务反向代理到 80 端口，以 Ubuntu 系统为例，直接在终端执行如下指令：\nsudo apt install nginx Windows 用户自行查阅相关资料。不会吧，不会吧，不会有人服务器用 windows 吧？？项目构建 使用模版 为了方便快速构建一个项目，我写了一个模版，你可以在 GitHub 上找到它。\n使用这个模版快速构建一个新的仓库，将它 clone 到本地，并进行下面的修改：\n 修改 package.json 修改 LICENSE 修改 README 在 src/config 下新建 db.js 写入数据库服务器的配置。  安装依赖 在项目路径下启动终端，执行如下指令：\nnpm i 这个指令是 npm install 的缩写，npm 会安装需要的依赖，本模版项目只依赖了俩个包：\n express mysql  依赖安装完成后，你会在项目路径下看到 node_modules 这个文件夹，它已经被写在 .gitignore 中，这个文件夹下是项目所需要的依赖，即使你意外地删掉了这个文件夹，再次执行 npm i 就可以将这些文件下载回来，所以你不应该在意这个文件夹中有什么内容，npm 会帮我们处理它。\n启动项目 使用 cd 命令切换到 src 目录下，执行下面的指令：\nnode app.js 之后你会在终端看到如下输出：\nServer start in development mode on http://localhost:4000; press Ctrl + C to terminated. 打开你的浏览器访问 http://localhost:4000/\n如果你看到下面的内容，说明项目成功启动了：\n{ \"status\": 200, \"info\": \"If you see this, the server deploy success!\" } 如果你在服务器启动项目，假设你的服务器 ip 为 43.192.82.215 并且配置了域名 api.aimerneige.com ，你可以通过在浏览器内访问下面的地址测试服务器：\n http://43.192.82.215:4000/ http://api.aimerneige.com:4000/  注意：\n 在本地测试启动的服务器只能通过 本地/内网 访问 在有公网 ip 的服务器上部署的服务可以在 任意浏览器内 打开  如果你在服务器测试，请注意以这样的方式运行仅能用来测试，不可以用作生产环境，后文会介绍如何在服务器部署项目。\n程序入口 项目可以启动后，说明环境配置无误，接下来可以开始写代码了。\n我们简单看一下程序的入口 app.js\n本项目依赖 express 构建，首先导入 express 的模块：\n// require const express = require(\"express\"); 接下来导入路由目录下的路由模块：\n// user require const indexRouter = require(\"./routes/index\"); 创建 express 对象：\n// express app var app = express(); 设置监听端口：\n// set port app.set(\"port\", process.env.PORT || 4000); 添加可以支持 json 解析的中间件：\n// json parse app.use(express.json()); app.use(express.urlencoded({ extended: false })); 添加路由中间件：\n// routes app.use(\"/\", indexRouter); 路由匹配失败后返回 404 错误：\n// catch 404 and forward to error handler app.use(function (req, res, next) { var err = new Error(\"Not Found\"); err.status = 404; next(err); }); 处理错误信息：\n// error handler app.use(function (err, req, res, next) { res.type(\"application/json\"); res.status(err.status || 500); res.send({ status: err.status || 500, message: err.message, }); }); 检测当前模块是否被直接执行，如果是则启动服务器，否者导出模块：\n// check if run app.js directly if (require.main === module) { app.listen(app.get(\"port\"), function () { console.log( \"Server start in \" + app.get(\"env\") + \" mode on http://localhost:\" + app.get(\"port\") + \"; press Ctrl + C to terminated.\" ); }); } else { module.exports = app; } 其他的代码可以暂时不去理会，最重要的是路由这一部分：\n// 导入路由模块 const indexRouter = require(\"./routes/index\"); // 添加路由中间件 app.use(\"/\", indexRouter); 在编写 api 时，只需要在 /src/routes 目录下新建路由模块，并在 app.js 下引用即可。\n添加路由 接下来我们看一下默认的路由模块 index.js ：\n导入 express 模块：\nconst express = require(\"express\"); const router = express.Router(); 配置路由规则：\nrouter.get(\"/\", function (req, res, next) { res.type(\"application/json\"); res.status(200); res.send({ status: 200, info: \"If you see this, the server deploy success!\", }); }); 导出模块：\nmodule.exports = router; 其中重点即配置路由规则这一部分。\n我相信这几行代码还是很易懂的，相对地，如果我们想要使用 post 方法，访问路径为 /about 需要这样写：\nrouter.post(\"/about\", fuction(){ /* function */ } ); 设置好请求方法和请求路径后，回调函数用来向客户端返回数据。\n设置返回数据类型，这里使用 json 进行数据传输：\nres.type(\"application/json\"); 设置返回状态码：\nres.status(200); 返回指定数据：\nres.send(return_data); 由于开发语言为 js ，而且本项目添加了解析 json 的中间件，如果想要返回 json，不需像其他语言那样要将对象解析为 json 字符串，直接返回一个对象即可，客户端会成功接收到正确的 json 字符串。\n// 服务器返回的对象 { status: 200, info: \"If you see this, the server deploy success!\", } // 客户端拿到的字符串 { \"status\": 200, \"info\": \"If you see this, the server deploy success!\" } 书写好路由模块后在 app.js 中引用即可：\n// 导入模块 const indexRouter = require(\"./routes/index\"); // ... 中间的其他代码  // 在 app 中应用路由模块 app.use(\"/\", indexRouter); 要注意模块导入的位置，不能乱放。和模版保持一致即可。\n添加更多的路由信息 就像上面的例子中所写的，我们可以继续添加新的路由模块，也可以在同一个路由模块下添加更多的访问路径。\n src/app.js  // ...  const indexRouter = require(\"./routes/index\"); const userRouter = require(\"./routes/user\"); // ...  app.use(\"/\", indexRouter); app.use(\"/user\", userRouter);  src/routes/index.js  // ...  // 访问路径 / router.get(\"/\", fuction(){ /* function */ } ); // 访问路径 /about router.get(\"/about\", function() { /* function */ }); // ...  src/routes/user.js  // ...  // 访问路径 /user/cat router.get(\"/cat\", fuction(){ /* function */ } ); // 访问路径 /user/edit router.post(\"/edit\", fuction(){ /* function */ } ); // 访问路径 /user/new router.psot(\"/new\", fuction(){ /* function */ } ); // ... 获取客户端数据 获取请求参数信息 req.query 对象是由客户端请求参数构成的，在回调函数内，可以直接调用它来获取客户端请求参数，如果客户端传递了参数，我们就可以拿到对应的数据，否者我们只能得到 undefined。由此可以通过判空来确定客户端请求参数是否正确。\n例如我们的请求路径为 /data 所需请求参数为 id 和 class 可以这样写：\n 注： 对应的示例请求地址为 https://api.example.com/data?id=1930201\u0026class=302\n router.get(\"/data\", function (req, res) { res.type(\"application/json\"); if (req.query.class === undefined || req.query.id === undefined) { res.status(400); // 向客户端返回错误信息，提示客户端返回正确的参数  res.send({ status: 400, info: \"Wrong arguments!\", }); } else { // 向用户返回数据（通常会用客户端参数来调用数据库，为了简便这里返回一个类做简单示范）  res.status(200); res.send({ status: 200, info: { class: req.query.class, id: req.query.id, }, }); } }); 我们可以通过判空来确定客户端请求参数是否正确，之后可以使用参数来进行其他操作，比如构建类，调取数据库等等。\n获取请求体信息 与请求参数类似，请求体信息也保存在一个类中，就是 req.body。使用方法和之前请求参数完全一致，这里只写一个示例，不多赘述。\nrouter.post(\"/new\", function (req, res) { res.type(\"application/json\"); if (req.body.class === undefined || req.body.id === undefined) { res.status(400); // 向客户端返回错误信息，提示客户端返回正确的参数  res.send({ status: 400, info: \"Wrong arguments!\", }); } else { var new_student = { class: req.body.class, id: req.body.id, }; // 向数据库内添加新的学生  res.status(200); res.send({ status: 200, info: \"Student create successful!\", }); } }); 获取更多信息 在回调函数中，req 对象中保存了所有来自客户请求的数据，前面介绍的只是比较常用的，其他内容可以查找文档。\n获取数据库信息 配置数据库信息 参考 db.js.example 创建 db.js 写入服务器的配置\nvar mysql = require(\"mysql\"); var pool = mysql.createPool({ host: \"host_ip\", user: \"user_name\", password: \"password\", database: \"data\", port: 3306, }); function query(sql, callback) { pool.getConnection(function (err, connection) { connection.query(sql, function (err, rows) { callback(err, rows); connection.release(); }); }); } exports.query = query; 配置好数据库服务器后，就可以通过下面的方法访问数据库的数据了：\nsql_command = \"DROP DATABASE *;\"; // ⚠️ 注意修改 db.query(sql_command, function (err, result, fields) { if (err) { // 如果数据库指令执行出现了错误，返回错误信息  requestSQLFailedLog(sql_command, err); res.status(400); res.send({ status: 400, info: err }); } else { // 如果数据库指令执行成功，返回数据  requestSQLSuccessLog(sql_command, result); res.status(200); res.send(result); } }); 服务部署  待完善，咕咕咕\n  将项目上传到服务器 修改 db.js 的配置 cd src node cluster.js 如果你想要后台运行，执行 nohup node cluster.js \u0026  ",
+  "articleBody": "前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。\n前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。\n 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。\n 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：\n nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。\n以 Ubuntu 为例，直接在终端执行如下指令：\nsudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。\n如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。\n安装 npm 通常情况下，安装 nodejs 时会附带安装 npm，你可以直接使用 npm -v 来查看当前系统安装的 npm 版本来检测安装情况。\n如果没有安装，以 Ubuntu 系统为例，可以在终端执行下面的指令：\nsudo apt install npm windows 用户在执行完 node 的安装程序后 npm  会自动安装完成。\n服务器安装 你需要在服务器上安装配置如下环境：\n nodejs npm mysql nginx  安装 nodejs 与 npm 其中 nodejs 和 npm 的安装同客户端完全相同，这里不再赘述。\n安装 mysql mysql 可以一并安装在运行 node 项目的服务器上，也可以使用独立的数据库提供服务器。\n本文章主要讨论如何构建 API ，这里不再赘述如何安装配置 mysql。可以查看我的其他文章。\n安装 nginx nginx 用于将服务反向代理到 80 端口，以 Ubuntu 系统为例，直接在终端执行如下指令：\nsudo apt install nginx Windows 用户自行查阅相关资料。不会吧，不会吧，不会有人服务器用 windows 吧？？项目构建 使用模版 为了方便快速构建一个项目，我写了一个模版，你可以在 GitHub 上找到它。\n使用这个模版快速构建一个新的仓库，将它 clone 到本地，并进行下面的修改：\n 修改 package.json 修改 LICENSE 修改 README 在 src/config 下新建 db.js 写入数据库服务器的配置。  安装依赖 在项目路径下启动终端，执行如下指令：\nnpm i 这个指令是 npm install 的缩写，npm 会安装需要的依赖，本模版项目只依赖了俩个包：\n express mysql  依赖安装完成后，你会在项目路径下看到 node_modules 这个文件夹，它已经被写在 .gitignore 中，这个文件夹下是项目所需要的依赖，即使你意外地删掉了这个文件夹，再次执行 npm i 就可以将这些文件下载回来，所以你不应该在意这个文件夹中有什么内容，npm 会帮我们处理它。\n启动项目 使用 cd 命令切换到 src 目录下，执行下面的指令：\nnode app.js 之后你会在终端看到如下输出：\nServer start in development mode on http://localhost:4000; press Ctrl + C to terminated. 打开你的浏览器访问 http://localhost:4000/\n如果你看到下面的内容，说明项目成功启动了：\n{ \"status\": 200, \"info\": \"If you see this, the server deploy success!\" } 如果你在服务器启动项目，假设你的服务器 ip 为 43.192.82.215 并且配置了域名 api.aimerneige.com ，你可以通过在浏览器内访问下面的地址测试服务器：\n http://43.192.82.215:4000/ http://api.aimerneige.com:4000/  注意：\n 在本地测试启动的服务器只能通过 本地/内网 访问 在有公网 ip 的服务器上部署的服务可以在 任意浏览器内 打开  如果你在服务器测试，请注意以这样的方式运行仅能用来测试，不可以用作生产环境，后文会介绍如何在服务器部署项目。\n程序入口 项目可以启动后，说明环境配置无误，接下来可以开始写代码了。\n我们简单看一下程序的入口 app.js\n本项目依赖 express 构建，首先导入 express 的模块：\n// require const express = require(\"express\"); 接下来导入路由目录下的路由模块：\n// user require const indexRouter = require(\"./routes/index\"); 创建 express 对象：\n// express app var app = express(); 设置监听端口：\n// set port app.set(\"port\", process.env.PORT || 4000); 添加可以支持 json 解析的中间件：\n// json parse app.use(express.json()); app.use(express.urlencoded({ extended: false })); 添加路由中间件：\n// routes app.use(\"/\", indexRouter); 路由匹配失败后返回 404 错误：\n// catch 404 and forward to error handler app.use(function (req, res, next) {  var err = new Error(\"Not Found\");  err.status = 404;  next(err); }); 处理错误信息：\n// error handler app.use(function (err, req, res, next) {  res.type(\"application/json\");  res.status(err.status || 500);  res.send({  status: err.status || 500,  message: err.message,  }); }); 检测当前模块是否被直接执行，如果是则启动服务器，否者导出模块：\n// check if run app.js directly if (require.main === module) {  app.listen(app.get(\"port\"), function () {  console.log(  \"Server start in \" +  app.get(\"env\") +  \" mode on http://localhost:\" +  app.get(\"port\") +  \"; press Ctrl + C to terminated.\"  );  }); } else {  module.exports = app; } 其他的代码可以暂时不去理会，最重要的是路由这一部分：\n// 导入路由模块 const indexRouter = require(\"./routes/index\"); // 添加路由中间件 app.use(\"/\", indexRouter); 在编写 api 时，只需要在 /src/routes 目录下新建路由模块，并在 app.js 下引用即可。\n添加路由 接下来我们看一下默认的路由模块 index.js ：\n导入 express 模块：\nconst express = require(\"express\"); const router = express.Router(); 配置路由规则：\nrouter.get(\"/\", function (req, res, next) {  res.type(\"application/json\");  res.status(200);  res.send({  status: 200,  info: \"If you see this, the server deploy success!\",  }); }); 导出模块：\nmodule.exports = router; 其中重点即配置路由规则这一部分。\n我相信这几行代码还是很易懂的，相对地，如果我们想要使用 post 方法，访问路径为 /about 需要这样写：\nrouter.post(\"/about\", fuction(){ /* function */ } ); 设置好请求方法和请求路径后，回调函数用来向客户端返回数据。\n设置返回数据类型，这里使用 json 进行数据传输：\nres.type(\"application/json\"); 设置返回状态码：\nres.status(200); 返回指定数据：\nres.send(return_data); 由于开发语言为 js ，而且本项目添加了解析 json 的中间件，如果想要返回 json，不需像其他语言那样要将对象解析为 json 字符串，直接返回一个对象即可，客户端会成功接收到正确的 json 字符串。\n// 服务器返回的对象 {  status: 200,  info: \"If you see this, the server deploy success!\", } // 客户端拿到的字符串 { \"status\": 200, \"info\": \"If you see this, the server deploy success!\" } 书写好路由模块后在 app.js 中引用即可：\n// 导入模块 const indexRouter = require(\"./routes/index\");  // ... 中间的其他代码  // 在 app 中应用路由模块 app.use(\"/\", indexRouter); 要注意模块导入的位置，不能乱放。和模版保持一致即可。\n添加更多的路由信息 就像上面的例子中所写的，我们可以继续添加新的路由模块，也可以在同一个路由模块下添加更多的访问路径。\n src/app.js  // ...  const indexRouter = require(\"./routes/index\"); const userRouter = require(\"./routes/user\");  // ...  app.use(\"/\", indexRouter); app.use(\"/user\", userRouter);  src/routes/index.js  // ...  // 访问路径 / router.get(\"/\", fuction(){ /* function */ } );  // 访问路径 /about router.get(\"/about\", function() { /* function */ });  // ...  src/routes/user.js  // ...  // 访问路径 /user/cat router.get(\"/cat\", fuction(){ /* function */ } );  // 访问路径 /user/edit router.post(\"/edit\", fuction(){ /* function */ } );  // 访问路径 /user/new router.psot(\"/new\", fuction(){ /* function */ } );  // ... 获取客户端数据 获取请求参数信息 req.query 对象是由客户端请求参数构成的，在回调函数内，可以直接调用它来获取客户端请求参数，如果客户端传递了参数，我们就可以拿到对应的数据，否者我们只能得到 undefined。由此可以通过判空来确定客户端请求参数是否正确。\n例如我们的请求路径为 /data 所需请求参数为 id 和 class 可以这样写：\n 注： 对应的示例请求地址为 https://api.example.com/data?id=1930201\u0026class=302\n router.get(\"/data\", function (req, res) {  res.type(\"application/json\");  if (req.query.class === undefined || req.query.id === undefined) {  res.status(400);  // 向客户端返回错误信息，提示客户端返回正确的参数  res.send({  status: 400,  info: \"Wrong arguments!\",  });  } else {  // 向用户返回数据（通常会用客户端参数来调用数据库，为了简便这里返回一个类做简单示范）  res.status(200);  res.send({  status: 200,  info: {  class: req.query.class,  id: req.query.id,  },  });  } }); 我们可以通过判空来确定客户端请求参数是否正确，之后可以使用参数来进行其他操作，比如构建类，调取数据库等等。\n获取请求体信息 与请求参数类似，请求体信息也保存在一个类中，就是 req.body。使用方法和之前请求参数完全一致，这里只写一个示例，不多赘述。\nrouter.post(\"/new\", function (req, res) {  res.type(\"application/json\");  if (req.body.class === undefined || req.body.id === undefined) {  res.status(400);  // 向客户端返回错误信息，提示客户端返回正确的参数  res.send({  status: 400,  info: \"Wrong arguments!\",  });  } else {  var new_student = {  class: req.body.class,  id: req.body.id,  };  // 向数据库内添加新的学生  res.status(200);  res.send({  status: 200,  info: \"Student create successful!\",  });  } }); 获取更多信息 在回调函数中，req 对象中保存了所有来自客户请求的数据，前面介绍的只是比较常用的，其他内容可以查找文档。\n获取数据库信息 配置数据库信息 参考 db.js.example 创建 db.js 写入服务器的配置\nvar mysql = require(\"mysql\");  var pool = mysql.createPool({  host: \"host_ip\",  user: \"user_name\",  password: \"password\",  database: \"data\",  port: 3306, });  function query(sql, callback) {  pool.getConnection(function (err, connection) {  connection.query(sql, function (err, rows) {  callback(err, rows);  connection.release();  });  }); }  exports.query = query; 配置好数据库服务器后，就可以通过下面的方法访问数据库的数据了：\nsql_command = \"DROP DATABASE *;\"; // ⚠️ 注意修改 db.query(sql_command, function (err, result, fields) {  if (err) {  // 如果数据库指令执行出现了错误，返回错误信息  requestSQLFailedLog(sql_command, err);  res.status(400);  res.send({ status: 400, info: err });  } else {  // 如果数据库指令执行成功，返回数据  requestSQLSuccessLog(sql_command, result);  res.status(200);  res.send(result);  } }); 服务部署  待完善，咕咕咕\n  将项目上传到服务器 修改 db.js 的配置 cd src node cluster.js 如果你想要后台运行，执行 nohup node cluster.js \u0026  ",
   "wordCount" : "813",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/nodejs.png","datePublished": "2021-01-30T20:17:30+08:00",
@@ -176,7 +174,7 @@ if (!doNotTrack) {
     <div class="post-description">
       使用 nodejs 开发简单后端
     </div>
-    <div class="post-meta"><span title='2021-01-30 20:17:30 +0800 CST'>January 30, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/build-api-with-nodejs-quickly.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2021-01-30 20:17:30 +0800 CST'>一月 30, 2021</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/build-api-with-nodejs-quickly.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
@@ -280,14 +278,14 @@ if (!doNotTrack) {
 <h4 id="安装-nodejs">安装 nodejs<a hidden class="anchor" aria-hidden="true" href="#安装-nodejs">#</a></h4>
 <p>Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。</p>
 <p>以 Ubuntu 为例，直接在终端执行如下指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install nodejs
-</code></pre></div><p>安装完成后使用 <code>node -v</code> 查看 node 版本来确认安装是否成功。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nodejs
+</span></span></code></pre></div><p>安装完成后使用 <code>node -v</code> 查看 node 版本来确认安装是否成功。</p>
 <p>如果是 windows 用户就更加简单了，直接在 <a href="https://nodejs.org/">nodejs 官网</a> 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。</p>
 <h4 id="安装-npm">安装 npm<a hidden class="anchor" aria-hidden="true" href="#安装-npm">#</a></h4>
 <p>通常情况下，安装 <code>nodejs</code> 时会附带安装 <code>npm</code>，你可以直接使用 <code>npm -v</code> 来查看当前系统安装的 <code>npm</code> 版本来检测安装情况。</p>
 <p>如果没有安装，以 <code>Ubuntu</code> 系统为例，可以在终端执行下面的指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install npm
-</code></pre></div><p><code>windows</code> 用户在执行完 <code>node</code> 的安装程序后 <code>npm </code> 会自动安装完成。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install npm
+</span></span></code></pre></div><p><code>windows</code> 用户在执行完 <code>node</code> 的安装程序后 <code>npm </code> 会自动安装完成。</p>
 <h3 id="服务器安装">服务器安装<a hidden class="anchor" aria-hidden="true" href="#服务器安装">#</a></h3>
 <p>你需要在服务器上安装配置如下环境：</p>
 <ul>
@@ -303,8 +301,8 @@ if (!doNotTrack) {
 <p>本文章主要讨论如何构建 <code>API</code> ，这里不再赘述如何安装配置 <code>mysql</code>。可以查看我的其他文章。</p>
 <h4 id="安装-nginx">安装 nginx<a hidden class="anchor" aria-hidden="true" href="#安装-nginx">#</a></h4>
 <p>nginx 用于将服务反向代理到 80 端口，以 <code>Ubuntu</code> 系统为例，直接在终端执行如下指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install nginx
-</code></pre></div><p>Windows 用户自行查阅相关资料。<!-- raw HTML omitted --><del>不会吧，不会吧，不会有人服务器用 windows 吧？？</del><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nginx
+</span></span></code></pre></div><p>Windows 用户自行查阅相关资料。<!-- raw HTML omitted --><del>不会吧，不会吧，不会有人服务器用 windows 吧？？</del><!-- raw HTML omitted --></p>
 <h2 id="项目构建">项目构建<a hidden class="anchor" aria-hidden="true" href="#项目构建">#</a></h2>
 <h3 id="使用模版">使用模版<a hidden class="anchor" aria-hidden="true" href="#使用模版">#</a></h3>
 <p>为了方便快速构建一个项目，我写了一个模版，你可以在 <a href="https://github.com/aimerneige/node_json_api_template">GitHub</a> 上找到它。</p>
@@ -317,8 +315,8 @@ if (!doNotTrack) {
 </ol>
 <h3 id="安装依赖">安装依赖<a hidden class="anchor" aria-hidden="true" href="#安装依赖">#</a></h3>
 <p>在项目路径下启动终端，执行如下指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i
-</code></pre></div><p>这个指令是 <code>npm install</code> 的缩写，<code>npm</code> 会安装需要的依赖，本模版项目只依赖了俩个包：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i
+</span></span></code></pre></div><p>这个指令是 <code>npm install</code> 的缩写，<code>npm</code> 会安装需要的依赖，本模版项目只依赖了俩个包：</p>
 <ol>
 <li>express</li>
 <li>mysql</li>
@@ -326,13 +324,13 @@ if (!doNotTrack) {
 <p>依赖安装完成后，你会在项目路径下看到 <code>node_modules</code> 这个文件夹，它已经被写在 <code>.gitignore</code> 中，这个文件夹下是项目所需要的依赖，即使你意外地删掉了这个文件夹，再次执行 <code>npm i</code> 就可以将这些文件下载回来，所以你不应该在意这个文件夹中有什么内容，<code>npm</code> 会帮我们处理它。</p>
 <h3 id="启动项目">启动项目<a hidden class="anchor" aria-hidden="true" href="#启动项目">#</a></h3>
 <p>使用 <code>cd</code> 命令切换到 <code>src</code> 目录下，执行下面的指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node app.js
-</code></pre></div><p>之后你会在终端看到如下输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Server start in development mode on http://localhost:4000; press Ctrl + C to terminated.
-</code></pre></div><p>打开你的浏览器访问 <a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node app.js
+</span></span></code></pre></div><p>之后你会在终端看到如下输出：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Server start in development mode on http://localhost:4000; press Ctrl + C to terminated.
+</span></span></code></pre></div><p>打开你的浏览器访问 <a href="http://localhost:4000/">http://localhost:4000/</a></p>
 <p>如果你看到下面的内容，说明项目成功启动了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#f92672">&#34;info&#34;</span>: <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span> }
-</code></pre></div><p>如果你在服务器启动项目，假设你的服务器 ip 为 <code>43.192.82.215</code> 并且配置了域名 <code>api.aimerneige.com</code> ，你可以通过在浏览器内访问下面的地址测试服务器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#f92672">&#34;info&#34;</span>: <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span> }
+</span></span></code></pre></div><p>如果你在服务器启动项目，假设你的服务器 ip 为 <code>43.192.82.215</code> 并且配置了域名 <code>api.aimerneige.com</code> ，你可以通过在浏览器内访问下面的地址测试服务器：</p>
 <ul>
 <li><a href="http://43.192.82.215:4000/">http://43.192.82.215:4000/</a></li>
 <li><a href="http://api.aimerneige.com:4000/">http://api.aimerneige.com:4000/</a></li>
@@ -347,240 +345,240 @@ if (!doNotTrack) {
 <p>项目可以启动后，说明环境配置无误，接下来可以开始写代码了。</p>
 <p>我们简单看一下程序的入口 <code>app.js</code></p>
 <p>本项目依赖 express 构建，首先导入 express 的模块：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// require
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;express&#34;</span>);
-</code></pre></div><p>接下来导入路由目录下的路由模块：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// user require
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
-</code></pre></div><p>创建 express 对象：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// express app
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
-</code></pre></div><p>设置监听端口：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// set port
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;port&#34;</span>, <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">PORT</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">4000</span>);
-</code></pre></div><p>添加可以支持 json 解析的中间件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// json parse
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>());
-<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">urlencoded</span>({ <span style="color:#a6e22e">extended</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }));
-</code></pre></div><p>添加路由中间件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// routes
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
-</code></pre></div><p>路由匹配失败后返回 404 错误：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// catch 404 and forward to error handler
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Not Found&#34;</span>);
-  <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">404</span>;
-  <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">err</span>);
-});
-</code></pre></div><p>处理错误信息：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// error handler
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">500</span>);
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">500</span>,
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>,
-  });
-});
-</code></pre></div><p>检测当前模块是否被直接执行，如果是则启动服务器，否者导出模块：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// check if run app.js directly
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">main</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">module</span>) {
-  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;port&#34;</span>), <span style="color:#66d9ef">function</span> () {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(
-      <span style="color:#e6db74">&#34;Server start in &#34;</span> <span style="color:#f92672">+</span>
-        <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;env&#34;</span>) <span style="color:#f92672">+</span>
-        <span style="color:#e6db74">&#34; mode on http://localhost:&#34;</span> <span style="color:#f92672">+</span>
-        <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;port&#34;</span>) <span style="color:#f92672">+</span>
-        <span style="color:#e6db74">&#34;; press Ctrl + C to terminated.&#34;</span>
-    );
-  });
-} <span style="color:#66d9ef">else</span> {
-  <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>;
-}
-</code></pre></div><p>其他的代码可以暂时不去理会，最重要的是路由这一部分：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 导入路由模块
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
-<span style="color:#75715e">// 添加路由中间件
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
-</code></pre></div><p>在编写 api 时，只需要在 <code>/src/routes</code> 目录下新建路由模块，并在 <code>app.js</code> 下引用即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// require
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;express&#34;</span>);
+</span></span></code></pre></div><p>接下来导入路由目录下的路由模块：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// user require
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
+</span></span></code></pre></div><p>创建 express 对象：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// express app
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+</span></span></code></pre></div><p>设置监听端口：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// set port
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;port&#34;</span>, <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">PORT</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">4000</span>);
+</span></span></code></pre></div><p>添加可以支持 json 解析的中间件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// json parse
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>());
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">urlencoded</span>({ <span style="color:#a6e22e">extended</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }));
+</span></span></code></pre></div><p>添加路由中间件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// routes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
+</span></span></code></pre></div><p>路由匹配失败后返回 404 错误：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// catch 404 and forward to error handler
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Not Found&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">404</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>处理错误信息：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// error handler
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">500</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>,
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>检测当前模块是否被直接执行，如果是则启动服务器，否者导出模块：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// check if run app.js directly
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">main</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">module</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;port&#34;</span>), <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Server start in &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;env&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34; mode on http://localhost:&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;port&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;; press Ctrl + C to terminated.&#34;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>其他的代码可以暂时不去理会，最重要的是路由这一部分：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 导入路由模块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加路由中间件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
+</span></span></code></pre></div><p>在编写 api 时，只需要在 <code>/src/routes</code> 目录下新建路由模块，并在 <code>app.js</code> 下引用即可。</p>
 <h3 id="添加路由">添加路由<a hidden class="anchor" aria-hidden="true" href="#添加路由">#</a></h3>
 <p>接下来我们看一下默认的路由模块 <code>index.js</code> ：</p>
 <p>导入 express 模块：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;express&#34;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
-</code></pre></div><p>配置路由规则：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-    <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span>,
-  });
-});
-</code></pre></div><p>导出模块：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
-</code></pre></div><p>其中重点即配置路由规则这一部分。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;express&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+</span></span></code></pre></div><p>配置路由规则：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span>,
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>导出模块：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+</span></span></code></pre></div><p>其中重点即配置路由规则这一部分。</p>
 <p>我相信这几行代码还是很易懂的，相对地，如果我们想要使用 post 方法，访问路径为 <code>/about</code> 需要这样写：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/about&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
-</code></pre></div><p>设置好请求方法和请求路径后，回调函数用来向客户端返回数据。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/about&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
+</span></span></code></pre></div><p>设置好请求方法和请求路径后，回调函数用来向客户端返回数据。</p>
 <p>设置返回数据类型，这里使用 <code>json</code> 进行数据传输：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
-</code></pre></div><p>设置返回状态码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
-</code></pre></div><p>返回指定数据：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">return_data</span>);
-</code></pre></div><p>由于开发语言为 js ，而且本项目添加了解析 json 的中间件，如果想要返回 json，不需像其他语言那样要将对象解析为 json 字符串，直接返回一个对象即可，客户端会成功接收到正确的 json 字符串。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 服务器返回的对象
-</span><span style="color:#75715e"></span>{
-    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-    <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span>,
-}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">客户端拿到的字符串</span>
-{ <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#f92672">&#34;info&#34;</span>: <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span> }
-</code></pre></div><p>书写好路由模块后在 <code>app.js</code> 中引用即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 导入模块
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
-
-<span style="color:#75715e">// ... 中间的其他代码
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 在 app 中应用路由模块
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
-</code></pre></div><p>要注意模块导入的位置，不能乱放。和模版保持一致即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span></code></pre></div><p>设置返回状态码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
+</span></span></code></pre></div><p>返回指定数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">return_data</span>);
+</span></span></code></pre></div><p>由于开发语言为 js ，而且本项目添加了解析 json 的中间件，如果想要返回 json，不需像其他语言那样要将对象解析为 json 字符串，直接返回一个对象即可，客户端会成功接收到正确的 json 字符串。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 服务器返回的对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// 客户端拿到的字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{ <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#f92672">&#34;info&#34;</span>: <span style="color:#e6db74">&#34;If you see this, the server deploy success!&#34;</span> }
+</span></span></code></pre></div><p>书写好路由模块后在 <code>app.js</code> 中引用即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 导入模块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... 中间的其他代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在 app 中应用路由模块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
+</span></span></code></pre></div><p>要注意模块导入的位置，不能乱放。和模版保持一致即可。</p>
 <h3 id="添加更多的路由信息">添加更多的路由信息<a hidden class="anchor" aria-hidden="true" href="#添加更多的路由信息">#</a></h3>
 <p>就像上面的例子中所写的，我们可以继续添加新的路由模块，也可以在同一个路由模块下添加更多的访问路径。</p>
 <ul>
 <li><code>src/app.js</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/user&#34;</span>);
-
-<span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
-<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/user&#34;</span>, <span style="color:#a6e22e">userRouter</span>);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/index&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./routes/user&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">indexRouter</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#34;/user&#34;</span>, <span style="color:#a6e22e">userRouter</span>);
+</span></span></code></pre></div><ul>
 <li><code>src/routes/index.js</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 访问路径 /
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
-
-<span style="color:#75715e">// 访问路径 /about
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/about&#34;</span>, <span style="color:#66d9ef">function</span>() { <span style="color:#75715e">/* function */</span> });
-
-<span style="color:#75715e">// ...
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 访问路径 /
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 访问路径 /about
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/about&#34;</span>, <span style="color:#66d9ef">function</span>() { <span style="color:#75715e">/* function */</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><ul>
 <li><code>src/routes/user.js</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 访问路径 /user/cat
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/cat&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
-
-<span style="color:#75715e">// 访问路径 /user/edit
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/edit&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
-
-<span style="color:#75715e">// 访问路径 /user/new
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">psot</span>(<span style="color:#e6db74">&#34;/new&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
-
-<span style="color:#75715e">// ...
-</span></code></pre></div><h3 id="获取客户端数据">获取客户端数据<a hidden class="anchor" aria-hidden="true" href="#获取客户端数据">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 访问路径 /user/cat
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/cat&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 访问路径 /user/edit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/edit&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 访问路径 /user/new
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">psot</span>(<span style="color:#e6db74">&#34;/new&#34;</span>, <span style="color:#a6e22e">fuction</span>(){ <span style="color:#75715e">/* function */</span> } );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><h3 id="获取客户端数据">获取客户端数据<a hidden class="anchor" aria-hidden="true" href="#获取客户端数据">#</a></h3>
 <h4 id="获取请求参数信息">获取请求参数信息<a hidden class="anchor" aria-hidden="true" href="#获取请求参数信息">#</a></h4>
 <p><code>req.query</code> 对象是由客户端请求参数构成的，在回调函数内，可以直接调用它来获取客户端请求参数，如果客户端传递了参数，我们就可以拿到对应的数据，否者我们只能得到 <code>undefined</code>。由此可以通过判空来确定客户端请求参数是否正确。</p>
 <p>例如我们的请求路径为 <code>/data</code> 所需请求参数为 <code>id</code> 和 <code>class</code> 可以这样写：</p>
 <blockquote>
 <p>注： 对应的示例请求地址为 <code>https://api.example.com/data?id=1930201&amp;class=302</code></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/data&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#66d9ef">class</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
-    <span style="color:#75715e">// 向客户端返回错误信息，提示客户端返回正确的参数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>,
-      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wrong arguments!&#34;</span>,
-    });
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#75715e">// 向用户返回数据（通常会用客户端参数来调用数据库，为了简便这里返回一个类做简单示范）
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> {
-        <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#66d9ef">class</span>,
-        <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">id</span>,
-      },
-    });
-  }
-});
-</code></pre></div><p>我们可以通过判空来确定客户端请求参数是否正确，之后可以使用参数来进行其他操作，比如构建类，调取数据库等等。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/data&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#66d9ef">class</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 向客户端返回错误信息，提示客户端返回正确的参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wrong arguments!&#34;</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 向用户返回数据（通常会用客户端参数来调用数据库，为了简便这里返回一个类做简单示范）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#66d9ef">class</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">id</span>,
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>我们可以通过判空来确定客户端请求参数是否正确，之后可以使用参数来进行其他操作，比如构建类，调取数据库等等。</p>
 <h4 id="获取请求体信息">获取请求体信息<a hidden class="anchor" aria-hidden="true" href="#获取请求体信息">#</a></h4>
 <p>与请求参数类似，请求体信息也保存在一个类中，就是 <code>req.body</code>。使用方法和之前请求参数完全一致，这里只写一个示例，不多赘述。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/new&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
-  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#66d9ef">class</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
-    <span style="color:#75715e">// 向客户端返回错误信息，提示客户端返回正确的参数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>,
-      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wrong arguments!&#34;</span>,
-    });
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">new_student</span> <span style="color:#f92672">=</span> {
-      <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#66d9ef">class</span>,
-      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">id</span>,
-    };
-    <span style="color:#75715e">// 向数据库内添加新的学生
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
-      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Student create successful!&#34;</span>,
-    });
-  }
-});
-</code></pre></div><h4 id="获取更多信息">获取更多信息<a hidden class="anchor" aria-hidden="true" href="#获取更多信息">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/new&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;application/json&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#66d9ef">class</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 向客户端返回错误信息，提示客户端返回正确的参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wrong arguments!&#34;</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">new_student</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#66d9ef">class</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">id</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 向数据库内添加新的学生
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Student create successful!&#34;</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h4 id="获取更多信息">获取更多信息<a hidden class="anchor" aria-hidden="true" href="#获取更多信息">#</a></h4>
 <p>在回调函数中，req 对象中保存了所有来自客户请求的数据，前面介绍的只是比较常用的，其他内容可以查找文档。</p>
 <h3 id="获取数据库信息">获取数据库信息<a hidden class="anchor" aria-hidden="true" href="#获取数据库信息">#</a></h3>
 <h4 id="配置数据库信息">配置数据库信息<a hidden class="anchor" aria-hidden="true" href="#配置数据库信息">#</a></h4>
 <p>参考 <code>db.js.example</code> 创建 <code>db.js</code> 写入服务器的配置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mysql</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;mysql&#34;</span>);
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pool</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mysql</span>.<span style="color:#a6e22e">createPool</span>({
-  <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;host_ip&#34;</span>,
-  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user_name&#34;</span>,
-  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;password&#34;</span>,
-  <span style="color:#a6e22e">database</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;data&#34;</span>,
-  <span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3306</span>,
-});
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql</span>, <span style="color:#a6e22e">callback</span>) {
-  <span style="color:#a6e22e">pool</span>.<span style="color:#a6e22e">getConnection</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">connection</span>) {
-    <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">rows</span>) {
-      <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">rows</span>);
-      <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">release</span>();
-    });
-  });
-}
-
-<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">query</span>;
-</code></pre></div><p>配置好数据库服务器后，就可以通过下面的方法访问数据库的数据了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">sql_command</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DROP DATABASE *;&#34;</span>; <span style="color:#75715e">// ⚠️ 注意修改
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">fields</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) {
-    <span style="color:#75715e">// 如果数据库指令执行出现了错误，返回错误信息
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestSQLFailedLog</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#a6e22e">err</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({ <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span> });
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#75715e">// 如果数据库指令执行成功，返回数据
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestSQLSuccessLog</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#a6e22e">result</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">result</span>);
-  }
-});
-</code></pre></div><h2 id="服务部署">服务部署<a hidden class="anchor" aria-hidden="true" href="#服务部署">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mysql</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;mysql&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pool</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mysql</span>.<span style="color:#a6e22e">createPool</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;host_ip&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user_name&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;password&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">database</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;data&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3306</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql</span>, <span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pool</span>.<span style="color:#a6e22e">getConnection</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">connection</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">rows</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">rows</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">release</span>();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">query</span>;
+</span></span></code></pre></div><p>配置好数据库服务器后，就可以通过下面的方法访问数据库的数据了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">sql_command</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DROP DATABASE *;&#34;</span>; <span style="color:#75715e">// ⚠️ 注意修改
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">query</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">fields</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 如果数据库指令执行出现了错误，返回错误信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestSQLFailedLog</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({ <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">info</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span> });
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 如果数据库指令执行成功，返回数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestSQLSuccessLog</span>(<span style="color:#a6e22e">sql_command</span>, <span style="color:#a6e22e">result</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">result</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="服务部署">服务部署<a hidden class="anchor" aria-hidden="true" href="#服务部署">#</a></h2>
 <blockquote>
 <p>待完善，咕咕咕</p>
 </blockquote>

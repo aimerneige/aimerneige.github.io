@@ -30,16 +30,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="Linux" />
@@ -122,7 +120,7 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config  将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录  设置 sudo 免密码 sudo visudo 在末尾添加如下内容...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>May 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>五月 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 如何配置新购置的 Linux 服务器" href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"></a>
 </article>
 
@@ -139,7 +137,7 @@ if (!doNotTrack) {
 来源: 菜鸟教程
   The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>March 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>三月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/basic-usage-of-find/"></a>
 </article>
 
@@ -156,9 +154,9 @@ if (!doNotTrack) {
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;....</p>
+patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;....</p>
   </div>
-  <footer class="entry-footer"><span title='2021-08-19 01:50:11 +0800 CST'>August 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2021-08-19 01:50:11 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 定制你的 rime 提升编程体验" href="https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/"></a>
 </article>
 
@@ -172,9 +170,9 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
   <div class="entry-content">
     <p>前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。
  测试环境：
-.............. aimerneige@an ..,;:ccc,. ------------- ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg) . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..&#39;,;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/&gt; 3] ....</p>
+.............. aimerneige@an  ..,;:ccc,. -------------  ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64  ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg)  . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>December 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/"></a>
 </article>
 
@@ -184,9 +182,9 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
     </h2>
   </header>
   <div class="entry-content">
-    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127....</p>
+    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536  inet 127....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>November 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/daily-linux-command/"></a>
 </article>
     </main>

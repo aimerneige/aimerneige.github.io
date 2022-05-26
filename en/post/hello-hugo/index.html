@@ -11,7 +11,7 @@
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/hello-hugo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -31,16 +31,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="Hello Hugo" />
@@ -87,7 +85,7 @@ if (!doNotTrack) {
   "keywords": [
     "hugo", "site"
   ],
-  "articleBody": "Before Start It’s been a long time since I wrote a blog post last time. That’s because I often reinstall my system on computer, and every time I install and configure the blog of hexo on my computer is a troublesome thing. But recently, I discovered hugo, a simple and easy-to-use blog system, which can keep me away from hexo, which is slow and troublesome to configure and install. It has a great experience to use and I happened to change a blog theme, so I decided to use hugo to build my new blog. This article briefly introduces how to install and use hugo.\nInstall You may need  golang git text editor you love  You must needn’t  nodejs npm  Install hugo Install hugo is very simple. Take fedora system as an example, simply run this command:\nsudo dnf install hugo Create Site Directory Create your site directory with this command:\nhugo new site blog Change to work directory:\ncd blog Use git for version control:\ngit init Install Theme Pick up your favorite theme, clone it into ./themes directory directly.\ngit clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1  Use --depth=1 to ignore the commit history.\n Of course, you can download a zip file and unzip it.\nIf you wants to make version control more convenient and update more easily, use this command to add submodule:\ngit submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1 Clone submodules when reclone repo:\ngit submodule update --init --recursive Update theme:\ngit submodule update --remote --merge Config hugo support many config file format. The yaml file is more readable, so in the next article we will use yaml.\nDifferent from hexo, you have only one config file, just follow you theme’s doc and edit config file.\nApply Theme theme: \"PaperMod\" Edit Theme Config Different thems has different way to config, please follow your theme’s doc.\nFollow config for reference:\nbaseURL: \"https://aimerneige.com/\" languageCode: \"en-us\" title: \"AimerNeige's Blog\" theme: \"PaperMod\" enableRobotsTXT: true buildDrafts: false buildFuture: false buildExpired: false defaultContentLanguage: en defaultContentLanguageInSubdir: true languages: en: languageName: \"English\" weight: 1 menu: main: - name: About url: about/ weight: 5 - name: Friends url: friends/ weight: 6 - name: Post url: post/ weight: 7 - name: Archive url: archives/ weight: 8 - name: Tags url: tags/ weight: 9 - name: Categories url: categories/ weight: 10 - name: Search url: search/ weight: 11 zh: languageName: \"中文\" weight: 2 menu: main: - name: 关于 url: about/ weight: 5 - name: 朋友 url: friends/ weight: 6 - name: 文章 url: post/ weight: 7 - name: 归档 url: archives/ weight: 8 - name: 标签 url: tags/ weight: 9 - name: 分类 url: categories/ weight: 10 - name: 搜索 url: search/ weight: 11 params: profileMode: enabled: true title: \"Aimer Neige\" subtitle: \"技术宅拯救世界\" imageUrl: \"https://avatars.githubusercontent.com/u/51701792?v=4\" imageTitle: \"avatar.jpeg\" imageWidth: 140 imageHeight: 140 params: env: production keywords: [Blog, OpenSource, Coding, Golang, Programming] author: \"Aimer Neige\" defaultTheme: auto disableThemeToggle: false ShowToc: true TocOpen: false ShowBreadCrumbs: true ShowReadingTime: false ShowPostNavLinks: true ShowShareButtons: false ShowCodeCopyButtons: true displayFullLangName: true editPost: URL: \"https://github.com/aimerneige/blog/content\" Text: \"Suggest Changes\" appendFilePath: true homeInfoParams: Title: \"Aimer Neige\" Content: \"Tech Otakus Save The World\" profileMode: enabled: true title: \"Aimer Neige\" subtitle: \"Tech Otakus Save The World\" imageUrl: \"https://avatars.githubusercontent.com/u/51701792?v=4\" imageTitle: \"avatar.jpeg\" imageWidth: 140 imageHeight: 140 socialIcons: - name: github url: \"https://github.com/AimerNeige\" - name: twitter url: \"https://twitter.com/NeigeAimer\" - name: steam url: \"https://steamcommunity.com/id/AimerNeige\" - name: Telegram url: \"https://t.me/AimerNeige\" - name: KoFi url: \"https://ko-fi.com/aimerneige\" - name: RsS url: \"index.xml\" taxonomies: category: categories tag: tags series: series outputs: home: - HTML - RSS - JSON Migrate Copy your markdown file to new site directory and edit config.\nTest Use this command to run a local test server:\nhugo serve -D Deploy Generate static file with this command:\nhugo Then public it to github:\ncd public git add -A git commit -m \"commit message\" git push ",
+  "articleBody": "Before Start It’s been a long time since I wrote a blog post last time. That’s because I often reinstall my system on computer, and every time I install and configure the blog of hexo on my computer is a troublesome thing. But recently, I discovered hugo, a simple and easy-to-use blog system, which can keep me away from hexo, which is slow and troublesome to configure and install. It has a great experience to use and I happened to change a blog theme, so I decided to use hugo to build my new blog. This article briefly introduces how to install and use hugo.\nInstall You may need  golang git text editor you love  You must needn’t  nodejs npm  Install hugo Install hugo is very simple. Take fedora system as an example, simply run this command:\nsudo dnf install hugo Create Site Directory Create your site directory with this command:\nhugo new site blog Change to work directory:\ncd blog Use git for version control:\ngit init Install Theme Pick up your favorite theme, clone it into ./themes directory directly.\ngit clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1  Use --depth=1 to ignore the commit history.\n Of course, you can download a zip file and unzip it.\nIf you wants to make version control more convenient and update more easily, use this command to add submodule:\ngit submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1 Clone submodules when reclone repo:\ngit submodule update --init --recursive Update theme:\ngit submodule update --remote --merge Config hugo support many config file format. The yaml file is more readable, so in the next article we will use yaml.\nDifferent from hexo, you have only one config file, just follow you theme’s doc and edit config file.\nApply Theme theme: \"PaperMod\" Edit Theme Config Different thems has different way to config, please follow your theme’s doc.\nFollow config for reference:\nbaseURL: \"https://aimerneige.com/\" languageCode: \"en-us\" title: \"AimerNeige's Blog\" theme: \"PaperMod\"  enableRobotsTXT: true buildDrafts: false buildFuture: false buildExpired: false  defaultContentLanguage: en defaultContentLanguageInSubdir: true  languages:  en:  languageName: \"English\"  weight: 1  menu:  main:  - name: About  url: about/  weight: 5  - name: Friends  url: friends/  weight: 6  - name: Post  url: post/  weight: 7  - name: Archive  url: archives/  weight: 8  - name: Tags  url: tags/  weight: 9  - name: Categories  url: categories/  weight: 10  - name: Search  url: search/  weight: 11  zh:  languageName: \"中文\"  weight: 2  menu:  main:  - name: 关于  url: about/  weight: 5  - name: 朋友  url: friends/  weight: 6  - name: 文章  url: post/  weight: 7  - name: 归档  url: archives/  weight: 8  - name: 标签  url: tags/  weight: 9  - name: 分类  url: categories/  weight: 10  - name: 搜索  url: search/  weight: 11  params:  profileMode:  enabled: true  title: \"Aimer Neige\"  subtitle: \"技术宅拯救世界\"  imageUrl: \"https://avatars.githubusercontent.com/u/51701792?v=4\"  imageTitle: \"avatar.jpeg\"  imageWidth: 140  imageHeight: 140  params:  env: production  keywords: [Blog, OpenSource, Coding, Golang, Programming]  author: \"Aimer Neige\"  defaultTheme: auto  disableThemeToggle: false   ShowToc: true  TocOpen: false  ShowBreadCrumbs: true  ShowReadingTime: false  ShowPostNavLinks: true  ShowShareButtons: false  ShowCodeCopyButtons: true  displayFullLangName: true   editPost:  URL: \"https://github.com/aimerneige/blog/content\"  Text: \"Suggest Changes\"  appendFilePath: true   homeInfoParams:  Title: \"Aimer Neige\"  Content: \"Tech Otakus Save The World\"   profileMode:  enabled: true  title: \"Aimer Neige\"  subtitle: \"Tech Otakus Save The World\"  imageUrl: \"https://avatars.githubusercontent.com/u/51701792?v=4\"  imageTitle: \"avatar.jpeg\"  imageWidth: 140  imageHeight: 140   socialIcons:  - name: github  url: \"https://github.com/AimerNeige\"  - name: twitter  url: \"https://twitter.com/NeigeAimer\"  - name: steam  url: \"https://steamcommunity.com/id/AimerNeige\"  - name: Telegram  url: \"https://t.me/AimerNeige\"  - name: KoFi  url: \"https://ko-fi.com/aimerneige\"  - name: RsS  url: \"index.xml\"  taxonomies:  category: categories  tag: tags  series: series  outputs:  home:  - HTML  - RSS  - JSON Migrate Copy your markdown file to new site directory and edit config.\nTest Use this command to run a local test server:\nhugo serve -D Deploy Generate static file with this command:\nhugo Then public it to github:\ncd public git add -A git commit -m \"commit message\" git push ",
   "wordCount" : "626",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/hugo-logo-wide.svg","datePublished": "2021-08-17T07:16:04+08:00",
@@ -249,183 +247,183 @@ if (!doNotTrack) {
 </p>
 <h2 id="install-hugo">Install <code>hugo</code><a hidden class="anchor" aria-hidden="true" href="#install-hugo">#</a></h2>
 <p>Install <code>hugo</code> is very simple. Take <code>fedora</code> system as an example, simply run this command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install hugo
-</code></pre></div><h2 id="create-site-directory">Create Site Directory<a hidden class="anchor" aria-hidden="true" href="#create-site-directory">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install hugo
+</span></span></code></pre></div><h2 id="create-site-directory">Create Site Directory<a hidden class="anchor" aria-hidden="true" href="#create-site-directory">#</a></h2>
 <p>Create your site directory with this command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site blog
-</code></pre></div><p>Change to work directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd blog
-</code></pre></div><p>Use git for version control:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
-</code></pre></div><h2 id="install-theme">Install Theme<a hidden class="anchor" aria-hidden="true" href="#install-theme">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site blog
+</span></span></code></pre></div><p>Change to work directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd blog
+</span></span></code></pre></div><p>Use git for version control:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><h2 id="install-theme">Install Theme<a hidden class="anchor" aria-hidden="true" href="#install-theme">#</a></h2>
 <p>Pick up your favorite theme, clone it into <code>./themes</code> directory directly.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><blockquote>
 <p>Use <code>--depth=1</code> to ignore the commit history.</p>
 </blockquote>
 <p>Of course, you can download a zip file and unzip it.</p>
 <p>If you wants to make version control more convenient and update more easily, use this command to add submodule:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>Clone submodules when reclone repo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule update --init --recursive
-</code></pre></div><p>Update theme:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule update --remote --merge
-</code></pre></div><h1 id="config">Config<a hidden class="anchor" aria-hidden="true" href="#config">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Clone submodules when reclone repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule update --init --recursive
+</span></span></code></pre></div><p>Update theme:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule update --remote --merge
+</span></span></code></pre></div><h1 id="config">Config<a hidden class="anchor" aria-hidden="true" href="#config">#</a></h1>
 <p><code>hugo</code> support many config file format. The <code>yaml</code> file is more readable, so in the next article we will use <code>yaml</code>.</p>
 <p>Different from <code>hexo</code>, you have only one config file, just follow you theme&rsquo;s doc and edit config file.</p>
 <h2 id="apply-theme">Apply Theme<a hidden class="anchor" aria-hidden="true" href="#apply-theme">#</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">theme</span>: <span style="color:#e6db74">&#34;PaperMod&#34;</span>
-</code></pre></div><h2 id="edit-theme-config">Edit Theme Config<a hidden class="anchor" aria-hidden="true" href="#edit-theme-config">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">theme</span>: <span style="color:#e6db74">&#34;PaperMod&#34;</span>
+</span></span></code></pre></div><h2 id="edit-theme-config">Edit Theme Config<a hidden class="anchor" aria-hidden="true" href="#edit-theme-config">#</a></h2>
 <p>Different thems has different way to config, please follow your theme&rsquo;s doc.</p>
 <p>Follow config for reference:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">baseURL</span>: <span style="color:#e6db74">&#34;https://aimerneige.com/&#34;</span>
-<span style="color:#f92672">languageCode</span>: <span style="color:#e6db74">&#34;en-us&#34;</span>
-<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;AimerNeige&#39;s Blog&#34;</span>
-<span style="color:#f92672">theme</span>: <span style="color:#e6db74">&#34;PaperMod&#34;</span>
-
-<span style="color:#f92672">enableRobotsTXT</span>: <span style="color:#66d9ef">true</span>
-<span style="color:#f92672">buildDrafts</span>: <span style="color:#66d9ef">false</span>
-<span style="color:#f92672">buildFuture</span>: <span style="color:#66d9ef">false</span>
-<span style="color:#f92672">buildExpired</span>: <span style="color:#66d9ef">false</span>
-
-<span style="color:#f92672">defaultContentLanguage</span>: <span style="color:#ae81ff">en</span>
-<span style="color:#f92672">defaultContentLanguageInSubdir</span>: <span style="color:#66d9ef">true</span>
-
-<span style="color:#f92672">languages</span>:
-  <span style="color:#f92672">en</span>:
-    <span style="color:#f92672">languageName</span>: <span style="color:#e6db74">&#34;English&#34;</span>
-    <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">1</span>
-    <span style="color:#f92672">menu</span>:
-      <span style="color:#f92672">main</span>:
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">About</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">about/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">5</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Friends</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">friends/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">6</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Post</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">post/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">7</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Archive</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">archives/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">8</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Tags</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">tags/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">9</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Categories</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">categories/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">10</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Search</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">search/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">11</span>
-  <span style="color:#f92672">zh</span>:
-    <span style="color:#f92672">languageName</span>: <span style="color:#e6db74">&#34;中文&#34;</span>
-    <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">2</span>
-    <span style="color:#f92672">menu</span>:
-      <span style="color:#f92672">main</span>:
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">关于</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">about/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">5</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">朋友</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">friends/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">6</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">文章</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">post/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">7</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">归档</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">archives/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">8</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">标签</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">tags/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">9</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">分类</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">categories/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">10</span>
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">搜索</span>
-          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">search/</span>
-          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">11</span>
-    <span style="color:#f92672">params</span>:
-      <span style="color:#f92672">profileMode</span>:
-        <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
-        <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
-        <span style="color:#f92672">subtitle</span>: <span style="color:#e6db74">&#34;技术宅拯救世界&#34;</span>
-        <span style="color:#f92672">imageUrl</span>: <span style="color:#e6db74">&#34;https://avatars.githubusercontent.com/u/51701792?v=4&#34;</span>
-        <span style="color:#f92672">imageTitle</span>: <span style="color:#e6db74">&#34;avatar.jpeg&#34;</span>
-        <span style="color:#f92672">imageWidth</span>: <span style="color:#ae81ff">140</span>
-        <span style="color:#f92672">imageHeight</span>: <span style="color:#ae81ff">140</span>
-
-<span style="color:#f92672">params</span>:
-  <span style="color:#f92672">env</span>: <span style="color:#ae81ff">production</span>
-  <span style="color:#f92672">keywords</span>: [<span style="color:#ae81ff">Blog, OpenSource, Coding, Golang, Programming]</span>
-  <span style="color:#f92672">author</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
-  <span style="color:#f92672">defaultTheme</span>: <span style="color:#ae81ff">auto</span>
-  <span style="color:#f92672">disableThemeToggle</span>: <span style="color:#66d9ef">false</span>
-
-  <span style="color:#f92672">ShowToc</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#f92672">TocOpen</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#f92672">ShowBreadCrumbs</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#f92672">ShowReadingTime</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#f92672">ShowPostNavLinks</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#f92672">ShowShareButtons</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#f92672">ShowCodeCopyButtons</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#f92672">displayFullLangName</span>: <span style="color:#66d9ef">true</span>
-
-  <span style="color:#f92672">editPost</span>:
-    <span style="color:#f92672">URL</span>: <span style="color:#e6db74">&#34;https://github.com/aimerneige/blog/content&#34;</span>
-    <span style="color:#f92672">Text</span>: <span style="color:#e6db74">&#34;Suggest Changes&#34;</span>
-    <span style="color:#f92672">appendFilePath</span>: <span style="color:#66d9ef">true</span>
-
-  <span style="color:#f92672">homeInfoParams</span>:
-    <span style="color:#f92672">Title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
-    <span style="color:#f92672">Content</span>: <span style="color:#e6db74">&#34;Tech Otakus Save The World&#34;</span>
-
-  <span style="color:#f92672">profileMode</span>:
-    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
-    <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
-    <span style="color:#f92672">subtitle</span>: <span style="color:#e6db74">&#34;Tech Otakus Save The World&#34;</span>
-    <span style="color:#f92672">imageUrl</span>: <span style="color:#e6db74">&#34;https://avatars.githubusercontent.com/u/51701792?v=4&#34;</span>
-    <span style="color:#f92672">imageTitle</span>: <span style="color:#e6db74">&#34;avatar.jpeg&#34;</span>
-    <span style="color:#f92672">imageWidth</span>: <span style="color:#ae81ff">140</span>
-    <span style="color:#f92672">imageHeight</span>: <span style="color:#ae81ff">140</span>
-
-  <span style="color:#f92672">socialIcons</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://github.com/AimerNeige&#34;</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">twitter</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://twitter.com/NeigeAimer&#34;</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">steam</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://steamcommunity.com/id/AimerNeige&#34;</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Telegram</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://t.me/AimerNeige&#34;</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">KoFi</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://ko-fi.com/aimerneige&#34;</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">RsS</span>
-      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;index.xml&#34;</span>
-
-<span style="color:#f92672">taxonomies</span>:
-  <span style="color:#f92672">category</span>: <span style="color:#ae81ff">categories</span>
-  <span style="color:#f92672">tag</span>: <span style="color:#ae81ff">tags</span>
-  <span style="color:#f92672">series</span>: <span style="color:#ae81ff">series</span>
-
-<span style="color:#f92672">outputs</span>:
-  <span style="color:#f92672">home</span>:
-    - <span style="color:#ae81ff">HTML</span>
-    - <span style="color:#ae81ff">RSS</span>
-    - <span style="color:#ae81ff">JSON</span>
-</code></pre></div><h1 id="migrate">Migrate<a hidden class="anchor" aria-hidden="true" href="#migrate">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">baseURL</span>: <span style="color:#e6db74">&#34;https://aimerneige.com/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">languageCode</span>: <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;AimerNeige&#39;s Blog&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">theme</span>: <span style="color:#e6db74">&#34;PaperMod&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">enableRobotsTXT</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">buildDrafts</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">buildFuture</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">buildExpired</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaultContentLanguage</span>: <span style="color:#ae81ff">en</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaultContentLanguageInSubdir</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">languages</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">en</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">languageName</span>: <span style="color:#e6db74">&#34;English&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">menu</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">main</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">About</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">about/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Friends</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">friends/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Post</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">post/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Archive</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">archives/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Tags</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">tags/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Categories</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">categories/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Search</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">search/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">zh</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">languageName</span>: <span style="color:#e6db74">&#34;中文&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">menu</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">main</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">关于</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">about/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">朋友</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">friends/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">文章</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">post/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">归档</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">archives/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">标签</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">tags/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">分类</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">categories/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">搜索</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">search/</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">profileMode</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">subtitle</span>: <span style="color:#e6db74">&#34;技术宅拯救世界&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imageUrl</span>: <span style="color:#e6db74">&#34;https://avatars.githubusercontent.com/u/51701792?v=4&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imageTitle</span>: <span style="color:#e6db74">&#34;avatar.jpeg&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imageWidth</span>: <span style="color:#ae81ff">140</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imageHeight</span>: <span style="color:#ae81ff">140</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">env</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">keywords</span>: [<span style="color:#ae81ff">Blog, OpenSource, Coding, Golang, Programming]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">author</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">defaultTheme</span>: <span style="color:#ae81ff">auto</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">disableThemeToggle</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowToc</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TocOpen</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowBreadCrumbs</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowReadingTime</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowPostNavLinks</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowShareButtons</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ShowCodeCopyButtons</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">displayFullLangName</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">editPost</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">URL</span>: <span style="color:#e6db74">&#34;https://github.com/aimerneige/blog/content&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Text</span>: <span style="color:#e6db74">&#34;Suggest Changes&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">appendFilePath</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">homeInfoParams</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Content</span>: <span style="color:#e6db74">&#34;Tech Otakus Save The World&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">profileMode</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">subtitle</span>: <span style="color:#e6db74">&#34;Tech Otakus Save The World&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">imageUrl</span>: <span style="color:#e6db74">&#34;https://avatars.githubusercontent.com/u/51701792?v=4&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">imageTitle</span>: <span style="color:#e6db74">&#34;avatar.jpeg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">imageWidth</span>: <span style="color:#ae81ff">140</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">imageHeight</span>: <span style="color:#ae81ff">140</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">socialIcons</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://github.com/AimerNeige&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">twitter</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://twitter.com/NeigeAimer&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">steam</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://steamcommunity.com/id/AimerNeige&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Telegram</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://t.me/AimerNeige&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">KoFi</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://ko-fi.com/aimerneige&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">RsS</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;index.xml&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">taxonomies</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">category</span>: <span style="color:#ae81ff">categories</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tag</span>: <span style="color:#ae81ff">tags</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">series</span>: <span style="color:#ae81ff">series</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">outputs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">home</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">HTML</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">RSS</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">JSON</span>
+</span></span></code></pre></div><h1 id="migrate">Migrate<a hidden class="anchor" aria-hidden="true" href="#migrate">#</a></h1>
 <p>Copy your markdown file to new site directory and edit config.</p>
 <h1 id="test">Test<a hidden class="anchor" aria-hidden="true" href="#test">#</a></h1>
 <p>Use this command to run a local test server:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo serve -D
-</code></pre></div><h1 id="deploy">Deploy<a hidden class="anchor" aria-hidden="true" href="#deploy">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo serve -D
+</span></span></code></pre></div><h1 id="deploy">Deploy<a hidden class="anchor" aria-hidden="true" href="#deploy">#</a></h1>
 <p>Generate static file with this command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo
-</code></pre></div><p>Then public it to github:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd public
-git add -A
-git commit -m <span style="color:#e6db74">&#34;commit message&#34;</span>
-git push
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>Then public it to github:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;commit message&#34;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div>
 
   </div>
 
