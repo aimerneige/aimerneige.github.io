@@ -8,16 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Windows</title>
-      <link>https://aimerneige.com/en/categories/windows/</link>
+      <title>Others</title>
+      <link>https://aimerneige.com/en/categories/others/</link>
       <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/categories/windows/</guid>
+      <guid>https://aimerneige.com/en/categories/others/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Devops</title>
+      <title>DevOps</title>
       <link>https://aimerneige.com/en/categories/devops/</link>
       <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
       
@@ -26,56 +26,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://aimerneige.com/en/categories/linux/</link>
-      <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://aimerneige.com/en/categories/shell/</link>
-      <pubDate>Sun, 01 May 2022 02:25:48 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://aimerneige.com/en/categories/development/</link>
-      <pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://aimerneige.com/en/categories/web/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Program</title>
       <link>https://aimerneige.com/en/categories/program/</link>
-      <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
+      <pubDate>Sun, 01 May 2022 02:25:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/categories/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Others</title>
-      <link>https://aimerneige.com/en/categories/others/</link>
-      <pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/others/</guid>
       <description></description>
     </item>
     

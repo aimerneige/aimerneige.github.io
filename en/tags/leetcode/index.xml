@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 11 Sep 2020 15:30:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode Pyramid Transition Matrix</title>
-      <link>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</link>
+      <link>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</link>
       <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</guid>
+      <guid>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</guid>
       <description>https://leetcode.com/problems/pyramid-transition-matrix/
   We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
 We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.

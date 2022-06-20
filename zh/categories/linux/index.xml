@@ -6,22 +6,13 @@
     <description>Recent content in Linux on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何配置新购置的 Linux 服务器</title>
-      <link>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</link>
-      <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/</guid>
-      <description>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config  将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录  设置 sudo 免密码 sudo visudo 在末尾添加如下内容</description>
-    </item>
-    
+    <lastBuildDate>Sat, 12 Mar 2022 19:36:29 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>find 指令的基本用法</title>
-      <link>https://aimerneige.com/zh/post/basic-usage-of-find/</link>
+      <link>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</link>
       <pubDate>Sat, 12 Mar 2022 19:36:29 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/basic-usage-of-find/</guid>
+      <guid>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</guid>
       <description>什么是 find 正如它的名字一样，find 指令用于查找文件。
  Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 来源: 菜鸟教程
@@ -30,10 +21,10 @@
     
     <item>
       <title>定制你的 rime 提升编程体验</title>
-      <link>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</link>
+      <link>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</link>
       <pubDate>Thu, 19 Aug 2021 01:50:11 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/diy-your-rime-for-better-coding/</guid>
+      <guid>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</guid>
       <description>平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。
  准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
@@ -44,19 +35,19 @@ patch:  punctuator/full_shape:  &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34;  &amp
     
     <item>
       <title>Linux 下安装 fcitx5 与 Rime</title>
-      <link>https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/</link>
+      <link>https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/</link>
       <pubDate>Sun, 13 Dec 2020 19:35:18 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/install-fcitx5-with-rime-on-linux/</guid>
+      <guid>https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/</guid>
       <description>Linux 下中文输入法安装</description>
     </item>
     
     <item>
       <title>每天一个 Linux 指令</title>
-      <link>https://aimerneige.com/zh/post/daily-linux-command/</link>
+      <link>https://aimerneige.com/zh/post/linux/daily-linux-command/</link>
       <pubDate>Tue, 10 Nov 2020 10:41:51 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/daily-linux-command/</guid>
+      <guid>https://aimerneige.com/zh/post/linux/daily-linux-command/</guid>
       <description>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&amp;lt;link&amp;gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt; mtu 65536  inet 127.</description>
     </item>
     

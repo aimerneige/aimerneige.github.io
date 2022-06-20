@@ -28,8 +28,21 @@
                 href="https://aimerneige.com/en/categories/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/post/install-wsa-with-google-play-store-and-root/</loc>
+    <loc>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/others/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
   </url><url>
     <loc>https://aimerneige.com/en/post/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
@@ -57,17 +70,17 @@
                 href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/categories/windows/</loc>
+    <loc>https://aimerneige.com/en/tags/windows/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/categories/windows/"
+                href="https://aimerneige.com/zh/tags/windows/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/categories/windows/"
+                href="https://aimerneige.com/en/tags/windows/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/wsa/</loc>
@@ -86,30 +99,17 @@
                 href="https://aimerneige.com/en/categories/devops/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/</loc>
+    <loc>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/post/how-to-setup-your-new-linux-server/"
+                href="https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/linux/</loc>
-    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
+                href="https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/linux/</loc>
@@ -131,35 +131,32 @@
     <loc>https://aimerneige.com/en/tags/notes/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/tags/shell/</loc>
+    <loc>https://aimerneige.com/en/categories/program/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/shell/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/</loc>
-    <lastmod>2022-05-01T02:22:52+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-variable/</loc>
-    <lastmod>2022-04-30T00:42:38+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/development/</loc>
-    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/categories/development/"
+                href="https://aimerneige.com/zh/categories/program/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/categories/development/"
+                href="https://aimerneige.com/en/categories/program/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/post/enable-swagger-on-spring-boot-gradle-projects/</loc>
+    <loc>https://aimerneige.com/en/tags/shell/</loc>
+    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-comment/</loc>
+    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-parameters/</loc>
+    <lastmod>2022-05-01T02:22:52+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-variable/</loc>
+    <lastmod>2022-04-30T00:42:38+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/program/java/enable-swagger-on-spring-boot-gradle-projects/</loc>
     <lastmod>2021-12-30T15:35:21+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/tags/java/</loc>
@@ -191,17 +188,17 @@
     <loc>https://aimerneige.com/en/tags/swagger/</loc>
     <lastmod>2021-12-30T15:35:21+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/hello-hugo/</loc>
+    <loc>https://aimerneige.com/en/post/others/hello-hugo/</loc>
     <lastmod>2021-08-17T07:16:04+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/post/hello-hugo/"
+                href="https://aimerneige.com/zh/post/others/hello-hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/post/hello-hugo/"
+                href="https://aimerneige.com/en/post/others/hello-hugo/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/hugo/</loc>
@@ -230,59 +227,20 @@
                 href="https://aimerneige.com/en/tags/site/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/categories/web/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/web/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/web/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/leetcode/</loc>
     <lastmod>2020-09-11T15:30:34+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</loc>
+    <loc>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</loc>
     <lastmod>2020-09-11T15:30:34+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/program/</loc>
-    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/program/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/program/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/android/</loc>
     <lastmod>2020-09-05T17:43:46+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/dark-mode-on-android/</loc>
+    <loc>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</loc>
     <lastmod>2020-09-05T17:43:46+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/hello-world/</loc>
+    <loc>https://aimerneige.com/en/post/others/hello-world/</loc>
     <lastmod>2020-01-24T15:50:47+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/others/</loc>
-    <lastmod>2020-01-24T15:50:47+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/others/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/others/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/others/</loc>
     <lastmod>2020-01-24T15:50:47+08:00</lastmod>

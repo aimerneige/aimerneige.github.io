@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>在 Windows10 安装和配置 alacritty | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="software, windows">
+<meta name="description" content="注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
+ 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+本次演示中可执行文件存储目录：
+C:\Tools\Alacritty\alacritty.exe
+配置 alacritty 将配置文件放置在如下目录：
+C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
+配置方法和 Linux 下类似。
+我的配置文件
+将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&#34;Alacritty terminal here&#34; &#34;Icon&#34;=&#34;C:\\Tools\\Alacritty\\alacritty.ico&#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&#34;C:\\Tools\\Alacritty\\alacritty.exe&#34; 当然，你也可以按照自己的喜好手动编辑注册表。
+其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
+你也可以将 @=&quot;Alacritty terminal here&quot; 修改为自己喜欢的内容。">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/others/alacritty-on-windows/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/others/alacritty-on-windows/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="在 Windows10 安装和配置 alacritty" />
+<meta property="og:description" content="注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
+ 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+本次演示中可执行文件存储目录：
+C:\Tools\Alacritty\alacritty.exe
+配置 alacritty 将配置文件放置在如下目录：
+C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
+配置方法和 Linux 下类似。
+我的配置文件
+将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&#34;Alacritty terminal here&#34; &#34;Icon&#34;=&#34;C:\\Tools\\Alacritty\\alacritty.ico&#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&#34;C:\\Tools\\Alacritty\\alacritty.exe&#34; 当然，你也可以按照自己的喜好手动编辑注册表。
+其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
+你也可以将 @=&quot;Alacritty terminal here&quot; 修改为自己喜欢的内容。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/others/alacritty-on-windows/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-10-22T15:15:19&#43;08:00" />
+<meta property="article:modified_time" content="2020-10-22T15:15:19&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在 Windows10 安装和配置 alacritty"/>
+<meta name="twitter:description" content="注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
+ 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+本次演示中可执行文件存储目录：
+C:\Tools\Alacritty\alacritty.exe
+配置 alacritty 将配置文件放置在如下目录：
+C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml
+配置方法和 Linux 下类似。
+我的配置文件
+将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty] @=&#34;Alacritty terminal here&#34; &#34;Icon&#34;=&#34;C:\\Tools\\Alacritty\\alacritty.ico&#34; [HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command] @=&#34;C:\\Tools\\Alacritty\\alacritty.exe&#34; 当然，你也可以按照自己的喜好手动编辑注册表。
+其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。
+你也可以将 @=&quot;Alacritty terminal here&quot; 修改为自己喜欢的内容。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "在 Windows10 安装和配置 alacritty",
+      "item": "https://aimerneige.com/zh/post/others/alacritty-on-windows/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在 Windows10 安装和配置 alacritty",
+  "name": "在 Windows10 安装和配置 alacritty",
+  "description": "注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。\n 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。\n本次演示中可执行文件存储目录：\nC:\\Tools\\Alacritty\\alacritty.exe\n配置 alacritty 将配置文件放置在如下目录：\nC:\\Users\\AimerNeige\\AppData\\Roaming\\alacritty\\alacritty.yml\n配置方法和 Linux 下类似。\n我的配置文件\n将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。\nWindows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\alacritty] @=\u0026#34;Alacritty terminal here\u0026#34; \u0026#34;Icon\u0026#34;=\u0026#34;C:\\\\Tools\\\\Alacritty\\\\alacritty.ico\u0026#34; [HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\alacritty\\command] @=\u0026#34;C:\\\\Tools\\\\Alacritty\\\\alacritty.exe\u0026#34; 当然，你也可以按照自己的喜好手动编辑注册表。\n其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。\n你也可以将 @=\u0026quot;Alacritty terminal here\u0026quot; 修改为自己喜欢的内容。",
+  "keywords": [
+    "software", "windows"
+  ],
+  "articleBody": " 注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。\n 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。\n本次演示中可执行文件存储目录：\nC:\\Tools\\Alacritty\\alacritty.exe\n配置 alacritty 将配置文件放置在如下目录：\nC:\\Users\\AimerNeige\\AppData\\Roaming\\alacritty\\alacritty.yml\n配置方法和 Linux 下类似。\n我的配置文件\n将 alacrity 注册为右键菜单启动 新建文本文件，填入如下内容，修改后缀为 .reg 运行，将配置写入注册表。\nWindows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\alacritty] @=\"Alacritty terminal here\" \"Icon\"=\"C:\\\\Tools\\\\Alacritty\\\\alacritty.ico\" [HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\alacritty\\command] @=\"C:\\\\Tools\\\\Alacritty\\\\alacritty.exe\" 当然，你也可以按照自己的喜好手动编辑注册表。\n其中 Icon 这一行中使用的的图标文件可以在 GitHub 官方仓库 下载，或者也可以使用自己喜欢的内容。\n你也可以将 @=\"Alacritty terminal here\" 修改为自己喜欢的内容。\n",
+  "wordCount" : "51",
+  "inLanguage": "zh",
+  "datePublished": "2020-10-22T15:15:19+08:00",
+  "dateModified": "2020-10-22T15:15:19+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/others/alacritty-on-windows/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/friends/" title="朋友">
+                    <span>朋友</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      在 Windows10 安装和配置 alacritty
+    </h1>
+    <div class="post-meta"><span title='2020-10-22 15:15:19 +0800 CST'>十月 22, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Others/alacritty-on-windows.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>注意将本文章提到的路径中 <code>AimerNeige</code> 修改为自己的用户名，之后不再赘述。</p>
+</blockquote>
+<h2 id="安装-alacritty">安装 alacritty<a hidden class="anchor" aria-hidden="true" href="#安装-alacritty">#</a></h2>
+<p>按照自己的喜好 在 <a href="https://github.com/alacritty/alacritty">GitHub</a> 下载最新版 <a href="https://github.com/alacritty/alacritty/releases">release</a> 或自己编译。</p>
+<p>本次演示中可执行文件存储目录：</p>
+<p><code>C:\Tools\Alacritty\alacritty.exe</code></p>
+<h2 id="配置-alacritty">配置 alacritty<a hidden class="anchor" aria-hidden="true" href="#配置-alacritty">#</a></h2>
+<p>将配置文件放置在如下目录：</p>
+<p><code>C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml</code></p>
+<p>配置方法和 Linux 下类似。</p>
+<p><a href="https://github.com/aimerneige/alacritty">我的配置文件</a></p>
+<h2 id="将-alacrity-注册为右键菜单启动">将 alacrity 注册为右键菜单启动<a hidden class="anchor" aria-hidden="true" href="#将-alacrity-注册为右键菜单启动">#</a></h2>
+<p>新建文本文件，填入如下内容，修改后缀为 <code>.reg</code> 运行，将配置写入注册表。</p>
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty]
+@=&#34;Alacritty terminal here&#34;
+&#34;Icon&#34;=&#34;C:\\Tools\\Alacritty\\alacritty.ico&#34;
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command]
+@=&#34;C:\\Tools\\Alacritty\\alacritty.exe&#34;
+</code></pre><p>当然，你也可以按照自己的喜好手动编辑注册表。</p>
+<p>其中 <code>Icon</code> 这一行中使用的的图标文件可以在 <a href="https://raw.githubusercontent.com/alacritty/alacritty/master/extra/windows/alacritty.ico">GitHub 官方仓库</a> 下载，或者也可以使用自己喜欢的内容。</p>
+<p>你也可以将 <code>@=&quot;Alacritty terminal here&quot;</code> 修改为自己喜欢的内容。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/software/">software</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/windows/">windows</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/zh/post/program/c/c-static-function/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>C 语言静态函数</span>
+  </a>
+  <a class="next" href="https://aimerneige.com/zh/post/program/tool/gcc-basic/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>GCC 基础</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

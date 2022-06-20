@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>C 语言多线程基础 | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="C/C&#43;&#43;, Teach">
+<meta name="description" content="线程于进程的对比
+          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) {  for (int i = 0; i &lt; 50; i&#43;&#43;)  {  printf(&#34;%d\n&#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/program/c/c-thread-basic/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/program/c/c-thread-basic/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="C 语言多线程基础" />
+<meta property="og:description" content="线程于进程的对比
+          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) {  for (int i = 0; i &lt; 50; i&#43;&#43;)  {  printf(&#34;%d\n&#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/program/c/c-thread-basic/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-11-01T18:21:23&#43;08:00" />
+<meta property="article:modified_time" content="2020-11-01T18:21:23&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C 语言多线程基础"/>
+<meta name="twitter:description" content="线程于进程的对比
+          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) {  for (int i = 0; i &lt; 50; i&#43;&#43;)  {  printf(&#34;%d\n&#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "C 语言多线程基础",
+      "item": "https://aimerneige.com/zh/post/program/c/c-thread-basic/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C 语言多线程基础",
+  "name": "C 语言多线程基础",
+  "description": "线程于进程的对比\n          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程\n#include \u0026lt;stdio.h\u0026gt;#include \u0026lt;pthread.h\u0026gt; void *myfunc(void *args) {  for (int i = 0; i \u0026lt; 50; i++)  {  printf(\u0026#34;%d\\n\u0026#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(\u0026amp;th1, NULL, myfunc, NULL);  pthread_create(\u0026amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数",
+  "keywords": [
+    "C/C++", "Teach"
+  ],
+  "articleBody": "线程于进程的对比\n          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程\n#include #include  void *myfunc(void *args) {  for (int i = 0; i  50; i++)  {  printf(\"%d\\n\", i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(\u0026th1, NULL, myfunc, NULL);  pthread_create(\u0026th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数\n#include #include  void *myfunc(void *args) {  char *name = (char *)args;  for (int i = 0; i  50; i++)  {  printf(\"%s %d\\n\", name, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(\u0026th1, NULL, myfunc, \"th1\");  pthread_create(\u0026th2, NULL, myfunc, \"th2\");   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 分部计算\n#include #include #include  int arr[5000]; int s1 = 0; int s2 = 0;  void *myfunc1(void *args) {  for (int i = 0; i  2500; i++)  {  s1 += arr[i];  }  return NULL; }  void *myfunc2(void *args) {  for (int i = 2500; i  5000; i++)  {  s2 += arr[i];  }  return NULL; }  int main() {   for (int i = 0; i  5000; i++)  {  arr[i] = rand() % 50;  }   pthread_t th1;  pthread_t th2;   pthread_create(\u0026th1, NULL, myfunc1, NULL);  pthread_create(\u0026th2, NULL, myfunc2, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   int S = s1 + s2;  printf(\"Result: %d\\n\", S);   return 0; } 单参数的写法\n#include #include #include  int arr[5000]; int s1 = 0; int s2 = 0;  void *myfunc(void *args) {  int a = 0 [(int *)args];  if (a == 1)  {  for (int i = 0; i  2500; i++)  {  s1 += arr[i];  }  }  else  {  for (int i = 2500; i  5000; i++)  {  s2 += arr[i];  }  }   return NULL; }  int main() {  for (int i = 0; i  5000; i++)  {  arr[i] = rand() % 50;  }   pthread_t th1;  pthread_t th2;   pthread_create(\u0026th1, NULL, myfunc, (int []){1});  pthread_create(\u0026th2, NULL, myfunc, (int []){2});   pthread_join(th1, NULL);  pthread_join(th2, NULL);   int S = s1 + s2;  printf(\"Result: %d\\n\", S);   return 0; } 传入结构体\n#include #include #include  typedef struct {  int first;  int last; } MY_ARGS;  int arr[5000]; int s1 = 0; int s2 = 0;  void *myfunc(void *args) {  MY_ARGS *arg = (MY_ARGS *)args;  for (int i = arg-first; i  arg-last; i++)  {  s1 += arr[i];  }  return NULL; }  int main() {  for (int i = 0; i  5000; i++)  {  arr[i] = rand() % 50;  }   pthread_t th1;  pthread_t th2;   MY_ARGS args_1 = {0, 2500};  MY_ARGS args_2 = {2500, 5000};   pthread_create(\u0026th1, NULL, myfunc, \u0026args_1);  pthread_create(\u0026th2, NULL, myfunc, \u0026args_2);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   int S = s1 + s2;  printf(\"Result: %d\\n\", S);   return 0; } 结构体的更多参数\n#include #include #include  typedef struct {  int first;  int last;  int result; } MY_ARGS;  int arr[5000];  void *myfunc(void *args) {  MY_ARGS *arg = (MY_ARGS *)args;  for (int i = arg-first; i  arg-last; i++)  {  arg-result += arr[i];  }  return NULL; }  int main() {  for (int i = 0; i  5000; i++)  {  arr[i] = rand() % 50;  }   pthread_t th1;  pthread_t th2;   MY_ARGS args_1 = {0, 2500, 0};  MY_ARGS args_2 = {2500, 5000, 1};   pthread_create(\u0026th1, NULL, myfunc, \u0026args_1);  pthread_create(\u0026th2, NULL, myfunc, \u0026args_2);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   int S = args_1.result + args_2.result;  printf(\"Result: %d\\n\", S);   return 0; } 一些错误的写法\n它会造成 race condition\n// dangerous operation #include #include  int a = 0;  void *myfunc(void *args) {  for (int i = 0; i  1000000; i++)  {  a++;  }  return NULL; }  int main() {  pthread_t pt1;  pthread_t pt2;   pthread_create(\u0026pt1, NULL, myfunc, NULL);  pthread_create(\u0026pt2, NULL, myfunc, NULL);   pthread_join(pt1, NULL);  pthread_join(pt2, NULL);   printf(\"%d\\n\", a);   return 0; } 加锁\n// in this way, it is slow #include #include  #define MAX_SIZE 5000000  pthread_mutex_t lock; int a = 0;  void *myfunc(void *args) {  for (int i = 0; i  100000; i++)  {  pthread_mutex_lock(\u0026lock);  a++;  pthread_mutex_unlock(\u0026lock);  }  return NULL; }  int main() {  pthread_t pt1;  pthread_t pt2;   pthread_mutex_init(\u0026lock, NULL);   pthread_create(\u0026pt1, NULL, myfunc, NULL);  pthread_create(\u0026pt2, NULL, myfunc, NULL);   pthread_join(pt1, NULL);  pthread_join(pt2, NULL);   printf(\"%d\\n\", a);   return 0; } 较为完整的写法\n#include #include #include  #define ZERO 0 #define HALF 2500000 #define MAX_SIZE 5000000  typedef struct {  int first;  int last;  int id; } MY_ARGS;  int *arr; int result[2];  void *myfunc(void *args) {  MY_ARGS *arg = (MY_ARGS *)args;  for (int i = arg-first; i  arg-last; i++)  {  result[arg-id] += arr[i];  }  return NULL; }  int main() {  arr = (int *)malloc(sizeof(int) * MAX_SIZE);  for (int i = 0; i  MAX_SIZE; i++)  {  arr[i] = rand() % 5;  }   result[0] = 0;  result[1] = 0;   pthread_t th1;  pthread_t th2;   MY_ARGS args_1 = {ZERO, HALF, 0};  MY_ARGS args_2 = {HALF, MAX_SIZE, 1};   pthread_create(\u0026th1, NULL, myfunc, \u0026args_1);  pthread_create(\u0026th2, NULL, myfunc, \u0026args_2);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   int S = result[0] + result[1];  printf(\"Result: %d\\n\", S);   return 0; } ",
+  "wordCount" : "787",
+  "inLanguage": "zh",
+  "datePublished": "2020-11-01T18:21:23+08:00",
+  "dateModified": "2020-11-01T18:21:23+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/program/c/c-thread-basic/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <span class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/friends/" title="朋友">
+                    <span>朋友</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      C 语言多线程基础
+    </h1>
+    <div class="post-meta"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Program/C/c-thread-basic.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><p>线程于进程的对比</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thread</td>
+<td>线程</td>
+<td>有共享内存</td>
+</tr>
+<tr>
+<td>process</td>
+<td>进程</td>
+<td>没有共享内存</td>
+</tr>
+</tbody>
+</table>
+<pre tabindex="0"><code>gcc file.c -lpthread
+</code></pre><p>创建线程</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>传入参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)args;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%s %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name, i);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#e6db74">&#34;th1&#34;</span>);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#e6db74">&#34;th2&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>分部计算</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5000</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc1</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2500</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        s1 <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc2</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2500</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        s2 <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>单参数的写法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5000</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> [(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)args];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2500</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            s1 <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2500</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            s2 <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">2</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>传入结构体</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> first;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> last;
+</span></span><span style="display:flex;"><span>} MY_ARGS;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5000</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    MY_ARGS <span style="color:#f92672">*</span>arg <span style="color:#f92672">=</span> (MY_ARGS <span style="color:#f92672">*</span>)args;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> arg<span style="color:#f92672">-&gt;</span>first; i <span style="color:#f92672">&lt;</span> arg<span style="color:#f92672">-&gt;</span>last; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        s1 <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>};
+</span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>结构体的更多参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> first;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> last;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result;
+</span></span><span style="display:flex;"><span>} MY_ARGS;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5000</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    MY_ARGS <span style="color:#f92672">*</span>arg <span style="color:#f92672">=</span> (MY_ARGS <span style="color:#f92672">*</span>)args;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> arg<span style="color:#f92672">-&gt;</span>first; i <span style="color:#f92672">&lt;</span> arg<span style="color:#f92672">-&gt;</span>last; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arg<span style="color:#f92672">-&gt;</span>result <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> args_1.result <span style="color:#f92672">+</span> args_2.result;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>一些错误的写法</p>
+<p>它会造成 race condition</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// dangerous operation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        a<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pthread_t pt1;
+</span></span><span style="display:flex;"><span>    pthread_t pt2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(pt1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(pt2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>加锁</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// in this way, it is slow
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAX_SIZE 5000000
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>pthread_mutex_t lock;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        pthread_mutex_lock(<span style="color:#f92672">&amp;</span>lock);
+</span></span><span style="display:flex;"><span>        a<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        pthread_mutex_unlock(<span style="color:#f92672">&amp;</span>lock);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pthread_t pt1;
+</span></span><span style="display:flex;"><span>    pthread_t pt2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_mutex_init(<span style="color:#f92672">&amp;</span>lock, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(pt1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(pt2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>较为完整的写法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ZERO 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define HALF 2500000
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAX_SIZE 5000000
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> first;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> last;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>} MY_ARGS;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    MY_ARGS <span style="color:#f92672">*</span>arg <span style="color:#f92672">=</span> (MY_ARGS <span style="color:#f92672">*</span>)args;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> arg<span style="color:#f92672">-&gt;</span>first; i <span style="color:#f92672">&lt;</span> arg<span style="color:#f92672">-&gt;</span>last; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        result[arg<span style="color:#f92672">-&gt;</span>id] <span style="color:#f92672">+=</span> arr[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    arr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> MAX_SIZE);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> MAX_SIZE; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    result[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    result[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_t th1;
+</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {ZERO, HALF, <span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {HALF, MAX_SIZE, <span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
+</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> result[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> result[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/teach/">Teach</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/zh/post/program/c/c-function-point/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>C 函数指针</span>
+  </a>
+  <a class="next" href="https://aimerneige.com/zh/post/program/c/c-static-function/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>C 语言静态函数</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

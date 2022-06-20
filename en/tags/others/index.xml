@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 24 Jan 2020 15:50:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/others/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>https://aimerneige.com/en/post/hello-world/</link>
+      <link>https://aimerneige.com/en/post/others/hello-world/</link>
       <pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/hello-world/</guid>
+      <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
 Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$

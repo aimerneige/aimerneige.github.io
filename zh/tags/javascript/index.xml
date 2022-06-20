@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 19 Aug 2021 21:44:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>对于某实验平台的吐槽</title>
-      <link>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</link>
+      <link>https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/</link>
       <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</guid>
+      <guid>https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/</guid>
       <description>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
  温馨提示:需要从实验空间进入实验,不可直接输入网址进入
  不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
@@ -26,10 +26,10 @@ $.ajax({ 	url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, 	type: &amp;#34;
     
     <item>
       <title>使用 nodejs 快速为 Android 程序构建 API</title>
-      <link>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</link>
+      <link>https://aimerneige.com/zh/post/program/javascript/build-api-with-nodejs-quickly/</link>
       <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</guid>
+      <guid>https://aimerneige.com/zh/post/program/javascript/build-api-with-nodejs-quickly/</guid>
       <description>使用 nodejs 开发简单后端</description>
     </item>
     

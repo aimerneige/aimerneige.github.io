@@ -9,28 +9,28 @@
     <lastBuildDate>Tue, 24 Aug 2021 21:31:05 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/teach/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置 go 开发环境</title>
-      <link>https://aimerneige.com/zh/post/go-env-setup-for-beginner/</link>
+      <link>https://aimerneige.com/zh/post/program/go/go-env-setup-for-beginner/</link>
       <pubDate>Tue, 24 Aug 2021 21:31:05 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/go-env-setup-for-beginner/</guid>
+      <guid>https://aimerneige.com/zh/post/program/go/go-env-setup-for-beginner/</guid>
       <description>本篇文章简要介绍如何配置 go 的开发环境</description>
     </item>
     
     <item>
       <title>C 函数指针</title>
-      <link>https://aimerneige.com/zh/post/c-function-point/</link>
+      <link>https://aimerneige.com/zh/post/program/c/c-function-point/</link>
       <pubDate>Wed, 04 Nov 2020 21:00:39 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/c-function-point/</guid>
+      <guid>https://aimerneige.com/zh/post/program/c/c-function-point/</guid>
       <description>函数指针用法</description>
     </item>
     
     <item>
       <title>C 语言多线程基础</title>
-      <link>https://aimerneige.com/zh/post/c-thread-basic/</link>
+      <link>https://aimerneige.com/zh/post/program/c/c-thread-basic/</link>
       <pubDate>Sun, 01 Nov 2020 18:21:23 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/c-thread-basic/</guid>
+      <guid>https://aimerneige.com/zh/post/program/c/c-thread-basic/</guid>
       <description>线程于进程的对比
           thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;pthread.h&amp;gt; void *myfunc(void *args) {  for (int i = 0; i &amp;lt; 50; i++)  {  printf(&amp;#34;%d\n&amp;#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数</description>
@@ -38,10 +38,10 @@
     
     <item>
       <title>C 语言静态函数</title>
-      <link>https://aimerneige.com/zh/post/c-static-function/</link>
+      <link>https://aimerneige.com/zh/post/program/c/c-static-function/</link>
       <pubDate>Sat, 31 Oct 2020 20:31:36 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/c-static-function/</guid>
+      <guid>https://aimerneige.com/zh/post/program/c/c-static-function/</guid>
       <description>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
 static int fun(void) {  printf(&amp;#34;I am a static funciton.\n&amp;#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：

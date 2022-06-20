@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 09 Apr 2022 22:22:44 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/fedora35/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 wsl 下安装 fedora 35</title>
-      <link>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</link>
+      <link>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</link>
       <pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/install-fedora35-on-wsl/</guid>
+      <guid>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</guid>
       <description>安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)

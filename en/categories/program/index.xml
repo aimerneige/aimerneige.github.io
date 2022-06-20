@@ -6,13 +6,62 @@
     <description>Recent content in Program on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2020 15:30:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 02:25:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell Learning Notes Comment</title>
+      <link>https://aimerneige.com/en/post/program/shell/shell-learning-notes-comment/</link>
+      <pubDate>Sun, 01 May 2022 02:25:48 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/program/shell/shell-learning-notes-comment/</guid>
+      <description>Shell Comment Start with #
+# this is a line of comment Simply write more with # start
+# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
+:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </description>
+    </item>
+    
+    <item>
+      <title>Shell Learning Notes Parameters</title>
+      <link>https://aimerneige.com/en/post/program/shell/shell-learning-notes-parameters/</link>
+      <pubDate>Sun, 01 May 2022 02:22:52 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/program/shell/shell-learning-notes-parameters/</guid>
+      <description>Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
+The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
+Note that the 0 is the script fine name.
+Example:
+#!/usr/bin/bash  echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning Notes Variable</title>
+      <link>https://aimerneige.com/en/post/program/shell/shell-learning-notes-variable/</link>
+      <pubDate>Sat, 30 Apr 2022 00:42:38 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/program/shell/shell-learning-notes-variable/</guid>
+      <description>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
+For example:
+your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you need to follow these rules:
+ You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
+    </item>
+    
+    <item>
+      <title>Enable Swagger on Spring Boot Gradle Projects</title>
+      <link>https://aimerneige.com/en/post/program/java/enable-swagger-on-spring-boot-gradle-projects/</link>
+      <pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/program/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
+      <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+Configuring Swagger Create SwaggerConfig class.
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
+    </item>
+    
     <item>
       <title>LeetCode Pyramid Transition Matrix</title>
-      <link>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</link>
+      <link>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</link>
       <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/leetcode-pyramid-transition-matrix/</guid>
+      <guid>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</guid>
       <description>https://leetcode.com/problems/pyramid-transition-matrix/
   We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
 We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.
@@ -21,10 +70,10 @@ We start with a bottom row of bottom, represented as a single string. We also st
     
     <item>
       <title>Dark Mode on Android</title>
-      <link>https://aimerneige.com/en/post/dark-mode-on-android/</link>
+      <link>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</link>
       <pubDate>Sat, 05 Sep 2020 17:43:46 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/dark-mode-on-android/</guid>
+      <guid>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
  Change the style First you should use the DayNight style by Google.
