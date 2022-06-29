@@ -4,6 +4,16 @@
   <url>
     <loc>https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/program/rust/re-learning-rust-in-2022/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/"
+                />
   </url><url>
     <loc>https://aimerneige.com/en/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>
@@ -59,6 +69,16 @@
   </url><url>
     <loc>https://aimerneige.com/en/tags/rust/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/rust/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/rust/"
+                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>

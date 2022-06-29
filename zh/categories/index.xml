@@ -6,7 +6,16 @@
     <description>Recent content in 分类 🤹‍♂️ on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 07:57:57 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Program</title>
+      <link>https://aimerneige.com/zh/categories/program/</link>
+      <pubDate>Wed, 29 Jun 2022 07:57:57 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/program/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://aimerneige.com/zh/categories/devops/</link>
@@ -31,15 +40,6 @@
       <pubDate>Sat, 12 Mar 2022 19:36:29 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Program</title>
-      <link>https://aimerneige.com/zh/categories/program/</link>
-      <pubDate>Tue, 28 Dec 2021 15:37:39 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/categories/program/</guid>
       <description></description>
     </item>
     
