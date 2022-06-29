@@ -6,7 +6,16 @@
     <description>Recent content in Categories 🤹‍♂️ on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 07:58:02 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Program</title>
+      <link>https://aimerneige.com/en/categories/program/</link>
+      <pubDate>Wed, 29 Jun 2022 07:58:02 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/program/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Others</title>
       <link>https://aimerneige.com/en/categories/others/</link>
@@ -22,15 +31,6 @@
       <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Program</title>
-      <link>https://aimerneige.com/en/categories/program/</link>
-      <pubDate>Sun, 01 May 2022 02:25:48 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/program/</guid>
       <description></description>
     </item>
     

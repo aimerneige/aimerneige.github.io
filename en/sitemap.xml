@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+  </url><url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +19,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -26,6 +29,48 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/program/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/program/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/program/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/rust/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</loc>
@@ -42,32 +87,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/others/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/windows/</loc>
@@ -130,19 +149,6 @@
   </url><url>
     <loc>https://aimerneige.com/en/tags/notes/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/program/</loc>
-    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/program/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/program/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/shell/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>

@@ -6,7 +6,17 @@
     <description>Recent content on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 07:58:02 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Reproduce] Learning Rust in 2022</title>
+      <link>https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/</link>
+      <pubDate>Wed, 29 Jun 2022 07:58:02 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/</guid>
+      <description>This article are reproduce from pretzelhammer/rust-blog
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
+    </item>
+    
     <item>
       <title>Install WSA With Google Play Store and Root</title>
       <link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link>
