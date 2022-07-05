@@ -18,10 +18,10 @@
     
     <item>
       <title>GCC 基础</title>
-      <link>https://aimerneige.com/zh/post/program/tool/gcc-basic/</link>
+      <link>https://aimerneige.com/zh/post/tool/gcc-basic/</link>
       <pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/program/tool/gcc-basic/</guid>
+      <guid>https://aimerneige.com/zh/post/tool/gcc-basic/</guid>
       <description>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
 GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
 GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。

@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/</loc>
+    <loc>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/post/program/rust/re-learning-rust-in-2022/"
+                href="https://aimerneige.com/zh/post/rust/re-learning-rust-in-2022/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/post/program/rust/re-learning-rust-in-2022/"
+                href="https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/</loc>
@@ -54,19 +54,6 @@
                 href="https://aimerneige.com/en/post/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/categories/program/</loc>
-    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/program/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/program/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/rust/</loc>
     <lastmod>2022-06-29T07:58:02+08:00</lastmod>
     <xhtml:link
@@ -78,6 +65,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/rust/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/rust/</loc>
+    <lastmod>2022-06-29T07:58:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/rust/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/rust/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/</loc>
@@ -170,19 +170,22 @@
     <loc>https://aimerneige.com/en/tags/notes/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url><url>
+    <loc>https://aimerneige.com/en/categories/shell/</loc>
+    <lastmod>2022-05-01T02:25:48+08:00</lastmod>
+  </url><url>
     <loc>https://aimerneige.com/en/tags/shell/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-comment/</loc>
+    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-comment/</loc>
     <lastmod>2022-05-01T02:25:48+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-parameters/</loc>
+    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/</loc>
     <lastmod>2022-05-01T02:22:52+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/program/shell/shell-learning-notes-variable/</loc>
+    <loc>https://aimerneige.com/en/post/shell/shell-learning-notes-variable/</loc>
     <lastmod>2022-04-30T00:42:38+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/program/java/enable-swagger-on-spring-boot-gradle-projects/</loc>
+    <loc>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</loc>
     <lastmod>2021-12-30T15:35:21+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/tags/java/</loc>
@@ -196,6 +199,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/java/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/java/</loc>
+    <lastmod>2021-12-30T15:35:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/java/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/spring/</loc>
@@ -256,14 +272,30 @@
     <loc>https://aimerneige.com/en/tags/leetcode/</loc>
     <lastmod>2020-09-11T15:30:34+08:00</lastmod>
   </url><url>
+    <loc>https://aimerneige.com/en/categories/leetcode/</loc>
+    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
+  </url><url>
     <loc>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</loc>
     <lastmod>2020-09-11T15:30:34+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/tags/android/</loc>
     <lastmod>2020-09-05T17:43:46+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</loc>
+    <loc>https://aimerneige.com/en/post/android/dark-mode-on-android/</loc>
     <lastmod>2020-09-05T17:43:46+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/program/</loc>
+    <lastmod>2020-09-05T17:43:46+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/program/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/program/"
+                />
   </url><url>
     <loc>https://aimerneige.com/en/post/others/hello-world/</loc>
     <lastmod>2020-01-24T15:50:47+08:00</lastmod>

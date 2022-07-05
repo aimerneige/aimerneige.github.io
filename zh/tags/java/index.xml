@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 28 Dec 2021 15:37:39 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 vscode 开发 Spring 项目</title>
-      <link>https://aimerneige.com/zh/post/program/java/start-develop-spring-project-on-vscode/</link>
+      <link>https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/</link>
       <pubDate>Tue, 28 Dec 2021 15:37:39 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/program/java/start-develop-spring-project-on-vscode/</guid>
+      <guid>https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/</guid>
       <description>前言 毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。
 Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。
 配置 安装配置 Java 和 Maven .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Tip

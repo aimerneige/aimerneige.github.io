@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 05 Sep 2020 17:43:46 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dark Mode on Android</title>
-      <link>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</link>
+      <link>https://aimerneige.com/en/post/android/dark-mode-on-android/</link>
       <pubDate>Sat, 05 Sep 2020 17:43:46 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/program/android/dark-mode-on-android/</guid>
+      <guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
  Change the style First you should use the DayNight style by Google.

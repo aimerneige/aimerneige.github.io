@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tool on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/categories/tool/</link>
+    <description>Recent content in Tool on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jan 2021 16:37:25 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用 EditorConfig 定义代码格式，统一代码风格</title>
+      <link>https://aimerneige.com/zh/post/tool/editorconfig/</link>
+      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/tool/editorconfig/</guid>
+      <description>EditorConfig 的简要介绍</description>
+    </item>
+    
+    <item>
+      <title>GCC 基础</title>
+      <link>https://aimerneige.com/zh/post/tool/gcc-basic/</link>
+      <pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/tool/gcc-basic/</guid>
+      <description>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
+GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
+GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
+GCC 的 C 编译器 是 gcc，其命令格式为 :
+Usage: gcc [options] file... GCC 下默认文扩展名的含义：
+   文件扩展名 GCC 所理解的含义     *.</description>
+    </item>
+    
+    <item>
+      <title>使用 Nginx 搭建静态网页服务</title>
+      <link>https://aimerneige.com/zh/post/tool/deploy-web-page-with-nginx/</link>
+      <pubDate>Sun, 04 Oct 2020 01:18:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/tool/deploy-web-page-with-nginx/</guid>
+      <description>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
+ 阅读须知 在阅读本文章前，你需要准备以下内容
+ 掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx）  不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
+准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
+升级系统 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！</description>
+    </item>
+    
+  </channel>
+</rss>

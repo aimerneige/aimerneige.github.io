@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Reproduce] Learning Rust in 2022 | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="Rust">
+<meta name="description" content="This article are reproduce from pretzelhammer/rust-blog
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&rsquo;s a great resource, it&rsquo;s pretty overwhelming for a beginner to get told &ldquo;If you&rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&rdquo; Most people give up before they even get started when they get advice like this.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css" integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/rust/re-learning-rust-in-2022/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="[Reproduce] Learning Rust in 2022" />
+<meta property="og:description" content="This article are reproduce from pretzelhammer/rust-blog
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&rsquo;s a great resource, it&rsquo;s pretty overwhelming for a beginner to get told &ldquo;If you&rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&rdquo; Most people give up before they even get started when they get advice like this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-29T07:58:02&#43;08:00" />
+<meta property="article:modified_time" content="2022-06-29T07:58:02&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Reproduce] Learning Rust in 2022"/>
+<meta name="twitter:description" content="This article are reproduce from pretzelhammer/rust-blog
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&rsquo;s a great resource, it&rsquo;s pretty overwhelming for a beginner to get told &ldquo;If you&rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&rdquo; Most people give up before they even get started when they get advice like this."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Reproduce] Learning Rust in 2022",
+      "item": "https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Reproduce] Learning Rust in 2022",
+  "name": "[Reproduce] Learning Rust in 2022",
+  "description": "This article are reproduce from pretzelhammer/rust-blog\n Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it\u0026rsquo;s a great resource, it\u0026rsquo;s pretty overwhelming for a beginner to get told \u0026ldquo;If you\u0026rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!\u0026rdquo; Most people give up before they even get started when they get advice like this.",
+  "keywords": [
+    "Rust"
+  ],
+  "articleBody": " This article are reproduce from pretzelhammer/rust-blog\n Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it’s a great resource, it’s pretty overwhelming for a beginner to get told “If you’d like to learn this programming language the best way to start is to read this 20 chapter book!” Most people give up before they even get started when they get advice like this. Nobody ever told someone to read a 20 chapter book just to get started with Javascript or Python. Rust’s learning curve is no joke but you gotta give the people what they want, and they want to program, not read about programming. Programming is fun and reading about programming is not as fun.\nThe first 10% of this article is gonna be me giving you advice on how to learn Rust in 2020 following a practical hands-on coding approach. This is the good part of the article. You can safely exit after this part (I’ll tell you when). The remaining 90% of this article is me ranting about how most online coding challenge sites have poor support for Rust.\nTL;DR If you’re a total Rust newbie and want to learn as much as possible in just one day you should read fasterthanlime’s excellent A half-hour to learn Rust and then checkout the awesome Rustlings repo and complete the exercises.\nIf you’re a Rust beginner you should get started on Exercism’s Rust Track. If you get stuck you should ask your friends Google and StackOverflow for help. I recommend taking the time to get comfortable reading and navigating the Rust Standard Library Docs which is amazing and has simple practical examples for how to use everything inside of it. Rust by Example is also a really good high-level reference that you can use to quickly learn Rust syntax and features. If you want to gain a deeper understanding of a certain Rust concept only then do I recommend finding the appropriate chapter in The Book to read. The best part of completing an exercise on Exercism is that you get access to all the solutions by other members which you can sort by most-starred to see particularly idiomatic or clever solutions. This is a great way to learn!\nAt this point you’re probably an advanced beginner and can find your own path. If you need more guidance and would like to continue working on small simple programs I recommend doing the exercises from the Advent of Code 2018 Calendar. The reason why I specifically recommended the 2018 calendar is because once you’re finished with an exercise you can compare your solution to BurntSushi’s Advent of Code 2018 Rust solutions. BurntSushi writes really clean, readable, idiomatic Rust code. Reading the code of an experienced Rustacean will teach you as much as the exercises themselves.\nExit now, the good part of the article is over.\nPractical Rust Resource Reviews Alternative title: Reviews of Free Online Resources a Rust Beginner can use to Practice Writing Small Simple Rust Programs\nMost of these resources weren’t specifically created for the purpose of teaching Rust, however they can all be used to learn and practice Rust and many of them explicitly support Rust submissions and provide Rust-specific versions of problems.\nThe resources are ordered from worst to best.\nHackerRank Rust is a supported language on HackerRank except you aren’t allowed to submit Rust solutions to most of the problems on their site. I tried to upload my solution directly and they refused it:\nThis is really strange because I was able to browse Rust solutions for the problem above submitted by other HackerRank users, so it’s possible to submit a Rust solution somehow. I tried Googling this issue but Google didn’t return any useful results. There’s no way for me to evaluate HackerRank other than to tell you not to waste your time with it like I did.\nProject Euler When I first started to learn programming back in 2012 I commonly heard “If you wanna get up to speed quickly in a new programming language solve some Project Euler problems with it!” which was okay advice at the time since there were not many other alternatives but in my opinion Project Euler has very little to do with programming. Project Euler problems are more math problems than they are programming problems. Their challenge lies almost entirely in the mathematical reasoning required to reach the solution as the programming required is usually trivial. I would not recommend solving Project Euler problems as a way to learn Rust unless you’re very mathematically inclined and have some nostalgia for the site.\nLeetCode Rust is a supported language on LeetCode. For every problem on LeetCode you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. For more involved problems the solution template might include a struct and an impl block with several unimplemented methods. Unfortunately, these solution templates are not created by humans, they are automatically generated, which results in a lot of really awkward and unidiomatic Rust code. Examples:\n   LeetCode generated Rust Idiomatic Rust     tree problems represent links as Option Option is overkill for tree links and Option works just as well and is much easier to work with   methods which obviously mutate self still borrow it immutably, e.g. fn insert(\u0026self, val: i32) methods that mutate self need to borrow it mutably, e.g. fn insert(\u0026mut self, val: i32)   signed 32-bit integers are used for all numbers, even if the problem is undefined for negative integers, e.g. fn nth_fib(n: i32) - i32 problems which are undefined for negative integers should use unsigned integers, e.g. fn nth_fib(n: u32) - u32   functions always take ownership of their arguments, even if it’s unnecessary, e.g. fn sum(nums: Vec) - i32 if you don’t need ownership then borrow fn sum(nums: \u0026[i32]) - i32   functions sometimes ignore basic error cases, e.g. for fn get_max(nums: Vec) - i32 what i32 should be returned if nums is empty? if a result might be undefined the return type should be wrapped in an Option, e.g. fn get_max(nums: \u0026[i32]) - Option    Other LeetCode issues, specific to Rust:\n LeetCode doesn’t allow you to pull in 3rd-party dependencies in solutions. Normally I think this is okay for most languages but Rust in particular has a pretty slim standard library which doesn’t even include regex support so a lot of the more complex string parsing problems on LeetCode are pointlessly difficult to solve in Rust but have otherwise trivial solutions in other languages which have regex support in their standard libraries. None of the problems in the concurrency category accept solutions in Rust. What? Fearless concurrency is one of Rust’s major selling points! After solving a problem you can go to the problem’s comments section to see other user’s solutions (as many users like to publish their solutions there) but because Rust isn’t very popular on LeetCode sometimes you won’t find any Rust solutions ;(  General LeetCode issues:\n LeetCode has a surprising amount of very low quality problems. Problems can be liked and disliked by users but problems are never removed even if they hit very high dislike ratios. I’ve seen lots of problems with 100+ votes and 80%+ dislike ratios and I don’t understand why they are kept on the site. Problem difficulty ratings are kinda off. Problems are rated as Easy, Medium, or Hard but there are many Easy problems with lower solve rates than many Hard problems. Not all problems accept solutions in all languages, and you can’t filter problems by which languages they accept. None of the graph problems on LeetCode accept Rust solutions, for example. LeetCode blocks “premium” problems behind a steep monthly paywall but doesn’t offer any kind of premium free-trial so there’s no telling if the quality is actually any better than the free problems.  Things LeetCode does right:\n Solutions to problems are tested against a suite of secret unit tests, but if you fail a particular test case they show you the failed case. All of the generated Rust code at least follows rustfmt conventions.  Codewars Codewars is a misleading name. There’s no war going on at Codewars. There’s no time limit to solve problems and your solutions aren’t judged on their speed of execution or memory usage. You aren’t in competition with anyone else. This isn’t a bad thing, just worth pointing out.\nRust is a supported language on Codewars. For every problem on Codewars you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. These solution templates are created by humans, including humans who aren’t familiar with Rust, so you occasionally get some awkward and unidiomatic Rust. Examples:\n   Codewars’ Rust Problems Idiomatic Rust     sometimes don’t follow rustfmt conventions, e.g. fn makeUppercase(s:\u0026str)-String always follows rustfmt conventions, e.g. fn make_uppercase(s: \u0026str) - String   sometimes takes signed integer arguments for problems that aren’t defined for negative integers, e.g. fn nth_fib(n: i32) - i32 if a problem isn’t defined for negative integers use unsigned integer arguments, e.g. fn nth_fib(n: u32) - u32   sometimes a problem asks you to return -1 for the null case, e.g. fn get_index(needle: i32, haystack: \u0026[i32]) - i32 if a result can be null the return type should be wrapped in an Option, e.g. fn get_index(needle: i32, haystack: \u0026[i32]) - Option   sometimes don’t take advantage of deref coercion, e.g. fn do_stuff(s: \u0026String, list: \u0026Vec) takes advantage of deref coercion, e.g. fn do_stuff(s: \u0026str, list: \u0026[i32])    All of the issues above only happen sometimes since there are Rustaceans of various skill-levels on Codewars translating problems to Rust. This is a huge step up from LeetCode where all of the generated Rust problem code is consistently unidiomatic. However, the Rust community on Codewars as a whole might lean towards the inexperienced side since I’ve seen some highly upvoted “idiomatic” solutions that were also a bit on the awkward side. Examples:\n   Codewars’ highest upvoted Rust solutions Idiomatic Rust     sometimes use an explicit return at the end of a function block, e.g. return result; blocks are evaluated as expressions and implicitly return their last item, an explicit return at the end of a function block is unnecessary, e.g. result   often use compact formatting to make the solution look more concise should follow rustfmt conventions   sometimes make unnecessary allocations, e.g. str_slice.to_string().chars() if you don’t need to allocate then don’t, e.g. str_slice.chars()   often try to solve the problem using nothing but iterators at the cost of everything else iterators are expressive and idiomatic, but if you have to chain 15 of them in a row and there are multiple levels of nested iterators in-between then perhaps you should consider refactoring to use some helper functions, intermediate variables, and maybe even a for-loop    Again, the issues above only happen sometimes. An experienced Rustacean can spot them easily but there are a lot of Rust newbies on these sites who have no clue they are learning anti-patterns.\nOther Codewars issues, specific to Rust:\n Rust doesn’t seem that popular on Codewars, the site has 9000 exercises but only 300 of them have been translated to Rust ;(  Other general Codewars issues:\n Your solution is tested against a suite of secret unit tests, if you fail one of the secret unit tests you aren’t shown the failed test case. This is especially annoying if the test case tests for an edge case that wasn’t clearly communicated in the problem description.  Things Codewars does right:\n There’s a small whitelist of 3rd-party dependencies you can use to help solve problems with Rust. This whitelist includes: rand, chrono, regex, serde, itertools, and lazy_static which helps round out Rust’s standard library and puts it more on par with other languages. You can filter problems by language. Submitting a solution to a problem also automatically publishes the solution. You can view and upvote other members’ solutions. You can sort solutions by most upvotes to see particularly concise and clever solutions, which sometimes will also be very idiomatic (but sometimes not, as explained above). Problem difficulty grading is pretty good! Instead of grading problems as Easy, Medium, or Hard like LeetCode, Codewars chooses to grade problems from easiest to hardest as: 8 kyu, 7 kyu, 6 kyu, 5 kyu, 4 kyu, 3 kyu, 2 kyu, 1 kyu. I completed 60 problems in the 8 kyu - 4 kyu range and every level felt a little more difficult than the last, which aligned with my expectations.  Advent of Code Advent of Code is totally language-agnostic. This would seem like a minus at first but seeing how horribly HackerRank, LeetCode, and Codewars handle their support for Rust on their sites it’s actually a plus. Advent of Code also gets placed above the previously mentioned sites because AoC’s exercises are really interesting, diverse, and high quality in my opinion.\nGeneral AoC issues:\n After you finish an exercise there’s no way to see other people’s Rust solutions unless you search from them on Google, and even after you find some there’s no telling how good or idiomatic they are.  To solve the above issue I recommend going through the 2018 Calendar problems and comparing your solutions to BurntSushi’s AoC 2018 Rust solutions. BurntSushi writes really clean, readable, idiomatic Rust code. If you want to go through the 2019 Calendar then I recommend comparing your solutions to bcmyers’ AoC 2019 Rust solutions. The reason I specifically suggest bcmyers’ is because he made a youtube playlist of him coding up the solutions and he does a great job of explaining his thought process and why he’s doing what he’s doing while he’s coding.\nThings AoC got right:\n High quality, interesting, curated exercises that are tied together with a narrative. Language agnostic, so while it doesn’t teach you any Rust patterns it at least doesn’t teach you any Rust anti-patterns either.  Rustlings Rustlings is sooo good. All Rustlings exercises are hand-crafted for Rust with love and it’s a wonderful breath of fresh air. Finally, a set of exercises that really teach you idiomatic Rust!\nIf you’re a total Rust newbie you should absolutely checkout Rustlings and get started on the exercises. I highly recommend reading fasterthanlime’s A half-hour to learn Rust first as it’ll get you up to speed on a lot of Rust syntax and concepts super quickly.\nI have only 1 tiny Rustlings criticism: there are some sudden difficulty spikes in the “error-handling” and “conversions” exercises that I could see some users getting overwhelmed by. I assume most probably make it through, or at least I hope.\nI also have 1 tiny non-criticism: it’s too short. This is a non-criticism because it’s one of Rustlings design goals to be a quick and gentle introduction to Rust but it’s so good that of course I wish it was somehow longer.\nExercism Exercism has a Rust track, which is a collection of exercises roughly ordered by subject and difficulty. The Rust track shares a lot of exercises in common with other tracks, but all of the exercises were translated to Rust by experienced Rustaceans and don’t suffer from any of the awkward unidiomatic Rust issues that are common on LeetCode and Codewars. There are about a dozen Rust-specific problems that require you to implement a standard library trait, or write a macro, or write a parallel solution using multiple threads, or write unsafe Rust code. These exercises are by far the highlights of the track and I wish there were more of them. Exercism is second only to Rustlings as a resource for learning Rust. The only reason I placed it above Rustlings is Rustlings can be completed in an evening and Exercism’s Rust track will take at least a month to complete so it just has a lot more content.\nExercism issues, specific to the Rust track:\n “Mentored mode” is useless, as most of the Rust mentors on the site are inactive, and the students heavily outnumber them, so it’s much better to go through a track in “practice mode”. There are 92 exercises but a good chunk of them don’t really teach you anything new so they kinda feel like busywork. They could probably cut ~20 exercises from the track to make it feel a lot tighter.  Things Exercism does right:\n All problems are translated to Rust or written for Rust by experienced Rustaceans. There are problems which specifically teach Rust’s idioms, design patterns, and unique features. Problem difficulties are fairly graded, easy problems are easy, medium problems are medium, hard problems are hard. You can include whatever 3rd-party dependencies that you want in your solutions. All unit tests are public, if you’re failing a test you know exactly why. After you submit a solution you can browse other user’s solutions, and you can sort solutions by which received the most stars.  Conclusion Same as the TL;DR :)\nDiscuss Discuss this article on\n learnrust subreddit official Rust users forum Twitter rust subreddit Hackernews Github  Notifications Get notified when the next article get published by\n Following pretzelhammer on Twitter or Subscribing to this repo’s release RSS feed or Watching this repo’s releases (click Watch - click Custom - select Releases - click Apply)  Further Reading  Common Rust Lifetime Misconceptions Sizedness in Rust Tour of Rust’s Standard Library Traits RESTful API in Sync \u0026 Async Rust Learn Assembly with Entirely Too Many Brainfuck Compilers  ",
+  "wordCount" : "2904",
+  "inLanguage": "en",
+  "datePublished": "2022-06-29T07:58:02+08:00",
+  "dateModified": "2022-06-29T07:58:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      [Reproduce] Learning Rust in 2022
+    </h1>
+    <div class="post-meta"><span title='2022-06-29 07:58:02 +0800 CST'>June 29, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;Translations:
+<ul class="i18n_list">
+    <li>
+        <a href="https://aimerneige.com/zh/post/rust/re-learning-rust-in-2022/">中文</a>
+    </li>
+</ul>&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Rust/Re-Learning-Rust-In-2022.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#intro" aria-label="Intro">Intro</a></li>
+                <li>
+                    <a href="#tldr" aria-label="TL;DR">TL;DR</a></li>
+                <li>
+                    <a href="#practical-rust-resource-reviews" aria-label="Practical Rust Resource Reviews">Practical Rust Resource Reviews</a><ul>
+                        
+                <li>
+                    <a href="#hackerrankhttpswwwhackerrankcom" aria-label="HackerRank"><a href="https://www.hackerrank.com">HackerRank</a></a></li>
+                <li>
+                    <a href="#project-eulerhttpsprojecteulernetarchives" aria-label="Project Euler"><a href="https://projecteuler.net/archives">Project Euler</a></a></li>
+                <li>
+                    <a href="#leetcodehttpsleetcodecomproblemsetall" aria-label="LeetCode"><a href="https://leetcode.com/problemset/all/">LeetCode</a></a></li>
+                <li>
+                    <a href="#codewarshttpswwwcodewarscomjoinlanguagerust" aria-label="Codewars"><a href="https://www.codewars.com/join?language=rust">Codewars</a></a></li>
+                <li>
+                    <a href="#advent-of-codehttpsadventofcodecom" aria-label="Advent of Code"><a href="https://adventofcode.com/">Advent of Code</a></a></li>
+                <li>
+                    <a href="#rustlingshttpsgithubcomrust-langrustlings" aria-label="Rustlings"><a href="https://github.com/rust-lang/rustlings">Rustlings</a></a></li>
+                <li>
+                    <a href="#exercismhttpsexercismiotracksrust" aria-label="Exercism"><a href="https://exercism.io/tracks/rust">Exercism</a></a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a></li>
+                <li>
+                    <a href="#discuss" aria-label="Discuss">Discuss</a></li>
+                <li>
+                    <a href="#notifications" aria-label="Notifications">Notifications</a></li>
+                <li>
+                    <a href="#further-reading" aria-label="Further Reading">Further Reading</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><blockquote>
+<p>This article are reproduce from <a href="https://github.com/pretzelhammer/rust-blog/blob/master/posts/learning-rust-in-2020.md">pretzelhammer/rust-blog</a></p>
+</blockquote>
+<h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<p>When I started learning Rust I made the mistake of following the advice to read <a href="https://doc.rust-lang.org/book/title-page.html">The Book</a> first. While it&rsquo;s a great resource, it&rsquo;s pretty overwhelming for a beginner to get told <em>&ldquo;If you&rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&rdquo;</em> Most people give up before they even get started when they get advice like this. Nobody ever told someone to read a 20 chapter book just to get started with Javascript or Python. Rust&rsquo;s learning curve is no joke but you gotta give the people what they want, and they want to program, not read about programming. Programming is fun and reading about programming is not as fun.</p>
+<p>The first 10% of this article is gonna be me giving you advice on how to learn Rust in 2020 following a <em>practical hands-on coding</em> approach. This is the good part of the article. You can safely exit after this part (I&rsquo;ll tell you when). The remaining 90% of this article is me ranting about how most online coding challenge sites have poor support for Rust.</p>
+<h2 id="tldr">TL;DR<a hidden class="anchor" aria-hidden="true" href="#tldr">#</a></h2>
+<p>If you&rsquo;re a total Rust newbie and want to learn as much as possible in just one day you should read fasterthanlime&rsquo;s excellent <a href="https://fasterthanli.me/blog/2020/a-half-hour-to-learn-rust/">A half-hour to learn Rust</a> and then checkout the awesome <a href="https://github.com/rust-lang/rustlings">Rustlings</a> repo and complete the exercises.</p>
+<p>If you&rsquo;re a Rust beginner you should get started on <a href="https://exercism.io/tracks/rust">Exercism&rsquo;s Rust Track</a>. If you get stuck you should ask your friends Google and StackOverflow for help. I recommend taking the time to get comfortable reading and navigating the <a href="https://doc.rust-lang.org/std/">Rust Standard Library Docs</a> which is amazing and has simple practical examples for how to use everything inside of it. <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a> is also a really good high-level reference that you can use to quickly learn Rust syntax and features. If you want to gain a deeper understanding of a certain Rust concept only then do I recommend finding the appropriate chapter in <a href="https://doc.rust-lang.org/book/title-page.html">The Book</a> to read. The best part of completing an exercise on Exercism is that you get access to all the solutions by other members which you can sort by most-starred to see particularly idiomatic or clever solutions. This is a great way to learn!</p>
+<p>At this point you&rsquo;re probably an advanced beginner and can find your own path. If you need more guidance and would like to continue working on small simple programs I recommend doing the exercises from the <a href="https://adventofcode.com/2018">Advent of Code 2018 Calendar</a>. The reason why I specifically recommended the 2018 calendar is because once you&rsquo;re finished with an exercise you can compare your solution to <a href="https://github.com/BurntSushi/advent-of-code">BurntSushi&rsquo;s Advent of Code 2018 Rust solutions</a>. BurntSushi writes really clean, readable, idiomatic Rust code. Reading the code of an experienced Rustacean will teach you as much as the exercises themselves.</p>
+<p>Exit now, the good part of the article is over.</p>
+<h2 id="practical-rust-resource-reviews">Practical Rust Resource Reviews<a hidden class="anchor" aria-hidden="true" href="#practical-rust-resource-reviews">#</a></h2>
+<p><em>Alternative title: Reviews of Free Online Resources a Rust Beginner can use to Practice Writing Small Simple Rust Programs</em></p>
+<p>Most of these resources weren&rsquo;t specifically created for the purpose of teaching Rust, however they can all be used to learn and practice Rust and many of them explicitly support Rust submissions and provide Rust-specific versions of problems.</p>
+<p>The resources are ordered from worst to best.</p>
+<h3 id="hackerrankhttpswwwhackerrankcom"><a href="https://www.hackerrank.com">HackerRank</a><a hidden class="anchor" aria-hidden="true" href="#hackerrankhttpswwwhackerrankcom">#</a></h3>
+<p>Rust is a supported language on HackerRank except you aren&rsquo;t allowed to submit Rust solutions to most of the problems on their site. I tried to upload my solution directly and they refused it:</p>
+<p><img loading="lazy" src="../assets/hackerrank-more-like-failrank.png" alt="hackerrank more like failrank"  />
+</p>
+<p>This is really strange because I was able to browse Rust solutions for the problem above submitted by other HackerRank users, so it&rsquo;s possible to submit a Rust solution somehow. I tried Googling this issue but Google didn&rsquo;t return any useful results. There&rsquo;s no way for me to evaluate HackerRank other than to tell you not to waste your time with it like I did.</p>
+<h3 id="project-eulerhttpsprojecteulernetarchives"><a href="https://projecteuler.net/archives">Project Euler</a><a hidden class="anchor" aria-hidden="true" href="#project-eulerhttpsprojecteulernetarchives">#</a></h3>
+<p>When I first started to learn programming back in 2012 I commonly heard <em>&ldquo;If you wanna get up to speed quickly in a new programming language solve some Project Euler problems with it!&rdquo;</em> which was okay advice at the time since there were not many other alternatives but in my opinion Project Euler has very little to do with programming. Project Euler problems are more math problems than they are programming problems. Their challenge lies almost entirely in the mathematical reasoning required to reach the solution as the programming required is usually trivial. I would not recommend solving Project Euler problems as a way to learn Rust unless you&rsquo;re very mathematically inclined and have some nostalgia for the site.</p>
+<h3 id="leetcodehttpsleetcodecomproblemsetall"><a href="https://leetcode.com/problemset/all/">LeetCode</a><a hidden class="anchor" aria-hidden="true" href="#leetcodehttpsleetcodecomproblemsetall">#</a></h3>
+<p>Rust is a supported language on LeetCode. For every problem on LeetCode you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. For more involved problems the solution template might include a <code>struct</code> and an <code>impl</code> block with several unimplemented methods. Unfortunately, these solution templates are not created by humans, they are automatically generated, which results in a lot of really awkward and unidiomatic Rust code. Examples:</p>
+<table>
+<thead>
+<tr>
+<th>LeetCode generated Rust</th>
+<th>Idiomatic Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tree problems represent links as <code>Option&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;</code></td>
+<td><code>Option&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;</code> is overkill for tree links and <code>Option&lt;Box&lt;Node&gt;&gt;</code> works just as well and is much easier to work with</td>
+</tr>
+<tr>
+<td>methods which obviously mutate self still borrow it immutably, e.g. <code>fn insert(&amp;self, val: i32)</code></td>
+<td>methods that mutate self need to borrow it mutably, e.g. <code>fn insert(&amp;mut self, val: i32)</code></td>
+</tr>
+<tr>
+<td>signed 32-bit integers are used for all numbers, even if the problem is undefined for negative integers, e.g. <code>fn nth_fib(n: i32) -&gt; i32</code></td>
+<td>problems which are undefined for negative integers should use unsigned integers, e.g. <code>fn nth_fib(n: u32) -&gt; u32</code></td>
+</tr>
+<tr>
+<td>functions always take ownership of their arguments, even if it&rsquo;s unnecessary, e.g. <code>fn sum(nums: Vec&lt;i32&gt;) -&gt; i32</code></td>
+<td>if you don&rsquo;t need ownership then borrow <code>fn sum(nums: &amp;[i32]) -&gt; i32</code></td>
+</tr>
+<tr>
+<td>functions sometimes ignore basic error cases, e.g. for <code>fn get_max(nums: Vec&lt;i32&gt;) -&gt; i32</code> what <code>i32</code> should be returned if <code>nums</code> is empty?</td>
+<td>if a result might be undefined the return type should be wrapped in an <code>Option</code>, e.g. <code>fn get_max(nums: &amp;[i32]) -&gt; Option&lt;i32&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Other LeetCode issues, specific to Rust:</p>
+<ul>
+<li>LeetCode doesn&rsquo;t allow you to pull in 3rd-party dependencies in solutions. Normally I think this is okay for most languages but Rust in particular has a pretty slim standard library which doesn&rsquo;t even include regex support so a lot of the more complex string parsing problems on LeetCode are pointlessly difficult to solve in Rust but have otherwise trivial solutions in other languages which have regex support in their standard libraries.</li>
+<li>None of the problems in the <code>concurrency</code> category accept solutions in Rust. What? Fearless concurrency is one of Rust&rsquo;s major selling points!</li>
+<li>After solving a problem you can go to the problem&rsquo;s comments section to see other user&rsquo;s solutions (as many users like to publish their solutions there) but because Rust isn&rsquo;t very popular on LeetCode sometimes you won&rsquo;t find any Rust solutions ;(</li>
+</ul>
+<p>General LeetCode issues:</p>
+<ul>
+<li>LeetCode has a surprising amount of very low quality problems. Problems can be liked and disliked by users but problems are never removed even if they hit very high dislike ratios. I&rsquo;ve seen lots of problems with 100+ votes and 80%+ dislike ratios and I don&rsquo;t understand why they are kept on the site.</li>
+<li>Problem difficulty ratings are kinda off. Problems are rated as Easy, Medium, or Hard but there are many Easy problems with lower solve rates than many Hard problems.</li>
+<li>Not all problems accept solutions in all languages, and you can&rsquo;t filter problems by which languages they accept. None of the graph problems on LeetCode accept Rust solutions, for example.</li>
+<li>LeetCode blocks &ldquo;premium&rdquo; problems behind a steep monthly paywall but doesn&rsquo;t offer any kind of premium free-trial so there&rsquo;s no telling if the quality is actually any better than the free problems.</li>
+</ul>
+<p>Things LeetCode does right:</p>
+<ul>
+<li>Solutions to problems are tested against a suite of secret unit tests, but if you fail a particular test case they show you the failed case.</li>
+<li>All of the generated Rust code at least follows rustfmt conventions.</li>
+</ul>
+<h3 id="codewarshttpswwwcodewarscomjoinlanguagerust"><a href="https://www.codewars.com/join?language=rust">Codewars</a><a hidden class="anchor" aria-hidden="true" href="#codewarshttpswwwcodewarscomjoinlanguagerust">#</a></h3>
+<p>Codewars is a misleading name. There&rsquo;s no war going on at Codewars. There&rsquo;s no time limit to solve problems and your solutions aren&rsquo;t judged on their speed of execution or memory usage. You aren&rsquo;t in competition with anyone else. This isn&rsquo;t a bad thing, just worth pointing out.</p>
+<p>Rust is a supported language on Codewars. For every problem on Codewars you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. These solution templates are created by humans, including humans who aren&rsquo;t familiar with Rust, so you occasionally get some awkward and unidiomatic Rust. Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Codewars&rsquo; Rust Problems</th>
+<th>Idiomatic Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sometimes don&rsquo;t follow rustfmt conventions, e.g. <code>fn makeUppercase(s:&amp;str)-&gt;String</code></td>
+<td>always follows rustfmt conventions, e.g. <code>fn make_uppercase(s: &amp;str) -&gt; String</code></td>
+</tr>
+<tr>
+<td>sometimes takes signed integer arguments for problems that aren&rsquo;t defined for negative integers, e.g. <code>fn nth_fib(n: i32) -&gt; i32</code></td>
+<td>if a problem isn&rsquo;t defined for negative integers use unsigned integer arguments, e.g. <code>fn nth_fib(n: u32) -&gt; u32</code></td>
+</tr>
+<tr>
+<td>sometimes a problem asks you to return <code>-1</code> for the null case, e.g. <code>fn get_index(needle: i32, haystack: &amp;[i32]) -&gt; i32</code></td>
+<td>if a result can be null the return type should be wrapped in an <code>Option</code>, e.g. <code>fn get_index(needle: i32, haystack: &amp;[i32]) -&gt; Option&lt;usize&gt;</code></td>
+</tr>
+<tr>
+<td>sometimes don&rsquo;t take advantage of deref coercion, e.g. <code>fn do_stuff(s: &amp;String, list: &amp;Vec&lt;i32&gt;)</code></td>
+<td>takes advantage of deref coercion, e.g. <code>fn do_stuff(s: &amp;str, list: &amp;[i32])</code></td>
+</tr>
+</tbody>
+</table>
+<p>All of the issues above only happen sometimes since there are Rustaceans of various skill-levels on Codewars translating problems to Rust. This is a huge step up from LeetCode where all of the generated Rust problem code is consistently unidiomatic. However, the Rust community on Codewars as a whole might lean towards the inexperienced side since I&rsquo;ve seen some highly upvoted &ldquo;idiomatic&rdquo; solutions that were also a bit on the awkward side. Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Codewars&rsquo; highest upvoted Rust solutions</th>
+<th>Idiomatic Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sometimes use an explicit return at the end of a function block, e.g. <code>return result;</code></td>
+<td>blocks are evaluated as expressions and implicitly return their last item, an explicit return at the end of a function block is unnecessary, e.g. <code>result</code></td>
+</tr>
+<tr>
+<td>often use compact formatting to make the solution look more concise</td>
+<td>should follow rustfmt conventions</td>
+</tr>
+<tr>
+<td>sometimes make unnecessary allocations, e.g. <code>str_slice.to_string().chars()</code></td>
+<td>if you don&rsquo;t need to allocate then don&rsquo;t, e.g. <code>str_slice.chars()</code></td>
+</tr>
+<tr>
+<td>often try to solve the problem using nothing but iterators at the cost of everything else</td>
+<td>iterators are expressive and idiomatic, but if you have to chain 15 of them in a row and there are multiple levels of nested iterators in-between then perhaps you should consider refactoring to use some helper functions, intermediate variables, and maybe even a for-loop</td>
+</tr>
+</tbody>
+</table>
+<p>Again, the issues above only happen sometimes. An experienced Rustacean can spot them easily but there are a lot of Rust newbies on these sites who have no clue they are learning anti-patterns.</p>
+<p>Other Codewars issues, specific to Rust:</p>
+<ul>
+<li>Rust doesn&rsquo;t seem that popular on Codewars, the site has 9000 exercises but only 300 of them have been translated to Rust ;(</li>
+</ul>
+<p>Other general Codewars issues:</p>
+<ul>
+<li>Your solution is tested against a suite of secret unit tests, if you fail one of the secret unit tests you aren&rsquo;t shown the failed test case. This is especially annoying if the test case tests for an edge case that wasn&rsquo;t clearly communicated in the problem description.</li>
+</ul>
+<p>Things Codewars does right:</p>
+<ul>
+<li>There&rsquo;s a small whitelist of 3rd-party dependencies you can use to help solve problems with Rust. This whitelist includes: rand, chrono, regex, serde, itertools, and lazy_static which helps round out Rust&rsquo;s standard library and puts it more on par with other languages.</li>
+<li>You can filter problems by language.</li>
+<li>Submitting a solution to a problem also automatically publishes the solution. You can view and upvote other members&rsquo; solutions. You can sort solutions by most upvotes to see particularly concise and clever solutions, which sometimes will also be very idiomatic (but sometimes not, as explained above).</li>
+<li>Problem difficulty grading is pretty good! Instead of grading problems as Easy, Medium, or Hard like LeetCode, Codewars chooses to grade problems from easiest to hardest as: 8 kyu, 7 kyu, 6 kyu, 5 kyu, 4 kyu, 3 kyu, 2 kyu, 1 kyu. I completed 60 problems in the 8 kyu - 4 kyu range and every level felt a little more difficult than the last, which aligned with my expectations.</li>
+</ul>
+<h3 id="advent-of-codehttpsadventofcodecom"><a href="https://adventofcode.com/">Advent of Code</a><a hidden class="anchor" aria-hidden="true" href="#advent-of-codehttpsadventofcodecom">#</a></h3>
+<p>Advent of Code is totally language-agnostic. This would seem like a minus at first but seeing how horribly HackerRank, LeetCode, and Codewars handle their support for Rust on their sites it&rsquo;s actually a plus. Advent of Code also gets placed above the previously mentioned sites because AoC&rsquo;s exercises are really interesting, diverse, and high quality in my opinion.</p>
+<p>General AoC issues:</p>
+<ul>
+<li>After you finish an exercise there&rsquo;s no way to see other people&rsquo;s Rust solutions unless you search from them on Google, and even after you find some there&rsquo;s no telling how good or idiomatic they are.</li>
+</ul>
+<p>To solve the above issue I recommend going through the 2018 Calendar problems and comparing your solutions to <a href="https://github.com/BurntSushi/advent-of-code">BurntSushi&rsquo;s AoC 2018 Rust solutions</a>. BurntSushi writes really clean, readable, idiomatic Rust code. If you want to go through the 2019 Calendar then I recommend comparing your solutions to <a href="https://github.com/bcmyers/aoc2019">bcmyers&rsquo; AoC 2019 Rust solutions</a>. The reason I specifically suggest bcmyers&rsquo; is because he made a <a href="https://www.youtube.com/playlist?list=PLQXBtq4j4Ozkx3r4eoMstdkkOG98qpBfg">youtube playlist of him coding up the solutions</a> and he does a great job of explaining his thought process and why he&rsquo;s doing what he&rsquo;s doing while he&rsquo;s coding.</p>
+<p>Things AoC got right:</p>
+<ul>
+<li>High quality, interesting, curated exercises that are tied together with a narrative.</li>
+<li>Language agnostic, so while it doesn&rsquo;t teach you any Rust patterns it at least doesn&rsquo;t teach you any Rust anti-patterns either.</li>
+</ul>
+<h3 id="rustlingshttpsgithubcomrust-langrustlings"><a href="https://github.com/rust-lang/rustlings">Rustlings</a><a hidden class="anchor" aria-hidden="true" href="#rustlingshttpsgithubcomrust-langrustlings">#</a></h3>
+<p>Rustlings is sooo good. All Rustlings exercises are hand-crafted for Rust with love and it&rsquo;s a wonderful breath of fresh air. Finally, a set of exercises that really teach you idiomatic Rust!</p>
+<p>If you&rsquo;re a total Rust newbie you should absolutely checkout <a href="https://github.com/rust-lang/rustlings">Rustlings</a> and get started on the exercises. I highly recommend reading fasterthanlime&rsquo;s <a href="https://fasterthanli.me/blog/2020/a-half-hour-to-learn-rust/">A half-hour to learn Rust</a> first as it&rsquo;ll get you up to speed on a lot of Rust syntax and concepts super quickly.</p>
+<p>I have only 1 tiny Rustlings criticism: there are some sudden difficulty spikes in the &ldquo;error-handling&rdquo; and &ldquo;conversions&rdquo; exercises that I could see some users getting overwhelmed by. I assume most probably make it through, or at least I hope.</p>
+<p>I also have 1 tiny non-criticism: it&rsquo;s too short. This is a non-criticism because it&rsquo;s one of Rustlings design goals to be a quick and gentle introduction to Rust but it&rsquo;s so good that of course I wish it was somehow longer.</p>
+<h3 id="exercismhttpsexercismiotracksrust"><a href="https://exercism.io/tracks/rust">Exercism</a><a hidden class="anchor" aria-hidden="true" href="#exercismhttpsexercismiotracksrust">#</a></h3>
+<p>Exercism has a Rust track, which is a collection of exercises roughly ordered by subject and difficulty. The Rust track shares a lot of exercises in common with other tracks, but all of the exercises were translated to Rust by experienced Rustaceans and don&rsquo;t suffer from any of the awkward unidiomatic Rust issues that are common on LeetCode and Codewars. There are about a dozen Rust-specific problems that require you to implement a standard library trait, or write a macro, or write a parallel solution using multiple threads, or write unsafe Rust code. These exercises are by far the highlights of the track and I wish there were more of them. Exercism is second only to Rustlings as a resource for learning Rust. The only reason I placed it above Rustlings is Rustlings can be completed in an evening and Exercism&rsquo;s Rust track will take at least a month to complete so it just has a lot more content.</p>
+<p>Exercism issues, specific to the Rust track:</p>
+<ul>
+<li>&ldquo;Mentored mode&rdquo; is useless, as most of the Rust mentors on the site are inactive, and the students heavily outnumber them, so it&rsquo;s much better to go through a track in &ldquo;practice mode&rdquo;.</li>
+<li>There are 92 exercises but a good chunk of them don&rsquo;t really teach you anything new so they kinda feel like busywork. They could probably cut ~20 exercises from the track to make it feel a lot tighter.</li>
+</ul>
+<p>Things Exercism does right:</p>
+<ul>
+<li>All problems are translated to Rust or written for Rust by experienced Rustaceans.</li>
+<li>There are problems which specifically teach Rust&rsquo;s idioms, design patterns, and unique features.</li>
+<li>Problem difficulties are fairly graded, easy problems are easy, medium problems are medium, hard problems are hard.</li>
+<li>You can include whatever 3rd-party dependencies that you want in your solutions.</li>
+<li>All unit tests are public, if you&rsquo;re failing a test you know exactly why.</li>
+<li>After you submit a solution you can browse other user&rsquo;s solutions, and you can sort solutions by which received the most stars.</li>
+</ul>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Same as the <a href="#tldr">TL;DR</a> :)</p>
+<h2 id="discuss">Discuss<a hidden class="anchor" aria-hidden="true" href="#discuss">#</a></h2>
+<p>Discuss this article on</p>
+<ul>
+<li><a href="https://www.reddit.com/r/learnrust/comments/ggj8tf/learning_rust_in_2020/">learnrust subreddit</a></li>
+<li><a href="https://users.rust-lang.org/t/blog-post-learning-rust-in-2020/42373">official Rust users forum</a></li>
+<li><a href="https://twitter.com/pretzelhammer/status/1259897499122360322">Twitter</a></li>
+<li><a href="https://www.reddit.com/r/rust/comments/gie64f/learning_rust_in_2020/">rust subreddit</a></li>
+<li><a href="https://news.ycombinator.com/item?id=23160975">Hackernews</a></li>
+<li><a href="https://github.com/pretzelhammer/rust-blog/discussions">Github</a></li>
+</ul>
+<h2 id="notifications">Notifications<a hidden class="anchor" aria-hidden="true" href="#notifications">#</a></h2>
+<p>Get notified when the next article get published by</p>
+<ul>
+<li><a href="https://twitter.com/pretzelhammer">Following pretzelhammer on Twitter</a> or</li>
+<li><a href="https://github.com/pretzelhammer/rust-blog/releases.atom">Subscribing to this repo&rsquo;s release RSS feed</a> or</li>
+<li>Watching this repo&rsquo;s releases (click <code>Watch</code> -&gt; click <code>Custom</code> -&gt; select <code>Releases</code> -&gt; click <code>Apply</code>)</li>
+</ul>
+<h2 id="further-reading">Further Reading<a hidden class="anchor" aria-hidden="true" href="#further-reading">#</a></h2>
+<ul>
+<li><a href="./common-rust-lifetime-misconceptions.md">Common Rust Lifetime Misconceptions</a></li>
+<li><a href="./sizedness-in-rust.md">Sizedness in Rust</a></li>
+<li><a href="./tour-of-rusts-standard-library-traits.md">Tour of Rust&rsquo;s Standard Library Traits</a></li>
+<li><a href="./restful-api-in-sync-and-async-rust.md">RESTful API in Sync &amp; Async Rust</a></li>
+<li><a href="./too-many-brainfuck-compilers.md">Learn Assembly with Entirely Too Many Brainfuck Compilers</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/rust/">Rust</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Install WSA With Google Play Store and Root</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

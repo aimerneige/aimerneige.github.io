@@ -35,10 +35,10 @@ patch:  punctuator/full_shape:  &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34;  &amp
     
     <item>
       <title>利用 EditorConfig 定义代码格式，统一代码风格</title>
-      <link>https://aimerneige.com/zh/post/program/tool/editorconfig/</link>
+      <link>https://aimerneige.com/zh/post/tool/editorconfig/</link>
       <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/program/tool/editorconfig/</guid>
+      <guid>https://aimerneige.com/zh/post/tool/editorconfig/</guid>
       <description>EditorConfig 的简要介绍</description>
     </item>
     

@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Jun 2022 07:57:57 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Program</title>
-      <link>https://aimerneige.com/zh/categories/program/</link>
+      <title>Rust</title>
+      <link>https://aimerneige.com/zh/categories/rust/</link>
       <pubDate>Wed, 29 Jun 2022 07:57:57 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/categories/program/</guid>
+      <guid>https://aimerneige.com/zh/categories/rust/</guid>
       <description></description>
     </item>
     
@@ -40,6 +40,60 @@
       <pubDate>Sat, 12 Mar 2022 19:36:29 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://aimerneige.com/zh/categories/java/</link>
+      <pubDate>Tue, 28 Dec 2021 15:37:39 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://aimerneige.com/zh/categories/go/</link>
+      <pubDate>Tue, 24 Aug 2021 21:31:05 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://aimerneige.com/zh/categories/javascript/</link>
+      <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>https://aimerneige.com/zh/categories/tool/</link>
+      <pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Program</title>
+      <link>https://aimerneige.com/zh/categories/program/</link>
+      <pubDate>Thu, 05 Nov 2020 14:37:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/program/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://aimerneige.com/zh/categories/python/</link>
+      <pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/python/</guid>
       <description></description>
     </item>
     

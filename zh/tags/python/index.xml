@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 29 May 2020 09:38:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每天一个 Python 小知识 isinstance</title>
-      <link>https://aimerneige.com/zh/post/program/python/daily-python-tips/</link>
+      <link>https://aimerneige.com/zh/post/python/daily-python-tips/</link>
       <pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/program/python/daily-python-tips/</guid>
+      <guid>https://aimerneige.com/zh/post/python/daily-python-tips/</guid>
       <description>首先来看下 w3schools 的解释：
  Example Check if the number 5 is an integer:
 x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
