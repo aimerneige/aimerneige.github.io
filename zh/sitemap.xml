@@ -445,5 +445,17 @@
                 hreflang="zh"
                 href="https://aimerneige.com/zh/search/"
                 />
+  </url><url>
+    <loc>https://aimerneige.com/zh/projects/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/projects/"
+                />
   </url>
 </urlset>

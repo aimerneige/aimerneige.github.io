@@ -339,6 +339,18 @@
                 href="https://aimerneige.com/en/friends/"
                 />
   </url><url>
+    <loc>https://aimerneige.com/en/projects/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/projects/"
+                />
+  </url><url>
     <loc>https://aimerneige.com/en/search/</loc>
     <xhtml:link
                 rel="alternate"

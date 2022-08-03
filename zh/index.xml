@@ -284,7 +284,7 @@ Parameter Values    Parameter Description     object Required.</description>
     </item>
     
     <item>
-      <title>Friends</title>
+      <title>Friends 🧑‍🤝‍🧑</title>
       <link>https://aimerneige.com/zh/friends/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -309,6 +309,15 @@ Parameter Values    Parameter Description     object Required.</description>
     </item>
     
     
+    
+    <item>
+      <title>项目 💻</title>
+      <link>https://aimerneige.com/zh/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aimerneige.com/zh/projects/</guid>
+      <description>projects</description>
+    </item>
     
   </channel>
 </rss>
