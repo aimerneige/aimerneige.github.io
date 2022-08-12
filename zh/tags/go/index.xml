@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Go on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/categories/go/</link>
-    <description>Recent content in Go on AimerNeige&#39;s Blog</description>
+    <title>go on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/go/</link>
+    <description>Recent content in go on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Aug 2022 22:40:28 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 22:40:28 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go 图像处理基础</title>
       <link>https://aimerneige.com/zh/post/go/go-image-processing-basic/</link>
@@ -16,15 +16,6 @@
       <description>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
 常见类型介绍 Colors Colors 是一个接口，它的代码如下：
 type Color interface { 	// RGBA returns the alpha-premultiplied red, green, blue and alpha values 	// for the color. Each value ranges within [0, 0xffff], but is represented 	// by a uint32 so that multiplying by a blend factor up to 0xffff will not 	// overflow. 	// 	// An alpha-premultiplied color component c has been scaled by alpha (a), 	// so has valid values 0 &amp;lt;= c &amp;lt;= a.</description>
-    </item>
-    
-    <item>
-      <title>配置 go 开发环境</title>
-      <link>https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/</link>
-      <pubDate>Tue, 24 Aug 2021 21:31:05 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/</guid>
-      <description>本篇文章简要介绍如何配置 go 的开发环境</description>
     </item>
     
   </channel>

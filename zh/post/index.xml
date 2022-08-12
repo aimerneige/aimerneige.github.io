@@ -6,7 +6,18 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 07:57:57 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 22:40:28 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go 图像处理基础</title>
+      <link>https://aimerneige.com/zh/post/go/go-image-processing-basic/</link>
+      <pubDate>Fri, 12 Aug 2022 22:40:28 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/go/go-image-processing-basic/</guid>
+      <description>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
+常见类型介绍 Colors Colors 是一个接口，它的代码如下：
+type Color interface { 	// RGBA returns the alpha-premultiplied red, green, blue and alpha values 	// for the color. Each value ranges within [0, 0xffff], but is represented 	// by a uint32 so that multiplying by a blend factor up to 0xffff will not 	// overflow. 	// 	// An alpha-premultiplied color component c has been scaled by alpha (a), 	// so has valid values 0 &amp;lt;= c &amp;lt;= a.</description>
+    </item>
+    
     <item>
       <title>[转载] Rust 大佬给初学者的学习建议</title>
       <link>https://aimerneige.com/zh/post/rust/re-learning-rust-in-2022/</link>
