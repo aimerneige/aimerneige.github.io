@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Golang embed | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="golang, embed">
+<meta name="description" content="前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
+embed 假设我们有一个文件 hello.txt
+Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
+// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/go/go-embed/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css" integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/go/go-embed/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Golang embed" />
+<meta property="og:description" content="前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
+embed 假设我们有一个文件 hello.txt
+Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
+// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/go/go-embed/" />
+<meta property="og:image" content="https://aimerneige.com/images/go-embed.webp" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-13T23:57:11&#43;08:00" />
+<meta property="article:modified_time" content="2022-08-13T23:57:11&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/go-embed.webp" />
+<meta name="twitter:title" content="Golang embed"/>
+<meta name="twitter:description" content="前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
+embed 假设我们有一个文件 hello.txt
+Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
+// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Golang embed",
+      "item": "https://aimerneige.com/zh/post/go/go-embed/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Golang embed",
+  "name": "Golang embed",
+  "description": "前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。\nembed 假设我们有一个文件 hello.txt\nHello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：\n// file: main.go package main  import ( \t\u0026#34;fmt\u0026#34; \t\u0026#34;os\u0026#34; )  func main() { \ts, err := os.ReadFile(\u0026#34;./hello.txt\u0026#34;) \tif err != nil { \tpanic(err) \t} \tfmt.Println(string(s)) } 很简单，不是吗？\n➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main.",
+  "keywords": [
+    "golang", "embed"
+  ],
+  "articleBody": "前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。\nembed 假设我们有一个文件 hello.txt\nHello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：\n// file: main.go package main  import ( \t\"fmt\" \t\"os\" )  func main() { \ts, err := os.ReadFile(\"./hello.txt\") \tif err != nil { \tpanic(err) \t} \tfmt.Println(string(s)) } 很简单，不是吗？\n➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main.go  ➜ ./main Hello World! Hello go embed! 但是如果 hello.txt 这个文件不存在的话，我们再次运行程序：\n➜ rm hello.txt  ➜ tree . . ├── go.mod ├── main └── main.go  0 directories, 3 files  ➜ ./main panic: open ./hello.txt: no such file or directory  goroutine 1 [running]: main.main() \t/home/aimerneige/Code/go/go-embed-tutorial/main.go:11 +0x96 exit status 2 显然，因为读取不到文件，程序在第 11 行 panic 了。那么如何将 hello.txt 也一并打包入可执行文件呢？\n我们先不使用 embed，而是直接将文件内容硬编码，我们就会得到这样的代码：\n// file: main.go package main  import ( \t\"fmt\" )  var f string = `Hello World! Hello go embed!`  func main() { \tfmt.Println(f) } 显然我们可以得到相同的结果：\n➜ go build main.go  ➜ tree . . ├── go.mod ├── main └── main.go  0 directories, 3 files  ➜ ./main Hello World! Hello go embed! 这里，我们使用了一个字符串 f 来存储文件中的内容。但是直接将文本内容放入源代码十分不优雅，尤其是当文本文件内容较多的时候，源代码就会太混乱，改动也比较麻烦。\n接下来，我们恢复文件 hello.txt 后使用 embed 来优化它：\n// file: main.go package main  import ( \t_ \"embed\" \t\"fmt\" )  //go:embed hello.txt var f string  func main() { \tfmt.Println(f) } 首先，我们下划线引入了一个包 _　\"embed\"，这样做是为了引入 embed 包来执行它的 init 函数而不使用它。有了这个包以后，我们就可以以注释的方式来将一个文件的内容绑定到一个变量上：\n//go:embed hello.txt var f string 这个变量就会以字符串的形式存储文件 hello.txt 中的数据。\n这时候，我们在 hello.txt 文件存在的情况下编译程序：\n➜ go build main.go  ➜ ./main Hello World! Hello go embed! 简单执行文件我们当然可以得到相同的输出，但是如果这个时候我们删除 hello.txt 会发生什么呢？\n➜ rm hello.txt  ➜ tree . . ├── go.mod ├── main └── main.go  0 directories, 3 files  ➜ ./main Hello World! Hello go embed! 正如预期的那样，我们依然得到了相同的输出，这是因为 hello.txt 中的内容已经编码到了可执行文件中了。\n类似地，我们还可以将图片编码为字节数组：\n// file: main.go package main  import ( \t\"bytes\" \t_ \"embed\" \t\"image/jpeg\" \t\"image/png\" \t\"os\" )  //go:embed avatar.jpg var imgData []byte  func main() { \timg, err := jpeg.Decode(bytes.NewReader(imgData)) \tif err != nil { \tpanic(err) \t} \tf, err := os.Create(\"./avatar.png\") \tif err != nil { \tpanic(err) \t}  defer f.Close() \tpng.Encode(f, img) } ➜ tree . . ├── avatar.jpg ├── go.mod └── main.go  0 directories, 3 files 此时，我们编译 main.go，得到的可执行文件可以在任意目录下执行，并且都会在同级目录下输出一个 avatar.png。\n➜ go build main.go  ➜ rm avatar.jpg  ➜ ./main  ➜ tree . . ├── avatar.png ├── go.mod ├── main └── main.go  0 directories, 4 files 注意 embed 的路径是相对于源代码文件而言的。如下例：\n➜ tree . . ├── go.mod ├── hello.txt ├── internal │ ├── asserts │ │ └── example.png │ ├── internal.go │ └── internal.txt └── main.go 2 directories, 6 files // file: internal/internal.go package internal  import ( \t_ \"embed\" )  //go:embed internal.txt var txt string  //go:embed asserts/example.png var png []byte 在 internal 包中，我们引用的俩个文件 internal/internal.txt 和 internal/asserts/example.png 的路径不是项目的相对路径，而是源文件 internal/internal.go 的相对路径。\n上面的写法已经能够覆盖大部分的场景了，但是，如果我们的文件很多要怎么办呢？这时就需要使用 embed.FS。embed.FS 可以将文件或文件夹打包入可执行文件，并抽象为 FS 以供调用：\n// file: main.go package main  import ( \t\"bytes\" \t\"embed\" \t\"fmt\" \t\"image/png\" \t\"io/fs\" )  //go:embed resources/images var images embed.FS  //go:embed resources/text var texts embed.FS  //go:embed resources var resources embed.FS  func main() { \t// read images \tfor i := 1; i  5; i++ { \tfilePath := fmt.Sprintf(\"resources/images/Screenshot-%d.png\", i) \timgFile, err := fs.ReadFile(images, filePath) \tif err != nil { \tpanic(err) \t} \timage, err := png.Decode(bytes.NewReader(imgFile)) \tif err != nil { \tpanic(err) \t} \tfmt.Printf(\"size of %s: %dx%d\\n\", filePath, image.Bounds().Dx(), image.Bounds().Dy()) \t} \t// read text \tfor i := 1; i  2; i++ { \tfilePath := fmt.Sprintf(\"resources/text/example%d.txt\", i) \texample, err := texts.ReadFile(filePath) \tif err != nil { \tpanic(err) \t} \tfmt.Printf(\"text of %s: %s\\n\", filePath, string(example)) \t} \t// read sub dir file \tlicense, err := resources.ReadFile(\"resources/license/LICENSE\") \tif err != nil { \tpanic(err) \t} \tfmt.Println(string(license)) } ➜ tree . . ├── go.mod ├── main.go └── resources  ├── images  │ ├── Screenshot-1.png  │ ├── Screenshot-2.png  │ ├── Screenshot-3.png  │ ├── Screenshot-4.png  │ └── Screenshot-5.png  ├── license  │ └── LICENSE  └── text  ├── example1.txt  └── example2.txt  4 directories, 10 files  ➜ cat resources/license/LICENSE EXAMPLE LICENSE FILE  ➜ cat resources/text/example1.txt example 1  ➜ cat resources/text/example2.txt example 2  ➜ go build main.go  ➜ ./main size of resources/images/Screenshot-1.png: 1920x1080 size of resources/images/Screenshot-2.png: 1920x1080 size of resources/images/Screenshot-3.png: 1920x1080 size of resources/images/Screenshot-4.png: 1920x1080 size of resources/images/Screenshot-5.png: 1920x1080 text of resources/text/example1.txt: example 1 text of resources/text/example2.txt: example 2 EXAMPLE LICENSE FILE  ➜ rm resources -rf  ➜ tree . . ├── go.mod ├── main └── main.go  0 directories, 3 files  ➜ ./main size of resources/images/Screenshot-1.png: 1920x1080 size of resources/images/Screenshot-2.png: 1920x1080 size of resources/images/Screenshot-3.png: 1920x1080 size of resources/images/Screenshot-4.png: 1920x1080 size of resources/images/Screenshot-5.png: 1920x1080 text of resources/text/example1.txt: example 1 text of resources/text/example2.txt: example 2 EXAMPLE LICENSE FILE 要注意的是，我们读取文件时提供的路径一定是完整的相对路径。\nembed.FS 在 http 静态服务中非常有用：\nmain.go\n// file: main.go package main  import ( \t\"embed\" \t\"fmt\" \t\"io/fs\" \t\"net/http\" )  //go:embed public var public embed.FS  func main() { \tmux := http.NewServeMux() \tmux.Handle(\"/\", handler()) \thttp.ListenAndServe(\":8080\", mux) }  func handler() http.Handler { \tf := fs.FS(public) \thtml, err := fs.Sub(f, \"public\") \tif err != nil { \tpanic(err) \t} \tfmt.Println(\"Server start at http://127.0.0.1:8080/\") \treturn http.FileServer(http.FS(html)) } index.html\n html lang=\"en\" head  meta charset=\"UTF-8\"  titleHello Worldtitle head body  h1Hello Worldh1  pThis is a simple example index.htmlp  pClick About bellow to see about page.p  a href=\"./about.html\"Abouta body html about.html\n html lang=\"en\" head  meta charset=\"UTF-8\"  titleAbouttitle head body  h1Abouth1  pThis is a simple about.html page.p  pClick bellow Index to back to index page.p  a href=\"./index.html\"Indexa body html ➜ tree . . ├── go.mod ├── main.go └── public  ├── about.html  └── index.html  1 directory, 4 files 当然还有很多其他神奇玩法，这里只介绍最基本的用法，其他大家发挥想象力。\n参考链接  embed  ",
+  "wordCount" : "837",
+  "inLanguage": "zh",
+  "image":"https://aimerneige.com/images/go-embed.webp","datePublished": "2022-08-13T23:57:11+08:00",
+  "dateModified": "2022-08-13T23:57:11+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/go/go-embed/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      Golang embed
+    </h1>
+    <div class="post-meta"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Go/go-embed.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-embed.webp" alt="Golang embed">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#embed" aria-label="embed">embed</a></li>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" aria-label="参考链接">参考链接</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h1>
+<p>在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 <a href="https://github.com/jteeuwen/go-bindata">go-bindata</a>。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 <a href="https://pkg.go.dev/embed">embed</a> 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。</p>
+<h1 id="embed">embed<a hidden class="anchor" aria-hidden="true" href="#embed">#</a></h1>
+<p>假设我们有一个文件 <code>hello.txt</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Hello World!
+</span></span><span style="display:flex;"><span>Hello go embed!
+</span></span></code></pre></div><p>我们要写一个程序读取其中的内容并输出到终端：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#e6db74">&#34;./hello.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>很简单，不是吗？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── hello.txt
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ go build main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main                             
+</span></span><span style="display:flex;"><span>Hello World!
+</span></span><span style="display:flex;"><span>Hello go embed!
+</span></span></code></pre></div><p>但是如果 <code>hello.txt</code> 这个文件不存在的话，我们再次运行程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ rm hello.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main  
+</span></span><span style="display:flex;"><span>panic: open ./hello.txt: no such file or directory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>goroutine <span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>running<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>main.main<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>	/home/aimerneige/Code/go/go-embed-tutorial/main.go:11 +0x96
+</span></span><span style="display:flex;"><span>exit status <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>显然，因为读取不到文件，程序在第 11 行 panic 了。那么如何将 <code>hello.txt</code> 也一并打包入可执行文件呢？</p>
+<p>我们先不使用 embed，而是直接将文件内容硬编码，我们就会得到这样的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">`Hello World!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Hello go embed!`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>显然我们可以得到相同的结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ go build main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main 
+</span></span><span style="display:flex;"><span>Hello World!
+</span></span><span style="display:flex;"><span>Hello go embed!
+</span></span></code></pre></div><p>这里，我们使用了一个字符串 <code>f</code> 来存储文件中的内容。但是直接将文本内容放入源代码十分不优雅，尤其是当文本文件内容较多的时候，源代码就会太混乱，改动也比较麻烦。</p>
+<p>接下来，我们恢复文件 <code>hello.txt</code> 后使用 embed 来优化它：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed hello.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>首先，我们下划线引入了一个包 <code>_　&quot;embed&quot;</code>，这样做是为了引入 <code>embed</code> 包来执行它的 <code>init</code> 函数而不使用它。有了这个包以后，我们就可以以注释的方式来将一个文件的内容绑定到一个变量上：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">//go:embed hello.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">string</span>
+</span></span></code></pre></div><p>这个变量就会以字符串的形式存储文件 <code>hello.txt</code> 中的数据。</p>
+<p>这时候，我们在 <code>hello.txt</code> 文件存在的情况下编译程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ go build main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main 
+</span></span><span style="display:flex;"><span>Hello World!
+</span></span><span style="display:flex;"><span>Hello go embed!
+</span></span></code></pre></div><p>简单执行文件我们当然可以得到相同的输出，但是如果这个时候我们删除 <code>hello.txt</code> 会发生什么呢？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ rm hello.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main 
+</span></span><span style="display:flex;"><span>Hello World!
+</span></span><span style="display:flex;"><span>Hello go embed!
+</span></span></code></pre></div><p>正如预期的那样，我们依然得到了相同的输出，这是因为 <code>hello.txt</code> 中的内容已经编码到了可执行文件中了。</p>
+<p>类似地，我们还可以将图片编码为字节数组：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;bytes&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;image/jpeg&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;image/png&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed avatar.jpg
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">imgData</span> []<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">img</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">jpeg</span>.<span style="color:#a6e22e">Decode</span>(<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">imgData</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Create</span>(<span style="color:#e6db74">&#34;./avatar.png&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">png</span>.<span style="color:#a6e22e">Encode</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">img</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── avatar.jpg
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span></code></pre></div><p>此时，我们编译 <code>main.go</code>，得到的可执行文件可以在任意目录下执行，并且都会在同级目录下输出一个 <code>avatar.png</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ go build main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ rm avatar.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── avatar.png
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">4</span> files
+</span></span></code></pre></div><p>注意 embed 的路径是相对于源代码文件而言的。如下例：</p>
+<pre tabindex="0"><code>➜ tree . 
+.
+├── go.mod
+├── hello.txt
+├── internal
+│   ├── asserts
+│   │   └── example.png
+│   ├── internal.go
+│   └── internal.txt
+└── main.go
+
+2 directories, 6 files
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: internal/internal.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">internal</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed internal.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">txt</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed asserts/example.png
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">png</span> []<span style="color:#66d9ef">byte</span>
+</span></span></code></pre></div><p>在 <code>internal</code> 包中，我们引用的俩个文件 <code>internal/internal.txt</code> 和 <code>internal/asserts/example.png</code> 的路径不是项目的相对路径，而是源文件 <code>internal/internal.go</code> 的相对路径。</p>
+<p>上面的写法已经能够覆盖大部分的场景了，但是，如果我们的文件很多要怎么办呢？这时就需要使用 <code>embed.FS</code>。<code>embed.FS</code> 可以将文件或文件夹打包入可执行文件，并抽象为 <code>FS</code> 以供调用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;bytes&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;image/png&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;io/fs&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed resources/images
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">images</span> <span style="color:#a6e22e">embed</span>.<span style="color:#a6e22e">FS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed resources/text
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">texts</span> <span style="color:#a6e22e">embed</span>.<span style="color:#a6e22e">FS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed resources
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">resources</span> <span style="color:#a6e22e">embed</span>.<span style="color:#a6e22e">FS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// read images
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">filePath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;resources/images/Screenshot-%d.png&#34;</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">imgFile</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">images</span>, <span style="color:#a6e22e">filePath</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">image</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">png</span>.<span style="color:#a6e22e">Decode</span>(<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">imgFile</span>))
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;size of %s: %dx%d\n&#34;</span>, <span style="color:#a6e22e">filePath</span>, <span style="color:#a6e22e">image</span>.<span style="color:#a6e22e">Bounds</span>().<span style="color:#a6e22e">Dx</span>(), <span style="color:#a6e22e">image</span>.<span style="color:#a6e22e">Bounds</span>().<span style="color:#a6e22e">Dy</span>())
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// read text
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">filePath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;resources/text/example%d.txt&#34;</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">example</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">texts</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">filePath</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;text of %s: %s\n&#34;</span>, <span style="color:#a6e22e">filePath</span>, string(<span style="color:#a6e22e">example</span>))
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// read sub dir file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">license</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#e6db74">&#34;resources/license/LICENSE&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">license</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ tree .            
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main.go
+</span></span><span style="display:flex;"><span>└── resources
+</span></span><span style="display:flex;"><span>    ├── images
+</span></span><span style="display:flex;"><span>    │   ├── Screenshot-1.png
+</span></span><span style="display:flex;"><span>    │   ├── Screenshot-2.png
+</span></span><span style="display:flex;"><span>    │   ├── Screenshot-3.png
+</span></span><span style="display:flex;"><span>    │   ├── Screenshot-4.png
+</span></span><span style="display:flex;"><span>    │   └── Screenshot-5.png
+</span></span><span style="display:flex;"><span>    ├── license
+</span></span><span style="display:flex;"><span>    │   └── LICENSE
+</span></span><span style="display:flex;"><span>    └── text
+</span></span><span style="display:flex;"><span>        ├── example1.txt
+</span></span><span style="display:flex;"><span>        └── example2.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> directories, <span style="color:#ae81ff">10</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ cat resources/license/LICENSE  
+</span></span><span style="display:flex;"><span>EXAMPLE LICENSE FILE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ cat resources/text/example1.txt 
+</span></span><span style="display:flex;"><span>example <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ cat resources/text/example2.txt
+</span></span><span style="display:flex;"><span>example <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ go build main.go 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main 
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-1.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-2.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-3.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-4.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-5.png: 1920x1080
+</span></span><span style="display:flex;"><span>text of resources/text/example1.txt: example <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>text of resources/text/example2.txt: example <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>EXAMPLE LICENSE FILE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ rm resources -rf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main
+</span></span><span style="display:flex;"><span>└── main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> directories, <span style="color:#ae81ff">3</span> files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜ ./main 
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-1.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-2.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-3.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-4.png: 1920x1080
+</span></span><span style="display:flex;"><span>size of resources/images/Screenshot-5.png: 1920x1080
+</span></span><span style="display:flex;"><span>text of resources/text/example1.txt: example <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>text of resources/text/example2.txt: example <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>EXAMPLE LICENSE FILE
+</span></span></code></pre></div><p>要注意的是，我们读取文件时提供的路径一定是完整的相对路径。</p>
+<p><code>embed.FS</code> 在 http 静态服务中非常有用：</p>
+<p><code>main.go</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// file: main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;io/fs&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//go:embed public
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">public</span> <span style="color:#a6e22e">embed</span>.<span style="color:#a6e22e">FS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">mux</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">NewServeMux</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">mux</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">handler</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#a6e22e">mux</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">handler</span>() <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">FS</span>(<span style="color:#a6e22e">public</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">Sub</span>(<span style="color:#a6e22e">f</span>, <span style="color:#e6db74">&#34;public&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Server start at http://127.0.0.1:8080/&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">FileServer</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">FS</span>(<span style="color:#a6e22e">html</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>index.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Hello World&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello World&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;This is a simple example index.html&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;Click About bellow to see about page.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./about.html&#34;</span>&gt;About&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><code>about.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;About&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;About&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;This is a simple about.html page.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;Click bellow Index to back to index page.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./index.html&#34;</span>&gt;Index&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── go.mod
+</span></span><span style="display:flex;"><span>├── main.go
+</span></span><span style="display:flex;"><span>└── public
+</span></span><span style="display:flex;"><span>    ├── about.html
+</span></span><span style="display:flex;"><span>    └── index.html
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> directory, <span style="color:#ae81ff">4</span> files
+</span></span></code></pre></div><p>当然还有很多其他神奇玩法，这里只介绍最基本的用法，其他大家发挥想象力。</p>
+<h1 id="参考链接">参考链接<a hidden class="anchor" aria-hidden="true" href="#参考链接">#</a></h1>
+<ul>
+<li><a href="https://pkg.go.dev/embed">embed</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/golang/">golang</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/embed/">embed</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/zh/post/go/go-image-processing-basic/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Go 图像处理基础</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

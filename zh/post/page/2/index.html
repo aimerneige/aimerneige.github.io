@@ -123,6 +123,29 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/hugo-logo-wide.svg" alt="hugo-logo">
+</figure>
+  <header class="entry-header">
+    <h2>Hello Hugo
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 距离上一次写博客文章已经很长时间了，因为经常重装系统，而每次在电脑上安装和配置 hexo 的博客都是一件比较麻烦的事情，于是就一直咕了。但是最近我发现了 hugo 这一简洁好用的博客系统，可以让我远离配置安装都又慢又麻烦的 hexo，使用下来体验很棒，而我恰好又打算换一个博客主题，于是决定使用 hugo 来搭建我的新博客。本文简要介绍如何安装和使用 hugo。
+安装 你可能需要  go 的开发环境 git 一个顺手的编辑器  你一定不需要  nodejs npm  安装 hugo 要安装 hugo 非常简单，以 fedora 系统为例，只需要执行如下指令：
+sudo dnf install hugo 创建站点文件夹 使用以下指令创建你的站点文件夹：
+hugo new site blog 切换到工作目录进行后续操作：
+cd blog 使用 git 进行版本控制：
+git init 安装主题 挑选好合适的主题后，将其直接 clone 在 ./themes 文件夹下即可。
+git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1  使用 --depth=1 参数会忽略历史 commit 记录。
+ 当然，下载解压压缩包的方式也是可以的。
+如果想要方便版本控制和更新，使用如下指令添加 submodule：
+git submodule add https://github....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>八月 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/zh/post/others/hello-hugo/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nodejs.png" alt="nodejs logo">
 </figure>
   <header class="entry-header">
@@ -278,23 +301,6 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\she
   </div>
   <footer class="entry-footer"><span title='2020-10-22 15:15:19 +0800 CST'>十月 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 Windows10 安装和配置 alacritty" href="https://aimerneige.com/zh/post/others/alacritty-on-windows/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>GCC 基础
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g&#43;&#43; 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
-GCC 工具集不仅能编译 C/C&#43;&#43; 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
-GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
-GCC 的 C 编译器 是 gcc，其命令格式为 :
-Usage: gcc [options] file... GCC 下默认文扩展名的含义：
-   文件扩展名 GCC 所理解的含义     *....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
