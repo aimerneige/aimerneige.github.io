@@ -230,8 +230,8 @@ if (!doNotTrack) {
 <li>解压压缩文件</li>
 </ol>
 <p>这里我们可以直接使用 <a href="https://golang.org/doc/install">官方安装指南</a> 提供的指令来解压。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf /usr/local/go <span style="color:#f92672">&amp;&amp;</span> tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
-</span></span></code></pre></div><p>本指令会将 go 安装在 <code>/usr/local/go</code> 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -rf /usr/local/go <span style="color:#f92672">&amp;&amp;</span> tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+</code></pre></div><p>本指令会将 go 安装在 <code>/usr/local/go</code> 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。</p>
 <div class="notice info" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>如果你使用了其他的路径来安装 go，在之后的配置过程中记得要修改 <code>GOROOT</code> 变量修改为你所安装的路径。</p></div>
 
@@ -245,13 +245,13 @@ if (!doNotTrack) {
 <p>成功解压后，如果你尝试直接在终端执行 go 指令，你会发现系统并没有识别到你刚安装的 go 二进制文件，这是因为我们还没有对 go 的环境变量进行配置。</p>
 <p>根据你所使用的不同的 shell，直接修改对应的配置文件，写入如下内容即可。<br>
 例如在 bash 下要修改 <code>~/.bashrc</code>，而在 zsh 下则需要修改 <code>~/.zshrc</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOROOT<span style="color:#f92672">=</span>/usr/local/go
-</span></span><span style="display:flex;"><span>export GOPATH<span style="color:#f92672">=</span>$HOME/golang
-</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$GOROOT/bin:$PATH
-</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$GOPATH/bin:$PATH
-</span></span><span style="display:flex;"><span>export GO111MODULE<span style="color:#f92672">=</span>on
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># export GOPROXY=https://goproxy.cn</span>
-</span></span></code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOROOT<span style="color:#f92672">=</span>/usr/local/go
+export GOPATH<span style="color:#f92672">=</span>$HOME/golang
+export PATH<span style="color:#f92672">=</span>$GOROOT/bin:$PATH
+export PATH<span style="color:#f92672">=</span>$GOPATH/bin:$PATH
+export GO111MODULE<span style="color:#f92672">=</span>on
+<span style="color:#75715e"># export GOPROXY=https://goproxy.cn</span>
+</code></pre></div><ol>
 <li><code>export GOROOT=/usr/local/go</code> 为 go 的安装目录，即之前的解压路径。</li>
 <li><code>export GOPATH=$HOME/golang</code> 为 go 的工作区目录，所有的源代码、代码包等会存放在这里，可以自己定义。</li>
 <li><code>export PATH=$GOROOT/bin:$PATH</code> 与 <code>export PATH=$GOPATH/bin:$PATH</code> 将可执行文件目录添加到环境变量。不需要修改。</li>

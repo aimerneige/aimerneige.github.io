@@ -91,7 +91,7 @@ We start with a bottom row of bottom, represented as a single string. We also st
   "keywords": [
     "LeetCode"
   ],
-  "articleBody": " https://leetcode.com/problems/pyramid-transition-matrix/\n  We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.\nWe are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.\nWe start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed. Each allowed triple is represented as a string of length 3.\nReturn true if we can build the pyramid all the way to the top, otherwise false.\nExample 1:\nInput: bottom = \"BCD\", allowed = [\"BCG\", \"CDE\", \"GEA\", \"FFF\"] Output: true Explanation: We can stack the pyramid like this: A / \\ G E / \\ / \\ B C D We are allowed to place G on top of B and C because BCG is an allowed triple. Similarly, we can place E on top of C and D, then A on top of G and E. Example 2:\nInput: bottom = \"AABA\", allowed = [\"AAA\", \"AAB\", \"ABA\", \"ABB\", \"BAC\"]: Output: false Explanation: We can't stack the pyramid to the top. Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D.... Constraints:\n bottom will be a string with length in range [2, 8]. allowed will have length in range [0, 200]. Letters in all strings will be chosen from the set {'A', 'B', 'C', 'D', 'E', 'F', 'G'}.   class Solution {  MapString, ListString map;   public boolean pyramidTransition(String bottom, ListString allowed) {  map = new HashMap();  for(String s : allowed) {  String key = s.substring(0, 2);  String value = s.substring(2, 3);  map.putIfAbsent(key, new ArrayList());  map.get(key).add(value);  }  return solve(bottom);  }   private boolean solve(String bottom) {  if(bottom.length() == 1) {  return true;  }  ListString nextBottoms = new ArrayList();  generateNextBottoms(bottom, nextBottoms, \"\", 0);  for(String next : nextBottoms) {  if(solve(next)) {  return true;  }  }  return false;  }   private void generateNextBottoms(String bottom, ListString res, String cur, int i) {  if(cur.length() == bottom.length() - 1) {  res.add(cur);  return;  }  String key = bottom.substring(i, i + 2);  if(!map.containsKey(key)) {  return;  }  ListString values = map.get(key);  for(String c : values) {  generateNextBottoms(bottom, res, cur + c, i + 1);  }  } } ",
+  "articleBody": " https://leetcode.com/problems/pyramid-transition-matrix/\n  We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.\nWe are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.\nWe start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed. Each allowed triple is represented as a string of length 3.\nReturn true if we can build the pyramid all the way to the top, otherwise false.\nExample 1:\nInput: bottom = \"BCD\", allowed = [\"BCG\", \"CDE\", \"GEA\", \"FFF\"] Output: true Explanation: We can stack the pyramid like this: A / \\ G E / \\ / \\ B C D We are allowed to place G on top of B and C because BCG is an allowed triple. Similarly, we can place E on top of C and D, then A on top of G and E. Example 2:\nInput: bottom = \"AABA\", allowed = [\"AAA\", \"AAB\", \"ABA\", \"ABB\", \"BAC\"]: Output: false Explanation: We can't stack the pyramid to the top. Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D.... Constraints:\n bottom will be a string with length in range [2, 8]. allowed will have length in range [0, 200]. Letters in all strings will be chosen from the set {'A', 'B', 'C', 'D', 'E', 'F', 'G'}.   class Solution { MapString, ListString map; public boolean pyramidTransition(String bottom, ListString allowed) { map = new HashMap(); for(String s : allowed) { String key = s.substring(0, 2); String value = s.substring(2, 3); map.putIfAbsent(key, new ArrayList()); map.get(key).add(value); } return solve(bottom); } private boolean solve(String bottom) { if(bottom.length() == 1) { return true; } ListString nextBottoms = new ArrayList(); generateNextBottoms(bottom, nextBottoms, \"\", 0); for(String next : nextBottoms) { if(solve(next)) { return true; } } return false; } private void generateNextBottoms(String bottom, ListString res, String cur, int i) { if(cur.length() == bottom.length() - 1) { res.add(cur); return; } String key = bottom.substring(i, i + 2); if(!map.containsKey(key)) { return; } ListString values = map.get(key); for(String c : values) { generateNextBottoms(bottom, res, cur + c, i + 1); } } } ",
   "wordCount" : "375",
   "inLanguage": "en",
   "datePublished": "2020-09-11T15:30:34+08:00",
@@ -186,7 +186,7 @@ We start with a bottom row of bottom, represented as a single string. We also st
 <p>We start with a bottom row of <code>bottom</code>, represented as a single string. We also start with a list of allowed triples <code>allowed</code>. Each allowed triple is represented as a string of length 3.</p>
 <p>Return true if we can build the pyramid all the way to the top, otherwise false.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: bottom = &#34;BCD&#34;, allowed = [&#34;BCG&#34;, &#34;CDE&#34;, &#34;GEA&#34;, &#34;FFF&#34;]
+<pre tabindex="0"><code>Input: bottom = &quot;BCD&quot;, allowed = [&quot;BCG&quot;, &quot;CDE&quot;, &quot;GEA&quot;, &quot;FFF&quot;]
 Output: true
 Explanation:
 We can stack the pyramid like this:
@@ -198,10 +198,10 @@ We can stack the pyramid like this:
 
 We are allowed to place G on top of B and C because BCG is an allowed triple.  Similarly, we can place E on top of C and D, then A on top of G and E.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code class="language-." data-lang=".">Input: bottom = &#34;AABA&#34;, allowed = [&#34;AAA&#34;, &#34;AAB&#34;, &#34;ABA&#34;, &#34;ABB&#34;, &#34;BAC&#34;]:
+<pre tabindex="0"><code class="language-." data-lang=".">Input: bottom = &quot;AABA&quot;, allowed = [&quot;AAA&quot;, &quot;AAB&quot;, &quot;ABA&quot;, &quot;ABB&quot;, &quot;BAC&quot;]:
 Output: false
 Explanation:
-We can&#39;t stack the pyramid to the top.
+We can't stack the pyramid to the top.
 Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D....
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -210,50 +210,50 @@ Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D....
 <li>Letters in all strings will be chosen from the set <code>{'A', 'B', 'C', 'D', 'E', 'F', 'G'}</code>.</li>
 </ul>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> map<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">pyramidTransition</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> allowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String s <span style="color:#f92672">:</span> allowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            String key <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 2<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>            String value <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>            map<span style="color:#f92672">.</span><span style="color:#a6e22e">putIfAbsent</span><span style="color:#f92672">(</span>key<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;());</span>
-</span></span><span style="display:flex;"><span>            map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>key<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> solve<span style="color:#f92672">(</span>bottom<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">solve</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nextBottoms <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>        generateNextBottoms<span style="color:#f92672">(</span>bottom<span style="color:#f92672">,</span> nextBottoms<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String next <span style="color:#f92672">:</span> nextBottoms<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>solve<span style="color:#f92672">(</span>next<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateNextBottoms</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> res<span style="color:#f92672">,</span> String cur<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>cur<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>cur<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        String key <span style="color:#f92672">=</span> bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 2<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>map<span style="color:#f92672">.</span><span style="color:#a6e22e">containsKey</span><span style="color:#f92672">(</span>key<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> values <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>key<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String c <span style="color:#f92672">:</span> values<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            generateNextBottoms<span style="color:#f92672">(</span>bottom<span style="color:#f92672">,</span> res<span style="color:#f92672">,</span> cur <span style="color:#f92672">+</span> c<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> map<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">pyramidTransition</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> allowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String s <span style="color:#f92672">:</span> allowed<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            String key <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 2<span style="color:#f92672">);</span>
+            String value <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
+            map<span style="color:#f92672">.</span><span style="color:#a6e22e">putIfAbsent</span><span style="color:#f92672">(</span>key<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;());</span>
+            map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>key<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> solve<span style="color:#f92672">(</span>bottom<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">solve</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nextBottoms <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+        generateNextBottoms<span style="color:#f92672">(</span>bottom<span style="color:#f92672">,</span> nextBottoms<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String next <span style="color:#f92672">:</span> nextBottoms<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>solve<span style="color:#f92672">(</span>next<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateNextBottoms</span><span style="color:#f92672">(</span>String bottom<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> res<span style="color:#f92672">,</span> String cur<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>cur<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>cur<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        String key <span style="color:#f92672">=</span> bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 2<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>map<span style="color:#f92672">.</span><span style="color:#a6e22e">containsKey</span><span style="color:#f92672">(</span>key<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> values <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>key<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String c <span style="color:#f92672">:</span> values<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            generateNextBottoms<span style="color:#f92672">(</span>bottom<span style="color:#f92672">,</span> res<span style="color:#f92672">,</span> cur <span style="color:#f92672">+</span> c<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
 
   </div>
 
