@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</guid>
       <description>This article are reproduce from pretzelhammer/rust-blog
- Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;quot; Most people give up before they even get started when they get advice like this.</description>
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</guid>
-      <description>Update system # Debian apt update # Fedora dnf update Install most used tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd batcat # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd bat Create sudo user # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige Test root privileges su - aimerneige sudo cat /etc/shadow Setup SSH public key # run this on your local machine ssh-copy-id aimerneige@server Test if you can connect to server ssh aimerneige@server Disable root and password login sudo vim /etc/ssh/sshd_config  Set PermitRootLogin as no To disable root login Set PasswordAuthentication ad no To disable password login  Skip password for sudo sudo visudo Add this on the end of file:</description>
+      <description>Update System # Debian apt update # Fedora dnf update Install Most Used Tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user Create Sudo User # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige Test Root Privileges su - aimerneige sudo cat /etc/shadow Setup SSH Public Key # run this on your local machine ssh-copy-id aimerneige@server Test if You Can Connect to Server ssh aimerneige@server Disable Root and Password Login sudo vim /etc/ssh/sshd_config  Set PermitRootLogin as no To disable root login Set PasswordAuthentication ad no To disable password login  Skip Password for Sudo sudo visudo Add this on the end of file:</description>
     </item>
     
     <item>
@@ -79,9 +79,9 @@ your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you ne
       
       <guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
       <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
-plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &amp;quot;io.springfox:springfox-boot-starter:3.0.0&amp;quot; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.</description>
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
     </item>
     
     <item>
@@ -126,9 +126,9 @@ Adapt colors Make a new folder at project/app/src/main/res/values-night then mak
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&#39;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&#39;; \mu(x), \kappa(x, x))$$
+Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
  Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
+C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
     </item>
     
   </channel>

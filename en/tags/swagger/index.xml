@@ -14,9 +14,9 @@
       
       <guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
       <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
-plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &amp;quot;io.springfox:springfox-boot-starter:3.0.0&amp;quot; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.</description>
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
     </item>
     
   </channel>
