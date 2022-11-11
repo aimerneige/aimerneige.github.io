@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/categories/linux/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -57,24 +57,19 @@ if (!doNotTrack) {
     <nav class="nav">
         <div class="logo">
             <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
                         <a href="https://aimerneige.com/zh/" title="中文"
                             aria-label="中文">中文</a>
                     </li>
                 </ul>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
                 <a href="https://aimerneige.com/en/about/" title="About">
                     <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://aimerneige.com/en/friends/" title="Friends">
-                    <span>Friends</span>
                 </a>
             </li>
             <li>
@@ -107,73 +102,26 @@ if (!doNotTrack) {
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/categories/">Categories 🤹‍♂️</a></div>
-  <h1>Linux</h1>
+  <h1>
+    Linux
+  </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/linux-server-setup.webp" alt="Server Setup">
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wechat.svg" alt="Fedora WeChat">
 </figure>
   <header class="entry-header">
-    <h2>How to Setup Your New Linux Server
+    <h2>Install WeChat on Fedora
     </h2>
   </header>
   <div class="entry-content">
-    <p>Update system # Debian apt update # Fedora dnf update Install most used tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget lsd Create sudo user # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige Test root privileges su - aimerneige sudo cat /etc/shadow Setup SSH public key # run this on your local machine ssh-copy-id aimerneige@server Test if you can connect to server ssh aimerneige@server Disable root and password login sudo vim /etc/ssh/sshd_config  Set PermitRootLogin as no To disable root login Set PasswordAuthentication ad no To disable password login  Skip password for sudo sudo visudo Add this on the end of file:...</p>
+    <p>Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
+winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
+Download And Config Fonts Run the following commands
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>May 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to How to Setup Your New Linux Server" href="https://aimerneige.com/en/post/how-to-setup-your-new-linux-server/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
-</figure>
-  <header class="entry-header">
-    <h2>Shell Learning Notes Comment
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Shell Comment Start with #
-# this is a line of comment Simply write more with # start
-# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
-:&lt;&lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&lt;&lt;&#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &#39; :&lt;&lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </p>
-  </div>
-  <footer class="entry-footer"><span title='2022-05-01 02:25:48 +0800 CST'>May 1, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Shell Learning Notes Comment" href="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
-</figure>
-  <header class="entry-header">
-    <h2>Shell Learning Notes Parameters
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Pass Parameters When you are running a shell script and you want to pass some parameters into the script, you can get the parameters by $n.
-The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
-Note that the 0 is the script fine name.
-Example:
-#!/usr/bin/bash  echo &#34;Parameters Example:&#34; echo &#34;The Script File Name: \&#34;$0\&#34;&#34; echo &#34;The First Parameters: \&#34;$1\&#34;&#34; echo &#34;The Second Parameters: \&#34;$2\&#34;&#34; echo &#34;The Third Parameters: \&#34;$3\&#34;&#34; echo &#34;The Forth Parameters: \&#34;$4\&#34;&#34; Run this script:...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-05-01 02:22:52 +0800 CST'>May 1, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Shell Learning Notes Parameters" href="https://aimerneige.com/en/post/shell/shell-learning-notes-parameters/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
-</figure>
-  <header class="entry-header">
-    <h2>Shell Learning Notes Variable
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
-For example:
-your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-04-30 00:42:38 +0800 CST'>April 30, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Shell Learning Notes Variable" href="https://aimerneige.com/en/post/shell/shell-learning-notes-variable/"></a>
+  <footer class="entry-footer"><span title='2022-11-10 12:03:30 +0800 CST'>November 10, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install WeChat on Fedora" href="https://aimerneige.com/en/post/draft/install-wechat-on-fedora/"></a>
 </article>
     </main>
     
@@ -182,7 +130,7 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

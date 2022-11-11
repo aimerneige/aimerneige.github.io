@@ -6,7 +6,19 @@
     <description>Recent content in Posts 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 07:58:02 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 12:03:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install WeChat on Fedora</title>
+      <link>https://aimerneige.com/en/post/draft/install-wechat-on-fedora/</link>
+      <pubDate>Thu, 10 Nov 2022 12:03:30 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/draft/install-wechat-on-fedora/</guid>
+      <description>Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
+winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
+Download And Config Fonts Run the following commands
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp;amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)</description>
+    </item>
+    
     <item>
       <title>[Reproduce] Learning Rust in 2022</title>
       <link>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</link>

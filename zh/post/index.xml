@@ -6,7 +6,26 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Aug 2022 23:57:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 12:03:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 Fedora 系统下安装微信</title>
+      <link>https://aimerneige.com/zh/post/draft/install-wechat-on-fedora/</link>
+      <pubDate>Thu, 10 Nov 2022 12:03:27 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/draft/install-wechat-on-fedora/</guid>
+      <description>在 Fedora 下运行微信 安装 wine sudo dnf install wine 调整缩放比例 输入下面的指令打开 winecfg
+winecfg 在 Graphics 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）
+下载并配置字体 依次执行如下指令即可
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 下载并安装微信 直接下载官方的 exe 安装包（在网页下载也是一样的）
+wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 使用 wine 启动微信
+wine ./WeChatSetup.exe 接下来按照 Windows 的安装逻辑点击下一步安装好微信
+安装结束后可以删除安装包
+修改语言设置 修改这个文件
+vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop 调整 Exec 这一部分，添加如下环境变量
+env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; 最终结果应该是这样（注意路径）
+[Desktop Entry] Name=WeChat Exec=env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; env WINEPREFIX=&amp;#34;/home/aimer/.wine&amp;#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.</description>
+    </item>
+    
     <item>
       <title>Golang embed</title>
       <link>https://aimerneige.com/zh/post/go/go-embed/</link>

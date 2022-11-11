@@ -123,6 +123,30 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wechat.svg" alt="Fedora WeChat">
+</figure>
+  <header class="entry-header">
+    <h2>在 Fedora 系统下安装微信
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在 Fedora 下运行微信 安装 wine sudo dnf install wine 调整缩放比例 输入下面的指令打开 winecfg
+winecfg 在 Graphics 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）
+下载并配置字体 依次执行如下指令即可
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 下载并安装微信 直接下载官方的 exe 安装包（在网页下载也是一样的）
+wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 使用 wine 启动微信
+wine ./WeChatSetup.exe 接下来按照 Windows 的安装逻辑点击下一步安装好微信
+安装结束后可以删除安装包
+修改语言设置 修改这个文件
+vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop 调整 Exec 这一部分，添加如下环境变量
+env LC_ALL=&#34;zh_CN.UTF8&#34; 最终结果应该是这样（注意路径）
+[Desktop Entry] Name=WeChat Exec=env LC_ALL=&#34;zh_CN.UTF8&#34; env WINEPREFIX=&#34;/home/aimer/.wine&#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-10 12:03:27 +0800 CST'>十一月 10, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 Fedora 系统下安装微信" href="https://aimerneige.com/zh/post/draft/install-wechat-on-fedora/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-embed.webp" alt="Golang embed">
 </figure>
   <header class="entry-header">
@@ -286,25 +310,6 @@ $.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	d
   </div>
   <footer class="entry-footer"><span title='2021-08-19 21:44:21 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 对于某实验平台的吐槽" href="https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/rime.png" alt="rime-logo">
-</figure>
-  <header class="entry-header">
-    <h2>定制你的 rime 提升编程体验
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。
- 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
-本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
-找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
-   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-08-19 01:50:11 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 定制你的 rime 提升编程体验" href="https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
