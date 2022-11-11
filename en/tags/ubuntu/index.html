@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/tags/ubuntu/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -29,16 +29,14 @@
 
     </style>
 </noscript>
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-5QJPQTJ618', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
 <meta property="og:title" content="ubuntu" />
@@ -58,24 +56,19 @@ if (!doNotTrack) {
     <nav class="nav">
         <div class="logo">
             <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
                         <a href="https://aimerneige.com/zh/" title="中文"
                             aria-label="中文">中文</a>
                     </li>
                 </ul>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
                 <a href="https://aimerneige.com/en/about/" title="About">
                     <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://aimerneige.com/en/friends/" title="Friends">
-                    <span>Friends</span>
                 </a>
             </li>
             <li>
@@ -108,20 +101,23 @@ if (!doNotTrack) {
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/tags/">Tags 🏷️</a></div>
-  <h1>ubuntu</h1>
+  <h1>
+    ubuntu
+  </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
+</figure>
   <header class="entry-header">
-    <h2>Ubuntu 20.04 Resolution Error Fix
+    <h2>Install qBittorrent-nox on Ubuntu Server
     </h2>
   </header>
   <div class="entry-content">
-    <p>After upgrade my ubuntu 20.04, I find the system ui resolution is small and looks ugly. I search google for this which tell me to reinstall my Graphics Card Driver. But it doesn’t work, so I have to try it myself. And here are my solutions:
- Open the settings. Select the Displays. Change the scale bigger. Select revert. All done.  After the system reboot, this problem will appear again....</p>
+    <p>Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-09-22 13:29:32 +0800 CST'>September 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 20.04 Resolution Error Fix" href="https://aimerneige.com/en/post/ubuntu-20.04-resolution-error-fix/"></a>
+  <footer class="entry-footer"><span title='2022-11-11 15:34:47 +0800 CST'>November 11, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install qBittorrent-nox on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"></a>
 </article>
     </main>
     
@@ -130,7 +126,7 @@ if (!doNotTrack) {
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

@@ -6,7 +6,16 @@
     <description>Recent content in Posts 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 12:03:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Nov 2022 15:34:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install qBittorrent-nox on Ubuntu Server</title>
+      <link>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/</link>
+      <pubDate>Fri, 11 Nov 2022 15:34:47 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/</guid>
+      <description>Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox.</description>
+    </item>
+    
     <item>
       <title>Install WeChat on Fedora</title>
       <link>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</link>

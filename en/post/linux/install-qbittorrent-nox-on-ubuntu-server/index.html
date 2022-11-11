@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Install qBittorrent-nox on Ubuntu Server | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="ubuntu, qBittorrent, qBittorrent-nox">
+<meta name="description" content="Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Install qBittorrent-nox on Ubuntu Server" />
+<meta property="og:description" content="Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/" />
+<meta property="og:image" content="https://aimerneige.com/images/ubuntu-qbittorrent.svg" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-11T15:34:47+08:00" />
+<meta property="article:modified_time" content="2022-11-11T15:34:47+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/ubuntu-qbittorrent.svg" />
+<meta name="twitter:title" content="Install qBittorrent-nox on Ubuntu Server"/>
+<meta name="twitter:description" content="Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Install qBittorrent-nox on Ubuntu Server",
+      "item": "https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Install qBittorrent-nox on Ubuntu Server",
+  "name": "Install qBittorrent-nox on Ubuntu Server",
+  "description": "Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update \u0026amp;\u0026amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox.",
+  "keywords": [
+    "ubuntu", "qBittorrent", "qBittorrent-nox"
+  ],
+  "articleBody": "Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update \u0026\u0026 sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox.service [Unit] Description=qBittorrent Command Line Client After=network.target  [Service] Type=forking User=qbittorrent-nox Group=qbittorrent-nox UMask=007 ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8080 Restart=on-failure  [Install] WantedBy=multi-user.target Reload systemctl sudo systemctl daemon-reload Start qBittorrent-nox sudo systemctl start qbittorrent-nox Enable qBittorrent-nox sudo systemctl enable qbittorrent-nox Check if qBittorrent-nox start systemctl status qbittorrent-nox Login in to your qBittorrent-nox    Item Value     username admin   password adminadmin     How to Remove qBittorrent-nox # Remove qBittorrent Stable sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-stable # Remove qBittorrent Unstable (Nightly) sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-unstable -y # Remove qBittorrent sudo apt autoremove qbittorrent-nox ",
+  "wordCount" : "163",
+  "inLanguage": "en",
+  "image":"https://aimerneige.com/images/ubuntu-qbittorrent.svg","datePublished": "2022-11-11T15:34:47+08:00",
+  "dateModified": "2022-11-11T15:34:47+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Install qBittorrent-nox on Ubuntu Server
+    </h1>
+    <div class="post-meta"><span title='2022-11-11 15:34:47 +0800 CST'>November 11, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Linux/Install-qBittorrent-nox-on-Ubuntu-Server.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install-qbittorrent-nox-on-ubuntu-server" aria-label="Install qBittorrent-nox on Ubuntu Server">Install qBittorrent-nox on Ubuntu Server</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#update-ubuntu" aria-label="Update ubuntu">Update ubuntu</a></li>
+                <li>
+                    <a href="#import-qbittorrent-nox-stable" aria-label="Import qBittorrent-nox Stable">Import qBittorrent-nox Stable</a></li>
+                <li>
+                    <a href="#import-qbittorrent-nox-unstable-nightly" aria-label="Import qBittorrent-nox Unstable (Nightly)">Import qBittorrent-nox Unstable (Nightly)</a></li>
+                <li>
+                    <a href="#reflect-the-newly-added-ppa" aria-label="Reflect the newly added PPA">Reflect the newly added PPA</a></li>
+                <li>
+                    <a href="#install-qbittorrent-nox" aria-label="Install qBittorrent-nox">Install qBittorrent-nox</a></li>
+                <li>
+                    <a href="#create-usergroup" aria-label="Create usergroup">Create usergroup</a></li>
+                <li>
+                    <a href="#add-you-to-usergroup" aria-label="Add you to usergroup">Add you to usergroup</a></li>
+                <li>
+                    <a href="#create-a-systemd-service-file" aria-label="Create a systemd service file">Create a systemd service file</a></li>
+                <li>
+                    <a href="#reload-systemctl" aria-label="Reload systemctl">Reload systemctl</a></li>
+                <li>
+                    <a href="#start-qbittorrent-nox" aria-label="Start qBittorrent-nox">Start qBittorrent-nox</a></li>
+                <li>
+                    <a href="#enable-qbittorrent-nox" aria-label="Enable qBittorrent-nox">Enable qBittorrent-nox</a></li>
+                <li>
+                    <a href="#check-if-qbittorrent-nox-start" aria-label="Check if qBittorrent-nox start">Check if qBittorrent-nox start</a></li>
+                <li>
+                    <a href="#login-in-to-your-qbittorrent-nox" aria-label="Login in to your qBittorrent-nox">Login in to your qBittorrent-nox</a></li>
+                <li>
+                    <a href="#how-to-remove-qbittorrent-nox" aria-label="How to Remove qBittorrent-nox">How to Remove qBittorrent-nox</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="install-qbittorrent-nox-on-ubuntu-server">Install qBittorrent-nox on Ubuntu Server<a hidden class="anchor" aria-hidden="true" href="#install-qbittorrent-nox-on-ubuntu-server">#</a></h1>
+<h3 id="update-ubuntu">Update ubuntu<a hidden class="anchor" aria-hidden="true" href="#update-ubuntu">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+</span></span></code></pre></div><h3 id="import-qbittorrent-nox-stable">Import qBittorrent-nox Stable<a hidden class="anchor" aria-hidden="true" href="#import-qbittorrent-nox-stable">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+</span></span></code></pre></div><h3 id="import-qbittorrent-nox-unstable-nightly">Import qBittorrent-nox Unstable (Nightly)<a hidden class="anchor" aria-hidden="true" href="#import-qbittorrent-nox-unstable-nightly">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y
+</span></span></code></pre></div><h3 id="reflect-the-newly-added-ppa">Reflect the newly added PPA<a hidden class="anchor" aria-hidden="true" href="#reflect-the-newly-added-ppa">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span></code></pre></div><h3 id="install-qbittorrent-nox">Install qBittorrent-nox<a hidden class="anchor" aria-hidden="true" href="#install-qbittorrent-nox">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install qbittorrent-nox -y
+</span></span></code></pre></div><h3 id="create-usergroup">Create usergroup<a hidden class="anchor" aria-hidden="true" href="#create-usergroup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo adduser --system --group qbittorrent-nox
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on fedora</span>
+</span></span><span style="display:flex;"><span>sudo groupadd qbittorrent-nox
+</span></span></code></pre></div><h3 id="add-you-to-usergroup">Add you to usergroup<a hidden class="anchor" aria-hidden="true" href="#add-you-to-usergroup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo adduser your-username qbittorrent-nox
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on fedora</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG qbittorrent-nox your-username
+</span></span></code></pre></div><h3 id="create-a-systemd-service-file">Create a systemd service file<a hidden class="anchor" aria-hidden="true" href="#create-a-systemd-service-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/systemd/system/qbittorrent-nox.service
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">qBittorrent Command Line Client</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">forking</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">qbittorrent-nox</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">qbittorrent-nox</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">UMask</span><span style="color:#f92672">=</span><span style="color:#e6db74">007</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/qbittorrent-nox -d --webui-port=8080</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">on-failure</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><h3 id="reload-systemctl">Reload systemctl<a hidden class="anchor" aria-hidden="true" href="#reload-systemctl">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span></code></pre></div><h3 id="start-qbittorrent-nox">Start qBittorrent-nox<a hidden class="anchor" aria-hidden="true" href="#start-qbittorrent-nox">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start qbittorrent-nox
+</span></span></code></pre></div><h3 id="enable-qbittorrent-nox">Enable qBittorrent-nox<a hidden class="anchor" aria-hidden="true" href="#enable-qbittorrent-nox">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable qbittorrent-nox
+</span></span></code></pre></div><h3 id="check-if-qbittorrent-nox-start">Check if qBittorrent-nox start<a hidden class="anchor" aria-hidden="true" href="#check-if-qbittorrent-nox-start">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status qbittorrent-nox
+</span></span></code></pre></div><h3 id="login-in-to-your-qbittorrent-nox">Login in to your qBittorrent-nox<a hidden class="anchor" aria-hidden="true" href="#login-in-to-your-qbittorrent-nox">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>password</td>
+<td>adminadmin</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="how-to-remove-qbittorrent-nox">How to Remove qBittorrent-nox<a hidden class="anchor" aria-hidden="true" href="#how-to-remove-qbittorrent-nox">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove qBittorrent Stable</span>
+</span></span><span style="display:flex;"><span>sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-stable
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove qBittorrent Unstable (Nightly)</span>
+</span></span><span style="display:flex;"><span>sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-unstable -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove qBittorrent</span>
+</span></span><span style="display:flex;"><span>sudo apt autoremove qbittorrent-nox
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/ubuntu/">ubuntu</a></li>
+      <li><a href="https://aimerneige.com/en/tags/qbittorrent/">qBittorrent</a></li>
+      <li><a href="https://aimerneige.com/en/tags/qbittorrent-nox/">qBittorrent-nox</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/en/post/linux/install-wechat-on-fedora/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Install WeChat on Fedora</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ubuntu on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/en/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on AimerNeige&#39;s Blog</description>
+    <title>qBittorrent on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/qbittorrent/</link>
+    <description>Recent content in qBittorrent on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Nov 2022 15:34:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Nov 2022 15:34:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/qbittorrent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install qBittorrent-nox on Ubuntu Server</title>
       <link>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/</link>
