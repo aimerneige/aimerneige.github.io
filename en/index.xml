@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 10 Nov 2022 12:03:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install WeChat on Fedora</title>
-      <link>https://aimerneige.com/en/post/draft/install-wechat-on-fedora/</link>
+      <link>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</link>
       <pubDate>Thu, 10 Nov 2022 12:03:30 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/draft/install-wechat-on-fedora/</guid>
+      <guid>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</guid>
       <description>Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
 winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
 Download And Config Fonts Run the following commands

@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 10 Nov 2022 12:03:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Fedora 系统下安装微信</title>
-      <link>https://aimerneige.com/zh/post/draft/install-wechat-on-fedora/</link>
+      <link>https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/</link>
       <pubDate>Thu, 10 Nov 2022 12:03:27 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/draft/install-wechat-on-fedora/</guid>
+      <guid>https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/</guid>
       <description>在 Fedora 下运行微信 安装 wine sudo dnf install wine 调整缩放比例 输入下面的指令打开 winecfg
 winecfg 在 Graphics 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）
 下载并配置字体 依次执行如下指令即可

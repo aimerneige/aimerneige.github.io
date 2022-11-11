@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Install WeChat on Fedora | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="wechat, fedora, wine">
+<meta name="description" content="Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
+winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
+Download And Config Fonts Run the following commands
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/linux/install-wechat-on-fedora/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/linux/install-wechat-on-fedora/">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Install WeChat on Fedora" />
+<meta property="og:description" content="Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
+winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
+Download And Config Fonts Run the following commands
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/linux/install-wechat-on-fedora/" />
+<meta property="og:image" content="https://aimerneige.com/images/fedora-wechat.svg" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-10T12:03:30+08:00" />
+<meta property="article:modified_time" content="2022-11-10T12:03:30+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/fedora-wechat.svg" />
+<meta name="twitter:title" content="Install WeChat on Fedora"/>
+<meta name="twitter:description" content="Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
+winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
+Download And Config Fonts Run the following commands
+sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Install WeChat on Fedora",
+      "item": "https://aimerneige.com/en/post/linux/install-wechat-on-fedora/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Install WeChat on Fedora",
+  "name": "Install WeChat on Fedora",
+  "description": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)",
+  "keywords": [
+    "wechat", "fedora", "wine"
+  ],
+  "articleBody": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026 Install WeChat Just download the exe Installer. (Same with download it from browser.)\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe Star WeChat Installer with wine:\nwine ./WeChatSetup.exe Then install it as in Windows.\nAfter installed, you can delete the installer file.\nAdjust language Settings Edit this file:\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop Change the part Exec , add a new enviroment variable:\nenv LC_ALL=\"zh_CN.UTF8\" The finally result should like this: (note for the path)\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe Start WeChat Durning the install process, a desktop file has been added to your system. Just open it as a normal application.\nKnow Issue  You can only use Chinese. Chinese characters will not display properly when you set language settings to English The name of the sticker can not be displayed properly The program launched by WeChat will be in Chinese The shadow of the WeChat’s windows still at the top of other program The mini-program might not work  Alternative If you don’t mind installing a nspawn sub-system into your computer, try this awesome project:\n GitHub - loaden/nspawn-qq  Refer Link  AnduinXue - Run WeChat in Ubuntu  ",
+  "wordCount" : "246",
+  "inLanguage": "en",
+  "image":"https://aimerneige.com/images/fedora-wechat.svg","datePublished": "2022-11-10T12:03:30+08:00",
+  "dateModified": "2022-11-10T12:03:30+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/linux/install-wechat-on-fedora/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Install WeChat on Fedora
+    </h1>
+    <div class="post-meta"><span title='2022-11-10 12:03:30 +0800 CST'>November 10, 2022</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;Translations:
+<ul class="i18n_list">
+    <li>
+        <a href="https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/">中文</a>
+    </li>
+</ul>&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Linux/Install-WeChat-On-Fedora.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wechat.svg" alt="Fedora WeChat">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install-wechat-on-fedora" aria-label="Install WeChat on Fedora">Install WeChat on Fedora</a><ul>
+                        
+                <li>
+                    <a href="#install-wine" aria-label="Install Wine">Install Wine</a></li>
+                <li>
+                    <a href="#adjust-dpi-config" aria-label="Adjust DPI Config">Adjust DPI Config</a></li>
+                <li>
+                    <a href="#download-and-config-fonts" aria-label="Download And Config Fonts">Download And Config Fonts</a></li>
+                <li>
+                    <a href="#download--install-wechat" aria-label="Download &amp;amp; Install WeChat">Download &amp; Install WeChat</a></li>
+                <li>
+                    <a href="#adjust-language-settings" aria-label="Adjust language Settings">Adjust language Settings</a></li>
+                <li>
+                    <a href="#start-wechat" aria-label="Start WeChat">Start WeChat</a></li>
+                <li>
+                    <a href="#know-issue" aria-label="Know Issue">Know Issue</a></li>
+                <li>
+                    <a href="#alternative" aria-label="Alternative">Alternative</a></li></ul>
+                </li>
+                <li>
+                    <a href="#refer-link" aria-label="Refer Link">Refer Link</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="install-wechat-on-fedora">Install WeChat on Fedora<a hidden class="anchor" aria-hidden="true" href="#install-wechat-on-fedora">#</a></h1>
+<h2 id="install-wine">Install Wine<a hidden class="anchor" aria-hidden="true" href="#install-wine">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install wine
+</span></span></code></pre></div><h2 id="adjust-dpi-config">Adjust DPI Config<a hidden class="anchor" aria-hidden="true" href="#adjust-dpi-config">#</a></h2>
+<p>Use bellow command to open winecfg</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>winecfg
+</span></span></code></pre></div><p>Adjust the dpi to a suitable value at tab <code>Graphics</code>. (4k monitor, 192 dpi)</p>
+<h2 id="download-and-config-fonts">Download And Config Fonts<a hidden class="anchor" aria-hidden="true" href="#download-and-config-fonts">#</a></h2>
+<p>Run the following commands</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install cabextract
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install winetricks
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>winetricks corefonts gdiplus riched20 riched30
+</span></span></code></pre></div><h2 id="download--install-wechat">Download &amp; Install WeChat<a hidden class="anchor" aria-hidden="true" href="#download--install-wechat">#</a></h2>
+<p>Just download the exe Installer. (Same with download it from browser.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
+</span></span></code></pre></div><p>Star WeChat Installer with wine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine ./WeChatSetup.exe
+</span></span></code></pre></div><p>Then install it as in Windows.</p>
+<p>After installed, you can delete the installer file.</p>
+<h2 id="adjust-language-settings">Adjust language Settings<a hidden class="anchor" aria-hidden="true" href="#adjust-language-settings">#</a></h2>
+<p>Edit this file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop
+</span></span></code></pre></div><p>Change the part <code>Exec</code> , add a new enviroment variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>env LC_ALL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh_CN.UTF8&#34;</span> 
+</span></span></code></pre></div><p>The finally result should like this: (note for the path)</p>
+<pre tabindex="0"><code class="language-desktop" data-lang="desktop">[Desktop Entry]
+Name=WeChat
+Exec=env LC_ALL=&#34;zh_CN.UTF8&#34; env WINEPREFIX=&#34;/home/aimer/.wine&#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk
+Type=Application
+StartupNotify=true
+Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat
+Icon=E03C_WeChat.0
+StartupWMClass=wechat.exe
+</code></pre><h2 id="start-wechat">Start WeChat<a hidden class="anchor" aria-hidden="true" href="#start-wechat">#</a></h2>
+<p>Durning the install process, a desktop file has been added to your system. Just open it as a normal application.</p>
+<h2 id="know-issue">Know Issue<a hidden class="anchor" aria-hidden="true" href="#know-issue">#</a></h2>
+<ol>
+<li>You can only use Chinese. Chinese characters will not display properly when you set language settings to English</li>
+<li>The name of the sticker can not be displayed properly</li>
+<li>The program launched by WeChat will be in Chinese</li>
+<li>The shadow of the WeChat&rsquo;s windows still at the top of other program</li>
+<li>The mini-program might not work</li>
+</ol>
+<h2 id="alternative">Alternative<a hidden class="anchor" aria-hidden="true" href="#alternative">#</a></h2>
+<p>If you don&rsquo;t mind installing a nspawn sub-system into your computer, try this awesome project:</p>
+<ul>
+<li><a href="https://github.com/loaden/nspawn-qq">GitHub - loaden/nspawn-qq</a></li>
+</ul>
+<h1 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h1>
+<ul>
+<li><a href="https://anduin.aiursoft.cn/post/2022/7/25/run-wechat-in-ubuntu">AnduinXue - Run WeChat in Ubuntu</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/wechat/">wechat</a></li>
+      <li><a href="https://aimerneige.com/en/tags/fedora/">fedora</a></li>
+      <li><a href="https://aimerneige.com/en/tags/wine/">wine</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[Reproduce] Learning Rust in 2022</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
