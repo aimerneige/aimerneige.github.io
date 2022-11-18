@@ -108,6 +108,28 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.svg" alt="Ubuntu Filebrowser">
+</figure>
+  <header class="entry-header">
+    <h2>Install Filebrowser on Ubuntu Server
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Install Filebrowser Install file browser to your server:
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:
+filebrowser -a 0.0.0.0 -r /path/to/your/files Access your server and try to login in.
+Username: admin
+Password: admin
+Create Your Own Config Write your config file:
+sudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:
+port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:
+sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-18 16:37:27 +0800 CST'>November 18, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install Filebrowser on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
 </figure>
   <header class="entry-header">

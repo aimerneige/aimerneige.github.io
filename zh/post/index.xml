@@ -6,7 +6,16 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 12:03:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Nov 2022 15:34:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 Ubuntu 服务器上安装 qBittorrent-nox</title>
+      <link>https://aimerneige.com/zh/post/linux/install-qbittorrent-nox-on-ubuntu-server/</link>
+      <pubDate>Fri, 11 Nov 2022 15:34:47 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/linux/install-qbittorrent-nox-on-ubuntu-server/</guid>
+      <description>在 Ubuntu 服务器上安装 qBittorrent-nox 更新系统 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y 导入 qBittorrent-nox 稳定版本的源 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y 导入 qBittorrent-nox 非稳定版本的源（每夜版） sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y 更新源 sudo apt update 安装 qBittorrent-nox sudo apt install qbittorrent-nox -y 创建用户和用户组 sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox 将你添加到用户组中 sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username 创建 service 文件 sudo vim /etc/systemd/system/qbittorrent-nox.service [Unit] Description=qBittorrent Command Line Client After=network.</description>
+    </item>
+    
     <item>
       <title>在 Fedora 系统上安装微信</title>
       <link>https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/</link>

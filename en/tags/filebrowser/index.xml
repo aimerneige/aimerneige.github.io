@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>filebrowser on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/filebrowser/</link>
+    <description>Recent content in filebrowser on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Nov 2022 16:37:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/filebrowser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Filebrowser on Ubuntu Server</title>
+      <link>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</link>
+      <pubDate>Fri, 18 Nov 2022 16:37:27 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</guid>
+      <description>Install Filebrowser Install file browser to your server:
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:
+filebrowser -a 0.0.0.0 -r /path/to/your/files Access your server and try to login in.
+Username: admin
+Password: admin
+Create Your Own Config Write your config file:
+sudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:
+port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:
+sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:</description>
+    </item>
+    
+  </channel>
+</rss>

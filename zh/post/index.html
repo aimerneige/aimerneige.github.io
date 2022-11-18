@@ -123,6 +123,20 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
+</figure>
+  <header class="entry-header">
+    <h2>在 Ubuntu 服务器上安装 qBittorrent-nox
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在 Ubuntu 服务器上安装 qBittorrent-nox 更新系统 sudo apt update &amp;&amp; sudo apt upgrade -y 导入 qBittorrent-nox 稳定版本的源 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y 导入 qBittorrent-nox 非稳定版本的源（每夜版） sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y 更新源 sudo apt update 安装 qBittorrent-nox sudo apt install qbittorrent-nox -y 创建用户和用户组 sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox 将你添加到用户组中 sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username 创建 service 文件 sudo vim /etc/systemd/system/qbittorrent-nox.service [Unit] Description=qBittorrent Command Line Client After=network....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-11 15:34:47 +0800 CST'>十一月 11, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 Ubuntu 服务器上安装 qBittorrent-nox" href="https://aimerneige.com/zh/post/linux/install-qbittorrent-nox-on-ubuntu-server/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wechat.svg" alt="Fedora WeChat">
 </figure>
   <header class="entry-header">
@@ -292,26 +306,6 @@ rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1....</p>
   </div>
   <footer class="entry-footer"><span title='2021-08-24 21:31:05 +0800 CST'>八月 24, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>对于某实验平台的吐槽
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
- 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
- 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
-这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
-这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
-结果我在后台找到了下面的代码:
-$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
-对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-08-19 21:44:21 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 对于某实验平台的吐槽" href="https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

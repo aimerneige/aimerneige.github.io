@@ -123,6 +123,28 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.svg" alt="Ubuntu Filebrowser">
+</figure>
+  <header class="entry-header">
+    <h2>Install Filebrowser on Ubuntu Server
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Install Filebrowser Install file browser to your server:
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:
+filebrowser -a 0.0.0.0 -r /path/to/your/files Access your server and try to login in.
+Username: admin
+Password: admin
+Create Your Own Config Write your config file:
+sudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:
+port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:
+sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-18 16:37:27 +0800 CST'>November 18, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install Filebrowser on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
 </figure>
   <header class="entry-header">
@@ -263,20 +285,6 @@ package com.aimerneige.example.config;  import org.springframework.context.annot
   </div>
   <footer class="entry-footer"><span title='2021-12-30 15:35:21 +0800 CST'>December 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Enable Swagger on Spring Boot Gradle Projects" href="https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/hugo-logo-wide.svg" alt="hugo-logo">
-</figure>
-  <header class="entry-header">
-    <h2>Hello Hugo
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Before Start It’s been a long time since I wrote a blog post last time. That’s because I often reinstall my system on computer, and every time I install and configure the blog of hexo on my computer is a troublesome thing. But recently, I discovered hugo, a simple and easy-to-use blog system, which can keep me away from hexo, which is slow and troublesome to configure and install. It has a great experience to use and I happened to change a blog theme, so I decided to use hugo to build my new blog....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>August 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/en/post/others/hello-hugo/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
