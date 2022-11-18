@@ -115,7 +115,7 @@ env LC_ALL=&#34;zh_CN.UTF8&#34; 最终结果应该是这样（注意路径）
   "keywords": [
     "wechat", "fedora", "wine"
   ],
-  "articleBody": "在 Fedora 系统上运行微信 安装 wine sudo dnf install wine 调整缩放比例 输入下面的指令打开 winecfg\nwinecfg 在 Graphics 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）\n下载并配置字体 依次执行如下指令即可\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 下载并安装微信 直接下载官方的 exe 安装包（在网页下载也是一样的）\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 使用 wine 启动微信\nwine ./WeChatSetup.exe 接下来按照 Windows 的安装逻辑点击下一步安装好微信\n安装结束后可以删除安装包\n修改语言设置 修改这个文件\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop 调整 Exec 这一部分，添加如下环境变量\nenv LC_ALL=\"zh_CN.UTF8\" 最终结果应该是这样（注意路径）\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe 启动微信 安装过程中会自动添加 desktop 文件，直接打开即可。\n已知问题  只能使用中文，使用英文时无法正常显示中文字符 表情包的名称显示不正常 通过微信调用的进程会携带中文的环境变量 程序窗口被覆盖后窗口阴影依然显示在最前 小程序有可能闪退  替代方案 如过你不介意安装一个 systemd-nspawn 的容器的话，可以尝试这个项目：\n GitHub - loaden/nspawn-qq  参考链接  AnduinXue - Run WeChat in Ubuntu  ",
+  "articleBody": "在 Fedora 系统上运行微信 安装 wine sudo dnf install wine 调整缩放比例 输入下面的指令打开 winecfg\nwinecfg 在 Graphics 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）\n下载并配置字体 依次执行如下指令即可\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 下载并安装微信 直接下载官方的 exe 安装包（在网页下载也是一样的）\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 使用 wine 启动微信\nwine ./WeChatSetup.exe 接下来按照 Windows 的安装逻辑点击下一步安装好微信\n安装结束后可以删除安装包\n修改语言设置 修改这个文件\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop 调整 Exec 这一部分，添加如下环境变量\nenv LC_ALL=\"zh_CN.UTF8\" 最终结果应该是这样（注意路径）\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe 启动微信 安装过程中会自动添加 desktop 文件，直接打开即可。\n已知问题  只能使用中文，使用英文时无法正常显示中文字符 表情包的名称显示不正常 通过微信调用的进程会携带中文的环境变量 程序窗口被覆盖后窗口阴影依然显示在最前 小程序有可能闪退  替代方案 如果你不介意安装一个 systemd-nspawn 的容器的话，可以尝试这个项目：\n GitHub - loaden/nspawn-qq  参考链接  AnduinXue - Run WeChat in Ubuntu  ",
   "wordCount" : "101",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/fedora-wechat.svg","datePublished": "2022-11-10T12:03:27+08:00",
@@ -287,7 +287,7 @@ StartupWMClass=wechat.exe
 <li>小程序有可能闪退</li>
 </ol>
 <h2 id="替代方案">替代方案<a hidden class="anchor" aria-hidden="true" href="#替代方案">#</a></h2>
-<p>如过你不介意安装一个 systemd-nspawn 的容器的话，可以尝试这个项目：</p>
+<p>如果你不介意安装一个 systemd-nspawn 的容器的话，可以尝试这个项目：</p>
 <ul>
 <li><a href="https://github.com/loaden/nspawn-qq">GitHub - loaden/nspawn-qq</a></li>
 </ul>
