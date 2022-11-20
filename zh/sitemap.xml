@@ -358,6 +358,16 @@
   </url><url>
     <loc>https://aimerneige.com/zh/tags/tools/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/tools/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/tools/"
+                />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/vscode/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>

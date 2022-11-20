@@ -6,7 +6,20 @@
     <description>Recent content in fedora on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 12:03:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 20:10:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rEFInd on Fedora</title>
+      <link>https://aimerneige.com/en/post/linux/refind-on-fedora/</link>
+      <pubDate>Sun, 20 Nov 2022 20:10:58 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/refind-on-fedora/</guid>
+      <description>rEFInd on Fedora Install Obtain an rEFInd binary for RPM based system.
+direct link (not the newest)
+Find the newest rpm package download link from here.
+After you download a rpm package, install it with your package manager
+sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm sudo yum localinstall refind-0.6.11-1.x86_64.rpm At the most of the time, your are ready to use rEFInd, if it did not work on your system, run redind-install:</description>
+    </item>
+    
     <item>
       <title>Install WeChat on Fedora</title>
       <link>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</link>

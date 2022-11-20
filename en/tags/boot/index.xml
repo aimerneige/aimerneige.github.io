@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>boot on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/boot/</link>
+    <description>Recent content in boot on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Nov 2022 20:10:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rEFInd on Fedora</title>
+      <link>https://aimerneige.com/en/post/linux/refind-on-fedora/</link>
+      <pubDate>Sun, 20 Nov 2022 20:10:58 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/refind-on-fedora/</guid>
+      <description>rEFInd on Fedora Install Obtain an rEFInd binary for RPM based system.
+direct link (not the newest)
+Find the newest rpm package download link from here.
+After you download a rpm package, install it with your package manager
+sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm sudo yum localinstall refind-0.6.11-1.x86_64.rpm At the most of the time, your are ready to use rEFInd, if it did not work on your system, run redind-install:</description>
+    </item>
+    
+  </channel>
+</rss>
