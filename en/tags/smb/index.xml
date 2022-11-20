@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>smb on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/smb/</link>
+    <description>Recent content in smb on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Nov 2022 17:55:43 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/smb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install and Configure Samba</title>
+      <link>https://aimerneige.com/en/post/linux/install-and-configure-samba/</link>
+      <pubDate>Sun, 20 Nov 2022 17:55:43 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
+      <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
+    </item>
+    
+  </channel>
+</rss>

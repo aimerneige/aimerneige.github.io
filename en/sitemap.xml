@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -28,14 +28,14 @@
                 href="https://aimerneige.com/en/categories/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/tags/filebrowser/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <loc>https://aimerneige.com/en/tags/fileshare/</loc>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <loc>https://aimerneige.com/en/post/linux/install-and-configure-samba/</loc>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/categories/linux/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -48,7 +48,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -60,8 +60,11 @@
                 href="https://aimerneige.com/en/post/"
                 />
   </url><url>
+    <loc>https://aimerneige.com/en/tags/smb/</loc>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
+  </url><url>
     <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+    <lastmod>2022-11-20T17:55:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -72,6 +75,12 @@
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/"
                 />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/filebrowser/</loc>
+    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</loc>
+    <lastmod>2022-11-18T16:37:27+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/tags/ubuntu/</loc>
     <lastmod>2022-11-18T16:37:27+08:00</lastmod>

@@ -6,7 +6,17 @@
     <description>Recent content in Posts 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Nov 2022 16:37:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 17:55:43 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install and Configure Samba</title>
+      <link>https://aimerneige.com/en/post/linux/install-and-configure-samba/</link>
+      <pubDate>Sun, 20 Nov 2022 17:55:43 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
+      <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
+    </item>
+    
     <item>
       <title>Install Filebrowser on Ubuntu Server</title>
       <link>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</link>

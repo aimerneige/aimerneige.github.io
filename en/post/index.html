@@ -123,6 +123,19 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Install and Configure Samba
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username ....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-20 17:55:43 +0800 CST'>November 20, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install and Configure Samba" href="https://aimerneige.com/en/post/linux/install-and-configure-samba/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.svg" alt="Ubuntu Filebrowser">
 </figure>
   <header class="entry-header">
@@ -268,23 +281,6 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
   </div>
   <footer class="entry-footer"><span title='2022-04-30 00:42:38 +0800 CST'>April 30, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Shell Learning Notes Variable" href="https://aimerneige.com/en/post/shell/shell-learning-notes-variable/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/spring_swagger.svg" alt="Spring Swagger">
-</figure>
-  <header class="entry-header">
-    <h2>Enable Swagger on Spring Boot Gradle Projects
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
-plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &#34;io.springfox:springfox-boot-starter:3.0.0&#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
-Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-12-30 15:35:21 +0800 CST'>December 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Enable Swagger on Spring Boot Gradle Projects" href="https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
