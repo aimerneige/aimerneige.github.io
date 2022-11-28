@@ -17,7 +17,7 @@
 direct link (not the newest)
 Find the newest rpm package download link from here.
 After you download a rpm package, install it with your package manager
-sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm sudo yum localinstall refind-0.6.11-1.x86_64.rpm At the most of the time, your are ready to use rEFInd, if it did not work on your system, run redind-install:</description>
+sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm sudo yum localinstall refind-0.6.11-1.x86_64.rpm At the most of the time, your are ready to use rEFInd, if it did not work on your system, run refind-install:</description>
     </item>
     
     <item>
