@@ -258,8 +258,8 @@ if (!doNotTrack) {
 <p>From: <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">Geeks for Geeks</a></p>
 </blockquote>
 <h1 id="基础语法">基础语法<a hidden class="anchor" aria-hidden="true" href="#基础语法">#</a></h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>path...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
-</span></span></code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>path...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
+</code></pre></div><blockquote>
 <ul>
 <li>The <code>options</code> attribute controls the treatment of the symbolic links, debugging options, and optimization method.</li>
 <li>The <code>path...</code> attribute defines the starting directory or directories where find will search the files.</li>
@@ -272,8 +272,8 @@ if (!doNotTrack) {
 <style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}</style>
 <div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice note" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#note-notice"></use></svg></span>Note</p><p>如果查询 <code>man find</code>，会得到这样一份语法说明:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find <span style="color:#f92672">[</span>-H<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D debugopts<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-Olevel<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>starting-point...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
-</span></span></code></pre></div><p>本文将 <code>[-H] [-L] [-P] [-D debugopts] [-Olevel]</code> 这一部分抽象成了 <code>options</code></p></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find <span style="color:#f92672">[</span>-H<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D debugopts<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-Olevel<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>starting-point...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
+</code></pre></div><p>本文将 <code>[-H] [-L] [-P] [-D debugopts] [-Olevel]</code> 这一部分抽象成了 <code>options</code></p></div>
 
 <p><code>-H</code>, <code>-L</code> and <code>-P</code> 用于控制对 <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> 的处理方法。</p>
 <p><code>[-D debugopts]</code> 用于控制调试功能。</p>
@@ -293,69 +293,69 @@ if (!doNotTrack) {
 <p>包含各种选项，搜索模式和操作。比如可以指定文件名，文件大小，修改日期等选项来过滤查找内容。</p>
 <h1 id="使用样例">使用样例<a hidden class="anchor" aria-hidden="true" href="#使用样例">#</a></h1>
 <h3 id="搜索当前目录下全部名称为-avatar-的文件或文件夹">搜索当前目录下全部名称为 <code>avatar</code> 的文件或文件夹<a hidden class="anchor" aria-hidden="true" href="#搜索当前目录下全部名称为-avatar-的文件或文件夹">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;avatar&#34;</span>
-</span></span></code></pre></div><h3 id="搜索当前目录下所有-go-源代码文件">搜索当前目录下所有 go 源代码文件<a hidden class="anchor" aria-hidden="true" href="#搜索当前目录下所有-go-源代码文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.go&#34;</span> -type f
-</span></span></code></pre></div><div class="notice note" >
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#34;avatar&#34;</span>
+</code></pre></div><h3 id="搜索当前目录下所有-go-源代码文件">搜索当前目录下所有 go 源代码文件<a hidden class="anchor" aria-hidden="true" href="#搜索当前目录下所有-go-源代码文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#34;*.go&#34;</span> -type f
+</code></pre></div><div class="notice note" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#note-notice"></use></svg></span>Note</p><p>如果没有 <code>-type f</code>，输出结果可能包含有以 <code>*.go</code> 结尾的文件夹。</p></div>
 
 <h3 id="查找最近-20-天内更新过的文件">查找最近 20 天内更新过的文件<a hidden class="anchor" aria-hidden="true" href="#查找最近-20-天内更新过的文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -ctime -20
-</span></span></code></pre></div><h3 id="只搜索当前目录下的文件和文件夹而不递归搜索">只搜索当前目录下的文件和文件夹而不递归搜索<a hidden class="anchor" aria-hidden="true" href="#只搜索当前目录下的文件和文件夹而不递归搜索">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -maxdepth <span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><div class="notice warning" >
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -ctime -20
+</code></pre></div><h3 id="只搜索当前目录下的文件和文件夹而不递归搜索">只搜索当前目录下的文件和文件夹而不递归搜索<a hidden class="anchor" aria-hidden="true" href="#只搜索当前目录下的文件和文件夹而不递归搜索">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -maxdepth <span style="color:#ae81ff">1</span>
+</code></pre></div><div class="notice warning" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p><code>-maxdepth</code> 作为全局选项应该位于其他选项的前面。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 正确的做法</span>
-</span></span><span style="display:flex;"><span>find . -maxdepth <span style="color:#ae81ff">1</span> -name <span style="color:#e6db74">&#34;*avatar*&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 不当的做法（会有警告）</span>
-</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*avatar*&#34;</span> -maxdepth <span style="color:#ae81ff">1</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 正确的做法</span>
+find . -maxdepth <span style="color:#ae81ff">1</span> -name <span style="color:#e6db74">&#34;*avatar*&#34;</span>
+<span style="color:#75715e"># 不当的做法（会有警告）</span>
+find . -name <span style="color:#e6db74">&#34;*avatar*&#34;</span> -maxdepth <span style="color:#ae81ff">1</span>
+</code></pre></div></div>
 
 <h3 id="删除当前目录下名为-temp-的文件">删除当前目录下名为 temp 的文件<a hidden class="anchor" aria-hidden="true" href="#删除当前目录下名为-temp-的文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 直接删</span>
-</span></span><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -delete
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 打印一下删了哪些文件</span>
-</span></span><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -delete -print
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 为了防止删错，还是确认一下吧</span>
-</span></span><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -ok rm <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="查找一下七天前的旧日志并在删除之前询问它们">查找一下七天前的旧日志，并在删除之前询问它们<a hidden class="anchor" aria-hidden="true" href="#查找一下七天前的旧日志并在删除之前询问它们">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find ./log -type f -mtime +7 -ok rm <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="查找指定目录下有哪些空文件">查找指定目录下有哪些空文件<a hidden class="anchor" aria-hidden="true" href="#查找指定目录下有哪些空文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 打印文件名</span>
-</span></span><span style="display:flex;"><span>find /home/aimerneige /root -type f -size <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 调用 ls 看一下文件属性吧</span>
-</span></span><span style="display:flex;"><span>find /home/aimerneige /root -type f -size <span style="color:#ae81ff">0</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="查找当前目录下指定大小范围内的文件">查找当前目录下指定大小范围内的文件<a hidden class="anchor" aria-hidden="true" href="#查找当前目录下指定大小范围内的文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 大于 200k</span>
-</span></span><span style="display:flex;"><span>find . -type f -size +200k
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 小于200k</span>
-</span></span><span style="display:flex;"><span>find . -type f -size -200k
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在 50k 与 200k 之间</span>
-</span></span><span style="display:flex;"><span>find . -type f -size +50k -200k
-</span></span></code></pre></div><h3 id="查找全部-ntfs-硬盘中拷贝出的文件">查找全部 ntfs 硬盘中拷贝出的文件<a hidden class="anchor" aria-hidden="true" href="#查找全部-ntfs-硬盘中拷贝出的文件">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查找权限为 777 的文件，并打印详细信息</span>
-</span></span><span style="display:flex;"><span>find . -type f -perm <span style="color:#ae81ff">777</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 777 太讨厌了，权限改为默认的 664</span>
-</span></span><span style="display:flex;"><span>find . -type f -perm <span style="color:#ae81ff">777</span> -exec chmod <span style="color:#ae81ff">664</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="看一下当前目录下文件占用情况">看一下当前目录下文件占用情况<a hidden class="anchor" aria-hidden="true" href="#看一下当前目录下文件占用情况">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -type d -exec du -sh <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="批量添加文件后缀">批量添加文件后缀<a hidden class="anchor" aria-hidden="true" href="#批量添加文件后缀">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;*.JPG&#34;</span> -exec mv <span style="color:#f92672">{}</span> <span style="color:#f92672">{}</span>.jpg <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h3 id="使用-bat-查看当前目录下全部-go-源代码">使用 bat 查看当前目录下全部 go 源代码<a hidden class="anchor" aria-hidden="true" href="#使用-bat-查看当前目录下全部-go-源代码">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span> -exec bat <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><h1 id="使用技巧">使用技巧<a hidden class="anchor" aria-hidden="true" href="#使用技巧">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接删</span>
+find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -delete
+<span style="color:#75715e"># 打印一下删了哪些文件</span>
+find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -delete -print
+<span style="color:#75715e"># 为了防止删错，还是确认一下吧</span>
+find . -type f -name <span style="color:#e6db74">&#34;temp&#34;</span> -ok rm <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="查找一下七天前的旧日志并在删除之前询问它们">查找一下七天前的旧日志，并在删除之前询问它们<a hidden class="anchor" aria-hidden="true" href="#查找一下七天前的旧日志并在删除之前询问它们">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ./log -type f -mtime +7 -ok rm <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="查找指定目录下有哪些空文件">查找指定目录下有哪些空文件<a hidden class="anchor" aria-hidden="true" href="#查找指定目录下有哪些空文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打印文件名</span>
+find /home/aimerneige /root -type f -size <span style="color:#ae81ff">0</span>
+<span style="color:#75715e"># 调用 ls 看一下文件属性吧</span>
+find /home/aimerneige /root -type f -size <span style="color:#ae81ff">0</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="查找当前目录下指定大小范围内的文件">查找当前目录下指定大小范围内的文件<a hidden class="anchor" aria-hidden="true" href="#查找当前目录下指定大小范围内的文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 大于 200k</span>
+find . -type f -size +200k
+<span style="color:#75715e"># 小于200k</span>
+find . -type f -size -200k
+<span style="color:#75715e"># 在 50k 与 200k 之间</span>
+find . -type f -size +50k -200k
+</code></pre></div><h3 id="查找全部-ntfs-硬盘中拷贝出的文件">查找全部 ntfs 硬盘中拷贝出的文件<a hidden class="anchor" aria-hidden="true" href="#查找全部-ntfs-硬盘中拷贝出的文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查找权限为 777 的文件，并打印详细信息</span>
+find . -type f -perm <span style="color:#ae81ff">777</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+<span style="color:#75715e"># 777 太讨厌了，权限改为默认的 664</span>
+find . -type f -perm <span style="color:#ae81ff">777</span> -exec chmod <span style="color:#ae81ff">664</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="看一下当前目录下文件占用情况">看一下当前目录下文件占用情况<a hidden class="anchor" aria-hidden="true" href="#看一下当前目录下文件占用情况">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type d -exec du -sh <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="批量添加文件后缀">批量添加文件后缀<a hidden class="anchor" aria-hidden="true" href="#批量添加文件后缀">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type f -name <span style="color:#e6db74">&#34;*.JPG&#34;</span> -exec mv <span style="color:#f92672">{}</span> <span style="color:#f92672">{}</span>.jpg <span style="color:#ae81ff">\;</span>
+</code></pre></div><h3 id="使用-bat-查看当前目录下全部-go-源代码">使用 bat 查看当前目录下全部 go 源代码<a hidden class="anchor" aria-hidden="true" href="#使用-bat-查看当前目录下全部-go-源代码">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span> -exec bat <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><h1 id="使用技巧">使用技巧<a hidden class="anchor" aria-hidden="true" href="#使用技巧">#</a></h1>
 <h3 id="当搜索目标路径为当前目录时可以省略不写">当搜索目标路径为当前目录<code>.</code>时，可以省略不写<a hidden class="anchor" aria-hidden="true" href="#当搜索目标路径为当前目录时可以省略不写">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上面的指令和下面的等价</span>
-</span></span><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span>
-</span></span></code></pre></div><h3 id="当结果过多时使用-xargs-代替--exec">当结果过多时，使用 <code>xargs</code> 代替 <code>-exec</code><a hidden class="anchor" aria-hidden="true" href="#当结果过多时使用-xargs-代替--exec">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><p>exec 的原理是将查找结果一次性发送到后面的命令当中，如果结果过多会导致数据溢出而报错。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span>
+<span style="color:#75715e"># 上面的指令和下面的等价</span>
+find . -type f -name <span style="color:#e6db74">&#34;*.go&#34;</span>
+</code></pre></div><h3 id="当结果过多时使用-xargs-代替--exec">当结果过多时，使用 <code>xargs</code> 代替 <code>-exec</code><a hidden class="anchor" aria-hidden="true" href="#当结果过多时使用-xargs-代替--exec">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div><p>exec 的原理是将查找结果一次性发送到后面的命令当中，如果结果过多会导致数据溢出而报错。</p>
 <p>使用管道以及 xargs 来避免这个问题：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> | xargs ls -l
-</span></span></code></pre></div><p>结果太多了不好看，我们把结果输出到一个文件里面。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> | xargs ls -l &gt; ./result.txt
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> | xargs ls -l
+</code></pre></div><p>结果太多了不好看，我们把结果输出到一个文件里面。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ~ -type f -name <span style="color:#e6db74">&#34;*.cpp&#34;</span> | xargs ls -l &gt; ./result.txt
+</code></pre></div>
 
   </div>
 
@@ -417,7 +417,7 @@ if (!doNotTrack) {
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

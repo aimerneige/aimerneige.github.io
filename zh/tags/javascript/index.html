@@ -118,9 +118,9 @@ if (!doNotTrack) {
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
+$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑  })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1....</p>
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1....</p>
   </div>
   <footer class="entry-footer"><span title='2021-08-19 21:44:21 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 对于某实验平台的吐槽" href="https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/"></a>
@@ -150,7 +150,7 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

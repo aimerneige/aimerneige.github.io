@@ -84,7 +84,7 @@ if (!doNotTrack) {
   "keywords": [
     "editor", "tool"
   ],
-  "articleBody": "在多人协作的项目中，为了同一代码格式，可以使用 editorconfig 来定义，这样不仅可以帮助协作者快速了解当前项目要求的代码风格，也可以方便使用一些格式化工具保证代码风格按照预期格式化。\n快速了解  What is EditorConfig? EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems. Source: https://editorconfig.org/\n 简单示例  示例来自 https://editorconfig.org/\n # EditorConfig is awesome: https://EditorConfig.org  # top-most EditorConfig file root = true  # Unix-style newlines with a newline ending every file [*] end_of_line = lf insert_final_newline = true  # Matches multiple files with brace expansion notation # Set default charset [*.{js,py}] charset = utf-8  # 4 space indentation [*.py] indent_style = space indent_size = 4  # Tab indentation (no size specified) [Makefile] indent_style = tab  # Indentation override for all JS under lib directory [lib/**.js] indent_style = space indent_size = 2  # Matches the exact files either package.json or .travis.yml [{package.json,.travis.yml}] indent_style = space indent_size = 2 使用方法 直接在项目目录下新建文件 .editorconfig 写入配置，安装对应插件后即可，保存文件时会按照配置文件自动格式化。\n额外地，如果你在 Windows 下如果使用 Windows Explorer 新建 .editorconfig 文件，需要将文件名写为 .editorconfig.，Windows 会自动重命名为 .editorconfig。\n特殊符号的含义    符号 含义     * 匹配任何字符串，除了路径分割符 (/)   ** 匹配任何字符串   ? 匹配任何单字符   [name] 匹配 name 中所包含的任一字符   [!name] 匹配不包含在 name 中的任一字符   {s1,s2,s3} 匹配任何给定单字符串 (用逗号分割) (在 EditorConfig Core 0.11.0 后受支持)   {num1..num2} 匹配任何在 num1 和 num2 之间的数字，num1 和 num2 可以是正数也可以是负数    支持的配置属性  indent_style 缩进样式 {tab, space} indent_size 每次缩进相当于多少列 {2,4,8…} (当 indent_style 设置为 space 时使用) tab_width 每次缩进相当于多少列 {2,4,8…} (当 indent_style 设置为 tab 时使用) end_of_line 换行 {lf, cr, crlf} charset 编码 {latin1, utf-16be, utf-16le, utf-8, utf-8-bom, unset} trim_trailing_whitespace {true, false} 是否删掉结尾的空白字符 insert_final_newline {true, false} 是否在结尾插入新行 root {true, false} 是否顶级配置文件  ",
+  "articleBody": "在多人协作的项目中，为了同一代码格式，可以使用 editorconfig 来定义，这样不仅可以帮助协作者快速了解当前项目要求的代码风格，也可以方便使用一些格式化工具保证代码风格按照预期格式化。\n快速了解  What is EditorConfig? EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems. Source: https://editorconfig.org/\n 简单示例  示例来自 https://editorconfig.org/\n # EditorConfig is awesome: https://EditorConfig.org # top-most EditorConfig file root = true # Unix-style newlines with a newline ending every file [*] end_of_line = lf insert_final_newline = true # Matches multiple files with brace expansion notation # Set default charset [*.{js,py}] charset = utf-8 # 4 space indentation [*.py] indent_style = space indent_size = 4 # Tab indentation (no size specified) [Makefile] indent_style = tab # Indentation override for all JS under lib directory [lib/**.js] indent_style = space indent_size = 2 # Matches the exact files either package.json or .travis.yml [{package.json,.travis.yml}] indent_style = space indent_size = 2 使用方法 直接在项目目录下新建文件 .editorconfig 写入配置，安装对应插件后即可，保存文件时会按照配置文件自动格式化。\n额外地，如果你在 Windows 下如果使用 Windows Explorer 新建 .editorconfig 文件，需要将文件名写为 .editorconfig.，Windows 会自动重命名为 .editorconfig。\n特殊符号的含义    符号 含义     * 匹配任何字符串，除了路径分割符 (/)   ** 匹配任何字符串   ? 匹配任何单字符   [name] 匹配 name 中所包含的任一字符   [!name] 匹配不包含在 name 中的任一字符   {s1,s2,s3} 匹配任何给定单字符串 (用逗号分割) (在 EditorConfig Core 0.11.0 后受支持)   {num1..num2} 匹配任何在 num1 和 num2 之间的数字，num1 和 num2 可以是正数也可以是负数    支持的配置属性  indent_style 缩进样式 {tab, space} indent_size 每次缩进相当于多少列 {2,4,8…} (当 indent_style 设置为 space 时使用) tab_width 每次缩进相当于多少列 {2,4,8…} (当 indent_style 设置为 tab 时使用) end_of_line 换行 {lf, cr, crlf} charset 编码 {latin1, utf-16be, utf-16le, utf-8, utf-8-bom, unset} trim_trailing_whitespace {true, false} 是否删掉结尾的空白字符 insert_final_newline {true, false} 是否在结尾插入新行 root {true, false} 是否顶级配置文件  ",
   "wordCount" : "269",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/editorconfig.png","datePublished": "2021-01-29T16:37:25+08:00",
@@ -213,40 +213,40 @@ if (!doNotTrack) {
 <blockquote>
 <p>示例来自 <a href="https://editorconfig.org/">https://editorconfig.org/</a></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-.editorconfig" data-lang=".editorconfig"><span style="display:flex;"><span><span style="color:#75715e"># EditorConfig is awesome: https://EditorConfig.org</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># top-most EditorConfig file</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unix-style newlines with a newline ending every file</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[*]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end_of_line</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">lf</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">insert_final_newline</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Matches multiple files with brace expansion notation</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default charset</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[*.{js,py}]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">charset</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">utf-8</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4 space indentation</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[*.py]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">4</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tab indentation (no size specified)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Makefile]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">tab</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Indentation override for all JS under lib directory</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[lib/**.js]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Matches the exact files either package.json or .travis.yml</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[{package.json,.travis.yml}]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2</span>
-</span></span></code></pre></div><h2 id="使用方法">使用方法<a hidden class="anchor" aria-hidden="true" href="#使用方法">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.editorconfig" data-lang=".editorconfig"><span style="color:#75715e"># EditorConfig is awesome: https://EditorConfig.org</span>
+
+<span style="color:#75715e"># top-most EditorConfig file</span>
+<span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+
+<span style="color:#75715e"># Unix-style newlines with a newline ending every file</span>
+<span style="color:#66d9ef">[*]</span>
+<span style="color:#a6e22e">end_of_line</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">lf</span>
+<span style="color:#a6e22e">insert_final_newline</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+
+<span style="color:#75715e"># Matches multiple files with brace expansion notation</span>
+<span style="color:#75715e"># Set default charset</span>
+<span style="color:#66d9ef">[*.{js,py}]</span>
+<span style="color:#a6e22e">charset</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">utf-8</span>
+
+<span style="color:#75715e"># 4 space indentation</span>
+<span style="color:#66d9ef">[*.py]</span>
+<span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
+<span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">4</span>
+
+<span style="color:#75715e"># Tab indentation (no size specified)</span>
+<span style="color:#66d9ef">[Makefile]</span>
+<span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">tab</span>
+
+<span style="color:#75715e"># Indentation override for all JS under lib directory</span>
+<span style="color:#66d9ef">[lib/**.js]</span>
+<span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
+<span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2</span>
+
+<span style="color:#75715e"># Matches the exact files either package.json or .travis.yml</span>
+<span style="color:#66d9ef">[{package.json,.travis.yml}]</span>
+<span style="color:#a6e22e">indent_style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">space</span>
+<span style="color:#a6e22e">indent_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2</span>
+</code></pre></div><h2 id="使用方法">使用方法<a hidden class="anchor" aria-hidden="true" href="#使用方法">#</a></h2>
 <p>直接在项目目录下新建文件 <code>.editorconfig</code> 写入配置，安装对应插件后即可，保存文件时会按照配置文件自动格式化。</p>
 <p>额外地，如果你在 Windows 下如果使用 <strong>Windows Explorer</strong> 新建 <code>.editorconfig</code> 文件，需要将文件名写为 <code>.editorconfig.</code>，Windows 会自动重命名为 <code>.editorconfig</code>。</p>
 <h2 id="特殊符号的含义">特殊符号的含义<a hidden class="anchor" aria-hidden="true" href="#特殊符号的含义">#</a></h2>
@@ -361,7 +361,7 @@ if (!doNotTrack) {
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

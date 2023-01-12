@@ -26,10 +26,10 @@ sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64
       <pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid>
-      <description>Onedrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
+      <description>Onedrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive Authorize this app visiting: https://..... Enter the response uri: Copy the url from browser like this:
 https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Paste it into terminal then press enter:
 The Final result will like this:
-[user@hostname ~]$ onedrive Authorize this app visiting:  https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient  Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt;  Application has been successfully authorized, however no additional command switches were provided.</description>
+[user@hostname ~]$ onedrive Authorize this app visiting: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Application has been successfully authorized, however no additional command switches were provided. Please use &amp;#39;onedrive --help&amp;#39; for further assistance in regards to running this application.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
       
       <guid>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</guid>
       <description>This article are reproduce from pretzelhammer/rust-blog
- Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;quot; Most people give up before they even get started when they get advice like this.</description>
     </item>
     
     <item>
@@ -152,9 +152,9 @@ your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you ne
       
       <guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
       <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
-plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
+plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &amp;quot;io.springfox:springfox-boot-starter:3.0.0&amp;quot; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.</description>
     </item>
     
     <item>
@@ -199,9 +199,9 @@ Adapt colors Make a new folder at project/app/src/main/res/values-night then mak
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&#39;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&#39;; \mu(x), \kappa(x, x))$$
  Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
+C #include &amp;lt;stdio.h&amp;gt;int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
     </item>
     
   </channel>

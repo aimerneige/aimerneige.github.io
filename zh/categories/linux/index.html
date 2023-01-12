@@ -175,7 +175,7 @@ env LC_ALL=&#34;zh_CN.UTF8&#34; 最终结果应该是这样（注意路径）
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
    平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;～&#34;  &#34;!&#34;: &#34;！&#34;  &#34;@&#34;: &#34;＠&#34;  &#34;#&#34;: &#34;＃&#34;  &#34;$&#34;: &#34;￥&#34;  &#34;%&#34;: &#34;％&#34;  &#34;^&#34;: &#34;……&#34;  &#34;&amp;&#34;: &#34;＆&#34;  &#34;*&#34;: &#34;×&#34;  &#34;(&#34;: &#34;（&#34;  &#34;)&#34;: &#34;）&#34;  &#34;_&#34;: &#34;——&#34;  &#34;&#43;&#34;: &#34;＋&#34;  &#34;-&#34;: &#34;－&#34;  &#34;=&#34;: &#34;＝&#34;  &#34;[&#34;: &#34;【&#34;  &#34;]&#34;: &#34;】&#34;  &#34;{&#34;: &#34;｛&#34;  &#34;}&#34;: &#34;｝&#34;  &#34;|&#34;: &#34;｜&#34;  &#34;\\&#34;: &#34;、&#34;  &#34;/&#34;: &#34;、&#34;  &#34;;&#34;: &#34;；&#34;  &#34;&#39;&#34;: &#34;‘&#34;  &#34;,&#34;: &#34;，&#34;  &#34;....</p>
+patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#34; &#34;!&#34;: &#34;！&#34; &#34;@&#34;: &#34;＠&#34; &#34;#&#34;: &#34;＃&#34; &#34;$&#34;: &#34;￥&#34; &#34;%&#34;: &#34;％&#34; &#34;^&#34;: &#34;……&#34; &#34;&amp;&#34;: &#34;＆&#34; &#34;*&#34;: &#34;×&#34; &#34;(&#34;: &#34;（&#34; &#34;)&#34;: &#34;）&#34; &#34;_&#34;: &#34;——&#34; &#34;&#43;&#34;: &#34;＋&#34; &#34;-&#34;: &#34;－&#34; &#34;=&#34;: &#34;＝&#34; &#34;[&#34;: &#34;【&#34; &#34;]&#34;: &#34;】&#34; &#34;{&#34;: &#34;｛&#34; &#34;}&#34;: &#34;｝&#34; &#34;|&#34;: &#34;｜&#34; &#34;\\&#34;: &#34;、&#34; &#34;/&#34;: &#34;、&#34; &#34;;&#34;: &#34;；&#34; &#34;&#39;&#34;: &#34;‘&#34; &#34;,&#34;: &#34;，&#34; &#34;....</p>
   </div>
   <footer class="entry-footer"><span title='2021-08-19 01:50:11 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 定制你的 rime 提升编程体验" href="https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/"></a>
@@ -191,7 +191,7 @@ patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;�
   <div class="entry-content">
     <p>前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。
  测试环境：
-.............. aimerneige@an  ..,;:ccc,. -------------  ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64  ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg)  . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ....</p>
+.............. aimerneige@an ..,;:ccc,. ------------- ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg) . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..&#39;,;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/&gt; 3] ....</p>
   </div>
   <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/"></a>
@@ -203,7 +203,7 @@ patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;�
     </h2>
   </header>
   <div class="entry-content">
-    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536  inet 127....</p>
+    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127....</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/linux/daily-linux-command/"></a>
@@ -211,7 +211,7 @@ patch:  punctuator/full_shape:  &#34;`&#34;: &#34;｀&#34;  &#34;~&#34;: &#34;�
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
