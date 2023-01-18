@@ -124,6 +124,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>C 语言多线程基础
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>线程于进程的对比
+          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c/c-thread-basic/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>C 语言静态函数
     </h2>
   </header>

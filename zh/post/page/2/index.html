@@ -123,6 +123,30 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/golang.jpeg" alt="Blue Poison">
+</figure>
+  <header class="entry-header">
+    <h2>配置 go 开发环境
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>由于某些网络原因1，本文所提到的部分网站、下载链接可能在中国大陆地区无法访问，请自行查找解决方案，本文不再赘述。
+  如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
+ 下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
+本文不推荐使用一键安装包的方式安装 go 语言，即请不要直接下载下图所示的文件:
+我们在下面的 Stable versions 后找到最新版本的 go，选择适合自己电脑系统与架构的压缩包。要选择 Archive　而不要选择 Installer。
+.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Tip
+当然使用 msi 等一键安装包安装也是完全可以的，如果你想要使用一键安装包的方式安装 go，请查阅其他资料。
+  如果你想要通过源码安装，请自行查阅 通过源码构建。
+ 安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
+Linux  解压压缩文件  这里我们可以直接使用 官方安装指南 提供的指令来解压。
+rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-24 21:31:05 +0800 CST'>八月 24, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/"></a>
+</article>
+
+<article class="post-entry"> 
   <header class="entry-header">
     <h2>对于某实验平台的吐槽
     </h2>
@@ -287,20 +311,6 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
   </div>
   <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>十一月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c/c-function-point/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C 语言多线程基础
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>线程于进程的对比
-          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c/c-thread-basic/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
