@@ -100,7 +100,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
   "keywords": [
     "C/C++", "Teach"
   ],
-  "articleBody": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) { printf(\"I am a static funciton.\\n\"); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include  static void fun1() { printf(\"fun1 called.\\n\"); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include  int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1' 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。\n",
+  "articleBody": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) { printf(\"I am a static funciton.\\n\"); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include static void fun1() { printf(\"fun1 called.\\n\"); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1' 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。\n",
   "wordCount" : "66",
   "inLanguage": "zh",
   "datePublished": "2020-10-31T20:31:36+08:00",
@@ -187,34 +187,34 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 </div>
   </header> 
   <div class="post-content"><p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fun</span>(<span style="color:#66d9ef">void</span>)
-{
-    printf(<span style="color:#e6db74">&#34;I am a static funciton.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-}
-</code></pre></div><p>与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fun</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;I am a static funciton.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。</p>
 <p>例如，我们在文件 <code>file.c</code> 中存储了下面的程序：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// in file `file1.c`
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun1</span>()
-{
-    printf(<span style="color:#e6db74">&#34;fun1 called.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-}
-</code></pre></div><p>然后，我们在文件 <code>file2.c</code> 中存储了这样的程序：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// in file `file2.c`
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
-{
-    fun1();
-
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>接下来，如果我们按照如下的命令编译：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcc file2.c file1.c
-</code></pre></div><p>你会得到这样的链接错误：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">undefined reference to <span style="color:#e6db74">`</span>fun1<span style="color:#960050;background-color:#1e0010">&#39;</span>
-</code></pre></div><p>这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// in file `file1.c`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun1</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;fun1 called.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>然后，我们在文件 <code>file2.c</code> 中存储了这样的程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// in file `file2.c`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fun1</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>接下来，如果我们按照如下的命令编译：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc file2.c file1.c
+</span></span></code></pre></div><p>你会得到这样的链接错误：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>undefined reference to <span style="color:#e6db74">`</span>fun1<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div><p>这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
 
 
   </div>

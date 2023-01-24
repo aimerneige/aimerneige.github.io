@@ -14,11 +14,11 @@
       
       <guid>https://aimerneige.com/zh/post/python/daily-python-tips/</guid>
       <description>首先来看下 w3schools 的解释：
- Example Check if the number 5 is an integer:
-x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+Example Check if the number 5 is an integer:
+x = isinstance(5, int) Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
 If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
- Syntax isinstance(object, type)
-Parameter Values    Parameter Description     object Required.</description>
+Syntax isinstance(object, type)
+Parameter Values Parameter Description object Required. An object. type A type or a class, or a tuple of types and/or classes More Examples Example Check if &amp;ldquo;Hello&amp;rdquo; is one of the types described in the type parameter:</description>
     </item>
     
   </channel>

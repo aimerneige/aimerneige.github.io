@@ -10,13 +10,13 @@
 <meta name="description" content="安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
-.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning
+Warning
 注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
- 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
 执行下面的指令设置 wsl 默认版本为 wsl2：
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
-The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;.">
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
@@ -53,13 +53,13 @@ if (!doNotTrack) {
 <meta property="og:description" content="安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
-.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning
+Warning
 注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
- 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
 执行下面的指令设置 wsl 默认版本为 wsl2：
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
-The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;." />
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/" />
 <meta property="og:image" content="https://aimerneige.com/images/fedora-wsl.png" /><meta property="article:section" content="post" />
@@ -72,13 +72,13 @@ The following is a list of valid distributions that can be installed. Install us
 <meta name="twitter:description" content="安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
-.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning
+Warning
 注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
- 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
 执行下面的指令设置 wsl 默认版本为 wsl2：
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
-The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;."/>
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16."/>
 
 
 <script type="application/ld+json">
@@ -107,12 +107,12 @@ The following is a list of valid distributions that can be installed. Install us
   "@type": "BlogPosting",
   "headline": "在 wsl 下安装 fedora 35",
   "name": "在 wsl 下安装 fedora 35",
-  "description": "安装 wsl2 使用管理员身份开启 windows terminal.\n执行如下指令：\nwsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)\n.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning\n注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。\n 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。\n执行下面的指令设置 wsl 默认版本为 wsl2：\nwsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：\nwsl --list --online 返回数据类似下面这样：\nThe following is a list of valid distributions that can be installed. Install using \u0026#39;wsl --install -d \u0026lt;Distro\u0026gt;\u0026#39;.",
+  "description": "安装 wsl2 使用管理员身份开启 windows terminal.\n执行如下指令：\nwsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)\nWarning\n注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。\n安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。\n执行下面的指令设置 wsl 默认版本为 wsl2：\nwsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：\nwsl --list --online 返回数据类似下面这样：\nThe following is a list of valid distributions that can be installed. Install using \u0026#39;wsl --install -d \u0026lt;Distro\u0026gt;\u0026#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.",
   "keywords": [
     "wsl", "wsl2", "fedora35", "windows"
   ],
-  "articleBody": "安装 wsl2 使用管理员身份开启 windows terminal.\n执行如下指令：\nwsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)\n.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning\n注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。\n 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。\n执行下面的指令设置 wsl 默认版本为 wsl2：\nwsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：\nwsl --list --online 返回数据类似下面这样：\nThe following is a list of valid distributions that can be installed. Install using 'wsl --install -d '. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.04 Ubuntu 16.04 LTS Ubuntu-18.04 Ubuntu 18.04 LTS Ubuntu-20.04 Ubuntu 20.04 LTS 如果想要安装某发行版，直接执行相应指令即可。例如可以通过下面的指令安装 debian 子系统：\nwsl --install -d Debian 当你安装了多个发行版，可以通过下面的指令指定默认发行版：\nwsl --setdefault  例如，设置 Kali-linux 为默认发行版：\nwsl --setdefault Kali-linux 安装 fedora 35 wsl 提供的发行版中，并不包含 fedora 系统，所以只能手动安装。\n下载 fedora 镜像文件(rootfs image) 在 Fedora-Container-Base 选择需要的 fedora 版本下载。\n在保证 State 一栏为 complete 的前提下找到需要的版本。\nFedora 35 build\n我们要下载的文件是 xz 格式，同时选择正确的架构，如 x86_64。\n(点击下面的链接直接下载)\nFedora-Container-Base-35-20220221.0.x86_64.tar.xz\n下载好之后解压这个压缩文件，如果你不知道用什么软件，下载使用 7-Zip。\nWarning\n注意，解压为 tar 文件即可，不要继续解压 tar 文件。\n 此时，查看你刚刚得到的 tar 文件，在里面找到一个名为 layer.tar 的文件，单独解压它，他就是我们需要的 rootfs image。把它解压到一个容易找到的位置，比如 Downloads 目录。为了便于使用，你可以将它重命名为 fedora-35-rootfs.tar。\n如果你想要一些更加官方的系统镜像，可以在 docker-brew-fedora 项目中找到你想要的文件。\n直接在 仓库 中找到对应的版本和架构后下载对应的文件即可。比如，你可能下载了 fedora-35-x86_64.tar.xz，下载完成后，解压这个文件，得到 tar 文件，这个 tar 文件就是 rootfs image。如果愿意，你也可以将它重命名为 fedora-35-rootfs.tar。\n创建你的 wsl 存储目录 创建一个文件夹来保存你的 wsl 文件。\nmkdir $HOME\\wsl\\fedora 释放镜像文件 假设你想要将子系统命名为 fedora，想要把它保存在 $HOME\\wsl\\fedora 目录下，同时 rootfs 文件存储在 $HOME\\Downloads\\fedora-35-rootfs.tar，执行下面的指令：\nwsl --import fedora $HOME\\wsl\\fedora $HOME\\Downloads\\fedora-35-rootfs.tar 检查安装情况 wsl -l 使用 root 启动 fedora 子系统： wsl -d fedora 设置 fedora 为默认发行版 wsl -s fedora 修复问题 Info\n注：以下问题是否存在取决于你下载的 fedora 版本，如果你没有对应错误直接跳过即可。\n 挂载错误 如果你在第一次启动 fedora 时得到了以下错误：\nAn error occurred mounting one of your file systems. Please run 'dmesg' for more details. 这是由于系统缺少 mount 指令造成的，如果你不需要 mount 指令也不在意错误，完全可以忽略这个错误（虽然还是建议修一下）。\n安装 util-linux 这个包即可。（如果你是一个极简主义者，安装 util-linux-core 这个包）\ndnf install -y util-linux 安装完成后关闭 fedora 重启即可。\nwsl -t fedora 配置你的 fedora 升级系统 dnf update 创建用户 继续之前，先安装下面的包：\ndnf install -y passwd cracklib-dicts 在 wheel 用户组下创建名为 myusername 的用户\nuseradd -G wheel myusername 为用户 myusername 设置密码\npasswd myusername 使用指定用户登录 wsl\nwsl -d fedora -u myusername 查看是否成功\nwhoami 检查是否具有 sudo 权限\nsudo cat /etc/shadow 设置默认用户 首先你的系统必须是 Windows build 18980 之后的版本，只需要 修改 wsl 配置文件 即可。\n如果你没有创建过 /etc/wsl.conf 文件，直接执行如下指令：\nprintf \"\\n[user]\\ndefault = myusername\\n\" | sudo tee -a /etc/wsl.conf 或者手动添加下面内容到 /etc/wsl.conf：\n[user] default = myusername 关闭 fedora 子系统。\nwsl -t fedora 在不指定用户的情况下启动 fedora 子系统，检查用户是否正确。\n容器 如果你需要运行容器，重新安装 shadow-utils 确保修复一些 rootfs 带来的错误：\nsudo dnf reinstall -y shadow-utils ping 如果你想要执行 ping 指令，执行下面的操作：\nsudo dnf install -y procps-ng iputils sudo sysctl -w net.ipv4.ping_group_range=\"0 2000\" 常用指令 安装下面的包来启用 Linux 下常用指令：\nsudo dnf -y install iproute findutils ncurses initscripts 编辑器 安装必要的编辑器，你可以按照喜好选择 vim nano 或 micro。\nsudo dnf install -y vim man 继续之前首先要确保 nodocs 选项没有被开启，你可以手动编辑 tsflags=nodocs 这一行，也可以直接执行下面的指令：\ngrep -v nodocs /etc/dnf/dnf.conf | sudo tee /etc/dnf/dnf.conf 接下来安装 man\nsudo dnf install -y man man-pages 安装完成之后，在这之后安装的软件就可以使用 man 指令查看文档了，但是之前已经安装好的软件，并不能查看文档，比如现在执行 man dnf 就不会得到任何结果。需要执行 sudo dnf reinstall -y dnf 重新安装 dnf 之后，才可以正确查看相关文档。\n执行下面的指令重新安装全部的包：\nWarning\n这一步非常费时，如果你不常用 man 可以选择跳过。\n for pkg in $(dnf repoquery --installed --qf \"%{name}\"); do sudo dnf reinstall -qy $pkg; done 允许调用 Windows 的浏览器 首先安装 wslu\nsudo dnf copr enable wslutilities/wslu sudo dnf install wslu 添加如下配置\nexport BROWSER=wslview 导出系统 为了方便之后安装，可以将系统导出。\n首先清理掉缓存文件：\nsudo dnf clean all 使用下面的指令导出 fedora 子系统到 $HOME\\Downloads\\fedora-wsl.tar 目录下。\nwsl --export fedora $HOME\\Downloads\\fedora-wsl.tar 之后要使用的时候，可以使用下面的指令导入：\nmkdir $HOME\\wsl\\freshfedora wsl --import freshfedora $HOME\\wsl\\freshfedora $HOME\\Downloads\\fedora-wsl.tar wsl 常用指令 查看当前正在运行的子系统 wsl --list --running 关闭指定子系统 wsl --terminate  例如关闭正在运行的 Ubuntu 子系统：\nwsl --terminate Ubuntu 关闭全部子系统 wsl --shutdown 升级 wsl wsl --update 版本回滚 wsl --update --rollback 删除子系统 wsl --unregister  wsl 使用技巧 在文件资源管理器中输入 \\\\wsl$ 即可进入 wsl 的目录。可以将它添加到文件资源管理器的网络路径里便于访问。\n参考  Install Fedora 36 or earlier on Windows Subsystem for Linux (WSL)\n ",
-  "wordCount" : "543",
+  "articleBody": "安装 wsl2 使用管理员身份开启 windows terminal.\n执行如下指令：\nwsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)\nWarning\n注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。\n安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。\n执行下面的指令设置 wsl 默认版本为 wsl2：\nwsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：\nwsl --list --online 返回数据类似下面这样：\nThe following is a list of valid distributions that can be installed. Install using 'wsl --install -d '. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.04 Ubuntu 16.04 LTS Ubuntu-18.04 Ubuntu 18.04 LTS Ubuntu-20.04 Ubuntu 20.04 LTS 如果想要安装某发行版，直接执行相应指令即可。例如可以通过下面的指令安装 debian 子系统：\nwsl --install -d Debian 当你安装了多个发行版，可以通过下面的指令指定默认发行版：\nwsl --setdefault 例如，设置 Kali-linux 为默认发行版：\nwsl --setdefault Kali-linux 安装 fedora 35 wsl 提供的发行版中，并不包含 fedora 系统，所以只能手动安装。\n下载 fedora 镜像文件(rootfs image) 在 Fedora-Container-Base 选择需要的 fedora 版本下载。\n在保证 State 一栏为 complete 的前提下找到需要的版本。\nFedora 35 build\n我们要下载的文件是 xz 格式，同时选择正确的架构，如 x86_64。\n(点击下面的链接直接下载)\nFedora-Container-Base-35-20220221.0.x86_64.tar.xz\n下载好之后解压这个压缩文件，如果你不知道用什么软件，下载使用 7-Zip。\nWarning\n注意，解压为 tar 文件即可，不要继续解压 tar 文件。\n此时，查看你刚刚得到的 tar 文件，在里面找到一个名为 layer.tar 的文件，单独解压它，他就是我们需要的 rootfs image。把它解压到一个容易找到的位置，比如 Downloads 目录。为了便于使用，你可以将它重命名为 fedora-35-rootfs.tar。\n如果你想要一些更加官方的系统镜像，可以在 docker-brew-fedora 项目中找到你想要的文件。\n直接在 仓库 中找到对应的版本和架构后下载对应的文件即可。比如，你可能下载了 fedora-35-x86_64.tar.xz，下载完成后，解压这个文件，得到 tar 文件，这个 tar 文件就是 rootfs image。如果愿意，你也可以将它重命名为 fedora-35-rootfs.tar。\n创建你的 wsl 存储目录 创建一个文件夹来保存你的 wsl 文件。\nmkdir $HOME\\wsl\\fedora 释放镜像文件 假设你想要将子系统命名为 fedora，想要把它保存在 $HOME\\wsl\\fedora 目录下，同时 rootfs 文件存储在 $HOME\\Downloads\\fedora-35-rootfs.tar，执行下面的指令：\nwsl --import fedora $HOME\\wsl\\fedora $HOME\\Downloads\\fedora-35-rootfs.tar 检查安装情况 wsl -l 使用 root 启动 fedora 子系统： wsl -d fedora 设置 fedora 为默认发行版 wsl -s fedora 修复问题 Info\n注：以下问题是否存在取决于你下载的 fedora 版本，如果你没有对应错误直接跳过即可。\n挂载错误 如果你在第一次启动 fedora 时得到了以下错误：\nAn error occurred mounting one of your file systems. Please run 'dmesg' for more details. 这是由于系统缺少 mount 指令造成的，如果你不需要 mount 指令也不在意错误，完全可以忽略这个错误（虽然还是建议修一下）。\n安装 util-linux 这个包即可。（如果你是一个极简主义者，安装 util-linux-core 这个包）\ndnf install -y util-linux 安装完成后关闭 fedora 重启即可。\nwsl -t fedora 配置你的 fedora 升级系统 dnf update 创建用户 继续之前，先安装下面的包：\ndnf install -y passwd cracklib-dicts 在 wheel 用户组下创建名为 myusername 的用户\nuseradd -G wheel myusername 为用户 myusername 设置密码\npasswd myusername 使用指定用户登录 wsl\nwsl -d fedora -u myusername 查看是否成功\nwhoami 检查是否具有 sudo 权限\nsudo cat /etc/shadow 设置默认用户 首先你的系统必须是 Windows build 18980 之后的版本，只需要 修改 wsl 配置文件 即可。\n如果你没有创建过 /etc/wsl.conf 文件，直接执行如下指令：\nprintf \"\\n[user]\\ndefault = myusername\\n\" | sudo tee -a /etc/wsl.conf 或者手动添加下面内容到 /etc/wsl.conf：\n[user] default = myusername 关闭 fedora 子系统。\nwsl -t fedora 在不指定用户的情况下启动 fedora 子系统，检查用户是否正确。\n容器 如果你需要运行容器，重新安装 shadow-utils 确保修复一些 rootfs 带来的错误：\nsudo dnf reinstall -y shadow-utils ping 如果你想要执行 ping 指令，执行下面的操作：\nsudo dnf install -y procps-ng iputils sudo sysctl -w net.ipv4.ping_group_range=\"0 2000\" 常用指令 安装下面的包来启用 Linux 下常用指令：\nsudo dnf -y install iproute findutils ncurses initscripts 编辑器 安装必要的编辑器，你可以按照喜好选择 vim nano 或 micro。\nsudo dnf install -y vim man 继续之前首先要确保 nodocs 选项没有被开启，你可以手动编辑 tsflags=nodocs 这一行，也可以直接执行下面的指令：\ngrep -v nodocs /etc/dnf/dnf.conf | sudo tee /etc/dnf/dnf.conf 接下来安装 man\nsudo dnf install -y man man-pages 安装完成之后，在这之后安装的软件就可以使用 man 指令查看文档了，但是之前已经安装好的软件，并不能查看文档，比如现在执行 man dnf 就不会得到任何结果。需要执行 sudo dnf reinstall -y dnf 重新安装 dnf 之后，才可以正确查看相关文档。\n执行下面的指令重新安装全部的包：\nWarning\n这一步非常费时，如果你不常用 man 可以选择跳过。\nfor pkg in $(dnf repoquery --installed --qf \"%{name}\"); do sudo dnf reinstall -qy $pkg; done 允许调用 Windows 的浏览器 首先安装 wslu\nsudo dnf copr enable wslutilities/wslu sudo dnf install wslu 添加如下配置\nexport BROWSER=wslview 导出系统 为了方便之后安装，可以将系统导出。\n首先清理掉缓存文件：\nsudo dnf clean all 使用下面的指令导出 fedora 子系统到 $HOME\\Downloads\\fedora-wsl.tar 目录下。\nwsl --export fedora $HOME\\Downloads\\fedora-wsl.tar 之后要使用的时候，可以使用下面的指令导入：\nmkdir $HOME\\wsl\\freshfedora wsl --import freshfedora $HOME\\wsl\\freshfedora $HOME\\Downloads\\fedora-wsl.tar wsl 常用指令 查看当前正在运行的子系统 wsl --list --running 关闭指定子系统 wsl --terminate 例如关闭正在运行的 Ubuntu 子系统：\nwsl --terminate Ubuntu 关闭全部子系统 wsl --shutdown 升级 wsl wsl --update 版本回滚 wsl --update --rollback 删除子系统 wsl --unregister wsl 使用技巧 在文件资源管理器中输入 \\\\wsl$ 即可进入 wsl 的目录。可以将它添加到文件资源管理器的网络路径里便于访问。\n参考 Install Fedora 36 or earlier on Windows Subsystem for Linux (WSL)\n",
+  "wordCount" : "525",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/fedora-wsl.png","datePublished": "2022-04-09T22:22:44+08:00",
   "dateModified": "2022-04-09T22:22:44+08:00",
@@ -285,38 +285,38 @@ The following is a list of valid distributions that can be installed. Install us
   <div class="post-content"><h2 id="安装-wsl2">安装 wsl2<a hidden class="anchor" aria-hidden="true" href="#安装-wsl2">#</a></h2>
 <p>使用管理员身份开启 windows terminal.</p>
 <p>执行如下指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl.exe --install
-</code></pre></div><p>等待安装完成后在开始菜单执行重启(Restart)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl.exe --install
+</span></span></code></pre></div><p>等待安装完成后在开始菜单执行重启(Restart)</p>
 <style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}</style>
 <div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice warning" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>注意是在开始菜单选择 <code>Restart</code> 而不能是选择 <code>Shut Down</code> 关机之后手动开机。</p></div>
 
 <p>安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。</p>
 <p>执行下面的指令设置 wsl 默认版本为 wsl2：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --set-default-version 2
-</code></pre></div><h2 id="安装其他版本的子系统">安装其他版本的子系统<a hidden class="anchor" aria-hidden="true" href="#安装其他版本的子系统">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --set-default-version <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h2 id="安装其他版本的子系统">安装其他版本的子系统<a hidden class="anchor" aria-hidden="true" href="#安装其他版本的子系统">#</a></h2>
 <p>如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --list --online
-</code></pre></div><p>返回数据类似下面这样：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">The following is a list of valid distributions that can be installed.
-Install using <span style="color:#e6db74">&#39;wsl --install -d &lt;Distro&gt;&#39;</span>.
-
-NAME            FRIENDLY NAME
-Ubuntu          Ubuntu
-Debian          Debian GNU/Linux
-kali-linux      Kali Linux Rolling
-openSUSE-42     openSUSE Leap 42
-SLES-12         SUSE Linux Enterprise Server v12
-Ubuntu-16.04    Ubuntu 16.04 LTS
-Ubuntu-18.04    Ubuntu 18.04 LTS
-Ubuntu-20.04    Ubuntu 20.04 LTS
-</code></pre></div><p>如果想要安装某发行版，直接执行相应指令即可。例如可以通过下面的指令安装 <code>debian</code> 子系统：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --install -d Debian
-</code></pre></div><p>当你安装了多个发行版，可以通过下面的指令指定默认发行版：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --setdefault &lt;Distro&gt;
-</code></pre></div><p>例如，设置 Kali-linux 为默认发行版：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --setdefault Kali-linux
-</code></pre></div><h2 id="安装-fedora-35">安装 fedora 35<a hidden class="anchor" aria-hidden="true" href="#安装-fedora-35">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --list --online
+</span></span></code></pre></div><p>返回数据类似下面这样：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>The following is a list of valid distributions that can be installed.
+</span></span><span style="display:flex;"><span>Install using <span style="color:#e6db74">&#39;wsl --install -d &lt;Distro&gt;&#39;</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME            FRIENDLY NAME
+</span></span><span style="display:flex;"><span>Ubuntu          Ubuntu
+</span></span><span style="display:flex;"><span>Debian          Debian GNU/Linux
+</span></span><span style="display:flex;"><span>kali-linux      Kali Linux Rolling
+</span></span><span style="display:flex;"><span>openSUSE-<span style="color:#ae81ff">42</span>     openSUSE Leap <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>SLES-<span style="color:#ae81ff">12</span>         SUSE Linux Enterprise Server v12
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">16.04</span>    Ubuntu <span style="color:#ae81ff">16.04</span> LTS
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">18.04</span>    Ubuntu <span style="color:#ae81ff">18.04</span> LTS
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">20.04</span>    Ubuntu <span style="color:#ae81ff">20.04</span> LTS
+</span></span></code></pre></div><p>如果想要安装某发行版，直接执行相应指令即可。例如可以通过下面的指令安装 <code>debian</code> 子系统：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --install -d Debian
+</span></span></code></pre></div><p>当你安装了多个发行版，可以通过下面的指令指定默认发行版：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --setdefault &lt;Distro&gt;
+</span></span></code></pre></div><p>例如，设置 Kali-linux 为默认发行版：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --setdefault Kali-linux
+</span></span></code></pre></div><h2 id="安装-fedora-35">安装 fedora 35<a hidden class="anchor" aria-hidden="true" href="#安装-fedora-35">#</a></h2>
 <p>wsl 提供的发行版中，并不包含 fedora 系统，所以只能手动安装。</p>
 <h3 id="下载-fedora-镜像文件rootfs-image">下载 fedora 镜像文件(<strong>rootfs</strong> image)<a hidden class="anchor" aria-hidden="true" href="#下载-fedora-镜像文件rootfs-image">#</a></h3>
 <p>在 <a href="https://koji.fedoraproject.org/koji/packageinfo?packageID=26387">Fedora-Container-Base</a> 选择需要的 fedora 版本下载。</p>
@@ -334,109 +334,109 @@ Ubuntu-20.04    Ubuntu 20.04 LTS
 <p>直接在 <a href="https://github.com/fedora-cloud/docker-brew-fedora/branches/active">仓库</a> 中找到对应的版本和架构后下载对应的文件即可。比如，你可能下载了 <code>fedora-35-x86_64.tar.xz</code>，下载完成后，解压这个文件，得到 <code>tar</code> 文件，这个 <code>tar</code> 文件就是 rootfs image。如果愿意，你也可以将它重命名为 <code>fedora-35-rootfs.tar</code>。</p>
 <h3 id="创建你的-wsl-存储目录">创建你的 wsl 存储目录<a hidden class="anchor" aria-hidden="true" href="#创建你的-wsl-存储目录">#</a></h3>
 <p>创建一个文件夹来保存你的 wsl 文件。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">mkdir $HOME\wsl\fedora
-</code></pre></div><h3 id="释放镜像文件">释放镜像文件<a hidden class="anchor" aria-hidden="true" href="#释放镜像文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>mkdir $HOME\wsl\fedora
+</span></span></code></pre></div><h3 id="释放镜像文件">释放镜像文件<a hidden class="anchor" aria-hidden="true" href="#释放镜像文件">#</a></h3>
 <p>假设你想要将子系统命名为 <code>fedora</code>，想要把它保存在 <code>$HOME\wsl\fedora</code> 目录下，同时 rootfs 文件存储在 <code>$HOME\Downloads\fedora-35-rootfs.tar</code>，执行下面的指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --import fedora $HOME\wsl\fedora $HOME\Downloads\fedora-35-rootfs.tar
-</code></pre></div><h3 id="检查安装情况">检查安装情况<a hidden class="anchor" aria-hidden="true" href="#检查安装情况">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -l
-</code></pre></div><h3 id="使用-root-启动-fedora-子系统">使用 root 启动 fedora 子系统：<a hidden class="anchor" aria-hidden="true" href="#使用-root-启动-fedora-子系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -d fedora
-</code></pre></div><h3 id="设置-fedora-为默认发行版">设置 fedora 为默认发行版<a hidden class="anchor" aria-hidden="true" href="#设置-fedora-为默认发行版">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -s fedora
-</code></pre></div><h2 id="修复问题">修复问题<a hidden class="anchor" aria-hidden="true" href="#修复问题">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --import fedora $HOME\wsl\fedora $HOME\Downloads\fedora-<span style="color:#ae81ff">35</span>-rootfs.tar
+</span></span></code></pre></div><h3 id="检查安装情况">检查安装情况<a hidden class="anchor" aria-hidden="true" href="#检查安装情况">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -l
+</span></span></code></pre></div><h3 id="使用-root-启动-fedora-子系统">使用 root 启动 fedora 子系统：<a hidden class="anchor" aria-hidden="true" href="#使用-root-启动-fedora-子系统">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -d fedora
+</span></span></code></pre></div><h3 id="设置-fedora-为默认发行版">设置 fedora 为默认发行版<a hidden class="anchor" aria-hidden="true" href="#设置-fedora-为默认发行版">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -s fedora
+</span></span></code></pre></div><h2 id="修复问题">修复问题<a hidden class="anchor" aria-hidden="true" href="#修复问题">#</a></h2>
 <div class="notice info" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>注：以下问题是否存在取决于你下载的 fedora 版本，如果你没有对应错误直接跳过即可。</p></div>
 
 <h3 id="挂载错误">挂载错误<a hidden class="anchor" aria-hidden="true" href="#挂载错误">#</a></h3>
 <p>如果你在第一次启动 fedora 时得到了以下错误：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">An error occurred mounting one of your file systems. Please run <span style="color:#e6db74">&#39;dmesg&#39;</span> <span style="color:#66d9ef">for</span> more details.
-</code></pre></div><p>这是由于系统缺少 mount 指令造成的，如果你不需要 mount 指令也不在意错误，完全可以忽略这个错误（虽然还是建议修一下）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>An error occurred mounting one of your file systems. Please run <span style="color:#e6db74">&#39;dmesg&#39;</span> <span style="color:#66d9ef">for</span> more details.
+</span></span></code></pre></div><p>这是由于系统缺少 mount 指令造成的，如果你不需要 mount 指令也不在意错误，完全可以忽略这个错误（虽然还是建议修一下）。</p>
 <p>安装 <code>util-linux</code> 这个包即可。（如果你是一个极简主义者，安装 <code>util-linux-core</code> 这个包）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf install -y util-linux
-</code></pre></div><p>安装完成后关闭 fedora 重启即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -t fedora
-</code></pre></div><h2 id="配置你的-fedora">配置你的 fedora<a hidden class="anchor" aria-hidden="true" href="#配置你的-fedora">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf install -y util-linux
+</span></span></code></pre></div><p>安装完成后关闭 fedora 重启即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -t fedora
+</span></span></code></pre></div><h2 id="配置你的-fedora">配置你的 fedora<a hidden class="anchor" aria-hidden="true" href="#配置你的-fedora">#</a></h2>
 <h3 id="升级系统">升级系统<a hidden class="anchor" aria-hidden="true" href="#升级系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf update
-</code></pre></div><h3 id="创建用户">创建用户<a hidden class="anchor" aria-hidden="true" href="#创建用户">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf update
+</span></span></code></pre></div><h3 id="创建用户">创建用户<a hidden class="anchor" aria-hidden="true" href="#创建用户">#</a></h3>
 <p>继续之前，先安装下面的包：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf install -y passwd cracklib-dicts
-</code></pre></div><p>在 wheel 用户组下创建名为 <code>myusername</code> 的用户</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -G wheel myusername
-</code></pre></div><p>为用户 <code>myusername</code> 设置密码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">passwd myusername
-</code></pre></div><p>使用指定用户登录 wsl</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -d fedora -u myusername
-</code></pre></div><p>查看是否成功</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">whoami
-</code></pre></div><p>检查是否具有 sudo 权限</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cat /etc/shadow
-</code></pre></div><h3 id="设置默认用户">设置默认用户<a hidden class="anchor" aria-hidden="true" href="#设置默认用户">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf install -y passwd cracklib-dicts
+</span></span></code></pre></div><p>在 wheel 用户组下创建名为 <code>myusername</code> 的用户</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd -G wheel myusername
+</span></span></code></pre></div><p>为用户 <code>myusername</code> 设置密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd myusername
+</span></span></code></pre></div><p>使用指定用户登录 wsl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -d fedora -u myusername
+</span></span></code></pre></div><p>查看是否成功</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>whoami
+</span></span></code></pre></div><p>检查是否具有 sudo 权限</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cat /etc/shadow
+</span></span></code></pre></div><h3 id="设置默认用户">设置默认用户<a hidden class="anchor" aria-hidden="true" href="#设置默认用户">#</a></h3>
 <p>首先你的系统必须是 Windows build 18980 之后的版本，只需要 <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#user">修改 wsl 配置文件</a> 即可。</p>
 <p>如果你没有创建过 <code>/etc/wsl.conf</code> 文件，直接执行如下指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">printf <span style="color:#e6db74">&#34;\n[user]\ndefault = myusername\n&#34;</span> | sudo tee -a /etc/wsl.conf
-</code></pre></div><p>或者手动添加下面内容到 <code>/etc/wsl.conf</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">user</span>]
-<span style="color:#a6e22e">default</span> = <span style="color:#a6e22e">myusername</span>
-</code></pre></div><p>关闭 fedora 子系统。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl -t fedora
-</code></pre></div><p>在不指定用户的情况下启动 fedora 子系统，检查用户是否正确。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#34;\n[user]\ndefault = myusername\n&#34;</span> | sudo tee -a /etc/wsl.conf
+</span></span></code></pre></div><p>或者手动添加下面内容到 <code>/etc/wsl.conf</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">user</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">default</span> = <span style="color:#a6e22e">myusername</span>
+</span></span></code></pre></div><p>关闭 fedora 子系统。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -t fedora
+</span></span></code></pre></div><p>在不指定用户的情况下启动 fedora 子系统，检查用户是否正确。</p>
 <h3 id="容器">容器<a hidden class="anchor" aria-hidden="true" href="#容器">#</a></h3>
 <p>如果你需要运行容器，重新安装 <code>shadow-utils</code> 确保修复一些 rootfs 带来的错误：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf reinstall -y shadow-utils
-</code></pre></div><h3 id="ping">ping<a hidden class="anchor" aria-hidden="true" href="#ping">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf reinstall -y shadow-utils
+</span></span></code></pre></div><h3 id="ping">ping<a hidden class="anchor" aria-hidden="true" href="#ping">#</a></h3>
 <p>如果你想要执行 ping 指令，执行下面的操作：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install -y procps-ng iputils
-sudo sysctl -w net.ipv4.ping_group_range<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 2000&#34;</span>
-</code></pre></div><h3 id="常用指令">常用指令<a hidden class="anchor" aria-hidden="true" href="#常用指令">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install -y procps-ng iputils
+</span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv4.ping_group_range<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 2000&#34;</span>
+</span></span></code></pre></div><h3 id="常用指令">常用指令<a hidden class="anchor" aria-hidden="true" href="#常用指令">#</a></h3>
 <p>安装下面的包来启用 Linux 下常用指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf -y install iproute findutils ncurses initscripts
-</code></pre></div><h3 id="编辑器">编辑器<a hidden class="anchor" aria-hidden="true" href="#编辑器">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf -y install iproute findutils ncurses initscripts
+</span></span></code></pre></div><h3 id="编辑器">编辑器<a hidden class="anchor" aria-hidden="true" href="#编辑器">#</a></h3>
 <p>安装必要的编辑器，你可以按照喜好选择 <code>vim</code> <code>nano</code> 或 <code>micro</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install -y vim
-</code></pre></div><h3 id="man">man<a hidden class="anchor" aria-hidden="true" href="#man">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install -y vim
+</span></span></code></pre></div><h3 id="man">man<a hidden class="anchor" aria-hidden="true" href="#man">#</a></h3>
 <p>继续之前首先要确保 <code>nodocs</code> 选项没有被开启，你可以手动编辑 <code>tsflags=nodocs</code> 这一行，也可以直接执行下面的指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep -v nodocs /etc/dnf/dnf.conf | sudo tee /etc/dnf/dnf.conf
-</code></pre></div><p>接下来安装 man</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install -y man man-pages
-</code></pre></div><p>安装完成之后，在这之后安装的软件就可以使用 <code>man</code> 指令查看文档了，但是之前已经安装好的软件，并不能查看文档，比如现在执行 <code>man dnf</code> 就不会得到任何结果。需要执行 <code>sudo dnf reinstall -y dnf</code> 重新安装 dnf 之后，才可以正确查看相关文档。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -v nodocs /etc/dnf/dnf.conf | sudo tee /etc/dnf/dnf.conf
+</span></span></code></pre></div><p>接下来安装 man</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install -y man man-pages
+</span></span></code></pre></div><p>安装完成之后，在这之后安装的软件就可以使用 <code>man</code> 指令查看文档了，但是之前已经安装好的软件，并不能查看文档，比如现在执行 <code>man dnf</code> 就不会得到任何结果。需要执行 <code>sudo dnf reinstall -y dnf</code> 重新安装 dnf 之后，才可以正确查看相关文档。</p>
 <p>执行下面的指令重新安装全部的包：</p>
 <div class="notice warning" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>这一步非常费时，如果你不常用 man 可以选择跳过。</p></div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pkg in <span style="color:#66d9ef">$(</span>dnf repoquery --installed --qf <span style="color:#e6db74">&#34;%{name}&#34;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> sudo dnf reinstall -qy $pkg; <span style="color:#66d9ef">done</span>
-</code></pre></div><h3 id="允许调用-windows-的浏览器">允许调用 Windows 的浏览器<a hidden class="anchor" aria-hidden="true" href="#允许调用-windows-的浏览器">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> pkg in <span style="color:#66d9ef">$(</span>dnf repoquery --installed --qf <span style="color:#e6db74">&#34;%{name}&#34;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> sudo dnf reinstall -qy $pkg; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h3 id="允许调用-windows-的浏览器">允许调用 Windows 的浏览器<a hidden class="anchor" aria-hidden="true" href="#允许调用-windows-的浏览器">#</a></h3>
 <p>首先安装 <a href="https://github.com/wslutilities/wslu">wslu</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf copr enable wslutilities/wslu
-sudo dnf install wslu
-</code></pre></div><p>添加如下配置</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export BROWSER<span style="color:#f92672">=</span>wslview
-</code></pre></div><h3 id="导出系统">导出系统<a hidden class="anchor" aria-hidden="true" href="#导出系统">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf copr enable wslutilities/wslu
+</span></span><span style="display:flex;"><span>sudo dnf install wslu
+</span></span></code></pre></div><p>添加如下配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export BROWSER<span style="color:#f92672">=</span>wslview
+</span></span></code></pre></div><h3 id="导出系统">导出系统<a hidden class="anchor" aria-hidden="true" href="#导出系统">#</a></h3>
 <p>为了方便之后安装，可以将系统导出。</p>
 <p>首先清理掉缓存文件：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf clean all
-</code></pre></div><p>使用下面的指令导出 fedora 子系统到 <code>$HOME\Downloads\fedora-wsl.tar</code> 目录下。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --export fedora $HOME\Downloads\fedora-wsl.tar
-</code></pre></div><p>之后要使用的时候，可以使用下面的指令导入：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">mkdir $HOME\wsl\freshfedora
-wsl --import freshfedora $HOME\wsl\freshfedora $HOME\Downloads\fedora-wsl.tar
-</code></pre></div><h2 id="wsl-常用指令">wsl 常用指令<a hidden class="anchor" aria-hidden="true" href="#wsl-常用指令">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf clean all
+</span></span></code></pre></div><p>使用下面的指令导出 fedora 子系统到 <code>$HOME\Downloads\fedora-wsl.tar</code> 目录下。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --export fedora $HOME\Downloads\fedora-wsl.tar
+</span></span></code></pre></div><p>之后要使用的时候，可以使用下面的指令导入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>mkdir $HOME\wsl\freshfedora
+</span></span><span style="display:flex;"><span>wsl --import freshfedora $HOME\wsl\freshfedora $HOME\Downloads\fedora-wsl.tar
+</span></span></code></pre></div><h2 id="wsl-常用指令">wsl 常用指令<a hidden class="anchor" aria-hidden="true" href="#wsl-常用指令">#</a></h2>
 <h3 id="查看当前正在运行的子系统">查看当前正在运行的子系统<a hidden class="anchor" aria-hidden="true" href="#查看当前正在运行的子系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --list --running
-</code></pre></div><h3 id="关闭指定子系统">关闭指定子系统<a hidden class="anchor" aria-hidden="true" href="#关闭指定子系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --terminate &lt;Distro&gt;
-</code></pre></div><p>例如关闭正在运行的 Ubuntu 子系统：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --terminate Ubuntu
-</code></pre></div><h3 id="关闭全部子系统">关闭全部子系统<a hidden class="anchor" aria-hidden="true" href="#关闭全部子系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --shutdown
-</code></pre></div><h3 id="升级-wsl">升级 wsl<a hidden class="anchor" aria-hidden="true" href="#升级-wsl">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --update
-</code></pre></div><h3 id="版本回滚">版本回滚<a hidden class="anchor" aria-hidden="true" href="#版本回滚">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --update --rollback
-</code></pre></div><h3 id="删除子系统">删除子系统<a hidden class="anchor" aria-hidden="true" href="#删除子系统">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">wsl --unregister &lt;Distro&gt;
-</code></pre></div><h2 id="wsl-使用技巧">wsl 使用技巧<a hidden class="anchor" aria-hidden="true" href="#wsl-使用技巧">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --list --running
+</span></span></code></pre></div><h3 id="关闭指定子系统">关闭指定子系统<a hidden class="anchor" aria-hidden="true" href="#关闭指定子系统">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --terminate &lt;Distro&gt;
+</span></span></code></pre></div><p>例如关闭正在运行的 Ubuntu 子系统：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --terminate Ubuntu
+</span></span></code></pre></div><h3 id="关闭全部子系统">关闭全部子系统<a hidden class="anchor" aria-hidden="true" href="#关闭全部子系统">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --shutdown
+</span></span></code></pre></div><h3 id="升级-wsl">升级 wsl<a hidden class="anchor" aria-hidden="true" href="#升级-wsl">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --update
+</span></span></code></pre></div><h3 id="版本回滚">版本回滚<a hidden class="anchor" aria-hidden="true" href="#版本回滚">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --update --rollback
+</span></span></code></pre></div><h3 id="删除子系统">删除子系统<a hidden class="anchor" aria-hidden="true" href="#删除子系统">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --unregister &lt;Distro&gt;
+</span></span></code></pre></div><h2 id="wsl-使用技巧">wsl 使用技巧<a hidden class="anchor" aria-hidden="true" href="#wsl-使用技巧">#</a></h2>
 <p>在文件资源管理器中输入 <code>\\wsl$</code> 即可进入 wsl 的目录。可以将它添加到文件资源管理器的网络路径里便于访问。</p>
 <h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
 <blockquote>

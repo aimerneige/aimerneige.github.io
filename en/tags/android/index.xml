@@ -15,7 +15,7 @@
       <guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
- Change the style First you should use the DayNight style by Google.
+Change the style First you should use the DayNight style by Google.
 &amp;lt;style name=&amp;#34;AppTheme&amp;#34; parent=&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&amp;gt; If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.
 Adapt colors Make a new folder at project/app/src/main/res/values-night then make a new resource file colors.</description>
     </item>

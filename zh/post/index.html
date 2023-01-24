@@ -130,7 +130,7 @@ if (!doNotTrack) {
     </h2>
   </header>
   <div class="entry-content">
-    <p>阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+    <p>阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。
@@ -210,7 +210,7 @@ Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输
   <div class="entry-content">
     <p>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
 常见类型介绍 Colors Colors 是一个接口，它的代码如下：
-type Color interface { // RGBA returns the alpha-premultiplied red, green, blue and alpha values 	// for the color. Each value ranges within [0, 0xffff], but is represented 	// by a uint32 so that multiplying by a blend factor up to 0xffff will not 	// overflow. 	// 	// An alpha-premultiplied color component c has been scaled by alpha (a), 	// so has valid values 0 &lt;= c &lt;= a....</p>
+type Color interface { // RGBA returns the alpha-premultiplied red, green, blue and alpha values // for the color. Each value ranges within [0, 0xffff], but is represented // by a uint32 so that multiplying by a blend factor up to 0xffff will not // overflow. // // An alpha-premultiplied color component c has been scaled by alpha (a), // so has valid values 0 &lt;= c &lt;= a....</p>
   </div>
   <footer class="entry-footer"><span title='2022-08-12 22:40:28 +0800 CST'>八月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Go 图像处理基础" href="https://aimerneige.com/zh/post/go/go-image-processing-basic/"></a>
@@ -225,7 +225,7 @@ type Color interface { // RGBA returns the alpha-premultiplied red, green, blue 
   </header>
   <div class="entry-content">
     <p>本文章转载自 Rustt
- 简介 当我开始学习 Rust 的时候，我犯了一个错误，那就是先读《The Rust Programming Language》。虽然这是一本非常好的资料，但让新手一开始就阅读这本 20 个章节的书籍，简直令人望而生畏，大多数人还没开始就放弃了。没有人会让一个刚开始学习 JavaScript 或者 Python 的人去阅读一本 20 个章节的书籍。Rust 学习曲线非常陡峭的，但只要循序渐进的学习一定也能学有所成。
+简介 当我开始学习 Rust 的时候，我犯了一个错误，那就是先读《The Rust Programming Language》。虽然这是一本非常好的资料，但让新手一开始就阅读这本 20 个章节的书籍，简直令人望而生畏，大多数人还没开始就放弃了。没有人会让一个刚开始学习 JavaScript 或者 Python 的人去阅读一本 20 个章节的书籍。Rust 学习曲线非常陡峭的，但只要循序渐进的学习一定也能学有所成。
 摘要 如果你是一个完完全全的 Rust 小白，想要在一天中尽可能多的学习 Rust，那我推荐你去阅读 fasterthanlime 的《半小时快速了解 Rust》，然后完成 Rustlings 项目中的练习。
 如果你已经学过 Rust 的基本语法，你可以试着做一下 Exercism.io 网站上的 Rust 部分。如果你遇到了问题，你可以在 Google 或者 StackOverflow 上寻求帮助。我推荐你花点时间来简单的阅读和浏览一下《Rust Standard Library Docs》，它是一个很棒的学习资料，里面有一些简单且实用例子去帮助你更好的使用 Rust 的标准库。《Rust by Example》也是一本高质量的参考资料，你可以通过他快速的学习 Rust 的语法和特性。如果你想要更深入的理解 Rust 的某一个概念，那么我推荐你在《The Rust Programming Language》这本书中寻找相关的章节去阅读。尤其推荐在 Exercism.io 上进行练习。在完成每个题目之后，你可以查看其他所有人的题解，可以按点赞数排序来找到通俗易懂并且巧妙的题解。这是一种很棒的学习方式。
 此时，你可能已经是一个高级的初学者，能够找到属于自己的学习路线。但，如果你还需要更多的指导并想要尝试用 Rust 来写一些简单的程序，我推荐你试一着做一下 Advent of Code 2018 Calendar 上的练习。为什么推荐你做 2018 年的题目呢？因为当你做完了这个练习，你可以和 BurntSushi 提供的答案（ BurntSushi’s Advent of Code 2018 Rust solutions）进行对比。BurntSushi 写的 Rust 代码整洁、可读性强、通俗易懂。阅读一个有经验的 Rustacean 的代码将会使你受益无穷。...</p>
@@ -242,7 +242,7 @@ type Color interface { // RGBA returns the alpha-premultiplied red, green, blue 
     </h2>
   </header>
   <div class="entry-content">
-    <p>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config  将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录  设置 sudo 免密码 sudo visudo 在末尾添加如下内容...</p>
+    <p>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 测试连通性 ssh aimerneige@server 禁用 root 和密码登录 sudo vim /etc/ssh/sshd_config 将 PermitRootLogin 修改为 no 可以禁用 root 用户登录 将 PasswordAuthentication 修改为 no 可以禁用密码登录 设置 sudo 免密码 sudo visudo 在末尾添加如下内容...</p>
   </div>
   <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>五月 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 如何配置新购置的 Linux 服务器" href="https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/"></a>
@@ -259,13 +259,13 @@ type Color interface { // RGBA returns the alpha-premultiplied red, green, blue 
     <p>安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
-.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning
+Warning
 注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
- 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
 执行下面的指令设置 wsl 默认版本为 wsl2：
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
-The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;....</p>
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16....</p>
   </div>
   <footer class="entry-footer"><span title='2022-04-09 22:22:44 +0800 CST'>四月 9, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 wsl 下安装 fedora 35" href="https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/"></a>
@@ -280,9 +280,9 @@ The following is a list of valid distributions that can be installed. Install us
   </header>
   <div class="entry-content">
     <p>什么是 find 正如它的名字一样，find 指令用于查找文件。
- Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
+Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 来源: 菜鸟教程
-  The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
+The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
   </div>
   <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>三月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/linux/basic-usage-of-find/"></a>
@@ -298,9 +298,9 @@ The following is a list of valid distributions that can be installed. Install us
   <div class="entry-content">
     <p>前言 毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。
 Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。
-配置 安装配置 Java 和 Maven .notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Tip
+配置 安装配置 Java 和 Maven Tip
 正常流程配置 Java 和 Maven，如果你已经配置过可以直接跳过
-  下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin  安装必要插件  Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators XML Dependency Analytics  在 settings....</p>
+下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin 安装必要插件 Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators XML Dependency Analytics 在 settings....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-28 15:37:39 +0800 CST'>十二月 28, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 vscode 开发 Spring 项目" href="https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/"></a>

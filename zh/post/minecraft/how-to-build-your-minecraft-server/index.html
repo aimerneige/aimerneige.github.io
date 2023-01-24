@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>如何搭建你自己的 Minecraft 服务器 | AimerNeige&#39;s Blog</title>
 <meta name="keywords" content="game, minecraft, server">
-<meta name="description" content="阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+<meta name="description" content="阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。
@@ -49,7 +49,7 @@ if (!doNotTrack) {
 }
 </script>
 <meta property="og:title" content="如何搭建你自己的 Minecraft 服务器" />
-<meta property="og:description" content="阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+<meta property="og:description" content="阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。
@@ -67,7 +67,7 @@ java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更�
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://aimerneige.com/images/Minecraft_Java_Edtion.svg" />
 <meta name="twitter:title" content="如何搭建你自己的 Minecraft 服务器"/>
-<meta name="twitter:description" content="阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+<meta name="twitter:description" content="阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。
@@ -104,11 +104,11 @@ java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更�
   "@type": "BlogPosting",
   "headline": "如何搭建你自己的 Minecraft 服务器",
   "name": "如何搭建你自己的 Minecraft 服务器",
-  "description": "阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。\n没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。\n如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。\n如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。\n至于你需要多高的配置来运行 Minecraft 服务器，可以参考 Wiki 的内容：\n确保服务器可以被外部连接后，安装 Minecraft 下载服务器文件 在 官网 下载服务器运行所需的 jar 文件。\n官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。\n运行服务器 直接使用官网的示例指令运行 jar 文件：\njava -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更高的内存，可以修改 -Xmx1024M -Xms1024M 这一部分。",
+  "description": "阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。\n没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。\n如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。\n如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。\n至于你需要多高的配置来运行 Minecraft 服务器，可以参考 Wiki 的内容：\n确保服务器可以被外部连接后，安装 Minecraft 下载服务器文件 在 官网 下载服务器运行所需的 jar 文件。\n官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。\n运行服务器 直接使用官网的示例指令运行 jar 文件：\njava -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更高的内存，可以修改 -Xmx1024M -Xms1024M 这一部分。",
   "keywords": [
     "game", "minecraft", "server"
   ],
-  "articleBody": "阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。\n没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。\n如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。\n如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。\n至于你需要多高的配置来运行 Minecraft 服务器，可以参考 Wiki 的内容：\n确保服务器可以被外部连接后，安装 Minecraft 下载服务器文件 在 官网 下载服务器运行所需的 jar 文件。\n官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。\n运行服务器 直接使用官网的示例指令运行 jar 文件：\njava -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更高的内存，可以修改 -Xmx1024M -Xms1024M 这一部分。\n第一次执行后，需要同意用户协议才可以继续执行，修改 eula.txt 这个文件，将 eula=false 改为 eula=true。\n同意用户协议之后，继续使用相同的指令运行 jar 文件，这时 jar 文件会释放很多配置文件，并自动启动服务器，这时可以尝试使用客户端连接。\n客户端连接成功后，证明服务器已成功运行，如需关闭服务器，使用 Ctrl-c 即可。\n配置 修改 server.properties 并重启即可。\n下面是一些常用设置：\n正版认证：\n online-mode=false 关闭 online-mode=true 开启  种子设定\n level-seed=minecraft  地图存档设定\n level-name=world name  难度设定\n difficulty=peaceful easy normal hard  启用白名单\n enforce-whitelist=true  人数上限\n max-players=5  限制世界大小\n max-world-size=10000  服务器名称\n motd=MiraiChess Minecraft Server  限制挂机\n player-idle-timeout=30  禁止 pvp\n pvp=false  关于 server.properties 的更多细节，请查阅 Wiki。\n自动备份 参考这篇文章：\n Anduin - Auto backup for Minecraft on Linux  升级 替换 server.jar 之后重启即可。\n",
+  "articleBody": "阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。\n没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。\n如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。\n如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。\n至于你需要多高的配置来运行 Minecraft 服务器，可以参考 Wiki 的内容：\n确保服务器可以被外部连接后，安装 Minecraft 下载服务器文件 在 官网 下载服务器运行所需的 jar 文件。\n官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。\n运行服务器 直接使用官网的示例指令运行 jar 文件：\njava -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更高的内存，可以修改 -Xmx1024M -Xms1024M 这一部分。\n第一次执行后，需要同意用户协议才可以继续执行，修改 eula.txt 这个文件，将 eula=false 改为 eula=true。\n同意用户协议之后，继续使用相同的指令运行 jar 文件，这时 jar 文件会释放很多配置文件，并自动启动服务器，这时可以尝试使用客户端连接。\n客户端连接成功后，证明服务器已成功运行，如需关闭服务器，使用 Ctrl-c 即可。\n配置 修改 server.properties 并重启即可。\n下面是一些常用设置：\n正版认证：\nonline-mode=false 关闭 online-mode=true 开启 种子设定\nlevel-seed=minecraft 地图存档设定\nlevel-name=world name 难度设定\ndifficulty=peaceful easy normal hard 启用白名单\nenforce-whitelist=true 人数上限\nmax-players=5 限制世界大小\nmax-world-size=10000 服务器名称\nmotd=MiraiChess Minecraft Server 限制挂机\nplayer-idle-timeout=30 禁止 pvp\npvp=false 关于 server.properties 的更多细节，请查阅 Wiki。\n自动备份 参考这篇文章：\nAnduin - Auto backup for Minecraft on Linux 升级 替换 server.jar 之后重启即可。\n",
   "wordCount" : "137",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/Minecraft_Java_Edtion.svg","datePublished": "2023-01-12T21:00:37+08:00",
@@ -266,8 +266,8 @@ java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更�
 <p>官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。</p>
 <h3 id="运行服务器">运行服务器<a hidden class="anchor" aria-hidden="true" href="#运行服务器">#</a></h3>
 <p>直接使用官网的示例指令运行 jar 文件：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui
-</code></pre></div><p>如果你有更高的内存，可以修改 <code>-Xmx1024M -Xms1024M</code> 这一部分。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui
+</span></span></code></pre></div><p>如果你有更高的内存，可以修改 <code>-Xmx1024M -Xms1024M</code> 这一部分。</p>
 <p>第一次执行后，需要同意用户协议才可以继续执行，修改 <code>eula.txt</code> 这个文件，将 <code>eula=false</code> 改为 <code>eula=true</code>。</p>
 <p>同意用户协议之后，继续使用相同的指令运行 jar 文件，这时 jar 文件会释放很多配置文件，并自动启动服务器，这时可以尝试使用客户端连接。</p>
 <p>客户端连接成功后，证明服务器已成功运行，如需关闭服务器，使用 <code>Ctrl-c</code> 即可。</p>

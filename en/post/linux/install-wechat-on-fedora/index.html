@@ -94,7 +94,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
   "keywords": [
     "wechat", "fedora", "wine"
   ],
-  "articleBody": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026 Install WeChat Just download the exe Installer. (Same with download it from browser.)\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe Star WeChat Installer with wine:\nwine ./WeChatSetup.exe Then install it as in Windows.\nAfter installed, you can delete the installer file.\nAdjust language Settings Edit this file:\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop Change the part Exec , add a new enviroment variable:\nenv LC_ALL=\"zh_CN.UTF8\" The finally result should like this: (note for the path)\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe Start WeChat Durning the install process, a desktop file has been added to your system. Just open it as a normal application.\nKnow Issue  You can only use Chinese. Chinese characters will not display properly when you set language settings to English The name of the sticker can not be displayed properly The program launched by WeChat will be in Chinese The shadow of the WeChat’s windows still at the top of other program The mini-program might not work  Alternative If you don’t mind installing a nspawn sub-system into your computer, try this awesome project:\n GitHub - loaden/nspawn-qq  Refer Link  AnduinXue - Run WeChat in Ubuntu  ",
+  "articleBody": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026 Install WeChat Just download the exe Installer. (Same with download it from browser.)\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe Star WeChat Installer with wine:\nwine ./WeChatSetup.exe Then install it as in Windows.\nAfter installed, you can delete the installer file.\nAdjust language Settings Edit this file:\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop Change the part Exec , add a new enviroment variable:\nenv LC_ALL=\"zh_CN.UTF8\" The finally result should like this: (note for the path)\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe Start WeChat Durning the install process, a desktop file has been added to your system. Just open it as a normal application.\nKnow Issue You can only use Chinese. Chinese characters will not display properly when you set language settings to English The name of the sticker can not be displayed properly The program launched by WeChat will be in Chinese The shadow of the WeChat’s windows still at the top of other program The mini-program might not work Alternative If you don’t mind installing a nspawn sub-system into your computer, try this awesome project:\nGitHub - loaden/nspawn-qq Refer Link AnduinXue - Run WeChat in Ubuntu ",
   "wordCount" : "246",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/fedora-wechat.svg","datePublished": "2022-11-10T12:03:30+08:00",
@@ -224,32 +224,32 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
 
   <div class="post-content"><h1 id="install-wechat-on-fedora">Install WeChat on Fedora<a hidden class="anchor" aria-hidden="true" href="#install-wechat-on-fedora">#</a></h1>
 <h2 id="install-wine">Install Wine<a hidden class="anchor" aria-hidden="true" href="#install-wine">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install wine
-</code></pre></div><h2 id="adjust-dpi-config">Adjust DPI Config<a hidden class="anchor" aria-hidden="true" href="#adjust-dpi-config">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install wine
+</span></span></code></pre></div><h2 id="adjust-dpi-config">Adjust DPI Config<a hidden class="anchor" aria-hidden="true" href="#adjust-dpi-config">#</a></h2>
 <p>Use bellow command to open winecfg</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">winecfg
-</code></pre></div><p>Adjust the dpi to a suitable value at tab <code>Graphics</code>. (4k monitor, 192 dpi)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>winecfg
+</span></span></code></pre></div><p>Adjust the dpi to a suitable value at tab <code>Graphics</code>. (4k monitor, 192 dpi)</p>
 <h2 id="download-and-config-fonts">Download And Config Fonts<a hidden class="anchor" aria-hidden="true" href="#download-and-config-fonts">#</a></h2>
 <p>Run the following commands</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install cabextract
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install winetricks
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">winetricks corefonts gdiplus riched20 riched30
-</code></pre></div><h2 id="download--install-wechat">Download &amp; Install WeChat<a hidden class="anchor" aria-hidden="true" href="#download--install-wechat">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install cabextract
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install winetricks
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>winetricks corefonts gdiplus riched20 riched30
+</span></span></code></pre></div><h2 id="download--install-wechat">Download &amp; Install WeChat<a hidden class="anchor" aria-hidden="true" href="#download--install-wechat">#</a></h2>
 <p>Just download the exe Installer. (Same with download it from browser.)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
-</code></pre></div><p>Star WeChat Installer with wine:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wine ./WeChatSetup.exe
-</code></pre></div><p>Then install it as in Windows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
+</span></span></code></pre></div><p>Star WeChat Installer with wine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine ./WeChatSetup.exe
+</span></span></code></pre></div><p>Then install it as in Windows.</p>
 <p>After installed, you can delete the installer file.</p>
 <h2 id="adjust-language-settings">Adjust language Settings<a hidden class="anchor" aria-hidden="true" href="#adjust-language-settings">#</a></h2>
 <p>Edit this file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop
-</code></pre></div><p>Change the part <code>Exec</code> , add a new enviroment variable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">env LC_ALL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh_CN.UTF8&#34;</span> 
-</code></pre></div><p>The finally result should like this: (note for the path)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop
+</span></span></code></pre></div><p>Change the part <code>Exec</code> , add a new enviroment variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>env LC_ALL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh_CN.UTF8&#34;</span> 
+</span></span></code></pre></div><p>The finally result should like this: (note for the path)</p>
 <pre tabindex="0"><code class="language-desktop" data-lang="desktop">[Desktop Entry]
 Name=WeChat
-Exec=env LC_ALL=&quot;zh_CN.UTF8&quot; env WINEPREFIX=&quot;/home/aimer/.wine&quot; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk
+Exec=env LC_ALL=&#34;zh_CN.UTF8&#34; env WINEPREFIX=&#34;/home/aimer/.wine&#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk
 Type=Application
 StartupNotify=true
 Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat

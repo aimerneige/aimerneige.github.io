@@ -13,7 +13,7 @@
       <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</guid>
-      <description>Update System # Debian apt update # Fedora dnf update Install Most Used Tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user Create Sudo User # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige Test Root Privileges su - aimerneige sudo cat /etc/shadow Setup SSH Public Key # run this on your local machine ssh-copy-id aimerneige@server Test if You Can Connect to Server ssh aimerneige@server Disable Root and Password Login sudo vim /etc/ssh/sshd_config  Set PermitRootLogin as no To disable root login Set PasswordAuthentication ad no To disable password login  Skip Password for Sudo sudo visudo Add this on the end of file:</description>
+      <description>Update System # Debian apt update # Fedora dnf update Install Most Used Tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user Create Sudo User # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige Test Root Privileges su - aimerneige sudo cat /etc/shadow Setup SSH Public Key # run this on your local machine ssh-copy-id aimerneige@server Test if You Can Connect to Server ssh aimerneige@server Disable Root and Password Login sudo vim /etc/ssh/sshd_config Set PermitRootLogin as no To disable root login Set PasswordAuthentication ad no To disable password login Skip Password for Sudo sudo visudo Add this on the end of file:</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <description>Shell Comment Start with #
 # this is a line of comment Simply write more with # start
 # Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
-:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </description>
+:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link https://www.runoob.com/linux/linux-shell-variable.html </description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@
 The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
 Note that the 0 is the script fine name.
 Example:
-#!/usr/bin/bash  echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
+#!/usr/bin/bash echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ Example:
       <description>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
+You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.</description>
     </item>
     
   </channel>

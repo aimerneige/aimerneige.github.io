@@ -10,7 +10,7 @@
 <meta name="description" content="Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.">
+You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/shell/shell-learning-notes-variable/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
@@ -47,7 +47,7 @@ if (!doNotTrack) {
 <meta property="og:description" content="Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters." />
+You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/en/post/shell/shell-learning-notes-variable/" />
 <meta property="og:image" content="https://aimerneige.com/images/Gnu-bash-logo.svg" /><meta property="article:section" content="post" />
@@ -60,7 +60,7 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
 <meta name="twitter:description" content="Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters."/>
+You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash."/>
 
 
 <script type="application/ld+json">
@@ -89,12 +89,12 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
   "@type": "BlogPosting",
   "headline": "Shell Learning Notes Variable",
   "name": "Shell Learning Notes Variable",
-  "description": "Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.\nFor example:\nyour_name=\u0026#34;Aimer Neige\u0026#34; Like other programming languages, you need to follow these rules:\n You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.",
+  "description": "Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.\nFor example:\nyour_name=\u0026#34;Aimer Neige\u0026#34; Like other programming languages, you need to follow these rules:\nYou can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.",
   "keywords": [
     "linux", "bash", "shell", "notes"
   ],
-  "articleBody": "Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.\nFor example:\nyour_name=\"Aimer Neige\" Like other programming languages, you need to follow these rules:\n You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.  For example, right variable names:\nRUNOOB LD_LIBRARY_PATH _var var2 Wrong variable names:\n?var=123 user*name=runoob Except assign a variable with =, a statement is also right. For example:\nfor file in `ls /etc` # or for file in $(ls /etc) Note that no spaces can be added to the sides of the equals sign.\n# right FOO=\"Hello\" echo $BAR # wrong BAR = \"Hello\" echo $BAR Access Variable If you want to use a variable, add $ before the variable name:\nyour_name=\"Alice\" echo $your_name echo ${your_name} The {} can be ignored, but still recommend you add it. That is because when you are faced with this situation:\nfor skill in Ada Coffee Action Java; do echo \"I am good at ${skill}Script\" done If you ignore the {}, the script will think you want to access a variable named skillScript, which will cause some problems.\nAll of the variables you defined can be redefined:\nyour_name=\"Tom\" echo $your_name your_name=\"Jack\" echo $your_name Write a script in this way are right but note that if you assign a variable the second time, do not use $ because the $ only be used when you want to access it.\nRead-only Variable Using thereadonly  command can make a variable read-only.\n#!/bin/bash  myUrl=\"https://www.google.com\" readonly myUrl myUrl=\"https://aimerneige.com\" If you run this script, you will get this error output:\n./test.sh: line 5: myUrl: readonly variable Delete Variable You can delete a variable with unset.\nunset variable_name Variable can not be accessed after being deleted. Note that unset can not delete a read-only variable.\nFor example:\n#!/bin/sh  myUrl=\"https://aimerneige.com\" unset myUrl echo $myUrl If you run this script, you will get noting for output.\nVariable Type  local variable: Define in a shell script, only available in the script. environment variable: Define in the system environment, can be accessed by all of the program and shell scripts. shell variable: Define in shell program, some of them are local variables and some of them are environment variables. These variables make sure the shell runs properly.  Shell String The string is the most used data structure. You can define a string with a single quote ', double quotes \" or without quotation marks.\nsingle-quoted string str='this is a string' Limitations of single-quoted strings:\n Any character in single quotes will be output as is, variables in single quoted strings are invalid; A single quote cannot appear in a single quote string (even after using an escape character for a single quote), but it can appear in pairs and be used as string concatenation.  Enclosing characters in single quotation marks (‘) holds onto the literal value of each character within the quotes. In simpler words, the shell will interpret the enclosed text within single quotes literally and will not interpolate anything including variables, backticks, certain \\ escapes, etc. No character in the single quote has special meaning. This is convenient when you do not want to use the escape characters to change the way the bash interprets the input string.double-quoted string Example:\nyour_name=\"runoob\" str=\"Hello, I know you are \\\"$your_name\\\"! \\n\" echo -e $str Example output:\nHello, I know you are \"runoob\"! Advantage of double-quoted string:\n Variables can be enclosed in double quotes Escape characters can appear in double quotes  Double quotes are similar to single quotes except that it allows the shell to interpret dollar sign ($), backtick(`), backslash() and exclamation mark(!). The characters have special meaning when used with double quotes, and before display, they are evaluated. A double quote may be used within double quotes by preceding it with a backslash.\nstring concatenation Example:\nyour_name=\"runoob\" # double-quoted string greeting=\"hello, \"$your_name\" !\" greeting_1=\"hello, ${your_name}!\" echo $greeting $greeting_1 # single-quoted string greeting_2='hello, '$your_name' !' greeting_3='hello, ${your_name} !' echo $greeting_2 $greeting_3 Example output:\nhello, runoob ! hello, runoob ! hello, runoob ! hello, ${your_name} ! length of string string=\"abcd\" echo ${#string} # output: 4 If the variable are array, ${#string} is equivalent to ${#string[0]}.\nFor Example:\nstring=\"abcd\" echo ${#string[0]} # output: 4 extract substring Assume there is a variable var=http://www.aaa.com/123.htm.\n# operator, delete left characters, keep right characters echo ${var#*//} Where var is the variable name, the # sign is the operator, and *// means to delete the first //sign from the left and all characters on the left from the left.\nIn the example, delete http:// and we got www.aaa.com/123.htm.\n## operator, delete left characters, keep right characters echo ${var##*/} ##*/ means to delete the last (rightmost) / sign from the left and all characters to the left from it.\nIn the example, delete http://www.aaa.com/ and we got 123.htm\n% operator, delete right characters, keep left characters echo ${var%/*} %/* means to delete the first / sign from the right and the characters to the right from it.\nIn the example, delete /123.htm and we got http://www.aaa.com.\n%% operator, delete right characters, keep left characters echo ${var%%/*} %%/* means to delete the last (leftmost) / sign from the right and all characters to the right from it.\nIn the example, delete //www.aaa.com/123.htm and we got http:.\nfrom left index with character counts echo ${var:0:5} Where 0 means start from the first character from left, and 5 means the total number of characters.\nIn the example, we got http:.\nfrom left index to end echo ${var:7} The 7 means start from the 8th character from left and till the end.\nIn the example, we got www.aaa.com/123.htm.\nfrom right index with character counts echo ${var:0-7:3} Where 0-7 means start from the 7th character from right, and the 3 means the total number of characters.\nIn the example, we got 123.\nfrom left index to start echo ${var:0-7} The 0-7 means start from the 7th character from right and till the end.\nIn the example, we got 123.htm.\nNote: The index of the first character are 0.\nSearch String Find the position of the character i or o (whichever occurs first is counted)\nstring=\"runoob is a great site\" echo `expr index \"$string\" io` # output 4  More about expr command:\n https://cheat.sh/expr https://www.geeksforgeeks.org/expr-command-in-linux-with-examples/   Shell Array You can use one-dimensional array in bash. (bash does not support multidimensional arrays)\nThere is no limit to the size of the array.\nSimilar to the C programming language, the elements of the array start to index with 0.\ndefine array Define an array with brackets (), and separate all of the elements with space.\nFor example:\narray_name=(value0 value1 value2 value3) array_name=( value0 value1 value2 value3 ) array_name[0]=value0 array_name[1]=value1 array_name[2]=value2 array_name[3]=value3 array_name[0]=value0 array_name[114514]=value114514 Subscripts can be no-continuous and the range is without any limit.\naccess array Access elements by:\nvalue=${array_name[3]} Use @ or * to access all of the elements:\necho ${array_name[@]} echo ${array_name[*]} get array length Similar to string:\n# Get the number of array elements length=${#array_name[@]} # or length=${#array_name[*]} # Get the length of a single element of an array length=${#array_name[3]} Refer Link  https://www.runoob.com/linux/linux-shell-variable.html https://www.geeksforgeeks.org/difference-between-single-and-double-quotes-in-shell-script-and-linux/  ",
-  "wordCount" : "1210",
+  "articleBody": "Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.\nFor example:\nyour_name=\"Aimer Neige\" Like other programming languages, you need to follow these rules:\nYou can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash. For example, right variable names:\nRUNOOB LD_LIBRARY_PATH _var var2 Wrong variable names:\n?var=123 user*name=runoob Except assign a variable with =, a statement is also right. For example:\nfor file in `ls /etc` # or for file in $(ls /etc) Note that no spaces can be added to the sides of the equals sign.\n# right FOO=\"Hello\" echo $BAR # wrong BAR = \"Hello\" echo $BAR Access Variable If you want to use a variable, add $ before the variable name:\nyour_name=\"Alice\" echo $your_name echo ${your_name} The {} can be ignored, but still recommend you add it. That is because when you are faced with this situation:\nfor skill in Ada Coffee Action Java; do echo \"I am good at ${skill}Script\" done If you ignore the {}, the script will think you want to access a variable named skillScript, which will cause some problems.\nAll of the variables you defined can be redefined:\nyour_name=\"Tom\" echo $your_name your_name=\"Jack\" echo $your_name Write a script in this way are right but note that if you assign a variable the second time, do not use $ because the $ only be used when you want to access it.\nRead-only Variable Using thereadonly command can make a variable read-only.\n#!/bin/bash myUrl=\"https://www.google.com\" readonly myUrl myUrl=\"https://aimerneige.com\" If you run this script, you will get this error output:\n./test.sh: line 5: myUrl: readonly variable Delete Variable You can delete a variable with unset.\nunset variable_name Variable can not be accessed after being deleted. Note that unset can not delete a read-only variable.\nFor example:\n#!/bin/sh myUrl=\"https://aimerneige.com\" unset myUrl echo $myUrl If you run this script, you will get noting for output.\nVariable Type local variable: Define in a shell script, only available in the script. environment variable: Define in the system environment, can be accessed by all of the program and shell scripts. shell variable: Define in shell program, some of them are local variables and some of them are environment variables. These variables make sure the shell runs properly. Shell String The string is the most used data structure. You can define a string with a single quote ', double quotes \" or without quotation marks.\nsingle-quoted string str='this is a string' Limitations of single-quoted strings:\nAny character in single quotes will be output as is, variables in single quoted strings are invalid; A single quote cannot appear in a single quote string (even after using an escape character for a single quote), but it can appear in pairs and be used as string concatenation. Enclosing characters in single quotation marks (‘) holds onto the literal value of each character within the quotes. In simpler words, the shell will interpret the enclosed text within single quotes literally and will not interpolate anything including variables, backticks, certain \\ escapes, etc. No character in the single quote has special meaning. This is convenient when you do not want to use the escape characters to change the way the bash interprets the input string.\ndouble-quoted string Example:\nyour_name=\"runoob\" str=\"Hello, I know you are \\\"$your_name\\\"! \\n\" echo -e $str Example output:\nHello, I know you are \"runoob\"! Advantage of double-quoted string:\nVariables can be enclosed in double quotes Escape characters can appear in double quotes Double quotes are similar to single quotes except that it allows the shell to interpret dollar sign ($), backtick(`), backslash() and exclamation mark(!). The characters have special meaning when used with double quotes, and before display, they are evaluated. A double quote may be used within double quotes by preceding it with a backslash.\nstring concatenation Example:\nyour_name=\"runoob\" # double-quoted string greeting=\"hello, \"$your_name\" !\" greeting_1=\"hello, ${your_name} !\" echo $greeting $greeting_1 # single-quoted string greeting_2='hello, '$your_name' !' greeting_3='hello, ${your_name} !' echo $greeting_2 $greeting_3 Example output:\nhello, runoob ! hello, runoob ! hello, runoob ! hello, ${your_name} ! length of string string=\"abcd\" echo ${#string} # output: 4 If the variable are array, ${#string} is equivalent to ${#string[0]}.\nFor Example:\nstring=\"abcd\" echo ${#string[0]} # output: 4 extract substring Assume there is a variable var=http://www.aaa.com/123.htm.\n# operator, delete left characters, keep right characters echo ${var#*//} Where var is the variable name, the # sign is the operator, and *// means to delete the first //sign from the left and all characters on the left from the left.\nIn the example, delete http:// and we got www.aaa.com/123.htm.\n## operator, delete left characters, keep right characters echo ${var##*/} ##*/ means to delete the last (rightmost) / sign from the left and all characters to the left from it.\nIn the example, delete http://www.aaa.com/ and we got 123.htm\n% operator, delete right characters, keep left characters echo ${var%/*} %/* means to delete the first / sign from the right and the characters to the right from it.\nIn the example, delete /123.htm and we got http://www.aaa.com.\n%% operator, delete right characters, keep left characters echo ${var%%/*} %%/* means to delete the last (leftmost) / sign from the right and all characters to the right from it.\nIn the example, delete //www.aaa.com/123.htm and we got http:.\nfrom left index with character counts echo ${var:0:5} Where 0 means start from the first character from left, and 5 means the total number of characters.\nIn the example, we got http:.\nfrom left index to end echo ${var:7} The 7 means start from the 8th character from left and till the end.\nIn the example, we got www.aaa.com/123.htm.\nfrom right index with character counts echo ${var:0-7:3} Where 0-7 means start from the 7th character from right, and the 3 means the total number of characters.\nIn the example, we got 123.\nfrom left index to start echo ${var:0-7} The 0-7 means start from the 7th character from right and till the end.\nIn the example, we got 123.htm.\nNote: The index of the first character are 0.\nSearch String Find the position of the character i or o (whichever occurs first is counted)\nstring=\"runoob is a great site\" echo `expr index \"$string\" io` # output 4 More about expr command:\nhttps://cheat.sh/expr https://www.geeksforgeeks.org/expr-command-in-linux-with-examples/ Shell Array You can use one-dimensional array in bash. (bash does not support multidimensional arrays)\nThere is no limit to the size of the array.\nSimilar to the C programming language, the elements of the array start to index with 0.\ndefine array Define an array with brackets (), and separate all of the elements with space.\nFor example:\narray_name=(value0 value1 value2 value3) array_name=( value0 value1 value2 value3 ) array_name[0]=value0 array_name[1]=value1 array_name[2]=value2 array_name[3]=value3 array_name[0]=value0 array_name[114514]=value114514 Subscripts can be no-continuous and the range is without any limit.\naccess array Access elements by:\nvalue=${array_name[3]} Use @ or * to access all of the elements:\necho ${array_name[@]} echo ${array_name[*]} get array length Similar to string:\n# Get the number of array elements length=${#array_name[@]} # or length=${#array_name[*]} # Get the length of a single element of an array length=${#array_name[3]} Refer Link https://www.runoob.com/linux/linux-shell-variable.html https://www.geeksforgeeks.org/difference-between-single-and-double-quotes-in-shell-script-and-linux/ ",
+  "wordCount" : "1212",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/Gnu-bash-logo.svg","datePublished": "2022-04-30T00:42:38+08:00",
   "dateModified": "2022-04-30T00:42:38+08:00",
@@ -261,8 +261,8 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
 <h2 id="define-variable">Define Variable<a hidden class="anchor" aria-hidden="true" href="#define-variable">#</a></h2>
 <p>You are not allowed to add <code>$</code> when defining a variable, while in php, you need it.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
-</code></pre></div><p>Like other programming languages, you need to follow these rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Aimer Neige&#34;</span>
+</span></span></code></pre></div><p>Like other programming languages, you need to follow these rules:</p>
 <ol>
 <li>You can only use letters, numbers, and underscores, and the first character can not be numbers.</li>
 <li>You are not allowed to add space, use underscores <code>_</code> replace.</li>
@@ -270,61 +270,61 @@ your_name=&#34;Aimer Neige&#34; Like other programming languages, you need to fo
 <li>You can not use any keywords  used by bash.</li>
 </ol>
 <p>For example, right variable names:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">RUNOOB
-LD_LIBRARY_PATH
-_var
-var2
-</code></pre></div><p>Wrong variable names:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">?var<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
-user*name<span style="color:#f92672">=</span>runoob
-</code></pre></div><p>Except assign a variable with <code>=</code>, a statement is also right. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">`</span>ls /etc<span style="color:#e6db74">`</span>
-<span style="color:#75715e"># or</span>
-<span style="color:#66d9ef">for</span> file in <span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
-</code></pre></div><p>Note that no spaces can be added to the sides of the equals sign.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># right</span>
-FOO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello&#34;</span>
-echo $BAR
-
-<span style="color:#75715e"># wrong</span>
-BAR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
-echo $BAR
-</code></pre></div><h2 id="access-variable">Access Variable<a hidden class="anchor" aria-hidden="true" href="#access-variable">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>RUNOOB
+</span></span><span style="display:flex;"><span>LD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span>_var
+</span></span><span style="display:flex;"><span>var2
+</span></span></code></pre></div><p>Wrong variable names:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>?var<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>user*name<span style="color:#f92672">=</span>runoob
+</span></span></code></pre></div><p>Except assign a variable with <code>=</code>, a statement is also right. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">`</span>ls /etc<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in <span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>Note that no spaces can be added to the sides of the equals sign.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># right</span>
+</span></span><span style="display:flex;"><span>FOO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>echo $BAR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># wrong</span>
+</span></span><span style="display:flex;"><span>BAR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>echo $BAR
+</span></span></code></pre></div><h2 id="access-variable">Access Variable<a hidden class="anchor" aria-hidden="true" href="#access-variable">#</a></h2>
 <p>If you want to use a variable, add <code>$</code> before the variable name:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Alice&#34;</span>
-echo $your_name
-echo <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span>
-</code></pre></div><p>The <code>{}</code> can be ignored, but still recommend you add it. That is because when you are faced with this situation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> skill in Ada Coffee Action Java; <span style="color:#66d9ef">do</span>
-    echo <span style="color:#e6db74">&#34;I am good at </span><span style="color:#e6db74">${</span>skill<span style="color:#e6db74">}</span><span style="color:#e6db74">Script&#34;</span>
-<span style="color:#66d9ef">done</span>
-</code></pre></div><p>If you ignore the <code>{}</code>, the script will think you want to access a variable named <code>skillScript</code>, which will cause some problems.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>echo $your_name
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>The <code>{}</code> can be ignored, but still recommend you add it. That is because when you are faced with this situation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> skill in Ada Coffee Action Java; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;I am good at </span><span style="color:#e6db74">${</span>skill<span style="color:#e6db74">}</span><span style="color:#e6db74">Script&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>If you ignore the <code>{}</code>, the script will think you want to access a variable named <code>skillScript</code>, which will cause some problems.</p>
 <p>All of the variables you defined can be redefined:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Tom&#34;</span>
-echo $your_name
-your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Jack&#34;</span>
-echo $your_name
-</code></pre></div><p>Write a script in this way are right but note that if you assign a variable the second time, do not use <code>$</code> because the <code>$</code> only be used when you want to access it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Tom&#34;</span>
+</span></span><span style="display:flex;"><span>echo $your_name
+</span></span><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Jack&#34;</span>
+</span></span><span style="display:flex;"><span>echo $your_name
+</span></span></code></pre></div><p>Write a script in this way are right but note that if you assign a variable the second time, do not use <code>$</code> because the <code>$</code> only be used when you want to access it.</p>
 <h2 id="read-only-variable">Read-only Variable<a hidden class="anchor" aria-hidden="true" href="#read-only-variable">#</a></h2>
 <p>Using the<code>readonly </code> command can make a variable read-only.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>
-readonly myUrl
-myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://aimerneige.com&#34;</span>
-</code></pre></div><p>If you run this script, you will get this error output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./test.sh: line 5: myUrl: readonly variable
-</code></pre></div><h2 id="delete-variable">Delete Variable<a hidden class="anchor" aria-hidden="true" href="#delete-variable">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>
+</span></span><span style="display:flex;"><span>readonly myUrl
+</span></span><span style="display:flex;"><span>myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://aimerneige.com&#34;</span>
+</span></span></code></pre></div><p>If you run this script, you will get this error output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./test.sh: line 5: myUrl: readonly variable
+</span></span></code></pre></div><h2 id="delete-variable">Delete Variable<a hidden class="anchor" aria-hidden="true" href="#delete-variable">#</a></h2>
 <p>You can delete a variable with <code>unset</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">unset variable_name
-</code></pre></div><p>Variable can not be accessed after being deleted. Note that <code>unset</code> can not delete a read-only variable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unset variable_name
+</span></span></code></pre></div><p>Variable can not be accessed after being deleted. Note that <code>unset</code> can not delete a read-only variable.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>
-myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://aimerneige.com&#34;</span>
-unset myUrl
-echo $myUrl
-</code></pre></div><p>If you run this script, you will get noting for output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>myUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://aimerneige.com&#34;</span>
+</span></span><span style="display:flex;"><span>unset myUrl
+</span></span><span style="display:flex;"><span>echo $myUrl
+</span></span></code></pre></div><p>If you run this script, you will get noting for output.</p>
 <h2 id="variable-type">Variable Type<a hidden class="anchor" aria-hidden="true" href="#variable-type">#</a></h2>
 <ol>
 <li><strong>local variable</strong>: Define in a shell script, only available in the script.</li>
@@ -334,8 +334,8 @@ echo $myUrl
 <h2 id="shell-string">Shell String<a hidden class="anchor" aria-hidden="true" href="#shell-string">#</a></h2>
 <p>The string is the most used data structure. You can define a string with a single quote <code>'</code>, double quotes <code>&quot;</code> or without quotation marks.</p>
 <h3 id="single-quoted-string">single-quoted string<a hidden class="anchor" aria-hidden="true" href="#single-quoted-string">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this is a string&#39;</span>
-</code></pre></div><p>Limitations of single-quoted strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this is a string&#39;</span>
+</span></span></code></pre></div><p>Limitations of single-quoted strings:</p>
 <ol>
 <li>Any character in single quotes will be output as is, variables in single quoted strings are invalid;</li>
 <li>A single quote cannot appear in a single quote string (even after using an escape character for a single quote), but it can appear in pairs and be used as string concatenation.</li>
@@ -343,12 +343,12 @@ echo $myUrl
 <p>Enclosing characters in single quotation marks (‘) holds onto the literal value of each character within the quotes.  In simpler words, the shell will interpret the enclosed text within single quotes literally and will not interpolate anything including variables, backticks, certain \ escapes, etc. <!-- raw HTML omitted -->No character in the single quote has special meaning. This is convenient when you do not want to use the escape characters to change the way the bash interprets the input string.<!-- raw HTML omitted --></p>
 <h3 id="double-quoted-string">double-quoted string<a hidden class="anchor" aria-hidden="true" href="#double-quoted-string">#</a></h3>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob&#34;</span>
-str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, I know you are \&#34;</span>$your_name<span style="color:#e6db74">\&#34;! \n&#34;</span>
-echo -e $str
-</code></pre></div><p>Example output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Hello, I know you are <span style="color:#e6db74">&#34;runoob&#34;</span>!
-</code></pre></div><p>Advantage of double-quoted string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob&#34;</span>
+</span></span><span style="display:flex;"><span>str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, I know you are \&#34;</span>$your_name<span style="color:#e6db74">\&#34;! \n&#34;</span>
+</span></span><span style="display:flex;"><span>echo -e $str
+</span></span></code></pre></div><p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Hello, I know you are <span style="color:#e6db74">&#34;runoob&#34;</span>!
+</span></span></code></pre></div><p>Advantage of double-quoted string:</p>
 <ol>
 <li>Variables can be enclosed in double quotes</li>
 <li>Escape characters can appear in double quotes</li>
@@ -356,67 +356,67 @@ echo -e $str
 <p>Double quotes are similar to single quotes except that it allows the shell to interpret dollar sign ($), backtick(`), backslash() and exclamation mark(!). The characters have special meaning when used with double quotes, and before display, they are evaluated. A double quote may be used within double quotes by preceding it with a backslash.</p>
 <h3 id="string-concatenation">string concatenation<a hidden class="anchor" aria-hidden="true" href="#string-concatenation">#</a></h3>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob&#34;</span>
-<span style="color:#75715e"># double-quoted string</span>
-greeting<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, &#34;</span>$your_name<span style="color:#e6db74">&#34; !&#34;</span>
-greeting_1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, </span><span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> !&#34;</span>
-echo $greeting  $greeting_1
-
-<span style="color:#75715e"># single-quoted string</span>
-greeting_2<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, &#39;</span>$your_name<span style="color:#e6db74">&#39; !&#39;</span>
-greeting_3<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, ${your_name} !&#39;</span>
-echo $greeting_2  $greeting_3
-</code></pre></div><p>Example output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello, runoob ! hello, runoob !
-hello, runoob ! hello, <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span> !
-</code></pre></div><h3 id="length-of-string">length of string<a hidden class="anchor" aria-hidden="true" href="#length-of-string">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
-echo <span style="color:#e6db74">${#</span>string<span style="color:#e6db74">}</span> <span style="color:#75715e"># output: 4</span>
-</code></pre></div><p>If the variable are array, <code>${#string}</code> is equivalent to <code>${#string[0]}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># double-quoted string</span>
+</span></span><span style="display:flex;"><span>greeting<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, &#34;</span>$your_name<span style="color:#e6db74">&#34; !&#34;</span>
+</span></span><span style="display:flex;"><span>greeting_1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello, </span><span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> !&#34;</span>
+</span></span><span style="display:flex;"><span>echo $greeting  $greeting_1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># single-quoted string</span>
+</span></span><span style="display:flex;"><span>greeting_2<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, &#39;</span>$your_name<span style="color:#e6db74">&#39; !&#39;</span>
+</span></span><span style="display:flex;"><span>greeting_3<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hello, ${your_name} !&#39;</span>
+</span></span><span style="display:flex;"><span>echo $greeting_2  $greeting_3
+</span></span></code></pre></div><p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hello, runoob ! hello, runoob !
+</span></span><span style="display:flex;"><span>hello, runoob ! hello, <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span> !
+</span></span></code></pre></div><h3 id="length-of-string">length of string<a hidden class="anchor" aria-hidden="true" href="#length-of-string">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">${#</span>string<span style="color:#e6db74">}</span> <span style="color:#75715e"># output: 4</span>
+</span></span></code></pre></div><p>If the variable are array, <code>${#string}</code> is equivalent to <code>${#string[0]}</code>.</p>
 <p>For Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
-echo <span style="color:#e6db74">${#</span>string[0]<span style="color:#e6db74">}</span> <span style="color:#75715e"># output: 4</span>
-</code></pre></div><h3 id="extract-substring">extract substring<a hidden class="anchor" aria-hidden="true" href="#extract-substring">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">${#</span>string[0]<span style="color:#e6db74">}</span> <span style="color:#75715e"># output: 4</span>
+</span></span></code></pre></div><h3 id="extract-substring">extract substring<a hidden class="anchor" aria-hidden="true" href="#extract-substring">#</a></h3>
 <p>Assume there is a variable <code>var=http://www.aaa.com/123.htm</code>.</p>
 <h4 id="-operator-delete-left-characters-keep-right-characters"><code>#</code> operator, delete left characters, keep right characters<a hidden class="anchor" aria-hidden="true" href="#-operator-delete-left-characters-keep-right-characters">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var#*//<span style="color:#e6db74">}</span>
-</code></pre></div><p>Where <code>var</code> is the variable name, the <code>#</code> sign is the operator, and <code>*//</code> means to delete the first <code>//</code>sign from the left and all characters on the left from the left.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var#*//<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>Where <code>var</code> is the variable name, the <code>#</code> sign is the operator, and <code>*//</code> means to delete the first <code>//</code>sign from the left and all characters on the left from the left.</p>
 <p>In the example, delete <code>http://</code> and we got <code>www.aaa.com/123.htm</code>.</p>
 <h4 id="-operator-delete-left-characters-keep-right-characters-1"><code>##</code> operator, delete left characters, keep right characters<a hidden class="anchor" aria-hidden="true" href="#-operator-delete-left-characters-keep-right-characters-1">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var##*/<span style="color:#e6db74">}</span>
-</code></pre></div><p><code>##*/</code> means to delete the last (rightmost) <code>/</code> sign from the left and all characters to the left from it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var##*/<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p><code>##*/</code> means to delete the last (rightmost) <code>/</code> sign from the left and all characters to the left from it.</p>
 <p>In the example, delete <code>http://www.aaa.com/</code> and we got <code>123.htm</code></p>
 <h4 id="-operator-delete-right-characters-keep-left-characters"><code>%</code> operator, delete right characters, keep left characters<a hidden class="anchor" aria-hidden="true" href="#-operator-delete-right-characters-keep-left-characters">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var%/*<span style="color:#e6db74">}</span>
-</code></pre></div><p><code>%/*</code> means to delete the first <code>/</code> sign from the right and the characters to the right from it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var%/*<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p><code>%/*</code> means to delete the first <code>/</code> sign from the right and the characters to the right from it.</p>
 <p>In the example, delete <code>/123.htm</code> and we got <code>http://www.aaa.com.</code></p>
 <h4 id="-operator-delete-right-characters-keep-left-characters-1"><code>%%</code> operator, delete right characters, keep left characters<a hidden class="anchor" aria-hidden="true" href="#-operator-delete-right-characters-keep-left-characters-1">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var%%/*<span style="color:#e6db74">}</span>
-</code></pre></div><p><code>%%/*</code> means to delete the last (leftmost) <code>/</code> sign from the right and all characters to the right from it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var%%/*<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p><code>%%/*</code> means to delete the last (leftmost) <code>/</code> sign from the right and all characters to the right from it.</p>
 <p>In the example, delete <code>//www.aaa.com/123.htm</code> and we got <code>http:</code>.</p>
 <h4 id="from-left-index-with-character-counts">from left index with character counts<a hidden class="anchor" aria-hidden="true" href="#from-left-index-with-character-counts">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var:0:5<span style="color:#e6db74">}</span>
-</code></pre></div><p>Where <code>0</code> means start from the first character from left, and <code>5</code> means the total number of characters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var:0:5<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>Where <code>0</code> means start from the first character from left, and <code>5</code> means the total number of characters.</p>
 <p>In the example, we got <code>http:</code>.</p>
 <h4 id="from-left-index-to-end">from left index to end<a hidden class="anchor" aria-hidden="true" href="#from-left-index-to-end">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var:7<span style="color:#e6db74">}</span>
-</code></pre></div><p>The <code>7</code> means start from the 8th character from left and till the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var:7<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>The <code>7</code> means start from the 8th character from left and till the end.</p>
 <p>In the example, we got <code>www.aaa.com/123.htm</code>.</p>
 <h4 id="from-right-index-with-character-counts">from right index with character counts<a hidden class="anchor" aria-hidden="true" href="#from-right-index-with-character-counts">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var:0-7:3<span style="color:#e6db74">}</span>
-</code></pre></div><p>Where <code>0-7</code> means start from the 7th character from right, and the <code>3</code> means the total number of characters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var:0-7:3<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>Where <code>0-7</code> means start from the 7th character from right, and the <code>3</code> means the total number of characters.</p>
 <p>In the example, we got <code>123</code>.</p>
 <h4 id="from-left-index-to-start">from left index to start<a hidden class="anchor" aria-hidden="true" href="#from-left-index-to-start">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>var:0-7<span style="color:#e6db74">}</span>
-</code></pre></div><p>The <code>0-7</code> means start from the 7th character from right and till the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>var:0-7<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>The <code>0-7</code> means start from the 7th character from right and till the end.</p>
 <p>In the example, we got <code>123.htm</code>.</p>
 <h4 id="note">Note:<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h4>
 <p>The index of the first character are 0.</p>
 <h3 id="search-string">Search String<a hidden class="anchor" aria-hidden="true" href="#search-string">#</a></h3>
 <p>Find the position of the character <code>i</code> or <code>o</code> (whichever occurs first is counted)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob is a great site&#34;</span>
-echo <span style="color:#e6db74">`</span>expr index <span style="color:#e6db74">&#34;</span>$string<span style="color:#e6db74">&#34;</span> io<span style="color:#e6db74">`</span> <span style="color:#75715e"># output 4</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;runoob is a great site&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">`</span>expr index <span style="color:#e6db74">&#34;</span>$string<span style="color:#e6db74">&#34;</span> io<span style="color:#e6db74">`</span> <span style="color:#75715e"># output 4</span>
+</span></span></code></pre></div><blockquote>
 <p>More about <code>expr</code> command:</p>
 <ul>
 <li><a href="https://cheat.sh/expr">https://cheat.sh/expr</a></li>
@@ -430,35 +430,35 @@ echo <span style="color:#e6db74">`</span>expr index <span style="color:#e6db74">
 <h3 id="define-array">define array<a hidden class="anchor" aria-hidden="true" href="#define-array">#</a></h3>
 <p>Define an array with brackets <code>()</code>, and separate all of the elements with space.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array_name<span style="color:#f92672">=(</span>value0 value1 value2 value3<span style="color:#f92672">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array_name<span style="color:#f92672">=(</span>
-value0
-value1
-value2
-value3
-<span style="color:#f92672">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
-array_name<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>value1
-array_name<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>value2
-array_name<span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span>value3
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
-array_name<span style="color:#f92672">[</span>114514<span style="color:#f92672">]=</span>value114514
-</code></pre></div><p>Subscripts can be no-continuous and the range is without any limit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>array_name<span style="color:#f92672">=(</span>value0 value1 value2 value3<span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>array_name<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>value0
+</span></span><span style="display:flex;"><span>value1
+</span></span><span style="display:flex;"><span>value2
+</span></span><span style="display:flex;"><span>value3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
+</span></span><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>value1
+</span></span><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>value2
+</span></span><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span>value3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>value0
+</span></span><span style="display:flex;"><span>array_name<span style="color:#f92672">[</span>114514<span style="color:#f92672">]=</span>value114514
+</span></span></code></pre></div><p>Subscripts can be no-continuous and the range is without any limit.</p>
 <h3 id="access-array">access array<a hidden class="anchor" aria-hidden="true" href="#access-array">#</a></h3>
 <p>Access elements by:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">value<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>array_name[3]<span style="color:#e6db74">}</span>
-</code></pre></div><p>Use <code>@</code> or <code>*</code> to access all of the elements:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">${</span>array_name[@]<span style="color:#e6db74">}</span>
-echo <span style="color:#e6db74">${</span>array_name[*]<span style="color:#e6db74">}</span>
-</code></pre></div><h3 id="get-array-length">get array length<a hidden class="anchor" aria-hidden="true" href="#get-array-length">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>value<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>array_name[3]<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>Use <code>@</code> or <code>*</code> to access all of the elements:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>array_name[@]<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>array_name[*]<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><h3 id="get-array-length">get array length<a hidden class="anchor" aria-hidden="true" href="#get-array-length">#</a></h3>
 <p>Similar to string:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get the number of array elements</span>
-length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[@]<span style="color:#e6db74">}</span>
-<span style="color:#75715e"># or</span>
-length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[*]<span style="color:#e6db74">}</span>
-<span style="color:#75715e"># Get the length of a single element of an array</span>
-length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[3]<span style="color:#e6db74">}</span>
-</code></pre></div><h2 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get the number of array elements</span>
+</span></span><span style="display:flex;"><span>length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[@]<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[*]<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the length of a single element of an array</span>
+</span></span><span style="display:flex;"><span>length<span style="color:#f92672">=</span><span style="color:#e6db74">${#</span>array_name[3]<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><h2 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h2>
 <ul>
 <li><a href="https://www.runoob.com/linux/linux-shell-variable.html">https://www.runoob.com/linux/linux-shell-variable.html</a></li>
 <li><a href="https://www.geeksforgeeks.org/difference-between-single-and-double-quotes-in-shell-script-and-linux/">https://www.geeksforgeeks.org/difference-between-single-and-double-quotes-in-shell-script-and-linux/</a></li>

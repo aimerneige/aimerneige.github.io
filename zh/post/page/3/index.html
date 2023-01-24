@@ -129,8 +129,9 @@ if (!doNotTrack) {
   </header>
   <div class="entry-content">
     <p>线程于进程的对比
-          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数...</p>
+thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt; #include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数
+#include &lt;stdio.h&gt; #include &lt;pthread.h&gt; void *myfunc(void *args) { char *name = (char *)args; for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%s %d\n&#34;, name, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, &#34;th1&#34;); pthread_create(&amp;th2, NULL, myfunc, &#34;th2&#34;); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 分部计算...</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c/c-thread-basic/"></a>
@@ -161,7 +162,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
   </header>
   <div class="entry-content">
     <p>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
- 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
 本次演示中可执行文件存储目录：
 C:\Tools\Alacritty\alacritty.exe
 配置 alacritty 将配置文件放置在如下目录：
@@ -188,7 +189,7 @@ GCC 工具集不仅能编译 C/C&#43;&#43; 语言，其他例如 Objective-C 、
 GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
 GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
-   文件扩展名 GCC 所理解的含义     *....</p>
+文件扩展名 GCC 所理解的含义 *.c 该类文件为 C 语言的源文件 *....</p>
   </div>
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
@@ -203,8 +204,8 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </header>
   <div class="entry-content">
     <p>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
- 阅读须知 在阅读本文章前，你需要准备以下内容
- 掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx）  不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
+阅读须知 在阅读本文章前，你需要准备以下内容
+掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx） 不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
 准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
 升级系统 sudo apt update &amp;&amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！...</p>
   </div>
@@ -219,18 +220,20 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </header>
   <div class="entry-content">
     <p>本文章项目地址 https://github.com/AimerNeige/Tutorial.git
- 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
 主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
 杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
- 但是，没有杀毒软件的话，电脑中毒怎么办啊？
- 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
- 删了它们我怎么清理电脑垃圾啊？
- 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
- 没有软件管家我不会下载软件了怎么办？
- 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
- 没有电脑管家我如何管理系统自启动啊？
- 禁用开机自启动：
-启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。...</p>
+但是，没有杀毒软件的话，电脑中毒怎么办啊？
+如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+删了它们我怎么清理电脑垃圾啊？
+在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+没有软件管家我不会下载软件了怎么办？
+要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+没有电脑管家我如何管理系统自启动啊？
+禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。
+设置开机自启动：
+按住 Win 键（左下角有 windows 徽标的按键）然后按 R, 在弹出的运行框中输入 shell:startup 将软件的 快捷方式 放在这个目录下即可。...</p>
   </div>
   <footer class="entry-footer"><span title='2020-08-26 22:46:52 +0800 CST'>八月 26, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 写给小白的 win10 使用技巧" href="https://aimerneige.com/zh/post/others/tips-using-windows10/"></a>
@@ -243,11 +246,11 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </header>
   <div class="entry-content">
     <p>首先来看下 w3schools 的解释：
- Example Check if the number 5 is an integer:
-x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+Example Check if the number 5 is an integer:
+x = isinstance(5, int) Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
 If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
- Syntax isinstance(object, type)
-Parameter Values    Parameter Description     object Required....</p>
+Syntax isinstance(object, type)
+Parameter Values Parameter Description object Required. An object. type A type or a class, or a tuple of types and/or classes More Examples Example Check if “Hello” is one of the types described in the type parameter:...</p>
   </div>
   <footer class="entry-footer"><span title='2020-05-29 09:38:41 +0800 CST'>五月 29, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Python 小知识 isinstance" href="https://aimerneige.com/zh/post/python/daily-python-tips/"></a>

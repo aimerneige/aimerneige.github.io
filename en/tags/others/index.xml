@@ -15,9 +15,9 @@
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&#39;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&#39;; \mu(x), \kappa(x, x))$$
- Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
+Mathjax Test 1 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+Test 2 $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
+C #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
     </item>
     
   </channel>

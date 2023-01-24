@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</guid>
       <description>https://leetcode.com/problems/pyramid-transition-matrix/
-  We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
+We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
 We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.
 We start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed.</description>
     </item>

@@ -23,7 +23,7 @@ wine ./WeChatSetup.exe 接下来按照 Windows 的安装逻辑点击下一步安
 修改语言设置 修改这个文件
 vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop 调整 Exec 这一部分，添加如下环境变量
 env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; 最终结果应该是这样（注意路径）
-[Desktop Entry] Name=WeChat Exec=env LC_ALL=&amp;quot;zh_CN.UTF8&amp;quot; env WINEPREFIX=&amp;quot;/home/aimer/.wine&amp;quot; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.</description>
+[Desktop Entry] Name=WeChat Exec=env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; env WINEPREFIX=&amp;#34;/home/aimer/.wine&amp;#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.</description>
     </item>
     
   </channel>
