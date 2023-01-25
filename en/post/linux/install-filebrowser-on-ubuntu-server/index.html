@@ -60,12 +60,12 @@ port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/
 sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/" />
-<meta property="og:image" content="https://aimerneige.com/images/ubuntu-filebrowser.svg" /><meta property="article:section" content="post" />
+<meta property="og:image" content="https://aimerneige.com/images/ubuntu-filebrowser.png" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-18T16:37:27+08:00" />
 <meta property="article:modified_time" content="2022-11-18T16:37:27+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://aimerneige.com/images/ubuntu-filebrowser.svg" />
+<meta name="twitter:image" content="https://aimerneige.com/images/ubuntu-filebrowser.png" />
 <meta name="twitter:title" content="Install Filebrowser on Ubuntu Server"/>
 <meta name="twitter:description" content="Install Filebrowser Install file browser to your server:
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:
@@ -111,7 +111,7 @@ sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:"/>
   "articleBody": "Install Filebrowser Install file browser to your server:\ncurl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:\nfilebrowser -a 0.0.0.0 -r /path/to/your/files Access your server and try to login in.\nUsername: admin\nPassword: admin\nCreate Your Own Config Write your config file:\nsudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:\nport: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:\nsudo vim /etc/systemd/system/filebrowser.service Wirte something like this:\n[Unit] Description=File Browser Service After=network.target [Service] Type=simple Restart=on-failure RestartSec=5s ExecStart=filebrowser [Install] WantedBy=multi-user.target Start and enable it:\nsudo systemctl start filebrowser.service sudo systemctl enable filebrowser.service Makesure to change your access password!\nLink File Browser ",
   "wordCount" : "106",
   "inLanguage": "en",
-  "image":"https://aimerneige.com/images/ubuntu-filebrowser.svg","datePublished": "2022-11-18T16:37:27+08:00",
+  "image":"https://aimerneige.com/images/ubuntu-filebrowser.png","datePublished": "2022-11-18T16:37:27+08:00",
   "dateModified": "2022-11-18T16:37:27+08:00",
   "author":{
     "@type": "Person",
@@ -194,7 +194,7 @@ sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:"/>
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.svg" alt="Ubuntu Filebrowser">
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.png" alt="Ubuntu Filebrowser">
         
 </figure><div class="toc">
     <details >

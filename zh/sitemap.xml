@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/zh/</loc>
-    <lastmod>2023-01-12T21:00:37+08:00</lastmod>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,67 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/application/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/desktop/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/linux/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/</loc>
+    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/game/</loc>
@@ -27,60 +88,8 @@
     <loc>https://aimerneige.com/zh/tags/server/</loc>
     <lastmod>2023-01-12T21:00:37+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/</loc>
-    <lastmod>2023-01-12T21:00:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/</loc>
-    <lastmod>2023-01-12T21:00:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</loc>
     <lastmod>2023-01-12T21:00:37+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/zh/post/</loc>
-    <lastmod>2023-01-12T21:00:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/linux/</loc>
-    <lastmod>2022-11-11T15:34:47+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/qbittorrent/</loc>
     <lastmod>2022-11-11T15:34:47+08:00</lastmod>

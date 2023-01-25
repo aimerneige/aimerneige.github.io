@@ -123,6 +123,22 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/linux-desktopfile.png" alt="Desktop File">
+</figure>
+  <header class="entry-header">
+    <h2>如何编写 .desktop 文件
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 在 Linux 系统中，经常会遇到一些软件只提供了可执行文件，而并没有提供可以通过包管理安装的途径，常见于 AppImage 封装的软件，这时候每次需要运行软件都需要通过终端来执行，非常麻烦。不过这个问题可以通过手动编写 .desktop 文件来解决，这样这些可执行文件就可以和其他软件一样拥有桌面图标。
+用法 使用 vim 或其他文本编辑器直接编写 .desktop 文件后将其置于如下路径之一即可：
+/usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/ 示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-25 14:41:12 +0800 CST'>一月 25, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 如何编写 .desktop 文件" href="https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Minecraft_Java_Edtion.svg" alt="Minecraft Java Edtion">
 </figure>
   <header class="entry-header">
@@ -286,24 +302,6 @@ The find command in UNIX is a command line utility for walking a file hierarchy.
   </div>
   <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>三月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/linux/basic-usage-of-find/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/spring_vscode.svg" alt="Spring VSCode">
-</figure>
-  <header class="entry-header">
-    <h2>使用 vscode 开发 Spring 项目
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。
-Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。
-配置 安装配置 Java 和 Maven Tip
-正常流程配置 Java 和 Maven，如果你已经配置过可以直接跳过
-下载所需的 JDK 并解压。 在环境变量中配置 JAVA_HOME 在系统环境变量 PATH 中添加 JAVA_HOME/bin 下载 Maven 并解压 在环境变量中配置 MAVEN_HOME 在系统环境变量 PATH 中添加 MAVEN_HOME/bin 安装必要插件 Extension Pack For Java Gradle Extension Pack Spring Boot Extension Pack SonarLint Java Code Generators XML Dependency Analytics 在 settings....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-12-28 15:37:39 +0800 CST'>十二月 28, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 使用 vscode 开发 Spring 项目" href="https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

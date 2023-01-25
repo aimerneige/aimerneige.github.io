@@ -6,7 +6,18 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jan 2023 21:00:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2023 14:41:12 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何编写 .desktop 文件</title>
+      <link>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</link>
+      <pubDate>Wed, 25 Jan 2023 14:41:12 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</guid>
+      <description>前言 在 Linux 系统中，经常会遇到一些软件只提供了可执行文件，而并没有提供可以通过包管理安装的途径，常见于 AppImage 封装的软件，这时候每次需要运行软件都需要通过终端来执行，非常麻烦。不过这个问题可以通过手动编写 .desktop 文件来解决，这样这些可执行文件就可以和其他软件一样拥有桌面图标。
+用法 使用 vim 或其他文本编辑器直接编写 .desktop 文件后将其置于如下路径之一即可：
+/usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/ 示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments.</description>
+    </item>
+    
     <item>
       <title>如何搭建你自己的 Minecraft 服务器</title>
       <link>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</link>
