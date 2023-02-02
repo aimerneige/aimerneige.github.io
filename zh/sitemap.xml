@@ -87,6 +87,16 @@
   </url><url>
     <loc>https://aimerneige.com/zh/tags/server/</loc>
     <lastmod>2023-01-12T21:00:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/server/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/server/"
+                />
   </url><url>
     <loc>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</loc>
     <lastmod>2023-01-12T21:00:37+08:00</lastmod>

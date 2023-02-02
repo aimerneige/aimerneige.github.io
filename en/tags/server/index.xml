@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>DevOps on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/en/categories/devops/</link>
-    <description>Recent content in DevOps on AimerNeige&#39;s Blog</description>
+    <title>server on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/server/</link>
+    <description>Recent content in server on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Setup Your New Linux Server</title>
       <link>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</link>

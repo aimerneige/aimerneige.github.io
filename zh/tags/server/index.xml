@@ -24,5 +24,14 @@
 java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui 如果你有更高的内存，可以修改 -Xmx1024M -Xms1024M 这一部分。</description>
     </item>
     
+    <item>
+      <title>如何配置新购置的 Linux 服务器</title>
+      <link>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</link>
+      <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</guid>
+      <description>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimerneige usermod -aG sudo aimerneige # Fedora useradd -G wheel aimerneige passwd aimerneige 测试 root 权限 su - aimerneige sudo cat /etc/shadow 配置 SSH 连接密钥 快速上传本地密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimerneige@server 导入托管的密钥 # 导入你自己的密钥！ wget https://aimerneige.</description>
+    </item>
+    
   </channel>
 </rss>
