@@ -6,7 +6,21 @@
     <description>Recent content in 文章 📝 on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2023 14:41:12 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Jan 2023 16:24:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何搭建 Minecraft Mod 服务器</title>
+      <link>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</link>
+      <pubDate>Thu, 26 Jan 2023 16:24:34 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</guid>
+      <description>使用 PaperMC 安装 PaperMC 下载 PaperMC 提供的 jar 包，存储在恰当位置即可。
+启动 PaperMC java -Xms2G -Xmx2G -jar paper.jar --nogui 下面是官方提供的优化后的启动脚本：
+java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper.jar --nogui 安装 datapack 关掉已启动的服务器，将 datapack 存储在 papermc/world/datapacks 文件夹下，重启服务器即可。（如果不存在就新建一个）
+安装插件 关掉已启动的服务器，将下载好的插件存储在 papermc/plugins 文件夹下，重启服务器即可。（如果不存在就新建一个）
+配置服务器 PaperMC 提供了非常多的服务器修改配置，具体请查阅 官方文档。
+对于 mod 的说明 PaperMC 并不兼容 Fabric 的 mod。如果需要使用 Fabric 的 mod，请参考下面的内容使用 Fabric 服务器。</description>
+    </item>
+    
     <item>
       <title>如何编写 .desktop 文件</title>
       <link>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</link>

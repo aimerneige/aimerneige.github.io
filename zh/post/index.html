@@ -123,6 +123,25 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Minecraft_Java_Edtion.svg" alt="Minecraft Java Edtion">
+</figure>
+  <header class="entry-header">
+    <h2>如何搭建 Minecraft Mod 服务器
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>使用 PaperMC 安装 PaperMC 下载 PaperMC 提供的 jar 包，存储在恰当位置即可。
+启动 PaperMC java -Xms2G -Xmx2G -jar paper.jar --nogui 下面是官方提供的优化后的启动脚本：
+java -Xms10G -Xmx10G -XX:&#43;UseG1GC -XX:&#43;ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:&#43;UnlockExperimentalVMOptions -XX:&#43;DisableExplicitGC -XX:&#43;AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:&#43;PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper.jar --nogui 安装 datapack 关掉已启动的服务器，将 datapack 存储在 papermc/world/datapacks 文件夹下，重启服务器即可。（如果不存在就新建一个）
+安装插件 关掉已启动的服务器，将下载好的插件存储在 papermc/plugins 文件夹下，重启服务器即可。（如果不存在就新建一个）
+配置服务器 PaperMC 提供了非常多的服务器修改配置，具体请查阅 官方文档。
+对于 mod 的说明 PaperMC 并不兼容 Fabric 的 mod。如果需要使用 Fabric 的 mod，请参考下面的内容使用 Fabric 服务器。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-26 16:24:34 +0800 CST'>一月 26, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 如何搭建 Minecraft Mod 服务器" href="https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/linux-desktopfile.png" alt="Desktop File">
 </figure>
   <header class="entry-header">
@@ -285,23 +304,6 @@ The following is a list of valid distributions that can be installed. Install us
   </div>
   <footer class="entry-footer"><span title='2022-04-09 22:22:44 +0800 CST'>四月 9, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 wsl 下安装 fedora 35" href="https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/find.png" alt="Find Command On Cool Retro Term">
-</figure>
-  <header class="entry-header">
-    <h2>find 指令的基本用法
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>什么是 find 正如它的名字一样，find 指令用于查找文件。
-Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
-来源: 菜鸟教程
-The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>三月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/linux/basic-usage-of-find/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

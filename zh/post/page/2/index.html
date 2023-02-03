@@ -123,6 +123,23 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/find.png" alt="Find Command On Cool Retro Term">
+</figure>
+  <header class="entry-header">
+    <h2>find 指令的基本用法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>什么是 find 正如它的名字一样，find 指令用于查找文件。
+Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
+来源: 菜鸟教程
+The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-03-12 19:36:29 +0800 CST'>三月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to find 指令的基本用法" href="https://aimerneige.com/zh/post/linux/basic-usage-of-find/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/spring_vscode.svg" alt="Spring VSCode">
 </figure>
   <header class="entry-header">
@@ -295,28 +312,6 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </div>
   <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/linux/daily-linux-command/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>这不是 Bug，而是语言特性
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>今天遇到一个奇怪的问题：
-一个 C 语言初学者写了这样的错误代码：
-switch (a) { case1: // do something break; case2: // do something break; case3: // do something break; default: break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
-那么 case1 case2 这些东西是哪里来的？
-几番求证无果，最后在翻阅《C 专家编程》这本书的时候突然发现了原因：
-首先像下面这样写是可以的：
-switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again; default: i&#43;&#43;; case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。
-原错误代码中 case1 case2 等被编译器理解为了标签。
-由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。
-不管怎么说，问题解决了。
-这不是 Bug，而是 C 语言的特性。 #(滑稽)...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>十一月 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/c/this-is-not-bug/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
