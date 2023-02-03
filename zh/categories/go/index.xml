@@ -6,7 +6,23 @@
     <description>Recent content in Go on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Aug 2022 23:57:11 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 23:29:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Context</title>
+      <link>https://aimerneige.com/zh/post/go/go-context/</link>
+      <pubDate>Fri, 03 Feb 2023 23:29:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/go/go-context/</guid>
+      <description>前言 有时我们要通过第三方服务获取数据，它可以是外部提供的 API，也可以是微服务的接口等等，总之，它们有相同的问题：“获取数据可能需要大量时间”。如果在代码中同步地获取这些数据，程序就会花时间等待这些服务响应，而这些等待会严重影响程序的运行效率，而且一旦这些服务崩溃，我们的程序就会陷入无休止的等待中，那么如何解决这个问题呢？可以使用 Go 的 context 包。
+问题 我们用这个函数来替代那些第三方服务。我们直接使用 time.Sleep() 函数来模拟一个耗时过程，在现实场景中，它可能是在执行一个非常复杂的 SQL 查询，也可以是调用一个人工智能服务接口。当然，这个耗时是不确定的，甚至有可能是无穷大（卡死）。
+func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { time.Sleep(time.Millisecond * 500) return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：
+func foo() { // some code here ... val, err := fetchThirdPartyStuffWhichCanBeSlow() if err != nil { log.Fatal(err) } // some code here ... } 上面的代码如果用在一些只执行一次的脚本、工具中，并不会带来严重后果，无非多等一下就好了，即使有问题也可以关掉程序检查一下第三方服务。但是如果上面的代码用在一个承载大流量的 web 服务中，程序在执行完耗时代码后还要继续执行一些重要的业务功能，那么这样直接调用而不加考虑的代码很可能是致命的。一旦第三方服务出现问题，程序没有任何机制检查和处理，而是直接陷入无休止的等待。这显然是不合理的。
+解决方案 要解决上述的问题，比较常见的思路是引入一个主动停止耗时服务的功能，这样如果耗时函数花了太多时间执行，程序就可以感知到，并主动干预。
+在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。
+使用 Channel 如果不使用本文要介绍的 Context，传统的思路是使用 Channel + Select 来处理：
+type Response struct { value int err error } func fetchUserData(userID int) (int, error) { stop := make(chan bool) respch := make(chan Response) go func() { val, err := fetchThirdPartyStuffWhichCanBeSlow() respch &amp;lt;- Response{ value: val, err: err, } }() go func() { time.</description>
+    </item>
+    
     <item>
       <title>Golang embed</title>
       <link>https://aimerneige.com/zh/post/go/go-embed/</link>

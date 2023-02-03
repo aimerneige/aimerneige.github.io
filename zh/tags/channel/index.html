@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Go | AimerNeige&#39;s Blog</title>
+<title>channel | AimerNeige&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
-<link rel="canonical" href="https://aimerneige.com/zh/categories/go/">
+<link rel="canonical" href="https://aimerneige.com/zh/tags/channel/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/categories/go/index.xml">
-<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/categories/go/">
+<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/tags/channel/index.xml">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/channel/">
 <noscript>
     <style>
         #theme-toggle,
@@ -39,13 +39,13 @@ if (!doNotTrack) {
 	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
 }
 </script>
-<meta property="og:title" content="Go" />
+<meta property="og:title" content="channel" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://aimerneige.com/zh/categories/go/" />
+<meta property="og:url" content="https://aimerneige.com/zh/tags/channel/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go"/>
+<meta name="twitter:title" content="channel"/>
 <meta name="twitter:description" content=""/>
 
 </head>
@@ -100,9 +100,9 @@ if (!doNotTrack) {
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/categories/">分类 🤹‍♂️</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/tags/">标签 🏷️</a></div>
   <h1>
-    Go
+    channel
   </h1>
 </header>
 
@@ -125,70 +125,6 @@ type Response struct { value int err error } func fetchUserData(userID int) (int
   </div>
   <footer class="entry-footer"><span title='2023-02-03 23:29:21 +0800 CST'>二月 3, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang Context" href="https://aimerneige.com/zh/post/go/go-context/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-embed.webp" alt="Golang embed">
-</figure>
-  <header class="entry-header">
-    <h2>Golang embed
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
-embed 假设我们有一个文件 hello.txt
-Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main import ( &#34;fmt&#34; &#34;os&#34; ) func main() { s, err := os.ReadFile(&#34;./hello.txt&#34;) if err != nil { panic(err) } fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go 0 directories, 3 files ➜ go build main.go ➜ ./main Hello World! Hello go embed!...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-image-processing-basic.webp" alt="go image processing">
-</figure>
-  <header class="entry-header">
-    <h2>Go 图像处理基础
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
-常见类型介绍 Colors Colors 是一个接口，它的代码如下：
-type Color interface { // RGBA returns the alpha-premultiplied red, green, blue and alpha values // for the color. Each value ranges within [0, 0xffff], but is represented // by a uint32 so that multiplying by a blend factor up to 0xffff will not // overflow. // // An alpha-premultiplied color component c has been scaled by alpha (a), // so has valid values 0 &lt;= c &lt;= a....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-08-12 22:40:28 +0800 CST'>八月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Go 图像处理基础" href="https://aimerneige.com/zh/post/go/go-image-processing-basic/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/golang.jpeg" alt="Blue Poison">
-</figure>
-  <header class="entry-header">
-    <h2>配置 go 开发环境
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>由于某些网络原因1，本文所提到的部分网站、下载链接可能在中国大陆地区无法访问，请自行查找解决方案，本文不再赘述。
-如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
-下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
-本文不推荐使用一键安装包的方式安装 go 语言，即请不要直接下载下图所示的文件:
-我们在下面的 Stable versions 后找到最新版本的 go，选择适合自己电脑系统与架构的压缩包。要选择 Archive　而不要选择 Installer。
-Tip
-当然使用 msi 等一键安装包安装也是完全可以的，如果你想要使用一键安装包的方式安装 go，请查阅其他资料。
-如果你想要通过源码安装，请自行查阅 通过源码构建。
-安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
-Linux 解压压缩文件 这里我们可以直接使用 官方安装指南 提供的指令来解压。
-rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz 本指令会将 go 安装在 /usr/local/go 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。
-Info
-如果你使用了其他的路径来安装 go，在之后的配置过程中记得要修改 GOROOT 变量修改为你所安装的路径。
-执行命令前请先切换工作目录，确保当前路径下有刚刚下载好的压缩包。
-Warning
-压缩包名 go1.17.linux-amd64.tar.gz 可能有所不同，这取决于你安装的 go 版本和操作系统及处理器架构。
-配置环境变量 成功解压后，如果你尝试直接在终端执行 go 指令，你会发现系统并没有识别到你刚安装的 go 二进制文件，这是因为我们还没有对 go 的环境变量进行配置。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-08-24 21:31:05 +0800 CST'>八月 24, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/"></a>
 </article>
     </main>
     

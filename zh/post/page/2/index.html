@@ -123,6 +123,29 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wsl.png" alt="Fedora Windows">
+</figure>
+  <header class="entry-header">
+    <h2>在 wsl 下安装 fedora 35
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>安装 wsl2 使用管理员身份开启 windows terminal.
+执行如下指令：
+wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
+Warning
+注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+执行下面的指令设置 wsl 默认版本为 wsl2：
+wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
+wsl --list --online 返回数据类似下面这样：
+The following is a list of valid distributions that can be installed. Install using &#39;wsl --install -d &lt;Distro&gt;&#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-04-09 22:22:44 +0800 CST'>四月 9, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 wsl 下安装 fedora 35" href="https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/find.png" alt="Find Command On Cool Retro Term">
 </figure>
   <header class="entry-header">
@@ -300,18 +323,6 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </div>
   <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>每天一个 Linux 指令
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/linux/daily-linux-command/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>golang on AimerNeige&#39;s Blog</title>
-    <link>https://aimerneige.com/zh/tags/golang/</link>
-    <description>Recent content in golang on AimerNeige&#39;s Blog</description>
+    <title>channel on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/channel/</link>
+    <description>Recent content in channel on AimerNeige&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Feb 2023 23:29:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 23:29:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/channel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Context</title>
       <link>https://aimerneige.com/zh/post/go/go-context/</link>
@@ -21,28 +21,6 @@ func foo() { // some code here ... val, err := fetchThirdPartyStuffWhichCanBeSlo
 在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。
 使用 Channel 如果不使用本文要介绍的 Context，传统的思路是使用 Channel + Select 来处理：
 type Response struct { value int err error } func fetchUserData(userID int) (int, error) { stop := make(chan bool) respch := make(chan Response) go func() { val, err := fetchThirdPartyStuffWhichCanBeSlow() respch &amp;lt;- Response{ value: val, err: err, } }() go func() { time.</description>
-    </item>
-    
-    <item>
-      <title>Golang embed</title>
-      <link>https://aimerneige.com/zh/post/go/go-embed/</link>
-      <pubDate>Sat, 13 Aug 2022 23:57:11 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/go/go-embed/</guid>
-      <description>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
-embed 假设我们有一个文件 hello.txt
-Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os&amp;#34; ) func main() { s, err := os.ReadFile(&amp;#34;./hello.txt&amp;#34;) if err != nil { panic(err) } fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go 0 directories, 3 files ➜ go build main.go ➜ ./main Hello World! Hello go embed!</description>
-    </item>
-    
-    <item>
-      <title>配置 go 开发环境</title>
-      <link>https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/</link>
-      <pubDate>Tue, 24 Aug 2021 21:31:05 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/</guid>
-      <description>本篇文章简要介绍如何配置 go 的开发环境</description>
     </item>
     
   </channel>
