@@ -442,33 +442,71 @@
                 href="https://aimerneige.com/en/tags/site/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/tags/leetcode/</loc>
-    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/leetcode/</loc>
-    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</loc>
-    <lastmod>2020-09-11T15:30:34+08:00</lastmod>
-  </url><url>
     <loc>https://aimerneige.com/en/tags/android/</loc>
-    <lastmod>2020-09-05T17:43:46+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/android/dark-mode-on-android/</loc>
-    <lastmod>2020-09-05T17:43:46+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/program/</loc>
     <lastmod>2020-09-05T17:43:46+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://aimerneige.com/zh/categories/program/"
+                href="https://aimerneige.com/zh/tags/android/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aimerneige.com/en/categories/program/"
+                href="https://aimerneige.com/en/tags/android/"
                 />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/android/</loc>
+    <lastmod>2020-09-05T17:43:46+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/android/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/android/dark-mode-on-android/</loc>
+    <lastmod>2020-09-05T17:43:46+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/mingw/</loc>
+    <lastmod>2020-08-19T15:51:09+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/others/mingw-install-for-windows/</loc>
+    <lastmod>2020-08-19T15:51:09+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/software/</loc>
+    <lastmod>2020-08-19T15:51:09+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/software/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/software/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/android/change-package-name/</loc>
+    <lastmod>2020-08-18T00:50:53+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/android/data-save/</loc>
+    <lastmod>2020-08-10T00:50:41+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/ffmpeg/</loc>
+    <lastmod>2020-08-10T00:01:10+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</loc>
+    <lastmod>2020-08-10T00:01:10+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</loc>
+    <lastmod>2020-07-26T07:58:20+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/virtualbox/</loc>
+    <lastmod>2020-07-26T07:58:20+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/post/others/hello-world/</loc>
     <lastmod>2020-01-24T15:50:47+08:00</lastmod>

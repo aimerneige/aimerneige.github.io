@@ -33,5 +33,15 @@ sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:</des
       <description>Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox.</description>
     </item>
     
+    <item>
+      <title>Enable USB for VirtualBox on Ubuntu</title>
+      <link>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</link>
+      <pubDate>Sun, 26 Jul 2020 07:58:20 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</guid>
+      <description>Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn&amp;rsquo;t on Windows.
+I can&amp;rsquo;t remember it and search for web many times because when you set it, you need&amp;rsquo;t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it.</description>
+    </item>
+    
   </channel>
 </rss>

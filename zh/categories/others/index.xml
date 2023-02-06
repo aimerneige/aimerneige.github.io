@@ -94,5 +94,38 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\she
 按住 Win 键（左下角有 windows 徽标的按键）然后按 R, 在弹出的运行框中输入 shell:startup 将软件的 快捷方式 放在这个目录下即可。</description>
     </item>
     
+    <item>
+      <title>优雅地使用 GitHub</title>
+      <link>https://aimerneige.com/zh/post/others/use-github-gracefully/</link>
+      <pubDate>Sat, 01 Aug 2020 07:15:56 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/others/use-github-gracefully/</guid>
+      <description>官方文档
+较常用的检索限制 项目名称
+in:name &amp;lt;keyword&amp;gt; 项目 README
+in:readme &amp;lt;keyword&amp;gt; 项目描述
+in:description &amp;lt;keyword&amp;gt; 语言
+language: java star 数
+stars:&amp;gt;1000 fork 数
+forks:&amp;gt;500 更新时间
+pushed:&amp;gt;2020-08-01 使用示例
+in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01 参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY</description>
+    </item>
+    
+    <item>
+      <title>使用 PicGo 搭建便捷的图片上传服务</title>
+      <link>https://aimerneige.com/zh/post/others/picgo/</link>
+      <pubDate>Thu, 28 May 2020 00:13:47 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/others/picgo/</guid>
+      <description>在平时使用 markdown 的时候，图片一般是一个痛点，在本地引用图片后转到其他平台就有可能失效，尤其是上传到自己的博客的时候就很麻烦，在线图片可以解决这个问题，但是手动上传也是一件麻烦事，不过，已经有一些好心的程序员写了一个软件来解决这个问题，这里我推荐 PicGo 这款应用。
+这款应用完全开源、免费，支持跨平台特性。
+GitHub 主页
+官方文档
+软件的配置也十分简单，按照官方的教程新建一个 GitHub 仓库并连接软件就好了。
+官方的文档就很棒了，没必要提供更详细的教程。（话说这篇文章也太水了）</description>
+    </item>
+    
   </channel>
 </rss>

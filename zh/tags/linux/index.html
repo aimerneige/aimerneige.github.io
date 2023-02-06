@@ -137,6 +137,26 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Ubuntu 19.10 配置 Kotlin 开发环境
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
+安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+sudo apt install snap 这条指令执行后，系统安装的内容有：
+kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
+俩条指令都可以，建议使用上面的。
+kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
+Kotlin Kotlin Language 安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
+Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&lt;String&gt;) { println(&#34;Hello, World!&#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
+如果看到终端输出 Hello, World!...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-02-16 01:25:45 +0800 CST'>二月 16, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 19.10 配置 Kotlin 开发环境" href="https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/"></a>
+</article>
     </main>
     
 <footer class="footer">

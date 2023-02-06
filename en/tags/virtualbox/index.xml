@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>virtualbox on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/virtualbox/</link>
+    <description>Recent content in virtualbox on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jul 2020 07:58:20 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable USB for VirtualBox on Ubuntu</title>
+      <link>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</link>
+      <pubDate>Sun, 26 Jul 2020 07:58:20 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</guid>
+      <description>Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn&amp;rsquo;t on Windows.
+I can&amp;rsquo;t remember it and search for web many times because when you set it, you need&amp;rsquo;t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it.</description>
+    </item>
+    
+  </channel>
+</rss>

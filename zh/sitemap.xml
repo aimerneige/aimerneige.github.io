@@ -447,6 +447,16 @@
   </url><url>
     <loc>https://aimerneige.com/zh/tags/software/</loc>
     <lastmod>2021-08-19T01:50:11+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/software/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/software/"
+                />
   </url><url>
     <loc>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</loc>
     <lastmod>2021-08-19T01:50:11+08:00</lastmod>
@@ -525,16 +535,6 @@
   </url><url>
     <loc>https://aimerneige.com/zh/categories/program/</loc>
     <lastmod>2020-11-05T14:37:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/program/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/program/"
-                />
   </url><url>
     <loc>https://aimerneige.com/zh/post/c/this-is-not-bug/</loc>
     <lastmod>2020-11-05T14:37:41+08:00</lastmod>
@@ -563,14 +563,97 @@
     <loc>https://aimerneige.com/zh/post/others/tips-using-windows10/</loc>
     <lastmod>2020-08-26T22:46:52+08:00</lastmod>
   </url><url>
+    <loc>https://aimerneige.com/zh/tags/github/</loc>
+    <lastmod>2020-08-01T07:15:56+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/others/use-github-gracefully/</loc>
+    <lastmod>2020-08-01T07:15:56+08:00</lastmod>
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/categories/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/post/python/daily-python-tips/</loc>
+    <loc>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/python/daily-python-tips-assert/</loc>
+    <lastmod>2020-05-28T23:10:07+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/others/picgo/</loc>
+    <lastmod>2020-05-28T00:13:47+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</loc>
+    <lastmod>2020-05-27T23:36:38+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/python/20-python-skills/</loc>
+    <lastmod>2020-04-13T20:27:22+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/android/</loc>
+    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/android/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/android/</loc>
+    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/android/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/data-binding/</loc>
+    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/progress-dialog/</loc>
+    <lastmod>2020-02-20T23:40:51+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/live-data/</loc>
+    <lastmod>2020-02-20T22:22:21+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/view-module/</loc>
+    <lastmod>2020-02-20T22:21:25+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/toolbar/</loc>
+    <lastmod>2020-02-18T00:05:23+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/gson/</loc>
+    <lastmod>2020-02-17T00:26:02+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/kotlin/</loc>
+    <lastmod>2020-02-16T01:25:45+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</loc>
+    <lastmod>2020-02-16T01:25:45+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/web-image/</loc>
+    <lastmod>2020-02-16T01:24:30+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/gson-format/</loc>
+    <lastmod>2020-02-16T01:21:07+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/android/swiperefreshlayout/</loc>
+    <lastmod>2020-02-01T01:45:42+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/linux/ubuntu-install/</loc>
+    <lastmod>2020-01-24T16:11:30+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/c/c-random-number/</loc>
+    <lastmod>2020-01-24T15:58:19+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/tags/c/c&#43;&#43;/</loc>
   </url><url>

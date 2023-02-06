@@ -198,6 +198,20 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>面向小白的 C 语言随机数详解
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>// 生成一系列0~9之间的随机整数 #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;time.h&gt; int main() { srand( time(NULL) ); int ret; for (int i = 0; i &lt; 20; i&#43;&#43;) { ret = rand() % 10; // ret是一个0~9之间的随机整数 printf(&#34;%d &#34;, ret); } return 0; } 输出结果
+7 6 6 1 6 9 2 7 1 8 2 0 5 9 2 5 4 0 0 0 这是啥啊？看不懂啊。 不要着急，我来慢慢讲 首先是一个最简单的随机数：
+#include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; int main() { int ret = rand(); printf(&#34;%d&#34;, ret); return 0; } 输出结果...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-01-24 15:58:19 +0800 CST'>一月 24, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 面向小白的 C 语言随机数详解" href="https://aimerneige.com/zh/post/c/c-random-number/"></a>
+</article>
     </main>
     
 <footer class="footer">

@@ -167,18 +167,6 @@ package com.aimerneige.example.config; import org.springframework.context.annota
     </item>
     
     <item>
-      <title>LeetCode Pyramid Transition Matrix</title>
-      <link>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</link>
-      <pubDate>Fri, 11 Sep 2020 15:30:34 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/post/leetcode/leetcode-pyramid-transition-matrix/</guid>
-      <description>https://leetcode.com/problems/pyramid-transition-matrix/
-We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
-We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.
-We start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed.</description>
-    </item>
-    
-    <item>
       <title>Dark Mode on Android</title>
       <link>https://aimerneige.com/en/post/android/dark-mode-on-android/</link>
       <pubDate>Sat, 05 Sep 2020 17:43:46 +0800</pubDate>
@@ -189,6 +177,71 @@ This is a simple way to adapt a dark mode, if you wants more, check for GitHub o
 Change the style First you should use the DayNight style by Google.
 &amp;lt;style name=&amp;#34;AppTheme&amp;#34; parent=&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&amp;gt; If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.
 Adapt colors Make a new folder at project/app/src/main/res/values-night then make a new resource file colors.</description>
+    </item>
+    
+    <item>
+      <title>MinGW Install For Windows</title>
+      <link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link>
+      <pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid>
+      <description>Click here to download the MinGW setup file.
+Run the mingw-get-setup.exe.
+Click Install.
+Click Continue.
+Waite for install.
+After install done, click Continue.
+Select what you wants to install and right click it, click Mark For Installation.
+Click Installation on the left top.
+Click Apply Changes.
+Click Apply.
+Just wait for install. (May need proxy)
+After that, the mingw has been installed successfully. You can uninstall this install program.
+Set the system env settings and enjoy it!</description>
+    </item>
+    
+    <item>
+      <title>Android Develop Data Save</title>
+      <link>https://aimerneige.com/en/post/android/change-package-name/</link>
+      <pubDate>Tue, 18 Aug 2020 00:50:53 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/android/change-package-name/</guid>
+      <description>Change Package Name Quickly Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.
+Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.aimerneige.test.example. Click the part you want to change, like test.</description>
+    </item>
+    
+    <item>
+      <title>Android Develop Data Save</title>
+      <link>https://aimerneige.com/en/post/android/data-save/</link>
+      <pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/android/data-save/</guid>
+      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.</description>
+    </item>
+    
+    <item>
+      <title>How to install ffmpeg on Windows 10</title>
+      <link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link>
+      <pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid>
+      <description>Go this link and download a build package.
+For the version, choose the newest release version number like 4.3.1.
+For the Architecture, choose the Windows 64 bit.
+For the Linking, choose the Static.
+For the License, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.
+After selected, just click Download Build. You will get a zip package.
+Unzip the package to any location you want. I recommend to the C:\ffmpeg</description>
+    </item>
+    
+    <item>
+      <title>Enable USB for VirtualBox on Ubuntu</title>
+      <link>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</link>
+      <pubDate>Sun, 26 Jul 2020 07:58:20 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</guid>
+      <description>Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn&amp;rsquo;t on Windows.
+I can&amp;rsquo;t remember it and search for web many times because when you set it, you need&amp;rsquo;t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it.</description>
     </item>
     
     <item>

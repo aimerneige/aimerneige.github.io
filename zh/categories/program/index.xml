@@ -52,5 +52,14 @@ gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&amp;#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</description>
     </item>
     
+    <item>
+      <title>面向小白的 C 语言随机数详解</title>
+      <link>https://aimerneige.com/zh/post/c/c-random-number/</link>
+      <pubDate>Fri, 24 Jan 2020 15:58:19 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/c/c-random-number/</guid>
+      <description>函数指针用法</description>
+    </item>
+    
   </channel>
 </rss>

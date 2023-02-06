@@ -26,6 +26,42 @@
     </item>
     
     <item>
+      <title>MinGW Install For Windows</title>
+      <link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link>
+      <pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid>
+      <description>Click here to download the MinGW setup file.
+Run the mingw-get-setup.exe.
+Click Install.
+Click Continue.
+Waite for install.
+After install done, click Continue.
+Select what you wants to install and right click it, click Mark For Installation.
+Click Installation on the left top.
+Click Apply Changes.
+Click Apply.
+Just wait for install. (May need proxy)
+After that, the mingw has been installed successfully. You can uninstall this install program.
+Set the system env settings and enjoy it!</description>
+    </item>
+    
+    <item>
+      <title>How to install ffmpeg on Windows 10</title>
+      <link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link>
+      <pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid>
+      <description>Go this link and download a build package.
+For the version, choose the newest release version number like 4.3.1.
+For the Architecture, choose the Windows 64 bit.
+For the Linking, choose the Static.
+For the License, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.
+After selected, just click Download Build. You will get a zip package.
+Unzip the package to any location you want. I recommend to the C:\ffmpeg</description>
+    </item>
+    
+    <item>
       <title>Hello World</title>
       <link>https://aimerneige.com/en/post/others/hello-world/</link>
       <pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate>

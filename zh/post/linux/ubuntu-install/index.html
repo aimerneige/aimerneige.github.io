@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>如何安装 Ubuntu | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="ubuntu">
+<meta name="description" content="前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
+经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
+个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
+优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：
+Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
+使用 Etcher 写入 U 盘作为启动盘
+通过 U 盘启动系统">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/linux/ubuntu-install/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/linux/ubuntu-install/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="如何安装 Ubuntu" />
+<meta property="og:description" content="前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
+经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
+个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
+优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：
+Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
+使用 Etcher 写入 U 盘作为启动盘
+通过 U 盘启动系统" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/linux/ubuntu-install/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-01-24T16:11:30+08:00" />
+<meta property="article:modified_time" content="2020-01-24T16:11:30+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何安装 Ubuntu"/>
+<meta name="twitter:description" content="前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
+经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
+个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
+优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：
+Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
+使用 Etcher 写入 U 盘作为启动盘
+通过 U 盘启动系统"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "如何安装 Ubuntu",
+      "item": "https://aimerneige.com/zh/post/linux/ubuntu-install/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "如何安装 Ubuntu",
+  "name": "如何安装 Ubuntu",
+  "description": "前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。\n经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。\n个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足\n优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：\nWindows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件\n使用 Etcher 写入 U 盘作为启动盘\n通过 U 盘启动系统",
+  "keywords": [
+    "ubuntu"
+  ],
+  "articleBody": "前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。\n经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。\n个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足\n优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：\nWindows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件\n使用 Etcher 写入 U 盘作为启动盘\n通过 U 盘启动系统\n依照图形化安装程序进行安装\n系统安装好之后就可以开始使用激动人心的 Ubuntu19.10 了！\n（Emmmm，这个之后补图详细介绍吧）\n软件配置 安装好系统之后，还需要进行软件的配置，才能作为日常的使用。\n下面是博主的配置过程，仅供参考。\n换源 俗话说的好，装好 Linux 后第一件事就是换源。\n由于不同地区网络不同，我用起来很快的源你用可能会很慢，所以这里推荐大家自己百度，多试几个，选一个稳定高速的。\n实际上 Ubuntu 官方源在国内也是可以直接用的，博主就没有更换，默认官方源使用。\n可以通过 speedtest 工具检测网络问题是否是由于网卡驱动导致。\n首先安装 python3 sudo apt install python3 -y 安装 pip sudo apt install python-pip -y 安装 speedtest 工具 sudo pip install speedtest-cli 进行测速 speedtest 安装之后随时都可以使用 speedtest 指令测速，有关该 python 小工具的更多功能请自行谷歌\n如果测速结果正常但是安装软件却很慢说明网卡没有问题，可以考虑更换国内镜像源\n更新系统 不管有没有换源，首先更新系统\nsudo apt update \u0026\u0026 sudo apt upgrade 安装开发环境 安装 git sudo apt install git 安装 java 运行环境 jre sudo apt install openjdk-8-jre jdk sudo apt install openjdk-8-jdk 安装 gcc 编译器 sudo apt install gcc 安装 g++编译器 sudo apt install g++ 安装 adb 调试工具 sudo apt install adb 安装 chrome 这条终端指令安装的是开源的 chromium\nsudo apt install chromium-browser 如果想要正式版的 chrome 可以去 chrome 官网下载 deb 包安装\n更换 vim 系统自带的 vi 太难用了，安装 vim 替换\nsudo apt install vim 当然你也可以使用gedit或者nano\n安装 typora 装机必备啊，写博客什么的很舒服。\n官网有最新安装命令（以官网为主）\nwget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add - sudo add-apt-repository 'deb https://typora.io/linux ./' sudo apt-get update sudo apt-get install typora 网络代理 自行谷歌\n软件 在官网下载 deb 包进行安装\nVSC VirtuaBox\n网易云音乐\n等宽字体 下载 FiraCode 字体文件\n将 otf 字体文件保存到一文件夹内，这里以~/Downloads/FiraCode为例\n在/usr/local/share/fonts/目录下创建自定义文件夹名，这里以FiraCode为例\ncd /usr/local/hare/fonts/ mkdir FiraCode cd 到字体文件目录\ncd ~/Downloads/FiraCode/ 移动字体文件\nsudo mv * /usr/local/share/fonts/FiraCode/ // 或者使用cp命令拷贝 切换到字体目录\ncd /usr/local/share/fonts/FiraCode/ 建立字体缓存\nsudo fc-cache -fv 配置 VSC 调整字体 更改字体为 FiraCode\n更改字体大小，粗度\n下载必备扩展包 主题美化 One Dark Pro Material Icon Theme Material Theme\nC 语言 C/C++ Code Runner\nJava Language support for Java ™ for Visual Studio Code Debugger for Java Java Test Runner Java Extension Pack\n按需下载其他扩展包 配置 AndroidStudio 官网下载安装包\n提取文件到某一目录\n移动文件到/opt\nmv /opt cd 到安装目录\ncd /opt/android-studio/bin 通过指令运行\nrun with ./studio.sh 不嫌烦的话可以使用指令启动软件\n想添加桌面图标的编辑如下文件\ngedit ~/.local/share/applications/androidstudio.desktop 添加以下内容\nand add the lines below [Desktop Entry] Version=1.0 Type=Application Name=Android Studio Exec=\"/opt/android-studio/bin/studio.sh\" %f Icon=/opt/android-studio/bin/studio.png Categories=Development;IDE; Terminal=false StartupNotify=true StartupWMClass=android-studio JB 全家桶均可按照此方法安装，具体配置文件建议谷歌\n",
+  "wordCount" : "340",
+  "inLanguage": "zh",
+  "datePublished": "2020-01-24T16:11:30+08:00",
+  "dateModified": "2020-01-24T16:11:30+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/linux/ubuntu-install/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      如何安装 Ubuntu
+    </h1>
+    <div class="post-meta"><span title='2020-01-24 16:11:30 +0800 CST'>一月 24, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Linux/ubuntu-install.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a><ul>
+                        
+                <li>
+                    <a href="#%e4%bc%98%e7%82%b9" aria-label="优点">优点</a></li>
+                <li>
+                    <a href="#%e4%b8%8d%e8%b6%b3" aria-label="不足">不足</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ubuntu-%e7%9a%84%e5%ae%89%e8%a3%85" aria-label="Ubuntu 的安装">Ubuntu 的安装</a></li>
+                <li>
+                    <a href="#%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae" aria-label="软件配置">软件配置</a><ul>
+                        
+                <li>
+                    <a href="#%e6%8d%a2%e6%ba%90" aria-label="换源">换源</a><ul>
+                        
+                <li>
+                    <a href="#%e9%a6%96%e5%85%88%e5%ae%89%e8%a3%85-python3" aria-label="首先安装 python3">首先安装 python3</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-pip" aria-label="安装 pip">安装 pip</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-speedtest-%e5%b7%a5%e5%85%b7" aria-label="安装 speedtest 工具">安装 speedtest 工具</a></li>
+                <li>
+                    <a href="#%e8%bf%9b%e8%a1%8c%e6%b5%8b%e9%80%9f" aria-label="进行测速">进行测速</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%9b%b4%e6%96%b0%e7%b3%bb%e7%bb%9f" aria-label="更新系统">更新系统</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83" aria-label="安装开发环境">安装开发环境</a><ul>
+                        
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-git" aria-label="安装 git">安装 git</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-java-%e8%bf%90%e8%a1%8c%e7%8e%af%e5%a2%83" aria-label="安装 java 运行环境">安装 java 运行环境</a><ul>
+                        
+                <li>
+                    <a href="#jre" aria-label="jre">jre</a></li>
+                <li>
+                    <a href="#jdk" aria-label="jdk">jdk</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-gcc-%e7%bc%96%e8%af%91%e5%99%a8" aria-label="安装 gcc 编译器">安装 gcc 编译器</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-g%e7%bc%96%e8%af%91%e5%99%a8" aria-label="安装 g&#43;&#43;编译器">安装 g++编译器</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-adb-%e8%b0%83%e8%af%95%e5%b7%a5%e5%85%b7" aria-label="安装 adb 调试工具">安装 adb 调试工具</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-chrome" aria-label="安装 chrome">安装 chrome</a></li>
+                <li>
+                    <a href="#%e6%9b%b4%e6%8d%a2-vim" aria-label="更换 vim">更换 vim</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-typora" aria-label="安装 typora">安装 typora</a></li>
+                <li>
+                    <a href="#%e7%bd%91%e7%bb%9c%e4%bb%a3%e7%90%86" aria-label="网络代理">网络代理</a></li>
+                <li>
+                    <a href="#%e8%bd%af%e4%bb%b6" aria-label="软件">软件</a></li>
+                <li>
+                    <a href="#%e7%ad%89%e5%ae%bd%e5%ad%97%e4%bd%93" aria-label="等宽字体">等宽字体</a></li>
+                <li>
+                    <a href="#%e9%85%8d%e7%bd%ae-vsc" aria-label="配置 VSC">配置 VSC</a><ul>
+                        
+                <li>
+                    <a href="#%e8%b0%83%e6%95%b4%e5%ad%97%e4%bd%93" aria-label="调整字体">调整字体</a></li>
+                <li>
+                    <a href="#%e4%b8%8b%e8%bd%bd%e5%bf%85%e5%a4%87%e6%89%a9%e5%b1%95%e5%8c%85" aria-label="下载必备扩展包">下载必备扩展包</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%bb%e9%a2%98%e7%be%8e%e5%8c%96" aria-label="主题美化">主题美化</a></li>
+                <li>
+                    <a href="#c-%e8%af%ad%e8%a8%80" aria-label="C 语言">C 语言</a></li>
+                <li>
+                    <a href="#java" aria-label="Java">Java</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%8c%89%e9%9c%80%e4%b8%8b%e8%bd%bd%e5%85%b6%e4%bb%96%e6%89%a9%e5%b1%95%e5%8c%85" aria-label="按需下载其他扩展包">按需下载其他扩展包</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%85%8d%e7%bd%ae-androidstudio" aria-label="配置 AndroidStudio">配置 AndroidStudio</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h1>
+<p>之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。</p>
+<p>经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。</p>
+<p>个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足</p>
+<h2 id="优点">优点<a hidden class="anchor" aria-hidden="true" href="#优点">#</a></h2>
+<ol>
+<li>更加稳定</li>
+<li>更加安全</li>
+<li>不会整天提醒你更新系统</li>
+<li>配置开发环境仅需几行终端指令</li>
+<li>忘记恼人的弹窗广告和流氓软件吧</li>
+</ol>
+<h2 id="不足">不足<a hidden class="anchor" aria-hidden="true" href="#不足">#</a></h2>
+<ol>
+<li>很多软件不支持 Linux，只能在 Windows 上运行</li>
+<li>几乎 90% 的游戏都不支持 Linux</li>
+<li>需要学习命令行</li>
+<li>界面丑</li>
+</ol>
+<p>对策：</p>
+<ol>
+<li>Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine</li>
+<li>游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统</li>
+<li>命令行也不是特别难，遇到问题谷歌一下就行了</li>
+<li>至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的</li>
+</ol>
+<h1 id="ubuntu-的安装">Ubuntu 的安装<a hidden class="anchor" aria-hidden="true" href="#ubuntu-的安装">#</a></h1>
+<p>访问 Ubuntu 官网下载最新的镜像文件</p>
+<p>使用 Etcher 写入 U 盘作为启动盘</p>
+<p>通过 U 盘启动系统</p>
+<p>依照图形化安装程序进行安装</p>
+<p>系统安装好之后就可以开始使用激动人心的 Ubuntu19.10 了！</p>
+<p>（Emmmm，这个之后补图详细介绍吧）</p>
+<h1 id="软件配置">软件配置<a hidden class="anchor" aria-hidden="true" href="#软件配置">#</a></h1>
+<p>安装好系统之后，还需要进行软件的配置，才能作为日常的使用。</p>
+<p>下面是博主的配置过程，仅供参考。</p>
+<h2 id="换源">换源<a hidden class="anchor" aria-hidden="true" href="#换源">#</a></h2>
+<p>俗话说的好，装好 Linux 后第一件事就是换源。</p>
+<p>由于不同地区网络不同，我用起来很快的源你用可能会很慢，所以这里推荐大家自己百度，多试几个，选一个稳定高速的。</p>
+<p>实际上 Ubuntu 官方源在国内也是可以直接用的，博主就没有更换，默认官方源使用。</p>
+<p>可以通过 speedtest 工具检测网络问题是否是由于网卡驱动导致。</p>
+<h3 id="首先安装-python3">首先安装 python3<a hidden class="anchor" aria-hidden="true" href="#首先安装-python3">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install python3 -y
+</span></span></code></pre></div><h3 id="安装-pip">安装 pip<a hidden class="anchor" aria-hidden="true" href="#安装-pip">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install python-pip -y
+</span></span></code></pre></div><h3 id="安装-speedtest-工具">安装 speedtest 工具<a hidden class="anchor" aria-hidden="true" href="#安装-speedtest-工具">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pip install speedtest-cli
+</span></span></code></pre></div><h3 id="进行测速">进行测速<a hidden class="anchor" aria-hidden="true" href="#进行测速">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>speedtest
+</span></span></code></pre></div><p>安装之后随时都可以使用 speedtest 指令测速，有关该 python 小工具的更多功能请自行谷歌</p>
+<p>如果测速结果正常但是安装软件却很慢说明网卡没有问题，可以考虑更换国内镜像源</p>
+<h2 id="更新系统">更新系统<a hidden class="anchor" aria-hidden="true" href="#更新系统">#</a></h2>
+<p>不管有没有换源，首先更新系统</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
+</span></span></code></pre></div><h2 id="安装开发环境">安装开发环境<a hidden class="anchor" aria-hidden="true" href="#安装开发环境">#</a></h2>
+<h3 id="安装-git">安装 git<a hidden class="anchor" aria-hidden="true" href="#安装-git">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install git
+</span></span></code></pre></div><h3 id="安装-java-运行环境">安装 java 运行环境<a hidden class="anchor" aria-hidden="true" href="#安装-java-运行环境">#</a></h3>
+<h4 id="jre">jre<a hidden class="anchor" aria-hidden="true" href="#jre">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install openjdk-8-jre
+</span></span></code></pre></div><h4 id="jdk">jdk<a hidden class="anchor" aria-hidden="true" href="#jdk">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install openjdk-8-jdk
+</span></span></code></pre></div><h3 id="安装-gcc-编译器">安装 gcc 编译器<a hidden class="anchor" aria-hidden="true" href="#安装-gcc-编译器">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install gcc
+</span></span></code></pre></div><h3 id="安装-g编译器">安装 g++编译器<a hidden class="anchor" aria-hidden="true" href="#安装-g编译器">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install g++
+</span></span></code></pre></div><h3 id="安装-adb-调试工具">安装 adb 调试工具<a hidden class="anchor" aria-hidden="true" href="#安装-adb-调试工具">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install adb
+</span></span></code></pre></div><h2 id="安装-chrome">安装 chrome<a hidden class="anchor" aria-hidden="true" href="#安装-chrome">#</a></h2>
+<p>这条终端指令安装的是开源的 chromium</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install chromium-browser
+</span></span></code></pre></div><p>如果想要正式版的 chrome 可以去 chrome 官网下载 deb 包安装</p>
+<h2 id="更换-vim">更换 vim<a hidden class="anchor" aria-hidden="true" href="#更换-vim">#</a></h2>
+<p>系统自带的 vi 太难用了，安装 vim 替换</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install vim
+</span></span></code></pre></div><p>当然你也可以使用<code>gedit</code>或者<code>nano</code></p>
+<h2 id="安装-typora">安装 typora<a hidden class="anchor" aria-hidden="true" href="#安装-typora">#</a></h2>
+<p>装机必备啊，写博客什么的很舒服。</p>
+<p><a href="https://typora.io/#linux">官网</a>有最新安装命令（以官网为主）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+</span></span><span style="display:flex;"><span>sudo add-apt-repository <span style="color:#e6db74">&#39;deb https://typora.io/linux ./&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install typora
+</span></span></code></pre></div><h2 id="网络代理">网络代理<a hidden class="anchor" aria-hidden="true" href="#网络代理">#</a></h2>
+<p>自行谷歌</p>
+<h2 id="软件">软件<a hidden class="anchor" aria-hidden="true" href="#软件">#</a></h2>
+<p>在官网下载 deb 包进行安装</p>
+<p>VSC
+VirtuaBox</p>
+<p>网易云音乐</p>
+<h2 id="等宽字体">等宽字体<a hidden class="anchor" aria-hidden="true" href="#等宽字体">#</a></h2>
+<p>下载 FiraCode 字体文件</p>
+<p>将 otf 字体文件保存到一文件夹内，这里以<code>~/Downloads/FiraCode</code>为例</p>
+<p>在<code>/usr/local/share/fonts/</code>目录下创建自定义文件夹名，这里以<code>FiraCode</code>为例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /usr/local/hare/fonts/
+</span></span><span style="display:flex;"><span>mkdir FiraCode
+</span></span></code></pre></div><p>cd 到字体文件目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~/Downloads/FiraCode/
+</span></span></code></pre></div><p>移动字体文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mv * /usr/local/share/fonts/FiraCode/
+</span></span><span style="display:flex;"><span>// 或者使用cp命令拷贝
+</span></span></code></pre></div><p>切换到字体目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /usr/local/share/fonts/FiraCode/
+</span></span></code></pre></div><p>建立字体缓存</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo fc-cache -fv
+</span></span></code></pre></div><h2 id="配置-vsc">配置 VSC<a hidden class="anchor" aria-hidden="true" href="#配置-vsc">#</a></h2>
+<h3 id="调整字体">调整字体<a hidden class="anchor" aria-hidden="true" href="#调整字体">#</a></h3>
+<p>更改字体为 FiraCode</p>
+<p>更改字体大小，粗度</p>
+<h3 id="下载必备扩展包">下载必备扩展包<a hidden class="anchor" aria-hidden="true" href="#下载必备扩展包">#</a></h3>
+<h4 id="主题美化">主题美化<a hidden class="anchor" aria-hidden="true" href="#主题美化">#</a></h4>
+<p><code>One Dark Pro</code>
+<code>Material Icon Theme</code>
+<code>Material Theme</code></p>
+<h4 id="c-语言">C 语言<a hidden class="anchor" aria-hidden="true" href="#c-语言">#</a></h4>
+<p><code>C/C++</code>
+<code>Code Runner</code></p>
+<h4 id="java">Java<a hidden class="anchor" aria-hidden="true" href="#java">#</a></h4>
+<p><code>Language support for Java ™ for Visual Studio Code</code>
+<code>Debugger for Java</code>
+<code>Java Test Runner</code>
+<code>Java Extension Pack</code></p>
+<h3 id="按需下载其他扩展包">按需下载其他扩展包<a hidden class="anchor" aria-hidden="true" href="#按需下载其他扩展包">#</a></h3>
+<h2 id="配置-androidstudio">配置 AndroidStudio<a hidden class="anchor" aria-hidden="true" href="#配置-androidstudio">#</a></h2>
+<p>官网下载安装包</p>
+<p>提取文件到某一目录</p>
+<p>移动文件到/opt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /opt
+</span></span></code></pre></div><p>cd 到安装目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /opt/android-studio/bin
+</span></span></code></pre></div><p>通过指令运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>run with ./studio.sh
+</span></span></code></pre></div><p>不嫌烦的话可以使用指令启动软件</p>
+<p>想添加桌面图标的编辑如下文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gedit ~/.local/share/applications/androidstudio.desktop
+</span></span></code></pre></div><p>添加以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>and add the lines below
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Desktop Entry<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Version<span style="color:#f92672">=</span>1.0
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>Application
+</span></span><span style="display:flex;"><span>Name<span style="color:#f92672">=</span>Android Studio
+</span></span><span style="display:flex;"><span>Exec<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/android-studio/bin/studio.sh&#34;</span> %f
+</span></span><span style="display:flex;"><span>Icon<span style="color:#f92672">=</span>/opt/android-studio/bin/studio.png
+</span></span><span style="display:flex;"><span>Categories<span style="color:#f92672">=</span>Development;IDE;
+</span></span><span style="display:flex;"><span>Terminal<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>StartupNotify<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>StartupWMClass<span style="color:#f92672">=</span>android-studio
+</span></span></code></pre></div><p>JB 全家桶均可按照此方法安装，具体配置文件建议谷歌</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/ubuntu/">ubuntu</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/zh/post/android/swiperefreshlayout/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>Swiperefreshlayout</span>
+  </a>
+  <a class="next" href="https://aimerneige.com/zh/post/c/c-random-number/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>面向小白的 C 语言随机数详解</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -80,5 +80,15 @@ Download And Config Fonts Run the following commands
 sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp;amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)</description>
     </item>
     
+    <item>
+      <title>Enable USB for VirtualBox on Ubuntu</title>
+      <link>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</link>
+      <pubDate>Sun, 26 Jul 2020 07:58:20 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</guid>
+      <description>Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn&amp;rsquo;t on Windows.
+I can&amp;rsquo;t remember it and search for web many times because when you set it, you need&amp;rsquo;t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>github on AimerNeige&#39;s Blog</title>
+    <link>https://aimerneige.com/zh/tags/github/</link>
+    <description>Recent content in github on AimerNeige&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2020 07:15:56 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>优雅地使用 GitHub</title>
+      <link>https://aimerneige.com/zh/post/others/use-github-gracefully/</link>
+      <pubDate>Sat, 01 Aug 2020 07:15:56 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/others/use-github-gracefully/</guid>
+      <description>官方文档
+较常用的检索限制 项目名称
+in:name &amp;lt;keyword&amp;gt; 项目 README
+in:readme &amp;lt;keyword&amp;gt; 项目描述
+in:description &amp;lt;keyword&amp;gt; 语言
+language: java star 数
+stars:&amp;gt;1000 fork 数
+forks:&amp;gt;500 更新时间
+pushed:&amp;gt;2020-08-01 使用示例
+in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01 参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY</description>
+    </item>
+    
+  </channel>
+</rss>

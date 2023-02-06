@@ -172,6 +172,28 @@ patch: punctuator/full_shape: &#34;`&#34;: &#34;｀&#34; &#34;~&#34;: &#34;～&#
   <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>介绍 使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。
+查阅资料，我们会发现 Pillow 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。
+简单地查看下 官方文档 。
+emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。
+随便查了下，发现了这个：
+from PIL import Image image1 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image1.png&#39;) image2 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image2.png&#39;) image3 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image3.png&#39;) image4 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image4.png&#39;) im1 = image1.convert(&#39;RGB&#39;) im2 = image2.convert(&#39;RGB&#39;) im3 = image3.convert(&#39;RGB&#39;) im4 = image4.convert(&#39;RGB&#39;) imagelist = [im2,im3,im4] im1.save(r&#39;C:\Users\Ron\Desktop\Test\myImages.pdf&#39;,save_all=True, append_images=imagelist) 来源： https://datatofish.com/images-to-pdf-python/
+不需要仔细看又臭又长的官方文档了，nice！
+了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!
+代码很简单，直接上源码了：
+源码 项目文件目录：
+- comic/ # 包含了漫画的图片 - example_001....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-05-27 23:36:38 +0800 CST'>五月 27, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读" href="https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/"></a>
+</article>
     </main>
     
 <footer class="footer">

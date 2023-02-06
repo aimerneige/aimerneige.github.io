@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Android Develop Data Save | AimerNeige&#39;s Blog</title>
+<meta name="keywords" content="android">
+<meta name="description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/android/data-save/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/android/data-save/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Android Develop Data Save" />
+<meta property="og:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/android/data-save/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-08-10T00:50:41+08:00" />
+<meta property="article:modified_time" content="2020-08-10T00:50:41+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android Develop Data Save"/>
+<meta name="twitter:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Android Develop Data Save",
+      "item": "https://aimerneige.com/en/post/android/data-save/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Android Develop Data Save",
+  "name": "Android Develop Data Save",
+  "description": "Save data to file save data // This function will save the data of inputText into file \u0026#34;data\u0026#34; as text file // The file \u0026#34;data\u0026#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // \u0026#34;data\u0026#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(\u0026#34;data\u0026#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.",
+  "keywords": [
+    "android"
+  ],
+  "articleBody": "Save data to file save data // This function will save the data of inputText into file \"data\" as text file // The file \"data\" will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // \"data\" is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(\"data\", Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.printStackTrace() } } load data // This function will try to load the data at a file named \"data\" // which is on /data/data/com.aimerneige.example/files/data fun load(): String { // a StringBuilder to load data val content = StringBuilder() try { // \"data\" is the name of the file you want to find on disk val input = openFileInput(\"data\") val reader = BufferedReader(InputStreamReader(input)) reader.use { reader.forEachLine { content.append(it) } } } catch (e: IOException) { e.printStackTrace() } return content.toString() } You can also use like this:\nsave data with file name fun save(data_input: String, file_name: String) { try { val output = openFileOutput(file_name, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(data_input) } } catch (e: IOException) { e.printStackTrace() } } read data with file name fun load(file_name: String): String { val content = StringBuilder() try { val input = openFileInput(file_name) val reader = BufferedReader(InputStreamReader(input)) reader.use { reader.forEachLine { content.append(it) } } } catch (e: IOException) { e.printStackTrace() } return content.toString() } In this way, all of the file will saved into the file /data/data/{package-name}/files/{file-name}.\nSave data with SharedPreferences save data // This function will save much data with key-value into file \"data.xml\" // The file \"data.xml\" will be saved to /data/data/com.aimerneige.example/shared_prefs/data.xml button_save.setOnClickListener { // \"data\" is the name of the file you saved on phone storage // You can change it as you want val editor = getSharedPreferences(\"data\", Context.MODE_PRIVATE).edit() editor.putString(\"name\", \"Tom\") editor.putInt(\"age\", 28) editor.putBoolean(\"married\", false) editor.apply() } load data // This function will try to load the data at \"data.xml\" // which is on /data/data/com.aimerneige.example/shared_prefs/data.xml button_load.setOnClickListener { // \"data\" is the name of the file without the .xml val prefs = getSharedPreferences(\"data\", Context.MODE_PRIVATE) // needless to check if the file contains the data // just use a val to read it, if failed, use the default value val name = prefs.getString(\"name\", \"\") val age = prefs.getInt(\"age\", 0) val married = prefs.getBoolean(\"married\", false) val sb = StringBuilder() sb.append(\"Name: \" + name + \" \") sb.append(\"Age: \" + age.toString() + \" \") sb.append(\"Married: \" + married.toString() + \".\") Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show() } In this way, all of the file will saved into the file /data/data/{package-name}/shared_prefs/{file-name}.xml.\nOr, you can get a SharedPreferences in this way:\nval prefs = getSharedPreferences(Context.MODE_PRIVATE) This will save data into the file /data/data/{package-name}/shared_prefs/{current-activity-class-name}.xml\n",
+  "wordCount" : "448",
+  "inLanguage": "en",
+  "datePublished": "2020-08-10T00:50:41+08:00",
+  "dateModified": "2020-08-10T00:50:41+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/android/data-save/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AimerNeige's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Android Develop Data Save
+    </h1>
+    <div class="post-meta"><span title='2020-08-10 00:50:41 +0800 CST'>August 10, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Android/data-save.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#save-data-to-file" aria-label="Save data to file">Save data to file</a><ul>
+                        
+                <li>
+                    <a href="#save-data" aria-label="save data">save data</a></li>
+                <li>
+                    <a href="#load-data" aria-label="load data">load data</a></li>
+                <li>
+                    <a href="#save-data-with-file-name" aria-label="save data with file name">save data with file name</a></li>
+                <li>
+                    <a href="#read-data-with-file-name" aria-label="read data with file name">read data with file name</a></li></ul>
+                </li>
+                <li>
+                    <a href="#save-data-with-sharedpreferences" aria-label="Save data with SharedPreferences">Save data with SharedPreferences</a><ul>
+                        
+                <li>
+                    <a href="#save-data-1" aria-label="save data">save data</a></li>
+                <li>
+                    <a href="#load-data-1" aria-label="load data">load data</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="save-data-to-file">Save data to file<a hidden class="anchor" aria-hidden="true" href="#save-data-to-file">#</a></h2>
+<h3 id="save-data">save data<a hidden class="anchor" aria-hidden="true" href="#save-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// This function will save the data of inputText into file &#34;data&#34; as text file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">save</span>(inputText: String) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// &#34;data&#34; is the name of the file you saved on phone storage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// You can change it as you want
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">val</span> output = openFileOutput(<span style="color:#e6db74">&#34;data&#34;</span>, <span style="color:#a6e22e">Context</span>.MODE_PRIVATE)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> writer = BufferedWriter(OutputStreamWriter(output))
+</span></span><span style="display:flex;"><span>        writer.use {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">it</span>.write(inputText)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (e: IOException) {
+</span></span><span style="display:flex;"><span>        e.printStackTrace()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="load-data">load data<a hidden class="anchor" aria-hidden="true" href="#load-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// This function will try to load the data at a file named &#34;data&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// which is on /data/data/com.aimerneige.example/files/data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">load</span>(): String {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// a StringBuilder to load data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> content = StringBuilder()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// &#34;data&#34; is the name of the file you want to find on disk
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">val</span> input = openFileInput(<span style="color:#e6db74">&#34;data&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> reader = BufferedReader(InputStreamReader(input))
+</span></span><span style="display:flex;"><span>        reader.use {
+</span></span><span style="display:flex;"><span>            reader.forEachLine {
+</span></span><span style="display:flex;"><span>                content.append(<span style="color:#66d9ef">it</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> (e: IOException) {
+</span></span><span style="display:flex;"><span>        e.printStackTrace()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> content.toString()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can also use like this:</p>
+<h3 id="save-data-with-file-name">save data with file name<a hidden class="anchor" aria-hidden="true" href="#save-data-with-file-name">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">save</span>(data_input: String, file_name: String) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> output = openFileOutput(file_name, <span style="color:#a6e22e">Context</span>.MODE_PRIVATE)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> writer = BufferedWriter(OutputStreamWriter(output))
+</span></span><span style="display:flex;"><span>        writer.use {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">it</span>.write(data_input)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (e: IOException) {
+</span></span><span style="display:flex;"><span>        e.printStackTrace()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="read-data-with-file-name">read data with file name<a hidden class="anchor" aria-hidden="true" href="#read-data-with-file-name">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">load</span>(file_name: String): String {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> content = StringBuilder()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> input = openFileInput(file_name)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> reader = BufferedReader(InputStreamReader(input))
+</span></span><span style="display:flex;"><span>        reader.use {
+</span></span><span style="display:flex;"><span>            reader.forEachLine {
+</span></span><span style="display:flex;"><span>                content.append(<span style="color:#66d9ef">it</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> (e: IOException) {
+</span></span><span style="display:flex;"><span>        e.printStackTrace()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> content.toString()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this way, all of the file will saved into the file <code>/data/data/{package-name}/files/{file-name}</code>.</p>
+<h2 id="save-data-with-sharedpreferences">Save data with SharedPreferences<a hidden class="anchor" aria-hidden="true" href="#save-data-with-sharedpreferences">#</a></h2>
+<h3 id="save-data-1">save data<a hidden class="anchor" aria-hidden="true" href="#save-data-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// This function will save much data with key-value into file &#34;data.xml&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// The file &#34;data.xml&#34; will be saved to /data/data/com.aimerneige.example/shared_prefs/data.xml
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>button_save.setOnClickListener {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// &#34;data&#34; is the name of the file you saved on phone storage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// You can change it as you want
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> editor = getSharedPreferences(<span style="color:#e6db74">&#34;data&#34;</span>, <span style="color:#a6e22e">Context</span>.MODE_PRIVATE).edit()
+</span></span><span style="display:flex;"><span>    editor.putString(<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;Tom&#34;</span>)
+</span></span><span style="display:flex;"><span>    editor.putInt(<span style="color:#e6db74">&#34;age&#34;</span>, <span style="color:#ae81ff">28</span>)
+</span></span><span style="display:flex;"><span>    editor.putBoolean(<span style="color:#e6db74">&#34;married&#34;</span>, <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>    editor.apply()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="load-data-1">load data<a hidden class="anchor" aria-hidden="true" href="#load-data-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// This function will try to load the data at &#34;data.xml&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// which is on /data/data/com.aimerneige.example/shared_prefs/data.xml
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>button_load.setOnClickListener {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// &#34;data&#34; is the name of the file without the .xml
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> prefs = getSharedPreferences(<span style="color:#e6db74">&#34;data&#34;</span>, <span style="color:#a6e22e">Context</span>.MODE_PRIVATE)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// needless to check if the file contains the data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// just use a val to  read it, if failed, use the default value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> name = prefs.getString(<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> age = prefs.getInt(<span style="color:#e6db74">&#34;age&#34;</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> married = prefs.getBoolean(<span style="color:#e6db74">&#34;married&#34;</span>, <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> sb = StringBuilder()
+</span></span><span style="display:flex;"><span>    sb.append(<span style="color:#e6db74">&#34;Name: &#34;</span> + name + <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>    sb.append(<span style="color:#e6db74">&#34;Age: &#34;</span> + age.toString() + <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>    sb.append(<span style="color:#e6db74">&#34;Married: &#34;</span> + married.toString() + <span style="color:#e6db74">&#34;.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Toast</span>.makeText(<span style="color:#66d9ef">this</span>, sb.toString(), <span style="color:#a6e22e">Toast</span>.LENGTH_SHORT).show()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this way, all of the file will saved into the file <code>/data/data/{package-name}/shared_prefs/{file-name}.xml</code>.</p>
+<p>Or, you can get a SharedPreferences in this way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> prefs = getSharedPreferences(<span style="color:#a6e22e">Context</span>.MODE_PRIVATE)
+</span></span></code></pre></div><p>This will save data into the file <code>/data/data/{package-name}/shared_prefs/{current-activity-class-name}.xml</code></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/android/">android</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://aimerneige.com/en/post/android/change-package-name/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Android Develop Data Save</span>
+  </a>
+  <a class="next" href="https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/">
+    <span class="title">Next »</span>
+    <br>
+    <span>How to install ffmpeg on Windows 10</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

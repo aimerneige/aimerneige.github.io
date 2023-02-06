@@ -65,5 +65,14 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
 文件扩展名 GCC 所理解的含义 *.c 该类文件为 C 语言的源文件 *.</description>
     </item>
     
+    <item>
+      <title>面向小白的 C 语言随机数详解</title>
+      <link>https://aimerneige.com/zh/post/c/c-random-number/</link>
+      <pubDate>Fri, 24 Jan 2020 15:58:19 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/c/c-random-number/</guid>
+      <description>函数指针用法</description>
+    </item>
+    
   </channel>
 </rss>

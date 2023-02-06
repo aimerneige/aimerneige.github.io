@@ -16,5 +16,37 @@
       <description>在 Ubuntu 服务器上安装 qBittorrent-nox 更新系统 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y 导入 qBittorrent-nox 稳定版本的源 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y 导入 qBittorrent-nox 非稳定版本的源（每夜版） sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y 更新源 sudo apt update 安装 qBittorrent-nox sudo apt install qbittorrent-nox -y 创建用户和用户组 sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox 将你添加到用户组中 sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username 创建 service 文件 sudo vim /etc/systemd/system/qbittorrent-nox.service [Unit] Description=qBittorrent Command Line Client After=network.</description>
     </item>
     
+    <item>
+      <title>Ubuntu 19.10 配置 Kotlin 开发环境</title>
+      <link>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</link>
+      <pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid>
+      <description>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
+安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+sudo apt install snap 这条指令执行后，系统安装的内容有：
+kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
+俩条指令都可以，建议使用上面的。
+kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
+Kotlin Kotlin Language 安装下面这个插件后在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 -&amp;gt; 扩展 -&amp;gt; Run Code Configuration 中找到并勾选 Run In Terminal
+Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&amp;lt;String&amp;gt;) { println(&amp;#34;Hello, World!&amp;#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
+如果看到终端输出 Hello, World!</description>
+    </item>
+    
+    <item>
+      <title>如何安装 Ubuntu</title>
+      <link>https://aimerneige.com/zh/post/linux/ubuntu-install/</link>
+      <pubDate>Fri, 24 Jan 2020 16:11:30 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/linux/ubuntu-install/</guid>
+      <description>前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
+经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
+个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
+优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：
+Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
+使用 Etcher 写入 U 盘作为启动盘
+通过 U 盘启动系统</description>
+    </item>
+    
   </channel>
 </rss>
