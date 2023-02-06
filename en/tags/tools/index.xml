@@ -32,5 +32,15 @@ The Final result will like this:
 [user@hostname ~]$ onedrive Authorize this app visiting: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Application has been successfully authorized, however no additional command switches were provided. Please use &amp;#39;onedrive --help&amp;#39; for further assistance in regards to running this application.</description>
     </item>
     
+    <item>
+      <title>Auto Start Wifi Hotspot on Gnome</title>
+      <link>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</link>
+      <pubDate>Sun, 07 Nov 2021 20:54:42 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</guid>
+      <description>Edit and save file nmcli-hotspot.desktop on path /home/aimerneige/.config/autostart
+[Desktop Entry] Name=nmcli-hotspot Comment=Open HotSport With nmcli Exec=nmcli connection up Hotspot Terminal=true Type=Application </description>
+    </item>
+    
   </channel>
 </rss>

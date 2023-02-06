@@ -158,6 +158,26 @@ package com.aimerneige.example.config; import org.springframework.context.annota
     </item>
     
     <item>
+      <title>Auto Start Wifi Hotspot on Gnome</title>
+      <link>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</link>
+      <pubDate>Sun, 07 Nov 2021 20:54:42 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</guid>
+      <description>Edit and save file nmcli-hotspot.desktop on path /home/aimerneige/.config/autostart
+[Desktop Entry] Name=nmcli-hotspot Comment=Open HotSport With nmcli Exec=nmcli connection up Hotspot Terminal=true Type=Application </description>
+    </item>
+    
+    <item>
+      <title>Vala Env Setup</title>
+      <link>https://aimerneige.com/en/post/linux/vala-env-setup/</link>
+      <pubDate>Sat, 23 Oct 2021 21:36:57 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/vala-env-setup/</guid>
+      <description>vala env setup When it&amp;rsquo;s talking to Linux development, there are many ways to go. But I love elementary and want to build some awesome apps with vala. So this article is about how to set up your vala develop environment on elementary os. In the future, there will more articles about vala and Linux development.
+System Info When I write this artice (2021-7-31), elementary os 6 is still in develop, so I install it in gnome boxes.</description>
+    </item>
+    
+    <item>
       <title>Hello Hugo</title>
       <link>https://aimerneige.com/en/post/others/hello-hugo/</link>
       <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
