@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/tags/golang/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -116,12 +116,10 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>前言 有时我们要通过第三方服务获取数据，它可以是外部提供的 API，也可以是微服务的接口等等，总之，它们有相同的问题：“获取数据可能需要大量时间”。如果在代码中同步地获取这些数据，程序就会花时间等待这些服务响应，而这些等待会严重影响程序的运行效率，而且一旦这些服务崩溃，我们的程序就会陷入无休止的等待中，那么如何解决这个问题呢？可以使用 Go 的 context 包。
 问题 我们用这个函数来替代那些第三方服务。我们直接使用 time.Sleep() 函数来模拟一个耗时过程，在现实场景中，它可能是在执行一个非常复杂的 SQL 查询，也可以是调用一个人工智能服务接口。当然，这个耗时是不确定的，甚至有可能是无穷大（卡死）。
-func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { time.Sleep(time.Millisecond * 500) return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：
-func foo() { // some code here ... val, err := fetchThirdPartyStuffWhichCanBeSlow() if err != nil { log.Fatal(err) } // some code here ... } 上面的代码如果用在一些只执行一次的脚本、工具中，并不会带来严重后果，无非多等一下就好了，即使有问题也可以关掉程序检查一下第三方服务。但是如果上面的代码用在一个承载大流量的 web 服务中，程序在执行完耗时代码后还要继续执行一些重要的业务功能，那么这样直接调用而不加考虑的代码很可能是致命的。一旦第三方服务出现问题，程序没有任何机制检查和处理，而是直接陷入无休止的等待。这显然是不合理的。
+func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { 	time.Sleep(time.Millisecond * 500)  	return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：
+func foo() { 	// some code here ...  	val, err := fetchThirdPartyStuffWhichCanBeSlow() 	if err != nil { 	log.Fatal(err) 	}  	// some code here ... } 上面的代码如果用在一些只执行一次的脚本、工具中，并不会带来严重后果，无非多等一下就好了，即使有问题也可以关掉程序检查一下第三方服务。但是如果上面的代码用在一个承载大流量的 web 服务中，程序在执行完耗时代码后还要继续执行一些重要的业务功能，那么这样直接调用而不加考虑的代码很可能是致命的。一旦第三方服务出现问题，程序没有任何机制检查和处理，而是直接陷入无休止的等待。这显然是不合理的。
 解决方案 要解决上述的问题，比较常见的思路是引入一个主动停止耗时服务的功能，这样如果耗时函数花了太多时间执行，程序就可以感知到，并主动干预。
-在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。
-使用 Channel 如果不使用本文要介绍的 Context，传统的思路是使用 Channel &#43; Select 来处理：
-type Response struct { value int err error } func fetchUserData(userID int) (int, error) { stop := make(chan bool) respch := make(chan Response) go func() { val, err := fetchThirdPartyStuffWhichCanBeSlow() respch &lt;- Response{ value: val, err: err, } }() go func() { time....</p>
+在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。...</p>
   </div>
   <footer class="entry-footer"><span title='2023-02-03 23:29:21 +0800 CST'>二月 3, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang Context" href="https://aimerneige.com/zh/post/go/go-context/"></a>
@@ -138,8 +136,8 @@ type Response struct { value int err error } func fetchUserData(userID int) (int
     <p>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
 embed 假设我们有一个文件 hello.txt
 Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main import ( &#34;fmt&#34; &#34;os&#34; ) func main() { s, err := os.ReadFile(&#34;./hello.txt&#34;) if err != nil { panic(err) } fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go 0 directories, 3 files ➜ go build main.go ➜ ./main Hello World! Hello go embed!...</p>
+// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main....</p>
   </div>
   <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>
@@ -154,22 +152,16 @@ Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输
   </header>
   <div class="entry-content">
     <p>由于某些网络原因1，本文所提到的部分网站、下载链接可能在中国大陆地区无法访问，请自行查找解决方案，本文不再赘述。
-如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
-下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
+  如果你在阅读本文时遇到了任何问题，请查阅 go 语言官方网站。
+ 下载预编译文件 在 Download Go 选择适合你平台的最新版本文件下载。
 本文不推荐使用一键安装包的方式安装 go 语言，即请不要直接下载下图所示的文件:
 我们在下面的 Stable versions 后找到最新版本的 go，选择适合自己电脑系统与架构的压缩包。要选择 Archive　而不要选择 Installer。
-Tip
+.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Tip
 当然使用 msi 等一键安装包安装也是完全可以的，如果你想要使用一键安装包的方式安装 go，请查阅其他资料。
-如果你想要通过源码安装，请自行查阅 通过源码构建。
-安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
-Linux 解压压缩文件 这里我们可以直接使用 官方安装指南 提供的指令来解压。
-rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz 本指令会将 go 安装在 /usr/local/go 路径下，因此执行命令需要 root 权限。当然，如果想要将 go 安装在其他路径也是可以的，但是还是推荐安装在官方推荐的路径下。
-Info
-如果你使用了其他的路径来安装 go，在之后的配置过程中记得要修改 GOROOT 变量修改为你所安装的路径。
-执行命令前请先切换工作目录，确保当前路径下有刚刚下载好的压缩包。
-Warning
-压缩包名 go1.17.linux-amd64.tar.gz 可能有所不同，这取决于你安装的 go 版本和操作系统及处理器架构。
-配置环境变量 成功解压后，如果你尝试直接在终端执行 go 指令，你会发现系统并没有识别到你刚安装的 go 二进制文件，这是因为我们还没有对 go 的环境变量进行配置。...</p>
+  如果你想要通过源码安装，请自行查阅 通过源码构建。
+ 安装 &amp; 配置 下面分别具体说明不同平台下安装和配置的方法。
+Linux  解压压缩文件  这里我们可以直接使用 官方安装指南 提供的指令来解压。
+rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1....</p>
   </div>
   <footer class="entry-footer"><span title='2021-08-24 21:31:05 +0800 CST'>八月 24, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 配置 go 开发环境" href="https://aimerneige.com/zh/post/go/go-env-setup-for-beginner/"></a>

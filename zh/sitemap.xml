@@ -30,19 +30,6 @@
     <loc>https://aimerneige.com/zh/post/go/go-context/</loc>
     <lastmod>2023-02-03T23:29:21+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/</loc>
-    <lastmod>2023-02-03T23:29:21+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/categories/</loc>
     <lastmod>2023-02-03T23:29:21+08:00</lastmod>
     <xhtml:link
@@ -69,13 +56,26 @@
                 href="https://aimerneige.com/zh/post/"
                 />
   </url><url>
+    <loc>https://aimerneige.com/zh/tags/</loc>
+    <lastmod>2023-02-03T23:29:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+  </url><url>
     <loc>https://aimerneige.com/zh/tags/game/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/minecraft/</loc>
+    <loc>https://aimerneige.com/zh/categories/minecraft/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/categories/minecraft/</loc>
+    <loc>https://aimerneige.com/zh/tags/minecraft/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/tags/mod/</loc>
@@ -366,19 +366,6 @@
     <loc>https://aimerneige.com/zh/tags/tool/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/java/</loc>
-    <lastmod>2021-12-28T15:37:39+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/java/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/java/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/categories/java/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
     <xhtml:link
@@ -390,6 +377,19 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/java/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/java/</loc>
+    <lastmod>2021-12-28T15:37:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/java/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/spring/</loc>
@@ -569,10 +569,10 @@
     <loc>https://aimerneige.com/zh/post/others/use-github-gracefully/</loc>
     <lastmod>2020-08-01T07:15:56+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/python/</loc>
+    <loc>https://aimerneige.com/zh/categories/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/categories/python/</loc>
+    <loc>https://aimerneige.com/zh/tags/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</loc>
@@ -590,19 +590,6 @@
     <loc>https://aimerneige.com/zh/post/python/20-python-skills/</loc>
     <lastmod>2020-04-13T20:27:22+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/android/</loc>
-    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/android/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/categories/android/</loc>
     <lastmod>2020-02-22T00:43:15+08:00</lastmod>
     <xhtml:link
@@ -614,6 +601,19 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/android/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/android/</loc>
+    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/android/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/post/android/data-binding/</loc>

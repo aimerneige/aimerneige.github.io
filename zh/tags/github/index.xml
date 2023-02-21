@@ -22,8 +22,9 @@ language: java star 数
 stars:&amp;gt;1000 fork 数
 forks:&amp;gt;500 更新时间
 pushed:&amp;gt;2020-08-01 使用示例
-in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01 参考链接:
-https://www.youtube.com/watch?v=Uj6WWAqg0NY</description>
+in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01  参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY
+ </description>
     </item>
     
   </channel>

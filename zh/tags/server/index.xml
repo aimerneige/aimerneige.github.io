@@ -27,7 +27,7 @@ java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMill
       <pubDate>Thu, 12 Jan 2023 21:00:37 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</guid>
-      <description>阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+      <description>阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。

@@ -27,7 +27,7 @@ GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 
 GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
 GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
-文件扩展名 GCC 所理解的含义 *.c 该类文件为 C 语言的源文件 *.</description>
+   文件扩展名 GCC 所理解的含义     *.</description>
     </item>
     
     <item>
@@ -36,15 +36,14 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
       <pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid>
-      <description>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
-安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+      <description>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode
+ 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
 sudo apt install snap 这条指令执行后，系统安装的内容有：
-kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
+ kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。
 俩条指令都可以，建议使用上面的。
-kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
-Kotlin Kotlin Language 安装下面这个插件后在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 -&amp;gt; 扩展 -&amp;gt; Run Code Configuration 中找到并勾选 Run In Terminal
-Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&amp;lt;String&amp;gt;) { println(&amp;#34;Hello, World!&amp;#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
-如果看到终端输出 Hello, World!</description>
+kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。
+ Kotlin Kotlin Language    安装下面这个插件后在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 -&amp;gt; 扩展 -&amp;gt; Run Code Configuration 中找到并勾选 Run In Terminal
+ Code Runner    测试  建立新文件 HelloWorld.</description>
     </item>
     
   </channel>

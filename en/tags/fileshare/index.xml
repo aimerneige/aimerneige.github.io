@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
       <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
-[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username Warning</description>
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
     </item>
     
   </channel>

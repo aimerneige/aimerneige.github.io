@@ -10,12 +10,12 @@
 <meta name="description" content="ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
 在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
 首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段
-package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
-// May Cause Error public MutableLiveData&lt;Integer&gt; getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
-在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData&lt;&gt;(); LikedNumber.">
+package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
+ // May Cause Error  public MutableLiveData&lt;Integer&gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
+ 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData&lt;&gt;();  LikedNumber.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/android/live-data/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -49,9 +49,9 @@ if (!doNotTrack) {
 <meta property="og:description" content="ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
 在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
 首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段
-package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
-// May Cause Error public MutableLiveData&lt;Integer&gt; getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
-在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData&lt;&gt;(); LikedNumber." />
+package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
+ // May Cause Error  public MutableLiveData&lt;Integer&gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
+ 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData&lt;&gt;();  LikedNumber." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/android/live-data/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-02-20T22:22:21+08:00" />
@@ -62,9 +62,9 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <meta name="twitter:description" content="ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
 在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
 首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段
-package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
-// May Cause Error public MutableLiveData&lt;Integer&gt; getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
-在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData&lt;&gt;(); LikedNumber."/>
+package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
+ // May Cause Error  public MutableLiveData&lt;Integer&gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
+ 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData&lt;&gt;();  LikedNumber."/>
 
 
 <script type="application/ld+json">
@@ -93,11 +93,11 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
   "@type": "BlogPosting",
   "headline": "使用 LiveData 优雅地管理布局显示的数据",
   "name": "使用 LiveData 优雅地管理布局显示的数据",
-  "description": "ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。\n在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。\n首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段\npackage com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData\u0026lt;Integer\u0026gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法\n// May Cause Error public MutableLiveData\u0026lt;Integer\u0026gt; getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。\n在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData\u0026lt;\u0026gt;(); LikedNumber.",
+  "description": "ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。\n在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。\n首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段\npackage com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData\u0026lt;Integer\u0026gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法\n // May Cause Error  public MutableLiveData\u0026lt;Integer\u0026gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。\n 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData\u0026lt;\u0026gt;();  LikedNumber.",
   "keywords": [
     "android"
   ],
-  "articleBody": "ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。\n在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。\n首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段\npackage com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData\u003cInteger\u003e LikedNumber; } 然后为 LiveData 对象构建 get 方法\n// May Cause Error public MutableLiveData\u003cInteger\u003e getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。\n在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData\u003c\u003e(); LikedNumber.setValue(0); } 在 get 方法中解决(推荐) public MutableLiveData\u003cInteger\u003e getLikedNumber() { if (LikedNumber == null) { LikedNumber = new MutableLiveData\u003c\u003e(); LikedNumber.setValue(0); } return LikedNumber; } 接下来为数据提供操作方法，要注意的是这里非常不建议直接提供 set 方法对数据进行修改。这里以增加（减少）数据大小为例：\npublic void addLikedNumber(int n) { LikedNumber.setValue(LikedNumber.getValue() + n); } 需要增加（减少）数据大小的时候通过这个方法传入正数（负数）即可。\n要注意的是经过 LiveData 包装后 int 数据不能进行直接的加减操作，只能通过 setValue 、 getValue 等对数据进行处理（当然这并不是难事）\n在 Activity 中使用 LiveData 首先在 Activity 中构建 ViewModel 的引用\nViewModelWithLiveData viewModelWithLiveData; ``` 在 `onCreate` 方法内获得 `ViewModel` 的实体 ```java viewModelWithLiveData = ViewModelProviders.of(this).get(ViewModelWithLiveData.class); ``` 对 `LiveData` 数据创建观察者 ```java viewModelWithLiveData.getLikedNumber().observe(this, new Observer\u003cInteger\u003e() { @Override public void onChanged(Integer integer) { textView.setText(String.valueOf(integer)); } }); ``` 添加观察后，当数据发生变化后，会自动更改组件上的内容，当然这个行为完全可以自己改。 别忘了使用数据操作方法 ```java liked.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { viewModelWithLiveData.addLikedNumber(1); } }); disliked.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { viewModelWithLiveData.addLikedNumber(-1); } }); ``` ",
+  "articleBody": "ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。\n在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。\n首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段\npackage com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveDataInteger LikedNumber; } 然后为 LiveData 对象构建 get 方法\n // May Cause Error  public MutableLiveDataInteger getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。\n 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData();  LikedNumber.setValue(0);  } 在 get 方法中解决(推荐)   public MutableLiveDataInteger getLikedNumber() {  if (LikedNumber == null) {  LikedNumber = new MutableLiveData();  LikedNumber.setValue(0);  }  return LikedNumber;  } 接下来为数据提供操作方法，要注意的是这里非常不建议直接提供 set 方法对数据进行修改。这里以增加（减少）数据大小为例：\n public void addLikedNumber(int n) {  LikedNumber.setValue(LikedNumber.getValue() + n);  } 需要增加（减少）数据大小的时候通过这个方法传入正数（负数）即可。\n要注意的是经过 LiveData 包装后 int 数据不能进行直接的加减操作，只能通过 setValue 、 getValue 等对数据进行处理（当然这并不是难事）\n在 Activity 中使用 LiveData 首先在 Activity 中构建 ViewModel 的引用\n ViewModelWithLiveData viewModelWithLiveData; ```  在 `onCreate` 方法内获得 `ViewModel` 的实体  ```java  viewModelWithLiveData = ViewModelProviders.of(this).get(ViewModelWithLiveData.class); ```  对 `LiveData` 数据创建观察者  ```java  viewModelWithLiveData.getLikedNumber().observe(this, new ObserverInteger() {  @Override  public void onChanged(Integer integer) {  textView.setText(String.valueOf(integer));  }  }); ```  添加观察后，当数据发生变化后，会自动更改组件上的内容，当然这个行为完全可以自己改。  别忘了使用数据操作方法  ```java  liked.setOnClickListener(new View.OnClickListener() {  @Override  public void onClick(View v) {  viewModelWithLiveData.addLikedNumber(1);  }  });   disliked.setOnClickListener(new View.OnClickListener() {  @Override  public void onClick(View v) {  viewModelWithLiveData.addLikedNumber(-1);  }  }); ``` ",
   "wordCount" : "189",
   "inLanguage": "zh",
   "datePublished": "2020-02-20T22:22:21+08:00",
@@ -223,7 +223,7 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#75715e">// One possible wey to make the LikedNumber not null
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   ViewModelWithLiveData <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>       LikedNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MutableLiveData<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>       LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>       LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">}</span>
 </span></span></code></pre></div><ol start="2">
 <li>在 get 方法中解决(推荐)</li>
@@ -231,7 +231,7 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> MutableLiveData<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getLikedNumber</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>LikedNumber <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>            LikedNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MutableLiveData<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>            LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> LikedNumber<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
@@ -246,13 +246,13 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    ViewModelWithLiveData viewModelWithLiveData<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">在</span> <span style="color:#960050;background-color:#1e0010">`</span>onCreate<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">方法内获得</span> <span style="color:#960050;background-color:#1e0010">`</span>ViewModel<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">的实体</span>
+</span></span><span style="display:flex;"><span>在 <span style="color:#960050;background-color:#1e0010">`</span>onCreate<span style="color:#960050;background-color:#1e0010">`</span> 方法内获得 <span style="color:#960050;background-color:#1e0010">`</span>ViewModel<span style="color:#960050;background-color:#1e0010">`</span> 的实体
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    viewModelWithLiveData <span style="color:#f92672">=</span> ViewModelProviders<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>ViewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">对</span> <span style="color:#960050;background-color:#1e0010">`</span>LiveData<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">数据创建观察者</span>
+</span></span><span style="display:flex;"><span>对 <span style="color:#960050;background-color:#1e0010">`</span>LiveData<span style="color:#960050;background-color:#1e0010">`</span> 数据创建观察者
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">getLikedNumber</span><span style="color:#f92672">().</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Observer<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
@@ -263,22 +263,22 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加观察后，当数据发生变化后，会自动更改组件上的内容，当然这个行为完全可以自己改。</span>
+</span></span><span style="display:flex;"><span>添加观察后<span style="color:#960050;background-color:#1e0010">，</span>当数据发生变化后<span style="color:#960050;background-color:#1e0010">，</span>会自动更改组件上的内容<span style="color:#960050;background-color:#1e0010">，</span>当然这个行为完全可以自己改<span style="color:#960050;background-color:#1e0010">。</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">别忘了使用数据操作方法</span>
+</span></span><span style="display:flex;"><span>别忘了使用数据操作方法
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    liked<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    disliked<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(-</span>1<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>

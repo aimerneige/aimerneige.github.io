@@ -8,17 +8,17 @@
 <title>对于某实验平台的吐槽 | Aimer&#39;s Blog</title>
 <meta name="keywords" content="web, javascript">
 <meta name="description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
-温馨提示:需要从实验空间进入实验,不可直接输入网址进入
-不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。
+$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
-// 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1.attr(&#34;data-score&#34;)); if (questionAnswer.length &gt; 1) { var userdAnswer = question1.">
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -50,14 +50,14 @@ if (!doNotTrack) {
 </script>
 <meta property="og:title" content="对于某实验平台的吐槽" />
 <meta property="og:description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
-温馨提示:需要从实验空间进入实验,不可直接输入网址进入
-不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。
+$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
-// 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1.attr(&#34;data-score&#34;)); if (questionAnswer.length &gt; 1) { var userdAnswer = question1." />
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-08-19T21:44:21+08:00" />
@@ -66,14 +66,14 @@ $.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="对于某实验平台的吐槽"/>
 <meta name="twitter:description" content="今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
-温馨提示:需要从实验空间进入实验,不可直接输入网址进入
-不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+ 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+ 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data: { courseId: courseId }, dataType: &#34;JSON&#34;, success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。
+$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
-// 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) { var question1 = $(answer[k]).find(&#34;.question1&#34;); var questionAnswer = question1.attr(&#34;data-answer&#34;); var userAnswer = question1.find(&#34;input[type=&#39;radio&#39;]:checked&#34;).val(); var score = parseFloat(question1.attr(&#34;data-score&#34;)); if (questionAnswer.length &gt; 1) { var userdAnswer = question1."/>
+ // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1."/>
 
 
 <script type="application/ld+json">
@@ -102,11 +102,11 @@ $.ajax({ url: &#34;/webApi/experimen/rig/getData&#34;, type: &#34;GET&#34;, data
   "@type": "BlogPosting",
   "headline": "对于某实验平台的吐槽",
   "name": "对于某实验平台的吐槽",
-  "description": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ url: \u0026#34;/webApi/experimen/rig/getData\u0026#34;, type: \u0026#34;GET\u0026#34;, data: { courseId: courseId }, dataType: \u0026#34;JSON\u0026#34;, success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n// 单选 var answer = $(\u0026#39;.afterTesting .topic1 form\u0026#39;); for (var k = 0; k \u0026lt; answer.length; k++) { var question1 = $(answer[k]).find(\u0026#34;.question1\u0026#34;); var questionAnswer = question1.attr(\u0026#34;data-answer\u0026#34;); var userAnswer = question1.find(\u0026#34;input[type=\u0026#39;radio\u0026#39;]:checked\u0026#34;).val(); var score = parseFloat(question1.attr(\u0026#34;data-score\u0026#34;)); if (questionAnswer.length \u0026gt; 1) { var userdAnswer = question1.",
+  "description": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n 温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ \turl: \u0026#34;/webApi/experimen/rig/getData\u0026#34;, \ttype: \u0026#34;GET\u0026#34;, \tdata: { courseId: courseId }, \tdataType: \u0026#34;JSON\u0026#34;, \tsuccess: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n // 单选 var answer = $(\u0026#39;.afterTesting .topic1 form\u0026#39;); for (var k = 0; k \u0026lt; answer.length; k++) {  var question1 = $(answer[k]).find(\u0026#34;.question1\u0026#34;);  var questionAnswer = question1.",
   "keywords": [
     "web", "javascript"
   ],
-  "articleBody": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ url: \"/webApi/experimen/rig/getData\", type: \"GET\", data: { courseId: courseId }, dataType: \"JSON\", success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n// 单选 var answer = $('.afterTesting .topic1 form'); for (var k = 0; k \u003c answer.length; k++) { var question1 = $(answer[k]).find(\".question1\"); var questionAnswer = question1.attr(\"data-answer\"); var userAnswer = question1.find(\"input[type='radio']:checked\").val(); var score = parseFloat(question1.attr(\"data-score\")); if (questionAnswer.length \u003e 1) { var userdAnswer = question1.find(\"input[type='checkbox']:checked\"); let userdAnswerStr = ''; for (let i = 0; i \u003c userdAnswer.length; i++) { userdAnswerStr += $(userdAnswer[i]).val(); //console.log($(userdAnswer[i]).val()); } //console.log(userdAnswerStr); userAnswer = userdAnswerStr } var isok = \"\"; if (questionAnswer == userAnswer) { isok = \"正确\"; question1.find(\".countItem span\").html(score); resultafter += score } else { isok = \"错误\"; question1.find(\".countItem span\").html(\"0\"); } question1.find(\".yourAnswer span\").html(isok); } 好家伙，前端直接向后台发请求拿答案数据，然后判断对错？这就好比考试的时候老师把答案和试卷都给你，让你自己写完试卷自己评分。\n直接发一个请求过去，果然拿到答案了。\n数据示例:\n{ \"id\": \"570239720236388352\", \"courseId\": null, \"title\": \"07、机器人的运动速度与摇杆的偏转量 （）\", \"optionA\": \"A、正比 \", \"optionB\": \"B、反比 \", \"optionC\": \"C、不成比例 \", \"optionD\": \"D、以上均不正确\", \"optionE\": \"\", \"optionF\": \"\", \"optionG\": \"\", \"optionH\": \"\", \"answer\": \"A\", \"tag\": \"\", \"analysis\": \"\", \"remarks\": \"\", \"content\": \"\", \"score\": 3.0, \"pid\": \"550581359601651712_before\", \"countOfRow\": null } ",
+  "articleBody": "今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:\n 温馨提示:需要从实验空间进入实验,不可直接输入网址进入\n 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。\n这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？\n这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。\n结果我在后台找到了下面的代码:\n$.ajax({ \turl: \"/webApi/experimen/rig/getData\", \ttype: \"GET\", \tdata: { courseId: courseId }, \tdataType: \"JSON\", \tsuccess: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。\n对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。\n // 单选 var answer = $('.afterTesting .topic1 form'); for (var k = 0; k  answer.length; k++) {  var question1 = $(answer[k]).find(\".question1\");  var questionAnswer = question1.attr(\"data-answer\");  var userAnswer = question1.find(\"input[type='radio']:checked\").val();  var score = parseFloat(question1.attr(\"data-score\"));  if (questionAnswer.length  1) {  var userdAnswer = question1.find(\"input[type='checkbox']:checked\");  let userdAnswerStr = '';  for (let i = 0; i  userdAnswer.length; i++) {  userdAnswerStr += $(userdAnswer[i]).val();  //console.log($(userdAnswer[i]).val());  }  //console.log(userdAnswerStr);  userAnswer = userdAnswerStr  }  var isok = \"\";  if (questionAnswer == userAnswer) {  isok = \"正确\";  question1.find(\".countItem span\").html(score);  resultafter += score  } else {  isok = \"错误\";  question1.find(\".countItem span\").html(\"0\"); \t} \tquestion1.find(\".yourAnswer span\").html(isok); } 好家伙，前端直接向后台发请求拿答案数据，然后判断对错？这就好比考试的时候老师把答案和试卷都给你，让你自己写完试卷自己评分。\n直接发一个请求过去，果然拿到答案了。\n数据示例:\n{  \"id\": \"570239720236388352\",  \"courseId\": null,  \"title\": \"07、机器人的运动速度与摇杆的偏转量 （）\",  \"optionA\": \"A、正比 \",  \"optionB\": \"B、反比 \",  \"optionC\": \"C、不成比例 \",  \"optionD\": \"D、以上均不正确\",  \"optionE\": \"\",  \"optionF\": \"\",  \"optionG\": \"\",  \"optionH\": \"\",  \"answer\": \"A\",  \"tag\": \"\",  \"analysis\": \"\",  \"remarks\": \"\",  \"content\": \"\",  \"score\": 3.0,  \"pid\": \"550581359601651712_before\",  \"countOfRow\": null } ",
   "wordCount" : "175",
   "inLanguage": "zh",
   "datePublished": "2021-08-19T21:44:21+08:00",

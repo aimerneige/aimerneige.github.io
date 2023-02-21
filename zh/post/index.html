@@ -10,7 +10,7 @@
 <meta name="description" content="文章 📝 - Aimer&#39;s Blog">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -132,12 +132,10 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>前言 有时我们要通过第三方服务获取数据，它可以是外部提供的 API，也可以是微服务的接口等等，总之，它们有相同的问题：“获取数据可能需要大量时间”。如果在代码中同步地获取这些数据，程序就会花时间等待这些服务响应，而这些等待会严重影响程序的运行效率，而且一旦这些服务崩溃，我们的程序就会陷入无休止的等待中，那么如何解决这个问题呢？可以使用 Go 的 context 包。
 问题 我们用这个函数来替代那些第三方服务。我们直接使用 time.Sleep() 函数来模拟一个耗时过程，在现实场景中，它可能是在执行一个非常复杂的 SQL 查询，也可以是调用一个人工智能服务接口。当然，这个耗时是不确定的，甚至有可能是无穷大（卡死）。
-func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { time.Sleep(time.Millisecond * 500) return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：
-func foo() { // some code here ... val, err := fetchThirdPartyStuffWhichCanBeSlow() if err != nil { log.Fatal(err) } // some code here ... } 上面的代码如果用在一些只执行一次的脚本、工具中，并不会带来严重后果，无非多等一下就好了，即使有问题也可以关掉程序检查一下第三方服务。但是如果上面的代码用在一个承载大流量的 web 服务中，程序在执行完耗时代码后还要继续执行一些重要的业务功能，那么这样直接调用而不加考虑的代码很可能是致命的。一旦第三方服务出现问题，程序没有任何机制检查和处理，而是直接陷入无休止的等待。这显然是不合理的。
+func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { 	time.Sleep(time.Millisecond * 500)  	return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：
+func foo() { 	// some code here ...  	val, err := fetchThirdPartyStuffWhichCanBeSlow() 	if err != nil { 	log.Fatal(err) 	}  	// some code here ... } 上面的代码如果用在一些只执行一次的脚本、工具中，并不会带来严重后果，无非多等一下就好了，即使有问题也可以关掉程序检查一下第三方服务。但是如果上面的代码用在一个承载大流量的 web 服务中，程序在执行完耗时代码后还要继续执行一些重要的业务功能，那么这样直接调用而不加考虑的代码很可能是致命的。一旦第三方服务出现问题，程序没有任何机制检查和处理，而是直接陷入无休止的等待。这显然是不合理的。
 解决方案 要解决上述的问题，比较常见的思路是引入一个主动停止耗时服务的功能，这样如果耗时函数花了太多时间执行，程序就可以感知到，并主动干预。
-在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。
-使用 Channel 如果不使用本文要介绍的 Context，传统的思路是使用 Channel &#43; Select 来处理：
-type Response struct { value int err error } func fetchUserData(userID int) (int, error) { stop := make(chan bool) respch := make(chan Response) go func() { val, err := fetchThirdPartyStuffWhichCanBeSlow() respch &lt;- Response{ value: val, err: err, } }() go func() { time....</p>
+在后文中，我们假设我们要使用用户的 ID 访问用户的数据，且调用三方服务的代码被单独封装为 fetchUserData()。...</p>
   </div>
   <footer class="entry-footer"><span title='2023-02-03 23:29:21 +0800 CST'>二月 3, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang Context" href="https://aimerneige.com/zh/post/go/go-context/"></a>
@@ -172,7 +170,7 @@ java -Xms10G -Xmx10G -XX:&#43;UseG1GC -XX:&#43;ParallelRefProcEnabled -XX:MaxGCP
   <div class="entry-content">
     <p>前言 在 Linux 系统中，经常会遇到一些软件只提供了可执行文件，而并没有提供可以通过包管理安装的途径，常见于 AppImage 封装的软件，这时候每次需要运行软件都需要通过终端来执行，非常麻烦。不过这个问题可以通过手动编写 .desktop 文件来解决，这样这些可执行文件就可以和其他软件一样拥有桌面图标。
 用法 使用 vim 或其他文本编辑器直接编写 .desktop 文件后将其置于如下路径之一即可：
-/usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/ 示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments....</p>
+ /usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/  示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments....</p>
   </div>
   <footer class="entry-footer"><span title='2023-01-25 14:41:12 +0800 CST'>一月 25, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 如何编写 .desktop 文件" href="https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/"></a>
@@ -186,7 +184,7 @@ java -Xms10G -Xmx10G -XX:&#43;UseG1GC -XX:&#43;ParallelRefProcEnabled -XX:MaxGCP
     </h2>
   </header>
   <div class="entry-content">
-    <p>阅前须知 本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界” 准备 可供外部连接的服务器 基础 Linux 知识 安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
+    <p>阅前须知  本文章面向具有一定运维经验的用户，不面向小白 本文章介绍的 Minecraft 是 Java 版本的 Minecraft 本文章只介绍纯净服的搭建，不会说明如何安装 mod 如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”  准备  可供外部连接的服务器 基础 Linux 知识  安装 首先要确定你的服务器是否可以被外部连接 有公网 IP 如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。
 没有公网 IP 如果你没有公网 IP，你需要购买一台云服务器，这样，你就拥有了一个可供外部连接的公网 IP。
 如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 frp 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。
 如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。
@@ -249,8 +247,8 @@ env LC_ALL=&#34;zh_CN.UTF8&#34; 最终结果应该是这样（注意路径）
     <p>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
 embed 假设我们有一个文件 hello.txt
 Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main import ( &#34;fmt&#34; &#34;os&#34; ) func main() { s, err := os.ReadFile(&#34;./hello.txt&#34;) if err != nil { panic(err) } fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go 0 directories, 3 files ➜ go build main.go ➜ ./main Hello World! Hello go embed!...</p>
+// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main....</p>
   </div>
   <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>
@@ -266,7 +264,7 @@ Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输
   <div class="entry-content">
     <p>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
 常见类型介绍 Colors Colors 是一个接口，它的代码如下：
-type Color interface { // RGBA returns the alpha-premultiplied red, green, blue and alpha values // for the color. Each value ranges within [0, 0xffff], but is represented // by a uint32 so that multiplying by a blend factor up to 0xffff will not // overflow. // // An alpha-premultiplied color component c has been scaled by alpha (a), // so has valid values 0 &lt;= c &lt;= a....</p>
+type Color interface { 	// RGBA returns the alpha-premultiplied red, green, blue and alpha values 	// for the color. Each value ranges within [0, 0xffff], but is represented 	// by a uint32 so that multiplying by a blend factor up to 0xffff will not 	// overflow. 	// 	// An alpha-premultiplied color component c has been scaled by alpha (a), 	// so has valid values 0 &lt;= c &lt;= a....</p>
   </div>
   <footer class="entry-footer"><span title='2022-08-12 22:40:28 +0800 CST'>八月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Go 图像处理基础" href="https://aimerneige.com/zh/post/go/go-image-processing-basic/"></a>
@@ -281,7 +279,7 @@ type Color interface { // RGBA returns the alpha-premultiplied red, green, blue 
   </header>
   <div class="entry-content">
     <p>本文章转载自 Rustt
-简介 当我开始学习 Rust 的时候，我犯了一个错误，那就是先读《The Rust Programming Language》。虽然这是一本非常好的资料，但让新手一开始就阅读这本 20 个章节的书籍，简直令人望而生畏，大多数人还没开始就放弃了。没有人会让一个刚开始学习 JavaScript 或者 Python 的人去阅读一本 20 个章节的书籍。Rust 学习曲线非常陡峭的，但只要循序渐进的学习一定也能学有所成。
+ 简介 当我开始学习 Rust 的时候，我犯了一个错误，那就是先读《The Rust Programming Language》。虽然这是一本非常好的资料，但让新手一开始就阅读这本 20 个章节的书籍，简直令人望而生畏，大多数人还没开始就放弃了。没有人会让一个刚开始学习 JavaScript 或者 Python 的人去阅读一本 20 个章节的书籍。Rust 学习曲线非常陡峭的，但只要循序渐进的学习一定也能学有所成。
 摘要 如果你是一个完完全全的 Rust 小白，想要在一天中尽可能多的学习 Rust，那我推荐你去阅读 fasterthanlime 的《半小时快速了解 Rust》，然后完成 Rustlings 项目中的练习。
 如果你已经学过 Rust 的基本语法，你可以试着做一下 Exercism.io 网站上的 Rust 部分。如果你遇到了问题，你可以在 Google 或者 StackOverflow 上寻求帮助。我推荐你花点时间来简单的阅读和浏览一下《Rust Standard Library Docs》，它是一个很棒的学习资料，里面有一些简单且实用例子去帮助你更好的使用 Rust 的标准库。《Rust by Example》也是一本高质量的参考资料，你可以通过他快速的学习 Rust 的语法和特性。如果你想要更深入的理解 Rust 的某一个概念，那么我推荐你在《The Rust Programming Language》这本书中寻找相关的章节去阅读。尤其推荐在 Exercism.io 上进行练习。在完成每个题目之后，你可以查看其他所有人的题解，可以按点赞数排序来找到通俗易懂并且巧妙的题解。这是一种很棒的学习方式。
 此时，你可能已经是一个高级的初学者，能够找到属于自己的学习路线。但，如果你还需要更多的指导并想要尝试用 Rust 来写一些简单的程序，我推荐你试一着做一下 Advent of Code 2018 Calendar 上的练习。为什么推荐你做 2018 年的题目呢？因为当你做完了这个练习，你可以和 BurntSushi 提供的答案（ BurntSushi’s Advent of Code 2018 Rust solutions）进行对比。BurntSushi 写的 Rust 代码整洁、可读性强、通俗易懂。阅读一个有经验的 Rustacean 的代码将会使你受益无穷。...</p>

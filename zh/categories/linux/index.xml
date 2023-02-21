@@ -15,7 +15,7 @@
       <guid>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</guid>
       <description>前言 在 Linux 系统中，经常会遇到一些软件只提供了可执行文件，而并没有提供可以通过包管理安装的途径，常见于 AppImage 封装的软件，这时候每次需要运行软件都需要通过终端来执行，非常麻烦。不过这个问题可以通过手动编写 .desktop 文件来解决，这样这些可执行文件就可以和其他软件一样拥有桌面图标。
 用法 使用 vim 或其他文本编辑器直接编写 .desktop 文件后将其置于如下路径之一即可：
-/usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/ 示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments.</description>
+ /usr/share/applications/ /usr/local/share/applications/ ~/.local/share/applications/  示例 来自 Arch Linux Wiki 的示例 [Desktop Entry] # The type as listed above Type=Application # The version of the desktop entry specification to which this file complies Version=1.0 # The name of the application Name=jMemorize # A comment which can/will be used as a tooltip Comment=Flash card based learning tool # The path to the folder in which the executable is run Path=/opt/jmemorise # The executable of the application, possibly with arguments.</description>
     </item>
     
     <item>
@@ -53,9 +53,9 @@ env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; 最终结果应该是这样（注意路�
       
       <guid>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</guid>
       <description>什么是 find 正如它的名字一样，find 指令用于查找文件。
-Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
+ Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 来源: 菜鸟教程
-The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found.</description>
+  The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found.</description>
     </item>
     
     <item>
@@ -65,11 +65,11 @@ The find command in UNIX is a command line utility for walking a file hierarchy.
       
       <guid>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</guid>
       <description>平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 // 的时候，输入法总是希望我手动选择是要输入 / 还是中文的 、，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。
-准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
+ 准备 阅读本文前，你要保证你在使用 rime 输入法。遇到任何问题请多查阅 rime 提供的文档。
 本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。
 找到 rime 用户资料夹 不同的平台下，rime 用户资料夹的位置会有所不同
-平台 rime 用户资料夹位置 ibus ~/.config/ibus/rime fcitx ~/.config/fcitx/rime fcitx5 ~/.local/share/fcitx5/rime 创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
-patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34; &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34; &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34; &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34; &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34; &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34; &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34; &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34; &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34; &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34; &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34; &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34; &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34; &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34; &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34; &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34; &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34; &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34; &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34; &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34; &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34; &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34; &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34; &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34; &amp;#34;.</description>
+   平台 rime 用户资料夹位置     ibus ~/.config/ibus/rime   fcitx ~/.config/fcitx/rime   fcitx5 ~/.local/share/fcitx5/rime    创建你的配置文件 如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 default.custom.yaml 的配置文件，写入如下内容:
+patch:  punctuator/full_shape:  &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34;  &amp;#34;~&amp;#34;: &amp;#34;～&amp;#34;  &amp;#34;!&amp;#34;: &amp;#34;！&amp;#34;  &amp;#34;@&amp;#34;: &amp;#34;＠&amp;#34;  &amp;#34;#&amp;#34;: &amp;#34;＃&amp;#34;  &amp;#34;$&amp;#34;: &amp;#34;￥&amp;#34;  &amp;#34;%&amp;#34;: &amp;#34;％&amp;#34;  &amp;#34;^&amp;#34;: &amp;#34;……&amp;#34;  &amp;#34;&amp;amp;&amp;#34;: &amp;#34;＆&amp;#34;  &amp;#34;*&amp;#34;: &amp;#34;×&amp;#34;  &amp;#34;(&amp;#34;: &amp;#34;（&amp;#34;  &amp;#34;)&amp;#34;: &amp;#34;）&amp;#34;  &amp;#34;_&amp;#34;: &amp;#34;——&amp;#34;  &amp;#34;+&amp;#34;: &amp;#34;＋&amp;#34;  &amp;#34;-&amp;#34;: &amp;#34;－&amp;#34;  &amp;#34;=&amp;#34;: &amp;#34;＝&amp;#34;  &amp;#34;[&amp;#34;: &amp;#34;【&amp;#34;  &amp;#34;]&amp;#34;: &amp;#34;】&amp;#34;  &amp;#34;{&amp;#34;: &amp;#34;｛&amp;#34;  &amp;#34;}&amp;#34;: &amp;#34;｝&amp;#34;  &amp;#34;|&amp;#34;: &amp;#34;｜&amp;#34;  &amp;#34;\\&amp;#34;: &amp;#34;、&amp;#34;  &amp;#34;/&amp;#34;: &amp;#34;、&amp;#34;  &amp;#34;;&amp;#34;: &amp;#34;；&amp;#34;  &amp;#34;&amp;#39;&amp;#34;: &amp;#34;‘&amp;#34;  &amp;#34;,&amp;#34;: &amp;#34;，&amp;#34;  &amp;#34;.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       <pubDate>Tue, 10 Nov 2020 10:41:51 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/linux/daily-linux-command/</guid>
-      <description>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&amp;lt;link&amp;gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt; mtu 65536 inet 127.</description>
+      <description>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&amp;lt;link&amp;gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&amp;lt;global&amp;gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt; mtu 65536  inet 127.</description>
     </item>
     
     <item>
@@ -96,15 +96,14 @@ patch: punctuator/full_shape: &amp;#34;`&amp;#34;: &amp;#34;｀&amp;#34; &amp;#3
       <pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid>
-      <description>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
-安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+      <description>Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode
+ 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
 sudo apt install snap 这条指令执行后，系统安装的内容有：
-kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
+ kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。
 俩条指令都可以，建议使用上面的。
-kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
-Kotlin Kotlin Language 安装下面这个插件后在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 -&amp;gt; 扩展 -&amp;gt; Run Code Configuration 中找到并勾选 Run In Terminal
-Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&amp;lt;String&amp;gt;) { println(&amp;#34;Hello, World!&amp;#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
-如果看到终端输出 Hello, World!</description>
+kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。
+ Kotlin Kotlin Language    安装下面这个插件后在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 -&amp;gt; 扩展 -&amp;gt; Run Code Configuration 中找到并勾选 Run In Terminal
+ Code Runner    测试  建立新文件 HelloWorld.</description>
     </item>
     
     <item>
@@ -116,10 +115,9 @@ Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&amp;lt;Str
       <description>前言 之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
 经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
 个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
-优点 更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧 不足 很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑 对策：
-Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的 Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
-使用 Etcher 写入 U 盘作为启动盘
-通过 U 盘启动系统</description>
+优点  更加稳定 更加安全 不会整天提醒你更新系统 配置开发环境仅需几行终端指令 忘记恼人的弹窗广告和流氓软件吧  不足  很多软件不支持 Linux，只能在 Windows 上运行 几乎 90% 的游戏都不支持 Linux 需要学习命令行 界面丑  对策：
+ Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统 命令行也不是特别难，遇到问题谷歌一下就行了 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的  Ubuntu 的安装 访问 Ubuntu 官网下载最新的镜像文件
+使用 Etcher 写入 U 盘作为启动盘</description>
     </item>
     
   </channel>

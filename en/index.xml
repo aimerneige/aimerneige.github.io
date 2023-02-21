@@ -26,10 +26,10 @@ sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64
       <pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid>
-      <description>Onedrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive Authorize this app visiting: https://..... Enter the response uri: Copy the url from browser like this:
+      <description>Onedrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
 https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Paste it into terminal then press enter:
 The Final result will like this:
-[user@hostname ~]$ onedrive Authorize this app visiting: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Application has been successfully authorized, however no additional command switches were provided. Please use &amp;#39;onedrive --help&amp;#39; for further assistance in regards to running this application.</description>
+[user@hostname ~]$ onedrive Authorize this app visiting:  https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient  Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt;  Application has been successfully authorized, however no additional command switches were provided.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ The Final result will like this:
       
       <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
       <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
-[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username Warning</description>
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
       
       <guid>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</guid>
       <description>This article are reproduce from pretzelhammer/rust-blog
-Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
+ Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ Intro When I started learning Rust I made the mistake of following the advice to
       <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid>
-      <description>Install Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it Enable usb debug Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS </description>
+      <description>Install  Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it  Enable usb debug  Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS  </description>
     </item>
     
     <item>
@@ -117,7 +117,7 @@ Intro When I started learning Rust I made the mistake of following the advice to
       <description>Shell Comment Start with #
 # this is a line of comment Simply write more with # start
 # Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
-:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link https://www.runoob.com/linux/linux-shell-variable.html </description>
+:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </description>
     </item>
     
     <item>
@@ -130,7 +130,7 @@ Intro When I started learning Rust I made the mistake of following the advice to
 The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
 Note that the 0 is the script fine name.
 Example:
-#!/usr/bin/bash echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
+#!/usr/bin/bash  echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
     </item>
     
     <item>
@@ -142,7 +142,7 @@ Example:
       <description>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you need to follow these rules:
-You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.</description>
+ You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
     </item>
     
     <item>
@@ -151,10 +151,10 @@ You can only use letters, numbers, and underscores, and the first character can 
       <pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
-      <description>Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle
+      <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.</description>
+package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@ System Info When I write this artice (2021-7-31), elementary os 6 is still in de
       <guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
-Change the style First you should use the DayNight style by Google.
+ Change the style First you should use the DayNight style by Google.
 &amp;lt;style name=&amp;#34;AppTheme&amp;#34; parent=&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&amp;gt; If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.
 Adapt colors Make a new folder at project/app/src/main/res/values-night then make a new resource file colors.</description>
     </item>
@@ -227,7 +227,7 @@ Set the system env settings and enjoy it!</description>
       
       <guid>https://aimerneige.com/en/post/android/change-package-name/</guid>
       <description>Change Package Name Quickly Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.
-Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.aimerneige.test.example. Click the part you want to change, like test.</description>
+ Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.</description>
     </item>
     
     <item>
@@ -236,7 +236,7 @@ Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find
       <pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/android/data-save/</guid>
-      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.</description>
+      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.</description>
     </item>
     
     <item>
@@ -272,9 +272,9 @@ I can&amp;rsquo;t remember it and search for web many times because when you set
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax Test 1 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
-Test 2 $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
+Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+ Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
+C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
     </item>
     
     <item>
