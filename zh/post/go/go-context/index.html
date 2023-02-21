@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Golang Context | AimerNeige&#39;s Blog</title>
+<title>Golang Context | Aimer&#39;s Blog</title>
 <meta name="keywords" content="golang, channel, context">
 <meta name="description" content="前言 有时我们要通过第三方服务获取数据，它可以是外部提供的 API，也可以是微服务的接口等等，总之，它们有相同的问题：“获取数据可能需要大量时间”。如果在代码中同步地获取这些数据，程序就会花时间等待这些服务响应，而这些等待会严重影响程序的运行效率，而且一旦这些服务崩溃，我们的程序就会陷入无休止的等待中，那么如何解决这个问题呢？可以使用 Go 的 context 包。
 问题 我们用这个函数来替代那些第三方服务。我们直接使用 time.Sleep() 函数来模拟一个耗时过程，在现实场景中，它可能是在执行一个非常复杂的 SQL 查询，也可以是调用一个人工智能服务接口。当然，这个耗时是不确定的，甚至有可能是无穷大（卡死）。
@@ -120,7 +120,7 @@ type Response struct { value int err error } func fetchUserData(userID int) (int
   },
   "publisher": {
     "@type": "Organization",
-    "name": "AimerNeige's Blog",
+    "name": "Aimer's Blog",
     "logo": {
       "@type": "ImageObject",
       "url": "https://aimerneige.com/favicon.ico"
@@ -135,7 +135,7 @@ type Response struct { value int err error } func fetchUserData(userID int) (int
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="Aimer&#39;s Blog (Alt + H)">Aimer&#39;s Blog</a>
             <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
@@ -404,7 +404,7 @@ type Response struct { value int err error } func fetchUserData(userID int) (int
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">Aimer&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
