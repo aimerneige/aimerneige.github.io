@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Nov 2022 20:10:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rEFInd on Fedora</title>
-      <link>https://aimerneige.com/en/post/linux/refind-on-fedora/</link>
+      <title>Install rEFInd on Fedora</title>
+      <link>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</link>
       <pubDate>Sun, 20 Nov 2022 20:10:58 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/linux/refind-on-fedora/</guid>
+      <guid>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</guid>
       <description>rEFInd on Fedora Install Obtain an rEFInd binary for RPM based system.
 direct link (not the newest)
 Find the newest rpm package download link from here.

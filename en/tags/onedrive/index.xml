@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Nov 2022 20:10:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/onedrive/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Onedrive on Linux</title>
+      <title>OneDrive on Linux</title>
       <link>https://aimerneige.com/en/post/linux/onedrive-on-linux/</link>
       <pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid>
-      <description>Onedrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
+      <description>OneDrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
 https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Paste it into terminal then press enter:
 The Final result will like this:
 [user@hostname ~]$ onedrive Authorize this app visiting:  https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient  Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt;  Application has been successfully authorized, however no additional command switches were provided.</description>
