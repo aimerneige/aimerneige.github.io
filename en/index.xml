@@ -6,7 +6,20 @@
     <description>Recent content on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 20:10:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Feb 2023 15:36:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install kvm on Fedora</title>
+      <link>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</link>
+      <pubDate>Sat, 25 Feb 2023 15:36:58 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid>
+      <description>KVM: Kernel-Based Virtual Machine
+   Products Company     VirtualBox Oracle   VMWare VMWare   Hyper-V Microsoft    First, use x86 laptop or pc.
+# check if kvm avaiable (output should bigger than 0) egrep -c &amp;#39;(vmx|svm)&amp;#39; /proc/cpuinfo if output is 0, enable vt on BIOS.
+Install KVM on fedora36
+# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools  qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs  sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)</description>
+    </item>
+    
     <item>
       <title>rEFInd on Fedora</title>
       <link>https://aimerneige.com/en/post/linux/refind-on-fedora/</link>

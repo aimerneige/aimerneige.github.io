@@ -123,6 +123,24 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/kvm-banner-logo.png" alt="KVM Logo">
+</figure>
+  <header class="entry-header">
+    <h2>Install kvm on Fedora
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>KVM: Kernel-Based Virtual Machine
+   Products Company     VirtualBox Oracle   VMWare VMWare   Hyper-V Microsoft    First, use x86 laptop or pc.
+# check if kvm avaiable (output should bigger than 0) egrep -c &#39;(vmx|svm)&#39; /proc/cpuinfo if output is 0, enable vt on BIOS.
+Install KVM on fedora36
+# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools  qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we’ll use to work with our VMs  sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or “virt-manager”)...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-02-25 15:36:58 +0800 CST'>February 25, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install kvm on Fedora" href="https://aimerneige.com/en/post/linux/install-kvm-on-fedora/"></a>
+</article>
+
+<article class="post-entry"> 
   <header class="entry-header">
     <h2>rEFInd on Fedora
     </h2>
@@ -260,23 +278,6 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
   </div>
   <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>May 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to How to Setup Your New Linux Server" href="https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Gnu-bash-logo.svg" alt="Bash Logo">
-</figure>
-  <header class="entry-header">
-    <h2>Shell Learning Notes Comment
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Shell Comment Start with #
-# this is a line of comment Simply write more with # start
-# Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
-:&lt;&lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&lt;&lt;&#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &#39; :&lt;&lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </p>
-  </div>
-  <footer class="entry-footer"><span title='2022-05-01 02:25:48 +0800 CST'>May 1, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Shell Learning Notes Comment" href="https://aimerneige.com/en/post/shell/shell-learning-notes-comment/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
