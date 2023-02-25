@@ -94,8 +94,8 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
   "keywords": [
     "wechat", "fedora", "wine"
   ],
-  "articleBody": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026 Install WeChat Just download the exe Installer. (Same with download it from browser.)\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe Star WeChat Installer with wine:\nwine ./WeChatSetup.exe Then install it as in Windows.\nAfter installed, you can delete the installer file.\nAdjust language Settings Edit this file:\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop Change the part Exec , add a new enviroment variable:\nenv LC_ALL=\"zh_CN.UTF8\" The finally result should like this: (note for the path)\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe Start WeChat Durning the install process, a desktop file has been added to your system. Just open it as a normal application.\nKnow Issue  You can only use Chinese. Chinese characters will not display properly when you set language settings to English The name of the sticker can not be displayed properly The program launched by WeChat will be in Chinese The shadow of the WeChat’s windows still at the top of other program The mini-program might not work  Alternative If you don’t mind installing a nspawn sub-system into your computer, try this awesome project:\n GitHub - loaden/nspawn-qq  Refer Link  AnduinXue - Run WeChat in Ubuntu  ",
-  "wordCount" : "246",
+  "articleBody": "Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg\nwinecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)\nDownload And Config Fonts Run the following commands\nsudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download \u0026 Install WeChat Just download the exe Installer. (Same with download it from browser.)\nwget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe Star WeChat Installer with wine:\nwine ./WeChatSetup.exe Then install it as in Windows.\nAfter installed, you can delete the installer file.\nAdjust language Settings Edit this file:\nvim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop Change the part Exec , add a new enviroment variable:\nenv LC_ALL=\"zh_CN.UTF8\" The finally result should like this: (note for the path)\n[Desktop Entry] Name=WeChat Exec=env LC_ALL=\"zh_CN.UTF8\" env WINEPREFIX=\"/home/aimer/.wine\" wine C:\\\\\\\\ProgramData\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start\\\\ Menu\\\\\\\\Programs\\\\\\\\WeChat\\\\\\\\WeChat.lnk Type=Application StartupNotify=true Path=/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat Icon=E03C_WeChat.0 StartupWMClass=wechat.exe Start WeChat Durning the install process, a desktop file has been added to your system. Just open it as a normal application.\nKnow Issue  You can only use Chinese. Chinese characters will not display properly when you set language settings to English The name of the sticker can not be displayed properly The program launched by WeChat will be in Chinese The shadow of the WeChat’s windows still at the top of other program The mini-program might not work  Alternative nspawn If you don’t mind installing a nspawn sub-system into your computer, try this awesome project:\n GitHub - loaden/nspawn-qq  community package: View this blog article for more detail:\n XUTHUS - fedora 安装微信和企业微信  Refer Link  AnduinXue - Run WeChat in Ubuntu  ",
+  "wordCount" : "260",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/fedora-wechat.svg","datePublished": "2022-11-10T12:03:30+08:00",
   "dateModified": "2022-11-10T12:03:30+08:00",
@@ -212,7 +212,13 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
                 <li>
                     <a href="#know-issue" aria-label="Know Issue">Know Issue</a></li>
                 <li>
-                    <a href="#alternative" aria-label="Alternative">Alternative</a></li></ul>
+                    <a href="#alternative" aria-label="Alternative">Alternative</a><ul>
+                        
+                <li>
+                    <a href="#nspawn" aria-label="nspawn">nspawn</a></li>
+                <li>
+                    <a href="#community-package" aria-label="community package:">community package:</a></li></ul>
+                </li></ul>
                 </li>
                 <li>
                     <a href="#refer-link" aria-label="Refer Link">Refer Link</a>
@@ -266,9 +272,15 @@ StartupWMClass=wechat.exe
 <li>The mini-program might not work</li>
 </ol>
 <h2 id="alternative">Alternative<a hidden class="anchor" aria-hidden="true" href="#alternative">#</a></h2>
+<h3 id="nspawn">nspawn<a hidden class="anchor" aria-hidden="true" href="#nspawn">#</a></h3>
 <p>If you don&rsquo;t mind installing a nspawn sub-system into your computer, try this awesome project:</p>
 <ul>
 <li><a href="https://github.com/loaden/nspawn-qq">GitHub - loaden/nspawn-qq</a></li>
+</ul>
+<h3 id="community-package">community package:<a hidden class="anchor" aria-hidden="true" href="#community-package">#</a></h3>
+<p>View this blog article for more detail:</p>
+<ul>
+<li><a href="https://www.xuthus.cc/linux/fedora34-install-wechat.html">XUTHUS - fedora 安装微信和企业微信</a></li>
 </ul>
 <h1 id="refer-link">Refer Link<a hidden class="anchor" aria-hidden="true" href="#refer-link">#</a></h1>
 <ul>
