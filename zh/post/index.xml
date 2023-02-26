@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/</guid>
       <description> 本来很简单的东西，但是老忘，干脆写个博客吧
- 正确写法 type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } 错误写法 type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } 很多 Tag Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  </description>
+ 错误写法 type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } 正确写法 type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } 很多 Tag Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  </description>
     </item>
     
     <item>
