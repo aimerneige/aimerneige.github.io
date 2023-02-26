@@ -6,7 +6,16 @@
     <description>Recent content in Categories 🤹‍♂️ on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Feb 2023 15:36:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 12:48:36 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://aimerneige.com/en/categories/go/</link>
+      <pubDate>Sun, 26 Feb 2023 12:48:36 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://aimerneige.com/en/categories/linux/</link>

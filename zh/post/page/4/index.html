@@ -124,6 +124,29 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>优雅地使用 GitHub
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>官方文档
+较常用的检索限制 项目名称
+in:name &lt;keyword&gt; 项目 README
+in:readme &lt;keyword&gt; 项目描述
+in:description &lt;keyword&gt; 语言
+language: java star 数
+stars:&gt;1000 fork 数
+forks:&gt;500 更新时间
+pushed:&gt;2020-08-01 使用示例
+in:name marp in:description theme stars:&gt;5 pushed:&gt;2020-01-01  参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY
+ </p>
+  </div>
+  <footer class="entry-footer"><span title='2020-08-01 07:15:56 +0800 CST'>八月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 优雅地使用 GitHub" href="https://aimerneige.com/zh/post/others/use-github-gracefully/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>每天一个 Python 小知识 isinstance
     </h2>
   </header>
@@ -275,25 +298,6 @@ package com.aimerneige.viewmoudletest;  import androidx.lifecycle.ViewModel;  pu
   </div>
   <footer class="entry-footer"><span title='2020-02-20 22:21:25 +0800 CST'>二月 20, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 ViewModel 管理布局上的数据" href="https://aimerneige.com/zh/post/android/view-module/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ToolBar
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>MaterialDesign 依赖库  implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar  android:id=&#34;@&#43;id/toolBar&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  &lt;!--其他属性设置--&gt;  /&gt;  关于旧版的说明
-旧版需要使用兼容包
-compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
-使用以下布局方法
-&lt;android.support.v7.widget.Toolbar  android:id=&#34;@&#43;id/toolbar&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;&gt;  &lt;TextView  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;标题&#34;  android:textSize=&#34;20sp&#34;/&gt;  &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
- 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(&#34;AppBarLayoutTest&#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错
-import androidx.appcompat.widget.Toolbar;
- 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-02-18 00:05:23 +0800 CST'>二月 18, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to ToolBar" href="https://aimerneige.com/zh/post/android/toolbar/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

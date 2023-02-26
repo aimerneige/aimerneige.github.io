@@ -19,6 +19,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/zh/categories/go/index.xml">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/categories/go/">
 <link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/categories/go/">
 <noscript>
     <style>
@@ -105,6 +106,19 @@ if (!doNotTrack) {
     Go
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>如何给 Go 的结构体添加多个 tag
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 本来很简单的东西，但是老忘，干脆写个博客吧
+ 正确写法 type Page struct {  PageId string `bson:&#34;pageId&#34;,json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34;,json:&#34;pageId&#34;` } 错误写法 type Page struct {  PageId string `bson:&#34;pageId&#34; json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34; json:&#34;pageId&#34;` } 很多 Tag Items []Item `gorm:&#34;column:items,type:varchar(255);comment:&#39;sample column&#39;&#34; json:&#34;items&#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  </p>
+  </div>
+  <footer class="entry-footer"><span title='2023-02-26 12:48:36 +0800 CST'>二月 26, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 如何给 Go 的结构体添加多个 tag" href="https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-context.png" alt="Golang Context">

@@ -123,6 +123,19 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+  <header class="entry-header">
+    <h2>如何给 Go 的结构体添加多个 tag
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 本来很简单的东西，但是老忘，干脆写个博客吧
+ 正确写法 type Page struct {  PageId string `bson:&#34;pageId&#34;,json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34;,json:&#34;pageId&#34;` } 错误写法 type Page struct {  PageId string `bson:&#34;pageId&#34; json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34; json:&#34;pageId&#34;` } 很多 Tag Items []Item `gorm:&#34;column:items,type:varchar(255);comment:&#39;sample column&#39;&#34; json:&#34;items&#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  </p>
+  </div>
+  <footer class="entry-footer"><span title='2023-02-26 12:48:36 +0800 CST'>二月 26, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 如何给 Go 的结构体添加多个 tag" href="https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-context.png" alt="Golang Context">
 </figure>
   <header class="entry-header">
@@ -286,20 +299,6 @@ type Color interface { 	// RGBA returns the alpha-premultiplied red, green, blue
   </div>
   <footer class="entry-footer"><span title='2022-06-29 07:57:57 +0800 CST'>六月 29, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to [转载] Rust 大佬给初学者的学习建议" href="https://aimerneige.com/zh/post/rust/re-learning-rust-in-2022/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/linux-server-setup.webp" alt="Server Setup">
-</figure>
-  <header class="entry-header">
-    <h2>如何配置新购置的 Linux 服务器
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimer usermod -aG sudo aimer # Fedora useradd -G wheel aimer passwd aimer 测试 root 权限 su - aimer sudo cat /etc/shadow 配置 SSH 连接密钥 快速上传本地密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimer@server 导入托管的密钥 # 导入你自己的密钥！ wget https://aimerneige....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-05-17 22:09:41 +0800 CST'>五月 17, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 如何配置新购置的 Linux 服务器" href="https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
