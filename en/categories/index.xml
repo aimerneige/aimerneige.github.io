@@ -6,7 +6,16 @@
     <description>Recent content in Categories 🤹‍♂️ on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 12:48:36 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 20:57:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Others</title>
+      <link>https://aimerneige.com/en/categories/others/</link>
+      <pubDate>Wed, 01 Mar 2023 20:57:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/others/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Go</title>
       <link>https://aimerneige.com/en/categories/go/</link>
@@ -31,15 +40,6 @@
       <pubDate>Wed, 29 Jun 2022 07:58:02 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/categories/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Others</title>
-      <link>https://aimerneige.com/en/categories/others/</link>
-      <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/others/</guid>
       <description></description>
     </item>
     

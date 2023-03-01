@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>hugo on Aimer&#39;s Blog</title>
-    <link>https://aimerneige.com/en/tags/hugo/</link>
-    <description>Recent content in hugo on Aimer&#39;s Blog</description>
+    <title>spotify on Aimer&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/spotify/</link>
+    <description>Recent content in spotify on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Mar 2023 20:57:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 20:57:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/spotify/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spotify Short Codes</title>
       <link>https://aimerneige.com/en/post/others/spotify-shortcodes/</link>
@@ -16,15 +16,6 @@
       <description>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
  Full code from j-un:
  Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
-    </item>
-    
-    <item>
-      <title>Hello Hugo</title>
-      <link>https://aimerneige.com/en/post/others/hello-hugo/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/post/others/hello-hugo/</guid>
-      <description>Install and Config hugo</description>
     </item>
     
   </channel>

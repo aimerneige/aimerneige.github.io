@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -26,6 +26,67 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/hugo/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/hugo/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/music/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/others/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/spotify/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/others/spotify-shortcodes/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2023-03-01T20:57:21+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/go/</loc>
@@ -65,32 +126,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/post/go/how-to-add-multiple-tags-to-go-struct/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</loc>
@@ -301,19 +336,6 @@
     <loc>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/categories/others/</loc>
-    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/others/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/others/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/windows/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
     <xhtml:link
@@ -471,19 +493,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/post/others/hello-hugo/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/hugo/</loc>
-    <lastmod>2021-08-17T07:16:04+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/hugo/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/site/</loc>
