@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>在 PaperMod 博客中设置自定义字体 | Aimer&#39;s Blog</title>
+<meta name="keywords" content="blog, papermod, fonts, css">
+<meta name="description" content="下载字体 下载你需要的字体，并存储在 static/fonts
+导入字体 @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1955d4fcdd17d7bc8c9fb8996beed084f215b74a0e0182e09dfc2c7c7d90255e.css" integrity="sha256-GVXU/N0X17yMn7iZa&#43;7QhPIVt0oOAYLgnfwsfH2QJV4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/others/set-diy-fonts-on-papermod-site/">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="在 PaperMod 博客中设置自定义字体" />
+<meta property="og:description" content="下载字体 下载你需要的字体，并存储在 static/fonts
+导入字体 @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/" />
+<meta property="og:image" content="https://aimerneige.com/images/lxgw.png" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-02T20:54:06+08:00" />
+<meta property="article:modified_time" content="2023-03-02T20:54:06+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/lxgw.png" />
+<meta name="twitter:title" content="在 PaperMod 博客中设置自定义字体"/>
+<meta name="twitter:description" content="下载字体 下载你需要的字体，并存储在 static/fonts
+导入字体 @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章 📝",
+      "item": "https://aimerneige.com/zh/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "在 PaperMod 博客中设置自定义字体",
+      "item": "https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在 PaperMod 博客中设置自定义字体",
+  "name": "在 PaperMod 博客中设置自定义字体",
+  "description": "下载字体 下载你需要的字体，并存储在 static/fonts\n导入字体 @font-face {  font-family: \u0026#34;LXGWWenKai-Regular\u0026#34;;  src: url(\u0026#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf\u0026#34;) format(\u0026#34;truetype\u0026#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css\n导入多字重的字体文件 @font-face {  font-family: \u0026#34;LXGWWenKai\u0026#34;;  src: url(\u0026#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf\u0026#34;) format(\u0026#34;truetype\u0026#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: \u0026#34;LXGWWenKai\u0026#34;;  src: url(\u0026#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf\u0026#34;) format(\u0026#34;truetype\u0026#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: \u0026#34;LXGWWenKai\u0026#34;;  src: url(\u0026#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.",
+  "keywords": [
+    "blog", "papermod", "fonts", "css"
+  ],
+  "articleBody": "下载字体 下载你需要的字体，并存储在 static/fonts\n导入字体 @font-face {  font-family: \"LXGWWenKai-Regular\";  src: url(\"/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf\") format(\"truetype\"); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css\n导入多字重的字体文件 @font-face {  font-family: \"LXGWWenKai\";  src: url(\"/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf\") format(\"truetype\");  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: \"LXGWWenKai\";  src: url(\"/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf\") format(\"truetype\");  font-weight: normal;  font-style: normal; }  @font-face {  font-family: \"LXGWWenKai\";  src: url(\"/fonts/lxgw-wenkai/LXGWWenKai-Bold.ttf\") format(\"truetype\");  font-weight: bold;  font-style: normal; } 参考链接  Sulv’s Blog - Hugo博客自定义字体 PaperMod - FAQs StackOverflow - Using custom fonts using CSS? StackOverflow - Multiple font-weights, one @font-face query GitHub - lxgw/LxgwWenKai  ",
+  "wordCount" : "87",
+  "inLanguage": "zh",
+  "image":"https://aimerneige.com/images/lxgw.png","datePublished": "2023-03-02T20:54:06+08:00",
+  "dateModified": "2023-03-02T20:54:06+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aimer's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="Aimer&#39;s Blog (Alt + H)">Aimer&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/zh/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/zh/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/post/">文章 📝</a></div>
+    <h1 class="post-title">
+      在 PaperMod 博客中设置自定义字体
+    </h1>
+    <div class="post-meta"><span title='2023-03-02 20:54:06 +0800 CST'>三月 2, 2023</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;语言:
+<ul class="i18n_list">
+    <li>
+        <a href="https://aimerneige.com/en/post/others/set-diy-fonts-on-papermod-site/">English</a>
+    </li>
+</ul>&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Others/set-diy-fonts-on-papermod-site.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/lxgw.png" alt="lxgw">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%8b%e8%bd%bd%e5%ad%97%e4%bd%93" aria-label="下载字体">下载字体</a></li>
+                <li>
+                    <a href="#%e5%af%bc%e5%85%a5%e5%ad%97%e4%bd%93" aria-label="导入字体">导入字体</a></li>
+                <li>
+                    <a href="#%e5%ba%94%e7%94%a8%e5%ad%97%e4%bd%93" aria-label="应用字体">应用字体</a></li>
+                <li>
+                    <a href="#%e5%9c%a8-papermod-%e4%b8%ad%e5%ba%94%e7%94%a8" aria-label="在 PaperMod 中应用">在 PaperMod 中应用</a></li>
+                <li>
+                    <a href="#%e5%af%bc%e5%85%a5%e5%a4%9a%e5%ad%97%e9%87%8d%e7%9a%84%e5%ad%97%e4%bd%93%e6%96%87%e4%bb%b6" aria-label="导入多字重的字体文件">导入多字重的字体文件</a></li>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" aria-label="参考链接">参考链接</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="下载字体">下载字体<a hidden class="anchor" aria-hidden="true" href="#下载字体">#</a></h2>
+<p>下载你需要的字体，并存储在 <code>static/fonts</code></p>
+<h2 id="导入字体">导入字体<a hidden class="anchor" aria-hidden="true" href="#导入字体">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LXGWWenKai-Regular&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;truetype&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="应用字体">应用字体<a hidden class="anchor" aria-hidden="true" href="#应用字体">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: LXGWWenKai-Regular;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="在-papermod-中应用">在 PaperMod 中应用<a hidden class="anchor" aria-hidden="true" href="#在-papermod-中应用">#</a></h2>
+<p>把你自己的 css 文件文件放在 <code>assets/css/extended/custom_fonts.css</code></p>
+<h2 id="导入多字重的字体文件">导入多字重的字体文件<a hidden class="anchor" aria-hidden="true" href="#导入多字重的字体文件">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LXGWWenKai&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;truetype&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">lighter</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LXGWWenKai&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;truetype&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LXGWWenKai&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.ttf&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;truetype&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">bold</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="参考链接">参考链接<a hidden class="anchor" aria-hidden="true" href="#参考链接">#</a></h2>
+<ul>
+<li><a href="https://www.sulvblog.cn/posts/blog/hugo_change_font/">Sulv&rsquo;s Blog - Hugo博客自定义字体</a></li>
+<li><a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#bundling-custom-css-with-themes-assets">PaperMod - FAQs</a></li>
+<li><a href="https://stackoverflow.com/questions/12144000/using-custom-fonts-using-css">StackOverflow - Using custom fonts using CSS?</a></li>
+<li><a href="https://stackoverflow.com/questions/28279989/multiple-font-weights-one-font-face-query">StackOverflow - Multiple font-weights, one @font-face query</a></li>
+<li><a href="https://github.com/lxgw/LxgwWenKai">GitHub - lxgw/LxgwWenKai</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/zh/tags/blog/">blog</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/papermod/">papermod</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/fonts/">fonts</a></li>
+      <li><a href="https://aimerneige.com/zh/tags/css/">css</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>如何给 Go 的结构体添加多个 tag</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: #00b5da">
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">Aimer&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

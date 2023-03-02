@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/zh/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,123 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/blog/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/blog/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/css/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/css/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/css/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/fonts/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/fonts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/fonts/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/others/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/papermod/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/papermod/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/papermod/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/others/set-diy-fonts-on-papermod-site/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/others/set-diy-fonts-on-papermod-site/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/categories/go/</loc>
@@ -41,32 +158,6 @@
                 href="https://aimerneige.com/zh/tags/golang/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/</loc>
     <lastmod>2023-02-26T12:48:36+08:00</lastmod>
     <xhtml:link
@@ -78,19 +169,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/post/</loc>
-    <lastmod>2023-02-26T12:48:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/channel/</loc>
@@ -351,19 +429,6 @@
   </url><url>
     <loc>https://aimerneige.com/zh/tags/fedora35/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/others/</loc>
-    <lastmod>2022-04-09T22:22:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/others/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/others/"
-                />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/windows/</loc>
     <lastmod>2022-04-09T22:22:44+08:00</lastmod>

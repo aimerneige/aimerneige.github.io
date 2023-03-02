@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>blog on Aimer&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/blog/</link>
+    <description>Recent content in blog on Aimer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2023 20:54:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set Diy Fonts on PaperMod Site</title>
+      <link>https://aimerneige.com/en/post/others/set-diy-fonts-on-papermod-site/</link>
+      <pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/set-diy-fonts-on-papermod-site/</guid>
+      <description>Download fonts Download the fonts you need and put it into static/fonts
+Import your fonts @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.</description>
+    </item>
+    
+  </channel>
+</rss>
