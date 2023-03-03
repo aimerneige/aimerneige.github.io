@@ -11,7 +11,7 @@
  错误写法 type Page struct {  PageId string `bson:&#34;pageId&#34;,json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34;,json:&#34;pageId&#34;` } 正确写法 type Page struct {  PageId string `bson:&#34;pageId&#34; json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34; json:&#34;pageId&#34;` } 很多 Tag Items []Item `gorm:&#34;column:items,type:varchar(255);comment:&#39;sample column&#39;&#34; json:&#34;items&#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  ">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/go/how-to-add-multiple-tags-to-go-struct/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.1955d4fcdd17d7bc8c9fb8996beed084f215b74a0e0182e09dfc2c7c7d90255e.css" integrity="sha256-GVXU/N0X17yMn7iZa&#43;7QhPIVt0oOAYLgnfwsfH2QJV4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1a3bc216084c4d25d9d2ad6194a81a9af705e37ffb312368d9619e5c97ac96a9.css" integrity="sha256-GjvCFghMTSXZ0q1hlKgamvcF43/7MSNo2WGeXJeslqk=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
