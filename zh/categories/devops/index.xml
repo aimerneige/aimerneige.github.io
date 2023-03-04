@@ -16,5 +16,18 @@
       <description>更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimer usermod -aG sudo aimer # Fedora useradd -G wheel aimer passwd aimer 测试 root 权限 su - aimer sudo cat /etc/shadow 配置 SSH 连接密钥 快速上传本地密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimer@server 导入托管的密钥 # 导入你自己的密钥！ wget https://aimerneige.</description>
     </item>
     
+    <item>
+      <title>使用 Nginx 搭建静态网页服务</title>
+      <link>https://aimerneige.com/zh/post/devops/deploy-web-page-with-nginx/</link>
+      <pubDate>Sun, 04 Oct 2020 01:18:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/devops/deploy-web-page-with-nginx/</guid>
+      <description>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
+ 阅读须知 在阅读本文章前，你需要准备以下内容
+ 掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx）  不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
+准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
+升级系统 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！</description>
+    </item>
+    
   </channel>
 </rss>
