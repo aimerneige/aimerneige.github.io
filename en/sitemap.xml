@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</loc>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/"
+                />
+  </url><url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +29,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/blog/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -29,7 +42,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -42,7 +55,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/css/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -55,7 +68,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/fonts/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -67,21 +80,8 @@
                 href="https://aimerneige.com/en/tags/fonts/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/categories/others/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/others/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/others/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/papermod/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -94,7 +94,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -106,21 +106,8 @@
                 href="https://aimerneige.com/en/post/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/post/others/set-custom-fonts-on-papermod-site/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/others/set-custom-fonts-on-papermod-site/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/others/set-custom-fonts-on-papermod-site/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -130,6 +117,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/web/</loc>
+    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/web/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/hugo/</loc>
@@ -151,7 +164,7 @@
     <loc>https://aimerneige.com/en/tags/spotify/</loc>
     <lastmod>2023-03-01T20:57:21+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/post/others/spotify-shortcodes/</loc>
+    <loc>https://aimerneige.com/en/post/web/spotify-shortcodes/</loc>
     <lastmod>2023-03-01T20:57:21+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/categories/go/</loc>
@@ -400,6 +413,19 @@
   </url><url>
     <loc>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/others/</loc>
+    <lastmod>2022-05-17T23:13:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/others/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/others/"
+                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/windows/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>

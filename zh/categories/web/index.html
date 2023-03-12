@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Web | AimerNeige&#39;s Blog</title>
+<title>Web | Aimer&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/categories/web/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b6864f372c27f173a987ddb48ee433ea8cd3d526c14bf5f6effbbdabc9f22a3e.css" integrity="sha256-toZPNywn8XOph920juQz6ozT1SbBS/X27/u9q8nyKj4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -56,25 +56,20 @@ if (!doNotTrack) {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://aimerneige.com/zh/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
-            <span class="logo-switches">
+            <a href="https://aimerneige.com/zh/" accesskey="h" title="Aimer&#39;s Blog (Alt + H)">Aimer&#39;s Blog</a>
+            <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
                         <a href="https://aimerneige.com/en/" title="English"
                             aria-label="English">English</a>
                     </li>
                 </ul>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
                 <a href="https://aimerneige.com/zh/about/" title="关于">
                     <span>关于</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://aimerneige.com/zh/friends/" title="朋友">
-                    <span>朋友</span>
                 </a>
             </li>
             <li>
@@ -107,81 +102,51 @@ if (!doNotTrack) {
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/zh/">主页</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/zh/categories/">分类 🤹‍♂️</a></div>
-  <h1>Web</h1>
+  <h1>
+    Web
+  </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
+</figure>
   <header class="entry-header">
-    <h2>对于某实验平台的吐槽
+    <h2>在 PaperMod 博客中添加友链
     </h2>
   </header>
   <div class="entry-content">
-    <p>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
- 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
- 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
-这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
-这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
-结果我在后台找到了下面的代码:
-$.ajax({ 	url: &#34;/webApi/experimen/rig/getData&#34;, 	type: &#34;GET&#34;, 	data: { courseId: courseId }, 	dataType: &#34;JSON&#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
-对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&#39;.afterTesting .topic1 form&#39;); for (var k = 0; k &lt; answer.length; k&#43;&#43;) {  var question1 = $(answer[k]).find(&#34;.question1&#34;);  var questionAnswer = question1....</p>
+    <p>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
+完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
+ 用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
   </div>
-  <footer class="entry-footer"><span title='2021-08-19 21:44:21 +0800 CST'>八月 19, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 对于某实验平台的吐槽" href="https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/"></a>
+  <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>三月 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 PaperMod 博客中添加友链" href="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/hugo-logo-wide.svg" alt="hugo-logo">
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/lxgw.png" alt="lxgw">
 </figure>
   <header class="entry-header">
-    <h2>Hello Hugo
+    <h2>在 PaperMod 博客中设置自定义字体
     </h2>
   </header>
   <div class="entry-content">
-    <p>前言 距离上一次写博客文章已经很长时间了，因为经常重装系统，而每次在电脑上安装和配置 hexo 的博客都是一件比较麻烦的事情，于是就一直咕了。但是最近我发现了 hugo 这一简洁好用的博客系统，可以让我远离配置安装都又慢又麻烦的 hexo，使用下来体验很棒，而我恰好又打算换一个博客主题，于是决定使用 hugo 来搭建我的新博客。本文简要介绍如何安装和使用 hugo。
-安装 你可能需要  go 的开发环境 git 一个顺手的编辑器  你一定不需要  nodejs npm  安装 hugo 要安装 hugo 非常简单，以 fedora 系统为例，只需要执行如下指令：
-sudo dnf install hugo 创建站点文件夹 使用以下指令创建你的站点文件夹：
-hugo new site blog 切换到工作目录进行后续操作：
-cd blog 使用 git 进行版本控制：
-git init 安装主题 挑选好合适的主题后，将其直接 clone 在 ./themes 文件夹下即可。
-git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1  使用 --depth=1 参数会忽略历史 commit 记录。
- 当然，下载解压压缩包的方式也是可以的。
-如果想要方便版本控制和更新，使用如下指令添加 submodule：
-git submodule add https://github....</p>
+    <p>下载字体 下载你需要的字体，并存储在 static/fonts
+导入字体 @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold....</p>
   </div>
-  <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>八月 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/zh/post/hello-hugo/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nodejs.png" alt="nodejs logo">
-</figure>
-  <header class="entry-header">
-    <h2>使用 nodejs 快速为 Android 程序构建 API
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。
-前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
- 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
- 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
- nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
-以 Ubuntu 为例，直接在终端执行如下指令：
-sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。
-如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。
-安装 npm 通常情况下，安装 nodejs 时会附带安装 npm，你可以直接使用 npm -v 来查看当前系统安装的 npm 版本来检测安装情况。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-01-30 20:17:30 +0800 CST'>一月 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 使用 nodejs 快速为 Android 程序构建 API" href="https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/"></a>
+  <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>三月 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 PaperMod 博客中设置自定义字体" href="https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/"></a>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/zh/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/zh/">Aimer&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

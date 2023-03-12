@@ -6,13 +6,25 @@
     <description>Recent content on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 20:54:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 PaperMod 博客中添加友链</title>
+      <link>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</link>
+      <pubDate>Sun, 12 Mar 2023 13:25:06 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</guid>
+      <description>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
+完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
+ 用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
+    </item>
+    
     <item>
       <title>在 PaperMod 博客中设置自定义字体</title>
-      <link>https://aimerneige.com/zh/post/others/set-custom-fonts-on-papermod-site/</link>
+      <link>https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/</link>
       <pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/others/set-custom-fonts-on-papermod-site/</guid>
+      <guid>https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/</guid>
       <description>下载字体 下载你需要的字体，并存储在 static/fonts
 导入字体 @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
 导入多字重的字体文件 @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>

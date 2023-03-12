@@ -124,6 +124,23 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>使用 LiveData 优雅地管理布局显示的数据
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
+在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
+首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段
+package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData&lt;Integer&gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
+ // May Cause Error  public MutableLiveData&lt;Integer&gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
+ 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData&lt;&gt;();  LikedNumber....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-02-20 22:22:21 +0800 CST'>二月 20, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 使用 LiveData 优雅地管理布局显示的数据" href="https://aimerneige.com/zh/post/android/live-data/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>使用 ViewModel 管理布局上的数据
     </h2>
   </header>

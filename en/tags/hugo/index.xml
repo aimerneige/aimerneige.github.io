@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 01 Mar 2023 20:57:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spotify Short Codes</title>
-      <link>https://aimerneige.com/en/post/others/spotify-shortcodes/</link>
+      <link>https://aimerneige.com/en/post/web/spotify-shortcodes/</link>
       <pubDate>Wed, 01 Mar 2023 20:57:21 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/others/spotify-shortcodes/</guid>
+      <guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid>
       <description>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
  Full code from j-un:
  Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>

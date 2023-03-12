@@ -6,13 +6,13 @@
     <description>Recent content in 分类 🤹‍♂️ on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 20:54:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Others</title>
-      <link>https://aimerneige.com/zh/categories/others/</link>
-      <pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate>
+      <title>Web</title>
+      <link>https://aimerneige.com/zh/categories/web/</link>
+      <pubDate>Sun, 12 Mar 2023 13:25:06 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/categories/others/</guid>
+      <guid>https://aimerneige.com/zh/categories/web/</guid>
       <description></description>
     </item>
     
@@ -58,6 +58,15 @@
       <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>https://aimerneige.com/zh/categories/others/</link>
+      <pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/categories/others/</guid>
       <description></description>
     </item>
     

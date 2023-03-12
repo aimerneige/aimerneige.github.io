@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Web on AimerNeige&#39;s Blog</title>
+    <title>Web on Aimer&#39;s Blog</title>
     <link>https://aimerneige.com/en/categories/web/</link>
-    <description>Recent content in Web on AimerNeige&#39;s Blog</description>
+    <description>Recent content in Web on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 07:16:04 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello Hugo</title>
-      <link>https://aimerneige.com/en/post/hello-hugo/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
+      <title>Add Friend Link in PaperMod Blog</title>
+      <link>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</link>
+      <pubDate>Sun, 12 Mar 2023 13:25:06 +0800</pubDate>
       
-      <guid>https://aimerneige.com/en/post/hello-hugo/</guid>
-      <description>Install and Config hugo</description>
+      <guid>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</guid>
+      <description>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
+Full Code Put this shortcode into layouts/shortcodes/friends.html
+ Usage Add your friends in data/friends.yml like this:
+- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>Set Custom Fonts in PaperMod Site</title>
+      <link>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</link>
+      <pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</guid>
+      <description>Download fonts Download the fonts you need and put it into static/fonts
+Import your fonts @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.</description>
+    </item>
+    
+    <item>
+      <title>Spotify Short Codes</title>
+      <link>https://aimerneige.com/en/post/web/spotify-shortcodes/</link>
+      <pubDate>Wed, 01 Mar 2023 20:57:21 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid>
+      <description>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
+ Full code from j-un:
+ Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
     </item>
     
   </channel>

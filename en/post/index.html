@@ -123,10 +123,27 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
+</figure>
+  <header class="entry-header">
+    <h2>Add Friend Link in PaperMod Blog
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
+Full Code Put this shortcode into layouts/shortcodes/friends.html
+ Usage Add your friends in data/friends.yml like this:
+- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>March 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Add Friend Link in PaperMod Blog" href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/lxgw.png" alt="lxgw">
 </figure>
   <header class="entry-header">
-    <h2>Set Custom Fonts on PaperMod Site
+    <h2>Set Custom Fonts in PaperMod Site
     </h2>
   </header>
   <div class="entry-content">
@@ -135,7 +152,7 @@ Import your fonts @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src:
 Import multi-weight fontfamily @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular....</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>March 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Set Custom Fonts on PaperMod Site" href="https://aimerneige.com/en/post/others/set-custom-fonts-on-papermod-site/"></a>
+  <a class="entry-link" aria-label="post link to Set Custom Fonts in PaperMod Site" href="https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -151,7 +168,7 @@ Import multi-weight fontfamily @font-face {  font-family: &#34;LXGWWenKai&#34;; 
  Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-01 20:57:21 +0800 CST'>March 1, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Spotify Short Codes" href="https://aimerneige.com/en/post/others/spotify-shortcodes/"></a>
+  <a class="entry-link" aria-label="post link to Spotify Short Codes" href="https://aimerneige.com/en/post/web/spotify-shortcodes/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -271,23 +288,6 @@ sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:...</
   </div>
   <footer class="entry-footer"><span title='2022-11-11 15:34:47 +0800 CST'>November 11, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Install qBittorrent-nox on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/fedora-wechat.svg" alt="Fedora WeChat">
-</figure>
-  <header class="entry-header">
-    <h2>Install WeChat on Fedora
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Install WeChat on Fedora Install Wine sudo dnf install wine Adjust DPI Config Use bellow command to open winecfg
-winecfg Adjust the dpi to a suitable value at tab Graphics. (4k monitor, 192 dpi)
-Download And Config Fonts Run the following commands
-sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdiplus riched20 riched30 Download &amp; Install WeChat Just download the exe Installer. (Same with download it from browser.)...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-11-10 12:03:30 +0800 CST'>November 10, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Install WeChat on Fedora" href="https://aimerneige.com/en/post/linux/install-wechat-on-fedora/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

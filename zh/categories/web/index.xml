@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Web on AimerNeige&#39;s Blog</title>
+    <title>Web on Aimer&#39;s Blog</title>
     <link>https://aimerneige.com/zh/categories/web/</link>
-    <description>Recent content in Web on AimerNeige&#39;s Blog</description>
+    <description>Recent content in Web on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 21:44:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>对于某实验平台的吐槽</title>
-      <link>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</link>
-      <pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate>
+      <title>在 PaperMod 博客中添加友链</title>
+      <link>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</link>
+      <pubDate>Sun, 12 Mar 2023 13:25:06 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/complaints-about-stupid-lab-platform/</guid>
-      <description>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
- 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
- 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
-这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
-这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
-结果我在后台找到了下面的代码:
-$.ajax({ 	url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, 	type: &amp;#34;GET&amp;#34;, 	data: { courseId: courseId }, 	dataType: &amp;#34;JSON&amp;#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
-对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) {  var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;);  var questionAnswer = question1.</description>
+      <guid>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</guid>
+      <description>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
+完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
+ 用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
     </item>
     
     <item>
-      <title>Hello Hugo</title>
-      <link>https://aimerneige.com/zh/post/hello-hugo/</link>
-      <pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate>
+      <title>在 PaperMod 博客中设置自定义字体</title>
+      <link>https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/</link>
+      <pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate>
       
-      <guid>https://aimerneige.com/zh/post/hello-hugo/</guid>
-      <description>安装和配置 hugo</description>
-    </item>
-    
-    <item>
-      <title>使用 nodejs 快速为 Android 程序构建 API</title>
-      <link>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</link>
-      <pubDate>Sat, 30 Jan 2021 20:17:30 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/zh/post/build-api-with-nodejs-quickly/</guid>
-      <description>使用 nodejs 开发简单后端</description>
+      <guid>https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/</guid>
+      <description>下载字体 下载你需要的字体，并存储在 static/fonts
+导入字体 @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>
     </item>
     
   </channel>

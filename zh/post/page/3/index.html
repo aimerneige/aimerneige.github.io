@@ -123,6 +123,28 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nodejs.png" alt="nodejs logo">
+</figure>
+  <header class="entry-header">
+    <h2>使用 nodejs 快速为 Android 程序构建 API
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。
+前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
+ 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
+ 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
+ nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
+以 Ubuntu 为例，直接在终端执行如下指令：
+sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。
+如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。
+安装 npm 通常情况下，安装 nodejs 时会附带安装 npm，你可以直接使用 npm -v 来查看当前系统安装的 npm 版本来检测安装情况。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-01-30 20:17:30 +0800 CST'>一月 30, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 使用 nodejs 快速为 Android 程序构建 API" href="https://aimerneige.com/zh/post/javascript/build-api-with-nodejs-quickly/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/editorconfig.png" alt="editorconfig-logo">
 </figure>
   <header class="entry-header">
@@ -273,24 +295,6 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </div>
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nginx.png" alt="nginx-logo">
-</figure>
-  <header class="entry-header">
-    <h2>使用 Nginx 搭建静态网页服务
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
- 阅读须知 在阅读本文章前，你需要准备以下内容
- 掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx）  不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
-准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
-升级系统 sudo apt update &amp;&amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-04 01:18:44 +0800 CST'>十月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 使用 Nginx 搭建静态网页服务" href="https://aimerneige.com/zh/post/devops/deploy-web-page-with-nginx/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

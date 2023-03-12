@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Web | AimerNeige&#39;s Blog</title>
+<title>Web | Aimer&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/categories/web/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css" integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b6864f372c27f173a987ddb48ee433ea8cd3d526c14bf5f6effbbdabc9f22a3e.css" integrity="sha256-toZPNywn8XOph920juQz6ozT1SbBS/X27/u9q8nyKj4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -56,25 +56,20 @@ if (!doNotTrack) {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://aimerneige.com/en/" accesskey="h" title="AimerNeige&#39;s Blog (Alt + H)">AimerNeige&#39;s Blog</a>
-            <span class="logo-switches">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="Aimer&#39;s Blog (Alt + H)">Aimer&#39;s Blog</a>
+            <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
                         <a href="https://aimerneige.com/zh/" title="中文"
                             aria-label="中文">中文</a>
                     </li>
                 </ul>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
                 <a href="https://aimerneige.com/en/about/" title="About">
                     <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://aimerneige.com/en/friends/" title="Friends">
-                    <span>Friends</span>
                 </a>
             </li>
             <li>
@@ -107,30 +102,67 @@ if (!doNotTrack) {
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/categories/">Categories 🤹‍♂️</a></div>
-  <h1>Web</h1>
+  <h1>
+    Web
+  </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/hugo-logo-wide.svg" alt="hugo-logo">
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
 </figure>
   <header class="entry-header">
-    <h2>Hello Hugo
+    <h2>Add Friend Link in PaperMod Blog
     </h2>
   </header>
   <div class="entry-content">
-    <p>Before Start It’s been a long time since I wrote a blog post last time. That’s because I often reinstall my system on computer, and every time I install and configure the blog of hexo on my computer is a troublesome thing. But recently, I discovered hugo, a simple and easy-to-use blog system, which can keep me away from hexo, which is slow and troublesome to configure and install. It has a great experience to use and I happened to change a blog theme, so I decided to use hugo to build my new blog....</p>
+    <p>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
+Full Code Put this shortcode into layouts/shortcodes/friends.html
+ Usage Add your friends in data/friends.yml like this:
+- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
   </div>
-  <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>August 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/en/post/hello-hugo/"></a>
+  <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>March 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Add Friend Link in PaperMod Blog" href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/lxgw.png" alt="lxgw">
+</figure>
+  <header class="entry-header">
+    <h2>Set Custom Fonts in PaperMod Site
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Download fonts Download the fonts you need and put it into static/fonts
+Import your fonts @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>March 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Set Custom Fonts in PaperMod Site" href="https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/Spotify_Logo_CMYK_Green.png" alt="Spotify Logo">
+</figure>
+  <header class="entry-header">
+    <h2>Spotify Short Codes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
+ Full code from j-un:
+ Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-01 20:57:21 +0800 CST'>March 1, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Spotify Short Codes" href="https://aimerneige.com/en/post/web/spotify-shortcodes/"></a>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://aimerneige.com/en/">AimerNeige&#39;s Blog</a></span>
+    <span>&copy; 2023 <a href="https://aimerneige.com/en/">Aimer&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

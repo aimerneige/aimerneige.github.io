@@ -123,6 +123,23 @@ if (!doNotTrack) {
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
+</figure>
+  <header class="entry-header">
+    <h2>在 PaperMod 博客中添加友链
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
+完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
+ 用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>三月 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 在 PaperMod 博客中添加友链" href="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/lxgw.png" alt="lxgw">
 </figure>
   <header class="entry-header">
@@ -135,7 +152,7 @@ if (!doNotTrack) {
 导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold....</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>三月 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 在 PaperMod 博客中设置自定义字体" href="https://aimerneige.com/zh/post/others/set-custom-fonts-on-papermod-site/"></a>
+  <a class="entry-link" aria-label="post link to 在 PaperMod 博客中设置自定义字体" href="https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -283,22 +300,6 @@ Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输
   </div>
   <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-image-processing-basic.webp" alt="go image processing">
-</figure>
-  <header class="entry-header">
-    <h2>Go 图像处理基础
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 Go 语言的官方包 image 和 image/color 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。
-常见类型介绍 Colors Colors 是一个接口，它的代码如下：
-type Color interface { 	// RGBA returns the alpha-premultiplied red, green, blue and alpha values 	// for the color. Each value ranges within [0, 0xffff], but is represented 	// by a uint32 so that multiplying by a blend factor up to 0xffff will not 	// overflow. 	// 	// An alpha-premultiplied color component c has been scaled by alpha (a), 	// so has valid values 0 &lt;= c &lt;= a....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-08-12 22:40:28 +0800 CST'>八月 12, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Go 图像处理基础" href="https://aimerneige.com/zh/post/go/go-image-processing-basic/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
