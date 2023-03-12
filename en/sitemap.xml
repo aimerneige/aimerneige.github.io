@@ -67,19 +67,6 @@
                 href="https://aimerneige.com/en/tags/css/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/tags/fonts/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/fonts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/fonts/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/papermod/</loc>
     <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
@@ -130,6 +117,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/web/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/fonts/</loc>
+    <lastmod>2023-03-02T20:54:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/fonts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/fonts/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</loc>
