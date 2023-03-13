@@ -34,18 +34,7 @@ package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData;
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="使用 LiveData 优雅地管理布局显示的数据" />
+</noscript><meta property="og:title" content="使用 LiveData 优雅地管理布局显示的数据" />
 <meta property="og:description" content="ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
 在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
 首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段

@@ -34,18 +34,7 @@ func foo() { 	// some code here ...  	val, err := fetchThirdPartyStuffWhichCanBe
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="Golang Context" />
+</noscript><meta property="og:title" content="Golang Context" />
 <meta property="og:description" content="前言 有时我们要通过第三方服务获取数据，它可以是外部提供的 API，也可以是微服务的接口等等，总之，它们有相同的问题：“获取数据可能需要大量时间”。如果在代码中同步地获取这些数据，程序就会花时间等待这些服务响应，而这些等待会严重影响程序的运行效率，而且一旦这些服务崩溃，我们的程序就会陷入无休止的等待中，那么如何解决这个问题呢？可以使用 Go 的 context 包。
 问题 我们用这个函数来替代那些第三方服务。我们直接使用 time.Sleep() 函数来模拟一个耗时过程，在现实场景中，它可能是在执行一个非常复杂的 SQL 查询，也可以是调用一个人工智能服务接口。当然，这个耗时是不确定的，甚至有可能是无穷大（卡死）。
 func fetchThirdPartyStuffWhichCanBeSlow() (int, error) { 	time.Sleep(time.Millisecond * 500)  	return 64, nil } 如果我们不做任何处理，直接调用这个函数，就像这样：

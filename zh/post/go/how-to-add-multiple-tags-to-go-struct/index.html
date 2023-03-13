@@ -31,18 +31,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="如何给 Go 的结构体添加多个 tag" />
+</noscript><meta property="og:title" content="如何给 Go 的结构体添加多个 tag" />
 <meta property="og:description" content=" 本来很简单的东西，但是老忘，干脆写个博客吧
  错误写法 type Page struct {  PageId string `bson:&#34;pageId&#34;,json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34;,json:&#34;pageId&#34;` } 正确写法 type Page struct {  PageId string `bson:&#34;pageId&#34; json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34; json:&#34;pageId&#34;` } 很多 Tag Items []Item `gorm:&#34;column:items,type:varchar(255);comment:&#39;sample column&#39;&#34; json:&#34;items&#34;` 参考链接  StackOverflow - How to define multiple name tags in a struct  " />
 <meta property="og:type" content="article" />

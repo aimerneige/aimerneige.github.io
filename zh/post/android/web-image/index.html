@@ -33,18 +33,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="设置网络图片" />
+</noscript><meta property="og:title" content="设置网络图片" />
 <meta property="og:description" content="通过网络连接获取图片信息，并将其设为软件的 ImageView 图片属性
   介绍： 与获取 HTML 类似，首先需要建立网络连接并获取数据，只是这次不通过 String 获取保存数据，而是使用 Bitmap 保存。
 与获取 HTML 数据类似，联网操作同样需要新建线程，要注意的是在子线程不能操作 UI，需要通过外部函数设置图片或者在函数返回 Bitmap 对象使用。

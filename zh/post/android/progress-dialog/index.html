@@ -37,18 +37,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="使用 ProgressDialog 实现加载提示" />
+</noscript><meta property="og:title" content="使用 ProgressDialog 实现加载提示" />
 <meta property="og:description" content="在进行一些耗时操作的时候，经常需要加载提示框来提醒用户当前在进行耗时操作，需要等待。
 而实现这样一个加载框十分简单。
 构建 ProgressDialog 对象 你可以在耗时操作开始前临时建立新的 ProgressDialog 对象，你也同样可以在 Activity 中构建 ProgressDialog 的引用，并在 OnCreate 方法内构建实体，在需要的时候直接显示和隐藏。

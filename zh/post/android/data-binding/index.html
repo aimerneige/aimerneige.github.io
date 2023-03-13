@@ -33,18 +33,7 @@ android {  compileSdkVersion 29  buildToolsVersion &#34;29.0.3&#34;  defaultConf
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="使用 DataBinding 精简代码" />
+</noscript><meta property="og:title" content="使用 DataBinding 精简代码" />
 <meta property="og:description" content="在构建布局的时候，是不是感到要写很多的 findViewById 很浪费时间呢？尤其是布局文件变化的时候，也要在 Activity 中更改很多内容，极大的降低了开发效率，而谷歌在 JetPack 中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 DataBinding 下面来介绍 DataBinding 的使用
 用到的依赖 implementation &#39;androidx.lifecycle:lifecycle-extensions:2.2.0&#39;
 开启 dataBinding 在 app 的 build.gradle 文件中添加以下内容

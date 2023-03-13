@@ -31,18 +31,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="使用 Gson 解析 Json 数据" />
+</noscript><meta property="og:title" content="使用 Gson 解析 Json 数据" />
 <meta property="og:description" content="新建项目 导入 Gson 依赖
  implementation &#39;com.google.code.gson:gson:2.8.5&#39; 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;LinearLayout  xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;match_parent&#34;  android:orientation=&#34;vertical&#34;&gt;   &lt;TextView  android:id=&#34;@&#43;id/text1&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;nodata&#34;/&gt;   &lt;TextView  android:id=&#34;@&#43;id/text2&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;nodata&#34;/&gt;   &lt;Button  android:id=&#34;@&#43;id/button&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;test&#34;/&gt;  &lt;/LinearLayout&gt; 代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。" />

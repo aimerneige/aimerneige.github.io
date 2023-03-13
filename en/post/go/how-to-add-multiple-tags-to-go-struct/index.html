@@ -31,18 +31,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="How to Add Multiple Tags to Go Struct" />
+</noscript><meta property="og:title" content="How to Add Multiple Tags to Go Struct" />
 <meta property="og:description" content=" It is easy but always be forgotten, so write this post
  Incorrect type Page struct {  PageId string `bson:&#34;pageId&#34;,json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34;,json:&#34;pageId&#34;` } Correct type Page struct {  PageId string `bson:&#34;pageId&#34; json:&#34;pageId&#34;`  Meta map[string]interface{} `bson:&#34;meta&#34; json:&#34;pageId&#34;` } More tags Items []Item `gorm:&#34;column:items,type:varchar(255);comment:&#39;sample column&#39;&#34; json:&#34;items&#34;` Links  StackOverflow - How to define multiple name tags in a struct  " />
 <meta property="og:type" content="article" />

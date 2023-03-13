@@ -30,18 +30,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="如何配置新购置的 Linux 服务器" />
+</noscript><meta property="og:title" content="如何配置新购置的 Linux 服务器" />
 <meta property="og:description" content="更新系统 # Debian apt update # Fedora dnf update 安装常用工具 # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user 创建 sudo 用户 # Debian adduser aimer usermod -aG sudo aimer # Fedora useradd -G wheel aimer passwd aimer 测试 root 权限 su - aimer sudo cat /etc/shadow 配置 SSH 连接密钥 快速上传本地密钥 # 在你的本地环境执行这条指令 ssh-copy-id aimer@server 导入托管的密钥 # 导入你自己的密钥！ wget https://aimerneige." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/" />

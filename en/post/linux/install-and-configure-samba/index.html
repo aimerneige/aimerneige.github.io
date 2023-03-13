@@ -30,18 +30,7 @@
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="Install and Configure Samba" />
+</noscript><meta property="og:title" content="Install and Configure Samba" />
 <meta property="og:description" content="SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
 [share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username ." />
 <meta property="og:type" content="article" />

@@ -32,18 +32,7 @@ package com.aimerneige.viewmoudletest;  import androidx.lifecycle.ViewModel;  pu
         }
 
     </style>
-</noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJPQTJ618"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-5QJPQTJ618', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="使用 ViewModel 管理布局上的数据" />
+</noscript><meta property="og:title" content="使用 ViewModel 管理布局上的数据" />
 <meta property="og:description" content="如果不进行处理的话，布局上的临时数据可能会因为屏幕反转，切换系统语言等而消失，但是处理过程略微繁琐，较为麻烦，但是谷歌为我们提供了一种更加简洁的方式来管理界面数据，那就是 ViewModel。
 构建自己的 ViewModel 类 新建 Java 类，继承至ViewModel，名字自定义，这里以MyViewModel为例。
 package com.aimerneige.viewmoudeltest;  import androidx.lifecycle.ViewModel;  public class MyViewMoude extends ViewModel { } 新建好类之后，直接将需要用到的数据填写在内部，可以直接使用 public 的数据类型（不推荐），或者使用 private 数据加 get 方法。
