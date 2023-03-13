@@ -2,6 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aimerneige.com/en/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/devops/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/devops/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/docker/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/devops/docker-basic-notes/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/note/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+  </url><url>
     <loc>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</loc>
     <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
@@ -15,19 +89,6 @@
                 href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/blog/</loc>
     <lastmod>2023-03-12T13:25:06+08:00</lastmod>
     <xhtml:link
@@ -39,19 +100,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/blog/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/css/</loc>
@@ -78,32 +126,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/papermod/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/web/</loc>
@@ -442,19 +464,6 @@
   </url><url>
     <loc>https://aimerneige.com/en/tags/wsa/</loc>
     <lastmod>2022-05-17T23:13:13+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/devops/</loc>
-    <lastmod>2022-05-17T22:09:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/devops/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/devops/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</loc>
     <lastmod>2022-05-17T22:09:41+08:00</lastmod>

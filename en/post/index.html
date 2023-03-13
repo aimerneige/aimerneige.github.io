@@ -112,6 +112,23 @@
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/docker-cover.png" alt="Docker">
+</figure>
+  <header class="entry-header">
+    <h2>Docker Basic Notes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This post is just a simple note.
+More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
+ Difference Image and Container
+ CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, …   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &lt;CONTAINER ID&gt; # start the container docker start &lt;CONTAINER ID&gt; # pulls image and starts container docker run redis:4....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-13 20:31:37 +0800 CST'>March 13, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Docker Basic Notes" href="https://aimerneige.com/en/post/devops/docker-basic-notes/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
 </figure>
   <header class="entry-header">
@@ -263,20 +280,6 @@ sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:...</
   </div>
   <footer class="entry-footer"><span title='2022-11-18 16:37:27 +0800 CST'>November 18, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Install Filebrowser on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
-</figure>
-  <header class="entry-header">
-    <h2>Install qBittorrent-nox on Ubuntu Server
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-11-11 15:34:47 +0800 CST'>November 11, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Install qBittorrent-nox on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

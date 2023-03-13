@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>DevOps on Aimer&#39;s Blog</title>
-    <link>https://aimerneige.com/en/categories/devops/</link>
-    <description>Recent content in DevOps on Aimer&#39;s Blog</description>
+    <title>docker on Aimer&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/docker/</link>
+    <description>Recent content in docker on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Mar 2023 20:31:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 20:31:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Basic Notes</title>
       <link>https://aimerneige.com/en/post/devops/docker-basic-notes/</link>
@@ -17,15 +17,6 @@
 More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
  Difference Image and Container
  CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
-    </item>
-    
-    <item>
-      <title>How to Setup Your New Linux Server</title>
-      <link>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</link>
-      <pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</guid>
-      <description>Update System # Debian apt update # Fedora dnf update Install Most Used Tools # Debain apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools # Fedora dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user Create Sudo User # Debian adduser aimer usermod -aG sudo aimer # Fedora useradd -G wheel aimer passwd aimer Test Root Privileges su - aimer sudo cat /etc/shadow Setup SSH Public Key Quickly Upload Your Local Key # run this on your local machine ssh-copy-id aimer@server Import The Key You Hosted # Import your own public key!</description>
     </item>
     
   </channel>

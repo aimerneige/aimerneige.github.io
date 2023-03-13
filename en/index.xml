@@ -6,7 +6,19 @@
     <description>Recent content on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 20:31:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Basic Notes</title>
+      <link>https://aimerneige.com/en/post/devops/docker-basic-notes/</link>
+      <pubDate>Mon, 13 Mar 2023 20:31:37 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/devops/docker-basic-notes/</guid>
+      <description>This post is just a simple note.
+More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
+ Difference Image and Container
+ CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
+    </item>
+    
     <item>
       <title>Add Friend Link in PaperMod Blog</title>
       <link>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</link>

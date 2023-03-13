@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Docker Basic Notes | Aimer&#39;s Blog</title>
+<meta name="keywords" content="docker, note">
+<meta name="description" content="This post is just a simple note.
+More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
+ Difference Image and Container
+ CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &lt;CONTAINER ID&gt; # start the container docker start &lt;CONTAINER ID&gt; # pulls image and starts container docker run redis:4.">
+<meta name="author" content="Aimer Neige">
+<link rel="canonical" href="https://aimerneige.com/en/post/devops/docker-basic-notes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b6864f372c27f173a987ddb48ee433ea8cd3d526c14bf5f6effbbdabc9f22a3e.css" integrity="sha256-toZPNywn8XOph920juQz6ozT1SbBS/X27/u9q8nyKj4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aimerneige.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aimerneige.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/devops/docker-basic-notes/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Docker Basic Notes" />
+<meta property="og:description" content="This post is just a simple note.
+More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
+ Difference Image and Container
+ CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &lt;CONTAINER ID&gt; # start the container docker start &lt;CONTAINER ID&gt; # pulls image and starts container docker run redis:4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aimerneige.com/en/post/devops/docker-basic-notes/" />
+<meta property="og:image" content="https://aimerneige.com/images/docker-cover.png" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-13T20:31:37+08:00" />
+<meta property="article:modified_time" content="2023-03-13T20:31:37+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://aimerneige.com/images/docker-cover.png" />
+<meta name="twitter:title" content="Docker Basic Notes"/>
+<meta name="twitter:description" content="This post is just a simple note.
+More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
+ Difference Image and Container
+ CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &lt;CONTAINER ID&gt; # start the container docker start &lt;CONTAINER ID&gt; # pulls image and starts container docker run redis:4."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts 📝",
+      "item": "https://aimerneige.com/en/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Docker Basic Notes",
+      "item": "https://aimerneige.com/en/post/devops/docker-basic-notes/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Docker Basic Notes",
+  "name": "Docker Basic Notes",
+  "description": "This post is just a simple note.\nMore detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE\n Difference Image and Container\n CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, \u0026hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop \u0026lt;CONTAINER ID\u0026gt; # start the container docker start \u0026lt;CONTAINER ID\u0026gt; # pulls image and starts container docker run redis:4.",
+  "keywords": [
+    "docker", "note"
+  ],
+  "articleBody": " This post is just a simple note.\nMore detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE\n Difference Image and Container\n CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, …   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop # start the container docker start # pulls image and starts container docker run redis:4.0 CONTAINER Ports vs HOST ports\n Multiple containers can run on your host machine Your laptop has only certain ports available Conflict when same port on host machine     host docker     Port 5000 Port 5000   Port 3000 Port 3000   Port 3001 Port 3000    docker run -p6000:6379 redis docker logs docker logs docker run -d -p6000:6379 --name redis-older redis:4.0 # it Interactive Terminal dcoker exec -it /bin/bash dcoker exec -it /bin/bash # if no bash installed dcoker exec -it /bin/sh dcoker exec -it /bin/sh # create a new container from a image docker run # start a exist container docker start docker pull mongo docker pull mongo-express docker network ls docker network create docker run -d \\  -p 27017:27017 \\  -e MONGO_INITDB_ROOT_USERNAME=admin \\  -e MONGO_INITDB_ROOT_PASSWORD=password \\  --network mongo-network \\  --name mongodb \\  mongo docker run -d \\  -p 8081:8081 \\  -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \\  -e ME_CONFIG_MONGODB_ADMINPASSWORD=password \\  -e ME_CONFIG_MONGODB_PORT=27017 \\  -e ME_CONFIG_MONGODB_SERVER=mongodb \\  --net mongo-network \\  --name mongo-express \\  mongo-express docker logs -f docker logs | tail docker logs | more Docker Compose\ndocker run command\ndocker run -d \\  -p 27017:27017 \\  -e MONGO_INITDB_ROOT_USERNAME=admin \\  -e MONGO_INITDB_ROOT_PASSWORD=password \\  --network mongo-network \\  --name mongodb \\  mongo  docker run -d \\  -p 8081:8081 \\  -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \\  -e ME_CONFIG_MONGODB_ADMINPASSWORD=password \\  -e ME_CONFIG_MONGODB_PORT=27017 \\  -e ME_CONFIG_MONGODB_SERVER=mongodb \\  --net mongo-network \\  --name mongo-express \\  mongo-express mongo-docker-compose.yaml\nversion: '3' services:  mongodb:  image: mongo  ports:  - 27017:27017  environment:  - MONGO_INITDB_ROOT_USERNAME=admin  - MONGO_INITDB_ROOT_PASSWORD=password  mongo-express:  image: mongo-express  ports:  - 8081:8081  environment:  - ME_CONFIG_MONGODB_ADMINUSERNAME=admin  - ME_CONFIG_MONGODB_ADMINPASSWORD=password  - ME_CONFIG_MONGODB_PORT=27017  - ME_CONFIG_MONGODB_SERVER=mongodb Docker Compose takes care of creating a common Network!\ndocker-compose -f mongo-docker-compose.yaml up docker-compose -f mongo-docker-compose.yaml up -d docker-compose -f mongo-docker-compose.yaml down Dockerfile\n Blueprint for building images  Image Environment Blueprint\ninstall node set MONGO_DB_USERNAME = admin set MONGO_DB_PASSWORD = password create /home/app folder copy current folder files to /home/app start the app with: \"node server.js\" DOCKERFILE\nFROMnodeENV MONGO_DB_USERNAME=admin \\  MONGO_DB_PASSWORD=password  RUN mkdir -p /home/appCOPY ./app /home/appCMD [ \"node\", \"/home/app/server.js\" ] FROM: Start by basing it on another image ENV: Optionally define environment variables RUN: execute any Linux command COPY: executes on the HOST machine CMD: entry point command  The name must be “Dockerfile”\ndocker build -t my-app:1.0 . # DELETE A IMAGE docker rmi # DELETE A CONTAINER docker rm docker pull mongo:4.2 docler pull docker.io/library/mongo:4.2 docker tag my-app:1.0 327587328957.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0 docker push 327587328957.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0 Docker Volumes\nContainer use virtual file system. When you stop or restart the container, all the data is GONE!\nFolder in physical host file system is mounted into the virtual file system of Docker.\nHost Volumes\ndocker run \\  -v /home/mount/data:/var/lib/mysql/data You decide where on the host file system the reference is made.\nAnonymous Volumes\ndocker run \\  -v /var/lib/mysql/data for each container a foldre is generated that gets mounted.\nAutomatically created by Docker\nNamed Volumes\ndocker run \\  -v name:/var/lib/mysql/data you can reference the volume by name\nshould be used in production\nDocker Volumes in docker-compose\nversion: '3' services:  mongodb:  image: mongo  ports:  - 27017:27017  volumes:  - db-data:/var/lib/mysql/data  mongo-express:  ... volumes:  db-data:  driver: local version: '3' services:  mongodb:  image: mongo  ports:  - 27017:27017  environment:  - MONGO_INITDB_ROOT_USERNAME=admin  - MONGO_INITDB_ROOT_PASSWORD=password  volumes:  - mongo-data:/data/db  - mysql-data:/var/lib/mysql  - postgres-data:/var/lib/postgresql/data  mongo-express:  image: mongo-express  ports:  - 8080:8081  environment:  - ME_CONFIG_MONGODB_ADMINUSERNAME=admin  - ME_CONFIG_MONGODB_ADMINPASSWORD=password  - ME_CONFIG_MONGODB_PORT=27017  - ME_CONFIG_MONGODB_SERVER=mongodb volumes:  mongo-data:  driver: local  mysql-data:  driver: local  postgres-data:  driver: local Docker Volume Locations\n Windows: C:\\ProgramData\\docker\\volumes Linux: /var/lib/docker/volumes OS X: /var/lib/docker/volumes  Docker for Mac creates a Linux virtual machine and stores all the Docker data here.\n",
+  "wordCount" : "704",
+  "inLanguage": "en",
+  "image":"https://aimerneige.com/images/docker-cover.png","datePublished": "2023-03-13T20:31:37+08:00",
+  "dateModified": "2023-03-13T20:31:37+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aimer Neige"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aimerneige.com/en/post/devops/docker-basic-notes/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aimer's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aimerneige.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aimerneige.com/en/" accesskey="h" title="Aimer&#39;s Blog (Alt + H)">Aimer&#39;s Blog</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://aimerneige.com/zh/" title="中文"
+                            aria-label="中文">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://aimerneige.com/en/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/post/" title="Post">
+                    <span>Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://aimerneige.com/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/post/">Posts 📝</a></div>
+    <h1 class="post-title">
+      Docker Basic Notes
+    </h1>
+    <div class="post-meta"><span title='2023-03-13 20:31:37 +0800 CST'>March 13, 2023</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/DevOps/docker-basic-notes.en.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/docker-cover.png" alt="Docker">
+        
+</figure>
+
+  <div class="post-content"><blockquote>
+<p>This post is just a simple note.</p>
+<p>More detail in this video: <a href="https://www.youtube.com/watch?v=3c-iBn73dDE">https://www.youtube.com/watch?v=3c-iBn73dDE</a></p>
+</blockquote>
+<p><strong>Difference Image and Container</strong></p>
+<ul>
+<li>CONTAINER is a running environment for IMAGE
+<ul>
+<li>virtual file system</li>
+<li>port blinded: talk to application running inside of container</li>
+<li>application image: postgres, redis, mongo, &hellip;</li>
+</ul>
+</li>
+<li>redis in dockerhub are images</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull postgres
+</span></span><span style="display:flex;"><span>docker pull redis
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># lists installed images</span>
+</span></span><span style="display:flex;"><span>docker images
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run redis
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># `-d` means running in detached mode</span>
+</span></span><span style="display:flex;"><span>docker run -d redis
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># lists running container</span>
+</span></span><span style="display:flex;"><span>docker ps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lists running and stopped container</span>
+</span></span><span style="display:flex;"><span>docker ps -a
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># stops the container</span>
+</span></span><span style="display:flex;"><span>docker stop &lt;CONTAINER ID&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start the container</span>
+</span></span><span style="display:flex;"><span>docker start &lt;CONTAINER ID&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># pulls image and starts container</span>
+</span></span><span style="display:flex;"><span>docker run redis:4.0
+</span></span></code></pre></div><p><strong>CONTAINER Ports vs HOST ports</strong></p>
+<ul>
+<li>Multiple containers can run on your host machine</li>
+<li>Your laptop has only certain ports available</li>
+<li>Conflict when same port on host machine</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>host</th>
+<th>docker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port 5000</td>
+<td>Port 5000</td>
+</tr>
+<tr>
+<td>Port 3000</td>
+<td>Port 3000</td>
+</tr>
+<tr>
+<td>Port 3001</td>
+<td>Port 3000</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p6000:6379 redis
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker logs &lt;CONTAINER ID&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker logs &lt;CONTAINER NAMES&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p6000:6379 --name redis-older redis:4.0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># it Interactive Terminal</span>
+</span></span><span style="display:flex;"><span>dcoker exec -it &lt;CONTAINER ID&gt; /bin/bash
+</span></span><span style="display:flex;"><span>dcoker exec -it &lt;CONTAINER NAMES&gt; /bin/bash
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if no bash installed</span>
+</span></span><span style="display:flex;"><span>dcoker exec -it &lt;CONTAINER ID&gt; /bin/sh
+</span></span><span style="display:flex;"><span>dcoker exec -it &lt;CONTAINER NAMES&gt; /bin/sh
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># create a new container from a image</span>
+</span></span><span style="display:flex;"><span>docker run
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start a exist container</span>
+</span></span><span style="display:flex;"><span>docker start
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull mongo
+</span></span><span style="display:flex;"><span>docker pull mongo-express
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network ls
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create &lt;NETWORK NAME&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 27017:27017 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e MONGO_INITDB_ROOT_USERNAME<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e MONGO_INITDB_ROOT_PASSWORD<span style="color:#f92672">=</span>password <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --network mongo-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name mongodb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    mongo
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 8081:8081 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_ADMINUSERNAME<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_ADMINPASSWORD<span style="color:#f92672">=</span>password <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">27017</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_SERVER<span style="color:#f92672">=</span>mongodb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --net mongo-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name mongo-express <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    mongo-express
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker logs &lt;CONTAINER ID&gt; -f
+</span></span><span style="display:flex;"><span>docker logs &lt;CONTAINER ID&gt; | tail
+</span></span><span style="display:flex;"><span>docker logs &lt;CONTAINER ID&gt; | more
+</span></span></code></pre></div><p><strong>Docker Compose</strong></p>
+<p>docker run command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 27017:27017 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e MONGO_INITDB_ROOT_USERNAME<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e MONGO_INITDB_ROOT_PASSWORD<span style="color:#f92672">=</span>password <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --network mongo-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name mongodb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    mongo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 8081:8081 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_ADMINUSERNAME<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_ADMINPASSWORD<span style="color:#f92672">=</span>password <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">27017</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e ME_CONFIG_MONGODB_SERVER<span style="color:#f92672">=</span>mongodb <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --net mongo-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name mongo-express <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    mongo-express
+</span></span></code></pre></div><p>mongo-docker-compose.yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongodb</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mongo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">27017</span>:<span style="color:#ae81ff">27017</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MONGO_INITDB_ROOT_USERNAME=admin</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MONGO_INITDB_ROOT_PASSWORD=password</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongo-express</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mongo-express</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8081</span>:<span style="color:#ae81ff">8081</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_ADMINUSERNAME=admin</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_ADMINPASSWORD=password</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_PORT=27017</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_SERVER=mongodb</span>
+</span></span></code></pre></div><p><em>Docker Compose takes care of creating a common Network!</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose -f mongo-docker-compose.yaml up
+</span></span><span style="display:flex;"><span>docker-compose -f mongo-docker-compose.yaml up -d
+</span></span><span style="display:flex;"><span>docker-compose -f mongo-docker-compose.yaml down
+</span></span></code></pre></div><p><strong>Dockerfile</strong></p>
+<ul>
+<li>Blueprint for building images</li>
+</ul>
+<p><em>Image Environment Blueprint</em></p>
+<pre tabindex="0"><code>install node
+
+set MONGO_DB_USERNAME = admin
+set MONGO_DB_PASSWORD = password
+
+create /home/app folder
+
+copy current folder files to /home/app
+
+start the app with: &#34;node server.js&#34;
+</code></pre><p><em>DOCKERFILE</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> node</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> MONGO_DB_USERNAME<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    MONGO_DB_PASSWORD<span style="color:#f92672">=</span>password
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> mkdir -p /home/app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./app /home/app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [ <span style="color:#e6db74">&#34;node&#34;</span>, <span style="color:#e6db74">&#34;/home/app/server.js&#34;</span> ]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ul>
+<li>FROM: Start by basing it on another image</li>
+<li>ENV: Optionally define environment variables</li>
+<li>RUN: execute any Linux command</li>
+<li>COPY: executes on the HOST machine</li>
+<li>CMD: entry point command</li>
+</ul>
+<p>The name must be &ldquo;Dockerfile&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t my-app:1.0 .
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># DELETE A IMAGE</span>
+</span></span><span style="display:flex;"><span>docker rmi &lt;IMAGE ID&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># DELETE A CONTAINER</span>
+</span></span><span style="display:flex;"><span>docker rm &lt;CONTAINER ID&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull mongo:4.2
+</span></span><span style="display:flex;"><span>docler pull docker.io/library/mongo:4.2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker tag my-app:1.0 327587328957.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker push 327587328957.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0
+</span></span></code></pre></div><p><strong>Docker Volumes</strong></p>
+<p>Container use virtual file system. When you stop or restart the container, all the data is GONE!</p>
+<p>Folder in physical host file system is <strong>mounted</strong> into the virtual file system of Docker.</p>
+<p><em>Host Volumes</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v /home/mount/data:/var/lib/mysql/data
+</span></span></code></pre></div><p>You decide <strong>where on the host file system</strong> the reference is made.</p>
+<p><em>Anonymous Volumes</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v /var/lib/mysql/data
+</span></span></code></pre></div><p>for <strong>each container a foldre is generated</strong> that gets mounted.</p>
+<p>Automatically created by Docker</p>
+<p><em>Named Volumes</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v name:/var/lib/mysql/data
+</span></span></code></pre></div><p>you can <strong>reference</strong> the volume <strong>by name</strong></p>
+<p>should be used in production</p>
+<p><strong>Docker Volumes in docker-compose</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongodb</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mongo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">27017</span>:<span style="color:#ae81ff">27017</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">db-data:/var/lib/mysql/data</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongo-express</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongodb</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mongo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">27017</span>:<span style="color:#ae81ff">27017</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MONGO_INITDB_ROOT_USERNAME=admin</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MONGO_INITDB_ROOT_PASSWORD=password</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">mongo-data:/data/db</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">mysql-data:/var/lib/mysql</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">postgres-data:/var/lib/postgresql/data</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongo-express</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mongo-express</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">8081</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_ADMINUSERNAME=admin</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_ADMINPASSWORD=password</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_PORT=27017</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ME_CONFIG_MONGODB_SERVER=mongodb</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mongo-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mysql-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span></code></pre></div><p><strong>Docker Volume Locations</strong></p>
+<ul>
+<li>Windows: <code>C:\ProgramData\docker\volumes</code></li>
+<li>Linux: <code>/var/lib/docker/volumes</code></li>
+<li>OS X: <code>/var/lib/docker/volumes</code></li>
+</ul>
+<p>Docker for Mac creates a Linux virtual machine and stores all the Docker data here.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://aimerneige.com/en/tags/docker/">docker</a></li>
+      <li><a href="https://aimerneige.com/en/tags/note/">note</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Add Friend Link in PaperMod Blog</span>
+  </a>
+</nav>
+
+  </footer>
+<div id="license">
+    <p>
+        This article is licensed under
+        <a
+            target="_blank"
+            rel="noopener"
+            href="http://creativecommons.org/licenses/by-nc/4.0/"
+            style="color: #00b5da"
+        >
+            <u>CC-BY-NC-4.0</u>
+        </a>
+    </p>
+</div>
+
+<div id="comment">
+    <script
+        id="utterances"
+        src="https://utteranc.es/client.js"
+        repo="aimerneige/aimerneige.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        
+        let ua = navigator.userAgent.toLocaleLowerCase();
+        if (ua.match(/QQ/i) == "qq") {
+            document.getElementById("utterances").remove();
+        }
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("utterances").remove();
+        }
+    </script>
+</div>
+
+
+
+
+
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://aimerneige.com/en/">Aimer&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
