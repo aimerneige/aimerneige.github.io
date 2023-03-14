@@ -6,7 +6,16 @@
     <description>Recent content in Categories 🤹‍♂️ on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Mar 2023 20:31:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 20:27:07 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://aimerneige.com/en/categories/linux/</link>
+      <pubDate>Tue, 14 Mar 2023 20:27:07 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://aimerneige.com/en/categories/devops/</link>
@@ -31,15 +40,6 @@
       <pubDate>Sun, 26 Feb 2023 12:48:36 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://aimerneige.com/en/categories/linux/</link>
-      <pubDate>Sat, 25 Feb 2023 15:36:58 +0800</pubDate>
-      
-      <guid>https://aimerneige.com/en/categories/linux/</guid>
       <description></description>
     </item>
     

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>qBittorrent | Aimer&#39;s Blog</title>
+<title>Linux | Aimer&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
-<link rel="canonical" href="https://aimerneige.com/en/tags/qbittorrent/">
+<link rel="canonical" href="https://aimerneige.com/en/categories/linux/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b6864f372c27f173a987ddb48ee433ea8cd3d526c14bf5f6effbbdabc9f22a3e.css" integrity="sha256-toZPNywn8XOph920juQz6ozT1SbBS/X27/u9q8nyKj4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
@@ -18,9 +18,9 @@
 <link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/en/tags/qbittorrent/index.xml">
-<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/tags/qbittorrent/">
-<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/tags/qbittorrent/">
+<link rel="alternate" type="application/rss+xml" href="https://aimerneige.com/en/categories/linux/index.xml">
+<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/categories/linux/">
+<link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/categories/linux/">
 <noscript>
     <style>
         #theme-toggle,
@@ -29,13 +29,13 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="qBittorrent" />
+</noscript><meta property="og:title" content="Linux" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://aimerneige.com/en/tags/qbittorrent/" />
+<meta property="og:url" content="https://aimerneige.com/en/categories/linux/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="qBittorrent"/>
+<meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content=""/>
 
 </head>
@@ -90,41 +90,31 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/tags/">Tags 🏷️</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://aimerneige.com/en/">Home</a>&nbsp;»&nbsp;<a href="https://aimerneige.com/en/categories/">Categories 🤹‍♂️</a></div>
   <h1>
-    qBittorrent
+    Linux
   </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/docker-qbittorrent.png" alt="Docker qBittorrent-nox">
-</figure>
   <header class="entry-header">
-    <h2>Install qBittorrent-nox Inside Docker
+    <h2>Enable USB for VirtualBox on Ubuntu
     </h2>
   </header>
   <div class="entry-content">
-    <p>Install docker You need to install docker first before get started.
-Take fedora as an example, just simply run these command:
-# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download....</p>
+    <p>Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn’t on Windows.
+I can’t remember it and search for web many times because when you set it, you need’t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-03-14 20:27:07 +0800 CST'>March 14, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Install qBittorrent-nox Inside Docker" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/"></a>
+  <footer class="entry-footer"><span title='2020-07-26 07:58:20 +0800 CST'>July 26, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Enable USB for VirtualBox on Ubuntu" href="https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-qbittorrent.svg" alt="Ubuntu qBittorrent-nox">
-</figure>
-  <header class="entry-header">
-    <h2>Install qBittorrent-nox on Ubuntu Server
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Install qBittorrent-nox on Ubuntu Server Update ubuntu sudo apt update &amp;&amp; sudo apt upgrade -y Import qBittorrent-nox Stable sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y Import qBittorrent-nox Unstable (Nightly) sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y Reflect the newly added PPA sudo apt update Install qBittorrent-nox sudo apt install qbittorrent-nox -y Create usergroup sudo adduser --system --group qbittorrent-nox # on fedora sudo groupadd qbittorrent-nox Add you to usergroup sudo adduser your-username qbittorrent-nox # on fedora sudo usermod -aG qbittorrent-nox your-username Create a systemd service file sudo vim /etc/systemd/system/qbittorrent-nox....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-11-11 15:34:47 +0800 CST'>November 11, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Install qBittorrent-nox on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://aimerneige.com/en/categories/linux/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

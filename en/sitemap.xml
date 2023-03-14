@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -26,6 +26,77 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/docker/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/linux/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/qbittorrent/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/qbittorrent/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/qbittorrent/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/qbittorrent-nox/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/qbittorrent-nox/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/qbittorrent-nox/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2023-03-14T20:27:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/categories/devops/</loc>
@@ -41,40 +112,11 @@
                 href="https://aimerneige.com/en/categories/devops/"
                 />
   </url><url>
-    <loc>https://aimerneige.com/en/tags/docker/</loc>
-    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
-  </url><url>
     <loc>https://aimerneige.com/en/post/devops/docker-basic-notes/</loc>
     <lastmod>2023-03-13T20:31:37+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/en/tags/note/</loc>
     <lastmod>2023-03-13T20:31:37+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2023-03-13T20:31:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</loc>
     <lastmod>2023-03-12T13:25:06+08:00</lastmod>
@@ -234,19 +276,6 @@
     <loc>https://aimerneige.com/en/tags/kvm/</loc>
     <lastmod>2023-02-25T15:36:58+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/en/categories/linux/</loc>
-    <lastmod>2023-02-25T15:36:58+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/en/tags/tools/</loc>
     <lastmod>2023-02-25T15:36:58+08:00</lastmod>
     <xhtml:link
@@ -327,32 +356,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/qbittorrent/</loc>
-    <lastmod>2022-11-11T15:34:47+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/qbittorrent/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/qbittorrent/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/qbittorrent-nox/</loc>
-    <lastmod>2022-11-11T15:34:47+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/qbittorrent-nox/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/qbittorrent-nox/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</loc>

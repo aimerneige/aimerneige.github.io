@@ -112,6 +112,22 @@
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/docker-qbittorrent.png" alt="Docker qBittorrent-nox">
+</figure>
+  <header class="entry-header">
+    <h2>Install qBittorrent-nox Inside Docker
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Install docker You need to install docker first before get started.
+Take fedora as an example, just simply run these command:
+# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-14 20:27:07 +0800 CST'>March 14, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to Install qBittorrent-nox Inside Docker" href="https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/docker-cover.png" alt="Docker">
 </figure>
   <header class="entry-header">
@@ -257,28 +273,6 @@ The Final result will like this:
   </div>
   <footer class="entry-footer"><span title='2022-11-20 17:55:43 +0800 CST'>November 20, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Install and Configure Samba" href="https://aimerneige.com/en/post/linux/install-and-configure-samba/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/ubuntu-filebrowser.png" alt="Ubuntu Filebrowser">
-</figure>
-  <header class="entry-header">
-    <h2>Install Filebrowser on Ubuntu Server
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Install Filebrowser Install file browser to your server:
-curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash Have a quick test:
-filebrowser -a 0.0.0.0 -r /path/to/your/files Access your server and try to login in.
-Username: admin
-Password: admin
-Create Your Own Config Write your config file:
-sudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:
-port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:
-sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-11-18 16:37:27 +0800 CST'>November 18, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Install Filebrowser on Ubuntu Server" href="https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
