@@ -80,7 +80,7 @@ Password: admin
 Create Your Own Config Write your config file:
 sudo mkdir /etc/filebrowser/ sudo vim /etc/filebrowser/.filebrowser.yaml Write something like this:
 port: 8080 address: 0.0.0.0 root: /path/to/your/file database: /etc/filebrowser/filebrowser.db Create Service Write a service file:
-sudo vim /etc/systemd/system/filebrowser.service Wirte something like this:</description>
+sudo vim /etc/systemd/system/filebrowser.service Write something like this:</description>
     </item>
     
     <item>
