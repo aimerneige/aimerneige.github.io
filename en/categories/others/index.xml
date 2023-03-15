@@ -6,7 +6,17 @@
     <description>Recent content in Others on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Google Play Store at One Plus Ace2</title>
+      <link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link>
+      <pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid>
+      <description>Today, I buy a new phone One Plus ACE 2. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.
+Enable GMS From Settings  Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
+    </item>
+    
     <item>
       <title>Install WSA With Google Play Store and Root</title>
       <link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link>

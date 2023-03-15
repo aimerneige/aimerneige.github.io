@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>google on Aimer&#39;s Blog</title>
+    <link>https://aimerneige.com/en/tags/google/</link>
+    <description>Recent content in google on Aimer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Google Play Store at One Plus Ace2</title>
+      <link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link>
+      <pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid>
+      <description>Today, I buy a new phone One Plus ACE 2. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.
+Enable GMS From Settings  Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
+    </item>
+    
+  </channel>
+</rss>
