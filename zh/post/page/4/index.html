@@ -112,6 +112,23 @@
 </header>
 
 <article class="post-entry"> 
+  <header class="entry-header">
+    <h2>GCC 基础
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>GCC 简介 GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g&#43;&#43; 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。
+GCC 工具集不仅能编译 C/C&#43;&#43; 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。
+GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
+GCC 的 C 编译器 是 gcc，其命令格式为 :
+Usage: gcc [options] file... GCC 下默认文扩展名的含义：
+   文件扩展名 GCC 所理解的含义     *....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/nginx.png" alt="nginx-logo">
 </figure>
   <header class="entry-header">
@@ -277,26 +294,6 @@ android {  compileSdkVersion 29  buildToolsVersion &#34;29.0.3&#34;  defaultConf
   </div>
   <footer class="entry-footer"><span title='2020-02-22 00:43:15 +0800 CST'>二月 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 DataBinding 精简代码" href="https://aimerneige.com/zh/post/android/data-binding/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>使用 ProgressDialog 实现加载提示
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在进行一些耗时操作的时候，经常需要加载提示框来提醒用户当前在进行耗时操作，需要等待。
-而实现这样一个加载框十分简单。
-构建 ProgressDialog 对象 你可以在耗时操作开始前临时建立新的 ProgressDialog 对象，你也同样可以在 Activity 中构建 ProgressDialog 的引用，并在 OnCreate 方法内构建实体，在需要的时候直接显示和隐藏。
-其中前者相对灵活，但是使用范围有限，后者使用范围较广，但是可以会使得 OnCreate 中的代码较为繁琐。
-但是，不管使用那种方法，ProgressDialog 的构建都是非常简单。
- ProgressDialog progressDialog;  progressDialog = new ProgressDialog(MainActivity.this);  // ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);  progressDialog.setTitle(&#34;This is Title&#34;);  progressDialog.setMessage(&#34;This is Message&#34;);  progressDialog.setCancelable(true); 其他属性可自行探索或者查阅官方文档
-显示加载框 在耗时操作开始前(或者任何你想要显示提示框的地方)，通过以下操作显示加载框:
- progressDialog.show(); 关闭提示框 在耗时操作关闭时(或者任何你想要关闭提示框的地方)，通过以下操作关闭加载框:
- progressDialog.hide(); 很简单不是吗又水了一期，不过好像没人看我的博客</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-02-20 23:40:51 +0800 CST'>二月 20, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to 使用 ProgressDialog 实现加载提示" href="https://aimerneige.com/zh/post/android/progress-dialog/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

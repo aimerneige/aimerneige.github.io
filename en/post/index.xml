@@ -6,7 +6,16 @@
     <description>Recent content in Posts 📝 on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 17:49:10 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Disable Auto Bluetooth Connection on Computer Startup</title>
+      <link>https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</link>
+      <pubDate>Mon, 17 Apr 2023 17:49:10 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</guid>
+      <description>Preface As I have multiple electronic devices and paired several Bluetooth earphones, I encountered an issue where my computer automatically took over the audio signal of the earphones while I was enjoying music on my phone. This forced me to reconnect the earphones to my phone, which significantly affected my music experience. Therefore, I conducted relevant research and eventually found a way to prevent my computer from automatically connecting to Bluetooth earphones.</description>
+    </item>
+    
     <item>
       <title>Install Google Play Store at One Plus Ace2</title>
       <link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link>

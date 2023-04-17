@@ -112,6 +112,22 @@
 </header>
 
 <article class="post-entry"> 
+  <header class="entry-header">
+    <h2>如何禁止电脑开机时自动连接蓝牙耳机
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 由于电子设备比较多，蓝牙耳机配对的设备也比较多，这就引起了一个问题，本来连着手机听歌听的好好的，电脑开机之后就会自动抢占蓝牙耳机的信号，导致我还得重新在手机上连接耳机，严重影响听歌体验，于是就查询了如何禁用电脑自动连接的行为，希望这篇文章对你也有用。
+如何操作 编辑 /etc/bluetooth/main.conf 这个文件：
+sudo vim /etc/bluetooth/main.conf 找到这些内容：
+# AutoEnable defines option to enable all controllers when they are found. # This includes adapters present on start as well as adapters that are plugged # in later on. Defaults to &#39;true&#39;. # AutoEnable=true 修改配置文件，禁用自动连接：
+AutoEnable=false 重启设备，测试效果。</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-04-17 17:49:10 +0800 CST'>四月 17, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
+  <a class="entry-link" aria-label="post link to 如何禁止电脑开机时自动连接蓝牙耳机" href="https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/"></a>
+</article>
+
+<article class="post-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/friend-link.png" alt="Friend Link">
 </figure>
   <header class="entry-header">
@@ -271,24 +287,6 @@ env LC_ALL=&#34;zh_CN.UTF8&#34; 最终结果应该是这样（注意路径）
   </div>
   <footer class="entry-footer"><span title='2022-11-10 12:03:27 +0800 CST'>十一月 10, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 Fedora 系统上安装微信" href="https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/"></a>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://aimerneige.com/images/go-embed.webp" alt="Golang embed">
-</figure>
-  <header class="entry-header">
-    <h2>Golang embed
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
-embed 假设我们有一个文件 hello.txt
-Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
-  <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

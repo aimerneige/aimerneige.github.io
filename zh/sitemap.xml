@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/zh/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,97 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/bluetooth/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/bluetooth/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/bluetooth/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/gnome/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/gnome/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/gnome/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/linux/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/categories/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/post/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/</loc>
+    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/blog/</loc>
@@ -65,45 +156,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/web/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/tags/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/zh/post/</loc>
-    <lastmod>2023-03-12T13:25:06+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</loc>
@@ -196,10 +248,10 @@
     <loc>https://aimerneige.com/zh/tags/game/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/minecraft/</loc>
+    <loc>https://aimerneige.com/zh/categories/minecraft/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/categories/minecraft/</loc>
+    <loc>https://aimerneige.com/zh/tags/minecraft/</loc>
     <lastmod>2023-01-26T16:24:34+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/tags/mod/</loc>
@@ -226,19 +278,6 @@
   </url><url>
     <loc>https://aimerneige.com/zh/tags/desktop/</loc>
     <lastmod>2023-01-25T14:41:12+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/zh/categories/linux/</loc>
-    <lastmod>2023-01-25T14:41:12+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
   </url><url>
     <loc>https://aimerneige.com/zh/post/linux/how-to-write-a-desktop-file/</loc>
     <lastmod>2023-01-25T14:41:12+08:00</lastmod>
@@ -487,19 +526,6 @@
     <loc>https://aimerneige.com/zh/tags/tool/</loc>
     <lastmod>2022-03-12T19:36:29+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/java/</loc>
-    <lastmod>2021-12-28T15:37:39+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/java/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/java/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/categories/java/</loc>
     <lastmod>2021-12-28T15:37:39+08:00</lastmod>
     <xhtml:link
@@ -511,6 +537,19 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/java/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/java/</loc>
+    <lastmod>2021-12-28T15:37:39+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/java/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/tags/spring/</loc>
@@ -690,10 +729,10 @@
     <loc>https://aimerneige.com/zh/post/others/use-github-gracefully/</loc>
     <lastmod>2020-08-01T07:15:56+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/python/</loc>
+    <loc>https://aimerneige.com/zh/categories/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/categories/python/</loc>
+    <loc>https://aimerneige.com/zh/tags/python/</loc>
     <lastmod>2020-05-29T09:38:41+08:00</lastmod>
   </url><url>
     <loc>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</loc>
@@ -711,19 +750,6 @@
     <loc>https://aimerneige.com/zh/post/python/20-python-skills/</loc>
     <lastmod>2020-04-13T20:27:22+08:00</lastmod>
   </url><url>
-    <loc>https://aimerneige.com/zh/tags/android/</loc>
-    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/android/"
-                />
-  </url><url>
     <loc>https://aimerneige.com/zh/categories/android/</loc>
     <lastmod>2020-02-22T00:43:15+08:00</lastmod>
     <xhtml:link
@@ -735,6 +761,19 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://aimerneige.com/zh/categories/android/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/zh/tags/android/</loc>
+    <lastmod>2020-02-22T00:43:15+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/android/"
                 />
   </url><url>
     <loc>https://aimerneige.com/zh/post/android/data-binding/</loc>

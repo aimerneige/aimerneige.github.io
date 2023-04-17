@@ -6,7 +6,20 @@
     <description>Recent content in 文章 📝 on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Mar 2023 13:25:06 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 17:49:10 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何禁止电脑开机时自动连接蓝牙耳机</title>
+      <link>https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</link>
+      <pubDate>Mon, 17 Apr 2023 17:49:10 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</guid>
+      <description>前言 由于电子设备比较多，蓝牙耳机配对的设备也比较多，这就引起了一个问题，本来连着手机听歌听的好好的，电脑开机之后就会自动抢占蓝牙耳机的信号，导致我还得重新在手机上连接耳机，严重影响听歌体验，于是就查询了如何禁用电脑自动连接的行为，希望这篇文章对你也有用。
+如何操作 编辑 /etc/bluetooth/main.conf 这个文件：
+sudo vim /etc/bluetooth/main.conf 找到这些内容：
+# AutoEnable defines option to enable all controllers when they are found. # This includes adapters present on start as well as adapters that are plugged # in later on. Defaults to &amp;#39;true&amp;#39;. # AutoEnable=true 修改配置文件，禁用自动连接：
+AutoEnable=false 重启设备，测试效果。</description>
+    </item>
+    
     <item>
       <title>在 PaperMod 博客中添加友链</title>
       <link>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</link>
