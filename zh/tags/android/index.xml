@@ -16,8 +16,8 @@
       <description>在构建布局的时候，是不是感到要写很多的 findViewById 很浪费时间呢？尤其是布局文件变化的时候，也要在 Activity 中更改很多内容，极大的降低了开发效率，而谷歌在 JetPack 中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 DataBinding 下面来介绍 DataBinding 的使用
 用到的依赖 implementation &#39;androidx.lifecycle:lifecycle-extensions:2.2.0&#39;
 开启 dataBinding 在 app 的 build.gradle 文件中添加以下内容
-dataBinding {  enabled true } 位置参考
-android {  compileSdkVersion 29  buildToolsVersion &amp;#34;29.0.3&amp;#34;  defaultConfig {  applicationId &amp;#34;com.aimerneige.databindingdemo&amp;#34;  minSdkVersion 24  targetSdkVersion 29  versionCode 1  versionName &amp;#34;1.0&amp;#34;  testInstrumentationRunner &amp;#34;androidx.test.runner.AndroidJUnitRunner&amp;#34;  dataBinding {  enabled true  }  }  buildTypes {  release {  minifyEnabled false  proguardFiles getDefaultProguardFile(&amp;#39;proguard-android-optimize.</description>
+dataBinding { enabled true } 位置参考
+android { compileSdkVersion 29 buildToolsVersion &amp;#34;29.0.3&amp;#34; defaultConfig { applicationId &amp;#34;com.aimerneige.databindingdemo&amp;#34; minSdkVersion 24 targetSdkVersion 29 versionCode 1 versionName &amp;#34;1.0&amp;#34; testInstrumentationRunner &amp;#34;androidx.test.runner.AndroidJUnitRunner&amp;#34; dataBinding { enabled true } } buildTypes { release { minifyEnabled false proguardFiles getDefaultProguardFile(&amp;#39;proguard-android-optimize.txt&amp;#39;), &amp;#39;proguard-rules.pro&amp;#39; } } } 为布局文件提供 dataBinding 支持 在布局文件开头点击黄色灯泡（或按ALT + Enter），选择以下操作将布局文件转换为 data binding layout ，获取 data binding 支持</description>
     </item>
     
     <item>
@@ -31,10 +31,10 @@ android {  compileSdkVersion 29  buildToolsVersion &amp;#34;29.0.3&amp;#34;  def
 构建 ProgressDialog 对象 你可以在耗时操作开始前临时建立新的 ProgressDialog 对象，你也同样可以在 Activity 中构建 ProgressDialog 的引用，并在 OnCreate 方法内构建实体，在需要的时候直接显示和隐藏。
 其中前者相对灵活，但是使用范围有限，后者使用范围较广，但是可以会使得 OnCreate 中的代码较为繁琐。
 但是，不管使用那种方法，ProgressDialog 的构建都是非常简单。
- ProgressDialog progressDialog;  progressDialog = new ProgressDialog(MainActivity.this);  // ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);  progressDialog.setTitle(&amp;#34;This is Title&amp;#34;);  progressDialog.setMessage(&amp;#34;This is Message&amp;#34;);  progressDialog.setCancelable(true); 其他属性可自行探索或者查阅官方文档
+ProgressDialog progressDialog; progressDialog = new ProgressDialog(MainActivity.this); // ProgressDialog progressDialog = new ProgressDialog(MainActivity.this); progressDialog.setTitle(&amp;#34;This is Title&amp;#34;); progressDialog.setMessage(&amp;#34;This is Message&amp;#34;); progressDialog.setCancelable(true); 其他属性可自行探索或者查阅官方文档
 显示加载框 在耗时操作开始前(或者任何你想要显示提示框的地方)，通过以下操作显示加载框:
- progressDialog.show(); 关闭提示框 在耗时操作关闭时(或者任何你想要关闭提示框的地方)，通过以下操作关闭加载框:
- progressDialog.hide(); 很简单不是吗又水了一期，不过好像没人看我的博客</description>
+progressDialog.show(); 关闭提示框 在耗时操作关闭时(或者任何你想要关闭提示框的地方)，通过以下操作关闭加载框:
+progressDialog.hide(); 很简单不是吗又水了一期，不过好像没人看我的博客</description>
     </item>
     
     <item>
@@ -46,9 +46,9 @@ android {  compileSdkVersion 29  buildToolsVersion &amp;#34;29.0.3&amp;#34;  def
       <description>ViewModel 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 LiveData 来辅助， ViewModel 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。
 在 ViewModel 中构建 LiveData 对象 与 ViewModel 不同， LiveData 不需要构建类，直接在 ViewModel 中创建对象即可。
 首先创建 ViewModel 对象，然后在 ViewModel 对象中创建 LiveData 字段
-package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel;  public class ViewModelWithLiveData extends ViewModel {  private MutableLiveData&amp;lt;Integer&amp;gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
- // May Cause Error  public MutableLiveData&amp;lt;Integer&amp;gt; getLikedNumber() {  return LikedNumber;  } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
- 在构造方法中解决   // One possible wey to make the LikedNumber not null  ViewModelWithLiveData () {  LikedNumber = new MutableLiveData&amp;lt;&amp;gt;();  LikedNumber.</description>
+package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; import androidx.lifecycle.ViewModel; public class ViewModelWithLiveData extends ViewModel { private MutableLiveData&amp;lt;Integer&amp;gt; LikedNumber; } 然后为 LiveData 对象构建 get 方法
+// May Cause Error public MutableLiveData&amp;lt;Integer&amp;gt; getLikedNumber() { return LikedNumber; } 要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。
+在构造方法中解决 // One possible wey to make the LikedNumber not null ViewModelWithLiveData () { LikedNumber = new MutableLiveData&amp;lt;&amp;gt;(); LikedNumber.</description>
     </item>
     
     <item>
@@ -59,8 +59,8 @@ package com.aimerneige.livedatatest;  import androidx.lifecycle.MutableLiveData;
       <guid>https://aimerneige.com/zh/post/android/view-module/</guid>
       <description>如果不进行处理的话，布局上的临时数据可能会因为屏幕反转，切换系统语言等而消失，但是处理过程略微繁琐，较为麻烦，但是谷歌为我们提供了一种更加简洁的方式来管理界面数据，那就是 ViewModel。
 构建自己的 ViewModel 类 新建 Java 类，继承至ViewModel，名字自定义，这里以MyViewModel为例。
-package com.aimerneige.viewmoudeltest;  import androidx.lifecycle.ViewModel;  public class MyViewMoude extends ViewModel { } 新建好类之后，直接将需要用到的数据填写在内部，可以直接使用 public 的数据类型（不推荐），或者使用 private 数据加 get 方法。
-package com.aimerneige.viewmoudletest;  import androidx.lifecycle.ViewModel;  public class MyViewMoude extends ViewModel {  public int number = 0;  public String test = &amp;#34;Test for 100&amp;#34;;   private int age = 0;   public int getAge() {  return age;  }   public void setAge(int age) {  this.</description>
+package com.aimerneige.viewmoudeltest; import androidx.lifecycle.ViewModel; public class MyViewMoude extends ViewModel { } 新建好类之后，直接将需要用到的数据填写在内部，可以直接使用 public 的数据类型（不推荐），或者使用 private 数据加 get 方法。
+package com.aimerneige.viewmoudletest; import androidx.lifecycle.ViewModel; public class MyViewMoude extends ViewModel { public int number = 0; public String test = &amp;#34;Test for 100&amp;#34;; private int age = 0; public int getAge() { return age; } public void setAge(int age) { this.age = age; } } 然后把ViewModel当成一个智能地存储数据的结构体使用即可。</description>
     </item>
     
     <item>
@@ -69,14 +69,18 @@ package com.aimerneige.viewmoudletest;  import androidx.lifecycle.ViewModel;  pu
       <pubDate>Tue, 18 Feb 2020 00:05:23 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/android/toolbar/</guid>
-      <description>MaterialDesign 依赖库  implementation &amp;#39;com.google.android.material:material:1.1.0&amp;#39; 在布局文件中加入 TooBar &amp;lt;androidx.appcompat.widget.Toolbar  android:id=&amp;#34;@+id/toolBar&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  &amp;lt;!--其他属性设置--&amp;gt;  /&amp;gt;  关于旧版的说明
+      <description>MaterialDesign 依赖库 implementation &amp;#39;com.google.android.material:material:1.1.0&amp;#39; 在布局文件中加入 TooBar &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolBar&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; &amp;lt;!--其他属性设置--&amp;gt; /&amp;gt; 关于旧版的说明
 旧版需要使用兼容包
 compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
 使用以下布局方法
-&amp;lt;android.support.v7.widget.Toolbar  android:id=&amp;#34;@+id/toolbar&amp;#34;  android:layout_width=&amp;#34;wrap_content&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt;  &amp;lt;TextView  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;标题&amp;#34;  android:textSize=&amp;#34;20sp&amp;#34;/&amp;gt;  &amp;lt;/android.support.v7.widget.Toolbar&amp;gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
- 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(&amp;#34;AppBarLayoutTest&amp;#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错
+&amp;lt;android.support.v7.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;TextView android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;标题&amp;#34; android:textSize=&amp;#34;20sp&amp;#34;/&amp;gt; &amp;lt;/android.support.v7.widget.Toolbar&amp;gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(&amp;#34;AppBarLayoutTest&amp;#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错
 import androidx.appcompat.widget.Toolbar;
- 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。</description>
+添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;menu xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34;&amp;gt; &amp;lt;item android:id=&amp;#34;@+id/toolbar_setting&amp;#34; android:icon=&amp;#34;@drawable/ic_setting&amp;#34; android:title=&amp;#34;@string/toolbar_setting&amp;#34; app:showAsAction=&amp;#34;always&amp;#34; /&amp;gt; &amp;lt;item android:id=&amp;#34;@+id/toolbar_about&amp;#34; android:title=&amp;#34;@string/toolbar_about&amp;#34; app:showAsAction=&amp;#34;never&amp;#34; /&amp;gt; &amp;lt;item android:id=&amp;#34;@+id/toolbar_exit&amp;#34; android:title=&amp;#34;@string/toolbar_exit&amp;#34; app:showAsAction=&amp;#34;never&amp;#34; /&amp;gt; &amp;lt;/menu&amp;gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater().</description>
     </item>
     
     <item>
@@ -86,8 +90,11 @@ import androidx.appcompat.widget.Toolbar;
       
       <guid>https://aimerneige.com/zh/post/android/gson/</guid>
       <description>新建项目 导入 Gson 依赖
- implementation &amp;#39;com.google.code.gson:gson:2.8.5&amp;#39; 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout  xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;match_parent&amp;#34;  android:orientation=&amp;#34;vertical&amp;#34;&amp;gt;   &amp;lt;TextView  android:id=&amp;#34;@+id/text1&amp;#34;  android:layout_width=&amp;#34;wrap_content&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;nodata&amp;#34;/&amp;gt;   &amp;lt;TextView  android:id=&amp;#34;@+id/text2&amp;#34;  android:layout_width=&amp;#34;wrap_content&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;nodata&amp;#34;/&amp;gt;   &amp;lt;Button  android:id=&amp;#34;@+id/button&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;test&amp;#34;/&amp;gt;  &amp;lt;/LinearLayout&amp;gt; 代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。</description>
+implementation &amp;#39;com.google.code.gson:gson:2.8.5&amp;#39; 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; android:orientation=&amp;#34;vertical&amp;#34;&amp;gt; &amp;lt;TextView android:id=&amp;#34;@+id/text1&amp;#34; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;nodata&amp;#34;/&amp;gt; &amp;lt;TextView android:id=&amp;#34;@+id/text2&amp;#34; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;nodata&amp;#34;/&amp;gt; &amp;lt;Button android:id=&amp;#34;@+id/button&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test&amp;#34;/&amp;gt; &amp;lt;/LinearLayout&amp;gt; 代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。
+发送 Http 请求并获取数据 操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。
+https://user.moecraft.net:8443/API/Mc/authlib/ 获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 jsonData。
+利用 GsonFormat 插件生成映射对象 具体操作方法不解释了，具体看之前发布的博客文章。这里新建的类命名为 ApiTest 。</description>
     </item>
     
     <item>
@@ -97,10 +104,10 @@ import androidx.appcompat.widget.Toolbar;
       
       <guid>https://aimerneige.com/zh/post/android/web-image/</guid>
       <description>通过网络连接获取图片信息，并将其设为软件的 ImageView 图片属性
-  介绍： 与获取 HTML 类似，首先需要建立网络连接并获取数据，只是这次不通过 String 获取保存数据，而是使用 Bitmap 保存。
+介绍： 与获取 HTML 类似，首先需要建立网络连接并获取数据，只是这次不通过 String 获取保存数据，而是使用 Bitmap 保存。
 与获取 HTML 数据类似，联网操作同样需要新建线程，要注意的是在子线程不能操作 UI，需要通过外部函数设置图片或者在函数返回 Bitmap 对象使用。
- 核心代码：  建立网络连接，这里使用 HttpURLConnection  URL url = new URL(&amp;#34;https://www.example.com.img&amp;#34;) HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setRequestMethod(&amp;#34;GET&amp;#34;); // ...... // 诸如超时时间等的设置 处理返回数据  InputStream is = connection.getInputStream(); Bitmap bitmap = BitmapFactory.decodeStream(is); 设置控件，注意该操作不能在子线程中进行  imageView.setImageBitmap(bitmap);  完整代码  代码很烂，有很多可以优化的地方
-  //设置网络图片  public void setUrlImage(final int ImageViewId, final String address) {  //开启一个线程用于联网  new Thread(new Runnable() {  @Override  public void run() {  try {  //把传过来的路径转成URL  URL url = new URL(address);  //获取连接  HttpURLConnection connection = (HttpURLConnection) url.</description>
+核心代码： 建立网络连接，这里使用 HttpURLConnection URL url = new URL(&amp;#34;https://www.example.com.img&amp;#34;) HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setRequestMethod(&amp;#34;GET&amp;#34;); // ...... // 诸如超时时间等的设置 处理返回数据 InputStream is = connection.getInputStream(); Bitmap bitmap = BitmapFactory.decodeStream(is); 设置控件，注意该操作不能在子线程中进行 imageView.setImageBitmap(bitmap); 完整代码 代码很烂，有很多可以优化的地方
+//设置网络图片 public void setUrlImage(final int ImageViewId, final String address) { //开启一个线程用于联网 new Thread(new Runnable() { @Override public void run() { try { //把传过来的路径转成URL URL url = new URL(address); //获取连接 HttpURLConnection connection = (HttpURLConnection) url.</description>
     </item>
     
     <item>
@@ -109,7 +116,7 @@ import androidx.appcompat.widget.Toolbar;
       <pubDate>Sun, 16 Feb 2020 01:21:07 +0800</pubDate>
       
       <guid>https://aimerneige.com/zh/post/android/gson-format/</guid>
-      <description>插件安装  File Settings Plugins Marketplace 在搜索框输入 GsonFormat 搜索 安装相应插件 根据提示重启 IDE  使用方法  新建实体类 ALT + Insert 或者 右键-&amp;gt;Generate 选择 GsonFormat 将待解析 Json 字符串输入弹出的对话框 OK  </description>
+      <description>插件安装 File Settings Plugins Marketplace 在搜索框输入 GsonFormat 搜索 安装相应插件 根据提示重启 IDE 使用方法 新建实体类 ALT + Insert 或者 右键-&amp;gt;Generate 选择 GsonFormat 将待解析 Json 字符串输入弹出的对话框 OK </description>
     </item>
     
     <item>
@@ -121,11 +128,12 @@ import androidx.appcompat.widget.Toolbar;
       <description>GoogleDoc
 GoogleGithub
 声明依赖项 直接复制官方文档，不多解释了（懒
- 在应用或模块的 build.gradle 文件中添加所需工件的依赖项：
- dependencies {  implementation &amp;#34;androidx.swiperefreshlayout:swiperefreshlayout:1.0.0&amp;#34;  } 如需详细了解依赖项，请参阅添加编译依赖项。
- 添加布局 在 xml 布局文件中添加 SwipeRefreshLayout，并将 WebView 内嵌在 SwipeRefreshLayout 中。
- 布局这里拷贝了别人的代码，结果软件闪退，搞了半天找不到原因，重开了一个项目，根据代码提示写了一份居然可以运行，分明代码一样的，好迷啊。。。。。
- &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout  xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;  xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34;  xmlns:tools=&amp;#34;http://schemas.android.com/tools&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;match_parent&amp;#34;  tools:context=&amp;#34;.MainActivity&amp;#34;&amp;gt;   &amp;lt;androidx.swiperefreshlayout.widget.SwipeRefreshLayout  android:id=&amp;#34;@+id/swipe_refresh&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt;   &amp;lt;WebView  android:id=&amp;#34;@+id/web_view&amp;#34;  android:layout_width=&amp;#34;match_parent&amp;#34;  android:layout_height=&amp;#34;match_parent&amp;#34; /&amp;gt;   &amp;lt;/androidx.swiperefreshlayout.widget.SwipeRefreshLayout&amp;gt;  &amp;lt;/LinearLayout&amp;gt; SwipeRefreshLayout 类似 ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽</description>
+在应用或模块的 build.gradle 文件中添加所需工件的依赖项：
+dependencies { implementation &amp;#34;androidx.swiperefreshlayout:swiperefreshlayout:1.0.0&amp;#34; } 如需详细了解依赖项，请参阅添加编译依赖项。
+添加布局 在 xml 布局文件中添加 SwipeRefreshLayout，并将 WebView 内嵌在 SwipeRefreshLayout 中。
+布局这里拷贝了别人的代码，结果软件闪退，搞了半天找不到原因，重开了一个项目，根据代码提示写了一份居然可以运行，分明代码一样的，好迷啊。。。。。
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; xmlns:tools=&amp;#34;http://schemas.android.com/tools&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; tools:context=&amp;#34;.MainActivity&amp;#34;&amp;gt; &amp;lt;androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id=&amp;#34;@+id/swipe_refresh&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;WebView android:id=&amp;#34;@+id/web_view&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; /&amp;gt; &amp;lt;/androidx.swiperefreshlayout.widget.SwipeRefreshLayout&amp;gt; &amp;lt;/LinearLayout&amp;gt; SwipeRefreshLayout 类似 ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;ScrollView xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;LinearLayout android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; android:orientation=&amp;#34;vertical&amp;#34;&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;Button android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;test_scroll&amp;#34; android:textSize=&amp;#34;16sp&amp;#34; /&amp;gt; &amp;lt;/LinearLayout&amp;gt; &amp;lt;/ScrollView&amp;gt; 编写代码部分 先放一个完整的源码，看不懂直接跳过，下面介绍关于 Swiperefreshlayout 的核心代码</description>
     </item>
     
   </channel>

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/categories/javascript/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -28,6 +28,34 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="JavaScript" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -40,6 +68,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -104,10 +138,10 @@
   </header>
   <div class="entry-content">
     <p>前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。
-前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
- 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
- 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
- nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
+前期准备 你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作 环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
+注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
+本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
+nodejs npm 安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
 以 Ubuntu 为例，直接在终端执行如下指令：
 sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。
 如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。

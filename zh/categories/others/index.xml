@@ -16,13 +16,13 @@
       <description>安装 wsl2 使用管理员身份开启 windows terminal.
 执行如下指令：
 wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
-.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.dark .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative} Warning
+Warning
 注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
- 安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
 执行下面的指令设置 wsl 默认版本为 wsl2：
 wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
 wsl --list --online 返回数据类似下面这样：
-The following is a list of valid distributions that can be installed. Install using &amp;#39;wsl --install -d &amp;lt;Distro&amp;gt;&amp;#39;.</description>
+The following is a list of valid distributions that can be installed. Install using &amp;#39;wsl --install -d &amp;lt;Distro&amp;gt;&amp;#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.</description>
     </item>
     
     <item>
@@ -32,14 +32,14 @@ The following is a list of valid distributions that can be installed. Install us
       
       <guid>https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/</guid>
       <description>今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:
- 温馨提示:需要从实验空间进入实验,不可直接输入网址进入
- 不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
+温馨提示:需要从实验空间进入实验,不可直接输入网址进入
+不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。
 这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？
 这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。
 结果我在后台找到了下面的代码:
-$.ajax({ 	url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, 	type: &amp;#34;GET&amp;#34;, 	data: { courseId: courseId }, 	dataType: &amp;#34;JSON&amp;#34;, 	success: function (res) {   // 省略的大量代码逻辑   })；  下面的注释是原来就有，不是我加的。
+$.ajax({ url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, type: &amp;#34;GET&amp;#34;, data: { courseId: courseId }, dataType: &amp;#34;JSON&amp;#34;, success: function (res) { // 省略的大量代码逻辑 })； 下面的注释是原来就有，不是我加的。
 对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。
- // 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) {  var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;);  var questionAnswer = question1.</description>
+// 单选 var answer = $(&amp;#39;.afterTesting .topic1 form&amp;#39;); for (var k = 0; k &amp;lt; answer.length; k++) { var question1 = $(answer[k]).find(&amp;#34;.question1&amp;#34;); var questionAnswer = question1.attr(&amp;#34;data-answer&amp;#34;); var userAnswer = question1.find(&amp;#34;input[type=&amp;#39;radio&amp;#39;]:checked&amp;#34;).val(); var score = parseFloat(question1.attr(&amp;#34;data-score&amp;#34;)); if (questionAnswer.length &amp;gt; 1) { var userdAnswer = question1.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ $.ajax({ 	url: &amp;#34;/webApi/experimen/rig/getData&amp;#34;, 	type: &amp;#34;
       
       <guid>https://aimerneige.com/zh/post/others/alacritty-on-windows/</guid>
       <description>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
- 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
 本次演示中可执行文件存储目录：
 C:\Tools\Alacritty\alacritty.exe
 配置 alacritty 将配置文件放置在如下目录：
@@ -78,18 +78,20 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\Background\she
       
       <guid>https://aimerneige.com/zh/post/others/tips-using-windows10/</guid>
       <description>本文章项目地址 https://github.com/AimerNeige/Tutorial.git
- 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
 主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
 杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
- 但是，没有杀毒软件的话，电脑中毒怎么办啊？
- 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
- 删了它们我怎么清理电脑垃圾啊？
- 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
- 没有软件管家我不会下载软件了怎么办？
- 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
- 没有电脑管家我如何管理系统自启动啊？
- 禁用开机自启动：
-启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。</description>
+但是，没有杀毒软件的话，电脑中毒怎么办啊？
+如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+删了它们我怎么清理电脑垃圾啊？
+在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+没有软件管家我不会下载软件了怎么办？
+要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+没有电脑管家我如何管理系统自启动啊？
+禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。
+设置开机自启动：
+按住 Win 键（左下角有 windows 徽标的按键）然后按 R, 在弹出的运行框中输入 shell:startup 将软件的 快捷方式 放在这个目录下即可。</description>
     </item>
     
     <item>
@@ -107,9 +109,8 @@ language: java star 数
 stars:&amp;gt;1000 fork 数
 forks:&amp;gt;500 更新时间
 pushed:&amp;gt;2020-08-01 使用示例
-in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01  参考链接:
-https://www.youtube.com/watch?v=Uj6WWAqg0NY
- </description>
+in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01 参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY</description>
     </item>
     
     <item>

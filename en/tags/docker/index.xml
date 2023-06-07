@@ -15,7 +15,7 @@
       <guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</guid>
       <description>Install docker You need to install docker first before get started.
 Take fedora as an example, just simply run these command:
-# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download.</description>
+# First, remove old docker packages sudo dnf remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \ --add-repo \ https://download.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@ Take fedora as an example, just simply run these command:
       <guid>https://aimerneige.com/en/post/devops/docker-basic-notes/</guid>
       <description>This post is just a simple note.
 More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
- Difference Image and Container  CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
+Difference Image and Container CONTAINER is a running environment for IMAGE virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip; redis in dockerhub are images docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
     </item>
     
   </channel>

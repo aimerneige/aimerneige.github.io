@@ -11,7 +11,7 @@
 System Info When I write this artice (2021-7-31), elementary os 6 is still in develop, so I install it in gnome boxes.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/linux/vala-env-setup/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -27,6 +27,34 @@ System Info When I write this artice (2021-7-31), elementary os 6 is still in de
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -76,7 +104,7 @@ System Info When I write this artice (2021-7-31), elementary os 6 is still in de
   "keywords": [
     "vala"
   ],
-  "articleBody": "vala env setup When it’s talking to Linux development, there are many ways to go. But I love elementary and want to build some awesome apps with vala. So this article is about how to set up your vala develop environment on elementary os. In the future, there will more articles about vala and Linux development.\nSystem Info When I write this artice (2021-7-31), elementary os 6 is still in develop, so I install it in gnome boxes. My host machine syetem is fedora 34.\n# fedora system info ➜ neofetch  /:-------------:\\  aimerneige@an-xiaomipro  :-------------------:: -----------------------  :-----------/shhOHbmp---:\\  OS: Fedora 34 (Workstation Edition) x86_64  /-----------omMMMNNNMMD ---: Host: TM1701  :-----------sMMMMNMNMP. ---: Kernel: 5.13.5-200.fc34.x86_64  :-----------:MMMdP------- ---\\  Uptime: 3 hours, 54 mins ,------------:MMMd-------- ---: Packages: 2173 (rpm), 55 (flatpak) :------------:MMMd------- .---: Shell: zsh 5.8 :---- oNMMMMMMMMMNho .----: Resolution: 1920x1080 :-- .+shhhMMMmhhy++ .------/ DE: GNOME 40.3 :- -------:MMMd--------------: WM: Mutter :- --------/MMMd-------------; WM Theme: Adwaita :- ------/hMMMy------------: Theme: Adwaita [GTK2/3] :-- :dMNdhhdNMMNo------------; Icons: Adwaita [GTK2/3] :---:sdNMMMMNds:------------: Terminal: gnome-terminal :------:://:-------------:: CPU: Intel i7-8550U (8) @ 4.000GHz :---------------------:// GPU: NVIDIA GeForce MX250  GPU: Intel UHD Graphics 620  Memory: 8165MiB / 15875MiB # elementary system info ➜ neofetch  eeeeeeeeeeeeeeeee aimerneige@Standard-PC-i440FX-PIIX-1996-5c9f7153  eeeeeeeeeeeeeeeeeeeeeee ------------------------------------------------  eeeee eeeeeeeeeeee eeeee OS: elementary OS 6 Early Access x86_64  eeee eeeee eee eeee Host: KVM/QEMU (Standard PC (i440FX + PIIX, 1996) pc-i440fx-5.2)  eeee eeee eee eeee Kernel: 5.8.0-55-generic eee eee eee eee Uptime: 36 mins eee eee eee eee Packages: 1578 (dpkg), 12 (flatpak) ee eee eeee eeee Shell: bash 5.0.17 ee eee eeeee eeeeee Resolution: 1920x995 ee eee eeeee eeeee ee DE: Unity eee eeee eeeeee eeeee eee WM: Mutter(Gala) eee eeeeeeeeee eeeeee eee Theme: io.elementary.stylesheet.grape [GTK2/3]  eeeeeeeeeeeeeeeeeeeeeeee eeeee Icons: Adwaita [GTK2/3]  eeeeeeee eeeeeeeeeeee eeee Terminal: Tabby  eeeee eeeee CPU: Intel i7-8550U (8) @ 1.992GHz  eeeeeee eeeeeee GPU: 00:02.0 Red Hat, Inc. QXL paravirtual graphic card  eeeeeeeeeeeeeeeee Memory: 965MiB / 1985MiB Install SDK In elementary os, simply run this:\nsudo apt install elementary-sdk After install, you can type gtk3-widget-factory in terminal. If you see a application with widget example opened, you are ready to go!\nInstall text editor (or IDE) vscode vscode is good for vala develop.\nInstall vscode with below command:\nflatpak install flathub com.visualstudio.code After install vscode, you need to install some extensions. Search and install bellow extensions:\n vala for Syntax Highlighting. uncrustify for Code Formatting. Meson for build. xml python  Open settings.json, add vala-language-server path.\nWhen you install the sdk, the vala-language-server is installed.\n# Use this to get the vala-language-server path. which vala-language-server // Add this to your settings.json \t\"vls.languageServerPath\": \"/usr/bin/vala-language-server\" I will use vscode but you can still choose your favorite editor.\nelementary code elementary code is a text editor which support vala syntax highlighting. If you like it, you can use it to develop.\nvim / neovim You can also choose to use vim or neovim as your editor.\nInstall vala.vim to enable syntax highlighting.\nGnome Builder Gnome Builder is a good IDE for vala development.\nYou can install it from flatpak easily.\nI am not familiar with this, view Documentation for more information.\nMore info https://wiki.gnome.org/Projects/Vala/Toolsvala\nHello World After that, write a hello world program and test your environment.\n// helloworld.vala public class MyApp : Gtk.Application { public MyApp () { Object ( application_id: \"com.github.myteam.myapp\", flags: ApplicationFlags.FLAGS_NONE ); } protected override void activate () { var window = new Gtk.ApplicationWindow (this) { default_height = 768, default_width = 1024, title = \"MyApp\" }; window.show_all (); } public static int main (string[] args) { return new MyApp ().run (args); } } Build with this command:\nvalac --pkg gtk+-3.0 helloworld.vala If build success, you will get a helloworld binary file.\nRun it:\n./helloworld If you see a empty window with title MyApp, you are ready to go.\n",
+  "articleBody": "vala env setup When it’s talking to Linux development, there are many ways to go. But I love elementary and want to build some awesome apps with vala. So this article is about how to set up your vala develop environment on elementary os. In the future, there will more articles about vala and Linux development.\nSystem Info When I write this artice (2021-7-31), elementary os 6 is still in develop, so I install it in gnome boxes. My host machine syetem is fedora 34.\n# fedora system info ➜ neofetch /:-------------:\\ aimerneige@an-xiaomipro :-------------------:: ----------------------- :-----------/shhOHbmp---:\\ OS: Fedora 34 (Workstation Edition) x86_64 /-----------omMMMNNNMMD ---: Host: TM1701 :-----------sMMMMNMNMP. ---: Kernel: 5.13.5-200.fc34.x86_64 :-----------:MMMdP------- ---\\ Uptime: 3 hours, 54 mins ,------------:MMMd-------- ---: Packages: 2173 (rpm), 55 (flatpak) :------------:MMMd------- .---: Shell: zsh 5.8 :---- oNMMMMMMMMMNho .----: Resolution: 1920x1080 :-- .+shhhMMMmhhy++ .------/ DE: GNOME 40.3 :- -------:MMMd--------------: WM: Mutter :- --------/MMMd-------------; WM Theme: Adwaita :- ------/hMMMy------------: Theme: Adwaita [GTK2/3] :-- :dMNdhhdNMMNo------------; Icons: Adwaita [GTK2/3] :---:sdNMMMMNds:------------: Terminal: gnome-terminal :------:://:-------------:: CPU: Intel i7-8550U (8) @ 4.000GHz :---------------------:// GPU: NVIDIA GeForce MX250 GPU: Intel UHD Graphics 620 Memory: 8165MiB / 15875MiB # elementary system info ➜ neofetch eeeeeeeeeeeeeeeee aimerneige@Standard-PC-i440FX-PIIX-1996-5c9f7153 eeeeeeeeeeeeeeeeeeeeeee ------------------------------------------------ eeeee eeeeeeeeeeee eeeee OS: elementary OS 6 Early Access x86_64 eeee eeeee eee eeee Host: KVM/QEMU (Standard PC (i440FX + PIIX, 1996) pc-i440fx-5.2) eeee eeee eee eeee Kernel: 5.8.0-55-generic eee eee eee eee Uptime: 36 mins eee eee eee eee Packages: 1578 (dpkg), 12 (flatpak) ee eee eeee eeee Shell: bash 5.0.17 ee eee eeeee eeeeee Resolution: 1920x995 ee eee eeeee eeeee ee DE: Unity eee eeee eeeeee eeeee eee WM: Mutter(Gala) eee eeeeeeeeee eeeeee eee Theme: io.elementary.stylesheet.grape [GTK2/3] eeeeeeeeeeeeeeeeeeeeeeee eeeee Icons: Adwaita [GTK2/3] eeeeeeee eeeeeeeeeeee eeee Terminal: Tabby eeeee eeeee CPU: Intel i7-8550U (8) @ 1.992GHz eeeeeee eeeeeee GPU: 00:02.0 Red Hat, Inc. QXL paravirtual graphic card eeeeeeeeeeeeeeeee Memory: 965MiB / 1985MiB Install SDK In elementary os, simply run this:\nsudo apt install elementary-sdk After install, you can type gtk3-widget-factory in terminal. If you see a application with widget example opened, you are ready to go!\nInstall text editor (or IDE) vscode vscode is good for vala develop.\nInstall vscode with below command:\nflatpak install flathub com.visualstudio.code After install vscode, you need to install some extensions. Search and install bellow extensions:\nvala for Syntax Highlighting. uncrustify for Code Formatting. Meson for build. xml python Open settings.json, add vala-language-server path.\nWhen you install the sdk, the vala-language-server is installed.\n# Use this to get the vala-language-server path. which vala-language-server // Add this to your settings.json \"vls.languageServerPath\": \"/usr/bin/vala-language-server\" I will use vscode but you can still choose your favorite editor.\nelementary code elementary code is a text editor which support vala syntax highlighting. If you like it, you can use it to develop.\nvim / neovim You can also choose to use vim or neovim as your editor.\nInstall vala.vim to enable syntax highlighting.\nGnome Builder Gnome Builder is a good IDE for vala development.\nYou can install it from flatpak easily.\nI am not familiar with this, view Documentation for more information.\nMore info https://wiki.gnome.org/Projects/Vala/Toolsvala\nHello World After that, write a hello world program and test your environment.\n// helloworld.vala public class MyApp : Gtk.Application { public MyApp () { Object ( application_id: \"com.github.myteam.myapp\", flags: ApplicationFlags.FLAGS_NONE ); } protected override void activate () { var window = new Gtk.ApplicationWindow (this) { default_height = 768, default_width = 1024, title = \"MyApp\" }; window.show_all (); } public static int main (string[] args) { return new MyApp ().run (args); } } Build with this command:\nvalac --pkg gtk+-3.0 helloworld.vala If build success, you will get a helloworld binary file.\nRun it:\n./helloworld If you see a empty window with title MyApp, you are ready to go.\n",
   "wordCount" : "616",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/vala-setup.png","datePublished": "2021-10-23T21:36:57+08:00",
@@ -102,6 +130,12 @@ System Info When I write this artice (2021-7-31), elementary os 6 is still in de
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -354,7 +388,7 @@ public class MyApp : Gtk.Application {
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

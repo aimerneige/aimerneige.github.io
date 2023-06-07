@@ -8,15 +8,15 @@
 <title>C 语言静态函数 | Aimer&#39;s Blog</title>
 <meta name="keywords" content="C/C&#43;&#43;, Teach">
 <meta name="description" content="在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) {  printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() {  printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/c/c-static-function/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -35,12 +35,40 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="C 语言静态函数" />
 <meta property="og:description" content="在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) {  printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() {  printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。" />
 <meta property="og:type" content="article" />
@@ -51,10 +79,10 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C 语言静态函数"/>
 <meta name="twitter:description" content="在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) {  printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() {  printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。"/>
 
@@ -85,11 +113,11 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
   "@type": "BlogPosting",
   "headline": "C 语言静态函数",
   "name": "C 语言静态函数",
-  "description": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) {  printf(\u0026#34;I am a static funciton.\\n\u0026#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include \u0026lt;stdio.h\u0026gt; static void fun1() {  printf(\u0026#34;fun1 called.\\n\u0026#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include \u0026lt;stdio.h\u0026gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1\u0026#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。",
+  "description": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) { printf(\u0026#34;I am a static funciton.\\n\u0026#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include \u0026lt;stdio.h\u0026gt; static void fun1() { printf(\u0026#34;fun1 called.\\n\u0026#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include \u0026lt;stdio.h\u0026gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1\u0026#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。",
   "keywords": [
     "C/C++", "Teach"
   ],
-  "articleBody": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) {  printf(\"I am a static funciton.\\n\"); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include  static void fun1() {  printf(\"fun1 called.\\n\"); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include  int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1' 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。\n",
+  "articleBody": "在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：\nstatic int fun(void) { printf(\"I am a static funciton.\\n\"); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。\n例如，我们在文件 file.c 中存储了下面的程序：\n// in file `file1.c` #include static void fun1() { printf(\"fun1 called.\\n\"); } 然后，我们在文件 file2.c 中存储了这样的程序：\n// in file `file2.c` #include int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：\ngcc file2.c file1.c 你会得到这样的链接错误：\nundefined reference to `fun1' 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。\n",
   "wordCount" : "66",
   "inLanguage": "zh",
   "datePublished": "2020-10-31T20:31:36+08:00",
@@ -115,6 +143,12 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -248,7 +282,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

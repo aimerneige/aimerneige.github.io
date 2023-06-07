@@ -15,8 +15,8 @@
       <guid>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</guid>
       <description>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
 Full Code Put this shortcode into layouts/shortcodes/friends.html
- Usage Add your friends in data/friends.yml like this:
-- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
+Usage Add your friends in data/friends.yml like this:
+- title: &amp;#34;伞&amp;#34; intro: &amp;#34;一只咸鱼的学习记录&amp;#34; link: &amp;#34;https://umb.ink/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34; intro: &amp;#34;这里是一个小白的博客&amp;#34; link: &amp;#34;https://mzdluo123.github.io/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@ Full Code Put this shortcode into layouts/shortcodes/friends.html
       
       <guid>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</guid>
       <description>Download fonts Download the fonts you need and put it into static/fonts
-Import your fonts @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
-Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.</description>
+Import your fonts @font-face { font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body { font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&am
       
       <guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid>
       <description>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
- Full code from j-un:
- Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
+Full code from j-un:
+Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
     </item>
     
   </channel>

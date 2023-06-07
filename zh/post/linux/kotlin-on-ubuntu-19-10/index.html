@@ -7,17 +7,18 @@
 <meta name="robots" content="index, follow">
 <title>Ubuntu 19.10 配置 Kotlin 开发环境 | Aimer&#39;s Blog</title>
 <meta name="keywords" content="ubuntu, linux, kotlin">
-<meta name="description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode
- 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+<meta name="description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
+安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
 sudo apt install snap 这条指令执行后，系统安装的内容有：
- kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。
+kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
 俩条指令都可以，建议使用上面的。
-kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。
- Kotlin Kotlin Language    安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
- Code Runner    测试  建立新文件 HelloWorld.">
+kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
+Kotlin Kotlin Language 安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
+Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&lt;String&gt;) { println(&#34;Hello, World!&#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
+如果看到终端输出 Hello, World!">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -36,15 +37,44 @@ kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就�
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="Ubuntu 19.10 配置 Kotlin 开发环境" />
-<meta property="og:description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode
- 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+<meta property="og:description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
+安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
 sudo apt install snap 这条指令执行后，系统安装的内容有：
- kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。
+kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
 俩条指令都可以，建议使用上面的。
-kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。
- Kotlin Kotlin Language    安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
- Code Runner    测试  建立新文件 HelloWorld." />
+kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
+Kotlin Kotlin Language 安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
+Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&lt;String&gt;) { println(&#34;Hello, World!&#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
+如果看到终端输出 Hello, World!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-02-16T01:25:45+08:00" />
@@ -52,14 +82,15 @@ kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu 19.10 配置 Kotlin 开发环境"/>
-<meta name="twitter:description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode
- 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
+<meta name="twitter:description" content="Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode
+安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：
 sudo apt install snap 这条指令执行后，系统安装的内容有：
- kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。
+kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。
 俩条指令都可以，建议使用上面的。
-kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。
- Kotlin Kotlin Language    安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
- Code Runner    测试  建立新文件 HelloWorld."/>
+kotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。
+Kotlin Kotlin Language 安装下面这个插件后在 文件 -&gt; 首选项 -&gt; 设置 -&gt; 扩展 -&gt; Run Code Configuration 中找到并勾选 Run In Terminal
+Code Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array&lt;String&gt;) { println(&#34;Hello, World!&#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。
+如果看到终端输出 Hello, World!"/>
 
 
 <script type="application/ld+json">
@@ -88,11 +119,11 @@ kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就�
   "@type": "BlogPosting",
   "headline": "Ubuntu 19.10 配置 Kotlin 开发环境",
   "name": "Ubuntu 19.10 配置 Kotlin 开发环境",
-  "description": "Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode\n 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：\nsudo apt install snap 这条指令执行后，系统安装的内容有：\n kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。\n俩条指令都可以，建议使用上面的。\nkotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。\n Kotlin Kotlin Language    安装下面这个插件后在 文件 -\u0026gt; 首选项 -\u0026gt; 设置 -\u0026gt; 扩展 -\u0026gt; Run Code Configuration 中找到并勾选 Run In Terminal\n Code Runner    测试  建立新文件 HelloWorld.",
+  "description": "Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode\n安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：\nsudo apt install snap 这条指令执行后，系统安装的内容有：\nkotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。\n俩条指令都可以，建议使用上面的。\nkotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。\nKotlin Kotlin Language 安装下面这个插件后在 文件 -\u0026gt; 首选项 -\u0026gt; 设置 -\u0026gt; 扩展 -\u0026gt; Run Code Configuration 中找到并勾选 Run In Terminal\nCode Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array\u0026lt;String\u0026gt;) { println(\u0026#34;Hello, World!\u0026#34;) } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。\n如果看到终端输出 Hello, World!",
   "keywords": [
     "ubuntu", "linux", "kotlin"
   ],
-  "articleBody": "Ubuntu 19.10 配置 Kotlin 开发环境 使用工具  VSCode\n 安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：\nsudo apt install snap 这条指令执行后，系统安装的内容有：\n kotlinc kotlinc-jvm kotlinc-js kotlin-dce-js  可以通过以下指令查看版本，如果有输出证明安装成功。\n俩条指令都可以，建议使用上面的。\nkotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就可以了，也可以都安装。\n Kotlin Kotlin Language    安装下面这个插件后在 文件 - 首选项 - 设置 - 扩展 - Run Code Configuration 中找到并勾选 Run In Terminal\n Code Runner    测试  建立新文件 HelloWorld.kt  fun main(args: Array) {  println(\"Hello, World!\") }  通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。\n  如果看到终端输出 Hello, World! 的内容，说明开发环境搭建成功。\n  参考内容：  https://askubuntu.com/questions/917223/installing-kotlin-securely-with-package-signatures-auto-update-etc   当然你也可以直接用 intellj-idea\n",
+  "articleBody": "Ubuntu 19.10 配置 Kotlin 开发环境 使用工具 VSCode\n安装 Kotlin 编译器 sudo snap install kotlin --classic 如果出现错误，执行以下命令：\nsudo apt install snap 这条指令执行后，系统安装的内容有：\nkotlinc kotlinc-jvm kotlinc-js kotlin-dce-js 可以通过以下指令查看版本，如果有输出证明安装成功。\n俩条指令都可以，建议使用上面的。\nkotlin -version kotlinc -version 安装插件 这俩个貌似安装一个就可以了，也可以都安装。\nKotlin Kotlin Language 安装下面这个插件后在 文件 -\u003e 首选项 -\u003e 设置 -\u003e 扩展 -\u003e Run Code Configuration 中找到并勾选 Run In Terminal\nCode Runner 测试 建立新文件 HelloWorld.kt fun main(args: Array) { println(\"Hello, World!\") } 通过点击右上角三角形（由 Code Runner 提供的快捷方式）来编译运行，查看输出。\n如果看到终端输出 Hello, World! 的内容，说明开发环境搭建成功。\n参考内容： https://askubuntu.com/questions/917223/installing-kotlin-securely-with-package-signatures-auto-update-etc 当然你也可以直接用 intellj-idea\n",
   "wordCount" : "76",
   "inLanguage": "zh",
   "datePublished": "2020-02-16T01:25:45+08:00",
@@ -118,6 +149,12 @@ kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就�
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -309,7 +346,7 @@ kotlin -version kotlinc -version 安装插件   这俩个貌似安装一个就�
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

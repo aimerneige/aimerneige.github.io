@@ -15,7 +15,7 @@
       <guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
- Change the style First you should use the DayNight style by Google.
+Change the style First you should use the DayNight style by Google.
 &amp;lt;style name=&amp;#34;AppTheme&amp;#34; parent=&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&amp;gt; If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.
 Adapt colors Make a new folder at project/app/src/main/res/values-night then make a new resource file colors.</description>
     </item>
@@ -27,7 +27,7 @@ Adapt colors Make a new folder at project/app/src/main/res/values-night then mak
       
       <guid>https://aimerneige.com/en/post/android/change-package-name/</guid>
       <description>Change Package Name Quickly Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.
- Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.</description>
+Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.aimerneige.test.example. Click the part you want to change, like test.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ Adapt colors Make a new folder at project/app/src/main/res/values-night then mak
       <pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/android/data-save/</guid>
-      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.</description>
+      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.</description>
     </item>
     
   </channel>

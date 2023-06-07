@@ -23,7 +23,7 @@
       
       <guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid>
       <description>Today, I buy a new phone One Plus ACE 2. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.
-Enable GMS From Settings  Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
+Enable GMS From Settings Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ Enable GMS From Settings  Open your settings app, search google. Click the first
       <guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</guid>
       <description>Install docker You need to install docker first before get started.
 Take fedora as an example, just simply run these command:
-# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download.</description>
+# First, remove old docker packages sudo dnf remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \ --add-repo \ https://download.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ Take fedora as an example, just simply run these command:
       <guid>https://aimerneige.com/en/post/devops/docker-basic-notes/</guid>
       <description>This post is just a simple note.
 More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
- Difference Image and Container  CONTAINER is a running environment for IMAGE  virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip;   redis in dockerhub are images  docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
+Difference Image and Container CONTAINER is a running environment for IMAGE virtual file system port blinded: talk to application running inside of container application image: postgres, redis, mongo, &amp;hellip; redis in dockerhub are images docker pull postgres docker pull redis # lists installed images docker images docker run redis # `-d` means running in detached mode docker run -d redis # lists running container docker ps # lists running and stopped container docker ps -a # stops the container docker stop &amp;lt;CONTAINER ID&amp;gt; # start the container docker start &amp;lt;CONTAINER ID&amp;gt; # pulls image and starts container docker run redis:4.</description>
     </item>
     
     <item>
@@ -56,8 +56,8 @@ More detail in this video: https://www.youtube.com/watch?v=3c-iBn73dDE
       <guid>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</guid>
       <description>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
 Full Code Put this shortcode into layouts/shortcodes/friends.html
- Usage Add your friends in data/friends.yml like this:
-- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
+Usage Add your friends in data/friends.yml like this:
+- title: &amp;#34;伞&amp;#34; intro: &amp;#34;一只咸鱼的学习记录&amp;#34; link: &amp;#34;https://umb.ink/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34; intro: &amp;#34;这里是一个小白的博客&amp;#34; link: &amp;#34;https://mzdluo123.github.io/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
     </item>
     
     <item>
@@ -67,8 +67,8 @@ Full Code Put this shortcode into layouts/shortcodes/friends.html
       
       <guid>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</guid>
       <description>Download fonts Download the fonts you need and put it into static/fonts
-Import your fonts @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
-Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.</description>
+Import your fonts @font-face { font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body { font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>
     </item>
     
     <item>
@@ -78,8 +78,8 @@ Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&am
       
       <guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid>
       <description>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try this awesome code. Bellow are the what it look like:
- Full code from j-un:
- Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
+Full code from j-un:
+Download this html file or copy the code, put it in layouts/shortcodes/spotify.html. Enjoy it!</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&am
       
       <guid>https://aimerneige.com/en/post/go/how-to-add-multiple-tags-to-go-struct/</guid>
       <description> It is easy but always be forgotten, so write this post
- Incorrect type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } Correct type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } More tags Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` Links  StackOverflow - How to define multiple name tags in a struct  </description>
+Incorrect type Page struct { PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;` Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } Correct type Page struct { PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;` Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } More tags Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` Links StackOverflow - How to define multiple name tags in a struct </description>
     </item>
     
     <item>
@@ -99,10 +99,10 @@ Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&am
       
       <guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid>
       <description>KVM: Kernel-Based Virtual Machine
-   Products Company     VirtualBox Oracle   VMWare VMWare   Hyper-V Microsoft    First, use x86 laptop or pc.
+Products Company VirtualBox Oracle VMWare VMWare Hyper-V Microsoft First, use x86 laptop or pc.
 # check if kvm avaiable (output should bigger than 0) egrep -c &amp;#39;(vmx|svm)&amp;#39; /proc/cpuinfo if output is 0, enable vt on BIOS.
 Install KVM on fedora36
-# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools  qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs  sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)</description>
+# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)</description>
     </item>
     
     <item>
@@ -124,10 +124,10 @@ sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64
       <pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid>
-      <description>OneDrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
+      <description>OneDrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive Authorize this app visiting: https://..... Enter the response uri: Copy the url from browser like this:
 https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Paste it into terminal then press enter:
 The Final result will like this:
-[user@hostname ~]$ onedrive Authorize this app visiting:  https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient  Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt;  Application has been successfully authorized, however no additional command switches were provided.</description>
+[user@hostname ~]$ onedrive Authorize this app visiting: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Application has been successfully authorized, however no additional command switches were provided. Please use &amp;#39;onedrive --help&amp;#39; for further assistance in regards to running this application.</description>
     </item>
     
     <item>
@@ -137,7 +137,7 @@ The Final result will like this:
       
       <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
       <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
-[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username Warning</description>
     </item>
     
     <item>
@@ -185,7 +185,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
       
       <guid>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</guid>
       <description>This article are reproduce from pretzelhammer/rust-blog
- Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
+Intro When I started learning Rust I made the mistake of following the advice to read The Book first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo; Most people give up before they even get started when they get advice like this.</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
       <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid>
-      <description>Install  Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it  Enable usb debug  Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS  </description>
+      <description>Install Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it Enable usb debug Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS </description>
     </item>
     
     <item>
@@ -215,7 +215,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
       <description>Shell Comment Start with #
 # this is a line of comment Simply write more with # start
 # Author: Aimer Neige # Email: aimer.neige@aimerneige.com # Date: 2022-04-29 Other way:
-:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link  https://www.runoob.com/linux/linux-shell-variable.html  </description>
+:&amp;lt;&amp;lt;EOF Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 EOF :&amp;lt;&amp;lt;&amp;#39; Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 &amp;#39; :&amp;lt;&amp;lt;! Author: Aimer Neige Email: aimer.neige@aimerneige.com Date: 2022-04-29 ! Refer Link https://www.runoob.com/linux/linux-shell-variable.html </description>
     </item>
     
     <item>
@@ -228,7 +228,7 @@ sudo dnf install cabextract sudo dnf install winetricks winetricks corefonts gdi
 The n represents a number, the 1 is meant for the first parameters you pass to the script, the 2 is the second parameters you pass to the script, and so on.
 Note that the 0 is the script fine name.
 Example:
-#!/usr/bin/bash  echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
+#!/usr/bin/bash echo &amp;#34;Parameters Example:&amp;#34; echo &amp;#34;The Script File Name: \&amp;#34;$0\&amp;#34;&amp;#34; echo &amp;#34;The First Parameters: \&amp;#34;$1\&amp;#34;&amp;#34; echo &amp;#34;The Second Parameters: \&amp;#34;$2\&amp;#34;&amp;#34; echo &amp;#34;The Third Parameters: \&amp;#34;$3\&amp;#34;&amp;#34; echo &amp;#34;The Forth Parameters: \&amp;#34;$4\&amp;#34;&amp;#34; Run this script:</description>
     </item>
     
     <item>
@@ -240,7 +240,7 @@ Example:
       <description>Shell Variable Define Variable You are not allowed to add $ when defining a variable, while in php, you need it.
 For example:
 your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you need to follow these rules:
- You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters.</description>
+You can only use letters, numbers, and underscores, and the first character can not be numbers. You are not allowed to add space, use underscores _ replace. You are not allowed to use special characters. You can not use any keywords used by bash.</description>
     </item>
     
     <item>
@@ -249,10 +249,10 @@ your_name=&amp;#34;Aimer Neige&amp;#34; Like other programming languages, you ne
       <pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid>
-      <description>Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+      <description>Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39; ... } ... dependencies { implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.</description>
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.</description>
     </item>
     
     <item>
@@ -292,7 +292,7 @@ System Info When I write this artice (2021-7-31), elementary os 6 is still in de
       <guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid>
       <description>In this example, I am using Material Design. But you can also use the Theme.AppCompat.DayNight.
 This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
- Change the style First you should use the DayNight style by Google.
+Change the style First you should use the DayNight style by Google.
 &amp;lt;style name=&amp;#34;AppTheme&amp;#34; parent=&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&amp;gt; If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.
 Adapt colors Make a new folder at project/app/src/main/res/values-night then make a new resource file colors.</description>
     </item>
@@ -325,7 +325,7 @@ Set the system env settings and enjoy it!</description>
       
       <guid>https://aimerneige.com/en/post/android/change-package-name/</guid>
       <description>Change Package Name Quickly Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.
- Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.</description>
+Open your Android Project at Android Studio. Go to the Androidmanifest.xml. Find your package name. For example com.aimerneige.test.example. Click the part you want to change, like test.</description>
     </item>
     
     <item>
@@ -334,7 +334,7 @@ Set the system env settings and enjoy it!</description>
       <pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/android/data-save/</guid>
-      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.</description>
+      <description>Save data to file save data // This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file // The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &amp;#34;data&amp;#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&amp;#34;data&amp;#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.</description>
     </item>
     
     <item>
@@ -370,9 +370,9 @@ I can&amp;rsquo;t remember it and search for web many times because when you set
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
- Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
+Mathjax Test 1 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+Test 2 $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
+C #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
     </item>
     
   </channel>

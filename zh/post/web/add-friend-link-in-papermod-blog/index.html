@@ -9,11 +9,11 @@
 <meta name="keywords" content="blog, papermod, css">
 <meta name="description" content="PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
 完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
- 用法 在 data/friends.yml 中添加你的友链数据，示例：
-- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; ">
+用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34; intro: &#34;一只咸鱼的学习记录&#34; link: &#34;https://umb.ink/&#34; image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34; intro: &#34;这里是一个小白的博客&#34; link: &#34;https://mzdluo123.github.io/&#34; image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; ">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -33,11 +33,39 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="在 PaperMod 博客中添加友链" />
 <meta property="og:description" content="PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
 完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
- 用法 在 data/friends.yml 中添加你的友链数据，示例：
-- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; " />
+用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34; intro: &#34;一只咸鱼的学习记录&#34; link: &#34;https://umb.ink/&#34; image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34; intro: &#34;这里是一个小白的博客&#34; link: &#34;https://mzdluo123.github.io/&#34; image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/" />
 <meta property="og:image" content="https://aimerneige.com/images/friend-link.png" /><meta property="article:section" content="post" />
@@ -49,8 +77,8 @@
 <meta name="twitter:title" content="在 PaperMod 博客中添加友链"/>
 <meta name="twitter:description" content="PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
 完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
- 用法 在 data/friends.yml 中添加你的友链数据，示例：
-- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; "/>
+用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34; intro: &#34;一只咸鱼的学习记录&#34; link: &#34;https://umb.ink/&#34; image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34; intro: &#34;这里是一个小白的博客&#34; link: &#34;https://mzdluo123.github.io/&#34; image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; "/>
 
 
 <script type="application/ld+json">
@@ -79,11 +107,11 @@
   "@type": "BlogPosting",
   "headline": "在 PaperMod 博客中添加友链",
   "name": "在 PaperMod 博客中添加友链",
-  "description": "PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。\n完整代码 把下面的代码存储在 layouts/shortcodes/friends.html\n 用法 在 data/friends.yml 中添加你的友链数据，示例：\n- title: \u0026#34;伞\u0026#34;  intro: \u0026#34;一只咸鱼的学习记录\u0026#34;  link: \u0026#34;https://umb.ink/\u0026#34;  image: \u0026#34;https://avatars.githubusercontent.com/u/53655863?v=4\u0026#34; - title: \u0026#34;HelloWorld的小博客\u0026#34;  intro: \u0026#34;这里是一个小白的博客\u0026#34;  link: \u0026#34;https://mzdluo123.github.io/\u0026#34;  image: \u0026#34;https://avatars.githubusercontent.com/u/23146087?v=4\u0026#34; ",
+  "description": "PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。\n完整代码 把下面的代码存储在 layouts/shortcodes/friends.html\n用法 在 data/friends.yml 中添加你的友链数据，示例：\n- title: \u0026#34;伞\u0026#34; intro: \u0026#34;一只咸鱼的学习记录\u0026#34; link: \u0026#34;https://umb.ink/\u0026#34; image: \u0026#34;https://avatars.githubusercontent.com/u/53655863?v=4\u0026#34; - title: \u0026#34;HelloWorld的小博客\u0026#34; intro: \u0026#34;这里是一个小白的博客\u0026#34; link: \u0026#34;https://mzdluo123.github.io/\u0026#34; image: \u0026#34;https://avatars.githubusercontent.com/u/23146087?v=4\u0026#34; ",
   "keywords": [
     "blog", "papermod", "css"
   ],
-  "articleBody": "PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。\n完整代码 把下面的代码存储在 layouts/shortcodes/friends.html\n 用法 在 data/friends.yml 中添加你的友链数据，示例：\n- title: \"伞\"  intro: \"一只咸鱼的学习记录\"  link: \"https://umb.ink/\"  image: \"https://avatars.githubusercontent.com/u/53655863?v=4\" - title: \"HelloWorld的小博客\"  intro: \"这里是一个小白的博客\"  link: \"https://mzdluo123.github.io/\"  image: \"https://avatars.githubusercontent.com/u/23146087?v=4\" ",
+  "articleBody": "PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。\n完整代码 把下面的代码存储在 layouts/shortcodes/friends.html\n用法 在 data/friends.yml 中添加你的友链数据，示例：\n- title: \"伞\" intro: \"一只咸鱼的学习记录\" link: \"https://umb.ink/\" image: \"https://avatars.githubusercontent.com/u/53655863?v=4\" - title: \"HelloWorld的小博客\" intro: \"这里是一个小白的博客\" link: \"https://mzdluo123.github.io/\" image: \"https://avatars.githubusercontent.com/u/23146087?v=4\" ",
   "wordCount" : "27",
   "inLanguage": "zh",
   "image":"https://aimerneige.com/images/friend-link.png","datePublished": "2023-03-12T13:25:06+08:00",
@@ -109,6 +137,12 @@
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -253,7 +287,7 @@
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

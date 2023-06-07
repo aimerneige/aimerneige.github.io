@@ -10,7 +10,7 @@
 <meta name="description" content="archives">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/archives/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -25,6 +25,34 @@
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -90,6 +118,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -141,13 +175,15 @@
 <main class="main">
 
 <header class="page-header">
-  <h1>归档 🗃️</h1>
+  <h1>
+    归档 🗃️
+  </h1>
 </header>
 <div class="archive-year">
   <h2 class="archive-year-header">2023<sup class="archive-count">&nbsp;&nbsp;8</sup>
   </h2>
   <div class="archive-month">
-    <h3 class="archive-month-header">April<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">四月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">如何禁止电脑开机时自动连接蓝牙耳机
@@ -158,7 +194,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">March<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">三月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">在 PaperMod 博客中添加友链
@@ -175,7 +211,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">February<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">二月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">如何给 Go 的结构体添加多个 tag
@@ -192,7 +228,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">January<sup class="archive-count">&nbsp;&nbsp;3</sup></h3>
+    <h3 class="archive-month-header">一月<sup class="archive-count">&nbsp;&nbsp;3</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">如何搭建 Minecraft Mod 服务器
@@ -219,7 +255,7 @@
   <h2 class="archive-year-header">2022<sup class="archive-count">&nbsp;&nbsp;8</sup>
   </h2>
   <div class="archive-month">
-    <h3 class="archive-month-header">November<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">十一月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">在 Ubuntu 服务器上安装 qBittorrent-nox
@@ -236,7 +272,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">August<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">八月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">Golang embed
@@ -253,7 +289,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">June<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">六月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">[转载] Rust 大佬给初学者的学习建议
@@ -264,7 +300,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">May<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">五月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">如何配置新购置的 Linux 服务器
@@ -275,7 +311,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">April<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">四月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">在 wsl 下安装 fedora 35
@@ -286,7 +322,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">March<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">三月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">find 指令的基本用法
@@ -301,7 +337,7 @@
   <h2 class="archive-year-header">2021<sup class="archive-count">&nbsp;&nbsp;7</sup>
   </h2>
   <div class="archive-month">
-    <h3 class="archive-month-header">December<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">十二月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">使用 vscode 开发 Spring 项目
@@ -312,7 +348,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">August<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
+    <h3 class="archive-month-header">八月<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">配置 go 开发环境
@@ -341,7 +377,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">January<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">一月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">使用 nodejs 快速为 Android 程序构建 API
@@ -362,7 +398,7 @@
   <h2 class="archive-year-header">2020<sup class="archive-count">&nbsp;&nbsp;28</sup>
   </h2>
   <div class="archive-month">
-    <h3 class="archive-month-header">December<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">十二月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">Linux 下安装 fcitx5 与 Rime
@@ -373,7 +409,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">November<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
+    <h3 class="archive-month-header">十一月<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">每天一个 Linux 指令
@@ -402,7 +438,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">October<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
+    <h3 class="archive-month-header">十月<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">C 语言静态函数
@@ -431,7 +467,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">August<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">八月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">写给小白的 win10 使用技巧
@@ -448,7 +484,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">May<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
+    <h3 class="archive-month-header">五月<sup class="archive-count">&nbsp;&nbsp;4</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">每天一个 Python 小知识 isinstance
@@ -477,7 +513,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">April<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">四月<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">20 个 Python 进阶技巧
@@ -488,7 +524,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">February<sup class="archive-count">&nbsp;&nbsp;10</sup></h3>
+    <h3 class="archive-month-header">二月<sup class="archive-count">&nbsp;&nbsp;10</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">使用 DataBinding 精简代码
@@ -553,7 +589,7 @@
     </div>
   </div>
   <div class="archive-month">
-    <h3 class="archive-month-header">January<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
+    <h3 class="archive-month-header">一月<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
       <div class="archive-entry">
         <h3 class="archive-entry-title">如何安装 Ubuntu

@@ -15,8 +15,8 @@
       <guid>https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/</guid>
       <description>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
 完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
- 用法 在 data/friends.yml 中添加你的友链数据，示例：
-- title: &amp;#34;伞&amp;#34;  intro: &amp;#34;一只咸鱼的学习记录&amp;#34;  link: &amp;#34;https://umb.ink/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34;  intro: &amp;#34;这里是一个小白的博客&amp;#34;  link: &amp;#34;https://mzdluo123.github.io/&amp;#34;  image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
+用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &amp;#34;伞&amp;#34; intro: &amp;#34;一只咸鱼的学习记录&amp;#34; link: &amp;#34;https://umb.ink/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34; - title: &amp;#34;HelloWorld的小博客&amp;#34; intro: &amp;#34;这里是一个小白的博客&amp;#34; link: &amp;#34;https://mzdluo123.github.io/&amp;#34; image: &amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34; </description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@
       
       <guid>https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/</guid>
       <description>下载字体 下载你需要的字体，并存储在 static/fonts
-导入字体 @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
-导入多字重的字体文件 @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>
+导入字体 @font-face { font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } 应用字体 body { font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: bold; font-style: normal; } 使用 CDN @import url(&amp;#39;https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css&amp;#39;); code { font-family: &amp;#39;JetBrains Mono&amp;#39;; } 参考链接 Sulv&amp;rsquo;s Blog - Hugo博客自定义字体 PaperMod - FAQs StackOverflow - Using custom fonts using CSS?</description>
     </item>
     
   </channel>

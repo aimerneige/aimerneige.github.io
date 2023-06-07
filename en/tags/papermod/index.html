@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/tags/papermod/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -29,6 +29,34 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="papermod" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -41,6 +69,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -106,8 +140,8 @@
   <div class="entry-content">
     <p>PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.
 Full Code Put this shortcode into layouts/shortcodes/friends.html
- Usage Add your friends in data/friends.yml like this:
-- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
+Usage Add your friends in data/friends.yml like this:
+- title: &#34;伞&#34; intro: &#34;一只咸鱼的学习记录&#34; link: &#34;https://umb.ink/&#34; image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34; intro: &#34;这里是一个小白的博客&#34; link: &#34;https://mzdluo123.github.io/&#34; image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
   </div>
   <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>March 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Add Friend Link in PaperMod Blog" href="https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/"></a>
@@ -122,8 +156,8 @@ Full Code Put this shortcode into layouts/shortcodes/friends.html
   </header>
   <div class="entry-content">
     <p>Download fonts Download the fonts you need and put it into static/fonts
-Import your fonts @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
-Import multi-weight fontfamily @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular....</p>
+Import your fonts @font-face { font-family: &#34;LXGWWenKai-Regular&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } Apply it in css body { font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold....</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>March 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Set Custom Fonts in PaperMod Site" href="https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/"></a>

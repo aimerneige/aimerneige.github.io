@@ -7,13 +7,13 @@
 <meta name="robots" content="index, follow">
 <title>Enable Swagger on Spring Boot Gradle Projects | Aimer&#39;s Blog</title>
 <meta name="keywords" content="java, swagger, spring">
-<meta name="description" content="Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+<meta name="description" content="Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &#34;io.springfox:springfox-boot-starter:3.0.0&#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.">
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -32,11 +32,39 @@ package com.aimerneige.example.config;  import org.springframework.context.annot
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="Enable Swagger on Spring Boot Gradle Projects" />
-<meta property="og:description" content="Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+<meta property="og:description" content="Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &#34;io.springfox:springfox-boot-starter:3.0.0&#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox." />
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/" />
 <meta property="og:image" content="https://aimerneige.com/images/spring_swagger.svg" /><meta property="article:section" content="post" />
@@ -46,10 +74,10 @@ package com.aimerneige.example.config;  import org.springframework.context.annot
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://aimerneige.com/images/spring_swagger.svg" />
 <meta name="twitter:title" content="Enable Swagger on Spring Boot Gradle Projects"/>
-<meta name="twitter:description" content="Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle
+<meta name="twitter:description" content="Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle
 plugins { id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; ... } ... dependencies { implementation &#34;io.springfox:springfox-boot-starter:3.0.0&#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication
 Configuring Swagger Create SwaggerConfig class.
-package com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox."/>
+package com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox."/>
 
 
 <script type="application/ld+json">
@@ -78,11 +106,11 @@ package com.aimerneige.example.config;  import org.springframework.context.annot
   "@type": "BlogPosting",
   "headline": "Enable Swagger on Spring Boot Gradle Projects",
   "name": "Enable Swagger on Spring Boot Gradle Projects",
-  "description": "Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle\nplugins { id \u0026#39;org.springframework.boot\u0026#39; version \u0026#39;2.5.2\u0026#39; ... } ... dependencies { implementation \u0026#34;io.springfox:springfox-boot-starter:3.0.0\u0026#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication\nConfiguring Swagger Create SwaggerConfig class.\npackage com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.",
+  "description": "Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle\nplugins { id \u0026#39;org.springframework.boot\u0026#39; version \u0026#39;2.5.2\u0026#39; ... } ... dependencies { implementation \u0026#34;io.springfox:springfox-boot-starter:3.0.0\u0026#34; ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication\nConfiguring Swagger Create SwaggerConfig class.\npackage com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.",
   "keywords": [
     "java", "swagger", "spring"
   ],
-  "articleBody": "Adding Swagger to Spring Boot  Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs  Getting the Swagger Spring dependency Edit build.gradle\nplugins { id 'org.springframework.boot' version '2.5.2' ... } ... dependencies { implementation \"io.springfox:springfox-boot-starter:3.0.0\" ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication\nConfiguring Swagger Create SwaggerConfig class.\npackage com.aimerneige.example.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.documentation.builders.RequestHandlerSelectors; import springfox.documentation.service.ApiInfo; import springfox.documentation.spi.DocumentationType; import springfox.documentation.spring.web.plugins.Docket; import springfox.documentation.swagger2.annotations.EnableSwagger2;  @Configuration @EnableSwagger2 public class SwaggerConfig {   @Bean  public Docket apiDocket() {  return new Docket(DocumentationType.SWAGGER_2)  .apiInfo(apiInfo())  .select()  .apis(RequestHandlerSelectors.basePackage(\"com.aimerneige.example.controller\"))  .paths(PathSelectors.any())  .build();  }   private ApiInfo apiInfo() {  return new ApiInfoBuilder()  .title(\"Example API\")  .version(\"1.0\")  .build();  } } Adding details as annotations to APIs Add annotation to your controller.\n",
+  "articleBody": "Adding Swagger to Spring Boot Getting the Swagger Spring dependency Enabling Swagger in your code Configuring Swagger Adding details as annotations to APIs Getting the Swagger Spring dependency Edit build.gradle\nplugins { id 'org.springframework.boot' version '2.5.2' ... } ... dependencies { implementation \"io.springfox:springfox-boot-starter:3.0.0\" ... } Enabling Swagger in your code Add @EnableSwagger2 to SpringBootApplication\nConfiguring Swagger Create SwaggerConfig class.\npackage com.aimerneige.example.config; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import springfox.documentation.builders.ApiInfoBuilder; import springfox.documentation.builders.PathSelectors; import springfox.documentation.builders.RequestHandlerSelectors; import springfox.documentation.service.ApiInfo; import springfox.documentation.spi.DocumentationType; import springfox.documentation.spring.web.plugins.Docket; import springfox.documentation.swagger2.annotations.EnableSwagger2; @Configuration @EnableSwagger2 public class SwaggerConfig { @Bean public Docket apiDocket() { return new Docket(DocumentationType.SWAGGER_2) .apiInfo(apiInfo()) .select() .apis(RequestHandlerSelectors.basePackage(\"com.aimerneige.example.controller\")) .paths(PathSelectors.any()) .build(); } private ApiInfo apiInfo() { return new ApiInfoBuilder() .title(\"Example API\") .version(\"1.0\") .build(); } } Adding details as annotations to APIs Add annotation to your controller.\n",
   "wordCount" : "123",
   "inLanguage": "en",
   "image":"https://aimerneige.com/images/spring_swagger.svg","datePublished": "2021-12-30T15:35:21+08:00",
@@ -108,6 +136,12 @@ package com.aimerneige.example.config;  import org.springframework.context.annot
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -301,7 +335,7 @@ dependencies {
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

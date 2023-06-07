@@ -10,7 +10,7 @@
 <meta name="description" content="文章 📝 - Aimer&#39;s Blog">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -26,6 +26,34 @@
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -56,6 +84,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -122,7 +156,7 @@ GCC 工具集不仅能编译 C/C&#43;&#43; 语言，其他例如 Objective-C 、
 GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。
 GCC 的 C 编译器 是 gcc，其命令格式为 :
 Usage: gcc [options] file... GCC 下默认文扩展名的含义：
-   文件扩展名 GCC 所理解的含义     *....</p>
+文件扩展名 GCC 所理解的含义 *.c 该类文件为 C 语言的源文件 *....</p>
   </div>
   <footer class="entry-footer"><span title='2020-10-17 22:37:01 +0800 CST'>十月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to GCC 基础" href="https://aimerneige.com/zh/post/tool/gcc-basic/"></a>
@@ -137,8 +171,8 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </header>
   <div class="entry-content">
     <p>使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
- 阅读须知 在阅读本文章前，你需要准备以下内容
- 掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx）  不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
+阅读须知 在阅读本文章前，你需要准备以下内容
+掌握基础的 Linux 命令行操作 （本文章将介绍如何在 Linux 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 Windows ，请查阅其他文章。） 拥有一台 Linux 服务器 （可以购买 VPS 也可以使用 虚拟机 本文章以 VPS 为例，并购置了域名 （域名非必须） ） 拥有一个静态网站的源码 （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 hexo 生成的静态网站为例。） 知道 Nginx 是什么，有什么用 （不需要掌握 Nginx） 不同 Linux 发行版下命令会有所区别，本文章以 Ubuntu20.04 为例
 准备服务器 如果你已经有了一台服务器并安装好了 Nginx ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。
 升级系统 sudo apt update &amp;&amp; sudo apt upgrade 安装 Nginx sudo apt install nginx 启动 Nginx sudo systemctl start nginx # 开机自动启动 sudo systemctl enable nginx 测试服务 直接在浏览器访问你服务器的 ip，如果你部署了 DNS 服务的话，你也可以直接使用域名。如果哦看到 Nginx 的欢迎界面，服务器准备成功！...</p>
   </div>
@@ -153,18 +187,20 @@ Usage: gcc [options] file... GCC 下默认文扩展名的含义：
   </header>
   <div class="entry-content">
     <p>本文章项目地址 https://github.com/AimerNeige/Tutorial.git
- 计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
+计算机使用技巧 如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。
 主要介绍 Windows10 的一些使用技巧，如果你是 mac 用户，请自行查阅其他文章，但是如果你是 Linux 用户，我觉得你应该不需要看我的文章。
 杀毒软件 或许你会在较旧的电脑上见到诸如360 安全卫士，金山毒霸，电脑管家等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 务必 立即 删除它们。
- 但是，没有杀毒软件的话，电脑中毒怎么办啊？
- 如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
- 删了它们我怎么清理电脑垃圾啊？
- 在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
- 没有软件管家我不会下载软件了怎么办？
- 要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
- 没有电脑管家我如何管理系统自启动啊？
- 禁用开机自启动：
-启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。...</p>
+但是，没有杀毒软件的话，电脑中毒怎么办啊？
+如果你的电脑是刚到手的笔记本，我相信你的预装系统是 Windows10。 而 windows 本身会预装 Windows Defender ，对于一般的病毒，Windows Defender 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 火绒杀毒 https://www.huorong.cn/ 。这款软件的个人版完全免费而且没用任何广告弹窗。
+删了它们我怎么清理电脑垃圾啊？
+在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 CCleaner https://www.ccleaner.com/。
+没有软件管家我不会下载软件了怎么办？
+要养成去官网下载软件的好习惯，比如我们想要安装 QQ 就使用搜索引擎搜索 QQ 的官网，找到 QQ 的官网 http://im.qq.com/ ，然后在官网下载安装包。类是地，我们同样可以在 Visual Studio Code 的官网 https://code.visualstudio.com/ 上下载 Visual Studio Code 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。
+没有电脑管家我如何管理系统自启动啊？
+禁用开机自启动：
+启动任务管理器，点击 启动 找到想要禁用的自启项，右击，选择禁用。
+设置开机自启动：
+按住 Win 键（左下角有 windows 徽标的按键）然后按 R, 在弹出的运行框中输入 shell:startup 将软件的 快捷方式 放在这个目录下即可。...</p>
   </div>
   <footer class="entry-footer"><span title='2020-08-26 22:46:52 +0800 CST'>八月 26, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 写给小白的 win10 使用技巧" href="https://aimerneige.com/zh/post/others/tips-using-windows10/"></a>
@@ -185,9 +221,8 @@ language: java star 数
 stars:&gt;1000 fork 数
 forks:&gt;500 更新时间
 pushed:&gt;2020-08-01 使用示例
-in:name marp in:description theme stars:&gt;5 pushed:&gt;2020-01-01  参考链接:
-https://www.youtube.com/watch?v=Uj6WWAqg0NY
- </p>
+in:name marp in:description theme stars:&gt;5 pushed:&gt;2020-01-01 参考链接:
+https://www.youtube.com/watch?v=Uj6WWAqg0NY</p>
   </div>
   <footer class="entry-footer"><span title='2020-08-01 07:15:56 +0800 CST'>八月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 优雅地使用 GitHub" href="https://aimerneige.com/zh/post/others/use-github-gracefully/"></a>
@@ -200,11 +235,11 @@ https://www.youtube.com/watch?v=Uj6WWAqg0NY
   </header>
   <div class="entry-content">
     <p>首先来看下 w3schools 的解释：
- Example Check if the number 5 is an integer:
-x = isinstance(5, int)  Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+Example Check if the number 5 is an integer:
+x = isinstance(5, int) Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
 If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
- Syntax isinstance(object, type)
-Parameter Values    Parameter Description     object Required....</p>
+Syntax isinstance(object, type)
+Parameter Values Parameter Description object Required. An object. type A type or a class, or a tuple of types and/or classes More Examples Example Check if “Hello” is one of the types described in the type parameter:...</p>
   </div>
   <footer class="entry-footer"><span title='2020-05-29 09:38:41 +0800 CST'>五月 29, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Python 小知识 isinstance" href="https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/"></a>
@@ -217,9 +252,10 @@ Parameter Values    Parameter Description     object Required....</p>
   </header>
   <div class="entry-content">
     <p>首先来看下 w3schools 的解释
- Example Test if a condition returns True:
-x = &#34;hello&#34;  #if condition returns True, then nothing happens: assert x == &#34;hello&#34;  #if condition returns False, AssertionError is raised: assert x == &#34;goodbye&#34; Definition and Usage The assert keyword is used when debugging code.
-The assert keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError....</p>
+Example Test if a condition returns True:
+x = &#34;hello&#34; #if condition returns True, then nothing happens: assert x == &#34;hello&#34; #if condition returns False, AssertionError is raised: assert x == &#34;goodbye&#34; Definition and Usage The assert keyword is used when debugging code.
+The assert keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.
+You can write a message to be written if the code returns False, check the example below....</p>
   </div>
   <footer class="entry-footer"><span title='2020-05-28 23:10:07 +0800 CST'>五月 28, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Python 小知识 assert" href="https://aimerneige.com/zh/post/python/daily-python-tips-assert/"></a>
@@ -253,10 +289,12 @@ GitHub 主页
 简单地查看下 官方文档 。
 emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。
 随便查了下，发现了这个：
- from PIL import Image  image1 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image1.png&#39;) image2 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image2.png&#39;) image3 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image3.png&#39;) image4 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image4.png&#39;)  im1 = image1.convert(&#39;RGB&#39;) im2 = image2.convert(&#39;RGB&#39;) im3 = image3.convert(&#39;RGB&#39;) im4 = image4.convert(&#39;RGB&#39;)  imagelist = [im2,im3,im4]  im1.save(r&#39;C:\Users\Ron\Desktop\Test\myImages.pdf&#39;,save_all=True, append_images=imagelist) 来源： https://datatofish.com/images-to-pdf-python/
- 不需要仔细看又臭又长的官方文档了，nice！
+from PIL import Image image1 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image1.png&#39;) image2 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image2.png&#39;) image3 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image3.png&#39;) image4 = Image.open(r&#39;C:\Users\Ron\Desktop\Test\image4.png&#39;) im1 = image1.convert(&#39;RGB&#39;) im2 = image2.convert(&#39;RGB&#39;) im3 = image3.convert(&#39;RGB&#39;) im4 = image4.convert(&#39;RGB&#39;) imagelist = [im2,im3,im4] im1.save(r&#39;C:\Users\Ron\Desktop\Test\myImages.pdf&#39;,save_all=True, append_images=imagelist) 来源： https://datatofish.com/images-to-pdf-python/
+不需要仔细看又臭又长的官方文档了，nice！
 了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!
-代码很简单，直接上源码了：...</p>
+代码很简单，直接上源码了：
+源码 项目文件目录：
+- comic/ # 包含了漫画的图片 - example_001....</p>
   </div>
   <footer class="entry-footer"><span title='2020-05-27 23:36:38 +0800 CST'>五月 27, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读" href="https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/"></a>
@@ -269,12 +307,12 @@ emmm，官方文档的东西有点多，为了快速解决问题还是直接查�
   </header>
   <div class="entry-content">
     <p>本来是在查资料，无意间看到了这个知乎文章，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自Medium的文章，但是原文章是英语写的，为了帮到那些英语不太好的 Python 学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）
-  基于 Medium 的文章 《20 Python Snippets You Should Learn Today》 ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。
+基于 Medium 的文章 《20 Python Snippets You Should Learn Today》 ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。
 大部分示例代码均引用自 Medium 《20 Python Snippets You Should Learn Today》
- 1 反转字符串 下面的代码使用 Python 切片操作来反转字符串。
-# Reversing a string using slicing  my_string = &#34;ABCDE&#34; reversed_string = my_string[::-1]  print(reversed_string)  # Output # EDCBA 这里用到的是 Python切片
+1 反转字符串 下面的代码使用 Python 切片操作来反转字符串。
+# Reversing a string using slicing my_string = &#34;ABCDE&#34; reversed_string = my_string[::-1] print(reversed_string) # Output # EDCBA 这里用到的是 Python切片
 切片某种意义上就是对如下代码的书写进行了简化（不考虑 Python 中-1 的情况）
-// [a🅱️c] for (int i = a, i &lt; b; i = i &#43; c) {  // do something } 推荐阅读： 《How to reverse a string in Python?...</p>
+// [a🅱️c] for (int i = a, i &lt; b; i = i &#43; c) { // do something } 推荐阅读： 《How to reverse a string in Python?...</p>
   </div>
   <footer class="entry-footer"><span title='2020-04-13 20:27:22 +0800 CST'>四月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 20 个 Python 进阶技巧" href="https://aimerneige.com/zh/post/python/20-python-skills/"></a>
@@ -289,8 +327,8 @@ emmm，官方文档的东西有点多，为了快速解决问题还是直接查�
     <p>在构建布局的时候，是不是感到要写很多的 findViewById 很浪费时间呢？尤其是布局文件变化的时候，也要在 Activity 中更改很多内容，极大的降低了开发效率，而谷歌在 JetPack 中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 DataBinding 下面来介绍 DataBinding 的使用
 用到的依赖 implementation &#39;androidx.lifecycle:lifecycle-extensions:2.2.0&#39;
 开启 dataBinding 在 app 的 build.gradle 文件中添加以下内容
-dataBinding {  enabled true } 位置参考
-android {  compileSdkVersion 29  buildToolsVersion &#34;29.0.3&#34;  defaultConfig {  applicationId &#34;com.aimerneige.databindingdemo&#34;  minSdkVersion 24  targetSdkVersion 29  versionCode 1  versionName &#34;1.0&#34;  testInstrumentationRunner &#34;androidx.test.runner.AndroidJUnitRunner&#34;  dataBinding {  enabled true  }  }  buildTypes {  release {  minifyEnabled false  proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize....</p>
+dataBinding { enabled true } 位置参考
+android { compileSdkVersion 29 buildToolsVersion &#34;29.0.3&#34; defaultConfig { applicationId &#34;com.aimerneige.databindingdemo&#34; minSdkVersion 24 targetSdkVersion 29 versionCode 1 versionName &#34;1.0&#34; testInstrumentationRunner &#34;androidx.test.runner.AndroidJUnitRunner&#34; dataBinding { enabled true } } buildTypes { release { minifyEnabled false proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39; } } } 为布局文件提供 dataBinding 支持 在布局文件开头点击黄色灯泡（或按ALT &#43; Enter），选择以下操作将布局文件转换为 data binding layout ，获取 data binding 支持...</p>
   </div>
   <footer class="entry-footer"><span title='2020-02-22 00:43:15 +0800 CST'>二月 22, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 使用 DataBinding 精简代码" href="https://aimerneige.com/zh/post/android/data-binding/"></a>

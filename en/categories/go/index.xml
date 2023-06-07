@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/en/post/go/how-to-add-multiple-tags-to-go-struct/</guid>
       <description> It is easy but always be forgotten, so write this post
- Incorrect type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } Correct type Page struct {  PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;`  Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } More tags Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` Links  StackOverflow - How to define multiple name tags in a struct  </description>
+Incorrect type Page struct { PageId string `bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;` Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;` } Correct type Page struct { PageId string `bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;` Meta map[string]interface{} `bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;` } More tags Items []Item `gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;` Links StackOverflow - How to define multiple name tags in a struct </description>
     </item>
     
   </channel>

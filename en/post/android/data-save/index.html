@@ -7,10 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Android Develop Data Save | Aimer&#39;s Blog</title>
 <meta name="keywords" content="android">
-<meta name="description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &#34;data&#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.">
+<meta name="description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/android/data-save/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -29,8 +29,36 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="Android Develop Data Save" />
-<meta property="og:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &#34;data&#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer." />
+<meta property="og:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/en/post/android/data-save/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-08-10T00:50:41+08:00" />
@@ -38,7 +66,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android Develop Data Save"/>
-<meta name="twitter:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // &#34;data&#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer."/>
+<meta name="twitter:description" content="Save data to file save data // This function will save the data of inputText into file &#34;data&#34; as text file // The file &#34;data&#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // &#34;data&#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(&#34;data&#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e."/>
 
 
 <script type="application/ld+json">
@@ -67,11 +95,11 @@
   "@type": "BlogPosting",
   "headline": "Android Develop Data Save",
   "name": "Android Develop Data Save",
-  "description": "Save data to file save data // This function will save the data of inputText into file \u0026#34;data\u0026#34; as text file // The file \u0026#34;data\u0026#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // \u0026#34;data\u0026#34; is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(\u0026#34;data\u0026#34;, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.",
+  "description": "Save data to file save data // This function will save the data of inputText into file \u0026#34;data\u0026#34; as text file // The file \u0026#34;data\u0026#34; will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // \u0026#34;data\u0026#34; is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(\u0026#34;data\u0026#34;, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.",
   "keywords": [
     "android"
   ],
-  "articleBody": "Save data to file save data // This function will save the data of inputText into file \"data\" as text file // The file \"data\" will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) {  try {  // \"data\" is the name of the file you saved on phone storage  // You can change it as you want  val output = openFileOutput(\"data\", Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.use {  it.write(inputText)  }  } catch (e: IOException) {  e.printStackTrace()  } } load data // This function will try to load the data at a file named \"data\" // which is on /data/data/com.aimerneige.example/files/data fun load(): String {  // a StringBuilder to load data  val content = StringBuilder()  try {  // \"data\" is the name of the file you want to find on disk  val input = openFileInput(\"data\")  val reader = BufferedReader(InputStreamReader(input))  reader.use {  reader.forEachLine {  content.append(it)  }  }  }  catch (e: IOException) {  e.printStackTrace()  }  return content.toString() } You can also use like this:\nsave data with file name fun save(data_input: String, file_name: String) {  try {  val output = openFileOutput(file_name, Context.MODE_PRIVATE)  val writer = BufferedWriter(OutputStreamWriter(output))  writer.use {  it.write(data_input)  }  } catch (e: IOException) {  e.printStackTrace()  } } read data with file name fun load(file_name: String): String {  val content = StringBuilder()  try {  val input = openFileInput(file_name)  val reader = BufferedReader(InputStreamReader(input))  reader.use {  reader.forEachLine {  content.append(it)  }  }  }  catch (e: IOException) {  e.printStackTrace()  }  return content.toString() } In this way, all of the file will saved into the file /data/data/{package-name}/files/{file-name}.\nSave data with SharedPreferences save data // This function will save much data with key-value into file \"data.xml\" // The file \"data.xml\" will be saved to /data/data/com.aimerneige.example/shared_prefs/data.xml button_save.setOnClickListener {  // \"data\" is the name of the file you saved on phone storage  // You can change it as you want  val editor = getSharedPreferences(\"data\", Context.MODE_PRIVATE).edit()  editor.putString(\"name\", \"Tom\")  editor.putInt(\"age\", 28)  editor.putBoolean(\"married\", false)  editor.apply() } load data // This function will try to load the data at \"data.xml\" // which is on /data/data/com.aimerneige.example/shared_prefs/data.xml button_load.setOnClickListener {  // \"data\" is the name of the file without the .xml  val prefs = getSharedPreferences(\"data\", Context.MODE_PRIVATE)  // needless to check if the file contains the data  // just use a val to read it, if failed, use the default value  val name = prefs.getString(\"name\", \"\")  val age = prefs.getInt(\"age\", 0)  val married = prefs.getBoolean(\"married\", false)  val sb = StringBuilder()  sb.append(\"Name: \" + name + \" \")  sb.append(\"Age: \" + age.toString() + \" \")  sb.append(\"Married: \" + married.toString() + \".\")  Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show() } In this way, all of the file will saved into the file /data/data/{package-name}/shared_prefs/{file-name}.xml.\nOr, you can get a SharedPreferences in this way:\nval prefs = getSharedPreferences(Context.MODE_PRIVATE) This will save data into the file /data/data/{package-name}/shared_prefs/{current-activity-class-name}.xml\n",
+  "articleBody": "Save data to file save data // This function will save the data of inputText into file \"data\" as text file // The file \"data\" will be saved to /data/data/com.aimerneige.example/files/data fun save(inputText: String) { try { // \"data\" is the name of the file you saved on phone storage // You can change it as you want val output = openFileOutput(\"data\", Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(inputText) } } catch (e: IOException) { e.printStackTrace() } } load data // This function will try to load the data at a file named \"data\" // which is on /data/data/com.aimerneige.example/files/data fun load(): String { // a StringBuilder to load data val content = StringBuilder() try { // \"data\" is the name of the file you want to find on disk val input = openFileInput(\"data\") val reader = BufferedReader(InputStreamReader(input)) reader.use { reader.forEachLine { content.append(it) } } } catch (e: IOException) { e.printStackTrace() } return content.toString() } You can also use like this:\nsave data with file name fun save(data_input: String, file_name: String) { try { val output = openFileOutput(file_name, Context.MODE_PRIVATE) val writer = BufferedWriter(OutputStreamWriter(output)) writer.use { it.write(data_input) } } catch (e: IOException) { e.printStackTrace() } } read data with file name fun load(file_name: String): String { val content = StringBuilder() try { val input = openFileInput(file_name) val reader = BufferedReader(InputStreamReader(input)) reader.use { reader.forEachLine { content.append(it) } } } catch (e: IOException) { e.printStackTrace() } return content.toString() } In this way, all of the file will saved into the file /data/data/{package-name}/files/{file-name}.\nSave data with SharedPreferences save data // This function will save much data with key-value into file \"data.xml\" // The file \"data.xml\" will be saved to /data/data/com.aimerneige.example/shared_prefs/data.xml button_save.setOnClickListener { // \"data\" is the name of the file you saved on phone storage // You can change it as you want val editor = getSharedPreferences(\"data\", Context.MODE_PRIVATE).edit() editor.putString(\"name\", \"Tom\") editor.putInt(\"age\", 28) editor.putBoolean(\"married\", false) editor.apply() } load data // This function will try to load the data at \"data.xml\" // which is on /data/data/com.aimerneige.example/shared_prefs/data.xml button_load.setOnClickListener { // \"data\" is the name of the file without the .xml val prefs = getSharedPreferences(\"data\", Context.MODE_PRIVATE) // needless to check if the file contains the data // just use a val to read it, if failed, use the default value val name = prefs.getString(\"name\", \"\") val age = prefs.getInt(\"age\", 0) val married = prefs.getBoolean(\"married\", false) val sb = StringBuilder() sb.append(\"Name: \" + name + \" \") sb.append(\"Age: \" + age.toString() + \" \") sb.append(\"Married: \" + married.toString() + \".\") Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show() } In this way, all of the file will saved into the file /data/data/{package-name}/shared_prefs/{file-name}.xml.\nOr, you can get a SharedPreferences in this way:\nval prefs = getSharedPreferences(Context.MODE_PRIVATE) This will save data into the file /data/data/{package-name}/shared_prefs/{current-activity-class-name}.xml\n",
   "wordCount" : "448",
   "inLanguage": "en",
   "datePublished": "2020-08-10T00:50:41+08:00",
@@ -97,6 +125,12 @@
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -336,7 +370,7 @@
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

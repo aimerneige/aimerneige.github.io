@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/tags/embed/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -28,6 +28,34 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="embed" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -40,6 +68,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -106,8 +140,8 @@
     <p>前言 在写项目的时候，有时候不可避免地要处理静态文件，如果将源码直接作为软件提供问题不大，使用相对路径读取这些静态文件就可以了。但是如果项目作为库向外公布显然不可行，使用相对路径是读取不到文件的，而使用绝对路径却会带来更大的问题：因为不同的人使用，路径绝对不可能完全一致的。如果要求用户在指定路径下放置这些依赖的静态文件，虽然可行但是会给用户带来很大的困扰，而且这样的实现方式显然不够优雅。这时候，将这些静态文件一起打包进可执行文件似乎是一个完美的解决方案，那么如何实现呢？最简单的方法是硬编码，将静态文件以文本或字节数组的形式直接编入源代码，go 也有一些库帮你自动生成代码，比如 go-bindata。很明显，这个库已经终止维护了，这是因为在 go 1.16 版本，官方发布了 embed 完美地解决了这个问题。本文简要介绍 embed 的一些基础用法。
 embed 假设我们有一个文件 hello.txt
 Hello World! Hello go embed! 我们要写一个程序读取其中的内容并输出到终端：
-// file: main.go package main  import ( 	&#34;fmt&#34; 	&#34;os&#34; )  func main() { 	s, err := os.ReadFile(&#34;./hello.txt&#34;) 	if err != nil { 	panic(err) 	} 	fmt.Println(string(s)) } 很简单，不是吗？
-➜ tree . . ├── go.mod ├── hello.txt └── main.go  0 directories, 3 files  ➜ go build main....</p>
+// file: main.go package main import ( &#34;fmt&#34; &#34;os&#34; ) func main() { s, err := os.ReadFile(&#34;./hello.txt&#34;) if err != nil { panic(err) } fmt.Println(string(s)) } 很简单，不是吗？
+➜ tree . . ├── go.mod ├── hello.txt └── main.go 0 directories, 3 files ➜ go build main.go ➜ ./main Hello World! Hello go embed!...</p>
   </div>
   <footer class="entry-footer"><span title='2022-08-13 23:57:11 +0800 CST'>八月 13, 2022</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Golang embed" href="https://aimerneige.com/zh/post/go/go-embed/"></a>

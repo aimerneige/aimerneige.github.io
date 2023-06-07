@@ -24,7 +24,7 @@
       <guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</guid>
       <description>Install docker You need to install docker first before get started.
 Take fedora as an example, just simply run these command:
-# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download.</description>
+# First, remove old docker packages sudo dnf remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \ --add-repo \ https://download.</description>
     </item>
     
     <item>
@@ -34,10 +34,10 @@ Take fedora as an example, just simply run these command:
       
       <guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid>
       <description>KVM: Kernel-Based Virtual Machine
-   Products Company     VirtualBox Oracle   VMWare VMWare   Hyper-V Microsoft    First, use x86 laptop or pc.
+Products Company VirtualBox Oracle VMWare VMWare Hyper-V Microsoft First, use x86 laptop or pc.
 # check if kvm avaiable (output should bigger than 0) egrep -c &amp;#39;(vmx|svm)&amp;#39; /proc/cpuinfo if output is 0, enable vt on BIOS.
 Install KVM on fedora36
-# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools  qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs  sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)</description>
+# Install required virtualization packages sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm # Also install useful tools for virtual machine management sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools qemu-kvm: the emulator itself libvirt-daemon: runs virtualization in background birdge-utils: important networking dependencies virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs sudo usermod -aG libvirt aimer sudo usermod -aG kvm aimer sudo systemctl start libvirtd sudo systemctl enable libvirtd Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)</description>
     </item>
     
     <item>
@@ -59,10 +59,10 @@ sudo dnf install refind-0.6.11-1.x86_64.rpm sudo rpm -Uvh refind-0.6.11-1.x86_64
       <pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid>
-      <description>OneDrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive  Authorize this app visiting:  https://.....  Enter the response uri: Copy the url from browser like this:
+      <description>OneDrive on Linux Install sudo dnf install onedrive Login [user@hostname ~]$ onedrive Authorize this app visiting: https://..... Enter the response uri: Copy the url from browser like this:
 https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Paste it into terminal then press enter:
 The Final result will like this:
-[user@hostname ~]$ onedrive Authorize this app visiting:  https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient  Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt;  Application has been successfully authorized, however no additional command switches were provided.</description>
+[user@hostname ~]$ onedrive Authorize this app visiting: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope=Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type=code&amp;amp;redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code=&amp;lt;redacted&amp;gt; Application has been successfully authorized, however no additional command switches were provided. Please use &amp;#39;onedrive --help&amp;#39; for further assistance in regards to running this application.</description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@ The Final result will like this:
       
       <guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid>
       <description>SMB File Share Update System sudo apt update Install Samba sudo apt install samba Edit Share Config sudo vim /etc/samba/smb.conf Add share point at the bottom of the config file
-[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username .</description>
+[share-name] comment = Your Comment Here path = /path/to/share/dir read only = no browsable = yes Start Samba sudo systemctl start smbd.service Enable Autostart sudo systemctl enable smbd.service Update Firewall Rules sudo ufw allow samba Setting User Password sudo smbpasswd -a username Warning</description>
     </item>
     
     <item>

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/tags/css/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -29,6 +29,34 @@
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="css" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -41,6 +69,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -106,8 +140,8 @@
   <div class="entry-content">
     <p>PaperMod 是一个非常棒的博客主题，但是它不支持友链，所以你要自己写一些代码。
 完整代码 把下面的代码存储在 layouts/shortcodes/friends.html
- 用法 在 data/friends.yml 中添加你的友链数据，示例：
-- title: &#34;伞&#34;  intro: &#34;一只咸鱼的学习记录&#34;  link: &#34;https://umb.ink/&#34;  image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34;  intro: &#34;这里是一个小白的博客&#34;  link: &#34;https://mzdluo123.github.io/&#34;  image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
+用法 在 data/friends.yml 中添加你的友链数据，示例：
+- title: &#34;伞&#34; intro: &#34;一只咸鱼的学习记录&#34; link: &#34;https://umb.ink/&#34; image: &#34;https://avatars.githubusercontent.com/u/53655863?v=4&#34; - title: &#34;HelloWorld的小博客&#34; intro: &#34;这里是一个小白的博客&#34; link: &#34;https://mzdluo123.github.io/&#34; image: &#34;https://avatars.githubusercontent.com/u/23146087?v=4&#34; </p>
   </div>
   <footer class="entry-footer"><span title='2023-03-12 13:25:06 +0800 CST'>三月 12, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 PaperMod 博客中添加友链" href="https://aimerneige.com/zh/post/web/add-friend-link-in-papermod-blog/"></a>
@@ -122,8 +156,8 @@
   </header>
   <div class="entry-content">
     <p>下载字体 下载你需要的字体，并存储在 static/fonts
-导入字体 @font-face {  font-family: &#34;LXGWWenKai-Regular&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body {  font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
-导入多字重的字体文件 @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;);  font-weight: normal;  font-style: normal; }  @font-face {  font-family: &#34;LXGWWenKai&#34;;  src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold....</p>
+导入字体 @font-face { font-family: &#34;LXGWWenKai-Regular&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); } 应用字体 body { font-family: LXGWWenKai-Regular; } 在 PaperMod 中应用 把你自己的 css 文件文件放在 assets/css/extended/custom_fonts.css
+导入多字重的字体文件 @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&#34;) format(&#34;truetype&#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&#34;) format(&#34;truetype&#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &#34;LXGWWenKai&#34;; src: url(&#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.ttf&#34;) format(&#34;truetype&#34;); font-weight: bold; font-style: normal; } 使用 CDN @import url(&#39;https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css&#39;); code { font-family: &#39;JetBrains Mono&#39;; } 参考链接 Sulv’s Blog - Hugo博客自定义字体 PaperMod - FAQs StackOverflow - Using custom fonts using CSS?...</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-02 20:54:06 +0800 CST'>三月 2, 2023</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 在 PaperMod 博客中设置自定义字体" href="https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/"></a>

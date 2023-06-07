@@ -13,7 +13,7 @@
       <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid>
-      <description>Install  Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it  Enable usb debug  Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS  </description>
+      <description>Install Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it Enable usb debug Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS </description>
     </item>
     
   </channel>

@@ -7,17 +7,21 @@
 <meta name="robots" content="index, follow">
 <title>ToolBar | Aimer&#39;s Blog</title>
 <meta name="keywords" content="android">
-<meta name="description" content="MaterialDesign 依赖库  implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar  android:id=&#34;@&#43;id/toolBar&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  &lt;!--其他属性设置--&gt;  /&gt;  关于旧版的说明
+<meta name="description" content="MaterialDesign 依赖库 implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar android:id=&#34;@&#43;id/toolBar&#34; android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; &lt;!--其他属性设置--&gt; /&gt; 关于旧版的说明
 旧版需要使用兼容包
 compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
 使用以下布局方法
-&lt;android.support.v7.widget.Toolbar  android:id=&#34;@&#43;id/toolbar&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;&gt;  &lt;TextView  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;标题&#34;  android:textSize=&#34;20sp&#34;/&gt;  &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
- 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(&#34;AppBarLayoutTest&#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错
+&lt;android.support.v7.widget.Toolbar android:id=&#34;@&#43;id/toolbar&#34; android:layout_width=&#34;wrap_content&#34; android:layout_height=&#34;wrap_content&#34;&gt; &lt;TextView android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; android:text=&#34;标题&#34; android:textSize=&#34;20sp&#34;/&gt; &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(&#34;AppBarLayoutTest&#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错
 import androidx.appcompat.widget.Toolbar;
- 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。">
+添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;menu xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34;&gt; &lt;item android:id=&#34;@&#43;id/toolbar_setting&#34; android:icon=&#34;@drawable/ic_setting&#34; android:title=&#34;@string/toolbar_setting&#34; app:showAsAction=&#34;always&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_about&#34; android:title=&#34;@string/toolbar_about&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_exit&#34; android:title=&#34;@string/toolbar_exit&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;/menu&gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater().">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/android/toolbar/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -36,15 +40,47 @@ import androidx.appcompat.widget.Toolbar;
         }
 
     </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
 </noscript><meta property="og:title" content="ToolBar" />
-<meta property="og:description" content="MaterialDesign 依赖库  implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar  android:id=&#34;@&#43;id/toolBar&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  &lt;!--其他属性设置--&gt;  /&gt;  关于旧版的说明
+<meta property="og:description" content="MaterialDesign 依赖库 implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar android:id=&#34;@&#43;id/toolBar&#34; android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; &lt;!--其他属性设置--&gt; /&gt; 关于旧版的说明
 旧版需要使用兼容包
 compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
 使用以下布局方法
-&lt;android.support.v7.widget.Toolbar  android:id=&#34;@&#43;id/toolbar&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;&gt;  &lt;TextView  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;标题&#34;  android:textSize=&#34;20sp&#34;/&gt;  &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
- 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(&#34;AppBarLayoutTest&#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错
+&lt;android.support.v7.widget.Toolbar android:id=&#34;@&#43;id/toolbar&#34; android:layout_width=&#34;wrap_content&#34; android:layout_height=&#34;wrap_content&#34;&gt; &lt;TextView android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; android:text=&#34;标题&#34; android:textSize=&#34;20sp&#34;/&gt; &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(&#34;AppBarLayoutTest&#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错
 import androidx.appcompat.widget.Toolbar;
- 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。" />
+添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;menu xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34;&gt; &lt;item android:id=&#34;@&#43;id/toolbar_setting&#34; android:icon=&#34;@drawable/ic_setting&#34; android:title=&#34;@string/toolbar_setting&#34; app:showAsAction=&#34;always&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_about&#34; android:title=&#34;@string/toolbar_about&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_exit&#34; android:title=&#34;@string/toolbar_exit&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;/menu&gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater()." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aimerneige.com/zh/post/android/toolbar/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-02-18T00:05:23+08:00" />
@@ -52,14 +88,18 @@ import androidx.appcompat.widget.Toolbar;
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ToolBar"/>
-<meta name="twitter:description" content="MaterialDesign 依赖库  implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar  android:id=&#34;@&#43;id/toolBar&#34;  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  &lt;!--其他属性设置--&gt;  /&gt;  关于旧版的说明
+<meta name="twitter:description" content="MaterialDesign 依赖库 implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar &lt;androidx.appcompat.widget.Toolbar android:id=&#34;@&#43;id/toolBar&#34; android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; &lt;!--其他属性设置--&gt; /&gt; 关于旧版的说明
 旧版需要使用兼容包
 compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
 使用以下布局方法
-&lt;android.support.v7.widget.Toolbar  android:id=&#34;@&#43;id/toolbar&#34;  android:layout_width=&#34;wrap_content&#34;  android:layout_height=&#34;wrap_content&#34;&gt;  &lt;TextView  android:layout_width=&#34;match_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;标题&#34;  android:textSize=&#34;20sp&#34;/&gt;  &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
- 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(&#34;AppBarLayoutTest&#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错
+&lt;android.support.v7.widget.Toolbar android:id=&#34;@&#43;id/toolbar&#34; android:layout_width=&#34;wrap_content&#34; android:layout_height=&#34;wrap_content&#34;&gt; &lt;TextView android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;wrap_content&#34; android:text=&#34;标题&#34; android:textSize=&#34;20sp&#34;/&gt; &lt;/android.support.v7.widget.Toolbar&gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(&#34;AppBarLayoutTest&#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错
 import androidx.appcompat.widget.Toolbar;
- 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。"/>
+添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;menu xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34;&gt; &lt;item android:id=&#34;@&#43;id/toolbar_setting&#34; android:icon=&#34;@drawable/ic_setting&#34; android:title=&#34;@string/toolbar_setting&#34; app:showAsAction=&#34;always&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_about&#34; android:title=&#34;@string/toolbar_about&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;item android:id=&#34;@&#43;id/toolbar_exit&#34; android:title=&#34;@string/toolbar_exit&#34; app:showAsAction=&#34;never&#34; /&gt; &lt;/menu&gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater()."/>
 
 
 <script type="application/ld+json">
@@ -88,11 +128,11 @@ import androidx.appcompat.widget.Toolbar;
   "@type": "BlogPosting",
   "headline": "ToolBar",
   "name": "ToolBar",
-  "description": "MaterialDesign 依赖库  implementation \u0026#39;com.google.android.material:material:1.1.0\u0026#39; 在布局文件中加入 TooBar \u0026lt;androidx.appcompat.widget.Toolbar  android:id=\u0026#34;@+id/toolBar\u0026#34;  android:layout_width=\u0026#34;match_parent\u0026#34;  android:layout_height=\u0026#34;wrap_content\u0026#34;  \u0026lt;!--其他属性设置--\u0026gt;  /\u0026gt;  关于旧版的说明\n旧版需要使用兼容包\ncompile 'com.android.support:appcompat-v7:23.1.1'\n使用以下布局方法\n\u0026lt;android.support.v7.widget.Toolbar  android:id=\u0026#34;@+id/toolbar\u0026#34;  android:layout_width=\u0026#34;wrap_content\u0026#34;  android:layout_height=\u0026#34;wrap_content\u0026#34;\u0026gt;  \u0026lt;TextView  android:layout_width=\u0026#34;match_parent\u0026#34;  android:layout_height=\u0026#34;wrap_content\u0026#34;  android:text=\u0026#34;标题\u0026#34;  android:textSize=\u0026#34;20sp\u0026#34;/\u0026gt;  \u0026lt;/android.support.v7.widget.Toolbar\u0026gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用\n 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(\u0026#34;AppBarLayoutTest\u0026#34;);  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错\nimport androidx.appcompat.widget.Toolbar;\n 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。",
+  "description": "MaterialDesign 依赖库 implementation \u0026#39;com.google.android.material:material:1.1.0\u0026#39; 在布局文件中加入 TooBar \u0026lt;androidx.appcompat.widget.Toolbar android:id=\u0026#34;@+id/toolBar\u0026#34; android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; \u0026lt;!--其他属性设置--\u0026gt; /\u0026gt; 关于旧版的说明\n旧版需要使用兼容包\ncompile 'com.android.support:appcompat-v7:23.1.1'\n使用以下布局方法\n\u0026lt;android.support.v7.widget.Toolbar android:id=\u0026#34;@+id/toolbar\u0026#34; android:layout_width=\u0026#34;wrap_content\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34;\u0026gt; \u0026lt;TextView android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; android:text=\u0026#34;标题\u0026#34; android:textSize=\u0026#34;20sp\u0026#34;/\u0026gt; \u0026lt;/android.support.v7.widget.Toolbar\u0026gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用\n在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(\u0026#34;AppBarLayoutTest\u0026#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错\nimport androidx.appcompat.widget.Toolbar;\n添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。\n官方文档：https://developer.android.com/reference/android/widget/Toolbar\n添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。\nshowAsAction 属性：\nalways:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） \u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;menu xmlns:android=\u0026#34;http://schemas.android.com/apk/res/android\u0026#34; xmlns:app=\u0026#34;http://schemas.android.com/apk/res-auto\u0026#34;\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_setting\u0026#34; android:icon=\u0026#34;@drawable/ic_setting\u0026#34; android:title=\u0026#34;@string/toolbar_setting\u0026#34; app:showAsAction=\u0026#34;always\u0026#34; /\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_about\u0026#34; android:title=\u0026#34;@string/toolbar_about\u0026#34; app:showAsAction=\u0026#34;never\u0026#34; /\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_exit\u0026#34; android:title=\u0026#34;@string/toolbar_exit\u0026#34; app:showAsAction=\u0026#34;never\u0026#34; /\u0026gt; \u0026lt;/menu\u0026gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater().",
   "keywords": [
     "android"
   ],
-  "articleBody": "MaterialDesign 依赖库  implementation 'com.google.android.material:material:1.1.0' 在布局文件中加入 TooBar   android:id=\"@+id/toolBar\"  android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"    /  关于旧版的说明\n旧版需要使用兼容包\ncompile 'com.android.support:appcompat-v7:23.1.1'\n使用以下布局方法\n  android:id=\"@+id/toolbar\"  android:layout_width=\"wrap_content\"  android:layout_height=\"wrap_content\"    android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"  android:text=\"标题\"  android:textSize=\"20sp\"/   很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用\n 在 MainActivity 中引用 Toolbar  Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局  toolbar.setTitle(\"AppBarLayoutTest\");  setSupportActionBar(toolbar);  导包的时候导这个，不要导错了，否则会报错\nimport androidx.appcompat.widget.Toolbar;\n 添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。\n 官方文档：https://developer.android.com/reference/android/widget/Toolbar\n 添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。\nshowAsAction 属性：\n always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里）    xmlns:android=\"http://schemas.android.com/apk/res/android\"  xmlns:app=\"http://schemas.android.com/apk/res-auto\"     android:id=\"@+id/toolbar_setting\"  android:icon=\"@drawable/ic_setting\"  android:title=\"@string/toolbar_setting\"  app:showAsAction=\"always\" /     android:id=\"@+id/toolbar_about\"  android:title=\"@string/toolbar_about\"  app:showAsAction=\"never\" /     android:id=\"@+id/toolbar_exit\"  android:title=\"@string/toolbar_exit\"  app:showAsAction=\"never\" /   在主菜单中引用菜单的布局文件  @Override  public boolean onCreateOptionsMenu(Menu menu) {  getMenuInflater().inflate(R.menu.toolbar, menu);  return true;  } 设置菜单点击事件  @Override  public boolean onOptionsItemSelected(@NonNull MenuItem item) {  switch (item.getItemId()) {  case android.R.id.home:  drawerLayout.openDrawer(GravityCompat.START);  break;  case R.id.toolbar_setting:  Toast.makeText(MainActivity.this, \"Waiting for coding for setting\", Toast.LENGTH_SHORT).show();  break;  case R.id.toolbar_about:  Toast.makeText(MainActivity.this, \"Waiting for coding for about\", Toast.LENGTH_SHORT).show();  break;  case R.id.toolbar_exit:  Toast.makeText(MainActivity.this, \"Waiting for coding for exit\", Toast.LENGTH_SHORT).show();  break;  default:  break;  }  return true;  } AppBarLayout 使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。\n这里省略了属性，主要关注布局层次即可。\n  android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"     android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"/     android:layout_width=\"match_parent\"  android:layout_height=\"46dp\"      用 AppBarLayout 套住 ToolBar 即可，内部还可以嵌套一个 TabLayout。\n你也可以将整个布局放置在 CoordinatorLayout 中实现更好的效果。\n完整代码 代码很垃圾，只是一个壳子，凑合看\n   android:id=\"@+id/draw_layout\"  xmlns:android=\"http://schemas.android.com/apk/res/android\"  xmlns:app=\"http://schemas.android.com/apk/res-auto\"  xmlns:tools=\"http://schemas.android.com/tools\"  android:layout_width=\"match_parent\"  android:layout_height=\"match_parent\"     android:layout_width=\"match_parent\"  android:layout_height=\"match_parent\"     android:id=\"@+id/app_bar\"  android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"     android:id=\"@+id/toolBar\"  android:layout_width=\"match_parent\"  android:layout_height=\"wrap_content\"  app:titleTextColor=\"@color/write\"  app:layout_scrollFlags=\"scroll|enterAlwaysCollapsed\"/     android:id=\"@+id/tabLayout\"  android:layout_width=\"match_parent\"  android:layout_height=\"46dp\"  android:minHeight=\"46dp\"  app:tabMode=\"fixed\"  app:layout_scrollFlags=\"scroll|exitUntilCollapsed|enterAlways\"     android:layout_width=\"wrap_content\"  android:layout_height=\"wrap_content\"  android:text=\"Test1\" /     android:layout_width=\"wrap_content\"  android:layout_height=\"wrap_content\"  android:text=\"Test2\" /     android:layout_width=\"wrap_content\"  android:layout_height=\"wrap_content\"  android:text=\"Test3\" /           android:id=\"@+id/view_pager\"  android:layout_width=\"match_parent\"  android:layout_height=\"match_parent\"  app:layout_behavior=\"@string/appbar_scrolling_view_behavior\" /     android:id=\"@+id/fab\"  android:layout_width=\"wrap_content\"  android:layout_height=\"wrap_content\"  android:layout_gravity=\"bottom|end\"  android:layout_margin=\"16dp\"  android:src=\"@drawable/ic_add\"  android:elevation=\"8dp\" /        android:id=\"@+id/nav_view\"  android:layout_width=\"300dp\"  android:layout_height=\"match_parent\"  android:layout_gravity=\"start\"  app:headerLayout=\"@layout/nav_header\"  app:menu=\"@menu/nav_menu\" /   package com.aimerneige.appbarlayoutyesy;  import androidx.annotation.NonNull; import androidx.appcompat.app.ActionBar; import androidx.appcompat.app.AppCompatActivity; import androidx.appcompat.widget.Toolbar; import androidx.core.view.GravityCompat; import androidx.drawerlayout.widget.DrawerLayout; import androidx.viewpager.widget.ViewPager;  import android.annotation.SuppressLint; import android.os.Bundle; import android.view.Menu; import android.view.MenuItem; import android.view.View; import android.widget.Toast;  import com.google.android.material.appbar.AppBarLayout; import com.google.android.material.floatingactionbutton.FloatingActionButton; import com.google.android.material.navigation.NavigationView; import com.google.android.material.snackbar.Snackbar; import com.google.android.material.tabs.TabLayout;  public class MainActivity extends AppCompatActivity {   private DrawerLayout drawerLayout;   @SuppressLint(\"ResourceAsColor\")  @Override  protected void onCreate(Bundle savedInstanceState) {  super.onCreate(savedInstanceState);  setContentView(R.layout.activity_main);   AppBarLayout appBarLayout = findViewById(R.id.app_bar);  Toolbar toolbar = findViewById(R.id.toolBar);  TabLayout tabLayout = findViewById(R.id.tabLayout);  ViewPager viewPager = findViewById(R.id.view_pager);  NavigationView navigationView = findViewById(R.id.nav_view);  FloatingActionButton fab = findViewById(R.id.fab);   drawerLayout = findViewById(R.id.draw_layout);   // Set toolbar as ActionBar  toolbar.setTitle(\"AppBarLayoutTest\");  setSupportActionBar(toolbar);   // Set menu icon  ActionBar actionBar = getSupportActionBar();  if (actionBar != null) {  actionBar.setDisplayHomeAsUpEnabled(true);  actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);  }   // Set TabLayout selected  tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {  @Override  public void onTabSelected(TabLayout.Tab tab) {   }   @Override  public void onTabUnselected(TabLayout.Tab tab) {   }   @Override  public void onTabReselected(TabLayout.Tab tab) {   }  });   // Navigation selected  navigationView.setCheckedItem(R.id.nav_alien);  navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {  @Override  public boolean onNavigationItemSelected(@NonNull MenuItem item) {  switch (item.getItemId()) {  case R.id.nav_alien:  Toast.makeText(MainActivity.this, \"alien\", Toast.LENGTH_SHORT).show();  break;  case R.id.nav_games:  Toast.makeText(MainActivity.this, \"Games\", Toast.LENGTH_SHORT).show();  break;  case R.id.nav_icecream:  Toast.makeText(MainActivity.this, \"IceCream\", Toast.LENGTH_SHORT).show();  break;  case R.id.nav_camping:  Toast.makeText(MainActivity.this, \"Camping\", Toast.LENGTH_SHORT).show();  break;  case R.id.nav_basketball:  Toast.makeText(MainActivity.this, \"Basketball\", Toast.LENGTH_SHORT).show();  break;  case R.id.nav_cloud:  Toast.makeText(MainActivity.this, \"Cloud\", Toast.LENGTH_SHORT).show();  break;  default:  break;  }  return true;  }  });   fab.setOnClickListener(new View.OnClickListener() {  @Override  public void onClick(View v) {  Snackbar.make(v, \"Waiting for coding\", Snackbar.LENGTH_LONG)  .setAction(\"Undo\", new View.OnClickListener() {  @Override  public void onClick(View v) {  Toast.makeText(MainActivity.this, \"Undo success\",  Toast.LENGTH_SHORT).show();  }  }).show();  }  });  }   // Set menu for toolbar  @Override  public boolean onCreateOptionsMenu(Menu menu) {  getMenuInflater().inflate(R.menu.toolbar, menu);  return true;  }   // ToolBar MenuOption  @Override  public boolean onOptionsItemSelected(@NonNull MenuItem item) {  switch (item.getItemId()) {  case android.R.id.home:  drawerLayout.openDrawer(GravityCompat.START);  break;  case R.id.toolbar_setting:  Toast.makeText(MainActivity.this, \"Waiting for coding for setting\", Toast.LENGTH_SHORT).show();  break;  case R.id.toolbar_about:  Toast.makeText(MainActivity.this, \"Waiting for coding for about\", Toast.LENGTH_SHORT).show();  break;  case R.id.toolbar_exit:  Toast.makeText(MainActivity.this, \"Waiting for coding for exit\", Toast.LENGTH_SHORT).show();  break;  default:  break;  }  return true;  } } ",
+  "articleBody": "MaterialDesign 依赖库 implementation 'com.google.android.material:material:1.1.0' 在布局文件中加入 TooBar ",
   "wordCount" : "548",
   "inLanguage": "zh",
   "datePublished": "2020-02-18T00:05:23+08:00",
@@ -118,6 +158,12 @@ import androidx.appcompat.widget.Toolbar;
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -600,7 +646,7 @@ import androidx.appcompat.widget.Toolbar;
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

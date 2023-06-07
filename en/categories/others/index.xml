@@ -14,7 +14,7 @@
       
       <guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid>
       <description>Today, I buy a new phone One Plus ACE 2. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.
-Enable GMS From Settings  Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
+Enable GMS From Settings Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@ Enable GMS From Settings  Open your settings app, search google. Click the first
       <pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate>
       
       <guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid>
-      <description>Install  Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it  Enable usb debug  Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS  </description>
+      <description>Install Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it Enable usb debug Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS </description>
     </item>
     
     <item>
@@ -79,9 +79,9 @@ Unzip the package to any location you want. I recommend to the C:\ffmpeg</descri
       <guid>https://aimerneige.com/en/post/others/hello-world/</guid>
       <description>Welcome Welcome!
 HelloWorld This is a simple test for my first blog article.
-Mathjax  Test 1  $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
- Test 2  $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
-C #include &amp;lt;stdio.h&amp;gt;int main() {  printf(&amp;#34;HelloWorld!\n&amp;#34;);  return 0; } C++ #include &amp;lt;iostream&amp;gt;int main() {  std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!</description>
+Mathjax Test 1 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+Test 2 $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
+C #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description>
     </item>
     
   </channel>

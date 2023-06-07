@@ -16,7 +16,7 @@ After selected, just click Download Build. You will get a zip package.
 Unzip the package to any location you want. I recommend to the C:\ffmpeg">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
@@ -32,6 +32,34 @@ Unzip the package to any location you want. I recommend to the C:\ffmpeg">
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -89,7 +117,7 @@ Unzip the package to any location you want. I recommend to the C:\ffmpeg"/>
   "keywords": [
     "windows", "software", "ffmpeg"
   ],
-  "articleBody": "Go this link and download a build package.\nFor the version, choose the newest release version number like 4.3.1.\nFor the Architecture, choose the Windows 64 bit.\nFor the Linking, choose the Static.\nFor the License, it’s doesn’t matter if you just use it on local.\nAfter selected, just click Download Build. You will get a zip package.\nUnzip the package to any location you want. I recommend to the C:\\ffmpeg\nAfter that, just add the bin folder to the System Environment PATH.\nOpen Windows PowerShell and input ffmpeg. If you get the right output, you can enjoy ffmpeg now.\n refer link:\nhttps://www.youtube.com/watch?v=qjtmgCb8NcE\n ",
+  "articleBody": "Go this link and download a build package.\nFor the version, choose the newest release version number like 4.3.1.\nFor the Architecture, choose the Windows 64 bit.\nFor the Linking, choose the Static.\nFor the License, it’s doesn’t matter if you just use it on local.\nAfter selected, just click Download Build. You will get a zip package.\nUnzip the package to any location you want. I recommend to the C:\\ffmpeg\nAfter that, just add the bin folder to the System Environment PATH.\nOpen Windows PowerShell and input ffmpeg. If you get the right output, you can enjoy ffmpeg now.\nrefer link:\nhttps://www.youtube.com/watch?v=qjtmgCb8NcE\n",
   "wordCount" : "103",
   "inLanguage": "en",
   "datePublished": "2020-08-10T00:01:10+08:00",
@@ -115,6 +143,12 @@ Unzip the package to any location you want. I recommend to the C:\ffmpeg"/>
 </head>
 
 <body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -234,7 +268,7 @@ Unzip the package to any location you want. I recommend to the C:\ffmpeg"/>
         repo="aimerneige/aimerneige.github.io"
         issue-term="title"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
     ></script>

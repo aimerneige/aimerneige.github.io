@@ -14,8 +14,8 @@
       
       <guid>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</guid>
       <description>Download fonts Download the fonts you need and put it into static/fonts
-Import your fonts @font-face {  font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body {  font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
-Import multi-weight fontfamily @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;);  font-weight: lighter;  font-style: normal; }  @font-face {  font-family: &amp;#34;LXGWWenKai&amp;#34;;  src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.</description>
+Import your fonts @font-face { font-family: &amp;#34;LXGWWenKai-Regular&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); } Apply it in css body { font-family: LXGWWenKai-Regular; } Use in PaperMod Put your own css file in assets/css/extended/custom_fonts.css
+Import multi-weight fontfamily @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: lighter; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;) format(&amp;#34;truetype&amp;#34;); font-weight: normal; font-style: normal; } @font-face { font-family: &amp;#34;LXGWWenKai&amp;#34;; src: url(&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.</description>
     </item>
     
   </channel>

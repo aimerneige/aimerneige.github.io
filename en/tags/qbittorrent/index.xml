@@ -15,7 +15,7 @@
       <guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</guid>
       <description>Install docker You need to install docker first before get started.
 Take fedora as an example, just simply run these command:
-# First, remove old docker packages sudo dnf remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-selinux \  docker-engine-selinux \  docker-engine  # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \  --add-repo \  https://download.</description>
+# First, remove old docker packages sudo dnf remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine # Install latest docker via dnf package manager # Set up the repository sudo dnf -y install dnf-plugins-core sudo dnf config-manager \ --add-repo \ https://download.</description>
     </item>
     
     <item>

@@ -10,7 +10,7 @@
 <meta name="description" content="文章 📝 - Aimer&#39;s Blog">
 <meta name="author" content="Aimer Neige">
 <link rel="canonical" href="https://aimerneige.com/zh/post/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://aimerneige.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://aimerneige.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://aimerneige.com/favicon-32x32.png">
@@ -26,6 +26,34 @@
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -56,6 +84,12 @@
 </head>
 
 <body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -120,15 +154,15 @@
   </header>
   <div class="entry-content">
     <p>前言 距离上一次写博客文章已经很长时间了，因为经常重装系统，而每次在电脑上安装和配置 hexo 的博客都是一件比较麻烦的事情，于是就一直咕了。但是最近我发现了 hugo 这一简洁好用的博客系统，可以让我远离配置安装都又慢又麻烦的 hexo，使用下来体验很棒，而我恰好又打算换一个博客主题，于是决定使用 hugo 来搭建我的新博客。本文简要介绍如何安装和使用 hugo。
-安装 你可能需要  go 的开发环境 git 一个顺手的编辑器  你一定不需要  nodejs npm  安装 hugo 要安装 hugo 非常简单，以 fedora 系统为例，只需要执行如下指令：
+安装 你可能需要 go 的开发环境 git 一个顺手的编辑器 你一定不需要 nodejs npm 安装 hugo 要安装 hugo 非常简单，以 fedora 系统为例，只需要执行如下指令：
 sudo dnf install hugo 创建站点文件夹 使用以下指令创建你的站点文件夹：
 hugo new site blog 切换到工作目录进行后续操作：
 cd blog 使用 git 进行版本控制：
 git init 安装主题 挑选好合适的主题后，将其直接 clone 在 ./themes 文件夹下即可。
-git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1  使用 --depth=1 参数会忽略历史 commit 记录。
- 当然，下载解压压缩包的方式也是可以的。
+git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1 使用 --depth=1 参数会忽略历史 commit 记录。
+当然，下载解压压缩包的方式也是可以的。
 如果想要方便版本控制和更新，使用如下指令添加 submodule：
-git submodule add https://github....</p>
+git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod 当重新 clone 仓库后，执行如下指令 clone 主题子仓库：...</p>
   </div>
   <footer class="entry-footer"><span title='2021-08-17 07:16:04 +0800 CST'>八月 17, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Hello Hugo" href="https://aimerneige.com/zh/post/others/hello-hugo/"></a>
@@ -143,10 +177,10 @@ git submodule add https://github....</p>
   </header>
   <div class="entry-content">
     <p>前言 之前在学习安卓的时候，很想要给自己的软件增加一个云服务功能，但是苦于没有学过后端，于是开始在互联网上查找资料。但是遗憾的是，后端是一个很大的范围，我查找了很多后端的资料也几乎都是在讲解如何写网页，并没有专门用来给安卓写后端的教程，在广泛地学习了大量后端内容后，成功的为自己的程序开发了一个简单的 API。希望这篇文章能够帮到那些没有系统地学习过后端，但是却想要快速开发一款能用的 API 的安卓开发者。
-前期准备  你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作  环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
- 注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
- 本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
- nodejs npm  安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
+前期准备 你要了解互联网通讯原理 你要会一些基础的 JavaScript 你要有一台服务器 你会数据库操作 最好有一个域名（非必须） 掌握基础的终端操作 环境配置 本文章中后端开发使用的开发语言为 JavaScript 配合 nodejs。数据库采用常用的 mysql。
+注： nodejs 开发常用的数据库是 mongodb，但是由于 mysql 比较常用这里就用 mysql 了，当然其他数据库也是可以的，你可以查找一下 nodejs 如何链接这些数据库，并将本文中 mysql 操作的部分替换掉就可以了。
+本地测试客户端安装 你需要在自己用来开发的电脑上安装配置如下环境：
+nodejs npm 安装 nodejs Linux 下直接使用包管理安装即可。如果包管理安装的 node 很旧，可以自行谷歌一下安装方法，这里不再赘述。
 以 Ubuntu 为例，直接在终端执行如下指令：
 sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确认安装是否成功。
 如果是 windows 用户就更加简单了，直接在 nodejs 官网 下载安装包运行即可。推荐使用长周期稳定版本。如果你想体验新特性，也可以考虑使用最新的版本。
@@ -165,7 +199,7 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </header>
   <div class="entry-content">
     <p>在多人协作的项目中，为了同一代码格式，可以使用 editorconfig 来定义，这样不仅可以帮助协作者快速了解当前项目要求的代码风格，也可以方便使用一些格式化工具保证代码风格按照预期格式化。
-快速了解  What is EditorConfig? EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems....</p>
+快速了解 What is EditorConfig? EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems....</p>
   </div>
   <footer class="entry-footer"><span title='2021-01-29 16:37:25 +0800 CST'>一月 29, 2021</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 利用 EditorConfig 定义代码格式，统一代码风格" href="https://aimerneige.com/zh/post/tool/editorconfig/"></a>
@@ -180,8 +214,8 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   </header>
   <div class="entry-content">
     <p>前言 Linux 下中文输入法一直是硬伤，各种方面都没有 windows 或 mac 下好用，最近在逛 github 的时候偶然翻到一个仓库 四叶草拼音输入方案，这个仓库提供的输入方案用起来十分舒服，但是在安装的时候也遇到一些坑，于是写了这篇文章来记录。
- 测试环境：
-.............. aimerneige@an  ..,;:ccc,. -------------  ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64  ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg)  . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ....</p>
+测试环境：
+.............. aimerneige@an ..,;:ccc,. ------------- ......&#39;&#39;&#39;;lxO. OS: Kali GNU/Linux Rolling x86_64 .....&#39;&#39;&#39;&#39;..........,:ld; Host: TM1701 .&#39;;;;:::;,,.x, Kernel: 5.9.0-kali4-amd64 ..&#39;&#39;&#39;. 0Xxoc:,. ... Uptime: 2 hours, 11 mins .... ,ONkc;,;cokOdc&#39;,. Packages: 3537 (dpkg) . OMo &#39;:ddo. Shell: zsh 5.8 dMc :OO; Resolution: 1920x1080, 1440x2560 0M. .:o. DE: GNOME 3.38.2 ;Wd WM: Mutter ;XO, WM Theme: Kali-Dark ,d0Odlc;,.. Theme: Kali-Dark [GTK2/3] ..&#39;,;:cdOOd::,. Icons: Flat-Remix-Blue-Dark [GTK2/&gt; 3] ....</p>
   </div>
   <footer class="entry-footer"><span title='2020-12-13 19:35:18 +0800 CST'>十二月 13, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to Linux 下安装 fcitx5 与 Rime" href="https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/"></a>
@@ -193,7 +227,7 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
     </h2>
   </header>
   <div class="entry-content">
-    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500  inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255  inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt;  inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt;  inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt;  ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet)  RX packets 110382 bytes 150904005 (150.9 MB)  RX errors 0 dropped 0 overruns 0 frame 0  TX packets 30811 bytes 3569027 (3.5 MB)  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0  lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536  inet 127....</p>
+    <p>ifconfig ➜ ~ ifconfig enx2c16dba37d18: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 10.0.117.154 netmask 255.255.255.0 broadcast 10.0.117.255 inet6 2001:250:c00:218:5bd6:795c:5b92:e787 prefixlen 64 scopeid 0x0&lt;global&gt; inet6 fe80::2224:6ee:2527:f54d prefixlen 64 scopeid 0x20&lt;link&gt; inet6 2001:250:c00:218:44fc:ad73:aeb8:b07d prefixlen 64 scopeid 0x0&lt;global&gt; ether 2c:16:db:a3:7d:18 txqueuelen 1000 (Ethernet) RX packets 110382 bytes 150904005 (150.9 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 30811 bytes 3569027 (3.5 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127....</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-10 10:41:51 +0800 CST'>十一月 10, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 每天一个 Linux 指令" href="https://aimerneige.com/zh/post/linux/daily-linux-command/"></a>
@@ -207,11 +241,15 @@ sudo apt install nodejs 安装完成后使用 node -v 查看 node 版本来确�
   <div class="entry-content">
     <p>今天遇到一个奇怪的问题：
 一个 C 语言初学者写了这样的错误代码：
-switch (a) {  case1:  // do something  break;  case2:  // do something  break;  case3:  // do something  break;  default:  break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
+switch (a) { case1: // do something break; case2: // do something break; case3: // do something break; default: break; } 错误很容易解决，但是，在编译这样的程序时，编译器居然没有报错？？！！
 那么 case1 case2 这些东西是哪里来的？
 几番求证无果，最后在翻阅《C 专家编程》这本书的时候突然发现了原因：
 首先像下面这样写是可以的：
-switch (i) {  case 5 &#43; 3: do_again:  case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again;  default: i&#43;&#43;;  case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。...</p>
+switch (i) { case 5 &#43; 3: do_again: case 2: printf(&#34;I loop unremittingly\n&#34;); goto do_again; default: i&#43;&#43;; case 3: ; } 这里定义了一个标签 do_again，并且通过 goto 跳转。
+原错误代码中 case1 case2 等被编译器理解为了标签。
+由于 goto 不被建议使用，博主居然已经忘记了标签和 goto 的用法。
+不管怎么说，问题解决了。
+这不是 Bug，而是 C 语言的特性。 #(滑稽)...</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-05 14:37:41 +0800 CST'>十一月 5, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to 这不是 Bug，而是语言特性" href="https://aimerneige.com/zh/post/c/this-is-not-bug/"></a>
@@ -231,7 +269,8 @@ void *(*p) (int, float); 这样我们就得到了一个指针变量 p，它的�
 所以函数指针的定义方法为：
 函数返回类型 (*指针变量名) (函数参数列表); 这里的函数参数列表类似函数声明，只需写出变量类型即可，并不需要定义变量。
 即下面的俩种写法等价并且第二种写法中定义的变量并没有任何意义，建议使用第一种写法，不要使用第二种写法。
-void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明  int (*p) (int x); // 函数指针的定义  p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明...</p>
+void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋值 int Func(int x); // 函数的声明 int (*p) (int x); // 函数指针的定义 p = &amp;Func; // 函数指针的赋值 p = Func; // 另一种可行的写法 注：对于俩种赋值写法的详细说明见对函数赋值和调用的一些说明
+函数指针的调用 #include &lt;stdio....</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-04 21:00:39 +0800 CST'>十一月 4, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 函数指针" href="https://aimerneige.com/zh/post/c/c-function-point/"></a>
@@ -244,8 +283,9 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
   </header>
   <div class="entry-content">
     <p>线程于进程的对比
-          thread 线程 有共享内存   process 进程 没有共享内存    gcc file.c -lpthread 创建线程
-#include &lt;stdio.h&gt;#include &lt;pthread.h&gt; void *myfunc(void *args) {  for (int i = 0; i &lt; 50; i&#43;&#43;)  {  printf(&#34;%d\n&#34;, i);  }  return NULL; }  int main() {  pthread_t th1;  pthread_t th2;   pthread_create(&amp;th1, NULL, myfunc, NULL);  pthread_create(&amp;th2, NULL, myfunc, NULL);   pthread_join(th1, NULL);  pthread_join(th2, NULL);   return 0; } 传入参数...</p>
+thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpthread 创建线程
+#include &lt;stdio.h&gt; #include &lt;pthread.h&gt; void *myfunc(void *args) { for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%d\n&#34;, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, NULL); pthread_create(&amp;th2, NULL, myfunc, NULL); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 传入参数
+#include &lt;stdio.h&gt; #include &lt;pthread.h&gt; void *myfunc(void *args) { char *name = (char *)args; for (int i = 0; i &lt; 50; i&#43;&#43;) { printf(&#34;%s %d\n&#34;, name, i); } return NULL; } int main() { pthread_t th1; pthread_t th2; pthread_create(&amp;th1, NULL, myfunc, &#34;th1&#34;); pthread_create(&amp;th2, NULL, myfunc, &#34;th2&#34;); pthread_join(th1, NULL); pthread_join(th2, NULL); return 0; } 分部计算...</p>
   </div>
   <footer class="entry-footer"><span title='2020-11-01 18:21:23 +0800 CST'>十一月 1, 2020</span>&nbsp;·&nbsp;Aimer Neige</footer>
   <a class="entry-link" aria-label="post link to C 语言多线程基础" href="https://aimerneige.com/zh/post/c/c-thread-basic/"></a>
@@ -258,10 +298,10 @@ void *(*p) (int, float); void *(*p) (int a, float b); 如何对函数指针赋�
   </header>
   <div class="entry-content">
     <p>在 C 语言中，函数默认是全局的。在函数前加“static”关键字可以使一个函数变成静态函数。例如，下面的函数 fun() 是静态的：
-static int fun(void) {  printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
+static int fun(void) { printf(&#34;I am a static funciton.\n&#34;); } 与 C 语言中的全局函数不同，对静态函数的访问仅限于声明它们的文件。因此，当我们想要限制函数的访问时，我们可以将函数定义为静态的。另外，如果我们想要在其他文件中使用相同的函数名，我们也可以将函数定义为静态的。
 例如，我们在文件 file.c 中存储了下面的程序：
-// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() {  printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
-// in file `file2.c` #include &lt;stdio.h&gt; int main(void) {  fun1();   return 0; } 接下来，如果我们按照如下的命令编译：
+// in file `file1.c` #include &lt;stdio.h&gt; static void fun1() { printf(&#34;fun1 called.\n&#34;); } 然后，我们在文件 file2.c 中存储了这样的程序：
+// in file `file2.c` #include &lt;stdio.h&gt; int main(void) { fun1(); return 0; } 接下来，如果我们按照如下的命令编译：
 gcc file2.c file1.c 你会得到这样的链接错误：
 undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被定义为静态，因而不能在 file2.c 中引用。</p>
   </div>
@@ -276,7 +316,7 @@ undefined reference to `fun1&#39; 这是因为 fun1() 函数在 file1.c 中被�
   </header>
   <div class="entry-content">
     <p>注意将本文章提到的路径中 AimerNeige 修改为自己的用户名，之后不再赘述。
- 安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
+安装 alacritty 按照自己的喜好 在 GitHub 下载最新版 release 或自己编译。
 本次演示中可执行文件存储目录：
 C:\Tools\Alacritty\alacritty.exe
 配置 alacritty 将配置文件放置在如下目录：
