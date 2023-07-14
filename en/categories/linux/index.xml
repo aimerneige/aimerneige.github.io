@@ -5,8 +5,23 @@
     <link>https://aimerneige.com/en/categories/linux/</link>
     <description>Recent content in Linux on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 17 Apr 2023 17:49:10 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Jul 2023 16:40:36 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Syncthing on Ubuntu Server</title>
+      <link>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</link>
+      <pubDate>Fri, 14 Jul 2023 16:40:36 +0800</pubDate>
+      
+      <guid>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</guid>
+      <description>Install Syncthing Debian/Ubuntu installation instructions
+Import PGP keys
+# Add the release PGP keys: sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg Add APT source
+# Add the &amp;#34;stable&amp;#34; channel to your APT sources: echo &amp;#34;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&amp;#34; | sudo tee /etc/apt/sources.list.d/syncthing.list Install Syncthing
+# Update and install syncthing: sudo apt-get update sudo apt-get install syncthing Install systemd unit Download service file
+wget https://github.com/syncthing/syncthing/blob/main/etc/linux-systemd/system/syncthing%40.service Install service file
+sudo chown root:root syncthing@.service sudo mv syncthing@.</description>
+    </item>
+    
     <item>
       <title>How to Disable Auto Bluetooth Connection on Computer Startup</title>
       <link>https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/</link>

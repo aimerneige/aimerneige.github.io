@@ -5,7 +5,7 @@
     <link>https://aimerneige.com/en/tags/spring/</link>
     <description>Recent content in spring on Aimer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 30 Dec 2021 15:35:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enable Swagger on Spring Boot Gradle Projects</title>

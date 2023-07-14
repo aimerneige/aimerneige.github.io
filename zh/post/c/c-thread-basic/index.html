@@ -231,21 +231,21 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, NULL);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -258,21 +258,21 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)args;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%s %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name, i);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#e6db74">&#34;th1&#34;</span>);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#e6db74">&#34;th2&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#e6db74">&#34;th1&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#e6db74">&#34;th2&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -308,20 +308,20 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc2, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -359,20 +359,20 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">1</span>});
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">2</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, (<span style="color:#66d9ef">int</span> []){<span style="color:#ae81ff">2</span>});
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -405,23 +405,23 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>};
 </span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> s1 <span style="color:#f92672">+</span> s2;
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -453,23 +453,23 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">50</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">0</span>};
 </span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">1</span>};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> args_1.result <span style="color:#f92672">+</span> args_2.result;
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -492,16 +492,16 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pthread_t pt1;
-</span></span><span style="display:flex;"><span>    pthread_t pt2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> pt1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> pt2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(pt1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(pt2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(pt1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(pt2, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -512,34 +512,34 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAX_SIZE 5000000
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>pthread_mutex_t lock;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pthread_mutex_t</span> lock;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myfunc</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>args)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        pthread_mutex_lock(<span style="color:#f92672">&amp;</span>lock);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_mutex_lock</span>(<span style="color:#f92672">&amp;</span>lock);
 </span></span><span style="display:flex;"><span>        a<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>        pthread_mutex_unlock(<span style="color:#f92672">&amp;</span>lock);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_mutex_unlock</span>(<span style="color:#f92672">&amp;</span>lock);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pthread_t pt1;
-</span></span><span style="display:flex;"><span>    pthread_t pt2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> pt1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> pt2;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_mutex_init(<span style="color:#f92672">&amp;</span>lock, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_mutex_init</span>(<span style="color:#f92672">&amp;</span>lock, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>pt1, NULL, myfunc, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>pt2, NULL, myfunc, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(pt1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(pt2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(pt1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(pt2, NULL);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -574,29 +574,29 @@ thread 线程 有共享内存 process 进程 没有共享内存 gcc file.c -lpth
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    arr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> MAX_SIZE);
+</span></span><span style="display:flex;"><span>    arr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> MAX_SIZE);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> MAX_SIZE; i<span style="color:#f92672">++</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    result[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    result[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_t th1;
-</span></span><span style="display:flex;"><span>    pthread_t th2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> th2;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    MY_ARGS args_1 <span style="color:#f92672">=</span> {ZERO, HALF, <span style="color:#ae81ff">0</span>};
 </span></span><span style="display:flex;"><span>    MY_ARGS args_2 <span style="color:#f92672">=</span> {HALF, MAX_SIZE, <span style="color:#ae81ff">1</span>};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
-</span></span><span style="display:flex;"><span>    pthread_create(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th1, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_1);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>th2, NULL, myfunc, <span style="color:#f92672">&amp;</span>args_2);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    pthread_join(th1, NULL);
-</span></span><span style="display:flex;"><span>    pthread_join(th2, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(th2, NULL);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> S <span style="color:#f92672">=</span> result[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> result[<span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, S);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}

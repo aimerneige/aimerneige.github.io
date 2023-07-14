@@ -316,7 +316,7 @@ The following is a list of valid distributions that can be installed. Install us
 
 <p>安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。</p>
 <p>执行下面的指令设置 wsl 默认版本为 wsl2：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --set-default-version 2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --set-default-version <span style="color:#ae81ff">2</span>
 </span></span></code></pre></div><h2 id="安装其他版本的子系统">安装其他版本的子系统<a hidden class="anchor" aria-hidden="true" href="#安装其他版本的子系统">#</a></h2>
 <p>如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --list --online
@@ -328,11 +328,11 @@ The following is a list of valid distributions that can be installed. Install us
 </span></span><span style="display:flex;"><span>Ubuntu          Ubuntu
 </span></span><span style="display:flex;"><span>Debian          Debian GNU/Linux
 </span></span><span style="display:flex;"><span>kali-linux      Kali Linux Rolling
-</span></span><span style="display:flex;"><span>openSUSE-42     openSUSE Leap 42
-</span></span><span style="display:flex;"><span>SLES-12         SUSE Linux Enterprise Server v12
-</span></span><span style="display:flex;"><span>Ubuntu-16.04    Ubuntu 16.04 LTS
-</span></span><span style="display:flex;"><span>Ubuntu-18.04    Ubuntu 18.04 LTS
-</span></span><span style="display:flex;"><span>Ubuntu-20.04    Ubuntu 20.04 LTS
+</span></span><span style="display:flex;"><span>openSUSE-<span style="color:#ae81ff">42</span>     openSUSE Leap <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>SLES-<span style="color:#ae81ff">12</span>         SUSE Linux Enterprise Server v12
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">16.04</span>    Ubuntu <span style="color:#ae81ff">16.04</span> LTS
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">18.04</span>    Ubuntu <span style="color:#ae81ff">18.04</span> LTS
+</span></span><span style="display:flex;"><span>Ubuntu-<span style="color:#ae81ff">20.04</span>    Ubuntu <span style="color:#ae81ff">20.04</span> LTS
 </span></span></code></pre></div><p>如果想要安装某发行版，直接执行相应指令即可。例如可以通过下面的指令安装 <code>debian</code> 子系统：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --install -d Debian
 </span></span></code></pre></div><p>当你安装了多个发行版，可以通过下面的指令指定默认发行版：</p>
@@ -360,7 +360,7 @@ The following is a list of valid distributions that can be installed. Install us
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>mkdir $HOME\wsl\fedora
 </span></span></code></pre></div><h3 id="释放镜像文件">释放镜像文件<a hidden class="anchor" aria-hidden="true" href="#释放镜像文件">#</a></h3>
 <p>假设你想要将子系统命名为 <code>fedora</code>，想要把它保存在 <code>$HOME\wsl\fedora</code> 目录下，同时 rootfs 文件存储在 <code>$HOME\Downloads\fedora-35-rootfs.tar</code>，执行下面的指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --import fedora $HOME\wsl\fedora $HOME\Downloads\fedora-35-rootfs.tar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl --import fedora $HOME\wsl\fedora $HOME\Downloads\fedora-<span style="color:#ae81ff">35</span>-rootfs.tar
 </span></span></code></pre></div><h3 id="检查安装情况">检查安装情况<a hidden class="anchor" aria-hidden="true" href="#检查安装情况">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>wsl -l
 </span></span></code></pre></div><h3 id="使用-root-启动-fedora-子系统">使用 root 启动 fedora 子系统：<a hidden class="anchor" aria-hidden="true" href="#使用-root-启动-fedora-子系统">#</a></h3>

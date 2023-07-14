@@ -246,7 +246,7 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#75715e">// One possible wey to make the LikedNumber not null
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   ViewModelWithLiveData <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>       LikedNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MutableLiveData<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>       LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>       LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">}</span>
 </span></span></code></pre></div><ol start="2">
 <li>在 get 方法中解决(推荐)</li>
@@ -254,7 +254,7 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> MutableLiveData<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getLikedNumber</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>LikedNumber <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>            LikedNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MutableLiveData<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>            LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            LikedNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> LikedNumber<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
@@ -269,13 +269,13 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    ViewModelWithLiveData viewModelWithLiveData<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>在 <span style="color:#960050;background-color:#1e0010">`</span>onCreate<span style="color:#960050;background-color:#1e0010">`</span> 方法内获得 <span style="color:#960050;background-color:#1e0010">`</span>ViewModel<span style="color:#960050;background-color:#1e0010">`</span> 的实体
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">在</span> <span style="color:#960050;background-color:#1e0010">`</span>onCreate<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">方法内获得</span> <span style="color:#960050;background-color:#1e0010">`</span>ViewModel<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">的实体</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    viewModelWithLiveData <span style="color:#f92672">=</span> ViewModelProviders<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>ViewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>对 <span style="color:#960050;background-color:#1e0010">`</span>LiveData<span style="color:#960050;background-color:#1e0010">`</span> 数据创建观察者
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">对</span> <span style="color:#960050;background-color:#1e0010">`</span>LiveData<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">数据创建观察者</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">getLikedNumber</span><span style="color:#f92672">().</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Observer<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
@@ -286,22 +286,22 @@ package com.aimerneige.livedatatest; import androidx.lifecycle.MutableLiveData; 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>添加观察后<span style="color:#960050;background-color:#1e0010">，</span>当数据发生变化后<span style="color:#960050;background-color:#1e0010">，</span>会自动更改组件上的内容<span style="color:#960050;background-color:#1e0010">，</span>当然这个行为完全可以自己改<span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加观察后，当数据发生变化后，会自动更改组件上的内容，当然这个行为完全可以自己改。</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>别忘了使用数据操作方法
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">别忘了使用数据操作方法</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>java
 </span></span><span style="display:flex;"><span>    liked<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    disliked<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(-</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            viewModelWithLiveData<span style="color:#f92672">.</span><span style="color:#a6e22e">addLikedNumber</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>

@@ -231,13 +231,13 @@ AutoEnable=false 重启设备，测试效果。"/>
 <p>编辑 <code>/etc/bluetooth/main.conf</code> 这个文件：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/bluetooth/main.conf
 </span></span></code></pre></div><p>找到这些内容：</p>
-<pre tabindex="0"><code class="language-conf" data-lang="conf"># AutoEnable defines option to enable all controllers when they are found.
-# This includes adapters present on start as well as adapters that are plugged
-# in later on. Defaults to &#39;true&#39;.
-# AutoEnable=true
-</code></pre><p>修改配置文件，禁用自动连接：</p>
-<pre tabindex="0"><code class="language-conf" data-lang="conf">AutoEnable=false
-</code></pre><p>重启设备，测试效果。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span><span style="color:#75715e"># AutoEnable defines option to enable all controllers when they are found.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># This includes adapters present on start as well as adapters that are plugged
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># in later on. Defaults to &#39;true&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># AutoEnable=true
+</span></span></span></code></pre></div><p>修改配置文件，禁用自动连接：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span>AutoEnable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><p>重启设备，测试效果。</p>
 
 
   </div>

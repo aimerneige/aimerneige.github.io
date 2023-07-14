@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aimerneige.com/en/</loc>
-    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -13,6 +13,77 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/categories/linux/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/categories/linux/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/post/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/post/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/syncthing/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/"
+                />
+  </url><url>
+    <loc>https://aimerneige.com/en/tags/tools/</loc>
+    <lastmod>2023-07-14T16:40:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://aimerneige.com/zh/tags/tools/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aimerneige.com/en/tags/tools/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/bluetooth/</loc>
@@ -26,19 +97,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/tags/bluetooth/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/</loc>
-    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/gnome/</loc>
@@ -65,45 +123,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/categories/linux/</loc>
-    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/categories/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/categories/linux/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/post/</loc>
-    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/post/"
-                />
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/</loc>
-    <lastmod>2023-04-17T17:49:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/"
                 />
   </url><url>
     <loc>https://aimerneige.com/en/tags/android/</loc>
@@ -346,19 +365,6 @@
   </url><url>
     <loc>https://aimerneige.com/en/tags/kvm/</loc>
     <lastmod>2023-02-25T15:36:58+08:00</lastmod>
-  </url><url>
-    <loc>https://aimerneige.com/en/tags/tools/</loc>
-    <lastmod>2023-02-25T15:36:58+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://aimerneige.com/zh/tags/tools/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aimerneige.com/en/tags/tools/"
-                />
   </url><url>
     <loc>https://aimerneige.com/en/tags/boot/</loc>
     <lastmod>2022-11-20T20:10:58+08:00</lastmod>
