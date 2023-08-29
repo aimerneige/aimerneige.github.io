@@ -297,9 +297,9 @@ Take fedora as an example, just simply run these command:
 <p>Copy all of the file inside <code>$HOME/.local</code> to <code>config/qBittorrent/data</code>.</p>
 <p>Edit <code>config/qBittorrent/config/qBittorrent.conf</code>, match all the port settings.</p>
 <p>Make sure you have these config settings inside <code>config/qBittorrent/config/qBittorrent.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">[</span>LegalNotice<span style="color:#960050;background-color:#1e0010">]</span>
-</span></span><span style="display:flex;"><span>Accepted<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><p>Edit the volumes to match your saved path.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[LegalNotice]
+Accepted=true
+</code></pre><p>Edit the volumes to match your saved path.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">./config:/config:rw</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">/path/to/your/hhd:/pt/saved/path:ro</span>

@@ -24,7 +24,6 @@ AutoEnable=false 重启设备，测试效果。">
 <link rel="mask-icon" href="https://aimerneige.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/">
 <link rel="alternate" hreflang="zh" href="https://aimerneige.com/zh/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/">
 <noscript>
     <style>
@@ -200,12 +199,7 @@ AutoEnable=false 重启设备，测试效果。"/>
     <h1 class="post-title">
       如何禁止电脑开机时自动连接蓝牙耳机
     </h1>
-    <div class="post-meta"><span title='2023-04-17 17:49:10 +0800 CST'>四月 17, 2023</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;语言:
-<ul class="i18n_list">
-    <li>
-        <a href="https://aimerneige.com/en/post/linux/how-to-disable-auto-bluetooth-connection-on-computer-startup/">English</a>
-    </li>
-</ul>&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Linux/how-to-disable-auto-bluetooth-connection-on-computer-startup.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2023-04-17 17:49:10 +0800 CST'>四月 17, 2023</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href="https://github.com/aimerneige/blog/edit/master/content/post/Linux/how-to-disable-auto-bluetooth-connection-on-computer-startup.zh.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> <div class="toc">
@@ -231,13 +225,13 @@ AutoEnable=false 重启设备，测试效果。"/>
 <p>编辑 <code>/etc/bluetooth/main.conf</code> 这个文件：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/bluetooth/main.conf
 </span></span></code></pre></div><p>找到这些内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span><span style="color:#75715e"># AutoEnable defines option to enable all controllers when they are found.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># This includes adapters present on start as well as adapters that are plugged
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># in later on. Defaults to &#39;true&#39;.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># AutoEnable=true
-</span></span></span></code></pre></div><p>修改配置文件，禁用自动连接：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span>AutoEnable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>
-</span></span></code></pre></div><p>重启设备，测试效果。</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"># AutoEnable defines option to enable all controllers when they are found.
+# This includes adapters present on start as well as adapters that are plugged
+# in later on. Defaults to &#39;true&#39;.
+# AutoEnable=true
+</code></pre><p>修改配置文件，禁用自动连接：</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">AutoEnable=false
+</code></pre><p>重启设备，测试效果。</p>
 
 
   </div>

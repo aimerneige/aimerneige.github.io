@@ -239,12 +239,12 @@
 </span></span></code></pre></div><h2 id="edit-share-config">Edit Share Config<a hidden class="anchor" aria-hidden="true" href="#edit-share-config">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/samba/smb.conf
 </span></span></code></pre></div><p>Add share point at the bottom of the config file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-conf" data-lang="conf"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">[</span>share-name<span style="color:#960050;background-color:#1e0010">]</span>
-</span></span><span style="display:flex;"><span>    comment <span style="color:#f92672">=</span> Your Comment Here
-</span></span><span style="display:flex;"><span>    path <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">/</span>path<span style="color:#960050;background-color:#1e0010">/</span>to<span style="color:#960050;background-color:#1e0010">/</span>share<span style="color:#960050;background-color:#1e0010">/</span>dir
-</span></span><span style="display:flex;"><span>    read only <span style="color:#f92672">=</span> no
-</span></span><span style="display:flex;"><span>    browsable <span style="color:#f92672">=</span> yes
-</span></span></code></pre></div><h2 id="start-samba">Start Samba<a hidden class="anchor" aria-hidden="true" href="#start-samba">#</a></h2>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[share-name]
+    comment = Your Comment Here
+    path = /path/to/share/dir
+    read only = no
+    browsable = yes
+</code></pre><h2 id="start-samba">Start Samba<a hidden class="anchor" aria-hidden="true" href="#start-samba">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start smbd.service
 </span></span></code></pre></div><h2 id="enable-autostart">Enable Autostart<a hidden class="anchor" aria-hidden="true" href="#enable-autostart">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable smbd.service
