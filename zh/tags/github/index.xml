@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Github on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/github/</link><description>Recent content in Github on Aimer's Blog</description><generator>Hugo -- 0.139.4</generator><language>zh</language><lastBuildDate>Sat, 01 Aug 2020 07:15:56 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>优雅地使用 GitHub</title><link>https://aimerneige.com/zh/post/others/use-github-gracefully/</link><pubDate>Sat, 01 Aug 2020 07:15:56 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/use-github-gracefully/</guid><description>&lt;p>&lt;a href="https://docs.github.com/cn/github/searching-for-information-on-github/understanding-the-search-syntax">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="较常用的检索限制">较常用的检索限制&lt;/h2>
+&lt;p>项目名称&lt;/p>
+&lt;pre tabindex="0">&lt;code>in:name &amp;lt;keyword&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>项目 README&lt;/p>
+&lt;pre tabindex="0">&lt;code>in:readme &amp;lt;keyword&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>项目描述&lt;/p>
+&lt;pre tabindex="0">&lt;code>in:description &amp;lt;keyword&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>语言&lt;/p>
+&lt;pre tabindex="0">&lt;code>language: java
+&lt;/code>&lt;/pre>&lt;p>star 数&lt;/p>
+&lt;pre tabindex="0">&lt;code>stars:&amp;gt;1000
+&lt;/code>&lt;/pre>&lt;p>fork 数&lt;/p>
+&lt;pre tabindex="0">&lt;code>forks:&amp;gt;500
+&lt;/code>&lt;/pre>&lt;p>更新时间&lt;/p>
+&lt;pre tabindex="0">&lt;code>pushed:&amp;gt;2020-08-01
+&lt;/code>&lt;/pre>&lt;p>使用示例&lt;/p>
+&lt;pre tabindex="0">&lt;code>in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>参考链接:&lt;br>
+&lt;a href="https://www.youtube.com/watch?v=Uj6WWAqg0NY">https://www.youtube.com/watch?v=Uj6WWAqg0NY&lt;/a>&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

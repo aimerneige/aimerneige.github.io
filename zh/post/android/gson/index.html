@@ -1,0 +1,215 @@
+<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>使用 Gson 解析 Json 数据 | Aimer's Blog</title>
+<meta name=keywords content="android"><meta name=description content='新建项目
+导入 Gson 依赖
+    implementation &#39;com.google.code.gson:gson:2.8.5&#39;
+设计布局
+这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nodata"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nodata"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"/>
+
+</LinearLayout>
+代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。
+发送 Http 请求并获取数据
+操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。
+https://user.moecraft.net:8443/API/Mc/authlib/
+
+获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 jsonData。'><meta name=author content="Aimer Neige"><link rel=canonical href=https://aimerneige.com/zh/post/android/gson/><link crossorigin=anonymous href=/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as=style><link rel=icon href=https://aimerneige.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://aimerneige.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://aimerneige.com/favicon-32x32.png><link rel=apple-touch-icon href=https://aimerneige.com/apple-touch-icon.png><link rel=mask-icon href=https://aimerneige.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://aimerneige.com/zh/post/android/gson/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://aimerneige.com/zh/post/android/gson/"><meta property="og:site_name" content="Aimer's Blog"><meta property="og:title" content="使用 Gson 解析 Json 数据"><meta property="og:description" content='新建项目 导入 Gson 依赖
+implementation &#39;com.google.code.gson:gson:2.8.5&#39; 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
+<?xml version="1.0" encoding="utf-8"?> <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"> <TextView android:id="@+id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="nodata"/> <TextView android:id="@+id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="nodata"/> <Button android:id="@+id/button" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="test"/> </LinearLayout> 代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。
+发送 Http 请求并获取数据 操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。
+https://user.moecraft.net:8443/API/Mc/authlib/ 获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 jsonData。'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2020-02-17T00:26:02+08:00"><meta property="article:modified_time" content="2020-02-17T00:26:02+08:00"><meta property="article:tag" content="Android"><meta name=twitter:card content="summary"><meta name=twitter:title content="使用 Gson 解析 Json 数据"><meta name=twitter:description content='新建项目
+导入 Gson 依赖
+    implementation &#39;com.google.code.gson:gson:2.8.5&#39;
+设计布局
+这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nodata"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nodata"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"/>
+
+</LinearLayout>
+代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。
+发送 Http 请求并获取数据
+操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。
+https://user.moecraft.net:8443/API/Mc/authlib/
+
+获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 jsonData。'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章 📝","item":"https://aimerneige.com/zh/post/"},{"@type":"ListItem","position":2,"name":"使用 Gson 解析 Json 数据","item":"https://aimerneige.com/zh/post/android/gson/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"使用 Gson 解析 Json 数据","name":"使用 Gson 解析 Json 数据","description":"新建项目 导入 Gson 依赖\nimplementation \u0026#39;com.google.code.gson:gson:2.8.5\u0026#39; 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;LinearLayout xmlns:android=\u0026#34;http://schemas.android.com/apk/res/android\u0026#34; android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;match_parent\u0026#34; android:orientation=\u0026#34;vertical\u0026#34;\u0026gt; \u0026lt;TextView android:id=\u0026#34;@+id/text1\u0026#34; android:layout_width=\u0026#34;wrap_content\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; android:text=\u0026#34;nodata\u0026#34;/\u0026gt; \u0026lt;TextView android:id=\u0026#34;@+id/text2\u0026#34; android:layout_width=\u0026#34;wrap_content\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; android:text=\u0026#34;nodata\u0026#34;/\u0026gt; \u0026lt;Button android:id=\u0026#34;@+id/button\u0026#34; android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; android:text=\u0026#34;test\u0026#34;/\u0026gt; \u0026lt;/LinearLayout\u0026gt; 代码很简单就不多解释了。另外 在 Activity 中注册控件 的内容也省略。\n发送 Http 请求并获取数据 操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。\nhttps://user.moecraft.net:8443/API/Mc/authlib/ 获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 jsonData。\n","keywords":["android"],"articleBody":"新建项目 导入 Gson 依赖\nimplementation 'com.google.code.gson:gson:2.8.5' 设计布局 这里设计俩个 TextView 和一个 Button，点击 Button 后发送 Http 请求获取 Json 数据，并且通过 Gson 进行解析，将解析结果显示在 TextView 上，以此验证解析成功。\n\u003c?xml version=\"1.0\" encoding=\"utf-8\"?\u003e ","wordCount":"353","inLanguage":"zh","datePublished":"2020-02-17T00:26:02+08:00","dateModified":"2020-02-17T00:26:02+08:00","author":{"@type":"Person","name":"Aimer Neige"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimerneige.com/zh/post/android/gson/"},"publisher":{"@type":"Organization","name":"Aimer's Blog","logo":{"@type":"ImageObject","url":"https://aimerneige.com/favicon.ico"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://aimerneige.com/zh/ accesskey=h title="Aimer's Blog (Alt + H)">Aimer's Blog</a><div class=logo-switches><ul class=lang-switch><li>|</li><li><a href=https://aimerneige.com/en/ title=English aria-label=English>English</a></li></ul></div></div><ul id=menu><li><a href=https://aimerneige.com/zh/about/ title=关于><span>关于</span></a></li><li><a href=https://aimerneige.com/zh/post/ title=文章><span>文章</span></a></li><li><a href=https://aimerneige.com/zh/archives/ title=归档><span>归档</span></a></li><li><a href=https://aimerneige.com/zh/tags/ title=标签><span>标签</span></a></li><li><a href=https://aimerneige.com/zh/categories/ title=分类><span>分类</span></a></li><li><a href=https://aimerneige.com/zh/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://aimerneige.com/zh/>主页</a>&nbsp;»&nbsp;<a href=https://aimerneige.com/zh/post/>文章 📝</a></div><h1 class="post-title entry-hint-parent">使用 Gson 解析 Json 数据</h1><div class=post-meta><span title='2020-02-17 00:26:02 +0800 CST'>二月 17, 2020</span>&nbsp;·&nbsp;Aimer Neige&nbsp;|&nbsp;<a href=https://github.com/aimerneige/blog/edit/master/content/post/Android/gson.zh.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><ul><li><a href=#%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae aria-label=新建项目>新建项目</a></li><li><a href=#%e8%ae%be%e8%ae%a1%e5%b8%83%e5%b1%80 aria-label=设计布局>设计布局</a></li><li><a href=#%e5%8f%91%e9%80%81-http-%e8%af%b7%e6%b1%82%e5%b9%b6%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae aria-label="发送 Http 请求并获取数据">发送 Http 请求并获取数据</a></li><li><a href=#%e5%88%a9%e7%94%a8-gsonformat-%e6%8f%92%e4%bb%b6%e7%94%9f%e6%88%90%e6%98%a0%e5%b0%84%e5%af%b9%e8%b1%a1 aria-label="利用 GsonFormat 插件生成映射对象">利用 GsonFormat 插件生成映射对象</a></li><li><a href=#%e9%80%9a%e8%bf%87-gson-%e8%a7%a3%e6%9e%90%e5%af%b9%e5%ba%94%e5%86%85%e5%ae%b9 aria-label="通过 Gson 解析对应内容">通过 Gson 解析对应内容</a></li><li><a href=#%e7%bb%93%e6%9d%9f aria-label=结束>结束</a></li></ul></div></details></div><div class=post-content><h2 id=新建项目>新建项目<a hidden class=anchor aria-hidden=true href=#新建项目>#</a></h2><p>导入 Gson 依赖</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle><span style=display:flex><span>    implementation <span style=color:#e6db74>&#39;com.google.code.gson:gson:2.8.5&#39;</span>
+</span></span></code></pre></div><h2 id=设计布局>设计布局<a hidden class=anchor aria-hidden=true href=#设计布局>#</a></h2><p>这里设计俩个 <code>TextView</code> 和一个 <code>Button</code>，点击 <code>Button</code> 后发送 <code>Http</code> 请求获取 <code>Json</code> 数据，并且通过 <code>Gson</code> 进行解析，将解析结果显示在 <code>TextView</code> 上，以此验证解析成功。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;LinearLayout</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>xmlns:android=</span><span style=color:#e6db74>&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:orientation=</span><span style=color:#e6db74>&#34;vertical&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;TextView</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/text1&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;nodata&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;TextView</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/text2&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;nodata&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;Button</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/button&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;test&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/LinearLayout&gt;</span>
+</span></span></code></pre></div><p>代码很简单就不多解释了。另外 <strong>在 Activity 中注册控件</strong> 的内容也省略。</p><h2 id=发送-http-请求并获取数据>发送 Http 请求并获取数据<a hidden class=anchor aria-hidden=true href=#发送-http-请求并获取数据>#</a></h2><p>操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。</p><pre><code>https://user.moecraft.net:8443/API/Mc/authlib/
+</code></pre><p>获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 <code>jsonData</code>。</p><h2 id=利用-gsonformat-插件生成映射对象>利用 GsonFormat 插件生成映射对象<a hidden class=anchor aria-hidden=true href=#利用-gsonformat-插件生成映射对象>#</a></h2><p>具体操作方法不解释了，具体看之前发布的博客文章。这里新建的类命名为 <code>ApiTest</code> 。</p><p>以下代码为 <code>GsonFormat</code> 自动生成。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>import</span> java.util.List;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ApiTest</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * meta : {&#34;serverName&#34;:&#34;MoeCraft&#34;,&#34;implementationName&#34;:&#34;MoeCraft Account Center: Minecraft Yggdrasil API (Completely Implemented by Kenvix) for Authlib-Injector 1.1.23&#34;,&#34;implementationVersion&#34;:&#34;5.0&#34;}
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * skinDomains : [&#34;.moecraft.net&#34;,&#34;.kenvix.com&#34;,&#34;accounts.moecraft.net&#34;,&#34;user.moecraft.net&#34;,&#34;user.moecraft.net:8443&#34;,&#34;localhost&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * signaturePublickey : -----BEGIN PUBLIC KEY-----
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDYM0MxKIv4ybovs4XlwMk4g/0r
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     O4+HDK+ltpFDkFjiBY5pDHK4J5Z2tdtkliK7DC2mwIAK5wOeTXYb9uHO8VAVxuE9
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     enMSOiVl9uvSVPelDU/t/JH3gSE6yYT7aNHT6xpvqnSQrCUGDvTbsqXvjxEr3F/H
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     zORoqhiGR+F27XfOhQIDAQAB
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     -----END PUBLIC KEY-----
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * status : 0
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * info :
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> MetaBean meta;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String signaturePublickey;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> status;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String info;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> skinDomains;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> MetaBean <span style=color:#a6e22e>getMeta</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> meta;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setMeta</span>(MetaBean meta) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>meta</span> <span style=color:#f92672>=</span> meta;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getSignaturePublickey</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> signaturePublickey;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setSignaturePublickey</span>(String signaturePublickey) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>signaturePublickey</span> <span style=color:#f92672>=</span> signaturePublickey;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getStatus</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> status;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setStatus</span>(<span style=color:#66d9ef>int</span> status) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>=</span> status;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getInfo</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> info;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setInfo</span>(String info) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>info</span> <span style=color:#f92672>=</span> info;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>getSkinDomains</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> skinDomains;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setSkinDomains</span>(List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> skinDomains) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>skinDomains</span> <span style=color:#f92672>=</span> skinDomains;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MetaBean</span> {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>         * serverName : MoeCraft
+</span></span></span><span style=display:flex><span><span style=color:#75715e>         * implementationName : MoeCraft Account Center: Minecraft Yggdrasil API (Completely Implemented by Kenvix) for Authlib-Injector 1.1.23
+</span></span></span><span style=display:flex><span><span style=color:#75715e>         * implementationVersion : 5.0
+</span></span></span><span style=display:flex><span><span style=color:#75715e>         */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>private</span> String serverName;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>private</span> String implementationName;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>private</span> String implementationVersion;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getServerName</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> serverName;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setServerName</span>(String serverName) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>serverName</span> <span style=color:#f92672>=</span> serverName;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getImplementationName</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> implementationName;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setImplementationName</span>(String implementationName) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>implementationName</span> <span style=color:#f92672>=</span> implementationName;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getImplementationVersion</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> implementationVersion;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setImplementationVersion</span>(String implementationVersion) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>implementationVersion</span> <span style=color:#f92672>=</span> implementationVersion;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>源 Json 数据中内容较多，这里我们只挑选部分内容基础进行测试。</p><p>此处我们选择解析的对象（目标）是 <code>MetaBean</code> 下的 <code>serverName</code> 和 <code>implementationName</code> 字段。</p><h2 id=通过-gson-解析对应内容>通过 Gson 解析对应内容<a hidden class=anchor aria-hidden=true href=#通过-gson-解析对应内容>#</a></h2><ol><li>构建 Gson 对象</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>Gson gson <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Gson();
+</span></span></code></pre></div><ol start=2><li>通过 <code>Gson</code> 解析来构建 <code>ApiTest</code> 实体类</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>ApiTest apiTest <span style=color:#f92672>=</span> gson.<span style=color:#a6e22e>fromJson</span>(jsonData, ApiTest.<span style=color:#a6e22e>class</span>);
+</span></span></code></pre></div><ol start=3><li>直接通过 <code>get</code> 方法访问 <code>apiTest</code> 实体类中的内容即可</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>text1.<span style=color:#a6e22e>setText</span>(apiTest.<span style=color:#a6e22e>getMeta</span>().<span style=color:#a6e22e>getServerName</span>());
+</span></span><span style=display:flex><span>text2.<span style=color:#a6e22e>setText</span>(apiTest.<span style=color:#a6e22e>getMeta</span>().<span style=color:#a6e22e>getImplementationName</span>());
+</span></span></code></pre></div><h2 id=结束>结束<a hidden class=anchor aria-hidden=true href=#结束>#</a></h2><p>其实很简单，利用谷歌提供的 <code>Gson</code> 配合 <code>GsonFormat</code> 简直不要太爽。</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://aimerneige.com/zh/tags/android/>Android</a></li></ul><nav class=paginav><a class=prev href=https://aimerneige.com/zh/post/android/toolbar/><span class=title>« 上一页</span><br><span>ToolBar</span>
+</a><a class=next href=https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/><span class=title>下一页 »</span><br><span>Ubuntu 19.10 配置 Kotlin 开发环境</span></a></nav></footer><div id=license><p>This article is licensed under
+<a target=_blank rel=noopener href=http://creativecommons.org/licenses/by-nc/4.0/ style=color:#00b5da><u>CC-BY-NC-4.0</u></a></p></div><div id=comment><script id=utterances src=https://utteranc.es/client.js repo=aimerneige/aimerneige.github.io issue-term=title label=comment theme=preferred-color-scheme crossorigin=anonymous async></script><script>let ua=navigator.userAgent.toLocaleLowerCase();ua.match(/QQ/i)=="qq"&&document.getElementById("utterances").remove(),ua.match(/MicroMessenger/i)=="micromessenger"&&document.getElementById("utterances").remove()</script></div></article></main><footer class=footer><span>&copy; 2024 <a href=https://aimerneige.com/zh/>Aimer's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
