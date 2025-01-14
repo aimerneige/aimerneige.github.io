@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Music on Aimer's Blog</title><link>https://aimerneige.com/en/tags/music/</link><description>Recent content in Music on Aimer's Blog</description><generator>Hugo -- 0.139.4</generator><language>en</language><lastBuildDate>Wed, 01 Mar 2023 20:57:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/music/index.xml" rel="self" type="application/rss+xml"/><item><title>Spotify Short Codes</title><link>https://aimerneige.com/en/post/web/spotify-shortcodes/</link><pubDate>Wed, 01 Mar 2023 20:57:21 +0800</pubDate><guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid><description>&lt;p>Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try &lt;a href="https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242">this&lt;/a> awesome code. Bellow are the what it look like:&lt;/p>
+&lt;iframe src="https://open.spotify.com/embed/track/7tL9WRrT4ZJaDRgyLc7pIt"
+width="100%"
+height="250"
+frameborder="0"
+allowtransparency="true"
+allow="encrypted-media">&lt;/iframe>
+&lt;p>Full code from &lt;a href="https://gist.github.com/j-un">j-un&lt;/a>:&lt;/p>
+&lt;script src="https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242.js">&lt;/script>
+&lt;p>Download this html file or copy the code, put it in &lt;code>layouts/shortcodes/spotify.html&lt;/code>. Enjoy it!&lt;/p></description></item></channel></rss>

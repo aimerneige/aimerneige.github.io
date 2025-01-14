@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Syncthing on Aimer's Blog</title><link>https://aimerneige.com/en/tags/syncthing/</link><description>Recent content in Syncthing on Aimer's Blog</description><generator>Hugo -- 0.139.4</generator><language>en</language><lastBuildDate>Fri, 14 Jul 2023 16:40:36 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/syncthing/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Syncthing on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</link><pubDate>Fri, 14 Jul 2023 16:40:36 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</guid><description>&lt;h2 id="install-syncthing">Install Syncthing&lt;/h2>
+&lt;p>&lt;a href="https://apt.syncthing.net/">Debian/Ubuntu installation instructions&lt;/a>&lt;/p>
+&lt;p>Import PGP keys&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Add the release PGP keys:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add APT source&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Add the &amp;#34;stable&amp;#34; channel to your APT sources:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&amp;#34;&lt;/span> | sudo tee /etc/apt/sources.list.d/syncthing.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install Syncthing&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Update and install syncthing:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-get update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-get install syncthing
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-systemd-unit">Install systemd unit&lt;/h2>
+&lt;p>Download service file&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget https://github.com/syncthing/syncthing/blob/main/etc/linux-systemd/system/syncthing%40.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install service file&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo chown root:root syncthing@.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mv syncthing@.service /etc/systemd/system/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable service&lt;/p></description></item></channel></rss>

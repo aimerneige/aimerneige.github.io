@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Onedrive on Aimer's Blog</title><link>https://aimerneige.com/en/tags/onedrive/</link><description>Recent content in Onedrive on Aimer's Blog</description><generator>Hugo -- 0.139.4</generator><language>en</language><lastBuildDate>Sun, 20 Nov 2022 20:10:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/onedrive/index.xml" rel="self" type="application/rss+xml"/><item><title>OneDrive on Linux</title><link>https://aimerneige.com/en/post/linux/onedrive-on-linux/</link><pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid><description>&lt;h1 id="onedrive-on-linux">OneDrive on Linux&lt;/h1>
+&lt;h2 id="install">Install&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dnf install onedrive
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="login">Login&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>user@hostname ~&lt;span style="color:#f92672">]&lt;/span>$ onedrive
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorize this app visiting:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://.....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter the response uri:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy the url from browser like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672">=&lt;/span>&amp;lt;redacted&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste it into terminal then press enter:&lt;/p>
+&lt;p>The Final result will like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>user@hostname ~&lt;span style="color:#f92672">]&lt;/span>$ onedrive
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorize this app visiting:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id&lt;span style="color:#f92672">=&lt;/span>22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope&lt;span style="color:#f92672">=&lt;/span>Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type&lt;span style="color:#f92672">=&lt;/span>code&amp;amp;redirect_uri&lt;span style="color:#f92672">=&lt;/span>https://login.microsoftonline.com/common/oauth2/nativeclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672">=&lt;/span>&amp;lt;redacted&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Application has been successfully authorized, however no additional command switches were provided.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please use &lt;span style="color:#e6db74">&amp;#39;onedrive --help&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> further assistance in regards to running this application.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;p>Show your configuration:&lt;/p></description></item></channel></rss>
