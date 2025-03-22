@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Android on Aimer's Blog</title><link>https://aimerneige.com/en/tags/android/</link><description>Recent content in Android on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Google Play Store at One Plus Ace2</title><link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link><pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid><description>&lt;p>Today, I buy a new phone &lt;a href="https://www.oneplus.com/cn/ace-2">One Plus ACE 2&lt;/a>. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.&lt;/p>
+&lt;h2 id="enable-gms-from-settings">Enable GMS From Settings&lt;/h2>
+&lt;ol>
+&lt;li>Open your settings app, search &lt;code>google&lt;/code>.&lt;/li>
+&lt;li>Click the first result &lt;code>Google Mobile Services&lt;/code>.&lt;/li>
+&lt;li>Enable Google Mobile Services.&lt;/li>
+&lt;li>Login in your google account at &lt;code>Google&lt;/code> if you want.&lt;/li>
+&lt;/ol>
+&lt;h2 id="install-google-play-store">Install Google Play Store&lt;/h2>
+&lt;p>After you enable GMS, all you need to do next is install a google play store.&lt;/p></description></item><item><title>Dark Mode on Android</title><link>https://aimerneige.com/en/post/android/dark-mode-on-android/</link><pubDate>Sat, 05 Sep 2020 17:43:46 +0800</pubDate><guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid><description>&lt;blockquote>
+&lt;p>In this example, I am using Material Design. But you can also use the &lt;code>Theme.AppCompat.DayNight&lt;/code>.&lt;/p>
+&lt;p>This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.&lt;/p>&lt;/blockquote>
+&lt;h2 id="change-the-style">Change the style&lt;/h2>
+&lt;p>First you should use the &lt;code>DayNight&lt;/code> style by &lt;a href="https://developer.android.com/guide/topics/ui/look-and-feel/darktheme">Google&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;style&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;AppTheme&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">parent=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.&lt;/p>
+&lt;h2 id="adapt-colors">Adapt colors&lt;/h2>
+&lt;p>Make a new folder at &lt;code>project/app/src/main/res/values-night&lt;/code> then make a new resource file &lt;code>colors.xml&lt;/code>. Edit the color you want to set on dark mode.&lt;/p></description></item><item><title>Android Develop Data Save</title><link>https://aimerneige.com/en/post/android/change-package-name/</link><pubDate>Tue, 18 Aug 2020 00:50:53 +0800</pubDate><guid>https://aimerneige.com/en/post/android/change-package-name/</guid><description>&lt;h1 id="change-package-name-quickly">Change Package Name Quickly&lt;/h1>
+&lt;p>Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.&lt;/p>
+&lt;ol>
+&lt;li>Open your Android Project at Android Studio.&lt;/li>
+&lt;li>Go to the &lt;code>Androidmanifest.xml&lt;/code>.&lt;/li>
+&lt;li>Find your package name. For example &lt;code>com.aimerneige.test.example&lt;/code>.&lt;/li>
+&lt;li>Click the part you want to change, like &lt;code>test&lt;/code>.&lt;/li>
+&lt;li>Right click and select &lt;code>Refactor&lt;/code> -&amp;gt; &lt;code>Rename&lt;/code>.&lt;/li>
+&lt;li>Select the &lt;code>Rename package&lt;/code>.&lt;/li>
+&lt;li>Enter a new package name.&lt;/li>
+&lt;li>Click the &lt;code>Refactor&lt;/code>, &lt;code>Do Refactor&lt;/code>.&lt;/li>
+&lt;li>Waiting for the operation done.&lt;/li>
+&lt;/ol>
+&lt;p>That&amp;rsquo;s all. Enjoy it!&lt;/p></description></item><item><title>Android Develop Data Save</title><link>https://aimerneige.com/en/post/android/data-save/</link><pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate><guid>https://aimerneige.com/en/post/android/data-save/</guid><description>&lt;h2 id="save-data-to-file">Save data to file&lt;/h2>
+&lt;h3 id="save-data">save data&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">fun&lt;/span> &lt;span style="color:#a6e22e">save&lt;/span>(inputText: String) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// &amp;#34;data&amp;#34; is the name of the file you saved on phone storage
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// You can change it as you want
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">val&lt;/span> output = openFileOutput(&lt;span style="color:#e6db74">&amp;#34;data&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">Context&lt;/span>.MODE_PRIVATE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">val&lt;/span> writer = BufferedWriter(OutputStreamWriter(output))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer.use {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">it&lt;/span>.write(inputText)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (e: IOException) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> e.printStackTrace()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="load-data">load data&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// This function will try to load the data at a file named &amp;#34;data&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// which is on /data/data/com.aimerneige.example/files/data
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">fun&lt;/span> &lt;span style="color:#a6e22e">load&lt;/span>(): String {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// a StringBuilder to load data
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">val&lt;/span> content = StringBuilder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// &amp;#34;data&amp;#34; is the name of the file you want to find on disk
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">val&lt;/span> input = openFileInput(&lt;span style="color:#e6db74">&amp;#34;data&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">val&lt;/span> reader = BufferedReader(InputStreamReader(input))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reader.use {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reader.forEachLine {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> content.append(&lt;span style="color:#66d9ef">it&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">catch&lt;/span> (e: IOException) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> e.printStackTrace()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> content.toString()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also use like this:&lt;/p></description></item></channel></rss>

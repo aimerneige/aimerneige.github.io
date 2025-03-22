@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Java on Aimer's Blog</title><link>https://aimerneige.com/en/tags/java/</link><description>Recent content in Java on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Sun, 17 Mar 2024 21:16:38 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Setup Your Fabric Workspace</title><link>https://aimerneige.com/en/post/minecraft/how-to-setup-your-fabric-workspace/</link><pubDate>Sun, 17 Mar 2024 21:16:38 +0800</pubDate><guid>https://aimerneige.com/en/post/minecraft/how-to-setup-your-fabric-workspace/</guid><description>&lt;h2 id="prepare-jdk-and-ide">Prepare JDK and IDE&lt;/h2>
+&lt;p>Just simply download &lt;a href="https://www.jetbrains.com/idea/">IntellJ IDEA Community&lt;/a> is good for fabric development.&lt;/p>
+&lt;p>Keep in mind that you must download jdk-17 for development. You can download the jdk inside IDEA or download it manually. But don&amp;rsquo;t forget to setup in IDEA.&lt;/p>
+&lt;h2 id="download-template">Download Template&lt;/h2>
+&lt;p>You can download a template in &lt;a href="https://fabricmc.net/develop/template/">fabric template mod generator&lt;/a>.&lt;/p>
+&lt;p>Setup your own Mod Name, Mod ID and Package Name. Select the newest minecraft version and download the zip file.&lt;/p></description></item><item><title>Enable Swagger on Spring Boot Gradle Projects</title><link>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</link><pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate><guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid><description>&lt;h1 id="adding-swagger-to-spring-boot">Adding Swagger to Spring Boot&lt;/h1>
+&lt;ol>
+&lt;li>Getting the Swagger Spring dependency&lt;/li>
+&lt;li>Enabling Swagger in your code&lt;/li>
+&lt;li>Configuring Swagger&lt;/li>
+&lt;li>Adding details as annotations to APIs&lt;/li>
+&lt;/ol>
+&lt;h2 id="getting-the-swagger-spring-dependency">Getting the Swagger Spring dependency&lt;/h2>
+&lt;p>Edit &lt;code>build.gradle&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>plugins {
+id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39;
+...
+}
+...
+dependencies {
+implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34;
+...
+}
+&lt;/code>&lt;/pre>&lt;h2 id="enabling-swagger-in-your-code">Enabling Swagger in your code&lt;/h2>
+&lt;p>Add &lt;code>@EnableSwagger2&lt;/code> to SpringBootApplication&lt;/p>
+&lt;h2 id="configuring-swagger">Configuring Swagger&lt;/h2>
+&lt;p>Create &lt;code>SwaggerConfig&lt;/code> class.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> com.aimerneige.example.config;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.context.annotation.Bean;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.context.annotation.Configuration;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.ApiInfoBuilder;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.PathSelectors;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.RequestHandlerSelectors;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.service.ApiInfo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.spi.DocumentationType;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.spring.web.plugins.Docket;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.swagger2.annotations.EnableSwagger2;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@EnableSwagger2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SwaggerConfig&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Docket &lt;span style="color:#a6e22e">apiDocket&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Docket(DocumentationType.&lt;span style="color:#a6e22e">SWAGGER_2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">apiInfo&lt;/span>(apiInfo())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">select&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">apis&lt;/span>(RequestHandlerSelectors.&lt;span style="color:#a6e22e">basePackage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;com.aimerneige.example.controller&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">paths&lt;/span>(PathSelectors.&lt;span style="color:#a6e22e">any&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> ApiInfo &lt;span style="color:#a6e22e">apiInfo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ApiInfoBuilder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">title&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Example API&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">version&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;1.0&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="adding-details-as-annotations-to-apis">Adding details as annotations to APIs&lt;/h2>
+&lt;p>Add annotation to your controller.&lt;/p></description></item></channel></rss>

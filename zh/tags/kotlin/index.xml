@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kotlin on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/kotlin/</link><description>Recent content in Kotlin on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>zh</language><lastBuildDate>Sun, 16 Feb 2020 01:25:45 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu 19.10 配置 Kotlin 开发环境</title><link>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</link><pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid><description>&lt;h1 id="ubuntu-1910-配置-kotlin-开发环境">Ubuntu 19.10 配置 Kotlin 开发环境&lt;/h1>
+&lt;h2 id="使用工具">使用工具&lt;/h2>
+&lt;blockquote>
+&lt;p>VSCode&lt;/p>&lt;/blockquote>
+&lt;h2 id="安装-kotlin-编译器">安装 Kotlin 编译器&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo snap install kotlin --classic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果出现错误，执行以下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install snap
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这条指令执行后，系统安装的内容有：&lt;/p>
+&lt;ul>
+&lt;li>kotlinc&lt;/li>
+&lt;li>kotlinc-jvm&lt;/li>
+&lt;li>kotlinc-js&lt;/li>
+&lt;li>kotlin-dce-js&lt;/li>
+&lt;/ul>
+&lt;p>可以通过以下指令查看版本，如果有输出证明安装成功。&lt;/p>
+&lt;p>俩条指令都可以，建议使用上面的。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kotlin -version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kotlinc -version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装插件">安装插件&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>这俩个貌似安装一个就可以了，也可以都安装。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Kotlin&lt;/code>&lt;/li>
+&lt;li>&lt;code>Kotlin Language&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>安装下面这个插件后在 &lt;code>文件&lt;/code> -&amp;gt; &lt;code>首选项&lt;/code> -&amp;gt; &lt;code>设置&lt;/code> -&amp;gt; &lt;code>扩展&lt;/code> -&amp;gt; &lt;code>Run Code Configuration&lt;/code> 中找到并勾选 &lt;code>Run In Terminal&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Code Runner&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="测试">测试&lt;/h1>
+&lt;ol>
+&lt;li>建立新文件 &lt;code>HelloWorld.kt&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fun&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(args: Array&amp;lt;String&amp;gt;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println(&lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>
+&lt;p>通过点击右上角三角形（由 &lt;code>Code Runner&lt;/code> 提供的快捷方式）来编译运行，查看输出。&lt;/p></description></item></channel></rss>

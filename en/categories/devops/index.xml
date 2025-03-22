@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>DevOps on Aimer's Blog</title><link>https://aimerneige.com/en/categories/devops/</link><description>Recent content in DevOps on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Mon, 13 Mar 2023 20:31:37 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Basic Notes</title><link>https://aimerneige.com/en/post/devops/docker-basic-notes/</link><pubDate>Mon, 13 Mar 2023 20:31:37 +0800</pubDate><guid>https://aimerneige.com/en/post/devops/docker-basic-notes/</guid><description>&lt;blockquote>
+&lt;p>This post is just a simple note.&lt;/p>
+&lt;p>More detail in this video: &lt;a href="https://www.youtube.com/watch?v=3c-iBn73dDE">https://www.youtube.com/watch?v=3c-iBn73dDE&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h2 id="difference-image-and-container">&lt;strong>Difference Image and Container&lt;/strong>&lt;/h2>
+&lt;ul>
+&lt;li>CONTAINER is a running environment for IMAGE
+&lt;ul>
+&lt;li>virtual file system&lt;/li>
+&lt;li>port blinded: talk to application running inside of container&lt;/li>
+&lt;li>application image: postgres, redis, mongo, &amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>redis in dockerhub are images&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker pull postgres
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull redis
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># lists installed images&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker images
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run redis
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># `-d` means running in detached mode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -d redis
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># lists running container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker ps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># lists running and stopped container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker ps -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># stops the container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker stop &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># start the container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker start &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pulls image and starts container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run redis:4.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="container-ports-vs-host-ports">&lt;strong>CONTAINER Ports vs HOST ports&lt;/strong>&lt;/h2>
+&lt;ul>
+&lt;li>Multiple containers can run on your host machine&lt;/li>
+&lt;li>Your laptop has only certain ports available&lt;/li>
+&lt;li>Conflict when same port on host machine&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>host&lt;/th>
+&lt;th>docker&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Port 5000&lt;/td>
+&lt;td>Port 5000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Port 3000&lt;/td>
+&lt;td>Port 3000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Port 3001&lt;/td>
+&lt;td>Port 3000&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -p6000:6379 redis
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker logs &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker logs &amp;lt;CONTAINER NAMES&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -d -p6000:6379 --name redis-older redis:4.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># it Interactive Terminal&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker exec -it &amp;lt;CONTAINER ID&amp;gt; /bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker exec -it &amp;lt;CONTAINER NAMES&amp;gt; /bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># if no bash installed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker exec -it &amp;lt;CONTAINER ID&amp;gt; /bin/sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker exec -it &amp;lt;CONTAINER NAMES&amp;gt; /bin/sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># create a new container from a image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># start a exist container&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker pull mongo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull mongo-express
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker network ls
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker network create &amp;lt;NETWORK NAME&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 27017:27017 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e MONGO_INITDB_ROOT_USERNAME&lt;span style="color:#f92672">=&lt;/span>admin &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e MONGO_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672">=&lt;/span>password &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --network mongo-network &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name mongodb &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> mongo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 8081:8081 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e ME_CONFIG_MONGODB_ADMINUSERNAME&lt;span style="color:#f92672">=&lt;/span>admin &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e ME_CONFIG_MONGODB_ADMINPASSWORD&lt;span style="color:#f92672">=&lt;/span>password &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e ME_CONFIG_MONGODB_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">27017&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e ME_CONFIG_MONGODB_SERVER&lt;span style="color:#f92672">=&lt;/span>mongodb &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --net mongo-network &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name mongo-express &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> mongo-express
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker logs &amp;lt;CONTAINER ID&amp;gt; -f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker logs &amp;lt;CONTAINER ID&amp;gt; | tail
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker logs &amp;lt;CONTAINER ID&amp;gt; | more
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-compose">&lt;strong>Docker Compose&lt;/strong>&lt;/h2>
+&lt;p>docker run command&lt;/p></description></item><item><title>How to Setup Your New Linux Server</title><link>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</link><pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate><guid>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</guid><description>&lt;h2 id="update-system">Update System&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debian&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-most-used-tools">Install Most Used Tools&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debain&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-sudo-user">Create Sudo User&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debian&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>adduser aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usermod -aG sudo aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd -G wheel aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>passwd aimer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="test-root-privileges">Test Root Privileges&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cat /etc/shadow
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-ssh-public-key">Setup SSH Public Key&lt;/h2>
+&lt;h3 id="quickly-upload-your-local-key">Quickly Upload Your Local Key&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># run this on your local machine&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id aimer@server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="import-the-key-you-hosted">Import The Key You Hosted&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Import your own public key!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://aimer.aiursoft.cn/authorized_keys -O ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#ae81ff">600&lt;/span> ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="test-if-you-can-connect-to-server">Test if You Can Connect to Server&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh aimer@server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="disable-root-and-password-login">Disable Root and Password Login&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Set &lt;code>PermitRootLogin&lt;/code> as &lt;code>no&lt;/code> To disable &lt;code>root&lt;/code> login&lt;/li>
+&lt;li>Set &lt;code>PasswordAuthentication&lt;/code> as &lt;code>no&lt;/code> To disable password login&lt;/li>
+&lt;/ul>
+&lt;p>Delete this file &lt;code>/etc/ssh/sshd_config.d/50-cloud-init.conf&lt;/code>&lt;/p></description></item></channel></rss>

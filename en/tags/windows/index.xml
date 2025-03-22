@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Windows on Aimer's Blog</title><link>https://aimerneige.com/en/tags/windows/</link><description>Recent content in Windows on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Fri, 08 Mar 2024 00:15:56 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Boot Fedora From Windows Hyper-V</title><link>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</link><pubDate>Fri, 08 Mar 2024 00:15:56 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</guid><description>&lt;ol>
+&lt;li>Enable Hypyer-V&lt;/li>
+&lt;li>disk manager -&amp;gt; offline&lt;/li>
+&lt;li>create vm. skip the disk creation&lt;/li>
+&lt;li>open vm settings. select physical disk instead of vhd&lt;/li>
+&lt;li>Disable secure boot and checkpoint&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk">https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk&lt;/a>&lt;/p></description></item><item><title>Install WSA With Google Play Store and Root</title><link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link><pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid><description>&lt;h2 id="install">Install&lt;/h2>
+&lt;ol>
+&lt;li>Uninstall old wsa (if you have)&lt;/li>
+&lt;li>make sure you have &lt;code>Virtual Machine Platform&lt;/code> enabled on &lt;code>Turn Windows features on or off&lt;/code>&lt;/li>
+&lt;li>fork this repo: &lt;a href="https://github.com/LSPosed/MagiskOnWSA">https://github.com/LSPosed/MagiskOnWSA&lt;/a>&lt;/li>
+&lt;li>build it with actions&lt;/li>
+&lt;li>download build result&lt;/li>
+&lt;li>run the install script&lt;/li>
+&lt;li>start the wsa and enjoy it&lt;/li>
+&lt;/ol>
+&lt;h2 id="enable-usb-debug">Enable usb debug&lt;/h2>
+&lt;ol>
+&lt;li>Open wsa settings, enable &lt;code>Developer Mode&lt;/code>&lt;/li>
+&lt;li>copy wsa ip address&lt;/li>
+&lt;li>&lt;code>adb connect WSA-IP-ADDRESS&lt;/code>&lt;/li>
+&lt;/ol></description></item><item><title>MinGW Install For Windows</title><link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link><pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate><guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid><description>&lt;p>Click &lt;a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">here&lt;/a> to download the MinGW setup file.&lt;/p>
+&lt;p>Run the &lt;code>mingw-get-setup.exe&lt;/code>.&lt;/p>
+&lt;p>Click &lt;code>Install&lt;/code>.&lt;/p>
+&lt;p>Click &lt;code>Continue&lt;/code>.&lt;/p>
+&lt;p>Waite for install.&lt;/p>
+&lt;p>After install done, click &lt;code>Continue&lt;/code>.&lt;/p>
+&lt;p>Select what you wants to install and right click it, click &lt;code>Mark For Installation&lt;/code>.&lt;/p>
+&lt;p>Click &lt;code>Installation&lt;/code> on the left top.&lt;/p>
+&lt;p>Click &lt;code>Apply Changes&lt;/code>.&lt;/p>
+&lt;p>Click &lt;code>Apply&lt;/code>.&lt;/p>
+&lt;p>Just wait for install. (May need proxy)&lt;/p>
+&lt;p>After that, the mingw has been installed successfully. You can uninstall this install program.&lt;/p>
+&lt;p>Set the system env settings and enjoy it!&lt;/p></description></item><item><title>How to install ffmpeg on Windows 10</title><link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link><pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate><guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid><description>&lt;p>Go &lt;a href="https://ffmpeg.zeranoe.com/builds/">this link&lt;/a> and download a build package.&lt;/p>
+&lt;p>For the &lt;code>version&lt;/code>, choose the newest &lt;code>release&lt;/code> version number like &lt;code>4.3.1&lt;/code>.&lt;/p>
+&lt;p>For the &lt;code>Architecture&lt;/code>, choose the &lt;code>Windows 64 bit&lt;/code>.&lt;/p>
+&lt;p>For the &lt;code>Linking&lt;/code>, choose the &lt;code>Static&lt;/code>.&lt;/p>
+&lt;p>For the &lt;code>License&lt;/code>, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.&lt;/p>
+&lt;p>After selected, just click Download Build. You will get a zip package.&lt;/p>
+&lt;p>Unzip the package to any location you want. I recommend to the &lt;code>C:\ffmpeg&lt;/code>&lt;/p></description></item></channel></rss>

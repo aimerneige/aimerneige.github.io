@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Wechat on Aimer's Blog</title><link>https://aimerneige.com/en/tags/wechat/</link><description>Recent content in Wechat on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Thu, 10 Nov 2022 12:03:30 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/wechat/index.xml" rel="self" type="application/rss+xml"/><item><title>Install WeChat on Fedora</title><link>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</link><pubDate>Thu, 10 Nov 2022 12:03:30 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</guid><description>&lt;h1 id="install-wechat-on-fedora">Install WeChat on Fedora&lt;/h1>
+&lt;h2 id="install-wine">Install Wine&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dnf install wine
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="adjust-dpi-config">Adjust DPI Config&lt;/h2>
+&lt;p>Use bellow command to open winecfg&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>winecfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Adjust the dpi to a suitable value at tab &lt;code>Graphics&lt;/code>. (4k monitor, 192 dpi)&lt;/p>
+&lt;h2 id="download-and-config-fonts">Download And Config Fonts&lt;/h2>
+&lt;p>Run the following commands&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dnf install cabextract
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dnf install winetricks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>winetricks corefonts gdiplus riched20 riched30
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="download--install-wechat">Download &amp;amp; Install WeChat&lt;/h2>
+&lt;p>Just download the exe Installer. (Same with download it from browser.)&lt;/p></description></item></channel></rss>

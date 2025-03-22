@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Wsa on Aimer's Blog</title><link>https://aimerneige.com/en/tags/wsa/</link><description>Recent content in Wsa on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Tue, 17 May 2022 23:13:13 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/wsa/index.xml" rel="self" type="application/rss+xml"/><item><title>Install WSA With Google Play Store and Root</title><link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link><pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid><description>&lt;h2 id="install">Install&lt;/h2>
+&lt;ol>
+&lt;li>Uninstall old wsa (if you have)&lt;/li>
+&lt;li>make sure you have &lt;code>Virtual Machine Platform&lt;/code> enabled on &lt;code>Turn Windows features on or off&lt;/code>&lt;/li>
+&lt;li>fork this repo: &lt;a href="https://github.com/LSPosed/MagiskOnWSA">https://github.com/LSPosed/MagiskOnWSA&lt;/a>&lt;/li>
+&lt;li>build it with actions&lt;/li>
+&lt;li>download build result&lt;/li>
+&lt;li>run the install script&lt;/li>
+&lt;li>start the wsa and enjoy it&lt;/li>
+&lt;/ol>
+&lt;h2 id="enable-usb-debug">Enable usb debug&lt;/h2>
+&lt;ol>
+&lt;li>Open wsa settings, enable &lt;code>Developer Mode&lt;/code>&lt;/li>
+&lt;li>copy wsa ip address&lt;/li>
+&lt;li>&lt;code>adb connect WSA-IP-ADDRESS&lt;/code>&lt;/li>
+&lt;/ol></description></item></channel></rss>

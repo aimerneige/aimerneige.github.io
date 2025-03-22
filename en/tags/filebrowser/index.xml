@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Filebrowser on Aimer's Blog</title><link>https://aimerneige.com/en/tags/filebrowser/</link><description>Recent content in Filebrowser on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>en</language><lastBuildDate>Fri, 18 Nov 2022 16:37:27 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/filebrowser/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Filebrowser on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</link><pubDate>Fri, 18 Nov 2022 16:37:27 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</guid><description>&lt;h2 id="install-filebrowser">Install Filebrowser&lt;/h2>
+&lt;p>Install file browser to your server:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Have a quick test:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>filebrowser -a 0.0.0.0 -r /path/to/your/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Access your server and try to login in.&lt;/p>
+&lt;p>Username: &lt;code>admin&lt;/code>&lt;br>
+Password: &lt;code>admin&lt;/code>&lt;/p>
+&lt;h2 id="create-your-own-config">Create Your Own Config&lt;/h2>
+&lt;p>Write your config file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo mkdir /etc/filebrowser/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo vim /etc/filebrowser/.filebrowser.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write something like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">port&lt;/span>: &lt;span style="color:#ae81ff">8080&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">address&lt;/span>: &lt;span style="color:#ae81ff">0.0.0.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">root&lt;/span>: &lt;span style="color:#ae81ff">/path/to/your/file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">database&lt;/span>: &lt;span style="color:#ae81ff">/etc/filebrowser/filebrowser.db&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-service">Create Service&lt;/h2>
+&lt;p>Write a service file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/systemd/system/filebrowser.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write something like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-service" data-lang="service">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Unit]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Description&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">File Browser Service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">After&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">network.target&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Service]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">simple&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Restart&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">on-failure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">RestartSec&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">5s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ExecStart&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">filebrowser&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Install]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">WantedBy&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">multi-user.target&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start and enable it:&lt;/p></description></item></channel></rss>

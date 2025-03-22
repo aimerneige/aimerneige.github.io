@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Image on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/image/</link><description>Recent content in Image on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>zh</language><lastBuildDate>Fri, 12 Aug 2022 22:40:28 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 图像处理基础</title><link>https://aimerneige.com/zh/post/go/go-image-processing-basic/</link><pubDate>Fri, 12 Aug 2022 22:40:28 +0800</pubDate><guid>https://aimerneige.com/zh/post/go/go-image-processing-basic/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>Go 语言的官方包 &lt;a href="https://pkg.go.dev/image">image&lt;/a> 和 &lt;a href="https://pkg.go.dev/image/color">image/color&lt;/a> 定义了非常多的类型，涵盖了很多的图像处理基础内容，本文简单介绍这些库中的基本概念和使用方法。&lt;/p>
+&lt;h1 id="常见类型介绍">常见类型介绍&lt;/h1>
+&lt;h2 id="colors">Colors&lt;/h2>
+&lt;p>&lt;a href="https://pkg.go.dev/image/color#Color">Colors&lt;/a> 是一个接口，它的代码如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Color&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// RGBA returns the alpha-premultiplied red, green, blue and alpha values&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// for the color. Each value ranges within [0, 0xffff], but is represented&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// by a uint32 so that multiplying by a blend factor up to 0xffff will not&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// overflow.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// An alpha-premultiplied color component c has been scaled by alpha (a),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// so has valid values 0 &amp;lt;= c &amp;lt;= a.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">RGBA&lt;/span>() (&lt;span style="color:#a6e22e">r&lt;/span>, &lt;span style="color:#a6e22e">g&lt;/span>, &lt;span style="color:#a6e22e">b&lt;/span>, &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#66d9ef">uint32&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>简单来说，它定义了一个函数，它将任意类型的颜色转化为 rgba 值。这个转化过程可能是有损失的，比如转化 &lt;code>CMYK&lt;/code> 或 &lt;code>YCbCr&lt;/code> 颜色空间的颜色。&lt;/p></description></item></channel></rss>

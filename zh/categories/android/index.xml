@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Android on Aimer's Blog</title><link>https://aimerneige.com/zh/categories/android/</link><description>Recent content in Android on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>zh</language><lastBuildDate>Sat, 22 Feb 2020 00:43:15 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/android/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 DataBinding 精简代码</title><link>https://aimerneige.com/zh/post/android/data-binding/</link><pubDate>Sat, 22 Feb 2020 00:43:15 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/data-binding/</guid><description>&lt;p>在构建布局的时候，是不是感到要写很多的 &lt;code>findViewById&lt;/code> 很浪费时间呢？尤其是布局文件变化的时候，也要在 &lt;code>Activity&lt;/code> 中更改很多内容，极大的降低了开发效率，而谷歌在 JetPack 中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 &lt;code>DataBinding&lt;/code> 下面来介绍 &lt;code>DataBinding&lt;/code> 的使用&lt;/p>
+&lt;h2 id="用到的依赖">用到的依赖&lt;/h2>
+&lt;p>&lt;code>implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'&lt;/code>&lt;/p>
+&lt;h2 id="开启-databinding">开启 &lt;code>dataBinding&lt;/code>&lt;/h2>
+&lt;p>在 &lt;code>app&lt;/code> 的 &lt;code>build.gradle&lt;/code> 文件中添加以下内容&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gradle" data-lang="gradle">&lt;span style="display:flex;">&lt;span>dataBinding &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enabled &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>位置参考&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gradle" data-lang="gradle">&lt;span style="display:flex;">&lt;span>android &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> compileSdkVersion &lt;span style="color:#ae81ff">29&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buildToolsVersion &lt;span style="color:#e6db74">&amp;#34;29.0.3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> defaultConfig &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> applicationId &lt;span style="color:#e6db74">&amp;#34;com.aimerneige.databindingdemo&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> minSdkVersion &lt;span style="color:#ae81ff">24&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> targetSdkVersion &lt;span style="color:#ae81ff">29&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> versionCode &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> versionName &lt;span style="color:#e6db74">&amp;#34;1.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> testInstrumentationRunner &lt;span style="color:#e6db74">&amp;#34;androidx.test.runner.AndroidJUnitRunner&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataBinding &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enabled &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buildTypes &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> release &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> minifyEnabled &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proguardFiles &lt;span style="color:#a6e22e">getDefaultProguardFile&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;proguard-android-optimize.txt&amp;#39;&lt;/span>&lt;span style="color:#f92672">),&lt;/span> &lt;span style="color:#e6db74">&amp;#39;proguard-rules.pro&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="为布局文件提供-databinding-支持">为布局文件提供 &lt;code>dataBinding&lt;/code> 支持&lt;/h2>
+&lt;p>在布局文件开头点击黄色灯泡（或按&lt;code>ALT + Enter&lt;/code>），选择以下操作将布局文件转换为 &lt;code>data binding layout&lt;/code> ，获取 &lt;code>data binding&lt;/code> 支持&lt;/p></description></item><item><title>使用 ProgressDialog 实现加载提示</title><link>https://aimerneige.com/zh/post/android/progress-dialog/</link><pubDate>Thu, 20 Feb 2020 23:40:51 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/progress-dialog/</guid><description>&lt;p>在进行一些耗时操作的时候，经常需要加载提示框来提醒用户当前在进行耗时操作，需要等待。&lt;/p>
+&lt;p>而实现这样一个加载框十分简单。&lt;/p>
+&lt;h2 id="构建-progressdialog-对象">构建 &lt;code>ProgressDialog&lt;/code> 对象&lt;/h2>
+&lt;p>你可以在耗时操作开始前临时建立新的 &lt;code>ProgressDialog&lt;/code> 对象，你也同样可以在 Activity 中构建 &lt;code>ProgressDialog&lt;/code> 的引用，并在 &lt;code>OnCreate&lt;/code> 方法内构建实体，在需要的时候直接显示和隐藏。&lt;/p>
+&lt;p>其中前者相对灵活，但是使用范围有限，后者使用范围较广，但是可以会使得 &lt;code>OnCreate&lt;/code> 中的代码较为繁琐。&lt;/p>
+&lt;p>但是，不管使用那种方法，&lt;code>ProgressDialog&lt;/code> 的构建都是非常简单。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> ProgressDialog progressDialog;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> progressDialog &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ProgressDialog(MainActivity.&lt;span style="color:#a6e22e">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> progressDialog.&lt;span style="color:#a6e22e">setTitle&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;This is Title&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> progressDialog.&lt;span style="color:#a6e22e">setMessage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;This is Message&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> progressDialog.&lt;span style="color:#a6e22e">setCancelable&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其他属性可自行探索或者查阅官方文档&lt;/p>
+&lt;h2 id="显示加载框">显示加载框&lt;/h2>
+&lt;p>在耗时操作开始前(或者任何你想要显示提示框的地方)，通过以下操作显示加载框:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> progressDialog.&lt;span style="color:#a6e22e">show&lt;/span>();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="关闭提示框">关闭提示框&lt;/h2>
+&lt;p>在耗时操作关闭时(或者任何你想要关闭提示框的地方)，通过以下操作关闭加载框:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> progressDialog.&lt;span style="color:#a6e22e">hide&lt;/span>();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>很简单不是吗&lt;/p>
+&lt;p>&lt;del>又水了一期，不过好像没人看我的博客&lt;/del>&lt;/p></description></item><item><title>使用 LiveData 优雅地管理布局显示的数据</title><link>https://aimerneige.com/zh/post/android/live-data/</link><pubDate>Thu, 20 Feb 2020 22:22:21 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/live-data/</guid><description>&lt;p>&lt;code>ViewModel&lt;/code> 提供了一个可以管理数据的优雅的容器，但是它也只是存储数据而已，并不能对数据进行处理，只是存储数据而已，但是如果使用 &lt;code>LiveData&lt;/code> 来辅助， &lt;code>ViewModel&lt;/code> 不再只是存储数据，它本身也能处理界面内容，就像它的名字一样，能让数据活起来。&lt;/p>
+&lt;h2 id="在-viewmodel-中构建-livedata-对象">在 &lt;code>ViewModel&lt;/code> 中构建 &lt;code>LiveData&lt;/code> 对象&lt;/h2>
+&lt;p>与 &lt;code>ViewModel&lt;/code> 不同， &lt;code>LiveData&lt;/code> 不需要构建类，直接在 &lt;code>ViewModel&lt;/code> 中创建对象即可。&lt;/p>
+&lt;p>首先创建 &lt;code>ViewModel&lt;/code> 对象，然后在 ViewModel 对象中创建 &lt;code>LiveData&lt;/code> 字段&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> com.aimerneige.livedatatest;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> androidx.lifecycle.MutableLiveData;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> androidx.lifecycle.ViewModel;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ViewModelWithLiveData&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> ViewModel {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> MutableLiveData&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> LikedNumber;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后为 &lt;code>LiveData&lt;/code> 对象构建 get 方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// May Cause Error&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> MutableLiveData&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">getLikedNumber&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> LikedNumber;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>要注意的是构建的对象如果没有构建的话是为空的，直接返回会有空指针错误，所以要对空指针进行处理。&lt;/p>
+&lt;ol>
+&lt;li>在构造方法中解决&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// One possible wey to make the LikedNumber not null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewModelWithLiveData () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LikedNumber &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MutableLiveData&lt;span style="color:#f92672">&amp;lt;&amp;gt;&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LikedNumber.&lt;span style="color:#a6e22e">setValue&lt;/span>(0);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>在 get 方法中解决(推荐)&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> MutableLiveData&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">getLikedNumber&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (LikedNumber &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LikedNumber &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MutableLiveData&lt;span style="color:#f92672">&amp;lt;&amp;gt;&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LikedNumber.&lt;span style="color:#a6e22e">setValue&lt;/span>(0);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> LikedNumber;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>接下来为数据提供操作方法，要注意的是这里非常不建议直接提供 set 方法对数据进行修改。这里以增加（减少）数据大小为例：&lt;/p></description></item><item><title>使用 ViewModel 管理布局上的数据</title><link>https://aimerneige.com/zh/post/android/view-module/</link><pubDate>Thu, 20 Feb 2020 22:21:25 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/view-module/</guid><description>&lt;p>如果不进行处理的话，布局上的临时数据可能会因为屏幕反转，切换系统语言等而消失，但是处理过程略微繁琐，较为麻烦，但是谷歌为我们提供了一种更加简洁的方式来管理界面数据，那就是 ViewModel。&lt;/p>
+&lt;h2 id="构建自己的-viewmodel-类">构建自己的 &lt;code>ViewModel&lt;/code> 类&lt;/h2>
+&lt;p>新建 Java 类，继承至&lt;code>ViewModel&lt;/code>，名字自定义，这里以&lt;code>MyViewModel&lt;/code>为例。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> com.aimerneige.viewmoudeltest;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> androidx.lifecycle.ViewModel;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyViewMoude&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> ViewModel {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新建好类之后，直接将需要用到的数据填写在内部，可以直接使用 public 的数据类型（不推荐），或者使用 private 数据加 get 方法。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> com.aimerneige.viewmoudletest;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> androidx.lifecycle.ViewModel;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyViewMoude&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> ViewModel {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> number &lt;span style="color:#f92672">=&lt;/span> 0;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String test &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Test for 100&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> age &lt;span style="color:#f92672">=&lt;/span> 0;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">getAge&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> age;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setAge&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> age) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">age&lt;/span> &lt;span style="color:#f92672">=&lt;/span> age;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后把&lt;code>ViewModel&lt;/code>当成一个智能地存储数据的结构体使用即可。&lt;/p>
+&lt;h2 id="在-activity-中使用-viewmodel">在 Activity 中使用 ViewModel&lt;/h2>
+&lt;p>在&lt;code>MainActivity&lt;/code>内构建&lt;code>MyViewMoude&lt;/code>的引用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> MyViewMoude myViewMoude;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 onCreate 方法内获得 MyViewMoude 的实体&lt;/p></description></item><item><title>ToolBar</title><link>https://aimerneige.com/zh/post/android/toolbar/</link><pubDate>Tue, 18 Feb 2020 00:05:23 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/toolbar/</guid><description>&lt;h2 id="materialdesign-依赖库">MaterialDesign 依赖库&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span> implementation &amp;#39;com.google.android.material:material:1.1.0&amp;#39;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="在布局文件中加入-toobar">在布局文件中加入 TooBar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;androidx.appcompat.widget.Toolbar&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/toolBar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">&amp;lt;!--其他属性设置--&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>关于旧版的说明&lt;/p>
+&lt;p>旧版需要使用兼容包&lt;/p>
+&lt;p>&lt;code>compile 'com.android.support:appcompat-v7:23.1.1'&lt;/code>&lt;/p>
+&lt;p>使用以下布局方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;android.support.v7.widget.Toolbar&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/toolbar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TextView&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;标题&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;20sp&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/android.support.v7.widget.Toolbar&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用&lt;/p>&lt;/blockquote>
+&lt;h2 id="在-mainactivity-中引用-toolbar">在 MainActivity 中引用 Toolbar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> Toolbar toolbar &lt;span style="color:#f92672">=&lt;/span> findViewById(R.&lt;span style="color:#a6e22e">id&lt;/span>.&lt;span style="color:#a6e22e">toolBar&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="使用-toolbar-作为界面布局">使用 ToolBar 作为界面布局&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> toolbar.&lt;span style="color:#a6e22e">setTitle&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;AppBarLayoutTest&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setSupportActionBar(toolbar);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>导包的时候导这个，不要导错了，否则会报错&lt;/p>
+&lt;p>&lt;code>import androidx.appcompat.widget.Toolbar;&lt;/code>&lt;/p>&lt;/blockquote>
+&lt;h2 id="添加自定义属性">添加自定义属性&lt;/h2>
+&lt;p>按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。&lt;/p>
+&lt;blockquote>
+&lt;p>官方文档：https://developer.android.com/reference/android/widget/Toolbar&lt;/p>&lt;/blockquote>
+&lt;h2 id="添加菜单">添加菜单&lt;/h2>
+&lt;h3 id="构建菜单的布局文件">构建菜单的布局文件&lt;/h3>
+&lt;p>这里添加的 item 会按顺序显示在 ToolBar 上面。&lt;/p>
+&lt;p>showAsAction 属性：&lt;/p>
+&lt;ul>
+&lt;li>always:总是显示&lt;/li>
+&lt;li>ifRoom:空间足够时显示&lt;/li>
+&lt;li>never:永不显示（收纳在右侧的三条横线那个更多按钮里）&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;menu&lt;/span> &lt;span style="color:#a6e22e">xmlns:android=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:app=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;item&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/toolbar_setting&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:icon=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@drawable/ic_setting&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:title=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@string/toolbar_setting&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">app:showAsAction=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;always&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;item&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/toolbar_about&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:title=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@string/toolbar_about&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">app:showAsAction=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;never&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;item&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/toolbar_exit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:title=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@string/toolbar_exit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">app:showAsAction=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;never&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/menu&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="在主菜单中引用菜单的布局文件">在主菜单中引用菜单的布局文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">onCreateOptionsMenu&lt;/span>(Menu menu) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> getMenuInflater().&lt;span style="color:#a6e22e">inflate&lt;/span>(R.&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">toolbar&lt;/span>, menu);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置菜单点击事件">设置菜单点击事件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">onOptionsItemSelected&lt;/span>(&lt;span style="color:#a6e22e">@NonNull&lt;/span> MenuItem item) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">switch&lt;/span> (item.&lt;span style="color:#a6e22e">getItemId&lt;/span>()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> android.&lt;span style="color:#a6e22e">R&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span>.&lt;span style="color:#a6e22e">home&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> drawerLayout.&lt;span style="color:#a6e22e">openDrawer&lt;/span>(GravityCompat.&lt;span style="color:#a6e22e">START&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> R.&lt;span style="color:#a6e22e">id&lt;/span>.&lt;span style="color:#a6e22e">toolbar_setting&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Toast.&lt;span style="color:#a6e22e">makeText&lt;/span>(MainActivity.&lt;span style="color:#a6e22e">this&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Waiting for coding for setting&amp;#34;&lt;/span>, Toast.&lt;span style="color:#a6e22e">LENGTH_SHORT&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> R.&lt;span style="color:#a6e22e">id&lt;/span>.&lt;span style="color:#a6e22e">toolbar_about&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Toast.&lt;span style="color:#a6e22e">makeText&lt;/span>(MainActivity.&lt;span style="color:#a6e22e">this&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Waiting for coding for about&amp;#34;&lt;/span>, Toast.&lt;span style="color:#a6e22e">LENGTH_SHORT&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> R.&lt;span style="color:#a6e22e">id&lt;/span>.&lt;span style="color:#a6e22e">toolbar_exit&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Toast.&lt;span style="color:#a6e22e">makeText&lt;/span>(MainActivity.&lt;span style="color:#a6e22e">this&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Waiting for coding for exit&amp;#34;&lt;/span>, Toast.&lt;span style="color:#a6e22e">LENGTH_SHORT&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">default&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="appbarlayout">AppBarLayout&lt;/h2>
+&lt;p>使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。&lt;/p></description></item><item><title>使用 Gson 解析 Json 数据</title><link>https://aimerneige.com/zh/post/android/gson/</link><pubDate>Mon, 17 Feb 2020 00:26:02 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/gson/</guid><description>&lt;h2 id="新建项目">新建项目&lt;/h2>
+&lt;p>导入 Gson 依赖&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gradle" data-lang="gradle">&lt;span style="display:flex;">&lt;span> implementation &lt;span style="color:#e6db74">&amp;#39;com.google.code.gson:gson:2.8.5&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="设计布局">设计布局&lt;/h2>
+&lt;p>这里设计俩个 &lt;code>TextView&lt;/code> 和一个 &lt;code>Button&lt;/code>，点击 &lt;code>Button&lt;/code> 后发送 &lt;code>Http&lt;/code> 请求获取 &lt;code>Json&lt;/code> 数据，并且通过 &lt;code>Gson&lt;/code> 进行解析，将解析结果显示在 &lt;code>TextView&lt;/code> 上，以此验证解析成功。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;LinearLayout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:android=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:orientation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;vertical&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TextView&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/text1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;nodata&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TextView&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/text2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;nodata&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/LinearLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码很简单就不多解释了。另外 &lt;strong>在 Activity 中注册控件&lt;/strong> 的内容也省略。&lt;/p>
+&lt;h2 id="发送-http-请求并获取数据">发送 Http 请求并获取数据&lt;/h2>
+&lt;p>操作同一般的 HTML 源码获取，这里不多解释。由于保存在网络上的 Json 数据其源码就是合法的 Json 字符串，因此通过解析网页源码的方法获取的内容就是 Json 数据。这里有一个网页保存了 Json 数据，可用于测试。&lt;/p>
+&lt;pre>&lt;code>https://user.moecraft.net:8443/API/Mc/authlib/
+&lt;/code>&lt;/pre>
+&lt;p>获取源码之后将其保存在一个字符串内即可继续进行下一步操作。此处命名为 &lt;code>jsonData&lt;/code>。&lt;/p></description></item><item><title>设置网络图片</title><link>https://aimerneige.com/zh/post/android/web-image/</link><pubDate>Sun, 16 Feb 2020 01:24:30 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/web-image/</guid><description>&lt;blockquote>
+&lt;p>通过网络连接获取图片信息，并将其设为软件的 ImageView 图片属性&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="介绍">介绍：&lt;/h2>
+&lt;p>与获取 &lt;code>HTML&lt;/code> 类似，首先需要建立网络连接并获取数据，只是这次不通过 &lt;code>String&lt;/code> 获取保存数据，而是使用 &lt;code>Bitmap&lt;/code> 保存。&lt;/p>
+&lt;p>与获取 HTML 数据类似，联网操作同样需要新建线程，要注意的是&lt;strong>在子线程不能操作 UI&lt;/strong>，需要通过外部函数设置图片或者在函数返回 &lt;code>Bitmap&lt;/code> 对象使用。&lt;/p>
+&lt;hr>
+&lt;h2 id="核心代码">核心代码：&lt;/h2>
+&lt;ol>
+&lt;li>建立网络连接，这里使用 &lt;code>HttpURLConnection&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>URL url &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> URL(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com.img&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>HttpURLConnection connection &lt;span style="color:#f92672">=&lt;/span> (HttpURLConnection) url.&lt;span style="color:#a6e22e">openConnection&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connection.&lt;span style="color:#a6e22e">setRequestMethod&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;GET&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// ......&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 诸如超时时间等的设置&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>处理返回数据&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>InputStream is &lt;span style="color:#f92672">=&lt;/span> connection.&lt;span style="color:#a6e22e">getInputStream&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Bitmap bitmap &lt;span style="color:#f92672">=&lt;/span> BitmapFactory.&lt;span style="color:#a6e22e">decodeStream&lt;/span>(is);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>设置控件，注意该操作不能在子线程中进行&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>imageView.&lt;span style="color:#a6e22e">setImageBitmap&lt;/span>(bitmap);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="完整代码">完整代码&lt;/h2>
+&lt;blockquote>
+&lt;p>代码很烂，有很多可以优化的地方&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//设置网络图片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setUrlImage&lt;/span>(&lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> ImageViewId, &lt;span style="color:#66d9ef">final&lt;/span> String address) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//开启一个线程用于联网&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">new&lt;/span> Thread(&lt;span style="color:#66d9ef">new&lt;/span> Runnable() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//把传过来的路径转成URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> URL url &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> URL(address);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//获取连接&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpURLConnection connection &lt;span style="color:#f92672">=&lt;/span> (HttpURLConnection) url.&lt;span style="color:#a6e22e">openConnection&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//使用GET方法访问网络&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connection.&lt;span style="color:#a6e22e">setRequestMethod&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;GET&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//超时时间为10秒&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connection.&lt;span style="color:#a6e22e">setConnectTimeout&lt;/span>(10000);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//获取返回码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> code &lt;span style="color:#f92672">=&lt;/span> connection.&lt;span style="color:#a6e22e">getResponseCode&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (code &lt;span style="color:#f92672">==&lt;/span> 200) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InputStream inputStream &lt;span style="color:#f92672">=&lt;/span> connection.&lt;span style="color:#a6e22e">getInputStream&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//使用工厂把网络的输入流生产Bitmap&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Bitmap bitmap &lt;span style="color:#f92672">=&lt;/span> BitmapFactory.&lt;span style="color:#a6e22e">decodeStream&lt;/span>(inputStream);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//子线程不能操作UI，通过外部函数设置图片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setImage(ImageViewId, bitmap);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inputStream.&lt;span style="color:#a6e22e">close&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//服务启发生错误，显示提示信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Toast.&lt;span style="color:#a6e22e">makeText&lt;/span>(HttpImage.&lt;span style="color:#a6e22e">this&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Can&amp;#39;t get the image from Internet.&amp;#34;&lt;/span>, Toast.&lt;span style="color:#a6e22e">LENGTH_SHORT&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> e.&lt;span style="color:#a6e22e">printStackTrace&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setImage&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> ImageViewId, Bitmap bitmap) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ImageView imageView &lt;span style="color:#f92672">=&lt;/span> findViewById(ImageViewId);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> imageView.&lt;span style="color:#a6e22e">setImageBitmap&lt;/span>(bitmap);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="一些废话">一些废话&lt;/h2>
+&lt;p>实际上和处理 &lt;code>HTML&lt;/code> 是类似的，只不过不再使用 &lt;code>String&lt;/code> 处理服务器返回的数据。&lt;/p></description></item><item><title>使用 GsonFormat 插件快速构建 Json 映射对象</title><link>https://aimerneige.com/zh/post/android/gson-format/</link><pubDate>Sun, 16 Feb 2020 01:21:07 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/gson-format/</guid><description>&lt;h2 id="插件安装">插件安装&lt;/h2>
+&lt;ol>
+&lt;li>File&lt;/li>
+&lt;li>Settings&lt;/li>
+&lt;li>Plugins&lt;/li>
+&lt;li>Marketplace&lt;/li>
+&lt;li>在搜索框输入 &lt;code>GsonFormat&lt;/code> 搜索&lt;/li>
+&lt;li>安装相应插件&lt;/li>
+&lt;li>根据提示重启 IDE&lt;/li>
+&lt;/ol>
+&lt;h2 id="使用方法">使用方法&lt;/h2>
+&lt;ol>
+&lt;li>新建实体类&lt;/li>
+&lt;li>&lt;code>ALT + Insert&lt;/code> 或者 &lt;code>右键-&amp;gt;Generate&lt;/code>&lt;/li>
+&lt;li>选择 &lt;code>GsonFormat&lt;/code>&lt;/li>
+&lt;li>将待解析 Json 字符串输入弹出的对话框&lt;/li>
+&lt;li>OK&lt;/li>
+&lt;/ol></description></item><item><title>Swiperefreshlayout</title><link>https://aimerneige.com/zh/post/android/swiperefreshlayout/</link><pubDate>Sat, 01 Feb 2020 01:45:42 +0800</pubDate><guid>https://aimerneige.com/zh/post/android/swiperefreshlayout/</guid><description>&lt;p>&lt;a href="https://developer.android.google.cn/jetpack/androidx/releases/swiperefreshlayout?hl=zh-cn">GoogleDoc&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/googlearchive/android-SwipeRefreshLayoutBasic#readme">GoogleGithub&lt;/a>&lt;/p>
+&lt;h2 id="声明依赖项">声明依赖项&lt;/h2>
+&lt;p>直接复制官方文档，不多解释了（懒&lt;/p>
+&lt;blockquote>
+&lt;p>在应用或模块的 &lt;code>build.gradle&lt;/code> 文件中添加所需工件的依赖项：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span> dependencies &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> implementation &lt;span style="color:#e6db74">&amp;#34;androidx.swiperefreshlayout:swiperefreshlayout:1.0.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如需详细了解依赖项，请参阅&lt;a href="https://developer.android.google.cn/studio/build/dependencies.html?hl=zh-cn">添加编译依赖项&lt;/a>。&lt;/p>&lt;/blockquote>
+&lt;h2 id="添加布局">添加布局&lt;/h2>
+&lt;p>在 xml 布局文件中添加 SwipeRefreshLayout，并将 WebView 内嵌在 SwipeRefreshLayout 中。&lt;/p>
+&lt;blockquote>
+&lt;p>布局这里拷贝了别人的代码，结果软件闪退，搞了半天找不到原因，重开了一个项目，根据代码提示写了一份居然可以运行，分明代码一样的，好迷啊。。。。。&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;LinearLayout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:android=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:app=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:tools=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/tools&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">tools:context=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;.MainActivity&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;androidx.swiperefreshlayout.widget.SwipeRefreshLayout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/swipe_refresh&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;WebView&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;@+id/web_view&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/androidx.swiperefreshlayout.widget.SwipeRefreshLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/LinearLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>SwipeRefreshLayout 类似 ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;ScrollView&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:android=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;LinearLayout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:orientation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;vertical&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_width=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;match_parent&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:layout_height=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wrap_content&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:text=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test_scroll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">android:textSize=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;16sp&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/LinearLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/ScrollView&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="编写代码部分">编写代码部分&lt;/h2>
+&lt;p>先放一个完整的源码，看不懂直接跳过，下面介绍关于 Swiperefreshlayout 的核心代码&lt;/p></description></item></channel></rss>

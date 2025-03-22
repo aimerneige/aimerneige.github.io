@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tool on Aimer's Blog</title><link>https://aimerneige.com/zh/categories/tool/</link><description>Recent content in Tool on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>zh</language><lastBuildDate>Fri, 29 Jan 2021 16:37:25 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/tool/index.xml" rel="self" type="application/rss+xml"/><item><title>利用 EditorConfig 定义代码格式，统一代码风格</title><link>https://aimerneige.com/zh/post/tool/editorconfig/</link><pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate><guid>https://aimerneige.com/zh/post/tool/editorconfig/</guid><description>EditorConfig 的简要介绍</description></item><item><title>GCC 基础</title><link>https://aimerneige.com/zh/post/tool/gcc-basic/</link><pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate><guid>https://aimerneige.com/zh/post/tool/gcc-basic/</guid><description>&lt;h2 id="gcc-简介">GCC 简介&lt;/h2>
+&lt;p>GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。&lt;/p>
+&lt;p>GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。&lt;/p>
+&lt;p>GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。&lt;/p>
+&lt;p>GCC 的 C 编译器 是 gcc，其命令格式为 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Usage: gcc &lt;span style="color:#f92672">[&lt;/span>options&lt;span style="color:#f92672">]&lt;/span> file...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>GCC 下默认文扩展名的含义：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>文件扩展名&lt;/th>
+&lt;th>GCC 所理解的含义&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>*.c&lt;/td>
+&lt;td>该类文件为 C 语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.h&lt;/td>
+&lt;td>该类文件为 C 语言的头文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.i&lt;/td>
+&lt;td>该类文件为预处理后的 C 文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.C&lt;/td>
+&lt;td>该类文件为 C++ 语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.cc&lt;/td>
+&lt;td>该类文件为 C++ 语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.cxx&lt;/td>
+&lt;td>该类文件为 C++ 语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.m&lt;/td>
+&lt;td>该类文件为 Objective-C 语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.s&lt;/td>
+&lt;td>该类文件为汇编语言的源文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.o&lt;/td>
+&lt;td>该类文件为汇编后的目标文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.a&lt;/td>
+&lt;td>该类文件为静态库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>*.so&lt;/td>
+&lt;td>该类文件为共享库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>a.out&lt;/td>
+&lt;td>该类文件为链接后的输出文件&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>GCC 下有很多编译器，可以支持 C 语言，C++语言等多种语言&lt;/p></description></item></channel></rss>

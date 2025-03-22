@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Server on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/server/</link><description>Recent content in Server on Aimer's Blog</description><generator>Hugo -- 0.145.0</generator><language>zh</language><lastBuildDate>Thu, 26 Jan 2023 16:24:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/server/index.xml" rel="self" type="application/rss+xml"/><item><title>如何搭建 Minecraft Mod 服务器</title><link>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</link><pubDate>Thu, 26 Jan 2023 16:24:34 +0800</pubDate><guid>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</guid><description>&lt;h2 id="使用-papermc">使用 PaperMC&lt;/h2>
+&lt;h3 id="安装-papermc">安装 PaperMC&lt;/h3>
+&lt;p>下载 &lt;a href="https://papermc.io/downloads">PaperMC&lt;/a> 提供的 jar 包，存储在恰当位置即可。&lt;/p>
+&lt;h3 id="启动-papermc">启动 PaperMC&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>java -Xms2G -Xmx2G -jar paper.jar --nogui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面是&lt;a href="https://docs.papermc.io/paper/aikars-flags">官方提供的&lt;/a>优化后的启动脚本：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">200&lt;/span> -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">30&lt;/span> -XX:G1MaxNewSizePercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">40&lt;/span> -XX:G1HeapRegionSize&lt;span style="color:#f92672">=&lt;/span>8M -XX:G1ReservePercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">20&lt;/span> -XX:G1HeapWastePercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span> -XX:G1MixedGCCountTarget&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">4&lt;/span> -XX:InitiatingHeapOccupancyPercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">15&lt;/span> -XX:G1MixedGCLiveThresholdPercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">90&lt;/span> -XX:G1RSetUpdatingPauseTimePercent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span> -XX:SurvivorRatio&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">32&lt;/span> -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> -Dusing.aikars.flags&lt;span style="color:#f92672">=&lt;/span>https://mcflags.emc.gs -Daikars.new.flags&lt;span style="color:#f92672">=&lt;/span>true -jar paper.jar --nogui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装-datapack">安装 datapack&lt;/h3>
+&lt;p>关掉已启动的服务器，将 datapack 存储在 &lt;code>papermc/world/datapacks&lt;/code> 文件夹下，重启服务器即可。（如果不存在就新建一个）&lt;/p>
+&lt;h3 id="安装插件">安装插件&lt;/h3>
+&lt;p>关掉已启动的服务器，将下载好的插件存储在 &lt;code>papermc/plugins&lt;/code> 文件夹下，重启服务器即可。（如果不存在就新建一个）&lt;/p>
+&lt;h3 id="配置服务器">配置服务器&lt;/h3>
+&lt;p>PaperMC 提供了非常多的服务器修改配置，具体请查阅 &lt;a href="https://docs.papermc.io/paper/configuration">官方文档&lt;/a>。&lt;/p>
+&lt;h3 id="对于-mod-的说明">对于 mod 的说明&lt;/h3>
+&lt;p>PaperMC 并不兼容 Fabric 的 mod。如果需要使用 Fabric 的 mod，请参考下面的内容使用 Fabric 服务器。&lt;/p></description></item><item><title>如何搭建你自己的 Minecraft 服务器</title><link>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</link><pubDate>Thu, 12 Jan 2023 21:00:37 +0800</pubDate><guid>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</guid><description>&lt;h1 id="阅前须知">阅前须知&lt;/h1>
+&lt;ol>
+&lt;li>本文章面向具有一定运维经验的用户，不面向小白&lt;/li>
+&lt;li>本文章介绍的 Minecraft 是 Java 版本的 Minecraft&lt;/li>
+&lt;li>本文章只介绍纯净服的搭建，不会说明如何安装 mod&lt;/li>
+&lt;li>如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”&lt;/li>
+&lt;/ol>
+&lt;h1 id="准备">准备&lt;/h1>
+&lt;ol>
+&lt;li>可供外部连接的服务器&lt;/li>
+&lt;li>基础 Linux 知识&lt;/li>
+&lt;/ol>
+&lt;h1 id="安装">安装&lt;/h1>
+&lt;h2 id="首先要确定你的服务器是否可以被外部连接">首先要确定你的服务器是否可以被外部连接&lt;/h2>
+&lt;h3 id="有公网-ip">有公网 IP&lt;/h3>
+&lt;p>如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。&lt;/p>
+&lt;h3 id="没有公网-ip">没有公网 IP&lt;/h3>
+&lt;p>如果你没有公网 IP，你需要&lt;strong>购买一台云服务器&lt;/strong>，这样，你就拥有了一个可供外部连接的公网 IP。&lt;/p>
+&lt;p>如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 &lt;a href="https://github.com/fatedier/frp">frp&lt;/a> 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。&lt;/p>
+&lt;p>如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。&lt;/p>
+&lt;p>至于你需要多高的配置来运行 Minecraft 服务器，可以参考 &lt;a href="https://minecraft.fandom.com/zh/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%9C%80%E6%B1%82/%E4%B8%93%E7%94%A8">Wiki&lt;/a> 的内容：&lt;/p>
+&lt;h2 id="确保服务器可以被外部连接后安装-minecraft">确保服务器可以被外部连接后，安装 Minecraft&lt;/h2>
+&lt;h3 id="下载服务器文件">下载服务器文件&lt;/h3>
+&lt;p>在 &lt;a href="https://www.minecraft.net/zh-hans/download/server">官网&lt;/a> 下载服务器运行所需的 jar 文件。&lt;/p>
+&lt;p>官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。&lt;/p>
+&lt;h3 id="运行服务器">运行服务器&lt;/h3>
+&lt;p>直接使用官网的示例指令运行 jar 文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果你有更高的内存，可以修改 &lt;code>-Xmx1024M -Xms1024M&lt;/code> 这一部分。&lt;/p>
+&lt;p>第一次执行后，需要同意用户协议才可以继续执行，修改 &lt;code>eula.txt&lt;/code> 这个文件，将 &lt;code>eula=false&lt;/code> 改为 &lt;code>eula=true&lt;/code>。&lt;/p></description></item><item><title>如何配置新购置的 Linux 服务器</title><link>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</link><pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate><guid>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</guid><description>&lt;h2 id="更新系统">更新系统&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debian&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装常用工具">安装常用工具&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debain&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="创建-sudo-用户">创建 sudo 用户&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Debian&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>adduser aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usermod -aG sudo aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Fedora&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd -G wheel aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>passwd aimer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试-root-权限">测试 root 权限&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - aimer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cat /etc/shadow
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置-ssh-连接密钥">配置 SSH 连接密钥&lt;/h2>
+&lt;h3 id="快速上传本地密钥">快速上传本地密钥&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在你的本地环境执行这条指令&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id aimer@server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="导入托管的密钥">导入托管的密钥&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入你自己的密钥！&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://aimer.aiursoft.cn/authorized_keys -O ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#ae81ff">600&lt;/span> ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试连通性">测试连通性&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh aimer@server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="禁用-root-和密码登录">禁用 root 和密码登录&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>将 &lt;code>PermitRootLogin&lt;/code> 修改为 &lt;code>no&lt;/code> 可以禁用 &lt;code>root&lt;/code> 用户登录&lt;/li>
+&lt;li>将 &lt;code>PasswordAuthentication&lt;/code> 修改为 &lt;code>no&lt;/code> 可以禁用密码登录&lt;/li>
+&lt;/ul>
+&lt;p>删除这个文件 &lt;code>/etc/ssh/sshd_config.d/50-cloud-init.conf&lt;/code>&lt;/p></description></item></channel></rss>
