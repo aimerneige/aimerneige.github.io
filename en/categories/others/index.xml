@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Others on Aimer's Blog</title><link>https://aimerneige.com/en/categories/others/</link><description>Recent content in Others on Aimer's Blog</description><generator>Hugo -- 0.131.0</generator><language>en</language><lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Google Play Store at One Plus Ace2</title><link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link><pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid><description>Today, I buy a new phone One Plus ACE 2. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.
+Enable GMS From Settings Open your settings app, search google. Click the first result Google Mobile Services. Enable Google Mobile Services.</description></item><item><title>Install WSA With Google Play Store and Root</title><link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link><pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid><description>Install Uninstall old wsa (if you have) make sure you have Virtual Machine Platform enabled on Turn Windows features on or off fork this repo: https://github.com/LSPosed/MagiskOnWSA build it with actions download build result run the install script start the wsa and enjoy it Enable usb debug Open wsa settings, enable Developer Mode copy wsa ip address adb connect WSA-IP-ADDRESS</description></item><item><title>Hello Hugo</title><link>https://aimerneige.com/en/post/others/hello-hugo/</link><pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-hugo/</guid><description>Install and Config hugo</description></item><item><title>MinGW Install For Windows</title><link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link><pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate><guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid><description>Click here to download the MinGW setup file.
+Run the mingw-get-setup.exe.
+Click Install.
+Click Continue.
+Waite for install.
+After install done, click Continue.
+Select what you wants to install and right click it, click Mark For Installation.
+Click Installation on the left top.
+Click Apply Changes.
+Click Apply.
+Just wait for install. (May need proxy)
+After that, the mingw has been installed successfully. You can uninstall this install program.
+Set the system env settings and enjoy it!</description></item><item><title>How to install ffmpeg on Windows 10</title><link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link><pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate><guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid><description>Go this link and download a build package.
+For the version, choose the newest release version number like 4.3.1.
+For the Architecture, choose the Windows 64 bit.
+For the Linking, choose the Static.
+For the License, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.
+After selected, just click Download Build. You will get a zip package.
+Unzip the package to any location you want. I recommend to the C:\ffmpeg</description></item><item><title>Hello World</title><link>https://aimerneige.com/en/post/others/hello-world/</link><pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-world/</guid><description>Welcome Welcome!
+HelloWorld This is a simple test for my first blog article.
+Mathjax Test 1 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df =\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$
+Test 2 $$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$
+C #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;HelloWorld!\n&amp;#34;); return 0; } C++ #include &amp;lt;iostream&amp;gt; int main() { std::cout &amp;lt;&amp;lt; &amp;#34;HelloWorld!&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } Java public class Main { public static void main(String[] args) { System.</description></item></channel></rss>
