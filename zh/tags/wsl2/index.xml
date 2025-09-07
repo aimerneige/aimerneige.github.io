@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Wsl2 on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/wsl2/</link><description>Recent content in Wsl2 on Aimer's Blog</description><generator>Hugo -- 0.131.0</generator><language>zh</language><lastBuildDate>Sat, 09 Apr 2022 22:22:44 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/wsl2/index.xml" rel="self" type="application/rss+xml"/><item><title>在 wsl 下安装 fedora 35</title><link>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</link><pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</guid><description>安装 wsl2 使用管理员身份开启 windows terminal.
+执行如下指令：
+wsl.exe --install 等待安装完成后在开始菜单执行重启(Restart)
+警告
+注意是在开始菜单选择 Restart 而不能是选择 Shut Down 关机之后手动开机。
+安装过程中系统会自动下载 Ubuntu 的子系统，重启后会弹出 ubuntu 的命令行初始界面，输入用户名和密码即可开始使用 ubuntu 子系统。
+执行下面的指令设置 wsl 默认版本为 wsl2：
+wsl --set-default-version 2 安装其他版本的子系统 如果你想要其他版本的子系统，可以执行如下指令获取可通过 wsl 指令直接安装的发行版列表：
+wsl --list --online 返回数据类似下面这样：
+The following is a list of valid distributions that can be installed. Install using &amp;#39;wsl --install -d &amp;lt;Distro&amp;gt;&amp;#39;. NAME FRIENDLY NAME Ubuntu Ubuntu Debian Debian GNU/Linux kali-linux Kali Linux Rolling openSUSE-42 openSUSE Leap 42 SLES-12 SUSE Linux Enterprise Server v12 Ubuntu-16.</description></item></channel></rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Python on Aimer's Blog</title><link>https://aimerneige.com/zh/categories/python/</link><description>Recent content in Python on Aimer's Blog</description><generator>Hugo -- 0.131.0</generator><language>zh</language><lastBuildDate>Fri, 29 May 2020 09:38:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>每天一个 Python 小知识 isinstance</title><link>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</link><pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</guid><description>首先来看下 w3schools 的解释：
+Example Check if the number 5 is an integer:
+x = isinstance(5, int) Definition and Usage The isinstance() function returns True if the specified object is of the specified type, otherwise False.
+If the type parameter is a tuple, this function will return True if the object is one of the types in the tuple.
+Syntax isinstance(object, type)
+Parameter Values Parameter Description object Required. An object. type A type or a class, or a tuple of types and/or classes More Examples Example Check if &amp;ldquo;Hello&amp;rdquo; is one of the types described in the type parameter:</description></item><item><title>每天一个 Python 小知识 assert</title><link>https://aimerneige.com/zh/post/python/daily-python-tips-assert/</link><pubDate>Thu, 28 May 2020 23:10:07 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/daily-python-tips-assert/</guid><description>首先来看下 w3schools 的解释
+Example Test if a condition returns True:
+x = &amp;#34;hello&amp;#34; #if condition returns True, then nothing happens: assert x == &amp;#34;hello&amp;#34; #if condition returns False, AssertionError is raised: assert x == &amp;#34;goodbye&amp;#34; Definition and Usage The assert keyword is used when debugging code.
+The assert keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.
+You can write a message to be written if the code returns False, check the example below.</description></item><item><title>使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读</title><link>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</link><pubDate>Wed, 27 May 2020 23:36:38 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</guid><description>介绍 使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。
+查阅资料，我们会发现 Pillow 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。
+简单地查看下 官方文档 。
+emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。
+随便查了下，发现了这个：
+from PIL import Image image1 = Image.open(r&amp;#39;C:\Users\Ron\Desktop\Test\image1.png&amp;#39;) image2 = Image.open(r&amp;#39;C:\Users\Ron\Desktop\Test\image2.png&amp;#39;) image3 = Image.open(r&amp;#39;C:\Users\Ron\Desktop\Test\image3.png&amp;#39;) image4 = Image.open(r&amp;#39;C:\Users\Ron\Desktop\Test\image4.png&amp;#39;) im1 = image1.convert(&amp;#39;RGB&amp;#39;) im2 = image2.convert(&amp;#39;RGB&amp;#39;) im3 = image3.convert(&amp;#39;RGB&amp;#39;) im4 = image4.convert(&amp;#39;RGB&amp;#39;) imagelist = [im2,im3,im4] im1.save(r&amp;#39;C:\Users\Ron\Desktop\Test\myImages.pdf&amp;#39;,save_all=True, append_images=imagelist) 来源： https://datatofish.com/images-to-pdf-python/
+不需要仔细看又臭又长的官方文档了，nice！
+了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!
+代码很简单，直接上源码了：
+源码 项目文件目录：
+- comic/ # 包含了漫画的图片 - example_001.</description></item><item><title>20 个 Python 进阶技巧</title><link>https://aimerneige.com/zh/post/python/20-python-skills/</link><pubDate>Mon, 13 Apr 2020 20:27:22 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/20-python-skills/</guid><description>本来是在查资料，无意间看到了这个知乎文章，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自Medium的文章，但是原文章是英语写的，为了帮到那些英语不太好的 Python 学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）
+基于 Medium 的文章 《20 Python Snippets You Should Learn Today》 ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。
+大部分示例代码均引用自 Medium 《20 Python Snippets You Should Learn Today》
+1 反转字符串 下面的代码使用 Python 切片操作来反转字符串。
+# Reversing a string using slicing my_string = &amp;#34;ABCDE&amp;#34; reversed_string = my_string[::-1] print(reversed_string) # Output # EDCBA 这里用到的是 Python切片
+切片某种意义上就是对如下代码的书写进行了简化（不考虑 Python 中-1 的情况）
+// [a:b:c] for (int i = a, i &amp;lt; b; i = i + c) { // do something } 推荐阅读： 《How to reverse a string in Python?</description></item></channel></rss>
