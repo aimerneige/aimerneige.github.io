@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Python on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/python/</link><description>Recent content in Python on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Fri, 29 May 2020 09:38:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>每天一个 Python 小知识 isinstance</title><link>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</link><pubDate>Fri, 29 May 2020 09:38:41 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/daily-python-tips-isinstance/</guid><description>&lt;p&gt;首先来看下 w3schools 的解释：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id="example"&gt;Example&lt;/h3&gt;
+&lt;p&gt;Check if the number 5 is an integer:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;x &lt;span style="color:#f92672"&gt;=&lt;/span&gt; isinstance(&lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;, int)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="definition-and-usage"&gt;Definition and Usage&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;isinstance()&lt;/code&gt; function returns &lt;code&gt;True&lt;/code&gt; if the specified object is of the specified type, otherwise &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If the type parameter is a tuple, this function will return &lt;code&gt;True&lt;/code&gt; if the object is &lt;em&gt;one&lt;/em&gt; of the types in the tuple.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="syntax"&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;isinstance(&lt;em&gt;object&lt;/em&gt;, &lt;em&gt;type&lt;/em&gt;)&lt;/p&gt;
+&lt;h2 id="parameter-values"&gt;Parameter Values&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Parameter&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;em&gt;object&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Required. An object.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;em&gt;type&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;A type or a class, or a tuple of types and/or classes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="more-examples"&gt;More Examples&lt;/h2&gt;
+&lt;h3 id="example-1"&gt;Example&lt;/h3&gt;
+&lt;p&gt;Check if &amp;ldquo;Hello&amp;rdquo; is one of the types described in the type parameter:&lt;/p&gt;</description></item><item><title>每天一个 Python 小知识 assert</title><link>https://aimerneige.com/zh/post/python/daily-python-tips-assert/</link><pubDate>Thu, 28 May 2020 23:10:07 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/daily-python-tips-assert/</guid><description>&lt;p&gt;首先来看下 w3schools 的解释&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id="example"&gt;Example&lt;/h3&gt;
+&lt;p&gt;Test if a condition returns True:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;x &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#if condition returns True, then nothing happens:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;assert&lt;/span&gt; x &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#if condition returns False, AssertionError is raised:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;assert&lt;/span&gt; x &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;goodbye&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="definition-and-usage"&gt;Definition and Usage&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;assert&lt;/code&gt; keyword is used when debugging code.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;assert&lt;/code&gt; keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.&lt;/p&gt;
+&lt;p&gt;You can write a message to be written if the code returns False, check the example below.&lt;/p&gt;</description></item><item><title>使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读</title><link>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</link><pubDate>Wed, 27 May 2020 23:36:38 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</guid><description>&lt;h2 id="介绍"&gt;介绍&lt;/h2&gt;
+&lt;p&gt;使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。&lt;/p&gt;
+&lt;p&gt;查阅资料，我们会发现 &lt;a href="https://github.com/python-pillow/Pillow"&gt;Pillow&lt;/a&gt; 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。&lt;/p&gt;
+&lt;p&gt;简单地查看下 &lt;a href="https://pillow.readthedocs.io/en/stable/"&gt;官方文档&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。&lt;/p&gt;
+&lt;p&gt;随便查了下，发现了这个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; PIL &lt;span style="color:#f92672"&gt;import&lt;/span&gt; Image
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image1.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image2.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image3 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image3.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image4 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image4.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image1&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image2&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im3 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image3&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im4 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image4&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;imagelist &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [im2,im3,im4]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im1&lt;span style="color:#f92672"&gt;.&lt;/span&gt;save(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\myImages.pdf&amp;#39;&lt;/span&gt;,save_all&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;, append_images&lt;span style="color:#f92672"&gt;=&lt;/span&gt;imagelist)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来源： &lt;a href="https://datatofish.com/images-to-pdf-python/"&gt;https://datatofish.com/images-to-pdf-python/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不需要仔细看又臭又长的官方文档了，nice！&lt;/p&gt;
+&lt;p&gt;了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码很简单，直接上源码了：&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="源码"&gt;源码&lt;/h2&gt;
+&lt;p&gt;项目文件目录：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;- comic/ # 包含了漫画的图片
+- example_001.png
+- example_002.png
+- example_003.png
+...
+- example_202.png
+- output/ # 保存输出的pdf文件
+- ろりっぽいの.pdf
+main.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;main.py&lt;/p&gt;</description></item><item><title>20 个 Python 进阶技巧</title><link>https://aimerneige.com/zh/post/python/20-python-skills/</link><pubDate>Mon, 13 Apr 2020 20:27:22 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/20-python-skills/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本来是在查资料，无意间看到了这个&lt;a href="https://zhuanlan.zhihu.com/p/89998429"&gt;知乎文章&lt;/a&gt;，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自&lt;a href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124"&gt;Medium&lt;/a&gt;的文章，但是原文章是英语写的，为了帮到那些英语不太好的 Python 学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;基于 Medium 的文章 &lt;a href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124"&gt;《20 Python Snippets You Should Learn Today》&lt;/a&gt; ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。&lt;/p&gt;
+&lt;p&gt;大部分示例代码均引用自 &lt;strong&gt;Medium&lt;/strong&gt; &lt;a href="https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124"&gt;《20 Python Snippets You Should Learn Today》&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-反转字符串"&gt;1 反转字符串&lt;/h2&gt;
+&lt;p&gt;下面的代码使用 Python 切片操作来反转字符串。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Reversing a string using slicing&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;my_string &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;ABCDE&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;reversed_string &lt;span style="color:#f92672"&gt;=&lt;/span&gt; my_string[::&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(reversed_string)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Output&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# EDCBA&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到的是 Python&lt;a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017269965565856"&gt;切片&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;切片某种意义上就是对如下代码的书写进行了简化（不考虑 Python 中-1 的情况）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// [a:b:c]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; a, i &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; b; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; i &lt;span style="color:#f92672"&gt;+&lt;/span&gt; c) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;推荐阅读： &lt;a href="https://medium.com/swlh/how-to-reverse-a-string-in-python-66fc4bbc7379"&gt;《How to reverse a string in Python?》&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

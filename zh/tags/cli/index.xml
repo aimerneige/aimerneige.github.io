@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Cli on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/cli/</link><description>Recent content in Cli on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Sat, 12 Mar 2022 19:36:29 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>find 指令的基本用法</title><link>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</link><pubDate>Sat, 12 Mar 2022 19:36:29 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</guid><description>&lt;h1 id="什么是-find"&gt;什么是 &lt;code&gt;find&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;正如它的名字一样，&lt;code&gt;find&lt;/code&gt; 指令用于查找文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。&lt;/p&gt;
+&lt;p&gt;来源: &lt;a href="https://www.runoob.com/linux/linux-comm-find.html"&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found.&lt;/p&gt;
+&lt;p&gt;From: &lt;a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/"&gt;Geeks for Geeks&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

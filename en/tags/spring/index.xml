@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Spring on Aimer's Blog</title><link>https://aimerneige.com/en/tags/spring/</link><description>Recent content in Spring on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Thu, 30 Dec 2021 15:35:21 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Enable Swagger on Spring Boot Gradle Projects</title><link>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</link><pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate><guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid><description>&lt;h1 id="adding-swagger-to-spring-boot"&gt;Adding Swagger to Spring Boot&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Getting the Swagger Spring dependency&lt;/li&gt;
+&lt;li&gt;Enabling Swagger in your code&lt;/li&gt;
+&lt;li&gt;Configuring Swagger&lt;/li&gt;
+&lt;li&gt;Adding details as annotations to APIs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="getting-the-swagger-spring-dependency"&gt;Getting the Swagger Spring dependency&lt;/h2&gt;
+&lt;p&gt;Edit &lt;code&gt;build.gradle&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;plugins {
+id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39;
+...
+}
+...
+dependencies {
+implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34;
+...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="enabling-swagger-in-your-code"&gt;Enabling Swagger in your code&lt;/h2&gt;
+&lt;p&gt;Add &lt;code&gt;@EnableSwagger2&lt;/code&gt; to SpringBootApplication&lt;/p&gt;
+&lt;h2 id="configuring-swagger"&gt;Configuring Swagger&lt;/h2&gt;
+&lt;p&gt;Create &lt;code&gt;SwaggerConfig&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; com.aimerneige.example.config;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.context.annotation.Bean;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.context.annotation.Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.ApiInfoBuilder;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.PathSelectors;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.RequestHandlerSelectors;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.service.ApiInfo;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.spi.DocumentationType;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.spring.web.plugins.Docket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.swagger2.annotations.EnableSwagger2;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@Configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@EnableSwagger2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SwaggerConfig&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Bean&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; Docket &lt;span style="color:#a6e22e"&gt;apiDocket&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Docket(DocumentationType.&lt;span style="color:#a6e22e"&gt;SWAGGER_2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;apiInfo&lt;/span&gt;(apiInfo())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;select&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;apis&lt;/span&gt;(RequestHandlerSelectors.&lt;span style="color:#a6e22e"&gt;basePackage&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;com.aimerneige.example.controller&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;paths&lt;/span&gt;(PathSelectors.&lt;span style="color:#a6e22e"&gt;any&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;build&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; ApiInfo &lt;span style="color:#a6e22e"&gt;apiInfo&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; ApiInfoBuilder()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Example API&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;version&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;build&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="adding-details-as-annotations-to-apis"&gt;Adding details as annotations to APIs&lt;/h2&gt;
+&lt;p&gt;Add annotation to your controller.&lt;/p&gt;</description></item></channel></rss>

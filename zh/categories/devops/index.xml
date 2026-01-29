@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>DevOps on Aimer's Blog</title><link>https://aimerneige.com/zh/categories/devops/</link><description>Recent content in DevOps on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>如何配置新购置的 Linux 服务器</title><link>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</link><pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate><guid>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</guid><description>&lt;h2 id="更新系统"&gt;更新系统&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装常用工具"&gt;安装常用工具&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debain&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="创建-sudo-用户"&gt;创建 sudo 用户&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;adduser aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;usermod -aG sudo aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;useradd -G wheel aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;passwd aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="测试-root-权限"&gt;测试 root 权限&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;su - aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo cat /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="配置-ssh-连接密钥"&gt;配置 SSH 连接密钥&lt;/h2&gt;
+&lt;h3 id="快速上传本地密钥"&gt;快速上传本地密钥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在你的本地环境执行这条指令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-copy-id aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="导入托管的密钥"&gt;导入托管的密钥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 导入你自己的密钥！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://aimer.aiursoft.cn/authorized_keys -O ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod &lt;span style="color:#ae81ff"&gt;600&lt;/span&gt; ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="测试连通性"&gt;测试连通性&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="禁用-root-和密码登录"&gt;禁用 root 和密码登录&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;将 &lt;code&gt;PermitRootLogin&lt;/code&gt; 修改为 &lt;code&gt;no&lt;/code&gt; 可以禁用 &lt;code&gt;root&lt;/code&gt; 用户登录&lt;/li&gt;
+&lt;li&gt;将 &lt;code&gt;PasswordAuthentication&lt;/code&gt; 修改为 &lt;code&gt;no&lt;/code&gt; 可以禁用密码登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除这个文件 &lt;code&gt;/etc/ssh/sshd_config.d/50-cloud-init.conf&lt;/code&gt;&lt;/p&gt;</description></item><item><title>使用 Nginx 搭建静态网页服务</title><link>https://aimerneige.com/zh/post/devops/deploy-web-page-with-nginx/</link><pubDate>Sun, 04 Oct 2020 01:18:44 +0800</pubDate><guid>https://aimerneige.com/zh/post/devops/deploy-web-page-with-nginx/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 &lt;code&gt;CSDN&lt;/code&gt; 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和 Linux 后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="阅读须知"&gt;阅读须知&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在阅读本文章前，你需要准备以下内容&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;掌握基础的 &lt;code&gt;Linux&lt;/code&gt; 命令行操作&lt;/strong&gt; （本文章将介绍如何在 &lt;code&gt;Linux&lt;/code&gt; 服务器上部署静态网页，需要进行终端操作，因此你必须掌握命令行的使用。如果你打算使用 &lt;code&gt;Windows&lt;/code&gt; ，请查阅其他文章。）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥有一台 &lt;code&gt;Linux 服务器&lt;/code&gt;&lt;/strong&gt; （可以购买 &lt;code&gt;VPS&lt;/code&gt; 也可以使用 &lt;code&gt;虚拟机&lt;/code&gt; 本文章以 &lt;code&gt;VPS&lt;/code&gt; 为例，并购置了域名 &lt;em&gt;（域名非必须）&lt;/em&gt; ）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥有一个静态网站的源码&lt;/strong&gt; （如果仅仅作为学习目的，你可以写一个简单的 HTML 文件，这里以使用 &lt;code&gt;hexo&lt;/code&gt; 生成的静态网站为例。）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;知道 &lt;code&gt;Nginx&lt;/code&gt; 是什么，有什么用&lt;/strong&gt; （不需要掌握 &lt;code&gt;Nginx&lt;/code&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;不同 &lt;code&gt;Linux&lt;/code&gt; 发行版下命令会有所区别，本文章以 &lt;code&gt;Ubuntu20.04&lt;/code&gt; 为例&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="准备服务器"&gt;准备服务器&lt;/h2&gt;
+&lt;p&gt;如果你已经有了一台服务器并安装好了 &lt;code&gt;Nginx&lt;/code&gt; ，你可以直接跳过这一部分，但是如果你的服务器是新的，没有经过任何配置，请参阅以下内容进行配置。&lt;/p&gt;
+&lt;h3 id="升级系统"&gt;升级系统&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装-nginx"&gt;安装 &lt;code&gt;Nginx&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="启动-nginx"&gt;启动 &lt;code&gt;Nginx&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 开机自动启动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="测试服务"&gt;测试服务&lt;/h3&gt;
+&lt;p&gt;直接在浏览器访问你服务器的 ip，如果你部署了 &lt;code&gt;DNS&lt;/code&gt; 服务的话，你也可以直接使用域名。如果哦看到 &lt;code&gt;Nginx&lt;/code&gt; 的欢迎界面，服务器准备成功！&lt;/p&gt;</description></item></channel></rss>

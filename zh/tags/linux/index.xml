@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Linux on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/linux/</link><description>Recent content in Linux on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Tue, 17 May 2022 22:09:41 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>如何配置新购置的 Linux 服务器</title><link>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</link><pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate><guid>https://aimerneige.com/zh/post/devops/how-to-setup-your-new-linux-server/</guid><description>&lt;h2 id="更新系统"&gt;更新系统&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装常用工具"&gt;安装常用工具&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debain&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="创建-sudo-用户"&gt;创建 sudo 用户&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;adduser aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;usermod -aG sudo aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;useradd -G wheel aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;passwd aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="测试-root-权限"&gt;测试 root 权限&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;su - aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo cat /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="配置-ssh-连接密钥"&gt;配置 SSH 连接密钥&lt;/h2&gt;
+&lt;h3 id="快速上传本地密钥"&gt;快速上传本地密钥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在你的本地环境执行这条指令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-copy-id aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="导入托管的密钥"&gt;导入托管的密钥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 导入你自己的密钥！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://aimer.aiursoft.cn/authorized_keys -O ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod &lt;span style="color:#ae81ff"&gt;600&lt;/span&gt; ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="测试连通性"&gt;测试连通性&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="禁用-root-和密码登录"&gt;禁用 root 和密码登录&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;将 &lt;code&gt;PermitRootLogin&lt;/code&gt; 修改为 &lt;code&gt;no&lt;/code&gt; 可以禁用 &lt;code&gt;root&lt;/code&gt; 用户登录&lt;/li&gt;
+&lt;li&gt;将 &lt;code&gt;PasswordAuthentication&lt;/code&gt; 修改为 &lt;code&gt;no&lt;/code&gt; 可以禁用密码登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除这个文件 &lt;code&gt;/etc/ssh/sshd_config.d/50-cloud-init.conf&lt;/code&gt;&lt;/p&gt;</description></item><item><title>GCC 基础</title><link>https://aimerneige.com/zh/post/tool/gcc-basic/</link><pubDate>Sat, 17 Oct 2020 22:37:01 +0800</pubDate><guid>https://aimerneige.com/zh/post/tool/gcc-basic/</guid><description>&lt;h2 id="gcc-简介"&gt;GCC 简介&lt;/h2&gt;
+&lt;p&gt;GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写,包含 gcc 、 g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar 、 nm 等。&lt;/p&gt;
+&lt;p&gt;GCC 工具集不仅能编译 C/C++ 语言，其他例如 Objective-C 、 Pascal 、 Fortran 、 Java 、 Ada 等语言均能进行编译。&lt;/p&gt;
+&lt;p&gt;GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86 、 ARM 、 PowerPC 、 mips 等，以及 Linux 、 Windows 等软件平台。&lt;/p&gt;
+&lt;p&gt;GCC 的 C 编译器 是 gcc，其命令格式为 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Usage: gcc &lt;span style="color:#f92672"&gt;[&lt;/span&gt;options&lt;span style="color:#f92672"&gt;]&lt;/span&gt; file...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;GCC 下默认文扩展名的含义：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件扩展名&lt;/th&gt;
+&lt;th&gt;GCC 所理解的含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;*.c&lt;/td&gt;
+&lt;td&gt;该类文件为 C 语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.h&lt;/td&gt;
+&lt;td&gt;该类文件为 C 语言的头文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.i&lt;/td&gt;
+&lt;td&gt;该类文件为预处理后的 C 文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.C&lt;/td&gt;
+&lt;td&gt;该类文件为 C++ 语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.cc&lt;/td&gt;
+&lt;td&gt;该类文件为 C++ 语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.cxx&lt;/td&gt;
+&lt;td&gt;该类文件为 C++ 语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.m&lt;/td&gt;
+&lt;td&gt;该类文件为 Objective-C 语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.s&lt;/td&gt;
+&lt;td&gt;该类文件为汇编语言的源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.o&lt;/td&gt;
+&lt;td&gt;该类文件为汇编后的目标文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.a&lt;/td&gt;
+&lt;td&gt;该类文件为静态库&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*.so&lt;/td&gt;
+&lt;td&gt;该类文件为共享库&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a.out&lt;/td&gt;
+&lt;td&gt;该类文件为链接后的输出文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;GCC 下有很多编译器，可以支持 C 语言，C++语言等多种语言&lt;/p&gt;</description></item><item><title>Ubuntu 19.10 配置 Kotlin 开发环境</title><link>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</link><pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid><description>&lt;h1 id="ubuntu-1910-配置-kotlin-开发环境"&gt;Ubuntu 19.10 配置 Kotlin 开发环境&lt;/h1&gt;
+&lt;h2 id="使用工具"&gt;使用工具&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VSCode&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="安装-kotlin-编译器"&gt;安装 Kotlin 编译器&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo snap install kotlin --classic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果出现错误，执行以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install snap
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这条指令执行后，系统安装的内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kotlinc&lt;/li&gt;
+&lt;li&gt;kotlinc-jvm&lt;/li&gt;
+&lt;li&gt;kotlinc-js&lt;/li&gt;
+&lt;li&gt;kotlin-dce-js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以通过以下指令查看版本，如果有输出证明安装成功。&lt;/p&gt;
+&lt;p&gt;俩条指令都可以，建议使用上面的。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlin -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlinc -version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装插件"&gt;安装插件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这俩个貌似安装一个就可以了，也可以都安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Kotlin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Kotlin Language&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装下面这个插件后在 &lt;code&gt;文件&lt;/code&gt; -&amp;gt; &lt;code&gt;首选项&lt;/code&gt; -&amp;gt; &lt;code&gt;设置&lt;/code&gt; -&amp;gt; &lt;code&gt;扩展&lt;/code&gt; -&amp;gt; &lt;code&gt;Run Code Configuration&lt;/code&gt; 中找到并勾选 &lt;code&gt;Run In Terminal&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Code Runner&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="测试"&gt;测试&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;建立新文件 &lt;code&gt;HelloWorld.kt&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fun&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(args: Array&amp;lt;String&amp;gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println(&lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;通过点击右上角三角形（由 &lt;code&gt;Code Runner&lt;/code&gt; 提供的快捷方式）来编译运行，查看输出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果看到终端输出 &lt;code&gt;Hello, World!&lt;/code&gt; 的内容，说明开发环境搭建成功。&lt;/p&gt;</description></item></channel></rss>

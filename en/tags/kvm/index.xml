@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kvm on Aimer's Blog</title><link>https://aimerneige.com/en/tags/kvm/</link><description>Recent content in Kvm on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Sat, 25 Feb 2023 15:36:58 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/kvm/index.xml" rel="self" type="application/rss+xml"/><item><title>Install kvm on Fedora</title><link>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</link><pubDate>Sat, 25 Feb 2023 15:36:58 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid><description>&lt;p&gt;&lt;strong&gt;KVM&lt;/strong&gt;: Kernel-Based Virtual Machine&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Products&lt;/th&gt;
+&lt;th&gt;Company&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VirtualBox&lt;/td&gt;
+&lt;td&gt;Oracle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hyper-V&lt;/td&gt;
+&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;First, use x86 laptop or pc.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# check if kvm avaiable (output should bigger than 0)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;egrep -c &lt;span style="color:#e6db74"&gt;&amp;#39;(vmx|svm)&amp;#39;&lt;/span&gt; /proc/cpuinfo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if output is 0, enable vt on BIOS.&lt;/p&gt;
+&lt;p&gt;Install KVM on fedora36&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Install required virtualization packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Also install useful tools for virtual machine management&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;qemu-kvm: the emulator itself&lt;/li&gt;
+&lt;li&gt;libvirt-daemon: runs virtualization in background&lt;/li&gt;
+&lt;li&gt;birdge-utils: important networking dependencies&lt;/li&gt;
+&lt;li&gt;virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG libvirt aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG kvm aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)&lt;/p&gt;</description></item></channel></rss>

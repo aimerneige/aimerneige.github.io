@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Ubuntu on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/ubuntu/</link><description>Recent content in Ubuntu on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Fri, 11 Nov 2022 15:34:47 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Ubuntu 服务器上安装 qBittorrent-nox</title><link>https://aimerneige.com/zh/post/linux/install-qbittorrent-nox-on-ubuntu-server/</link><pubDate>Fri, 11 Nov 2022 15:34:47 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/install-qbittorrent-nox-on-ubuntu-server/</guid><description>&lt;h1 id="在-ubuntu-服务器上安装-qbittorrent-nox"&gt;在 Ubuntu 服务器上安装 qBittorrent-nox&lt;/h1&gt;
+&lt;h3 id="更新系统"&gt;更新系统&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="导入-qbittorrent-nox-稳定版本的源"&gt;导入 qBittorrent-nox 稳定版本的源&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="导入-qbittorrent-nox-非稳定版本的源每夜版"&gt;导入 qBittorrent-nox 非稳定版本的源（每夜版）&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="更新源"&gt;更新源&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装-qbittorrent-nox"&gt;安装 qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install qbittorrent-nox -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="创建用户和用户组"&gt;创建用户和用户组&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo adduser --system --group qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# on fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo groupadd qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="将你添加到用户组中"&gt;将你添加到用户组中&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo adduser your-username qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# on fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG qbittorrent-nox your-username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="创建-service-文件"&gt;创建 service 文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/systemd/system/qbittorrent-nox.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-service" data-lang="service"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Description&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qBittorrent Command Line Client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;After&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;forking&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;User&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qbittorrent-nox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Group&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qbittorrent-nox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;UMask&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;022&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ExecStart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/usr/bin/qbittorrent-nox -d --webui-port=8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Restart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;on-failure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;WantedBy&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="重载-systemctl"&gt;重载 systemctl&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="启动-qbittorrent-nox"&gt;启动 qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="开启开机自启动-qbittorrent-nox"&gt;开启开机自启动 qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="检查-qbittorrent-nox-是否启动"&gt;检查 qBittorrent-nox 是否启动&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl status qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="登录到-qbittorrent-nox"&gt;登录到 qBittorrent-nox&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;username&lt;/td&gt;
+&lt;td&gt;admin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;adminadmin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id="如何删除-qbittorrent-nox"&gt;如何删除 qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent Stable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-stable
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent Unstable (Nightly)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-unstable -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Ubuntu 19.10 配置 Kotlin 开发环境</title><link>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</link><pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid><description>&lt;h1 id="ubuntu-1910-配置-kotlin-开发环境"&gt;Ubuntu 19.10 配置 Kotlin 开发环境&lt;/h1&gt;
+&lt;h2 id="使用工具"&gt;使用工具&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VSCode&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="安装-kotlin-编译器"&gt;安装 Kotlin 编译器&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo snap install kotlin --classic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果出现错误，执行以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install snap
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这条指令执行后，系统安装的内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kotlinc&lt;/li&gt;
+&lt;li&gt;kotlinc-jvm&lt;/li&gt;
+&lt;li&gt;kotlinc-js&lt;/li&gt;
+&lt;li&gt;kotlin-dce-js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以通过以下指令查看版本，如果有输出证明安装成功。&lt;/p&gt;
+&lt;p&gt;俩条指令都可以，建议使用上面的。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlin -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlinc -version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装插件"&gt;安装插件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这俩个貌似安装一个就可以了，也可以都安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Kotlin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Kotlin Language&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装下面这个插件后在 &lt;code&gt;文件&lt;/code&gt; -&amp;gt; &lt;code&gt;首选项&lt;/code&gt; -&amp;gt; &lt;code&gt;设置&lt;/code&gt; -&amp;gt; &lt;code&gt;扩展&lt;/code&gt; -&amp;gt; &lt;code&gt;Run Code Configuration&lt;/code&gt; 中找到并勾选 &lt;code&gt;Run In Terminal&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Code Runner&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="测试"&gt;测试&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;建立新文件 &lt;code&gt;HelloWorld.kt&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fun&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(args: Array&amp;lt;String&amp;gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println(&lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;通过点击右上角三角形（由 &lt;code&gt;Code Runner&lt;/code&gt; 提供的快捷方式）来编译运行，查看输出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果看到终端输出 &lt;code&gt;Hello, World!&lt;/code&gt; 的内容，说明开发环境搭建成功。&lt;/p&gt;</description></item><item><title>如何安装 Ubuntu</title><link>https://aimerneige.com/zh/post/linux/ubuntu-install/</link><pubDate>Fri, 24 Jan 2020 16:11:30 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/ubuntu-install/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+&lt;p&gt;之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。&lt;/p&gt;
+&lt;p&gt;经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。&lt;/p&gt;
+&lt;p&gt;个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足&lt;/p&gt;
+&lt;h2 id="优点"&gt;优点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;更加稳定&lt;/li&gt;
+&lt;li&gt;更加安全&lt;/li&gt;
+&lt;li&gt;不会整天提醒你更新系统&lt;/li&gt;
+&lt;li&gt;配置开发环境仅需几行终端指令&lt;/li&gt;
+&lt;li&gt;忘记恼人的弹窗广告和流氓软件吧&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="不足"&gt;不足&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;很多软件不支持 Linux，只能在 Windows 上运行&lt;/li&gt;
+&lt;li&gt;几乎 90% 的游戏都不支持 Linux&lt;/li&gt;
+&lt;li&gt;需要学习命令行&lt;/li&gt;
+&lt;li&gt;界面丑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对策：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine&lt;/li&gt;
+&lt;li&gt;游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统&lt;/li&gt;
+&lt;li&gt;命令行也不是特别难，遇到问题谷歌一下就行了&lt;/li&gt;
+&lt;li&gt;至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="ubuntu-的安装"&gt;Ubuntu 的安装&lt;/h1&gt;
+&lt;p&gt;访问 Ubuntu 官网下载最新的镜像文件&lt;/p&gt;
+&lt;p&gt;使用 Etcher 写入 U 盘作为启动盘&lt;/p&gt;
+&lt;p&gt;通过 U 盘启动系统&lt;/p&gt;</description></item></channel></rss>

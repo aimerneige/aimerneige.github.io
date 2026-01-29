@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tools on Aimer's Blog</title><link>https://aimerneige.com/en/tags/tools/</link><description>Recent content in Tools on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Fri, 14 Jul 2023 16:40:36 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Syncthing on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</link><pubDate>Fri, 14 Jul 2023 16:40:36 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</guid><description>&lt;h2 id="install-syncthing"&gt;Install Syncthing&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://apt.syncthing.net/"&gt;Debian/Ubuntu installation instructions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Import PGP keys&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add the release PGP keys:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add APT source&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add the &amp;#34;stable&amp;#34; channel to your APT sources:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&amp;#34;&lt;/span&gt; | sudo tee /etc/apt/sources.list.d/syncthing.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Install Syncthing&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Update and install syncthing:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get install syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="install-systemd-unit"&gt;Install systemd unit&lt;/h2&gt;
+&lt;p&gt;Download service file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://github.com/syncthing/syncthing/blob/main/etc/linux-systemd/system/syncthing%40.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Install service file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo chown root:root syncthing@.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo mv syncthing@.service /etc/systemd/system/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enable service&lt;/p&gt;</description></item><item><title>Install kvm on Fedora</title><link>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</link><pubDate>Sat, 25 Feb 2023 15:36:58 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid><description>&lt;p&gt;&lt;strong&gt;KVM&lt;/strong&gt;: Kernel-Based Virtual Machine&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Products&lt;/th&gt;
+&lt;th&gt;Company&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VirtualBox&lt;/td&gt;
+&lt;td&gt;Oracle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hyper-V&lt;/td&gt;
+&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;First, use x86 laptop or pc.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# check if kvm avaiable (output should bigger than 0)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;egrep -c &lt;span style="color:#e6db74"&gt;&amp;#39;(vmx|svm)&amp;#39;&lt;/span&gt; /proc/cpuinfo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if output is 0, enable vt on BIOS.&lt;/p&gt;
+&lt;p&gt;Install KVM on fedora36&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Install required virtualization packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Also install useful tools for virtual machine management&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;qemu-kvm: the emulator itself&lt;/li&gt;
+&lt;li&gt;libvirt-daemon: runs virtualization in background&lt;/li&gt;
+&lt;li&gt;birdge-utils: important networking dependencies&lt;/li&gt;
+&lt;li&gt;virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG libvirt aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG kvm aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)&lt;/p&gt;</description></item><item><title>Install rEFInd on Fedora</title><link>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</link><pubDate>Sun, 20 Nov 2022 20:10:58 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</guid><description>&lt;h1 id="refind-on-fedora"&gt;rEFInd on Fedora&lt;/h1&gt;
+&lt;h1 id="install"&gt;Install&lt;/h1&gt;
+&lt;p&gt;Obtain an &lt;a href="https://www.rodsbooks.com/refind/"&gt;rEFInd&lt;/a&gt; binary for RPM based system.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://sourceforge.net/projects/refind/files/0.13.3.1/refind-0.13.3.1-1.x86_64.rpm/download"&gt;direct link&lt;/a&gt; (not the newest)&lt;/p&gt;
+&lt;p&gt;Find the newest rpm package download link from &lt;a href="https://www.rodsbooks.com/refind/getting.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you download a rpm package, install it with your package manager&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo yum localinstall refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At the most of the time, your are ready to use rEFInd, if it did not work on your system, run &lt;code&gt;refind-install&lt;/code&gt;:&lt;/p&gt;</description></item><item><title>OneDrive on Linux</title><link>https://aimerneige.com/en/post/linux/onedrive-on-linux/</link><pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid><description>&lt;h1 id="onedrive-on-linux"&gt;OneDrive on Linux&lt;/h1&gt;
+&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://.....
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Copy the url from browser like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Paste it into terminal then press enter:&lt;/p&gt;
+&lt;p&gt;The Final result will like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id&lt;span style="color:#f92672"&gt;=&lt;/span&gt;22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope&lt;span style="color:#f92672"&gt;=&lt;/span&gt;Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type&lt;span style="color:#f92672"&gt;=&lt;/span&gt;code&amp;amp;redirect_uri&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Application has been successfully authorized, however no additional command switches were provided.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Please use &lt;span style="color:#e6db74"&gt;&amp;#39;onedrive --help&amp;#39;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; further assistance in regards to running this application.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Show your configuration:&lt;/p&gt;</description></item><item><title>Auto Start Wifi Hotspot on Gnome</title><link>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</link><pubDate>Sun, 07 Nov 2021 20:54:42 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</guid><description>&lt;p&gt;Edit and save file &lt;code&gt;nmcli-hotspot.desktop&lt;/code&gt; on path &lt;code&gt;/home/aimerneige/.config/autostart&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-desktop" data-lang="desktop"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Desktop Entry]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Name&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;nmcli-hotspot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Comment&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Open HotSport With nmcli&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Exec&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;nmcli connection up Hotspot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Terminal&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Application&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

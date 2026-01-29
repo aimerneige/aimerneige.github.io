@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Java on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/java/</link><description>Recent content in Java on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Tue, 28 Dec 2021 15:37:39 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 vscode 开发 Spring 项目</title><link>https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/</link><pubDate>Tue, 28 Dec 2021 15:37:39 +0800</pubDate><guid>https://aimerneige.com/zh/post/java/start-develop-spring-project-on-vscode/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+&lt;p&gt;毫无疑问，idea 是最好的 Java IDE 之一，它对 Spring 也有很好的支持，但是由于某高校的 JetBrains 授权被拉入黑名单，导致我无法继续使用正版授权，虽然可以通过给 JetBrains 写邮件，证明自己高校学生的身份后继续获取授权，但是实在是懒，而且我也不是很喜欢使用 IDE，于是就就打算使用 vscode 进行开发。&lt;/p&gt;
+&lt;p&gt;Visual Studio Code 作为一款优秀的代码编辑器，有非常多的插件，经过配置后完全可以胜任大部分 IDE 的功能，本文章简要介绍如何构建 spring 的开发环境。&lt;/p&gt;
+&lt;h1 id="配置"&gt;配置&lt;/h1&gt;
+&lt;h2 id="安装配置-java-和-maven"&gt;安装配置 Java 和 Maven&lt;/h2&gt;
+&lt;style type="text/css"&gt;
+.notice {
+--title-color: #fff;
+--title-background-color: #6be;
+--content-color: #444;
+--content-background-color: #e7f2fa;
+}
+.notice.info {
+--title-background-color: #fb7;
+--content-background-color: #fec;
+}
+.notice.tip {
+--title-background-color: #5a5;
+--content-background-color: #efe;
+}
+.notice.warning {
+--title-background-color: #c33;
+--content-background-color: #fee;
+}
+@media (prefers-color-scheme:dark) {
+.notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+.notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+.notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+.notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+}
+body.dark .notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+body.dark .notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+body.dark .notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+body.dark .notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+.notice {
+padding: 18px;
+line-height: 24px;
+margin-bottom: 24px;
+border-radius: 4px;
+color: var(--content-color);
+background: var(--content-background-color);
+}
+.notice p:last-child {
+margin-bottom: 0
+}
+.notice-title {
+margin: -18px -18px 12px;
+padding: 4px 18px;
+border-radius: 4px 4px 0 0;
+font-weight: 700;
+color: var(--title-color);
+background: var(--title-background-color);
+}
+.icon-notice {
+display: inline-flex;
+align-self: center;
+margin-right: 8px;
+}
+.icon-notice img,
+.icon-notice svg {
+height: 1em;
+width: 1em;
+fill: currentColor;
+}
+.icon-notice img,
+.icon-notice.baseline svg {
+top: .125em;
+position: relative;
+}
+&lt;/style&gt;&lt;div class="notice tip" &gt;
+&lt;p class="notice-title"&gt;
+&lt;span class="icon-notice baseline"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="300.5 134 300 300"&gt;
+&lt;path d="M551.281 252.36c0-3.32-1.172-6.641-3.515-8.985l-17.774-17.578c-2.344-2.344-5.469-3.711-8.789-3.711-3.32 0-6.445 1.367-8.789 3.71l-79.687 79.493-44.141-44.14c-2.344-2.344-5.469-3.712-8.79-3.712-3.32 0-6.444 1.368-8.788 3.711l-17.774 17.579c-2.343 2.343-3.515 5.664-3.515 8.984 0 3.32 1.172 6.445 3.515 8.789l70.704 70.703c2.343 2.344 5.664 3.711 8.789 3.711 3.32 0 6.64-1.367 8.984-3.71l106.055-106.056c2.343-2.343 3.515-5.468 3.515-8.789ZM600.5 284c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z"/&gt;
+&lt;/svg&gt;
+&lt;/span&gt;提示&lt;/p&gt;</description></item></channel></rss>

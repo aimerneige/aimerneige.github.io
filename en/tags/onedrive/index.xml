@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Onedrive on Aimer's Blog</title><link>https://aimerneige.com/en/tags/onedrive/</link><description>Recent content in Onedrive on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Sun, 20 Nov 2022 20:10:48 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/onedrive/index.xml" rel="self" type="application/rss+xml"/><item><title>OneDrive on Linux</title><link>https://aimerneige.com/en/post/linux/onedrive-on-linux/</link><pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid><description>&lt;h1 id="onedrive-on-linux"&gt;OneDrive on Linux&lt;/h1&gt;
+&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://.....
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Copy the url from browser like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Paste it into terminal then press enter:&lt;/p&gt;
+&lt;p&gt;The Final result will like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id&lt;span style="color:#f92672"&gt;=&lt;/span&gt;22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope&lt;span style="color:#f92672"&gt;=&lt;/span&gt;Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type&lt;span style="color:#f92672"&gt;=&lt;/span&gt;code&amp;amp;redirect_uri&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Application has been successfully authorized, however no additional command switches were provided.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Please use &lt;span style="color:#e6db74"&gt;&amp;#39;onedrive --help&amp;#39;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; further assistance in regards to running this application.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Show your configuration:&lt;/p&gt;</description></item></channel></rss>

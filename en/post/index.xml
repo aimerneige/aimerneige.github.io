@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts 📝 on Aimer's Blog</title><link>https://aimerneige.com/en/post/</link><description>Recent content in Posts 📝 on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Sun, 22 Dec 2024 22:44:57 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Fix Linux EFI</title><link>https://aimerneige.com/en/post/linux/fix-linux-efi/</link><pubDate>Sun, 22 Dec 2024 22:44:57 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/fix-linux-efi/</guid><description>&lt;p&gt;When you have many disks, and you install many operating system, you may faced with a problem. That is your system&amp;rsquo;s EFI file will be stored in a different disk rather than your root disk. Also, you may accidentally delete system&amp;rsquo;s EFI file in a different disk. Here is how you can fix it.&lt;/p&gt;
+&lt;div class="notice warning" &gt;
+&lt;p class="notice-title"&gt;
+&lt;span class="icon-notice baseline"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300"&gt;
+&lt;path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/&gt;
+&lt;/svg&gt;
+&lt;/span&gt;Warning&lt;/p&gt;</description></item><item><title>Setup Your Own Apt Mirror</title><link>https://aimerneige.com/en/post/linux/setup-your-own-apt-mirror/</link><pubDate>Sat, 14 Dec 2024 23:08:17 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/setup-your-own-apt-mirror/</guid><description>&lt;h2 id="what-you-need"&gt;What you need&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;a server running ubuntu&lt;/li&gt;
+&lt;li&gt;enough disk space (at least 600G)&lt;/li&gt;
+&lt;li&gt;good internet connection&lt;/li&gt;
+&lt;li&gt;a domain name (optional)&lt;/li&gt;
+&lt;li&gt;a ssl certificate (optional)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="prepare-your-server"&gt;Prepare your server&lt;/h2&gt;
+&lt;p&gt;You can buy a cloud server, or use a local machine. Here, I am using a local machine to setup a offline apt mirror which can speed up my workflow.&lt;/p&gt;
+&lt;h2 id="install-apt-mirror"&gt;Install &lt;code&gt;apt-mirror&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Just run the following command to install apt-mirror on your server:&lt;/p&gt;</description></item><item><title>How to Setup Your Fabric Workspace</title><link>https://aimerneige.com/en/post/minecraft/how-to-setup-your-fabric-workspace/</link><pubDate>Sun, 17 Mar 2024 21:16:38 +0800</pubDate><guid>https://aimerneige.com/en/post/minecraft/how-to-setup-your-fabric-workspace/</guid><description>&lt;h2 id="prepare-jdk-and-ide"&gt;Prepare JDK and IDE&lt;/h2&gt;
+&lt;p&gt;Just simply download &lt;a href="https://www.jetbrains.com/idea/"&gt;IntellJ IDEA Community&lt;/a&gt; is good for fabric development.&lt;/p&gt;
+&lt;p&gt;Keep in mind that you must download jdk-17 for development. You can download the jdk inside IDEA or download it manually. But don&amp;rsquo;t forget to setup in IDEA.&lt;/p&gt;
+&lt;h2 id="download-template"&gt;Download Template&lt;/h2&gt;
+&lt;p&gt;You can download a template in &lt;a href="https://fabricmc.net/develop/template/"&gt;fabric template mod generator&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Setup your own Mod Name, Mod ID and Package Name. Select the newest minecraft version and download the zip file.&lt;/p&gt;</description></item><item><title>Boot Fedora From Windows Hyper-V</title><link>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</link><pubDate>Fri, 08 Mar 2024 00:15:56 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</guid><description>&lt;ol&gt;
+&lt;li&gt;Enable Hypyer-V&lt;/li&gt;
+&lt;li&gt;disk manager -&amp;gt; offline&lt;/li&gt;
+&lt;li&gt;create vm. skip the disk creation&lt;/li&gt;
+&lt;li&gt;open vm settings. select physical disk instead of vhd&lt;/li&gt;
+&lt;li&gt;Disable secure boot and checkpoint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk"&gt;https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Install Syncthing on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</link><pubDate>Fri, 14 Jul 2023 16:40:36 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-syncthing-on-ubuntu-server/</guid><description>&lt;h2 id="install-syncthing"&gt;Install Syncthing&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://apt.syncthing.net/"&gt;Debian/Ubuntu installation instructions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Import PGP keys&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add the release PGP keys:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add APT source&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add the &amp;#34;stable&amp;#34; channel to your APT sources:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&amp;#34;&lt;/span&gt; | sudo tee /etc/apt/sources.list.d/syncthing.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Install Syncthing&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Update and install syncthing:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get install syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="install-systemd-unit"&gt;Install systemd unit&lt;/h2&gt;
+&lt;p&gt;Download service file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://github.com/syncthing/syncthing/blob/main/etc/linux-systemd/system/syncthing%40.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Install service file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo chown root:root syncthing@.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo mv syncthing@.service /etc/systemd/system/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enable service&lt;/p&gt;</description></item><item><title>Install Google Play Store at One Plus Ace2</title><link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link><pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid><description>&lt;p&gt;Today, I buy a new phone &lt;a href="https://www.oneplus.com/cn/ace-2"&gt;One Plus ACE 2&lt;/a&gt;. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.&lt;/p&gt;
+&lt;h2 id="enable-gms-from-settings"&gt;Enable GMS From Settings&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open your settings app, search &lt;code&gt;google&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Click the first result &lt;code&gt;Google Mobile Services&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Enable Google Mobile Services.&lt;/li&gt;
+&lt;li&gt;Login in your google account at &lt;code&gt;Google&lt;/code&gt; if you want.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="install-google-play-store"&gt;Install Google Play Store&lt;/h2&gt;
+&lt;p&gt;After you enable GMS, all you need to do next is install a google play store.&lt;/p&gt;</description></item><item><title>Install qBittorrent-nox Inside Docker</title><link>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</link><pubDate>Tue, 14 Mar 2023 20:27:07 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-inside-docker/</guid><description>&lt;h2 id="install-docker"&gt;Install docker&lt;/h2&gt;
+&lt;p&gt;You need to install docker first before get started.&lt;/p&gt;
+&lt;p&gt;Take fedora as an example, just simply run these command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# First, remove old docker packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf remove docker &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-client &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-client-latest &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-common &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-latest &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-latest-logrotate &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-logrotate &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-selinux &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-engine-selinux &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker-engine
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Install latest docker via dnf package manager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Set up the repository&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install dnf-plugins-core
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf config-manager &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --add-repo &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; https://download.docker.com/linux/fedora/docker-ce.repo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Install Docker Engine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Start Using Docker&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Start Docker&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Start Docker As System Boot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Test If Docker Works&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo docker run hello-world
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;View &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;Docs&lt;/a&gt; for more detail about how to install docker in ubuntu system.&lt;/p&gt;</description></item><item><title>Docker Basic Notes</title><link>https://aimerneige.com/en/post/devops/docker-basic-notes/</link><pubDate>Mon, 13 Mar 2023 20:31:37 +0800</pubDate><guid>https://aimerneige.com/en/post/devops/docker-basic-notes/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;This post is just a simple note.&lt;/p&gt;
+&lt;p&gt;More detail in this video: &lt;a href="https://www.youtube.com/watch?v=3c-iBn73dDE"&gt;https://www.youtube.com/watch?v=3c-iBn73dDE&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="difference-image-and-container"&gt;&lt;strong&gt;Difference Image and Container&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CONTAINER is a running environment for IMAGE
+&lt;ul&gt;
+&lt;li&gt;virtual file system&lt;/li&gt;
+&lt;li&gt;port blinded: talk to application running inside of container&lt;/li&gt;
+&lt;li&gt;application image: postgres, redis, mongo, &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;redis in dockerhub are images&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull postgres
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull redis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# lists installed images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run redis
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# `-d` means running in detached mode&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d redis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# lists running container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# lists running and stopped container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker ps -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# stops the container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker stop &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# start the container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker start &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# pulls image and starts container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run redis:4.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="container-ports-vs-host-ports"&gt;&lt;strong&gt;CONTAINER Ports vs HOST ports&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple containers can run on your host machine&lt;/li&gt;
+&lt;li&gt;Your laptop has only certain ports available&lt;/li&gt;
+&lt;li&gt;Conflict when same port on host machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;host&lt;/th&gt;
+&lt;th&gt;docker&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Port 5000&lt;/td&gt;
+&lt;td&gt;Port 5000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Port 3000&lt;/td&gt;
+&lt;td&gt;Port 3000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Port 3001&lt;/td&gt;
+&lt;td&gt;Port 3000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -p6000:6379 redis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker logs &amp;lt;CONTAINER ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker logs &amp;lt;CONTAINER NAMES&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d -p6000:6379 --name redis-older redis:4.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# it Interactive Terminal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker exec -it &amp;lt;CONTAINER ID&amp;gt; /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker exec -it &amp;lt;CONTAINER NAMES&amp;gt; /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# if no bash installed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker exec -it &amp;lt;CONTAINER ID&amp;gt; /bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker exec -it &amp;lt;CONTAINER NAMES&amp;gt; /bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# create a new container from a image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# start a exist container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker start
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull mongo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull mongo-express
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker network ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker network create &amp;lt;NETWORK NAME&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -p 27017:27017 &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e MONGO_INITDB_ROOT_USERNAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;admin &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e MONGO_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;password &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --network mongo-network &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --name mongodb &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mongo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -p 8081:8081 &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e ME_CONFIG_MONGODB_ADMINUSERNAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;admin &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e ME_CONFIG_MONGODB_ADMINPASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;password &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e ME_CONFIG_MONGODB_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;27017&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -e ME_CONFIG_MONGODB_SERVER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;mongodb &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --net mongo-network &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --name mongo-express &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mongo-express
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker logs &amp;lt;CONTAINER ID&amp;gt; -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker logs &amp;lt;CONTAINER ID&amp;gt; | tail
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker logs &amp;lt;CONTAINER ID&amp;gt; | more
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="docker-compose"&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;docker run command&lt;/p&gt;</description></item><item><title>Add Friend Link in PaperMod Blog</title><link>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</link><pubDate>Sun, 12 Mar 2023 13:25:06 +0800</pubDate><guid>https://aimerneige.com/en/post/web/add-friend-link-in-papermod-blog/</guid><description>&lt;p&gt;PaperMod is a good hugo blog theme, but it did not support a friend link officially. So you need to do some simple customize.&lt;/p&gt;
+&lt;h2 id="full-code"&gt;Full Code&lt;/h2&gt;
+&lt;p&gt;Put this shortcode into &lt;code&gt;layouts/shortcodes/friends.html&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;style&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friends&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --link-count-per-row: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @&lt;span style="color:#66d9ef"&gt;media&lt;/span&gt; &lt;span style="color:#f92672"&gt;screen&lt;/span&gt; &lt;span style="color:#f92672"&gt;and&lt;/span&gt; &lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#f92672"&gt;min-width&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;576px&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friends&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --link-count-per-row: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @&lt;span style="color:#66d9ef"&gt;media&lt;/span&gt; &lt;span style="color:#f92672"&gt;screen&lt;/span&gt; &lt;span style="color:#f92672"&gt;and&lt;/span&gt; &lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#f92672"&gt;min-width&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;768px&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friends&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --link-count-per-row: &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friends&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;display&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;grid&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;grid-template-columns&lt;/span&gt;: &lt;span style="color:#a6e22e"&gt;repeat&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;var&lt;/span&gt;(&lt;span style="color:#f92672"&gt;--&lt;/span&gt;link&lt;span style="color:#f92672"&gt;-&lt;/span&gt;count&lt;span style="color:#f92672"&gt;-&lt;/span&gt;per&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;row&lt;/span&gt;), &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;fr);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; grid-gap: &lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;/* 空间占位 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend-skeleton&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;height&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;280&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;display&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;inline-block&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;position&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;relative&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;height&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;width&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;position&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;absolute&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;top&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;left&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;transition&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.67&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;s&lt;/span&gt; cubic-bezier(&lt;span style="color:#ae81ff"&gt;0.19&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.22&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;border-radius&lt;/span&gt;: &lt;span style="color:#a6e22e"&gt;var&lt;/span&gt;(&lt;span style="color:#f92672"&gt;--&lt;/span&gt;radius);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;box-shadow&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;-2&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.14&lt;/span&gt;), &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.12&lt;/span&gt;) &lt;span style="color:#75715e"&gt;!important&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;overflow&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;hidden&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;display&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;flex&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;flex-direction&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;column&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;justify-content&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;flex-start&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;align-items&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;center&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend&lt;/span&gt;:&lt;span style="color:#a6e22e"&gt;hover&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;transform&lt;/span&gt;: translateY(&lt;span style="color:#ae81ff"&gt;-8&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;box-shadow&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;-1&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;8&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.14&lt;/span&gt;), &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;14&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; rgba(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0.12&lt;/span&gt;) &lt;span style="color:#75715e"&gt;!important&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend-avatar&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;object-fit&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;cover&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;width&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;height&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;180&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;margin&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#75715e"&gt;!important&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;border-radius&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#75715e"&gt;!important&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend-content&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;text-align&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;center&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;flex&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;width&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;padding&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;background&lt;/span&gt;: &lt;span style="color:#a6e22e"&gt;var&lt;/span&gt;(&lt;span style="color:#f92672"&gt;--&lt;/span&gt;entry);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;transform&lt;/span&gt;: translate3d(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend-name&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;font-size&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1.2&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;rem&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;font-weight&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;bold&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;transform&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;inherit&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;friend-description&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;font-size&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.8&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;rem&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;color&lt;/span&gt;: &lt;span style="color:#a6e22e"&gt;var&lt;/span&gt;(&lt;span style="color:#f92672"&gt;--&lt;/span&gt;secondary);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;transform&lt;/span&gt;: translate3d(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friends&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {{ range .Site.Data.friends }}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend-skeleton&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;href&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;{{ .link }}&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;target&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;img&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend-avatar&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;{{ .image }}&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend-content&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend-name&amp;#34;&lt;/span&gt;&amp;gt;{{ .title }}&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;class&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;friend-description&amp;#34;&lt;/span&gt;&amp;gt;{{ .intro }}&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- style code by https://github.com/fissssssh --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- view https://github.com/fissssssh/fissssssh.github.io for more detail --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your friends in &lt;code&gt;data/friends.yml&lt;/code&gt; like this:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml" data-lang="yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;- &lt;span style="color:#f92672"&gt;title&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;伞&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;intro&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;一只咸鱼的学习记录&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;link&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://umb.ink/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;image&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://avatars.githubusercontent.com/u/53655863?v=4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;- &lt;span style="color:#f92672"&gt;title&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld的小博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;intro&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;这里是一个小白的博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;link&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://mzdluo123.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;image&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://avatars.githubusercontent.com/u/23146087?v=4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;Use shortcodes like this in your post:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;{{&amp;lt; friends &amp;gt;}}&lt;/p&gt;</description></item><item><title>Set Custom Fonts in PaperMod Site</title><link>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</link><pubDate>Thu, 02 Mar 2023 20:54:06 +0800</pubDate><guid>https://aimerneige.com/en/post/web/set-custom-fonts-in-papermod-site/</guid><description>&lt;h2 id="download-fonts"&gt;Download fonts&lt;/h2&gt;
+&lt;p&gt;Download the fonts you need and put it into &lt;code&gt;static/fonts&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="import-your-fonts"&gt;Import your fonts&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-family&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;LXGWWenKai-Regular&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; &lt;span style="color:#f92672"&gt;format&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;truetype&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="apply-it-in-css"&gt;Apply it in css&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;body&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;font-family&lt;/span&gt;: LXGWWenKai-Regular;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="use-in-papermod"&gt;Use in PaperMod&lt;/h2&gt;
+&lt;p&gt;Put your own css file in &lt;code&gt;assets/css/extended/custom_fonts.css&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="import-multi-weight-fontfamily"&gt;Import multi-weight fontfamily&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-family&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;LXGWWenKai&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; &lt;span style="color:#f92672"&gt;format&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;truetype&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-weight&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;lighter&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-style&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;normal&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-family&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;LXGWWenKai&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; &lt;span style="color:#f92672"&gt;format&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;truetype&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-weight&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;normal&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-style&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;normal&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-family&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;LXGWWenKai&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/fonts/lxgw-wenkai/LXGWWenKai-Bold.ttf&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt; &lt;span style="color:#f92672"&gt;format&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;truetype&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-weight&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;bold&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;font-style&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#f92672"&gt;normal&lt;/span&gt;&lt;span style="color:#f92672"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="use-cdn"&gt;Use cdn&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#f92672"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;code&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;font-family&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;JetBrains Mono&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="links"&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sulvblog.cn/posts/blog/hugo_change_font/"&gt;Sulv&amp;rsquo;s Blog - Hugo博客自定义字体&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#bundling-custom-css-with-themes-assets"&gt;PaperMod - FAQs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/12144000/using-custom-fonts-using-css"&gt;StackOverflow - Using custom fonts using CSS?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/28279989/multiple-font-weights-one-font-face-query"&gt;StackOverflow - Multiple font-weights, one @font-face query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lxgw/LxgwWenKai"&gt;GitHub - lxgw/LxgwWenKai&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Spotify Short Codes</title><link>https://aimerneige.com/en/post/web/spotify-shortcodes/</link><pubDate>Wed, 01 Mar 2023 20:57:21 +0800</pubDate><guid>https://aimerneige.com/en/post/web/spotify-shortcodes/</guid><description>&lt;p&gt;Today, I accidentally found a good music from Spotify. I want to share it on my blog, so I try &lt;a href="https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242"&gt;this&lt;/a&gt; awesome code. Bellow are the what it look like:&lt;/p&gt;
+&lt;iframe src="https://open.spotify.com/embed/track/7tL9WRrT4ZJaDRgyLc7pIt"
+width="100%"
+height="250"
+frameborder="0"
+allowtransparency="true"
+allow="encrypted-media"&gt;&lt;/iframe&gt;
+&lt;p&gt;Full code from &lt;a href="https://gist.github.com/j-un"&gt;j-un&lt;/a&gt;:&lt;/p&gt;
+&lt;script src="https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242.js"&gt;&lt;/script&gt;
+&lt;p&gt;Download this html file or copy the code, put it in &lt;code&gt;layouts/shortcodes/spotify.html&lt;/code&gt;. Enjoy it!&lt;/p&gt;</description></item><item><title>How to Add Multiple Tags to Go Struct</title><link>https://aimerneige.com/en/post/go/how-to-add-multiple-tags-to-go-struct/</link><pubDate>Sun, 26 Feb 2023 12:48:36 +0800</pubDate><guid>https://aimerneige.com/en/post/go/how-to-add-multiple-tags-to-go-struct/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;It is easy but always be forgotten, so write this post&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="incorrect"&gt;Incorrect&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;type&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Page&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;struct&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;PageId&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`bson:&amp;#34;pageId&amp;#34;,json:&amp;#34;pageId&amp;#34;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;Meta&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;map&lt;/span&gt;[&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;]&lt;span style="color:#66d9ef"&gt;interface&lt;/span&gt;{} &lt;span style="color:#e6db74"&gt;`bson:&amp;#34;meta&amp;#34;,json:&amp;#34;pageId&amp;#34;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="correct"&gt;Correct&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;type&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Page&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;struct&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;PageId&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`bson:&amp;#34;pageId&amp;#34; json:&amp;#34;pageId&amp;#34;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;Meta&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;map&lt;/span&gt;[&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;]&lt;span style="color:#66d9ef"&gt;interface&lt;/span&gt;{} &lt;span style="color:#e6db74"&gt;`bson:&amp;#34;meta&amp;#34; json:&amp;#34;pageId&amp;#34;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="more-tags"&gt;More tags&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Items&lt;/span&gt; []&lt;span style="color:#a6e22e"&gt;Item&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`gorm:&amp;#34;column:items,type:varchar(255);comment:&amp;#39;sample column&amp;#39;&amp;#34; json:&amp;#34;items&amp;#34;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/18635671/how-to-define-multiple-name-tags-in-a-struct"&gt;StackOverflow - How to define multiple name tags in a struct&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Install kvm on Fedora</title><link>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</link><pubDate>Sat, 25 Feb 2023 15:36:58 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-kvm-on-fedora/</guid><description>&lt;p&gt;&lt;strong&gt;KVM&lt;/strong&gt;: Kernel-Based Virtual Machine&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Products&lt;/th&gt;
+&lt;th&gt;Company&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VirtualBox&lt;/td&gt;
+&lt;td&gt;Oracle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;td&gt;VMWare&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hyper-V&lt;/td&gt;
+&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;First, use x86 laptop or pc.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# check if kvm avaiable (output should bigger than 0)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;egrep -c &lt;span style="color:#e6db74"&gt;&amp;#39;(vmx|svm)&amp;#39;&lt;/span&gt; /proc/cpuinfo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if output is 0, enable vt on BIOS.&lt;/p&gt;
+&lt;p&gt;Install KVM on fedora36&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Install required virtualization packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Also install useful tools for virtual machine management&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;qemu-kvm: the emulator itself&lt;/li&gt;
+&lt;li&gt;libvirt-daemon: runs virtualization in background&lt;/li&gt;
+&lt;li&gt;birdge-utils: important networking dependencies&lt;/li&gt;
+&lt;li&gt;virt-manager: the graphical program we&amp;rsquo;ll use to work with our VMs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG libvirt aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG kvm aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable libvirtd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Virtual Machine Manager (or &amp;ldquo;virt-manager&amp;rdquo;)&lt;/p&gt;</description></item><item><title>Install rEFInd on Fedora</title><link>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</link><pubDate>Sun, 20 Nov 2022 20:10:58 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-refind-on-fedora/</guid><description>&lt;h1 id="refind-on-fedora"&gt;rEFInd on Fedora&lt;/h1&gt;
+&lt;h1 id="install"&gt;Install&lt;/h1&gt;
+&lt;p&gt;Obtain an &lt;a href="https://www.rodsbooks.com/refind/"&gt;rEFInd&lt;/a&gt; binary for RPM based system.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://sourceforge.net/projects/refind/files/0.13.3.1/refind-0.13.3.1-1.x86_64.rpm/download"&gt;direct link&lt;/a&gt; (not the newest)&lt;/p&gt;
+&lt;p&gt;Find the newest rpm package download link from &lt;a href="https://www.rodsbooks.com/refind/getting.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you download a rpm package, install it with your package manager&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo rpm -Uvh refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo yum localinstall refind-0.6.11-1.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At the most of the time, your are ready to use rEFInd, if it did not work on your system, run &lt;code&gt;refind-install&lt;/code&gt;:&lt;/p&gt;</description></item><item><title>OneDrive on Linux</title><link>https://aimerneige.com/en/post/linux/onedrive-on-linux/</link><pubDate>Sun, 20 Nov 2022 20:10:48 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/onedrive-on-linux/</guid><description>&lt;h1 id="onedrive-on-linux"&gt;OneDrive on Linux&lt;/h1&gt;
+&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://.....
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Copy the url from browser like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Paste it into terminal then press enter:&lt;/p&gt;
+&lt;p&gt;The Final result will like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;user@hostname ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;$ onedrive
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Authorize this app visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id&lt;span style="color:#f92672"&gt;=&lt;/span&gt;22c49a0d-d21c-4792-aed1-8f163c982546&amp;amp;scope&lt;span style="color:#f92672"&gt;=&lt;/span&gt;Files.ReadWrite%20Files.ReadWrite.all%20Sites.ReadWrite.All%20offline_access&amp;amp;response_type&lt;span style="color:#f92672"&gt;=&lt;/span&gt;code&amp;amp;redirect_uri&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://login.microsoftonline.com/common/oauth2/nativeclient
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Enter the response uri: https://login.microsoftonline.com/common/oauth2/nativeclient?code&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;lt;redacted&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Application has been successfully authorized, however no additional command switches were provided.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Please use &lt;span style="color:#e6db74"&gt;&amp;#39;onedrive --help&amp;#39;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; further assistance in regards to running this application.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Show your configuration:&lt;/p&gt;</description></item><item><title>Install and Configure Samba</title><link>https://aimerneige.com/en/post/linux/install-and-configure-samba/</link><pubDate>Sun, 20 Nov 2022 17:55:43 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-and-configure-samba/</guid><description>&lt;h1 id="smb-file-share"&gt;SMB File Share&lt;/h1&gt;
+&lt;h2 id="update-system"&gt;Update System&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="install-samba"&gt;Install Samba&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install samba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="edit-share-config"&gt;Edit Share Config&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/samba/smb.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add share point at the end of the config file&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-conf" data-lang="conf"&gt;[share-name]
+comment = Your Comment Here
+path = /path/to/share/dir
+read only = no
+browsable = yes
+[public]
+comment = Public Shared Disk
+path = /mnt/disk/smb/share
+read only = no
+browsable = yes
+create mask = 0644
+directory mask = 0755
+[private]
+comment = Pricate Data Share
+path = /mnt/disk/smb/private
+read only = no
+browsable = no
+valid user = aimer, umb
+create mask = 0644
+directory mask = 0755
+[media]
+comment = Media Files
+path = /media
+read only = yes
+browsable = yes
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="start-samba"&gt;Start Samba&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start smbd.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="enable-autostart"&gt;Enable Autostart&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable smbd.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="update-firewall-rules"&gt;Update Firewall Rules&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo ufw allow samba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="setting-user-password"&gt;Setting User Password&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo smbpasswd -a username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;style type="text/css"&gt;
+.notice {
+--title-color: #fff;
+--title-background-color: #6be;
+--content-color: #444;
+--content-background-color: #e7f2fa;
+}
+.notice.info {
+--title-background-color: #fb7;
+--content-background-color: #fec;
+}
+.notice.tip {
+--title-background-color: #5a5;
+--content-background-color: #efe;
+}
+.notice.warning {
+--title-background-color: #c33;
+--content-background-color: #fee;
+}
+@media (prefers-color-scheme:dark) {
+.notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+.notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+.notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+.notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+}
+body.dark .notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+body.dark .notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+body.dark .notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+body.dark .notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+.notice {
+padding: 18px;
+line-height: 24px;
+margin-bottom: 24px;
+border-radius: 4px;
+color: var(--content-color);
+background: var(--content-background-color);
+}
+.notice p:last-child {
+margin-bottom: 0
+}
+.notice-title {
+margin: -18px -18px 12px;
+padding: 4px 18px;
+border-radius: 4px 4px 0 0;
+font-weight: 700;
+color: var(--title-color);
+background: var(--title-background-color);
+}
+.icon-notice {
+display: inline-flex;
+align-self: center;
+margin-right: 8px;
+}
+.icon-notice img,
+.icon-notice svg {
+height: 1em;
+width: 1em;
+fill: currentColor;
+}
+.icon-notice img,
+.icon-notice.baseline svg {
+top: .125em;
+position: relative;
+}
+&lt;/style&gt;&lt;div class="notice warning" &gt;
+&lt;p class="notice-title"&gt;
+&lt;span class="icon-notice baseline"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300"&gt;
+&lt;path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/&gt;
+&lt;/svg&gt;
+&lt;/span&gt;Warning&lt;/p&gt;</description></item><item><title>Install Filebrowser on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</link><pubDate>Fri, 18 Nov 2022 16:37:27 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-filebrowser-on-ubuntu-server/</guid><description>&lt;h2 id="install-filebrowser"&gt;Install Filebrowser&lt;/h2&gt;
+&lt;p&gt;Install file browser to your server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Have a quick test:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;filebrowser -a 0.0.0.0 -r /path/to/your/files
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Access your server and try to login in.&lt;/p&gt;
+&lt;p&gt;Username: &lt;code&gt;admin&lt;/code&gt;&lt;br&gt;
+Password: &lt;code&gt;admin&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="create-your-own-config"&gt;Create Your Own Config&lt;/h2&gt;
+&lt;p&gt;Write your config file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo mkdir /etc/filebrowser/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/filebrowser/.filebrowser.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;port&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;address&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.0.0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;root&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;/path/to/your/file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;database&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;/etc/filebrowser/filebrowser.db&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-service"&gt;Create Service&lt;/h2&gt;
+&lt;p&gt;Write a service file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/systemd/system/filebrowser.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Write something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-service" data-lang="service"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Description&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;File Browser Service&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;After&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;simple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Restart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;on-failure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;RestartSec&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;5s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ExecStart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;filebrowser&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;WantedBy&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start and enable it:&lt;/p&gt;</description></item><item><title>Install qBittorrent-nox on Ubuntu Server</title><link>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/</link><pubDate>Fri, 11 Nov 2022 15:34:47 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-qbittorrent-nox-on-ubuntu-server/</guid><description>&lt;h1 id="install-qbittorrent-nox-on-ubuntu-server"&gt;Install qBittorrent-nox on Ubuntu Server&lt;/h1&gt;
+&lt;h3 id="update-ubuntu"&gt;Update ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="import-qbittorrent-nox-stable"&gt;Import qBittorrent-nox Stable&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="import-qbittorrent-nox-unstable-nightly"&gt;Import qBittorrent-nox Unstable (Nightly)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="reflect-the-newly-added-ppa"&gt;Reflect the newly added PPA&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="install-qbittorrent-nox"&gt;Install qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install qbittorrent-nox -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="create-usergroup"&gt;Create usergroup&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo adduser --system --group qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# on fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo groupadd qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="add-you-to-usergroup"&gt;Add you to usergroup&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo adduser your-username qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# on fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG qbittorrent-nox your-username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="create-a-systemd-service-file"&gt;Create a systemd service file&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/systemd/system/qbittorrent-nox.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-service" data-lang="service"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Description&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qBittorrent Command Line Client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;After&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;forking&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;User&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qbittorrent-nox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Group&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;qbittorrent-nox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;UMask&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;022&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ExecStart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/usr/bin/qbittorrent-nox -d --webui-port=8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Restart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;on-failure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;WantedBy&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="reload-systemctl"&gt;Reload systemctl&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="start-qbittorrent-nox"&gt;Start qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl start qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="enable-qbittorrent-nox"&gt;Enable qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="check-if-qbittorrent-nox-start"&gt;Check if qBittorrent-nox start&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl status qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="login-in-to-your-qbittorrent-nox"&gt;Login in to your qBittorrent-nox&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;username&lt;/td&gt;
+&lt;td&gt;admin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;adminadmin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id="how-to-remove-qbittorrent-nox"&gt;How to Remove qBittorrent-nox&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent Stable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-stable
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent Unstable (Nightly)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo add-apt-repository --remove ppa:qbittorrent-team/qbittorrent-unstable -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove qBittorrent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove qbittorrent-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Install WeChat on Fedora</title><link>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</link><pubDate>Thu, 10 Nov 2022 12:03:30 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/install-wechat-on-fedora/</guid><description>&lt;h1 id="install-wechat-on-fedora"&gt;Install WeChat on Fedora&lt;/h1&gt;
+&lt;h2 id="install-wine"&gt;Install Wine&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install wine
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="adjust-dpi-config"&gt;Adjust DPI Config&lt;/h2&gt;
+&lt;p&gt;Use bellow command to open winecfg&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winecfg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Adjust the dpi to a suitable value at tab &lt;code&gt;Graphics&lt;/code&gt;. (4k monitor, 192 dpi)&lt;/p&gt;
+&lt;h2 id="download-and-config-fonts"&gt;Download And Config Fonts&lt;/h2&gt;
+&lt;p&gt;Run the following commands&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install cabextract
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install winetricks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winetricks corefonts gdiplus riched20 riched30
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="download--install-wechat"&gt;Download &amp;amp; Install WeChat&lt;/h2&gt;
+&lt;p&gt;Just download the exe Installer. (Same with download it from browser.)&lt;/p&gt;</description></item><item><title>[Reproduce] Learning Rust in 2022</title><link>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</link><pubDate>Wed, 29 Jun 2022 07:58:02 +0800</pubDate><guid>https://aimerneige.com/en/post/rust/re-learning-rust-in-2022/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;This article are reproduce from &lt;a href="https://github.com/pretzelhammer/rust-blog/blob/master/posts/learning-rust-in-2020.md"&gt;pretzelhammer/rust-blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="intro"&gt;Intro&lt;/h2&gt;
+&lt;p&gt;When I started learning Rust I made the mistake of following the advice to read &lt;a href="https://doc.rust-lang.org/book/title-page.html"&gt;The Book&lt;/a&gt; first. While it&amp;rsquo;s a great resource, it&amp;rsquo;s pretty overwhelming for a beginner to get told &lt;em&gt;&amp;ldquo;If you&amp;rsquo;d like to learn this programming language the best way to start is to read this 20 chapter book!&amp;rdquo;&lt;/em&gt; Most people give up before they even get started when they get advice like this. Nobody ever told someone to read a 20 chapter book just to get started with Javascript or Python. Rust&amp;rsquo;s learning curve is no joke but you gotta give the people what they want, and they want to program, not read about programming. Programming is fun and reading about programming is not as fun.&lt;/p&gt;</description></item><item><title>Install WSA With Google Play Store and Root</title><link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link><pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid><description>&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Uninstall old wsa (if you have)&lt;/li&gt;
+&lt;li&gt;make sure you have &lt;code&gt;Virtual Machine Platform&lt;/code&gt; enabled on &lt;code&gt;Turn Windows features on or off&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fork this repo: &lt;a href="https://github.com/LSPosed/MagiskOnWSA"&gt;https://github.com/LSPosed/MagiskOnWSA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;build it with actions&lt;/li&gt;
+&lt;li&gt;download build result&lt;/li&gt;
+&lt;li&gt;run the install script&lt;/li&gt;
+&lt;li&gt;start the wsa and enjoy it&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="enable-usb-debug"&gt;Enable usb debug&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open wsa settings, enable &lt;code&gt;Developer Mode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;copy wsa ip address&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;adb connect WSA-IP-ADDRESS&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>How to Setup Your New Linux Server</title><link>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</link><pubDate>Tue, 17 May 2022 22:09:41 +0800</pubDate><guid>https://aimerneige.com/en/post/devops/how-to-setup-your-new-linux-server/</guid><description>&lt;h2 id="update-system"&gt;Update System&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="install-most-used-tools"&gt;Install Most Used Tools&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debain&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget net-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf install -y neofetch htop tree ncdu ranger zsh vim neovim git curl wget util-linux-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-sudo-user"&gt;Create Sudo User&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;adduser aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;usermod -aG sudo aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;useradd -G wheel aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;passwd aimer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="test-root-privileges"&gt;Test Root Privileges&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;su - aimer
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo cat /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="setup-ssh-public-key"&gt;Setup SSH Public Key&lt;/h2&gt;
+&lt;h3 id="quickly-upload-your-local-key"&gt;Quickly Upload Your Local Key&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# run this on your local machine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-copy-id aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="import-the-key-you-hosted"&gt;Import The Key You Hosted&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Import your own public key!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://aimer.aiursoft.cn/authorized_keys -O ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod &lt;span style="color:#ae81ff"&gt;600&lt;/span&gt; ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="test-if-you-can-connect-to-server"&gt;Test if You Can Connect to Server&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh aimer@server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="disable-root-and-password-login"&gt;Disable Root and Password Login&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vim /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Set &lt;code&gt;PermitRootLogin&lt;/code&gt; as &lt;code&gt;no&lt;/code&gt; To disable &lt;code&gt;root&lt;/code&gt; login&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;PasswordAuthentication&lt;/code&gt; as &lt;code&gt;no&lt;/code&gt; To disable password login&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Delete this file &lt;code&gt;/etc/ssh/sshd_config.d/50-cloud-init.conf&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Enable Swagger on Spring Boot Gradle Projects</title><link>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</link><pubDate>Thu, 30 Dec 2021 15:35:21 +0800</pubDate><guid>https://aimerneige.com/en/post/java/enable-swagger-on-spring-boot-gradle-projects/</guid><description>&lt;h1 id="adding-swagger-to-spring-boot"&gt;Adding Swagger to Spring Boot&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Getting the Swagger Spring dependency&lt;/li&gt;
+&lt;li&gt;Enabling Swagger in your code&lt;/li&gt;
+&lt;li&gt;Configuring Swagger&lt;/li&gt;
+&lt;li&gt;Adding details as annotations to APIs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="getting-the-swagger-spring-dependency"&gt;Getting the Swagger Spring dependency&lt;/h2&gt;
+&lt;p&gt;Edit &lt;code&gt;build.gradle&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;plugins {
+id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.5.2&amp;#39;
+...
+}
+...
+dependencies {
+implementation &amp;#34;io.springfox:springfox-boot-starter:3.0.0&amp;#34;
+...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="enabling-swagger-in-your-code"&gt;Enabling Swagger in your code&lt;/h2&gt;
+&lt;p&gt;Add &lt;code&gt;@EnableSwagger2&lt;/code&gt; to SpringBootApplication&lt;/p&gt;
+&lt;h2 id="configuring-swagger"&gt;Configuring Swagger&lt;/h2&gt;
+&lt;p&gt;Create &lt;code&gt;SwaggerConfig&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; com.aimerneige.example.config;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.context.annotation.Bean;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; org.springframework.context.annotation.Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.ApiInfoBuilder;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.PathSelectors;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.builders.RequestHandlerSelectors;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.service.ApiInfo;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.spi.DocumentationType;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.spring.web.plugins.Docket;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; springfox.documentation.swagger2.annotations.EnableSwagger2;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@Configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;@EnableSwagger2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SwaggerConfig&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Bean&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; Docket &lt;span style="color:#a6e22e"&gt;apiDocket&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Docket(DocumentationType.&lt;span style="color:#a6e22e"&gt;SWAGGER_2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;apiInfo&lt;/span&gt;(apiInfo())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;select&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;apis&lt;/span&gt;(RequestHandlerSelectors.&lt;span style="color:#a6e22e"&gt;basePackage&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;com.aimerneige.example.controller&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;paths&lt;/span&gt;(PathSelectors.&lt;span style="color:#a6e22e"&gt;any&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;build&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; ApiInfo &lt;span style="color:#a6e22e"&gt;apiInfo&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; ApiInfoBuilder()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Example API&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;version&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;build&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="adding-details-as-annotations-to-apis"&gt;Adding details as annotations to APIs&lt;/h2&gt;
+&lt;p&gt;Add annotation to your controller.&lt;/p&gt;</description></item><item><title>Auto Start Wifi Hotspot on Gnome</title><link>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</link><pubDate>Sun, 07 Nov 2021 20:54:42 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/auto-start-wifi-hotspot-on-gnome/</guid><description>&lt;p&gt;Edit and save file &lt;code&gt;nmcli-hotspot.desktop&lt;/code&gt; on path &lt;code&gt;/home/aimerneige/.config/autostart&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-desktop" data-lang="desktop"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Desktop Entry]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Name&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;nmcli-hotspot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Comment&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Open HotSport With nmcli&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Exec&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;nmcli connection up Hotspot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Terminal&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Application&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Vala Env Setup</title><link>https://aimerneige.com/en/post/linux/vala-env-setup/</link><pubDate>Sat, 23 Oct 2021 21:36:57 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/vala-env-setup/</guid><description>&lt;h1 id="vala-env-setup"&gt;vala env setup&lt;/h1&gt;
+&lt;p&gt;When it&amp;rsquo;s talking to Linux development, there are many ways to go. But I love elementary and want to build some awesome apps with vala. So this article is about how to set up your vala develop environment on elementary os. In the future, there will more articles about vala and Linux development.&lt;/p&gt;
+&lt;h2 id="system-info"&gt;System Info&lt;/h2&gt;
+&lt;p&gt;When I write this artice (2021-7-31), elementary os 6 is still in develop, so I install it in gnome boxes. My host machine syetem is fedora 34.&lt;/p&gt;</description></item><item><title>Hello Hugo</title><link>https://aimerneige.com/en/post/others/hello-hugo/</link><pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-hugo/</guid><description>Install and Config hugo</description></item><item><title>Dark Mode on Android</title><link>https://aimerneige.com/en/post/android/dark-mode-on-android/</link><pubDate>Sat, 05 Sep 2020 17:43:46 +0800</pubDate><guid>https://aimerneige.com/en/post/android/dark-mode-on-android/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;In this example, I am using Material Design. But you can also use the &lt;code&gt;Theme.AppCompat.DayNight&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="change-the-style"&gt;Change the style&lt;/h2&gt;
+&lt;p&gt;First you should use the &lt;code&gt;DayNight&lt;/code&gt; style by &lt;a href="https://developer.android.com/guide/topics/ui/look-and-feel/darktheme"&gt;Google&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;style&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;AppTheme&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;parent=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Theme.MaterialComponents.DayNight&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to let things easily, that&amp;rsquo;s enough. But you can also provide more adaptation.&lt;/p&gt;
+&lt;h2 id="adapt-colors"&gt;Adapt colors&lt;/h2&gt;
+&lt;p&gt;Make a new folder at &lt;code&gt;project/app/src/main/res/values-night&lt;/code&gt; then make a new resource file &lt;code&gt;colors.xml&lt;/code&gt;. Edit the color you want to set on dark mode.&lt;/p&gt;</description></item><item><title>MinGW Install For Windows</title><link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link><pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate><guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid><description>&lt;p&gt;Click &lt;a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/"&gt;here&lt;/a&gt; to download the MinGW setup file.&lt;/p&gt;
+&lt;p&gt;Run the &lt;code&gt;mingw-get-setup.exe&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Waite for install.&lt;/p&gt;
+&lt;p&gt;After install done, click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Select what you wants to install and right click it, click &lt;code&gt;Mark For Installation&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Installation&lt;/code&gt; on the left top.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply Changes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Just wait for install. (May need proxy)&lt;/p&gt;
+&lt;p&gt;After that, the mingw has been installed successfully. You can uninstall this install program.&lt;/p&gt;
+&lt;p&gt;Set the system env settings and enjoy it!&lt;/p&gt;</description></item><item><title>Android Develop Data Save</title><link>https://aimerneige.com/en/post/android/change-package-name/</link><pubDate>Tue, 18 Aug 2020 00:50:53 +0800</pubDate><guid>https://aimerneige.com/en/post/android/change-package-name/</guid><description>&lt;h1 id="change-package-name-quickly"&gt;Change Package Name Quickly&lt;/h1&gt;
+&lt;p&gt;Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that&amp;rsquo;s doesn&amp;rsquo;t matter, we just need to change it. So, how we can change a package name? Here are the solution.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open your Android Project at Android Studio.&lt;/li&gt;
+&lt;li&gt;Go to the &lt;code&gt;Androidmanifest.xml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Find your package name. For example &lt;code&gt;com.aimerneige.test.example&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Click the part you want to change, like &lt;code&gt;test&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Right click and select &lt;code&gt;Refactor&lt;/code&gt; -&amp;gt; &lt;code&gt;Rename&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select the &lt;code&gt;Rename package&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Enter a new package name.&lt;/li&gt;
+&lt;li&gt;Click the &lt;code&gt;Refactor&lt;/code&gt;, &lt;code&gt;Do Refactor&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Waiting for the operation done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That&amp;rsquo;s all. Enjoy it!&lt;/p&gt;</description></item><item><title>Android Develop Data Save</title><link>https://aimerneige.com/en/post/android/data-save/</link><pubDate>Mon, 10 Aug 2020 00:50:41 +0800</pubDate><guid>https://aimerneige.com/en/post/android/data-save/</guid><description>&lt;h2 id="save-data-to-file"&gt;Save data to file&lt;/h2&gt;
+&lt;h3 id="save-data"&gt;save data&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// This function will save the data of inputText into file &amp;#34;data&amp;#34; as text file
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// The file &amp;#34;data&amp;#34; will be saved to /data/data/com.aimerneige.example/files/data
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fun&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;save&lt;/span&gt;(inputText: String) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// &amp;#34;data&amp;#34; is the name of the file you saved on phone storage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// You can change it as you want
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;val&lt;/span&gt; output = openFileOutput(&lt;span style="color:#e6db74"&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;Context&lt;/span&gt;.MODE_PRIVATE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;val&lt;/span&gt; writer = BufferedWriter(OutputStreamWriter(output))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; writer.use {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;it&lt;/span&gt;.write(inputText)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (e: IOException) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; e.printStackTrace()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="load-data"&gt;load data&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// This function will try to load the data at a file named &amp;#34;data&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// which is on /data/data/com.aimerneige.example/files/data
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fun&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;load&lt;/span&gt;(): String {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// a StringBuilder to load data
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;val&lt;/span&gt; content = StringBuilder()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// &amp;#34;data&amp;#34; is the name of the file you want to find on disk
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;val&lt;/span&gt; input = openFileInput(&lt;span style="color:#e6db74"&gt;&amp;#34;data&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;val&lt;/span&gt; reader = BufferedReader(InputStreamReader(input))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; reader.use {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; reader.forEachLine {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; content.append(&lt;span style="color:#66d9ef"&gt;it&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (e: IOException) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; e.printStackTrace()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; content.toString()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use like this:&lt;/p&gt;</description></item><item><title>How to install ffmpeg on Windows 10</title><link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link><pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate><guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid><description>&lt;p&gt;Go &lt;a href="https://ffmpeg.zeranoe.com/builds/"&gt;this link&lt;/a&gt; and download a build package.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;version&lt;/code&gt;, choose the newest &lt;code&gt;release&lt;/code&gt; version number like &lt;code&gt;4.3.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;Architecture&lt;/code&gt;, choose the &lt;code&gt;Windows 64 bit&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;Linking&lt;/code&gt;, choose the &lt;code&gt;Static&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;License&lt;/code&gt;, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.&lt;/p&gt;
+&lt;p&gt;After selected, just click Download Build. You will get a zip package.&lt;/p&gt;
+&lt;p&gt;Unzip the package to any location you want. I recommend to the &lt;code&gt;C:\ffmpeg&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Enable USB for VirtualBox on Ubuntu</title><link>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</link><pubDate>Sun, 26 Jul 2020 07:58:20 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/enable-usb-for-virtualbox-on-ubuntu/</guid><description>&lt;p&gt;Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn&amp;rsquo;t on Windows.&lt;/p&gt;
+&lt;p&gt;I can&amp;rsquo;t remember it and search for web many times because when you set it, you need&amp;rsquo;t to edit it twice. But sometimes, I will reinstall my ubuntu and the config will lost, so I wants to save it on my Blog in case one day I will use it.&lt;/p&gt;</description></item><item><title>Hello World</title><link>https://aimerneige.com/en/post/others/hello-world/</link><pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-world/</guid><description>&lt;h1 id="welcome"&gt;Welcome&lt;/h1&gt;
+&lt;p&gt;Welcome!&lt;/p&gt;
+&lt;h1 id="helloworld"&gt;HelloWorld&lt;/h1&gt;
+&lt;p&gt;This is a simple test for my first blog article.&lt;/p&gt;
+&lt;h2 id="mathjax"&gt;Mathjax&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Test 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$&lt;/p&gt;
+&lt;h2 id="c"&gt;C&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\n&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="c-1"&gt;C++&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;cout &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="java"&gt;Java&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Main&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="python"&gt;Python&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="go"&gt;Go&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="hidden-text"&gt;Hidden Text&lt;/h2&gt;
+&lt;style type="text/css"&gt;.heimu {color: black;background-color: black;}.heimu:hover {color: white;}&lt;/style&gt;
+&lt;span class="heimu" title="You know too much"&gt;
+Hidden Text
+&lt;/span&gt;
+&lt;h2 id="mermaid"&gt;Mermaid&lt;/h2&gt;
+&lt;div class="mermaid"&gt;
+sequenceDiagram
+Alice-&gt;&gt;John: Hello John, how are you?
+John--&gt;&gt;Alice: Great!
+Alice-)John: See you later!
+&lt;/div&gt;
+&lt;h2 id="gallery"&gt;Gallery&lt;/h2&gt;
+&lt;p&gt;Yalong Bay No.2, Longhai Road No., Jinyang, Sanya, Hainan China&lt;/p&gt;</description></item></channel></rss>

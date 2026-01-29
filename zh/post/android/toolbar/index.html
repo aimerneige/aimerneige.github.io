@@ -1,0 +1,520 @@
+<!doctype html><html lang=zh dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>ToolBar | Aimer's Blog</title><meta name=keywords content="android"><meta name=description content='MaterialDesign 依赖库
+    implementation &#39;com.google.android.material:material:1.1.0&#39;
+在布局文件中加入 TooBar
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    <!--其他属性设置-->
+    />
+
+关于旧版的说明
+旧版需要使用兼容包
+compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
+使用以下布局方法
+<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="20sp"/>
+    </android.support.v7.widget.Toolbar>
+很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+
+在 MainActivity 中引用 Toolbar
+    Toolbar toolbar = findViewById(R.id.toolBar);
+使用 ToolBar 作为界面布局
+    toolbar.setTitle("AppBarLayoutTest");
+    setSupportActionBar(toolbar);
+
+导包的时候导这个，不要导错了，否则会报错
+import androidx.appcompat.widget.Toolbar;
+
+添加自定义属性
+按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+
+添加菜单
+构建菜单的布局文件
+这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+
+always:总是显示
+ifRoom:空间足够时显示
+never:永不显示（收纳在右侧的三条横线那个更多按钮里）
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/toolbar_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/toolbar_setting"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/toolbar_about"
+        android:title="@string/toolbar_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/toolbar_exit"
+        android:title="@string/toolbar_exit"
+        app:showAsAction="never" />
+
+</menu>
+在主菜单中引用菜单的布局文件
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
+设置菜单点击事件
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.toolbar_setting:
+                Toast.makeText(MainActivity.this, "Waiting for coding for setting", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.toolbar_about:
+                Toast.makeText(MainActivity.this, "Waiting for coding for about", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.toolbar_exit:
+                Toast.makeText(MainActivity.this, "Waiting for coding for exit", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+AppBarLayout
+使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。'><meta name=author content="Aimer Neige"><link rel=canonical href=https://aimerneige.com/zh/post/android/toolbar/><link crossorigin=anonymous href=/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css integrity="sha256-NDzEgLn/yPBMy+XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as=style><link rel=icon href=https://aimerneige.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://aimerneige.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://aimerneige.com/favicon-32x32.png><link rel=apple-touch-icon href=https://aimerneige.com/apple-touch-icon.png><link rel=mask-icon href=https://aimerneige.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://aimerneige.com/zh/post/android/toolbar/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://aimerneige.com/zh/post/android/toolbar/"><meta property="og:site_name" content="Aimer's Blog"><meta property="og:title" content="ToolBar"><meta property="og:description" content='MaterialDesign 依赖库 implementation &#39;com.google.android.material:material:1.1.0&#39; 在布局文件中加入 TooBar <androidx.appcompat.widget.Toolbar android:id="@+id/toolBar" android:layout_width="match_parent" android:layout_height="wrap_content" <!--其他属性设置--> /> 关于旧版的说明
+旧版需要使用兼容包
+compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
+使用以下布局方法
+<android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content"> <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="标题" android:textSize="20sp"/> </android.support.v7.widget.Toolbar> 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle("AppBarLayoutTest"); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错
+import androidx.appcompat.widget.Toolbar;
+添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+always:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） <?xml version="1.0" encoding="utf-8"?> <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"> <item android:id="@+id/toolbar_setting" android:icon="@drawable/ic_setting" android:title="@string/toolbar_setting" app:showAsAction="always" /> <item android:id="@+id/toolbar_about" android:title="@string/toolbar_about" app:showAsAction="never" /> <item android:id="@+id/toolbar_exit" android:title="@string/toolbar_exit" app:showAsAction="never" /> </menu> 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater().inflate(R.menu.toolbar, menu); return true; } 设置菜单点击事件 @Override public boolean onOptionsItemSelected(@NonNull MenuItem item) { switch (item.getItemId()) { case android.R.id.home: drawerLayout.openDrawer(GravityCompat.START); break; case R.id.toolbar_setting: Toast.makeText(MainActivity.this, "Waiting for coding for setting", Toast.LENGTH_SHORT).show(); break; case R.id.toolbar_about: Toast.makeText(MainActivity.this, "Waiting for coding for about", Toast.LENGTH_SHORT).show(); break; case R.id.toolbar_exit: Toast.makeText(MainActivity.this, "Waiting for coding for exit", Toast.LENGTH_SHORT).show(); break; default: break; } return true; } AppBarLayout 使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2020-02-18T00:05:23+08:00"><meta property="article:modified_time" content="2020-02-18T00:05:23+08:00"><meta property="article:tag" content="Android"><meta name=twitter:card content="summary"><meta name=twitter:title content="ToolBar"><meta name=twitter:description content='MaterialDesign 依赖库
+    implementation &#39;com.google.android.material:material:1.1.0&#39;
+在布局文件中加入 TooBar
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    <!--其他属性设置-->
+    />
+
+关于旧版的说明
+旧版需要使用兼容包
+compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
+使用以下布局方法
+<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="20sp"/>
+    </android.support.v7.widget.Toolbar>
+很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用
+
+在 MainActivity 中引用 Toolbar
+    Toolbar toolbar = findViewById(R.id.toolBar);
+使用 ToolBar 作为界面布局
+    toolbar.setTitle("AppBarLayoutTest");
+    setSupportActionBar(toolbar);
+
+导包的时候导这个，不要导错了，否则会报错
+import androidx.appcompat.widget.Toolbar;
+
+添加自定义属性
+按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。
+
+官方文档：https://developer.android.com/reference/android/widget/Toolbar
+
+添加菜单
+构建菜单的布局文件
+这里添加的 item 会按顺序显示在 ToolBar 上面。
+showAsAction 属性：
+
+always:总是显示
+ifRoom:空间足够时显示
+never:永不显示（收纳在右侧的三条横线那个更多按钮里）
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/toolbar_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/toolbar_setting"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/toolbar_about"
+        android:title="@string/toolbar_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/toolbar_exit"
+        android:title="@string/toolbar_exit"
+        app:showAsAction="never" />
+
+</menu>
+在主菜单中引用菜单的布局文件
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
+设置菜单点击事件
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.toolbar_setting:
+                Toast.makeText(MainActivity.this, "Waiting for coding for setting", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.toolbar_about:
+                Toast.makeText(MainActivity.this, "Waiting for coding for about", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.toolbar_exit:
+                Toast.makeText(MainActivity.this, "Waiting for coding for exit", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+AppBarLayout
+使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章 📝","item":"https://aimerneige.com/zh/post/"},{"@type":"ListItem","position":2,"name":"ToolBar","item":"https://aimerneige.com/zh/post/android/toolbar/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ToolBar","name":"ToolBar","description":"MaterialDesign 依赖库 implementation \u0026#39;com.google.android.material:material:1.1.0\u0026#39; 在布局文件中加入 TooBar \u0026lt;androidx.appcompat.widget.Toolbar android:id=\u0026#34;@+id/toolBar\u0026#34; android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; \u0026lt;!--其他属性设置--\u0026gt; /\u0026gt; 关于旧版的说明\n旧版需要使用兼容包\ncompile 'com.android.support:appcompat-v7:23.1.1'\n使用以下布局方法\n\u0026lt;android.support.v7.widget.Toolbar android:id=\u0026#34;@+id/toolbar\u0026#34; android:layout_width=\u0026#34;wrap_content\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34;\u0026gt; \u0026lt;TextView android:layout_width=\u0026#34;match_parent\u0026#34; android:layout_height=\u0026#34;wrap_content\u0026#34; android:text=\u0026#34;标题\u0026#34; android:textSize=\u0026#34;20sp\u0026#34;/\u0026gt; \u0026lt;/android.support.v7.widget.Toolbar\u0026gt; 很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用\n在 MainActivity 中引用 Toolbar Toolbar toolbar = findViewById(R.id.toolBar); 使用 ToolBar 作为界面布局 toolbar.setTitle(\u0026#34;AppBarLayoutTest\u0026#34;); setSupportActionBar(toolbar); 导包的时候导这个，不要导错了，否则会报错\nimport androidx.appcompat.widget.Toolbar;\n添加自定义属性 按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。\n官方文档：https://developer.android.com/reference/android/widget/Toolbar\n添加菜单 构建菜单的布局文件 这里添加的 item 会按顺序显示在 ToolBar 上面。\nshowAsAction 属性：\nalways:总是显示 ifRoom:空间足够时显示 never:永不显示（收纳在右侧的三条横线那个更多按钮里） \u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;menu xmlns:android=\u0026#34;http://schemas.android.com/apk/res/android\u0026#34; xmlns:app=\u0026#34;http://schemas.android.com/apk/res-auto\u0026#34;\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_setting\u0026#34; android:icon=\u0026#34;@drawable/ic_setting\u0026#34; android:title=\u0026#34;@string/toolbar_setting\u0026#34; app:showAsAction=\u0026#34;always\u0026#34; /\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_about\u0026#34; android:title=\u0026#34;@string/toolbar_about\u0026#34; app:showAsAction=\u0026#34;never\u0026#34; /\u0026gt; \u0026lt;item android:id=\u0026#34;@+id/toolbar_exit\u0026#34; android:title=\u0026#34;@string/toolbar_exit\u0026#34; app:showAsAction=\u0026#34;never\u0026#34; /\u0026gt; \u0026lt;/menu\u0026gt; 在主菜单中引用菜单的布局文件 @Override public boolean onCreateOptionsMenu(Menu menu) { getMenuInflater().inflate(R.menu.toolbar, menu); return true; } 设置菜单点击事件 @Override public boolean onOptionsItemSelected(@NonNull MenuItem item) { switch (item.getItemId()) { case android.R.id.home: drawerLayout.openDrawer(GravityCompat.START); break; case R.id.toolbar_setting: Toast.makeText(MainActivity.this, \u0026#34;Waiting for coding for setting\u0026#34;, Toast.LENGTH_SHORT).show(); break; case R.id.toolbar_about: Toast.makeText(MainActivity.this, \u0026#34;Waiting for coding for about\u0026#34;, Toast.LENGTH_SHORT).show(); break; case R.id.toolbar_exit: Toast.makeText(MainActivity.this, \u0026#34;Waiting for coding for exit\u0026#34;, Toast.LENGTH_SHORT).show(); break; default: break; } return true; } AppBarLayout 使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。\n","keywords":["android"],"articleBody":"MaterialDesign 依赖库 implementation 'com.google.android.material:material:1.1.0' 在布局文件中加入 TooBar ","wordCount":"548","inLanguage":"zh","datePublished":"2020-02-18T00:05:23+08:00","dateModified":"2020-02-18T00:05:23+08:00","author":{"@type":"Person","name":"Aimer Neige"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimerneige.com/zh/post/android/toolbar/"},"publisher":{"@type":"Organization","name":"Aimer's Blog","logo":{"@type":"ImageObject","url":"https://aimerneige.com/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://aimerneige.com/zh/ accesskey=h title="Aimer's Blog (Alt + H)">Aimer's Blog</a><div class=logo-switches><ul class=lang-switch><li>|</li><li><a href=https://aimerneige.com/en/ title=English aria-label=English>English</a></li></ul></div></div><ul id=menu><li><a href=https://aimerneige.com/zh/about/ title=关于><span>关于</span></a></li><li><a href=https://aimerneige.com/zh/post/ title=文章><span>文章</span></a></li><li><a href=https://aimerneige.com/zh/archives/ title=归档><span>归档</span></a></li><li><a href=https://aimerneige.com/zh/tags/ title=标签><span>标签</span></a></li><li><a href=https://aimerneige.com/zh/categories/ title=分类><span>分类</span></a></li><li><a href=https://aimerneige.com/zh/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://aimerneige.com/zh/>主页</a>&nbsp;»&nbsp;<a href=https://aimerneige.com/zh/post/>文章 📝</a></div><h1 class="post-title entry-hint-parent">ToolBar</h1><div class=post-meta><span title='2020-02-18 00:05:23 +0800 +0800'>2020年2月18日</span>&nbsp;·&nbsp;<span>Aimer Neige</span>&nbsp;|&nbsp;<span>
+<a href=https://github.com/aimerneige/blog/edit/master/content/post/Android/toolbar.zh.md rel="noopener noreferrer edit" target=_blank>Suggest Changes</a></span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><ul><li><a href=#materialdesign-%e4%be%9d%e8%b5%96%e5%ba%93 aria-label="MaterialDesign 依赖库">MaterialDesign 依赖库</a></li><li><a href=#%e5%9c%a8%e5%b8%83%e5%b1%80%e6%96%87%e4%bb%b6%e4%b8%ad%e5%8a%a0%e5%85%a5-toobar aria-label="在布局文件中加入 TooBar">在布局文件中加入 TooBar</a></li><li><a href=#%e5%9c%a8-mainactivity-%e4%b8%ad%e5%bc%95%e7%94%a8-toolbar aria-label="在 MainActivity 中引用 Toolbar">在 MainActivity 中引用 Toolbar</a></li><li><a href=#%e4%bd%bf%e7%94%a8-toolbar-%e4%bd%9c%e4%b8%ba%e7%95%8c%e9%9d%a2%e5%b8%83%e5%b1%80 aria-label="使用 ToolBar 作为界面布局">使用 ToolBar 作为界面布局</a></li><li><a href=#%e6%b7%bb%e5%8a%a0%e8%87%aa%e5%ae%9a%e4%b9%89%e5%b1%9e%e6%80%a7 aria-label=添加自定义属性>添加自定义属性</a></li><li><a href=#%e6%b7%bb%e5%8a%a0%e8%8f%9c%e5%8d%95 aria-label=添加菜单>添加菜单</a><ul><li><a href=#%e6%9e%84%e5%bb%ba%e8%8f%9c%e5%8d%95%e7%9a%84%e5%b8%83%e5%b1%80%e6%96%87%e4%bb%b6 aria-label=构建菜单的布局文件>构建菜单的布局文件</a></li><li><a href=#%e5%9c%a8%e4%b8%bb%e8%8f%9c%e5%8d%95%e4%b8%ad%e5%bc%95%e7%94%a8%e8%8f%9c%e5%8d%95%e7%9a%84%e5%b8%83%e5%b1%80%e6%96%87%e4%bb%b6 aria-label=在主菜单中引用菜单的布局文件>在主菜单中引用菜单的布局文件</a></li><li><a href=#%e8%ae%be%e7%bd%ae%e8%8f%9c%e5%8d%95%e7%82%b9%e5%87%bb%e4%ba%8b%e4%bb%b6 aria-label=设置菜单点击事件>设置菜单点击事件</a></li></ul></li><li><a href=#appbarlayout aria-label=AppBarLayout>AppBarLayout</a></li><li><a href=#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81 aria-label=完整代码>完整代码</a></li></ul></div></details></div><div class=post-content><h2 id=materialdesign-依赖库>MaterialDesign 依赖库<a hidden class=anchor aria-hidden=true href=#materialdesign-依赖库>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    implementation &#39;com.google.android.material:material:1.1.0&#39;
+</span></span></code></pre></div><h2 id=在布局文件中加入-toobar>在布局文件中加入 TooBar<a hidden class=anchor aria-hidden=true href=#在布局文件中加入-toobar>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;androidx.appcompat.widget.Toolbar</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolBar&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>&lt;!--其他属性设置--</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    /&gt;
+</span></span></code></pre></div><blockquote><p>关于旧版的说明</p><p>旧版需要使用兼容包</p><p><code>compile 'com.android.support:appcompat-v7:23.1.1'</code></p><p>使用以下布局方法</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;android.support.v7.widget.Toolbar</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolbar&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;TextView</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;标题&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:textSize=</span><span style=color:#e6db74>&#34;20sp&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/android.support.v7.widget.Toolbar&gt;</span>
+</span></span></code></pre></div><p>很多文章都是这么写的，此处代码也是拷贝的，但是在开发中出了一些问题，博主是没有成功运行，仅供参考，挂了请自行查阅资料，不做解释。这里主要介绍新版 ToolBar 的使用</p></blockquote><h2 id=在-mainactivity-中引用-toolbar>在 MainActivity 中引用 Toolbar<a hidden class=anchor aria-hidden=true href=#在-mainactivity-中引用-toolbar>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    Toolbar toolbar <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolBar</span>);
+</span></span></code></pre></div><h2 id=使用-toolbar-作为界面布局>使用 ToolBar 作为界面布局<a hidden class=anchor aria-hidden=true href=#使用-toolbar-作为界面布局>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    toolbar.<span style=color:#a6e22e>setTitle</span>(<span style=color:#e6db74>&#34;AppBarLayoutTest&#34;</span>);
+</span></span><span style=display:flex><span>    setSupportActionBar(toolbar);
+</span></span></code></pre></div><blockquote><p>导包的时候导这个，不要导错了，否则会报错</p><p><code>import androidx.appcompat.widget.Toolbar;</code></p></blockquote><h2 id=添加自定义属性>添加自定义属性<a hidden class=anchor aria-hidden=true href=#添加自定义属性>#</a></h2><p>按需添加自定义属性，可以修改的内容包括标题的文字、图标、颜色等。不详细介绍，官方文档里很详细。</p><blockquote><p>官方文档：https://developer.android.com/reference/android/widget/Toolbar</p></blockquote><h2 id=添加菜单>添加菜单<a hidden class=anchor aria-hidden=true href=#添加菜单>#</a></h2><h3 id=构建菜单的布局文件>构建菜单的布局文件<a hidden class=anchor aria-hidden=true href=#构建菜单的布局文件>#</a></h3><p>这里添加的 item 会按顺序显示在 ToolBar 上面。</p><p>showAsAction 属性：</p><ul><li>always:总是显示</li><li>ifRoom:空间足够时显示</li><li>never:永不显示（收纳在右侧的三条横线那个更多按钮里）</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;menu</span> <span style=color:#a6e22e>xmlns:android=</span><span style=color:#e6db74>&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>xmlns:app=</span><span style=color:#e6db74>&#34;http://schemas.android.com/apk/res-auto&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;item</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolbar_setting&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:icon=</span><span style=color:#e6db74>&#34;@drawable/ic_setting&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:title=</span><span style=color:#e6db74>&#34;@string/toolbar_setting&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>app:showAsAction=</span><span style=color:#e6db74>&#34;always&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;item</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolbar_about&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:title=</span><span style=color:#e6db74>&#34;@string/toolbar_about&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>app:showAsAction=</span><span style=color:#e6db74>&#34;never&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;item</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolbar_exit&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:title=</span><span style=color:#e6db74>&#34;@string/toolbar_exit&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>app:showAsAction=</span><span style=color:#e6db74>&#34;never&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/menu&gt;</span>
+</span></span></code></pre></div><h3 id=在主菜单中引用菜单的布局文件>在主菜单中引用菜单的布局文件<a hidden class=anchor aria-hidden=true href=#在主菜单中引用菜单的布局文件>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>onCreateOptionsMenu</span>(Menu menu) {
+</span></span><span style=display:flex><span>        getMenuInflater().<span style=color:#a6e22e>inflate</span>(R.<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>toolbar</span>, menu);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><h3 id=设置菜单点击事件>设置菜单点击事件<a hidden class=anchor aria-hidden=true href=#设置菜单点击事件>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>onOptionsItemSelected</span>(<span style=color:#a6e22e>@NonNull</span> MenuItem item) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>switch</span> (item.<span style=color:#a6e22e>getItemId</span>()) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> android.<span style=color:#a6e22e>R</span>.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>home</span>:
+</span></span><span style=display:flex><span>                drawerLayout.<span style=color:#a6e22e>openDrawer</span>(GravityCompat.<span style=color:#a6e22e>START</span>);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_setting</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for setting&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_about</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for about&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_exit</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for exit&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>default</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><h2 id=appbarlayout>AppBarLayout<a hidden class=anchor aria-hidden=true href=#appbarlayout>#</a></h2><p>使用 AppBarLayout 可以给 ToolBar 定义更多的内容，并且 TabLayout 一般也是嵌套在其内部。</p><p>这里省略了属性，主要关注布局层次即可。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;com.google.android.material.appbar.AppBarLayout</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;androidx.appcompat.widget.Toolbar</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;com.google.android.material.tabs.TabLayout</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;46dp&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/com.google.android.material.tabs.TabLayout&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
+</span></span></code></pre></div><p>用 AppBarLayout 套住 ToolBar 即可，内部还可以嵌套一个 TabLayout。</p><p>你也可以将整个布局放置在 CoordinatorLayout 中实现更好的效果。</p><h2 id=完整代码>完整代码<a hidden class=anchor aria-hidden=true href=#完整代码>#</a></h2><p>代码很垃圾，只是一个壳子，凑合看</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;androidx.drawerlayout.widget.DrawerLayout</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/draw_layout&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>xmlns:android=</span><span style=color:#e6db74>&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>xmlns:app=</span><span style=color:#e6db74>&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>xmlns:tools=</span><span style=color:#e6db74>&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;match_parent&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;androidx.coordinatorlayout.widget.CoordinatorLayout</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;match_parent&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;com.google.android.material.appbar.AppBarLayout</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/app_bar&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;androidx.appcompat.widget.Toolbar</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/toolBar&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>app:titleTextColor=</span><span style=color:#e6db74>&#34;@color/write&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>app:layout_scrollFlags=</span><span style=color:#e6db74>&#34;scroll|enterAlwaysCollapsed&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;com.google.android.material.tabs.TabLayout</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/tabLayout&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;46dp&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>android:minHeight=</span><span style=color:#e6db74>&#34;46dp&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>app:tabMode=</span><span style=color:#e6db74>&#34;fixed&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>app:layout_scrollFlags=</span><span style=color:#e6db74>&#34;scroll|exitUntilCollapsed|enterAlways&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;com.google.android.material.tabs.TabItem</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;Test1&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;com.google.android.material.tabs.TabItem</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;Test2&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;com.google.android.material.tabs.TabItem</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>android:text=</span><span style=color:#e6db74>&#34;Test3&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/com.google.android.material.tabs.TabLayout&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;androidx.viewpager.widget.ViewPager</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/view_pager&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>app:layout_behavior=</span><span style=color:#e6db74>&#34;@string/appbar_scrolling_view_behavior&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;com.google.android.material.floatingactionbutton.FloatingActionButton</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/fab&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;wrap_content&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_gravity=</span><span style=color:#e6db74>&#34;bottom|end&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:layout_margin=</span><span style=color:#e6db74>&#34;16dp&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:src=</span><span style=color:#e6db74>&#34;@drawable/ic_add&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>android:elevation=</span><span style=color:#e6db74>&#34;8dp&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;com.google.android.material.navigation.NavigationView</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:id=</span><span style=color:#e6db74>&#34;@+id/nav_view&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_width=</span><span style=color:#e6db74>&#34;300dp&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_height=</span><span style=color:#e6db74>&#34;match_parent&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>android:layout_gravity=</span><span style=color:#e6db74>&#34;start&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>app:headerLayout=</span><span style=color:#e6db74>&#34;@layout/nav_header&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>app:menu=</span><span style=color:#e6db74>&#34;@menu/nav_menu&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/androidx.drawerlayout.widget.DrawerLayout&gt;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.aimerneige.appbarlayoutyesy;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.annotation.NonNull;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.appcompat.app.ActionBar;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.appcompat.app.AppCompatActivity;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.appcompat.widget.Toolbar;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.core.view.GravityCompat;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.drawerlayout.widget.DrawerLayout;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> androidx.viewpager.widget.ViewPager;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.annotation.SuppressLint;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.os.Bundle;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.view.Menu;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.view.MenuItem;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.view.View;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> android.widget.Toast;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.google.android.material.appbar.AppBarLayout;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.google.android.material.floatingactionbutton.FloatingActionButton;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.google.android.material.navigation.NavigationView;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.google.android.material.snackbar.Snackbar;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.google.android.material.tabs.TabLayout;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MainActivity</span> <span style=color:#66d9ef>extends</span> AppCompatActivity {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> DrawerLayout drawerLayout;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@SuppressLint</span>(<span style=color:#e6db74>&#34;ResourceAsColor&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onCreate</span>(Bundle savedInstanceState) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#a6e22e>onCreate</span>(savedInstanceState);
+</span></span><span style=display:flex><span>        setContentView(R.<span style=color:#a6e22e>layout</span>.<span style=color:#a6e22e>activity_main</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        AppBarLayout appBarLayout <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>app_bar</span>);
+</span></span><span style=display:flex><span>        Toolbar toolbar <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolBar</span>);
+</span></span><span style=display:flex><span>        TabLayout tabLayout <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>tabLayout</span>);
+</span></span><span style=display:flex><span>        ViewPager viewPager <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>view_pager</span>);
+</span></span><span style=display:flex><span>        NavigationView navigationView <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_view</span>);
+</span></span><span style=display:flex><span>        FloatingActionButton fab <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>fab</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        drawerLayout <span style=color:#f92672>=</span> findViewById(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>draw_layout</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Set toolbar as ActionBar</span>
+</span></span><span style=display:flex><span>        toolbar.<span style=color:#a6e22e>setTitle</span>(<span style=color:#e6db74>&#34;AppBarLayoutTest&#34;</span>);
+</span></span><span style=display:flex><span>        setSupportActionBar(toolbar);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Set menu icon</span>
+</span></span><span style=display:flex><span>        ActionBar actionBar <span style=color:#f92672>=</span> getSupportActionBar();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (actionBar <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            actionBar.<span style=color:#a6e22e>setDisplayHomeAsUpEnabled</span>(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            actionBar.<span style=color:#a6e22e>setHomeAsUpIndicator</span>(R.<span style=color:#a6e22e>drawable</span>.<span style=color:#a6e22e>ic_menu</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Set TabLayout selected</span>
+</span></span><span style=display:flex><span>        tabLayout.<span style=color:#a6e22e>addOnTabSelectedListener</span>(<span style=color:#66d9ef>new</span> TabLayout.<span style=color:#a6e22e>OnTabSelectedListener</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onTabSelected</span>(TabLayout.<span style=color:#a6e22e>Tab</span> tab) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onTabUnselected</span>(TabLayout.<span style=color:#a6e22e>Tab</span> tab) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onTabReselected</span>(TabLayout.<span style=color:#a6e22e>Tab</span> tab) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Navigation selected</span>
+</span></span><span style=display:flex><span>        navigationView.<span style=color:#a6e22e>setCheckedItem</span>(R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_alien</span>);
+</span></span><span style=display:flex><span>        navigationView.<span style=color:#a6e22e>setNavigationItemSelectedListener</span>(<span style=color:#66d9ef>new</span> NavigationView.<span style=color:#a6e22e>OnNavigationItemSelectedListener</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>onNavigationItemSelected</span>(<span style=color:#a6e22e>@NonNull</span> MenuItem item) {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>switch</span> (item.<span style=color:#a6e22e>getItemId</span>()) {
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_alien</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;alien&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_games</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Games&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_icecream</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;IceCream&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_camping</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Camping&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_basketball</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Basketball&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>nav_cloud</span>:
+</span></span><span style=display:flex><span>                        Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Cloud&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>default</span>:
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        fab.<span style=color:#a6e22e>setOnClickListener</span>(<span style=color:#66d9ef>new</span> View.<span style=color:#a6e22e>OnClickListener</span>() {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onClick</span>(View v) {
+</span></span><span style=display:flex><span>                Snackbar.<span style=color:#a6e22e>make</span>(v, <span style=color:#e6db74>&#34;Waiting for coding&#34;</span>, Snackbar.<span style=color:#a6e22e>LENGTH_LONG</span>)
+</span></span><span style=display:flex><span>                        .<span style=color:#a6e22e>setAction</span>(<span style=color:#e6db74>&#34;Undo&#34;</span>, <span style=color:#66d9ef>new</span> View.<span style=color:#a6e22e>OnClickListener</span>() {
+</span></span><span style=display:flex><span>                            <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>                            <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>onClick</span>(View v) {
+</span></span><span style=display:flex><span>                                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Undo success&#34;</span>,
+</span></span><span style=display:flex><span>                                        Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                            }
+</span></span><span style=display:flex><span>                        }).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Set menu for toolbar</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>onCreateOptionsMenu</span>(Menu menu) {
+</span></span><span style=display:flex><span>        getMenuInflater().<span style=color:#a6e22e>inflate</span>(R.<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>toolbar</span>, menu);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ToolBar MenuOption</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>onOptionsItemSelected</span>(<span style=color:#a6e22e>@NonNull</span> MenuItem item) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>switch</span> (item.<span style=color:#a6e22e>getItemId</span>()) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> android.<span style=color:#a6e22e>R</span>.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>home</span>:
+</span></span><span style=display:flex><span>                drawerLayout.<span style=color:#a6e22e>openDrawer</span>(GravityCompat.<span style=color:#a6e22e>START</span>);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_setting</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for setting&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_about</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for about&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> R.<span style=color:#a6e22e>id</span>.<span style=color:#a6e22e>toolbar_exit</span>:
+</span></span><span style=display:flex><span>                Toast.<span style=color:#a6e22e>makeText</span>(MainActivity.<span style=color:#a6e22e>this</span>, <span style=color:#e6db74>&#34;Waiting for coding for exit&#34;</span>, Toast.<span style=color:#a6e22e>LENGTH_SHORT</span>).<span style=color:#a6e22e>show</span>();
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>default</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://aimerneige.com/zh/tags/android/>Android</a></li></ul><nav class=paginav><a class=prev href=https://aimerneige.com/zh/post/android/view-module/><span class=title>« 上一页</span><br><span>使用 ViewModel 管理布局上的数据</span>
+</a><a class=next href=https://aimerneige.com/zh/post/android/gson/><span class=title>下一页 »</span><br><span>使用 Gson 解析 Json 数据</span></a></nav></footer><div id=license><p>This article is licensed under
+<a target=_blank rel=noopener href=http://creativecommons.org/licenses/by-nc/4.0/ style=color:#00b5da><u>CC-BY-NC-4.0</u></a></p></div><div id=comment><script id=utterances src=https://utteranc.es/client.js repo=aimerneige/aimerneige.github.io issue-term=title label=comment theme=preferred-color-scheme crossorigin=anonymous async></script><script>let ua=navigator.userAgent.toLocaleLowerCase();ua.match(/QQ/i)=="qq"&&document.getElementById("utterances").remove(),ua.match(/MicroMessenger/i)=="micromessenger"&&document.getElementById("utterances").remove()</script></div></article></main><footer class=footer><span>&copy; 2026 <a href=https://aimerneige.com/zh/>Aimer's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

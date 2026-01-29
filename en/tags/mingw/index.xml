@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mingw on Aimer's Blog</title><link>https://aimerneige.com/en/tags/mingw/</link><description>Recent content in Mingw on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Wed, 19 Aug 2020 15:51:09 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/mingw/index.xml" rel="self" type="application/rss+xml"/><item><title>MinGW Install For Windows</title><link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link><pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate><guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid><description>&lt;p&gt;Click &lt;a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/"&gt;here&lt;/a&gt; to download the MinGW setup file.&lt;/p&gt;
+&lt;p&gt;Run the &lt;code&gt;mingw-get-setup.exe&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Waite for install.&lt;/p&gt;
+&lt;p&gt;After install done, click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Select what you wants to install and right click it, click &lt;code&gt;Mark For Installation&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Installation&lt;/code&gt; on the left top.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply Changes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Just wait for install. (May need proxy)&lt;/p&gt;
+&lt;p&gt;After that, the mingw has been installed successfully. You can uninstall this install program.&lt;/p&gt;
+&lt;p&gt;Set the system env settings and enjoy it!&lt;/p&gt;</description></item></channel></rss>

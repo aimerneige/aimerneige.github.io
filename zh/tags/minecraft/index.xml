@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Minecraft on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/minecraft/</link><description>Recent content in Minecraft on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Thu, 26 Jan 2023 16:24:34 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/minecraft/index.xml" rel="self" type="application/rss+xml"/><item><title>如何搭建 Minecraft Mod 服务器</title><link>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</link><pubDate>Thu, 26 Jan 2023 16:24:34 +0800</pubDate><guid>https://aimerneige.com/zh/post/minecraft/how-to-build-a-minecraft-mod-server/</guid><description>&lt;h2 id="使用-papermc"&gt;使用 PaperMC&lt;/h2&gt;
+&lt;h3 id="安装-papermc"&gt;安装 PaperMC&lt;/h3&gt;
+&lt;p&gt;下载 &lt;a href="https://papermc.io/downloads"&gt;PaperMC&lt;/a&gt; 提供的 jar 包，存储在恰当位置即可。&lt;/p&gt;
+&lt;h3 id="启动-papermc"&gt;启动 PaperMC&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;java -Xms2G -Xmx2G -jar paper.jar --nogui
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下面是&lt;a href="https://docs.papermc.io/paper/aikars-flags"&gt;官方提供的&lt;/a&gt;优化后的启动脚本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;200&lt;/span&gt; -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;30&lt;/span&gt; -XX:G1MaxNewSizePercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;40&lt;/span&gt; -XX:G1HeapRegionSize&lt;span style="color:#f92672"&gt;=&lt;/span&gt;8M -XX:G1ReservePercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;20&lt;/span&gt; -XX:G1HeapWastePercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5&lt;/span&gt; -XX:G1MixedGCCountTarget&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;4&lt;/span&gt; -XX:InitiatingHeapOccupancyPercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;15&lt;/span&gt; -XX:G1MixedGCLiveThresholdPercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;90&lt;/span&gt; -XX:G1RSetUpdatingPauseTimePercent&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5&lt;/span&gt; -XX:SurvivorRatio&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;32&lt;/span&gt; -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; -Dusing.aikars.flags&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://mcflags.emc.gs -Daikars.new.flags&lt;span style="color:#f92672"&gt;=&lt;/span&gt;true -jar paper.jar --nogui
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装-datapack"&gt;安装 datapack&lt;/h3&gt;
+&lt;p&gt;关掉已启动的服务器，将 datapack 存储在 &lt;code&gt;papermc/world/datapacks&lt;/code&gt; 文件夹下，重启服务器即可。（如果不存在就新建一个）&lt;/p&gt;
+&lt;h3 id="安装插件"&gt;安装插件&lt;/h3&gt;
+&lt;p&gt;关掉已启动的服务器，将下载好的插件存储在 &lt;code&gt;papermc/plugins&lt;/code&gt; 文件夹下，重启服务器即可。（如果不存在就新建一个）&lt;/p&gt;
+&lt;h3 id="配置服务器"&gt;配置服务器&lt;/h3&gt;
+&lt;p&gt;PaperMC 提供了非常多的服务器修改配置，具体请查阅 &lt;a href="https://docs.papermc.io/paper/configuration"&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="对于-mod-的说明"&gt;对于 mod 的说明&lt;/h3&gt;
+&lt;p&gt;PaperMC 并不兼容 Fabric 的 mod。如果需要使用 Fabric 的 mod，请参考下面的内容使用 Fabric 服务器。&lt;/p&gt;</description></item><item><title>如何搭建你自己的 Minecraft 服务器</title><link>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</link><pubDate>Thu, 12 Jan 2023 21:00:37 +0800</pubDate><guid>https://aimerneige.com/zh/post/minecraft/how-to-build-your-minecraft-server/</guid><description>&lt;h1 id="阅前须知"&gt;阅前须知&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;本文章面向具有一定运维经验的用户，不面向小白&lt;/li&gt;
+&lt;li&gt;本文章介绍的 Minecraft 是 Java 版本的 Minecraft&lt;/li&gt;
+&lt;li&gt;本文章只介绍纯净服的搭建，不会说明如何安装 mod&lt;/li&gt;
+&lt;li&gt;如非特殊说明，本文中出现的 “我的世界” 均指代 Minecraft 的中文翻译，而不是由网易代理的 “我的世界”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="准备"&gt;准备&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;可供外部连接的服务器&lt;/li&gt;
+&lt;li&gt;基础 Linux 知识&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="安装"&gt;安装&lt;/h1&gt;
+&lt;h2 id="首先要确定你的服务器是否可以被外部连接"&gt;首先要确定你的服务器是否可以被外部连接&lt;/h2&gt;
+&lt;h3 id="有公网-ip"&gt;有公网 IP&lt;/h3&gt;
+&lt;p&gt;如果你有公网 IP，可以直接使用你的主机作为服务器，相当于你有一台私有的云服务器。&lt;/p&gt;
+&lt;h3 id="没有公网-ip"&gt;没有公网 IP&lt;/h3&gt;
+&lt;p&gt;如果你没有公网 IP，你需要&lt;strong&gt;购买一台云服务器&lt;/strong&gt;，这样，你就拥有了一个可供外部连接的公网 IP。&lt;/p&gt;
+&lt;p&gt;如果你对服务器配置要求较高，本地也有闲置主机可以用来跑 Minecraft 服务器，可以通过 &lt;a href="https://github.com/fatedier/frp"&gt;frp&lt;/a&gt; 将本地的主机穿透出去，以供外部连接。这样云服务器的配置就可以很低，只负责转发网络数据。&lt;/p&gt;
+&lt;p&gt;如果你对服务器的配置要求不高，也不想本地 24 小时开着一台机器，可以直接使用云服务器来跑 Minecraft 服务器。&lt;/p&gt;
+&lt;p&gt;至于你需要多高的配置来运行 Minecraft 服务器，可以参考 &lt;a href="https://minecraft.fandom.com/zh/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%9C%80%E6%B1%82/%E4%B8%93%E7%94%A8"&gt;Wiki&lt;/a&gt; 的内容：&lt;/p&gt;
+&lt;h2 id="确保服务器可以被外部连接后安装-minecraft"&gt;确保服务器可以被外部连接后，安装 Minecraft&lt;/h2&gt;
+&lt;h3 id="下载服务器文件"&gt;下载服务器文件&lt;/h3&gt;
+&lt;p&gt;在 &lt;a href="https://www.minecraft.net/zh-hans/download/server"&gt;官网&lt;/a&gt; 下载服务器运行所需的 jar 文件。&lt;/p&gt;
+&lt;p&gt;官方只提供最新版的文件，如果你需要历史版本，使用官方启动器下载。&lt;/p&gt;
+&lt;h3 id="运行服务器"&gt;运行服务器&lt;/h3&gt;
+&lt;p&gt;直接使用官网的示例指令运行 jar 文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果你有更高的内存，可以修改 &lt;code&gt;-Xmx1024M -Xms1024M&lt;/code&gt; 这一部分。&lt;/p&gt;
+&lt;p&gt;第一次执行后，需要同意用户协议才可以继续执行，修改 &lt;code&gt;eula.txt&lt;/code&gt; 这个文件，将 &lt;code&gt;eula=false&lt;/code&gt; 改为 &lt;code&gt;eula=true&lt;/code&gt;。&lt;/p&gt;</description></item></channel></rss>

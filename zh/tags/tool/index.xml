@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tool on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/tool/</link><description>Recent content in Tool on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Sat, 12 Mar 2022 19:36:29 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/tool/index.xml" rel="self" type="application/rss+xml"/><item><title>find 指令的基本用法</title><link>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</link><pubDate>Sat, 12 Mar 2022 19:36:29 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/basic-usage-of-find/</guid><description>&lt;h1 id="什么是-find"&gt;什么是 &lt;code&gt;find&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;正如它的名字一样，&lt;code&gt;find&lt;/code&gt; 指令用于查找文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。&lt;/p&gt;
+&lt;p&gt;来源: &lt;a href="https://www.runoob.com/linux/linux-comm-find.html"&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found.&lt;/p&gt;
+&lt;p&gt;From: &lt;a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/"&gt;Geeks for Geeks&lt;/a&gt;&lt;/p&gt;</description></item><item><title>定制你的 rime 提升编程体验</title><link>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</link><pubDate>Thu, 19 Aug 2021 01:50:11 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/diy-your-rime-for-better-coding/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;平时在使用 Linux 写代码的时候，总有一点让我很难受，那就是当我准备写中文注释的时候，输入 &lt;code&gt;//&lt;/code&gt; 的时候，输入法总是希望我手动选择是要输入 &lt;code&gt;/&lt;/code&gt; 还是中文的 &lt;code&gt;、&lt;/code&gt;，随之弹出来的框非常影响代码编辑，经常打断我的思路，类似的还有反引号等符号，不厌其烦的我去查找了一些资料，终于彻底解决了这个问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="准备"&gt;准备&lt;/h1&gt;
+&lt;p&gt;阅读本文前，你要保证你在使用 &lt;a href="https://rime.im/"&gt;rime&lt;/a&gt; 输入法。遇到任何问题请多查阅 rime 提供的&lt;a href="https://github.com/rime/home/wiki/CustomizationGuide"&gt;文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本文所提到的内容在 fedora34 系统下，ibus-rime 包测试通过。&lt;/p&gt;
+&lt;h1 id="找到-rime-用户资料夹"&gt;找到 rime 用户资料夹&lt;/h1&gt;
+&lt;p&gt;不同的平台下，rime 用户资料夹的位置会有所不同&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;平台&lt;/th&gt;
+&lt;th&gt;rime 用户资料夹位置&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ibus&lt;/td&gt;
+&lt;td&gt;~/.config/ibus/rime&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fcitx&lt;/td&gt;
+&lt;td&gt;~/.config/fcitx/rime&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fcitx5&lt;/td&gt;
+&lt;td&gt;~/.local/share/fcitx5/rime&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id="创建你的配置文件"&gt;创建你的配置文件&lt;/h1&gt;
+&lt;p&gt;如果你从来没有配置过 rime，那么你可以直接在 rime 用户资料夹下创建名为 &lt;code&gt;default.custom.yaml&lt;/code&gt; 的配置文件，写入如下内容:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml" data-lang="yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;patch&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;punctuator/full_shape&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;`&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｀&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;~&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;～&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;!&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;！&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;@&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;＠&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;#&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;＃&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;$&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;￥&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;%&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;％&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;^&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;……&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;amp;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;＆&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;*&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;×&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;(&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;（&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;)&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;）&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;_&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;——&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;+&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;＋&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;-&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;－&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;=&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;＝&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;[&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;【&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;]&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;】&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;{&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｛&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;}&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｝&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;|&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｜&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;\\&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;、&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;/&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;、&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;；&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;#39;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;‘&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;,&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;，&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;.&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;lt;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;《&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;gt;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;》&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;?&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;？&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;punctuator/half_shape&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;`&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;`&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;~&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;~&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;!&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;！&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;@&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;@&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;#&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;$&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;￥&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;%&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;^&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;……&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;amp;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&amp;amp;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;*&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;×&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;(&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;（&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;)&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;）&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;_&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;——&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;+&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;+&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;-&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;-&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;=&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;=&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;[&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;【&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;]&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;】&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;{&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｛&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;}&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｝&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;|&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;｜&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;\\&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;、&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;/&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;；&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;#39;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;’&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;,&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;，&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;.&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;lt;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;《&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;gt;&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;》&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;?&amp;#34;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;？&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上配置的具体细节请查阅&lt;a href="https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F"&gt;文档&lt;/a&gt;。&lt;/p&gt;</description></item><item><title>利用 EditorConfig 定义代码格式，统一代码风格</title><link>https://aimerneige.com/zh/post/tool/editorconfig/</link><pubDate>Fri, 29 Jan 2021 16:37:25 +0800</pubDate><guid>https://aimerneige.com/zh/post/tool/editorconfig/</guid><description>EditorConfig 的简要介绍</description></item><item><title>Linux 下安装 fcitx5 与 Rime</title><link>https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/</link><pubDate>Sun, 13 Dec 2020 19:35:18 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/install-fcitx5-with-rime-on-linux/</guid><description>Linux 下中文输入法安装</description></item><item><title>使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读</title><link>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</link><pubDate>Wed, 27 May 2020 23:36:38 +0800</pubDate><guid>https://aimerneige.com/zh/post/python/using-pillow-to-convert-comic-to-pdf-quickly/</guid><description>&lt;h2 id="介绍"&gt;介绍&lt;/h2&gt;
+&lt;p&gt;使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。&lt;/p&gt;
+&lt;p&gt;查阅资料，我们会发现 &lt;a href="https://github.com/python-pillow/Pillow"&gt;Pillow&lt;/a&gt; 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。&lt;/p&gt;
+&lt;p&gt;简单地查看下 &lt;a href="https://pillow.readthedocs.io/en/stable/"&gt;官方文档&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;emmm，官方文档的东西有点多，为了快速解决问题还是直接查找下有没有相关代码把。&lt;/p&gt;
+&lt;p&gt;随便查了下，发现了这个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; PIL &lt;span style="color:#f92672"&gt;import&lt;/span&gt; Image
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image1.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image2.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image3 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image3.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;image4 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Image&lt;span style="color:#f92672"&gt;.&lt;/span&gt;open(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\image4.png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image1&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image2&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im3 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image3&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im4 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; image4&lt;span style="color:#f92672"&gt;.&lt;/span&gt;convert(&lt;span style="color:#e6db74"&gt;&amp;#39;RGB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;imagelist &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [im2,im3,im4]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;im1&lt;span style="color:#f92672"&gt;.&lt;/span&gt;save(&lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;C:\Users\Ron\Desktop\Test\myImages.pdf&amp;#39;&lt;/span&gt;,save_all&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;, append_images&lt;span style="color:#f92672"&gt;=&lt;/span&gt;imagelist)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来源： &lt;a href="https://datatofish.com/images-to-pdf-python/"&gt;https://datatofish.com/images-to-pdf-python/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不需要仔细看又臭又长的官方文档了，nice！&lt;/p&gt;
+&lt;p&gt;了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码很简单，直接上源码了：&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="源码"&gt;源码&lt;/h2&gt;
+&lt;p&gt;项目文件目录：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;- comic/ # 包含了漫画的图片
+- example_001.png
+- example_002.png
+- example_003.png
+...
+- example_202.png
+- output/ # 保存输出的pdf文件
+- ろりっぽいの.pdf
+main.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;main.py&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Self-Hosting on Aimer's Blog</title><link>https://aimerneige.com/en/tags/self-hosting/</link><description>Recent content in Self-Hosting on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2024 23:08:17 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/self-hosting/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup Your Own Apt Mirror</title><link>https://aimerneige.com/en/post/linux/setup-your-own-apt-mirror/</link><pubDate>Sat, 14 Dec 2024 23:08:17 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/setup-your-own-apt-mirror/</guid><description>&lt;h2 id="what-you-need"&gt;What you need&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;a server running ubuntu&lt;/li&gt;
+&lt;li&gt;enough disk space (at least 600G)&lt;/li&gt;
+&lt;li&gt;good internet connection&lt;/li&gt;
+&lt;li&gt;a domain name (optional)&lt;/li&gt;
+&lt;li&gt;a ssl certificate (optional)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="prepare-your-server"&gt;Prepare your server&lt;/h2&gt;
+&lt;p&gt;You can buy a cloud server, or use a local machine. Here, I am using a local machine to setup a offline apt mirror which can speed up my workflow.&lt;/p&gt;
+&lt;h2 id="install-apt-mirror"&gt;Install &lt;code&gt;apt-mirror&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Just run the following command to install apt-mirror on your server:&lt;/p&gt;</description></item></channel></rss>

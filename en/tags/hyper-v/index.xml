@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hyper-V on Aimer's Blog</title><link>https://aimerneige.com/en/tags/hyper-v/</link><description>Recent content in Hyper-V on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Fri, 08 Mar 2024 00:15:56 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/tags/hyper-v/index.xml" rel="self" type="application/rss+xml"/><item><title>Boot Fedora From Windows Hyper-V</title><link>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</link><pubDate>Fri, 08 Mar 2024 00:15:56 +0800</pubDate><guid>https://aimerneige.com/en/post/linux/boot-fedora-from-windows-hyper-v/</guid><description>&lt;ol&gt;
+&lt;li&gt;Enable Hypyer-V&lt;/li&gt;
+&lt;li&gt;disk manager -&amp;gt; offline&lt;/li&gt;
+&lt;li&gt;create vm. skip the disk creation&lt;/li&gt;
+&lt;li&gt;open vm settings. select physical disk instead of vhd&lt;/li&gt;
+&lt;li&gt;Disable secure boot and checkpoint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk"&gt;https://superuser.com/questions/1284201/hyper-v-boot-to-os-on-physical-disk&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

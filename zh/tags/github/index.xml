@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Github on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/github/</link><description>Recent content in Github on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Sat, 01 Aug 2020 07:15:56 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>优雅地使用 GitHub</title><link>https://aimerneige.com/zh/post/others/use-github-gracefully/</link><pubDate>Sat, 01 Aug 2020 07:15:56 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/use-github-gracefully/</guid><description>&lt;p&gt;&lt;a href="https://docs.github.com/cn/github/searching-for-information-on-github/understanding-the-search-syntax"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="较常用的检索限制"&gt;较常用的检索限制&lt;/h2&gt;
+&lt;p&gt;项目名称&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:name &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目 README&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:readme &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目描述&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:description &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;语言&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;language: java
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;star 数&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;stars:&amp;gt;1000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;fork 数&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;forks:&amp;gt;500
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更新时间&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;pushed:&amp;gt;2020-08-01
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用示例&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;参考链接:&lt;br&gt;
+&lt;a href="https://www.youtube.com/watch?v=Uj6WWAqg0NY"&gt;https://www.youtube.com/watch?v=Uj6WWAqg0NY&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>

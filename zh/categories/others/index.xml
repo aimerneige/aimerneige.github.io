@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Others on Aimer's Blog</title><link>https://aimerneige.com/zh/categories/others/</link><description>Recent content in Others on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Tue, 06 Feb 2024 08:06:29 +0000</lastBuildDate><atom:link href="https://aimerneige.com/zh/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Atlas</title><link>https://aimerneige.com/zh/post/others/install-atlas/</link><pubDate>Tue, 06 Feb 2024 08:06:29 +0000</pubDate><guid>https://aimerneige.com/zh/post/others/install-atlas/</guid><description>F**k Windows Upgrade to Atlas</description></item><item><title>在 wsl 下安装 fedora 35</title><link>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</link><pubDate>Sat, 09 Apr 2022 22:22:44 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/install-fedora35-on-wsl/</guid><description>&lt;h2 id="安装-wsl2"&gt;安装 wsl2&lt;/h2&gt;
+&lt;p&gt;使用管理员身份开启 windows terminal.&lt;/p&gt;
+&lt;p&gt;执行如下指令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ps1" data-lang="ps1"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl.exe --install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;等待安装完成后在开始菜单执行重启(Restart)&lt;/p&gt;
+&lt;style type="text/css"&gt;
+.notice {
+--title-color: #fff;
+--title-background-color: #6be;
+--content-color: #444;
+--content-background-color: #e7f2fa;
+}
+.notice.info {
+--title-background-color: #fb7;
+--content-background-color: #fec;
+}
+.notice.tip {
+--title-background-color: #5a5;
+--content-background-color: #efe;
+}
+.notice.warning {
+--title-background-color: #c33;
+--content-background-color: #fee;
+}
+@media (prefers-color-scheme:dark) {
+.notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+.notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+.notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+.notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+}
+body.dark .notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+body.dark .notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+body.dark .notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+body.dark .notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+.notice {
+padding: 18px;
+line-height: 24px;
+margin-bottom: 24px;
+border-radius: 4px;
+color: var(--content-color);
+background: var(--content-background-color);
+}
+.notice p:last-child {
+margin-bottom: 0
+}
+.notice-title {
+margin: -18px -18px 12px;
+padding: 4px 18px;
+border-radius: 4px 4px 0 0;
+font-weight: 700;
+color: var(--title-color);
+background: var(--title-background-color);
+}
+.icon-notice {
+display: inline-flex;
+align-self: center;
+margin-right: 8px;
+}
+.icon-notice img,
+.icon-notice svg {
+height: 1em;
+width: 1em;
+fill: currentColor;
+}
+.icon-notice img,
+.icon-notice.baseline svg {
+top: .125em;
+position: relative;
+}
+&lt;/style&gt;&lt;div class="notice warning" &gt;
+&lt;p class="notice-title"&gt;
+&lt;span class="icon-notice baseline"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300"&gt;
+&lt;path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/&gt;
+&lt;/svg&gt;
+&lt;/span&gt;警告&lt;/p&gt;</description></item><item><title>对于某实验平台的吐槽</title><link>https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/</link><pubDate>Thu, 19 Aug 2021 21:44:21 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/complaints-about-stupid-lab-platform/</guid><description>&lt;p&gt;今天学校不知道哪搞了个平台，让我们去上面做模拟实验，我点开一看，好嘛，没啥用的机器人、电焊，继续看下去还有题目，又懒得上网查答案，但是学校给的通知里有一行话引起了我的注意:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提示:需要从实验空间进入实验,不可直接输入网址进入&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不可直接输入网址？我仔细看了下，发现实验空间的作用就是添加一个 token，如果直接进去就是游客，没有办法登录。&lt;/p&gt;
+&lt;p&gt;这下就好办了啊，虽然是游客，但是游客也可以做题啊，我用游客帐号先做了不就拿到答案了吗？&lt;/p&gt;
+&lt;p&gt;这个系统果然把正确答案显示在前端了，但是不太好看，于是我就跑去 F12 看了。&lt;/p&gt;
+&lt;p&gt;结果我在后台找到了下面的代码:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;$&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ajax&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/webApi/experimen/rig/getData&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;type&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;data&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;courseId&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;courseId&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;dataType&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;JSON&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;success&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;res&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 省略的大量代码逻辑
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })&lt;span style="color:#960050;background-color:#1e0010"&gt;；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;下面的注释是原来就有，不是我加的。&lt;br&gt;
+对，这个系统没有对 js 做混淆甚至在代码里有详细的注释。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 单选
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;answer&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;$&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;.afterTesting .topic1 form&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;k&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;k&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;answer&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;k&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;$&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;answer&lt;/span&gt;[&lt;span style="color:#a6e22e"&gt;k&lt;/span&gt;]).&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;.question1&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;questionAnswer&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;data-answer&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAnswer&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;input[type=&amp;#39;radio&amp;#39;]:checked&amp;#34;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;val&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;score&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; parseFloat(&lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;data-score&amp;#34;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;questionAnswer&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userdAnswer&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;input[type=&amp;#39;checkbox&amp;#39;]:checked&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userdAnswerStr&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userdAnswer&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userdAnswerStr&lt;/span&gt; &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;$&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;userdAnswer&lt;/span&gt;[&lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;]).&lt;span style="color:#a6e22e"&gt;val&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//console.log($(userdAnswer[i]).val());
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//console.log(userdAnswerStr);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAnswer&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userdAnswerStr&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;isok&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;questionAnswer&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAnswer&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;isok&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;正确&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;.countItem span&amp;#34;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;html&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;score&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;resultafter&lt;/span&gt; &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;score&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;isok&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;错误&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;.countItem span&amp;#34;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;html&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;question1&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;.yourAnswer span&amp;#34;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;html&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;isok&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好家伙，前端直接向后台发请求拿答案数据，然后判断对错？这就好比考试的时候老师把答案和试卷都给你，让你自己写完试卷自己评分。&lt;/p&gt;</description></item><item><title>Hello Hugo</title><link>https://aimerneige.com/zh/post/others/hello-hugo/</link><pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/hello-hugo/</guid><description>安装和配置 hugo</description></item><item><title>在 Windows10 安装和配置 alacritty</title><link>https://aimerneige.com/zh/post/others/alacritty-on-windows/</link><pubDate>Thu, 22 Oct 2020 15:15:19 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/alacritty-on-windows/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;注意将本文章提到的路径中 &lt;code&gt;AimerNeige&lt;/code&gt; 修改为自己的用户名，之后不再赘述。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="安装-alacritty"&gt;安装 alacritty&lt;/h2&gt;
+&lt;p&gt;按照自己的喜好 在 &lt;a href="https://github.com/alacritty/alacritty"&gt;GitHub&lt;/a&gt; 下载最新版 &lt;a href="https://github.com/alacritty/alacritty/releases"&gt;release&lt;/a&gt; 或自己编译。&lt;/p&gt;
+&lt;p&gt;本次演示中可执行文件存储目录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\Tools\Alacritty\alacritty.exe&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="配置-alacritty"&gt;配置 alacritty&lt;/h2&gt;
+&lt;p&gt;将配置文件放置在如下目录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\Users\AimerNeige\AppData\Roaming\alacritty\alacritty.yml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;配置方法和 Linux 下类似。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/aimerneige/alacritty"&gt;我的配置文件&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="将-alacrity-注册为右键菜单启动"&gt;将 alacrity 注册为右键菜单启动&lt;/h2&gt;
+&lt;p&gt;新建文本文件，填入如下内容，修改后缀为 &lt;code&gt;.reg&lt;/code&gt; 运行，将配置写入注册表。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty]
+@=&amp;#34;Alacritty terminal here&amp;#34;
+&amp;#34;Icon&amp;#34;=&amp;#34;C:\\Tools\\Alacritty\\alacritty.ico&amp;#34;
+[HKEY_CLASSES_ROOT\Directory\Background\shell\alacritty\command]
+@=&amp;#34;C:\\Tools\\Alacritty\\alacritty.exe&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然，你也可以按照自己的喜好手动编辑注册表。&lt;/p&gt;
+&lt;p&gt;其中 &lt;code&gt;Icon&lt;/code&gt; 这一行中使用的的图标文件可以在 &lt;a href="https://raw.githubusercontent.com/alacritty/alacritty/master/extra/windows/alacritty.ico"&gt;GitHub 官方仓库&lt;/a&gt; 下载，或者也可以使用自己喜欢的内容。&lt;/p&gt;
+&lt;p&gt;你也可以将 &lt;code&gt;@=&amp;quot;Alacritty terminal here&amp;quot;&lt;/code&gt; 修改为自己喜欢的内容。&lt;/p&gt;</description></item><item><title>写给小白的 win10 使用技巧</title><link>https://aimerneige.com/zh/post/others/tips-using-windows10/</link><pubDate>Wed, 26 Aug 2020 22:46:52 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/tips-using-windows10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文章项目地址 &lt;a href="https://github.com/AimerNeige/Tutorial.git"&gt;https://github.com/AimerNeige/Tutorial.git&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="计算机使用技巧"&gt;计算机使用技巧&lt;/h1&gt;
+&lt;p&gt;如果你是一个几乎没有接触过电脑但是却打算入门计算机专业，这篇文章将为你介绍一些基本的计算机使用技巧。&lt;/p&gt;
+&lt;p&gt;主要介绍 &lt;code&gt;Windows10&lt;/code&gt; 的一些使用技巧，如果你是 &lt;code&gt;mac&lt;/code&gt; 用户，请自行查阅其他文章，但是如果你是 &lt;code&gt;Linux&lt;/code&gt; 用户，我觉得你应该不需要看我的文章。&lt;/p&gt;
+&lt;h2 id="杀毒软件"&gt;杀毒软件&lt;/h2&gt;
+&lt;p&gt;或许你会在较旧的电脑上见到诸如&lt;em&gt;360 安全卫士&lt;/em&gt;，&lt;em&gt;金山毒霸&lt;/em&gt;，&lt;em&gt;电脑管家&lt;/em&gt;等杀毒软件，受其影响，你或许也会在电脑上安装这些软件，但是，对于计算机专业来说，这些软件不仅无用而且会给你的学习带来很多麻烦。请 &lt;strong&gt;务必&lt;/strong&gt; &lt;strong&gt;立即&lt;/strong&gt; 删除它们。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但是，没有杀毒软件的话，电脑中毒怎么办啊？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你的电脑是刚到手的笔记本，我相信你的预装系统是 &lt;code&gt;Windows10&lt;/code&gt;。 而 &lt;code&gt;windows&lt;/code&gt; 本身会预装 &lt;code&gt;Windows Defender&lt;/code&gt; ，对于一般的病毒，&lt;code&gt;Windows Defender&lt;/code&gt; 完全可以保护你的电脑，而且如果使用习惯良好，不下载使用来源不明的文件的话，即使没有任何杀毒软件也是可以的。但是你非要有双保险才放心，一定要安装杀毒软件的话，我推荐 &lt;code&gt;火绒杀毒&lt;/code&gt; &lt;a href="https://www.huorong.cn/"&gt;https://www.huorong.cn/&lt;/a&gt; 。这款软件的个人版完全免费而且没用任何广告弹窗。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;删了它们我怎么清理电脑垃圾啊？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在旧电脑上用的硬盘是机械硬盘，而机械硬盘的磁盘碎片会影响电脑系统运行速度，在旧电脑上清理垃圾确实有用且会提升电脑运行速度，但是现在的电脑用的都是固态硬盘，这些磁盘垃圾并不会影响电脑性能，不会影响系统的运行速度，最多只是占一些存储空间，如果你非要清理的话，我推荐你使用 &lt;code&gt;CCleaner&lt;/code&gt; &lt;a href="https://www.ccleaner.com/"&gt;https://www.ccleaner.com/&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;没有软件管家我不会下载软件了怎么办？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;要养成去官网下载软件的好习惯，比如我们想要安装 &lt;code&gt;QQ&lt;/code&gt; 就使用搜索引擎搜索 &lt;code&gt;QQ&lt;/code&gt; 的官网，找到 &lt;code&gt;QQ&lt;/code&gt; 的官网 &lt;a href="http://im.qq.com/"&gt;http://im.qq.com/&lt;/a&gt; ，然后在官网下载安装包。类是地，我们同样可以在 &lt;code&gt;Visual Studio Code&lt;/code&gt; 的官网 &lt;a href="https://code.visualstudio.com/"&gt;https://code.visualstudio.com/&lt;/a&gt; 上下载 &lt;code&gt;Visual Studio Code&lt;/code&gt; 的安装包。如果一个软件没有官网，你也可以在一些受信任的网站上下载它，不过大部分软件都会有官网的，除非你在下载破解软件或者其他上古软件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;没有电脑管家我如何管理系统自启动啊？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;禁用开机自启动：&lt;br&gt;
+启动任务管理器，点击 &lt;code&gt;启动&lt;/code&gt; 找到想要禁用的自启项，右击，选择禁用。&lt;/p&gt;
+&lt;p&gt;设置开机自启动：&lt;br&gt;
+按住 &lt;code&gt;Win&lt;/code&gt; 键（左下角有 windows 徽标的按键）然后按 &lt;code&gt;R&lt;/code&gt;, 在弹出的运行框中输入 &lt;code&gt;shell:startup&lt;/code&gt; 将软件的 &lt;strong&gt;快捷方式&lt;/strong&gt; 放在这个目录下即可。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我想要那个网速显示的悬浮窗！！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个软件可能会帮到你 &lt;a href="https://github.com/zhongyang219/TrafficMonitor"&gt;https://github.com/zhongyang219/TrafficMonitor&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;没有加速球电脑会不会卡啊？&lt;/p&gt;</description></item><item><title>优雅地使用 GitHub</title><link>https://aimerneige.com/zh/post/others/use-github-gracefully/</link><pubDate>Sat, 01 Aug 2020 07:15:56 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/use-github-gracefully/</guid><description>&lt;p&gt;&lt;a href="https://docs.github.com/cn/github/searching-for-information-on-github/understanding-the-search-syntax"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="较常用的检索限制"&gt;较常用的检索限制&lt;/h2&gt;
+&lt;p&gt;项目名称&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:name &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目 README&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:readme &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目描述&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:description &amp;lt;keyword&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;语言&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;language: java
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;star 数&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;stars:&amp;gt;1000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;fork 数&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;forks:&amp;gt;500
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更新时间&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;pushed:&amp;gt;2020-08-01
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用示例&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;in:name marp in:description theme stars:&amp;gt;5 pushed:&amp;gt;2020-01-01
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;参考链接:&lt;br&gt;
+&lt;a href="https://www.youtube.com/watch?v=Uj6WWAqg0NY"&gt;https://www.youtube.com/watch?v=Uj6WWAqg0NY&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>使用 PicGo 搭建便捷的图片上传服务</title><link>https://aimerneige.com/zh/post/others/picgo/</link><pubDate>Thu, 28 May 2020 00:13:47 +0800</pubDate><guid>https://aimerneige.com/zh/post/others/picgo/</guid><description>&lt;p&gt;在平时使用 markdown 的时候，图片一般是一个痛点，在本地引用图片后转到其他平台就有可能失效，尤其是上传到自己的博客的时候就很麻烦，在线图片可以解决这个问题，但是手动上传也是一件麻烦事，不过，已经有一些好心的程序员写了一个软件来解决这个问题，这里我推荐 PicGo 这款应用。&lt;/p&gt;
+&lt;p&gt;这款应用完全开源、免费，支持跨平台特性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/Molunerfinn/PicGo"&gt;GitHub 主页&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://picgo.github.io/PicGo-Doc/"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;软件的配置也十分简单，按照&lt;a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A"&gt;官方的教程&lt;/a&gt;新建一个 GitHub 仓库并连接软件就好了。&lt;/p&gt;
+&lt;p&gt;官方的文档就很棒了，没必要提供更详细的教程。（话说这篇文章也太水了）&lt;/p&gt;</description></item></channel></rss>

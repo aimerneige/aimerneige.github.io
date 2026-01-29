@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Others on Aimer's Blog</title><link>https://aimerneige.com/en/categories/others/</link><description>Recent content in Others on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>en</language><lastBuildDate>Wed, 15 Mar 2023 14:20:08 +0800</lastBuildDate><atom:link href="https://aimerneige.com/en/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Google Play Store at One Plus Ace2</title><link>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</link><pubDate>Wed, 15 Mar 2023 14:20:08 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-google-play-store-at-one-plus-ace2/</guid><description>&lt;p&gt;Today, I buy a new phone &lt;a href="https://www.oneplus.com/cn/ace-2"&gt;One Plus ACE 2&lt;/a&gt;. It&amp;rsquo;s a good phone and it contains GMS which can be enabled from settings. But it did not give you a google play store, which I really need to install some paid apps. So here is how you can install one.&lt;/p&gt;
+&lt;h2 id="enable-gms-from-settings"&gt;Enable GMS From Settings&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open your settings app, search &lt;code&gt;google&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Click the first result &lt;code&gt;Google Mobile Services&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Enable Google Mobile Services.&lt;/li&gt;
+&lt;li&gt;Login in your google account at &lt;code&gt;Google&lt;/code&gt; if you want.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="install-google-play-store"&gt;Install Google Play Store&lt;/h2&gt;
+&lt;p&gt;After you enable GMS, all you need to do next is install a google play store.&lt;/p&gt;</description></item><item><title>Install WSA With Google Play Store and Root</title><link>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</link><pubDate>Tue, 17 May 2022 23:13:13 +0800</pubDate><guid>https://aimerneige.com/en/post/others/install-wsa-with-google-play-store-and-root/</guid><description>&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Uninstall old wsa (if you have)&lt;/li&gt;
+&lt;li&gt;make sure you have &lt;code&gt;Virtual Machine Platform&lt;/code&gt; enabled on &lt;code&gt;Turn Windows features on or off&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fork this repo: &lt;a href="https://github.com/LSPosed/MagiskOnWSA"&gt;https://github.com/LSPosed/MagiskOnWSA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;build it with actions&lt;/li&gt;
+&lt;li&gt;download build result&lt;/li&gt;
+&lt;li&gt;run the install script&lt;/li&gt;
+&lt;li&gt;start the wsa and enjoy it&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="enable-usb-debug"&gt;Enable usb debug&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open wsa settings, enable &lt;code&gt;Developer Mode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;copy wsa ip address&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;adb connect WSA-IP-ADDRESS&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Hello Hugo</title><link>https://aimerneige.com/en/post/others/hello-hugo/</link><pubDate>Tue, 17 Aug 2021 07:16:04 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-hugo/</guid><description>Install and Config hugo</description></item><item><title>MinGW Install For Windows</title><link>https://aimerneige.com/en/post/others/mingw-install-for-windows/</link><pubDate>Wed, 19 Aug 2020 15:51:09 +0800</pubDate><guid>https://aimerneige.com/en/post/others/mingw-install-for-windows/</guid><description>&lt;p&gt;Click &lt;a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/"&gt;here&lt;/a&gt; to download the MinGW setup file.&lt;/p&gt;
+&lt;p&gt;Run the &lt;code&gt;mingw-get-setup.exe&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Waite for install.&lt;/p&gt;
+&lt;p&gt;After install done, click &lt;code&gt;Continue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Select what you wants to install and right click it, click &lt;code&gt;Mark For Installation&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Installation&lt;/code&gt; on the left top.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply Changes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Apply&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Just wait for install. (May need proxy)&lt;/p&gt;
+&lt;p&gt;After that, the mingw has been installed successfully. You can uninstall this install program.&lt;/p&gt;
+&lt;p&gt;Set the system env settings and enjoy it!&lt;/p&gt;</description></item><item><title>How to install ffmpeg on Windows 10</title><link>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</link><pubDate>Mon, 10 Aug 2020 00:01:10 +0800</pubDate><guid>https://aimerneige.com/en/post/others/how-to-install-ffmpeg-on-windows10/</guid><description>&lt;p&gt;Go &lt;a href="https://ffmpeg.zeranoe.com/builds/"&gt;this link&lt;/a&gt; and download a build package.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;version&lt;/code&gt;, choose the newest &lt;code&gt;release&lt;/code&gt; version number like &lt;code&gt;4.3.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;Architecture&lt;/code&gt;, choose the &lt;code&gt;Windows 64 bit&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;Linking&lt;/code&gt;, choose the &lt;code&gt;Static&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For the &lt;code&gt;License&lt;/code&gt;, it&amp;rsquo;s doesn&amp;rsquo;t matter if you just use it on local.&lt;/p&gt;
+&lt;p&gt;After selected, just click Download Build. You will get a zip package.&lt;/p&gt;
+&lt;p&gt;Unzip the package to any location you want. I recommend to the &lt;code&gt;C:\ffmpeg&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Hello World</title><link>https://aimerneige.com/en/post/others/hello-world/</link><pubDate>Fri, 24 Jan 2020 15:50:47 +0800</pubDate><guid>https://aimerneige.com/en/post/others/hello-world/</guid><description>&lt;h1 id="welcome"&gt;Welcome&lt;/h1&gt;
+&lt;p&gt;Welcome!&lt;/p&gt;
+&lt;h1 id="helloworld"&gt;HelloWorld&lt;/h1&gt;
+&lt;p&gt;This is a simple test for my first blog article.&lt;/p&gt;
+&lt;h2 id="mathjax"&gt;Mathjax&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Test 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f&amp;rsquo;} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f&amp;rsquo;; \mu(x), \kappa(x, x))$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$\frac{e}{\left( e+e^{\pi} - \pi^{e}\right) ,\left( - e+\pi^{e}\right) }+{E(\left( e+\pi\right) ,\left( 2,e+\pi\right) )}^{e}$$&lt;/p&gt;
+&lt;h2 id="c"&gt;C&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\n&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="c-1"&gt;C++&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;cout &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="java"&gt;Java&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Main&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="python"&gt;Python&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="go"&gt;Go&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;HelloWorld!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="hidden-text"&gt;Hidden Text&lt;/h2&gt;
+&lt;style type="text/css"&gt;.heimu {color: black;background-color: black;}.heimu:hover {color: white;}&lt;/style&gt;
+&lt;span class="heimu" title="You know too much"&gt;
+Hidden Text
+&lt;/span&gt;
+&lt;h2 id="mermaid"&gt;Mermaid&lt;/h2&gt;
+&lt;div class="mermaid"&gt;
+sequenceDiagram
+Alice-&gt;&gt;John: Hello John, how are you?
+John--&gt;&gt;Alice: Great!
+Alice-)John: See you later!
+&lt;/div&gt;
+&lt;h2 id="gallery"&gt;Gallery&lt;/h2&gt;
+&lt;p&gt;Yalong Bay No.2, Longhai Road No., Jinyang, Sanya, Hainan China&lt;/p&gt;</description></item></channel></rss>

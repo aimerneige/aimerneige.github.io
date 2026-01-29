@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kotlin on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/kotlin/</link><description>Recent content in Kotlin on Aimer's Blog</description><generator>Hugo -- 0.153.1</generator><language>zh</language><lastBuildDate>Sun, 16 Feb 2020 01:25:45 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu 19.10 配置 Kotlin 开发环境</title><link>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</link><pubDate>Sun, 16 Feb 2020 01:25:45 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/kotlin-on-ubuntu-19-10/</guid><description>&lt;h1 id="ubuntu-1910-配置-kotlin-开发环境"&gt;Ubuntu 19.10 配置 Kotlin 开发环境&lt;/h1&gt;
+&lt;h2 id="使用工具"&gt;使用工具&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VSCode&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="安装-kotlin-编译器"&gt;安装 Kotlin 编译器&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo snap install kotlin --classic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果出现错误，执行以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install snap
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这条指令执行后，系统安装的内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kotlinc&lt;/li&gt;
+&lt;li&gt;kotlinc-jvm&lt;/li&gt;
+&lt;li&gt;kotlinc-js&lt;/li&gt;
+&lt;li&gt;kotlin-dce-js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以通过以下指令查看版本，如果有输出证明安装成功。&lt;/p&gt;
+&lt;p&gt;俩条指令都可以，建议使用上面的。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlin -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kotlinc -version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装插件"&gt;安装插件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这俩个貌似安装一个就可以了，也可以都安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Kotlin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Kotlin Language&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装下面这个插件后在 &lt;code&gt;文件&lt;/code&gt; -&amp;gt; &lt;code&gt;首选项&lt;/code&gt; -&amp;gt; &lt;code&gt;设置&lt;/code&gt; -&amp;gt; &lt;code&gt;扩展&lt;/code&gt; -&amp;gt; &lt;code&gt;Run Code Configuration&lt;/code&gt; 中找到并勾选 &lt;code&gt;Run In Terminal&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Code Runner&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="测试"&gt;测试&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;建立新文件 &lt;code&gt;HelloWorld.kt&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fun&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(args: Array&amp;lt;String&amp;gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println(&lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;通过点击右上角三角形（由 &lt;code&gt;Code Runner&lt;/code&gt; 提供的快捷方式）来编译运行，查看输出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果看到终端输出 &lt;code&gt;Hello, World!&lt;/code&gt; 的内容，说明开发环境搭建成功。&lt;/p&gt;</description></item></channel></rss>
