@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Fedora on Aimer's Blog</title><link>https://aimerneige.com/zh/tags/fedora/</link><description>Recent content in Fedora on Aimer's Blog</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://aimerneige.com/zh/tags/fedora/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Fedora 上添加 Btrfs RAID0 数据池</title><link>https://aimerneige.com/zh/post/linux/add-raid-pool-on-fedora/</link><pubDate>Sun, 12 Jul 2026 00:00:00 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/add-raid-pool-on-fedora/</guid><description>&lt;style type="text/css"&gt;
+.notice {
+--title-color: #fff;
+--title-background-color: #6be;
+--content-color: #444;
+--content-background-color: #e7f2fa;
+}
+.notice.info {
+--title-background-color: #fb7;
+--content-background-color: #fec;
+}
+.notice.tip {
+--title-background-color: #5a5;
+--content-background-color: #efe;
+}
+.notice.warning {
+--title-background-color: #c33;
+--content-background-color: #fee;
+}
+@media (prefers-color-scheme:dark) {
+.notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+.notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+.notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+.notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+}
+body.dark .notice {
+--title-color: #fff;
+--title-background-color: #069;
+--content-color: #ddd;
+--content-background-color: #023;
+}
+body.dark .notice.info {
+--title-background-color: #a50;
+--content-background-color: #420;
+}
+body.dark .notice.tip {
+--title-background-color: #363;
+--content-background-color: #121;
+}
+body.dark .notice.warning {
+--title-background-color: #800;
+--content-background-color: #400;
+}
+.notice {
+padding: 18px;
+line-height: 24px;
+margin-bottom: 24px;
+border-radius: 4px;
+color: var(--content-color);
+background: var(--content-background-color);
+}
+.notice p:last-child {
+margin-bottom: 0
+}
+.notice-title {
+margin: -18px -18px 12px;
+padding: 4px 18px;
+border-radius: 4px 4px 0 0;
+font-weight: 700;
+color: var(--title-color);
+background: var(--title-background-color);
+}
+.icon-notice {
+display: inline-flex;
+align-self: center;
+margin-right: 8px;
+}
+.icon-notice img,
+.icon-notice svg {
+height: 1em;
+width: 1em;
+fill: currentColor;
+}
+.icon-notice img,
+.icon-notice.baseline svg {
+top: .125em;
+position: relative;
+}
+&lt;/style&gt;&lt;div class="notice warning" &gt;
+&lt;p class="notice-title"&gt;
+&lt;span class="icon-notice baseline"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300"&gt;
+&lt;path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/&gt;
+&lt;/svg&gt;
+&lt;/span&gt; 警告 &lt;/p&gt;</description></item><item><title>在 Fedora 系统上安装微信</title><link>https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/</link><pubDate>Thu, 10 Nov 2022 12:03:27 +0800</pubDate><guid>https://aimerneige.com/zh/post/linux/install-wechat-on-fedora/</guid><description>&lt;h1 id="在-fedora-系统上运行微信"&gt;在 Fedora 系统上运行微信&lt;/h1&gt;
+&lt;h2 id="安装-wine"&gt;安装 wine&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install wine
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="调整缩放比例"&gt;调整缩放比例&lt;/h2&gt;
+&lt;p&gt;输入下面的指令打开 winecfg&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winecfg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 &lt;code&gt;Graphics&lt;/code&gt; 一栏中调整合适的 dpi 以保证有舒适的使用体验。（4k 屏幕，192 dpi）&lt;/p&gt;
+&lt;h2 id="下载并配置字体"&gt;下载并配置字体&lt;/h2&gt;
+&lt;p&gt;依次执行如下指令即可&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install cabextract
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install winetricks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winetricks corefonts gdiplus riched20 riched30
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="下载并安装微信"&gt;下载并安装微信&lt;/h2&gt;
+&lt;p&gt;直接下载官方的 exe 安装包（在网页下载也是一样的）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用 wine 启动微信&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wine ./WeChatSetup.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来按照 Windows 的安装逻辑点击下一步安装好微信&lt;/p&gt;
+&lt;p&gt;安装结束后可以删除安装包&lt;/p&gt;
+&lt;h2 id="修改语言设置"&gt;修改语言设置&lt;/h2&gt;
+&lt;p&gt;修改这个文件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vim ~/.local/share/applications/wine/Programs/WeChat/WeChat.desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;调整 &lt;code&gt;Exec&lt;/code&gt; 这一部分，添加如下环境变量&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;env LC_ALL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;zh_CN.UTF8&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最终结果应该是这样（注意路径）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-desktop" data-lang="desktop"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Desktop Entry]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Name&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;WeChat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Exec&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;env LC_ALL=&amp;#34;zh_CN.UTF8&amp;#34; env WINEPREFIX=&amp;#34;/home/aimer/.wine&amp;#34; wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\WeChat\\\\WeChat.lnk&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Application&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;StartupNotify&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Path&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/home/aimer/.wine/dosdevices/c:/Program Files (x86)/Tencent/WeChat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Icon&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;E03C_WeChat.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;StartupWMClass&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;wechat.exe&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="启动微信"&gt;启动微信&lt;/h2&gt;
+&lt;p&gt;安装过程中会自动添加 desktop 文件，直接打开即可。&lt;/p&gt;</description></item></channel></rss>
